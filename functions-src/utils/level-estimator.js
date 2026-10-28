@@ -8,7 +8,9 @@
  * Designed for Cloudflare Pages Functions & local Node.js server.
  */
 
-import { detectLevelFromMetadata, labelToTier } from '../data/video-info-db.js';
+import { detectLevelFromMetadata, labelToTier, scoreToLevelLabel, scoreToTier } from '../data/video-info-db.js';
+
+export { scoreToLevelLabel, scoreToTier };
 
 // High-frequency English words >= 8 letters that are elementary/conversational (A1/A2/B1), not advanced C1/C2
 const COMMON_A1_A2_LONG_WORDS = new Set([
@@ -49,49 +51,6 @@ const ELEMENTARY_ZH_CHARS = new Set(
 // Advanced Korean academic & complex grammatical connectives (TOPIK 4-6)
 const ADVANCED_KO_CONNECTIVES = /관련하여|대하여|통하여|불구하고|비롯하여|의하면|바람에|따르면|바에|탓에|미루어|불사하고|염두에|일환으로/g;
 
-/**
- * Maps numeric score (1.0 to 5.0/6.0) to standard language level label
- * @param {number} score
- * @param {string} lang
- * @returns {string}
- */
-export function scoreToLevelLabel(score, lang) {
-    const clamped = Math.max(1, score);
-    if (lang === 'ja') {
-        const n = Math.min(5, Math.max(1, 6 - Math.round(clamped))); // 1 -> N5, 5 -> N1
-        return `JLPT N${n}`;
-    }
-    if (lang === 'zh') {
-        const n = Math.min(6, Math.max(1, Math.round(clamped)));
-        return `HSK ${n}`;
-    }
-    if (lang === 'ko') {
-        const n = Math.min(6, Math.max(1, Math.round(clamped)));
-        return `TOPIK ${n}`;
-    }
-    if (lang === 'en') {
-        const cefr = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-        const idx = Math.min(5, Math.max(0, Math.round(clamped) - 1));
-        return `CEFR ${cefr[idx]}`;
-    }
-    return `Level ${Math.round(clamped)}`;
-}
-
-/**
- * Maps numeric score to standard tier
- * @param {number} score
- * @param {string} lang
- * @returns {'beginner' | 'elementary' | 'intermediate' | 'upper_intermediate' | 'advanced'}
- */
-export function scoreToTier(score, lang) {
-    const max = (lang === 'zh' || lang === 'ko' || lang === 'en') ? 6 : 5;
-    const normalized = score / max;
-    if (normalized <= 0.28) return 'beginner';
-    if (normalized <= 0.48) return 'elementary';
-    if (normalized <= 0.68) return 'intermediate';
-    if (normalized <= 0.86) return 'upper_intermediate';
-    return 'advanced';
-}
 
 /**
  * Estimate language difficulty level from subtitle segments and metadata

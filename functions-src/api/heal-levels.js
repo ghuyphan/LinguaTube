@@ -9,7 +9,7 @@ import { matchesSecret } from '../utils/secret-auth.js';
  */
 
 import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
-import { saveVideoLevel } from '../data/video-info-db.js';
+import { saveVideoLevel, detectLevelFromMetadata, labelToTier } from '../data/video-info-db.js';
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { validateAuthToken } from '../middlewares/auth.js';
@@ -107,11 +107,51 @@ export async function onRequest(context) {
                 if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) continue;
 
                 const existing = currentLevels[normLang];
-                const needsHeal = forceAll || !existing || existing.method === 'server_heuristic' || existing.method === 'metadata';
+                const titleMeta = detectLevelFromMetadata(row.title || '', row.channel || '');
+                const hasTitleMeta = titleMeta && titleMeta.lang === normLang;
+                const titleMismatch = hasTitleMeta && existing?.level !== titleMeta.level;
+                const needsHeal = forceAll || !existing || existing.method === 'server_heuristic' || titleMismatch;
 
                 if (!needsHeal) continue;
 
-                // Check R2 for cached transcript
+                // Priority 1: Ground truth from title metadata
+                if (hasTitleMeta) {
+                    const tier = labelToTier(titleMeta.level) || 'intermediate';
+                    let defaultScore = 2.5;
+                    if (tier === 'beginner') defaultScore = 1.0;
+                    else if (tier === 'elementary') defaultScore = 2.0;
+                    else if (tier === 'intermediate') defaultScore = 3.0;
+                    else if (tier === 'upper_intermediate') defaultScore = 4.0;
+                    else if (tier === 'advanced') defaultScore = 5.0;
+
+                    const oldLevel = existing?.level || 'None';
+                    const oldScore = existing?.score ?? null;
+
+                    await saveVideoLevel(
+                        db,
+                        null,
+                        vId,
+                        normLang,
+                        titleMeta.level,
+                        0.95,
+                        'metadata',
+                        { score: defaultScore, tier, forceUpdate: true }
+                    );
+
+                    healed.push({
+                        videoId: vId,
+                        language: normLang,
+                        oldLevel,
+                        oldScore,
+                        newLevel: titleMeta.level,
+                        newScore: defaultScore,
+                        tier,
+                        method: 'metadata'
+                    });
+                    continue;
+                }
+
+                // Priority 2: Check R2 for cached transcript
                 let cached = null;
                 if (r2) {
                     cached = await getTranscriptFromR2(r2, vId, lang);

@@ -275,7 +275,7 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
 
     try {
         const row = await db.prepare(`
-            SELECT levels, sub_languages, available_languages FROM video_languages WHERE video_id = ?
+            SELECT levels, sub_languages, available_languages, title, channel FROM video_languages WHERE video_id = ?
         `).bind(videoId).first();
 
         let currentLevels = {};
@@ -300,6 +300,64 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
             }
         }
 
+        const isForceUpdate = Boolean(details?.forceUpdate);
+        const cleanLang = (language || '').toLowerCase().trim().split('-')[0].split('_')[0];
+
+        // Creator Title Ground-Truth Priority:
+        // Video creators explicitly declaring target proficiency in the title (e.g. "JLPT N5 Listening Practice")
+        // represents authoritative pedagogical intent (confidence 0.95).
+        const titleMeta = detectLevelFromMetadata(row?.title || '', row?.channel || '');
+        const hasTitleGroundTruth = titleMeta && titleMeta.lang === cleanLang;
+
+        const existingVal = currentLevels[language];
+        let existingConf = 0.0;
+        let existingScore = null;
+        let existingMethod = null;
+        if (existingVal) {
+            if (typeof existingVal === 'object' && existingVal !== null) {
+                existingConf = typeof existingVal.confidence === 'number' ? existingVal.confidence : 0.8;
+                existingScore = typeof existingVal.score === 'number' ? existingVal.score : null;
+                existingMethod = existingVal.method || null;
+            } else if (typeof existingVal === 'string') {
+                existingConf = 0.8;
+            }
+        }
+
+        // If title metadata is detected, anchor to creator intent unless administrative forceUpdate is provided
+        if (hasTitleGroundTruth && !isForceUpdate) {
+            const authoritativeTier = labelToTier(titleMeta.level) || 'intermediate';
+            let authoritativeScore = 2.5;
+            if (authoritativeTier === 'beginner') authoritativeScore = 1.0;
+            else if (authoritativeTier === 'elementary') authoritativeScore = 2.0;
+            else if (authoritativeTier === 'intermediate') authoritativeScore = 3.0;
+            else if (authoritativeTier === 'upper_intermediate') authoritativeScore = 4.0;
+            else if (authoritativeTier === 'advanced') authoritativeScore = 5.0;
+
+            const levelData = {
+                level: titleMeta.level,
+                tier: authoritativeTier,
+                score: authoritativeScore,
+                confidence: 0.95,
+                method: 'metadata',
+                updatedAt: Math.floor(Date.now() / 1000)
+            };
+            if (typeof details?.grammarCount === 'number') levelData.grammarCount = details.grammarCount;
+            if (typeof details?.speechRateCpm === 'number') levelData.speechRateCpm = details.speechRateCpm;
+            if (details?.breakdown && typeof details.breakdown === 'object') levelData.breakdown = details.breakdown;
+
+            currentLevels[language] = levelData;
+            delete currentLevels[`${language}_meta`];
+
+            if (row) {
+                await db.prepare(`
+                    UPDATE video_languages 
+                    SET levels = ?, updated_at = strftime('%s', 'now')
+                    WHERE video_id = ?
+                `).bind(JSON.stringify(currentLevels), videoId).run();
+            }
+            return currentLevels;
+        }
+
         const tier = details?.tier || labelToTier(level) || 'intermediate';
         let score = typeof details?.score === 'number' && Number.isFinite(details.score) ? details.score : null;
         if (score === null) {
@@ -316,43 +374,28 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
             safeConfidence = Math.min(0.85, safeConfidence);
         }
 
-        const existingVal = currentLevels[language];
-        let existingConf = 0.0;
-        let existingScore = null;
-        let existingMethod = null;
-        if (existingVal) {
-            if (typeof existingVal === 'object' && existingVal !== null) {
-                existingConf = typeof existingVal.confidence === 'number' ? existingVal.confidence : 0.8;
-                existingScore = typeof existingVal.score === 'number' ? existingVal.score : null;
-                existingMethod = existingVal.method || null;
-            } else if (typeof existingVal === 'string') {
-                existingConf = 0.8;
-            }
-        }
-
-        // Subtitle linguistic analysis represents ground truth from authentic spoken dialogue.
-        // It must supersede metadata guesses (which are just title regex keywords).
-        const isLinguisticOverridingMetadata = method === 'linguistics' && existingMethod === 'metadata';
-        const isHeuristicOverridingMetadata = method === 'server_heuristic' && existingMethod === 'metadata';
-        const canOverride = Boolean(details?.forceUpdate) || isLinguisticOverridingMetadata || isHeuristicOverridingMetadata;
-
-        // Do not downgrade verified high-confidence metadata (>= 0.95) unless override is allowed or incoming is also >= 0.95
-        if (!canOverride && existingConf >= 0.95 && safeConfidence < 0.95) {
+        // Security Hardening: Client submissions must NEVER overwrite high-confidence verified records (>= 0.90)
+        // unless explicit administrative forceUpdate is supplied.
+        if (!isForceUpdate && existingConf >= 0.90 && safeConfidence < 0.90) {
             return currentLevels;
         }
 
-        // If existing record has valid score and confidence, blend using EMA (60% existing + 40% new)
+        // For non-metadata videos, blend score using EMA (60% existing + 40% new)
         let finalScore = score;
-        if (!canOverride && existingScore !== null && Number.isFinite(existingScore) && existingConf >= 0.75) {
+        if (!isForceUpdate && existingScore !== null && Number.isFinite(existingScore) && existingConf >= 0.75) {
             finalScore = Math.round(((0.60 * existingScore) + (0.40 * score)) * 10) / 10;
         }
 
+        // Reconcile level and tier directly from finalScore instead of trusting raw incoming strings
+        const resolvedLevel = isForceUpdate ? level : scoreToLevelLabel(finalScore, cleanLang);
+        const resolvedTier = isForceUpdate ? tier : scoreToTier(finalScore, cleanLang);
+
         const levelData = {
-            level,
-            tier,
+            level: resolvedLevel,
+            tier: resolvedTier,
             score: finalScore,
-            confidence: canOverride ? safeConfidence : Math.max(safeConfidence, existingConf > 0.8 ? existingConf : safeConfidence),
-            method,
+            confidence: isForceUpdate ? safeConfidence : Math.max(safeConfidence, existingConf > 0.8 ? existingConf : safeConfidence),
+            method: isForceUpdate ? method : (existingMethod || method),
             updatedAt: Math.floor(Date.now() / 1000)
         };
         if (typeof details?.grammarCount === 'number') levelData.grammarCount = details.grammarCount;
@@ -522,6 +565,66 @@ export function labelToTier(label = '') {
     }
 
     return 'intermediate';
+}
+
+/**
+ * Maps numeric score (1.0 to 5.0/6.0) to calibrated standard language level label
+ * @param {number} score
+ * @param {string} lang
+ * @returns {string}
+ */
+export function scoreToLevelLabel(score, lang) {
+    const clamped = Math.max(1, score);
+    const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
+    if (cleanLang === 'ja') {
+        if (clamped < 1.85) return 'JLPT N5';
+        if (clamped < 2.75) return 'JLPT N4';
+        if (clamped < 3.70) return 'JLPT N3';
+        if (clamped < 4.60) return 'JLPT N2';
+        return 'JLPT N1';
+    }
+    if (cleanLang === 'zh') {
+        if (clamped < 1.85) return 'HSK 1';
+        if (clamped < 2.85) return 'HSK 2';
+        if (clamped < 3.85) return 'HSK 3';
+        if (clamped < 4.85) return 'HSK 4';
+        if (clamped < 5.85) return 'HSK 5';
+        return 'HSK 6';
+    }
+    if (cleanLang === 'ko') {
+        if (clamped < 1.85) return 'TOPIK 1';
+        if (clamped < 2.85) return 'TOPIK 2';
+        if (clamped < 3.85) return 'TOPIK 3';
+        if (clamped < 4.85) return 'TOPIK 4';
+        if (clamped < 5.85) return 'TOPIK 5';
+        return 'TOPIK 6';
+    }
+    if (cleanLang === 'en') {
+        if (clamped < 1.85) return 'CEFR A1';
+        if (clamped < 2.85) return 'CEFR A2';
+        if (clamped < 3.85) return 'CEFR B1';
+        if (clamped < 4.85) return 'CEFR B2';
+        if (clamped < 5.85) return 'CEFR C1';
+        return 'CEFR C2';
+    }
+    return `Level ${Math.round(clamped)}`;
+}
+
+/**
+ * Maps numeric score to standard tier
+ * @param {number} score
+ * @param {string} lang
+ * @returns {'beginner' | 'elementary' | 'intermediate' | 'upper_intermediate' | 'advanced'}
+ */
+export function scoreToTier(score, lang) {
+    const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
+    const max = (cleanLang === 'zh' || cleanLang === 'ko' || cleanLang === 'en') ? 6 : 5;
+    const normalized = score / max;
+    if (normalized <= 0.28) return 'beginner';
+    if (normalized <= 0.48) return 'elementary';
+    if (normalized <= 0.68) return 'intermediate';
+    if (normalized <= 0.86) return 'upper_intermediate';
+    return 'advanced';
 }
 
 /**

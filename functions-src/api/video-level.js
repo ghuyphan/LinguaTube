@@ -7,7 +7,7 @@
  */
 
 import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage, errorResponse } from '../utils/utils.js';
-import { saveVideoLevel } from '../data/video-info-db.js';
+import { saveVideoLevel, labelToTier } from '../data/video-info-db.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { validateAuthToken, unauthorizedResponse } from '../middlewares/auth.js';
 
@@ -93,10 +93,34 @@ export async function onRequestPost(context) {
             return jsonResponse({ error: 'Assessment confidence too low to persist (minimum 0.65 required)', confidence }, 400);
         }
 
+        // Semantic Coherence Validation:
+        // Reject contradictory combinations of level, tier, and score
+        const expectedTier = labelToTier(level);
+        const normalizedTier = normalizeIncomingTier(body?.tier);
+        if (normalizedTier && expectedTier) {
+            const isBeginnerLevel = expectedTier === 'beginner';
+            const isAdvancedLevel = expectedTier === 'advanced';
+            if ((isBeginnerLevel && ['advanced', 'upper_intermediate'].includes(normalizedTier)) ||
+                (isAdvancedLevel && ['beginner', 'elementary'].includes(normalizedTier))) {
+                return jsonResponse({ error: `Incoherent level and tier combination: ${level} cannot be ${normalizedTier}` }, 400);
+            }
+        }
+
+        let validatedScore = null;
+        if (typeof body?.score === 'number' && Number.isFinite(body.score)) {
+            validatedScore = Math.min(10.0, Math.max(0.0, Math.round(body.score * 10) / 10));
+            if (expectedTier === 'beginner' && validatedScore > 3.0) {
+                return jsonResponse({ error: `Incoherent score for beginner level ${level}: ${validatedScore}` }, 400);
+            }
+            if (expectedTier === 'advanced' && validatedScore < 2.5) {
+                return jsonResponse({ error: `Incoherent score for advanced level ${level}: ${validatedScore}` }, 400);
+            }
+        }
+
         // Extract and sanitize rich diagnostic details if provided
         const details = {};
-        if (typeof body?.score === 'number' && Number.isFinite(body.score)) {
-            details.score = Math.min(10.0, Math.max(0.0, Math.round(body.score * 10) / 10));
+        if (validatedScore !== null) {
+            details.score = validatedScore;
         }
         if (typeof body?.grammarCount === 'number' && Number.isFinite(body.grammarCount)) {
             details.grammarCount = Math.max(0, Math.min(10000, Math.round(body.grammarCount)));
@@ -104,7 +128,6 @@ export async function onRequestPost(context) {
         if (typeof body?.speechRateCpm === 'number' && Number.isFinite(body.speechRateCpm)) {
             details.speechRateCpm = Math.max(0, Math.min(2000, Math.round(body.speechRateCpm)));
         }
-        const normalizedTier = normalizeIncomingTier(body?.tier);
         if (normalizedTier) {
             details.tier = normalizedTier;
         }

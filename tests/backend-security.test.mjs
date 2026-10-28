@@ -2000,9 +2000,146 @@ test('saveVideoLevel: caps client confidence and applies EMA blending', async ()
 
   // 2. Client submits with spoofed confidence 1.0 (should be capped to 0.85) and blended via EMA
   const second = await saveVideoLevel(mockDb, null, 'vid_test_1', 'ja', 'JLPT N3', 1.0, 'linguistics', { score: 3.0, tier: 'intermediate' });
-  assert.equal(second.ja.level, 'JLPT N3');
   // Blended score: 0.60 * 2.0 + 0.40 * 3.0 = 1.2 + 1.2 = 2.4
   assert.equal(second.ja.score, 2.4);
+  // Canonical level and tier are reconciled from blended score 2.4 (< 2.75 -> JLPT N4)
+  assert.equal(second.ja.level, 'JLPT N4');
+  assert.equal(second.ja.tier, 'elementary');
+});
+
+test('saveVideoLevel: client linguistics CANNOT overwrite verified metadata without forceUpdate', async () => {
+  const { saveVideoLevel } = await import('../functions-src/data/video-info-db.js');
+
+  let storedLevels = null;
+  const mockDb = {
+    prepare: (query) => ({
+      bind: (...args) => ({
+        first: async () => ({ levels: storedLevels ? JSON.stringify(storedLevels) : null }),
+        run: async () => {
+          if (query.includes('UPDATE')) {
+            storedLevels = JSON.parse(args[0]);
+          }
+          return { success: true };
+        }
+      })
+    })
+  };
+
+  // 1. Initial verified metadata entry (confidence 0.95, JLPT N5)
+  await saveVideoLevel(mockDb, null, 'vid_meta_1', 'ja', 'JLPT N5', 0.95, 'metadata', { score: 1.0, tier: 'beginner', forceUpdate: true });
+  assert.equal(storedLevels.ja.level, 'JLPT N5');
+  assert.equal(storedLevels.ja.confidence, 0.95);
+
+  // 2. Client sends linguistics submission with JLPT N3 - MUST BE REJECTED to protect verified metadata
+  const rejected = await saveVideoLevel(mockDb, null, 'vid_meta_1', 'ja', 'JLPT N3', 0.85, 'linguistics', { score: 3.0, tier: 'intermediate' });
+  assert.equal(rejected.ja.level, 'JLPT N5', 'Metadata must remain locked against client linguistic overwrite');
+  assert.equal(rejected.ja.confidence, 0.95);
+  assert.equal(rejected.ja.method, 'metadata');
+});
+
+test('saveVideoLevel: anchors to creator title ground truth from D1 row', async () => {
+  const { saveVideoLevel } = await import('../functions-src/data/video-info-db.js');
+
+  let storedLevels = null;
+  const mockDb = {
+    prepare: (query) => ({
+      bind: (...args) => ({
+        first: async () => ({
+          levels: storedLevels ? JSON.stringify(storedLevels) : null,
+          title: 'Can you understand my Japanese? / N5 & N4 Japanese Listening Practice! #132',
+          channel: 'Japanese Ammo with Misa'
+        }),
+        run: async () => {
+          if (query.includes('UPDATE')) {
+            storedLevels = JSON.parse(args[0]);
+          }
+          return { success: true };
+        }
+      })
+    })
+  };
+
+  // Client attempts to submit JLPT N3 for video titled "N5 & N4"
+  const saved = await saveVideoLevel(mockDb, null, '45hezvxF6Hs', 'ja', 'JLPT N3', 0.85, 'linguistics', {
+    score: 3.2,
+    tier: 'intermediate',
+    grammarCount: 45,
+    speechRateCpm: 140
+  });
+
+  // Must anchor to title intent (JLPT N5) with confidence 0.95 and metadata method
+  assert.equal(saved.ja.level, 'JLPT N5');
+  assert.equal(saved.ja.tier, 'beginner');
+  assert.equal(saved.ja.confidence, 0.95);
+  assert.equal(saved.ja.method, 'metadata');
+  // Telemetry is retained
+  assert.equal(saved.ja.grammarCount, 45);
+  assert.equal(saved.ja.speechRateCpm, 140);
+});
+
+test('video-level API: validates semantic coherence between level, tier, and score', async (t) => {
+  const { onRequestPost } = await import('../functions-src/api/video-level.js');
+
+  const uid = '33333333-3333-4333-8333-333333333333';
+  const tokenPayload = Buffer.from(JSON.stringify({ sub: uid, exp: Math.floor(Date.now() / 1000) + 3600 })).toString('base64url');
+  const validToken = `eyJhbGciOiJIUzI1NiJ9.${tokenPayload}.sig`;
+
+  t.mock.method(globalThis, 'fetch', async (url) => {
+    if (url.includes('/auth/v1/user')) {
+      return Response.json({ id: uid, email: 'test@voca.study' });
+    }
+    if (url.includes('/rest/v1/profiles')) {
+      return Response.json([{ id: uid, subscription_tier: 'free', diamonds: 5 }]);
+    }
+    throw new Error(`Unexpected fetch ${url}`);
+  });
+
+  const makeContext = (body) => ({
+    request: new Request('https://voca.study/api/video-level', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${validToken}`
+      },
+      body: JSON.stringify(body)
+    }),
+    env: {
+      TRANSCRIPT_CACHE: {
+        get: async () => null,
+        put: async () => {}
+      },
+      VOCAB_DB: {
+        prepare: () => ({
+          bind: () => ({
+            first: async () => null,
+            run: async () => ({ success: true })
+          })
+        })
+      }
+    }
+  });
+
+  // 1. Contradictory: JLPT N1 with beginner tier
+  const res1 = await onRequestPost(makeContext({
+    videoId: 'dQw4w9WgXcQ',
+    language: 'ja',
+    level: 'JLPT N1',
+    tier: 'beginner'
+  }));
+  assert.equal(res1.status, 400);
+  const data1 = await res1.json();
+  assert.ok(data1.error.includes('Incoherent level and tier'));
+
+  // 2. Contradictory: JLPT N5 with score 4.5
+  const res2 = await onRequestPost(makeContext({
+    videoId: 'dQw4w9WgXcQ',
+    language: 'ja',
+    level: 'JLPT N5',
+    score: 4.5
+  }));
+  assert.equal(res2.status, 400);
+  const data2 = await res2.json();
+  assert.ok(data2.error.includes('Incoherent score'));
 });
 
 test('saveVideoLevel: forceUpdate and linguistic override bypass metadata lock and EMA drag', async () => {
