@@ -84,7 +84,7 @@ test('dictionary outage stays retryable; a clean negative expires', async t => {
     let mode = 'outage', calls = 0;
     t.mock.method(globalThis, 'fetch', async () => { calls++; if (mode === 'outage') throw Error('offline');
         if (mode === 'empty') return Response.json([]);
-        return Response.json({ searchResultMap: { searchResultListMap: { WORD: { items: [{ expEntry: 'recovered', meansCollector: [{ means: [{ value: 'meaning' }] }] }] } } } }); });
+        return Response.json({ searchResultMap: { searchResultListMap: { WORD: { items: [{ expEntry: 'recovered', languageCode: 'ENEN', meansCollector: [{ means: [{ value: 'meaning' }] }] }] } } } }); });
     const make = () => dictionary(context('/api/dict?word=outage-regression&from=en&to=en'));
     const outage = await make(); assert.equal(outage.status, 503); assert.equal(outage.headers.get('Cache-Control'), 'no-store');
     mode = 'found'; const before = calls; assert.equal((await (await make()).json()).entries.length, 1); assert.ok(calls > before);
@@ -197,4 +197,39 @@ test('kanji deadlines terminate stalled headers and bodies; TTS fallback also ab
         assert.equal(response.status,502);assert.equal(response.headers.get('Cache-Control'),'no-store');
     } finally {clearTimeout(timer);}
     assert.ok(budgets.every(ms=>ms===5000));
+});
+
+test('Naver keeps exact senses and per-entry direction while excluding reverse and subentries', () => {
+    const item = (word, code, value, matchType = 'exact:entry') => ({ handleEntry: word, expEntry: word, languageCode: code, matchType, meansCollector: [{ means: [{ value }] }] });
+    const data = { searchResultMap: { searchResultListMap: { WORD: { items: [
+        item('银行','ZHKO','은행'), item('银行','ZHKO','은행 기관'), item('银行','ZHEN','bank'),
+        item('银行','ZHZH','unrelated article','exact:subEntry'), item('은행','KOZH','银行')
+    ] } } } };
+    const entries = parseNaver(data, '银行', 'zh', 'ko');
+    assert.deepEqual(entries.map(e => [e.definitions[0], e.definitionLanguage]), [['은행','ko'], ['은행 기관','ko'], ['bank','en']]);
+});
+
+test('mixed dictionary languages translate independently and preserve failed group metadata', async () => {
+    const provider = { primaryTimeout: 1000, getSources(from, to) { return to === 'ko' ? [{url:'direct',parser:'naver',definitionLanguage:'ko'}] : []; },
+        async fetchFromSource() { return [
+            {word:'银行',definitions:['은행'],definitionLanguage:'ko'},
+            {word:'银行',definitions:['bank'],definitionLanguage:'en'},
+            {word:'银行',definitions:['银行机构'],definitionLanguage:'zh'}
+        ]; } };
+    const seen = [];
+    const translator = { async translateEntries(entries, target, options) { seen.push(options.sourceLang); return options.sourceLang === 'en' ? entries.map(e => ({...e,definitions:['은행 번역']})) : []; } };
+    const result = await new DictionaryService(provider, translator).fetchWithFallback('银行','zh','ko');
+    assert.deepEqual(seen.sort(), ['en','zh']);
+    assert.deepEqual(result.entries.map(e => [e.definitions[0],e.definitionLanguage,e.definitionKind]), [
+        ['은행','ko','native'], ['은행 번역','ko','translated'], ['银行机构','zh','fallback']
+    ]);
+});
+
+test('Naver malformed search shape remains unavailable and does not become a negative', async t => {
+    let malformed = true;
+    t.mock.method(globalThis, 'fetch', async () => malformed ? Response.json({searchResultMap:{searchResultListMap:{WORD:{items:'bad'}}}}) : Response.json({searchResultMap:{searchResultListMap:{WORD:{items:[{expEntry:'shapecheck',languageCode:'ENEN',meansCollector:[{means:[{value:'valid'}]}]}]}}}}));
+    const make = () => dictionary(context('/api/dict?word=shapecheck&from=en&to=en'));
+    assert.equal((await make()).status, 503);
+    malformed = false;
+    assert.equal((await (await make()).json()).entries[0].definitions[0], 'valid');
 });

@@ -182,3 +182,7 @@ AI pricing follow-up: `/api/transcript` supports the `quoteOnly` preview mode an
 AI subtitle billing uses official YouTube metadata. Configure the encrypted `YOUTUBE_DATA_API_KEY` and apply the additive D1 migration before backend deployment; see [setup and validation](doc/verified-video-metadata-2026-10-26.md).
 
 Video names, channels, tags and category IDs also use the shared official metadata request. Apply `db/migrations/d1/20261026_video_metadata_details.sql` after the verified-duration migration before deploying this update. Both metadata records and catalog details are persisted in D1.
+
+### Dictionary direction and language metadata
+
+Dictionary results preserve provider-reported direction and actual per-entry definition languages, including bounded translation fallback. Cache v6 requires coordinated public CDN invalidation or expiry at rollout; see [the API implementation and rollout notes](doc/backend-api.md). Changes remain local until deployed.

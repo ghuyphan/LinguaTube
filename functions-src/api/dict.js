@@ -23,7 +23,7 @@ import { DictionaryProvider } from '../providers/dictionary-apis.js';
 import { TranslationProvider } from '../providers/lingva.js';
 import { DictionaryService } from '../services/dict.service.js';
 
-const CACHE_VERSION = 'v5';
+const CACHE_VERSION = 'v6';
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 const memNegDictCache = new SimpleLRUCache(1000, 60000);
 

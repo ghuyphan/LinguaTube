@@ -468,3 +468,7 @@ Official YouTube Data API metadata is the sole new-job duration/live-state autho
 ## Official video details (2026-10-26)
 
 Apply `20261026_video_metadata_details.sql` after the verified-duration migration. Display names/channel/tags/category ID use the shared official resolver and D1 persistence. Preserve caption discovery, learning levels, discovery timestamps and manual/legacy category choices; never let generic hints overwrite official catalog fields. A provider outage is retryable, not a missing video. Keep raw YouTube category ID separate from Voca's mapped category.
+
+## Dictionary result authority (2026-10-28)
+
+Naver source/target direction comes from each result's provider language metadata, not the request endpoint or script guessing. Preserve per-entry definitionLanguage/definitionKind; translate homogeneous source-language groups under the shared bounded deadline and retain truthful fallback metadata on partial failures. Missing/malformed provider metadata is unavailable, not a negative-cache miss. Internal dictionary cache v6 does not invalidate cached public URLs: coordinate a CDN purge or expiry before verifying deployed semantic fixes. See doc/backend-api.md for validation and rollback.

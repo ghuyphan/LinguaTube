@@ -23,7 +23,7 @@ import { getJapaneseRomaji } from './japanese-romaji.js';
  * @param {Object} data - Raw API response
  * @returns {DictEntry[]}
  */
-function rawNaver(data, query = '') {
+function rawNaver(data, query = '', from = '', to = '') {
     const rawResults = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
     const cleanQuery = normalizeDictionaryText(query).toLowerCase();
     const isHangulQuery = /[\uAC00-\uD7AF]/.test(cleanQuery);
@@ -39,13 +39,20 @@ function rawNaver(data, query = '') {
     let filteredResults = rawResults.filter(item => {
         const h = headword(item);
         if (!h) return false;
+        // Naver search can mix reverse dictionaries and other target languages.
+        // The provider's languageCode is the direction of each result, not the endpoint.
+        const code = String(item.languageCode || '').toLowerCase();
+        if (from && !/^(?:ja|zh|ko|en|vi){2}$/.test(code)) throw new Error('Missing or invalid Naver language direction');
+        if (from && code.slice(0, 2) !== from) return false;
         if (isHangulQuery && /^[a-zA-Z\s-]+$/.test(h)) return false;
         return true;
     });
 
     const hasMatchTypeMeta = filteredResults.some(item => typeof item.matchType === 'string' && item.matchType.length > 0);
     if (cleanQuery && hasMatchTypeMeta) {
-        const directMatches = filteredResults.filter(isDirectMatch);
+        const eligible = filteredResults.filter(item => !String(item.matchType || '').startsWith('exact:subEntry'));
+        const exactHeadwords = eligible.filter(item => headword(item).toLowerCase() === cleanQuery);
+        const directMatches = exactHeadwords.length ? exactHeadwords : eligible.filter(isDirectMatch);
         if (directMatches.length > 0) {
             filteredResults = directMatches;
         } else if (isAsciiQuery || filteredResults.every(item => String(item.matchType || '').startsWith('allterm:proximity'))) {
@@ -161,6 +168,7 @@ function rawNaver(data, query = '') {
             word,
             reading,
             definitions,
+            ...(item.languageCode ? { definitionLanguage: String(item.languageCode).toLowerCase().slice(2, 4), definitionKind: 'native' } : (to ? { definitionLanguage: to, definitionKind: 'native' } : {})),
             ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
             partOfSpeech,
             ...(level ? { level } : {}),

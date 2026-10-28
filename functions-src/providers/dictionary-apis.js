@@ -71,7 +71,12 @@ const DICT_SOURCES = {
     ]
 };
 for (const [pair, sources] of Object.entries(DICT_SOURCES)) {
-    for (const source of sources) source.definitionLanguage = ['jisho', 'mdbg', 'jotoba', 'freedict', 'datamuse'].includes(source.parser) ? 'en' : pair.split('-')[1];
+    for (const source of sources) {
+        const [from, to] = pair.split('-');
+        source.from = from;
+        source.to = to;
+        source.definitionLanguage = ['jisho', 'mdbg', 'jotoba', 'freedict', 'datamuse'].includes(source.parser) ? 'en' : to;
+    }
 }
 
 export class DictionaryProvider {
@@ -166,13 +171,13 @@ export class DictionaryProvider {
         let data;
         if (['naver','jotoba','mazii','freedict','datamuse','jisho'].includes(source.parser)) {
             data = JSON.parse(text);
-            const valid = source.parser === 'naver' ? (typeof data?.searchResultMap?.searchResultListMap === 'object' && data.searchResultMap.searchResultListMap !== null) : source.parser === 'jotoba' ? Array.isArray(data?.words) :
+            const valid = source.parser === 'naver' ? (typeof data?.searchResultMap?.searchResultListMap === 'object' && data.searchResultMap.searchResultListMap !== null && !Array.isArray(data.searchResultMap.searchResultListMap) && (data.searchResultMap.searchResultListMap.WORD == null || (typeof data.searchResultMap.searchResultListMap.WORD === 'object' && Array.isArray(data.searchResultMap.searchResultListMap.WORD.items)))) : source.parser === 'jotoba' ? Array.isArray(data?.words) :
                 source.parser === 'mazii' ? (Array.isArray(data?.data || data?.results) || data?.found === 0) : source.parser === 'jisho' ? Array.isArray(data?.data) : Array.isArray(data);
             if (!valid) throw new Error('Malformed dictionary response');
         } else if (!/<html|<!doctype/i.test(text)) throw new Error('Malformed dictionary document');
         // Parse response
         switch (source.parser) {
-            case 'naver': return parseNaver(data, word);
+            case 'naver': return parseNaver(data, word, source.from, source.to);
             case 'jotoba': return parseJotoba(data, word);
             case 'mazii': return parseMazii(data, word);
             case 'freedict': return parseFreeDictionary(data);

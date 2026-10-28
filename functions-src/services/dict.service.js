@@ -35,16 +35,47 @@ export class DictionaryService {
                     }
                 }
             }
-            const actualLanguage = found.language;
-            if (actualLanguage === to) return { entries: found.entries.map(entry => ({ ...entry, definitionLanguage: to, definitionKind: 'native' })), source: found.source, outcome: 'found' };
-            const translated = await this.transProvider.translateEntries(found.entries, to, {
-                sourceLang: actualLanguage, deadline: Math.min(deadline, Date.now() + 4000), signal: combined
-            });
-            if (translated.length) return { entries: translated.map(entry => ({ ...entry, definitionLanguage: to, definitionKind: 'translated' })), source: `${found.source}+translated`, outcome: 'found' };
-            return { entries: found.entries.map(entry => ({ ...entry,
-                definitions: entry.definitions.map(value => actualLanguage === 'en' ? `[EN] ${value}` : value),
-                definitionLanguage: actualLanguage, definitionKind: 'fallback'
-            })), source: `${found.source}+raw`, outcome: 'found' };
+            // Entries from one provider can carry different definition languages.
+            // Translate homogeneous groups, retaining each original when its group fails.
+            const entries = found.entries.map(entry => ({ ...entry,
+                definitionLanguage: entry.definitionLanguage || found.language,
+                definitionKind: entry.definitionKind || 'native'
+            }));
+            const groups = new Map();
+            for (let i = 0; i < entries.length; i++) {
+                const language = entries[i].definitionLanguage;
+                if (language !== to) {
+                    if (!groups.has(language)) groups.set(language, []);
+                    groups.get(language).push(i);
+                }
+            }
+            let didTranslate = false, didFallback = false;
+            const translationDeadline = Math.min(deadline, Date.now() + 4000);
+            await Promise.all([...groups].map(async ([language, indices]) => {
+                let translated = [];
+                try {
+                    translated = await this.transProvider.translateEntries(indices.map(i => entries[i]), to, {
+                        sourceLang: language, deadline: translationDeadline, signal: combined
+                    });
+                } catch { /* Retain the original definitions on translation failure. */ }
+                const valid = Array.isArray(translated) && translated.length === indices.length &&
+                    translated.every((entry, i) => Array.isArray(entry?.definitions) &&
+                        entry.definitions.length === entries[indices[i]].definitions.length &&
+                        entry.definitions.every(value => typeof value === 'string' && value.trim()));
+                for (let n = 0; n < indices.length; n++) {
+                    const i = indices[n];
+                    if (valid) {
+                        entries[i] = { ...translated[n], definitionLanguage: to, definitionKind: 'translated' };
+                        didTranslate = true;
+                    } else {
+                        entries[i] = { ...entries[i],
+                            definitions: entries[i].definitions.map(value => language === 'en' && !value.startsWith('[EN] ') ? `[EN] ${value}` : value),
+                            definitionLanguage: language, definitionKind: 'fallback' };
+                        didFallback = true;
+                    }
+                }
+            }));
+            return { entries, source: `${found.source}${didTranslate ? '+translated' : ''}${didFallback ? '+raw' : ''}`, outcome: 'found' };
         } finally { controller.abort(); }
     }
 

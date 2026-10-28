@@ -998,3 +998,5 @@ labels. Mobile back actions occupy the card header, leaving the tab row full wid
 Available subtitles return while optional word-token enrichment continues in the background. Transcription completion no longer waits for dictionary initialization; existing client tokenization handles cues without tokens. Refresh joins an already-running transcription and reuses its result. New AI requests verify the actual video length before charging, using the existing tier limits and diamond price bands.
 
 Concurrent identical subtitle translations share work, and partial translation saves preserve the complete transcript. Incomplete recommendation verification is retryable instead of appearing as an empty catalog. This update changes backend behavior; dictionary providers, tokenizer internals and their frontend presentation are being updated separately.
+
+Dictionary lookups retain source-supplied definition languages per entry, including mixed-language provider results. Reverse-direction Naver entries are excluded, and untranslated entries remain explicitly labeled as fallback rather than being presented as the requested language.
