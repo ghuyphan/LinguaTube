@@ -271,24 +271,6 @@ export async function onRequestPost(context) {
                 }
                 // If not in R2 as AI, bypass Step 1 and proceed to Step 3 (Gladia AI)
             } else {
-                // Fallback: If requested language not in R2 and user did NOT request AI,
-                // check other available languages in R2 in parallel
-                const allCandidateLangs = Array.from(new Set([
-                    ...(nativeLanguages || []),
-                    ...(knownInfo?.subLanguages || [])
-                ])).filter(a => a !== lang);
-
-                if (!cached?.segments?.length && allCandidateLangs.length > 0) {
-                    const altResults = await Promise.all(
-                        allCandidateLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
-                    );
-                    const found = altResults.find(item => item.res?.segments?.length > 0);
-                    if (found) {
-                        cached = found.res;
-                        responseLang = found.altLang;
-                    }
-                }
-
                 if (cached?.segments?.length > 0) {
                     const normReq = normalizeLanguageCode(lang);
                     const normRes = normalizeLanguageCode(responseLang);
@@ -406,6 +388,52 @@ export async function onRequestPost(context) {
 
             if (nativeResult?.availableLangs?.length > 0) {
                 availableLanguages.native = nativeResult.availableLangs;
+            }
+
+            // Fallback: If requested language is not available natively on YouTube,
+            // check if another language was cached in R2 to offer as a language mismatch
+            const allCandidateLangs = Array.from(new Set([
+                ...(nativeLanguages || []),
+                ...(availableLanguages.native || []),
+                ...(knownInfo?.subLanguages || [])
+            ])).filter(a => a !== lang);
+
+            if (allCandidateLangs.length > 0) {
+                const altResults = await Promise.all(
+                    allCandidateLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
+                );
+                const found = altResults.find(item => item.res?.segments?.length > 0);
+                if (found) {
+                    const fallbackCached = found.res;
+                    const fallbackLang = found.altLang;
+                    const normReq = normalizeLanguageCode(lang);
+                    const normRes = normalizeLanguageCode(fallbackLang);
+                    const isMismatch = Boolean(normReq && normRes && normReq !== normRes);
+
+                    const targetNormLang = (normRes || fallbackLang || '').split('-')[0].toLowerCase();
+                    if (waitUntil && !fallbackCached.segments.every(s => s.tokens?.length)) waitUntil(enrichPublishedTranscript(r2, cleanVideoId, fallbackLang));
+
+                    const responseLevels = { ...(knownInfo?.levels || {}) };
+                    const existingLvl = responseLevels[targetNormLang];
+                    const needsLvlRecalc = !existingLvl || existingLvl.method === 'server_heuristic' || existingLvl.method === 'metadata';
+                    if (needsLvlRecalc && fallbackCached.segments?.length > 0) {
+                        const estimated = estimateTranscriptLevel(fallbackCached.segments, targetNormLang, { title: body.title, channel: body.channel });
+                        if (estimated) {
+                            responseLevels[targetNormLang] = estimated;
+                            if (waitUntil && db) {
+                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, { ...estimated, forceUpdate: true }).catch(() => {}));
+                            }
+                        }
+                    }
+
+                    return jsonResponse({
+                        success: true, videoId: cleanVideoId, language: fallbackLang, requestedLanguage: lang, segments: fallbackCached.segments,
+                        source: 'cache', sourceDetail: fallbackCached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [fallbackLang], whisperAvailable: diamondInfo.diamonds > 0,
+                        languageMismatch: isMismatch,
+                        levels: responseLevels,
+                        ...diamondInfo, timing: elapsed()
+                    }, 200, { 'X-Cache': 'LANG_MISMATCH' });
+                }
             }
 
             return jsonResponse({
