@@ -916,15 +916,17 @@ To maintain complete visual, structural, and functional harmony across all prima
 - **Celebration Feedback**: Triggers `ToastService.show({ message, type: 'achievement' })` upon earning new badges, leveling up, completing in-flow videos, or finishing daily missions.
 
 ### 8.2. `VideoLevelService` (`src/app/core/services/video-level.service.ts`)
-- **Signal & Cache Store**: Maintains in-memory cache and persists to LocalStorage (`linguatube_video_levels`).
+- **Signal & Cache Store**: Maintains in-memory cache and persists to LocalStorage (`voca_video_levels`).
 - **Hybrid Assessment Pipeline**:
-  1. `cached = this.cache[videoId]?.[targetLang]`: Returns cached assessment immediately.
-  2. `detectFastLevel(title, channelTitle, description)`: Quick title regex matching.
-  3. `assessLevel(videoId, targetLang, cues, videoMeta)`:
-     - Scans subtitle tokens with `GrammarService.detectGrammarPatterns()`.
+  1. `cached = this.getCachedLevel(videoId, targetLang)`: Returns cached assessment immediately.
+  2. `detectFromMetadata(title, channel, lang)`: Quick title and channel regex matching anchored to creator intent.
+  3. `assessLevel(videoId, targetLang, title, channel, cues, serverLevels)`:
+     - Instant fast-path via D1 `serverLevels` (0ms resolution).
+     - Subtitle token scanning via `GrammarService.detectPatterns()` and stratified 50-cue sampling.
      - Calculates speech speed in CPM (CJK) or WPM (English).
-     - Derives weighted score and maps to `ProficiencyLevelTier` (`beginner`, `intermediate`, `advanced`, `expert`).
-     - Dispatches asynchronous background persistence to `POST /api/video-level`.
+     - Unified 3-factor composite: 45% Grammar + 40% Vocab/Kanji + 15% Speech Rate.
+     - Calibrated cutoffs: Japanese (1.85, 2.75, 3.70, 4.60) and 6-level scales for ZH, KO, EN (1.85, 2.85, 3.85, 4.85, 5.85).
+     - Dispatches background persistence to `POST /api/video-level` and reconciles local cache with canonical server-resolved state.
 
 ### 8.3. `AchievementsDialogComponent` (`src/app/components/achievements-dialog/`)
 - **Design System & Structure**:

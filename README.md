@@ -186,3 +186,8 @@ Video names, channels, tags and category IDs also use the shared official metada
 ### Dictionary direction and language metadata
 
 Dictionary results preserve provider-reported direction and actual per-entry definition languages, including bounded translation fallback. Cache v6 requires coordinated public CDN invalidation or expiry at rollout; see [the API implementation and rollout notes](doc/backend-api.md). Changes remain local until deployed.
+
+
+### Video level consistency (2026-10-29)
+
+Community reports cannot choose trusted provenance or overwrite verified difficulty records. Backend and Flutter share calibrated boundaries and label-derived tiers; responses return canonical saved values. See the video level hardening section in `doc/backend-api.md` for contracts and validation. No migration or automatic regrading is needed.

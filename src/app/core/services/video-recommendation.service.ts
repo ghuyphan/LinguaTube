@@ -19,6 +19,10 @@ export interface LearnerRecommendationContext {
 interface RecommendedVideosResponse {
     success: boolean;
     language: string;
+    tier?: string;
+    category?: string;
+    query?: string;
+    sessionSeed?: number;
     count: number;
     offset?: number;
     hasMore?: boolean;
@@ -113,7 +117,12 @@ export class VideoRecommendationService {
 
         const requestId = ++this.activeRequestId;
         const activeTier = tier && tier !== 'all' ? tier : undefined;
-        const cleanQuery = typeof query === 'string' ? query.trim() : this.activeSearchQuery();
+        const cleanQuery = typeof query === 'string'
+            ? query.trim().split('').filter(c => {
+                const code = c.charCodeAt(0);
+                return code >= 32 && code !== 127;
+            }).join('').slice(0, 100)
+            : this.activeSearchQuery();
         this.activeSearchQuery.set(cleanQuery);
 
         const currentCat = category !== undefined ? (category && category !== 'all' ? category : null) : this.activeCategory();
@@ -177,6 +186,10 @@ export class VideoRecommendationService {
                     this.http.get<RecommendedVideosResponse>(fallbackUrl)
                         .pipe(timeout(6000))
                 );
+            }
+
+            if (response?.sessionSeed && !forceRefresh) {
+                this.sessionSeed.set(response.sessionSeed);
             }
 
             const rawVideos = response?.videos || [];
@@ -410,7 +423,8 @@ export class VideoRecommendationService {
                 thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.videoId}/mqdefault.jpg`,
                 languages: langs,
                 level: resolvedLevel,
-                tier: resolvedTier
+                tier: resolvedTier,
+                category: video.category || 'general'
             };
         });
     }

@@ -85,10 +85,11 @@ function vocabularyPattern(word) {
  * 
  * @param {Array<Object>} videos Candidate video objects
  * @param {Object} options Ranking configuration
- * @param {string} options.language Active learning language ('ja', 'ko', 'zh', 'en')
- * @param {string|null} options.tier Optional requested difficulty tier
- * @param {Object|null} options.context Learner context (history, vocab, channels)
- * @param {number} options.sessionSeed Session seed for deterministic serendipity
+ * @param {string} [options.language] Active learning language ('ja', 'ko', 'zh', 'en')
+ * @param {string|null} [options.tier] Optional requested difficulty tier
+ * @param {Object|null} [options.context] Learner context (history, vocab, channels)
+ * @param {number} [options.sessionSeed] Session seed for deterministic serendipity
+ * @param {string|null} [options.query] Optional search query for text relevance scoring
  * @returns {Array<Object>} Ranked and anti-clustered video objects
  */
 export function rankVideos(videos, options = {}) {
@@ -99,8 +100,17 @@ export function rankVideos(videos, options = {}) {
     const {
         tier: requestedTier = null,
         context = {},
-        sessionSeed = null
+        sessionSeed = null,
+        query = null
     } = options;
+
+    const cleanSearchQuery = (typeof query === 'string' && query.trim())
+        ? query.trim().normalize('NFKC').toLowerCase()
+        : null;
+    const isSearchMode = Boolean(cleanSearchQuery);
+    const searchTokens = isSearchMode
+        ? cleanSearchQuery.split(/[\s\u3000]+/).filter(t => t.length > 0)
+        : [];
 
     const safeContext = normalizeRecommendationContext(context);
 
@@ -216,10 +226,44 @@ export function rankVideos(videos, options = {}) {
             }
         }
 
+        // Factor S: Text Search Relevance Scoring
+        if (isSearchMode) {
+            const titleNorm = (v.title || '').normalize('NFKC').toLowerCase();
+            const channelNorm = (v.channel || '').normalize('NFKC').toLowerCase();
+
+            // Exact title match or title starts with query
+            if (titleNorm === cleanSearchQuery) {
+                score += 150;
+            } else if (titleNorm.startsWith(cleanSearchQuery)) {
+                score += 90;
+            } else if (titleNorm.includes(cleanSearchQuery)) {
+                score += 60;
+            }
+
+            // Token matches across title
+            let tokenHits = 0;
+            for (const token of searchTokens) {
+                if (titleNorm.includes(token)) {
+                    tokenHits++;
+                }
+            }
+            if (tokenHits > 0) {
+                score += tokenHits * 25;
+            }
+
+            // Channel name match
+            if (channelNorm === cleanSearchQuery) {
+                score += 50;
+            } else if (channelNorm.includes(cleanSearchQuery)) {
+                score += 30;
+            }
+        }
+
         // Factor F: Deterministic Serendipity Jitter when sessionSeed is provided
         // Calibrated to +/- 12 pts so refresh seed rotations naturally swap video order across duration tiers
         // while strictly preserving learner completion demotion (-70 pts) and vocab notebook boosts (+25-45 pts).
-        if (sessionSeed !== null && sessionSeed !== undefined) {
+        // Jitter is disabled in search mode so relevance takes absolute priority.
+        if (!isSearchMode && sessionSeed !== null && sessionSeed !== undefined) {
             score += getDeterministicJitter(vid || '', sessionSeed, WEIGHTS.jitter);
         }
 
@@ -236,6 +280,6 @@ export function rankVideos(videos, options = {}) {
     });
     const sortedVideos = scored.map(s => s.video);
 
-    // 4. Channel Anti-Clustering Pass
-    return declusterChannels(sortedVideos);
+    // 4. Channel Anti-Clustering Pass (bypassed in search mode to preserve relevance ordering)
+    return isSearchMode ? sortedVideos : declusterChannels(sortedVideos);
 }

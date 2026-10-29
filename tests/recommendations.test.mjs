@@ -142,3 +142,29 @@ test('scan safety limit reports incomplete discovery instead of a false empty fe
     await assert.rejects(getRecommendedVideosFromCloudflare(db, null, 'ja', 24, 'beginner'), /scan budget exceeded/);
     assert.equal(db.calls, 20);
 });
+
+test('rankVideos with search query prioritizes exact title match and disables serendipity jitter', () => {
+    const candidates = [
+        { videoId: 'v1', title: 'Japanese News Today', channel: 'DocuChannel', duration: 300 },
+        { videoId: 'v2', title: 'Documentary on Tokyo', channel: 'NHK', duration: 300 },
+        { videoId: 'v3', title: 'Documentary', channel: 'BBC', duration: 300 },
+        { videoId: 'v4', title: 'Random Cooking Show', channel: 'Chef', duration: 300 },
+    ];
+    const ranked = rankVideos(candidates, { query: 'Documentary', sessionSeed: 99999 });
+    assert.equal(ranked[0].videoId, 'v3');
+    assert.equal(ranked[1].videoId, 'v2');
+    assert.equal(ranked[2].videoId, 'v1');
+    assert.equal(ranked[3].videoId, 'v4');
+});
+
+test('search mode does not fail on sparse candidate sets under 200 items', options, async t => {
+    const rows = catalog(4001).map((row, i) => ({
+        ...row,
+        title: i < 5 ? `Documentary Episode ${i}` : 'Unrelated Video',
+        levels: '{"ja":"N5"}'
+    }));
+    const db = database(t, rows);
+    const result = await getRecommendedVideosFromCloudflare(db, null, 'ja', 24, null, false, 0, 'Documentary');
+    assert.ok(result.length >= 5);
+    assert.ok(result.every(v => v.title.includes('Documentary')));
+});

@@ -1896,8 +1896,16 @@ function declusterChannelsLocal(videos) {
 }
 
 function rankVideosLocal(videos, options = {}) {
-    const { tier: requestedTier, context, sessionSeed = 12345 } = options;
+    const { tier: requestedTier, context, sessionSeed = 12345, query = null } = options;
     if (!Array.isArray(videos) || videos.length === 0) return [];
+
+    const cleanSearchQuery = (typeof query === 'string' && query.trim())
+        ? query.trim().normalize('NFKC').toLowerCase()
+        : null;
+    const isSearchMode = Boolean(cleanSearchQuery);
+    const searchTokens = isSearchMode
+        ? cleanSearchQuery.split(/[\s\u3000]+/).filter(t => t.length > 0)
+        : [];
 
     const safeContext = context && typeof context === 'object' ? context : {};
     const watchedSet = new Set(Array.isArray(safeContext.watched) ? safeContext.watched : []);
@@ -1976,14 +1984,34 @@ function rankVideosLocal(videos, options = {}) {
             }
         }
 
-        const h = Math.abs(hashStringLocal(String(vid)) ^ sessionSeed);
-        score += ((h % 8000) / 1000) - 4;
+        if (isSearchMode) {
+            const titleNorm = (v.title || '').normalize('NFKC').toLowerCase();
+            const channelNorm = (v.channel || '').normalize('NFKC').toLowerCase();
+
+            if (titleNorm === cleanSearchQuery) score += 150;
+            else if (titleNorm.startsWith(cleanSearchQuery)) score += 90;
+            else if (titleNorm.includes(cleanSearchQuery)) score += 60;
+
+            let tokenHits = 0;
+            for (const token of searchTokens) {
+                if (titleNorm.includes(token)) tokenHits++;
+            }
+            if (tokenHits > 0) score += tokenHits * 25;
+
+            if (channelNorm === cleanSearchQuery) score += 50;
+            else if (channelNorm.includes(cleanSearchQuery)) score += 30;
+        }
+
+        if (!isSearchMode) {
+            const h = Math.abs(hashStringLocal(String(vid)) ^ sessionSeed);
+            score += ((h % 8000) / 1000) - 4;
+        }
 
         return { video: v, score };
     });
 
     scored.sort((a, b) => b.score - a.score);
-    return declusterChannelsLocal(scored.map(s => s.video));
+    return isSearchMode ? scored.map(s => s.video) : declusterChannelsLocal(scored.map(s => s.video));
 }
 
 /**
@@ -1991,12 +2019,16 @@ function rankVideosLocal(videos, options = {}) {
  * Returns videos with verified transcripts, with server-side ranking support
  */
 app.all('/api/recommended-videos', async (req, res) => {
-    const lang = (req.body?.lang || req.query.lang || 'ja').toLowerCase().trim();
-    const targetTier = (req.body?.tier || req.query.tier || '').toLowerCase().trim();
+    const lang = (typeof req.body?.lang === 'string' ? req.body.lang : (typeof req.query.lang === 'string' ? req.query.lang : 'ja')).toLowerCase().trim();
+    const targetTier = (typeof req.body?.tier === 'string' ? req.body.tier : (typeof req.query.tier === 'string' ? req.query.tier : '')).toLowerCase().trim();
+    const rawCategory = (typeof req.body?.category === 'string' ? req.body.category : (typeof req.query.category === 'string' ? req.query.category : '')).toLowerCase().trim();
+    const category = rawCategory && rawCategory !== 'all' ? rawCategory : null;
     const limit = Math.min(Math.max(parseInt(req.body?.limit ?? req.query.limit, 10) || 12, 1), 50);
     const offset = Math.max(parseInt(req.body?.offset ?? req.query.offset, 10) || 0, 0);
-    const sessionSeed = parseInt(req.body?.sessionSeed ?? req.query.seed, 10) || 12345;
+    const rawQuery = (typeof req.body?.q === 'string' ? req.body.q : (typeof req.body?.query === 'string' ? req.body.query : (typeof req.query.q === 'string' ? req.query.q : (typeof req.query.query === 'string' ? req.query.query : '')))).trim().slice(0, 100);
+    const query = rawQuery.length > 0 ? rawQuery : null;
     const isRefresh = req.body?.refresh === true || req.query.refresh === 'true' || req.query.force === 'true';
+    const sessionSeed = parseInt(req.body?.sessionSeed ?? req.query.seed, 10) || (isRefresh ? Math.floor(Math.random() * 1000000) : 12345);
     const userContext = (req.body?.context && typeof req.body.context === 'object') ? req.body.context : null;
 
     let results = [];
@@ -2048,6 +2080,7 @@ app.all('/api/recommended-videos', async (req, res) => {
                             thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
                             level: defaultLevel,
                             tier: defaultTier,
+                            category: 'general',
                             updatedAt: Math.floor(Date.now() / 1000)
                         });
                     }
@@ -2074,16 +2107,21 @@ app.all('/api/recommended-videos', async (req, res) => {
                 thumbnail: `https://i.ytimg.com/vi/${seed.videoId}/mqdefault.jpg`,
                 level: seed.level,
                 tier: seed.tier,
+                category: seed.category || 'general',
                 updatedAt: Math.floor(Date.now() / 1000)
             });
         }
     }
 
-    const query = (req.body?.q || req.body?.query || req.query.q || req.query.query || '').trim().toLowerCase();
+    if (category) {
+        results = results.filter(v => v.category === category);
+    }
+
     if (query) {
+        const queryLower = query.toLowerCase();
         results = results.filter(v => 
-            (v.title && v.title.toLowerCase().includes(query)) ||
-            (v.channel && v.channel.toLowerCase().includes(query))
+            (v.title && v.title.toLowerCase().includes(queryLower)) ||
+            (v.channel && v.channel.toLowerCase().includes(queryLower))
         );
     }
 
@@ -2091,7 +2129,8 @@ app.all('/api/recommended-videos', async (req, res) => {
     results = rankVideosLocal(results, {
         tier: targetTier,
         context: userContext,
-        sessionSeed
+        sessionSeed,
+        query
     });
 
     const pagedVideos = results.slice(offset, offset + limit);
@@ -2102,6 +2141,9 @@ app.all('/api/recommended-videos', async (req, res) => {
         success: true,
         language: lang,
         tier: targetTier && targetTier !== 'all' ? targetTier : undefined,
+        category: category || undefined,
+        query: query || undefined,
+        sessionSeed,
         count: pagedVideos.length,
         offset,
         hasMore,

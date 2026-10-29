@@ -79,7 +79,8 @@ for (const mode of ['auth-outage','auth-redirect','auth-identity-mismatch','prof
  add('authentication fails closed '+mode,'video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,fixture:mode,status:401,authOnly:true});
 add('authenticated level rejects invalid video ID','video-level',{body:{videoId:'short',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:400,authOnly:true});
 add('authenticated category persistence','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,status:200,authOnly:true,expect:{category:'news'}});
-add('authenticated level confidence clamps','video-level',{body:{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{confidence:0.9,details:{score:10,grammarCount:10000,speechRateCpm:2000}}});
+add('authenticated level confidence clamps','video-level',{body:{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{confidence:0.85,details:{score:10,grammarCount:10000,speechRateCpm:2000}}});
+add('authenticated level ignores spoofed authority','video-level',{body:{videoId:'12345678901',language:'ja',level:'JLPT N4',confidence:1,grammarCount:100,method:'metadata',forceUpdate:true,details:{forceUpdate:true}},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{method:'linguistics',confidence:0.85,level:'JLPT N4'}});
 add('diamond rate limit exact boundary','diamonds',{repeat:61,status:429,initialStatus:200,noUpstream:true});
 add('version conditional ETag','version',{conditional:true,status:304,noUpstream:true});
 export const providerCases=[];

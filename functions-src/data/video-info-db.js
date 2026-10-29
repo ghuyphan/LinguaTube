@@ -326,12 +326,7 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
         // If title metadata is detected, anchor to creator intent unless administrative forceUpdate is provided
         if (hasTitleGroundTruth && !isForceUpdate) {
             const authoritativeTier = labelToTier(titleMeta.level) || 'intermediate';
-            let authoritativeScore = 2.5;
-            if (authoritativeTier === 'beginner') authoritativeScore = 1.0;
-            else if (authoritativeTier === 'elementary') authoritativeScore = 2.0;
-            else if (authoritativeTier === 'intermediate') authoritativeScore = 3.0;
-            else if (authoritativeTier === 'upper_intermediate') authoritativeScore = 4.0;
-            else if (authoritativeTier === 'advanced') authoritativeScore = 5.0;
+            const authoritativeScore = levelToScore(titleMeta.level);
 
             const levelData = {
                 level: titleMeta.level,
@@ -358,15 +353,10 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
             return currentLevels;
         }
 
-        const tier = details?.tier || labelToTier(level) || 'intermediate';
-        let score = typeof details?.score === 'number' && Number.isFinite(details.score) ? details.score : null;
-        if (score === null) {
-            if (tier === 'beginner') score = 1.0;
-            else if (tier === 'elementary') score = 2.0;
-            else if (tier === 'intermediate') score = 3.0;
-            else if (tier === 'upper_intermediate') score = 4.0;
-            else if (tier === 'advanced') score = 5.0;
-        }
+        const tier = labelToTier(level) || 'intermediate';
+        const score = normalizeLevelScore(
+            typeof details?.score === 'number' && Number.isFinite(details.score)
+                ? details.score : levelToScore(level), cleanLang);
 
         // Cap client-submitted confidence to 0.85 max to prevent permanent poisoning
         let safeConfidence = Math.min(1.0, Math.max(0.0, confidence));
@@ -383,7 +373,7 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
         // For non-metadata videos, blend score using EMA (60% existing + 40% new)
         let finalScore = score;
         if (!isForceUpdate && existingScore !== null && Number.isFinite(existingScore) && existingConf >= 0.75) {
-            finalScore = Math.round(((0.60 * existingScore) + (0.40 * score)) * 10) / 10;
+            finalScore = normalizeLevelScore(Math.round(((0.60 * normalizeLevelScore(existingScore, cleanLang)) + (0.40 * score)) * 10) / 10, cleanLang);
         }
 
         // Reconcile level and tier directly from finalScore instead of trusting raw incoming strings
@@ -567,6 +557,27 @@ export function labelToTier(label = '') {
     return 'intermediate';
 }
 
+/** Normalize diagnostic scores before classification, blending or storage. */
+export function normalizeLevelScore(score, lang) {
+    const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
+    return Math.min(cleanLang === 'ja' ? 5 : 6, Math.max(1, Number.isFinite(score) ? score : 1));
+}
+
+/** Representative score for an explicit level, including the six-level scales. */
+export function levelToScore(level) {
+    const clean = String(level || '').trim().toUpperCase();
+    const jlpt = clean.match(/^(?:JLPT\s*)?N([1-5])$/);
+    if (jlpt) return 6 - Number(jlpt[1]);
+    const numbered = clean.match(/^(?:HSK|TOPIK)\s*([1-6])/);
+    if (numbered) return Number(numbered[1]);
+    if (/^TOPIK\s*II$/.test(clean)) return 6;
+    if (/^TOPIK\s*I$/.test(clean)) return 1;
+    const cefr = clean.replace(/^CEFR\s*/, '');
+    const index = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].indexOf(cefr);
+    if (index >= 0) return index + 1;
+    return { beginner: 1, elementary: 2, intermediate: 3, upper_intermediate: 4, advanced: 5 }[labelToTier(level)] || 3;
+}
+
 /**
  * Maps numeric score (1.0 to 5.0/6.0) to calibrated standard language level label
  * @param {number} score
@@ -574,7 +585,7 @@ export function labelToTier(label = '') {
  * @returns {string}
  */
 export function scoreToLevelLabel(score, lang) {
-    const clamped = Math.max(1, score);
+    const clamped = normalizeLevelScore(score, lang);
     const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
     if (cleanLang === 'ja') {
         if (clamped < 1.85) return 'JLPT N5';
@@ -617,14 +628,7 @@ export function scoreToLevelLabel(score, lang) {
  * @returns {'beginner' | 'elementary' | 'intermediate' | 'upper_intermediate' | 'advanced'}
  */
 export function scoreToTier(score, lang) {
-    const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
-    const max = (cleanLang === 'zh' || cleanLang === 'ko' || cleanLang === 'en') ? 6 : 5;
-    const normalized = score / max;
-    if (normalized <= 0.28) return 'beginner';
-    if (normalized <= 0.48) return 'elementary';
-    if (normalized <= 0.68) return 'intermediate';
-    if (normalized <= 0.86) return 'upper_intermediate';
-    return 'advanced';
+    return labelToTier(scoreToLevelLabel(score, lang));
 }
 
 /**
@@ -846,9 +850,20 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         const bindings = [`%${lang}%`, `%${lang}%`];
         if (category && category !== 'all') { sql += ' AND category = ?'; bindings.push(category); }
         if (cleanQuery) {
-            sql += " AND (title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')";
-            const pattern = `%${cleanQuery.replace(/[\\%_]/g, '\\$&')}%`;
-            bindings.push(pattern, pattern);
+            const tokens = cleanQuery.split(/[\s\u3000]+/).filter(t => t.length > 0).slice(0, 3);
+            if (tokens.length > 1) {
+                const tokenClauses = [];
+                for (const token of tokens) {
+                    tokenClauses.push("(title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')");
+                    const pattern = `%${token.replace(/[\\%_]/g, '\\$&')}%`;
+                    bindings.push(pattern, pattern);
+                }
+                sql += ` AND (${tokenClauses.join(' AND ')})`;
+            } else {
+                sql += " AND (title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')";
+                const pattern = `%${cleanQuery.replace(/[\\%_]/g, '\\$&')}%`;
+                bindings.push(pattern, pattern);
+            }
         }
         if (cursor) {
             sql += ' AND (COALESCE(updated_at, 0) < ? OR (COALESCE(updated_at, 0) = ? AND video_id > ?))';
@@ -913,8 +928,19 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         if (exhausted) break;
     }
     if (verificationIncomplete) throw new Error('Recommendation transcript verification budget exceeded');
-    if (!exhausted && candidates.size < 200) throw new Error('Recommendation scan budget exceeded');
-    const ranked = rankVideos([...candidates.values()], { language: lang, tier: targetTier, context, sessionSeed });
+    if (!exhausted && candidates.size < 200) {
+        if (!cleanQuery) {
+            throw new Error('Recommendation scan budget exceeded');
+        }
+        // In search mode, do not fail on sparse candidate sets; proceed with matches found
+    }
+    const ranked = rankVideos([...candidates.values()], {
+        language: lang,
+        tier: targetTier,
+        context,
+        sessionSeed,
+        query: cleanQuery
+    });
     const videos = ranked.slice(safeOffset, safeOffset + safeLimit);
     return includePage ? { videos, hasMore: safeOffset + videos.length < ranked.length } : videos;
 }

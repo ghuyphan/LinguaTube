@@ -597,3 +597,8 @@ AI billing metadata: `functions-src/services/video-metadata.service.js` owns off
 Official display details share `services/video-metadata.service.js` with billing, persist snippet JSON, and hydrate `video_languages` through `api/video-info.js`. `services/category.service.js` maps official IDs into Voca groups. Migration: `20261026_video_metadata_details.sql`; focused coverage: `tests/video-details.test.mjs`.
 
 Dictionary provider direction: `DictionaryProvider` passes the requested pair to the Naver parser. Naver result language codes select source direction and actual definition language; `DictionaryService` translates per-language groups and retains failed groups as labeled fallback entries. See the cache rollout note in `backend-api.md`.
+
+
+### Video level consistency (2026-10-29)
+
+Community reports cannot choose trusted provenance or overwrite verified difficulty records. Backend and Flutter share calibrated boundaries and label-derived tiers; responses return canonical saved values. See the video level hardening section in `backend-api.md` for contracts and validation. No migration or automatic regrading is needed.

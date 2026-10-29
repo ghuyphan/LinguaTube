@@ -85,7 +85,9 @@ async function handleRecommendedVideos(context, method) {
     const offsetParam = parseInt(body.offset ?? url.searchParams.get('offset'), 10);
     const offset = Math.max(isNaN(offsetParam) ? 0 : offsetParam, 0);
 
-    const rawQuery = (body.q || body.query || url.searchParams.get('q') || url.searchParams.get('query') || '').trim();
+    const rawQuery = (body.q || body.query || url.searchParams.get('q') || url.searchParams.get('query') || '')
+        .trim()
+        .replace(/[\x00-\x1F\x7F]/g, '');
     const query = rawQuery.length > 0 ? rawQuery.slice(0, 100) : null;
 
     const isRefresh = body.refresh === true || url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
@@ -100,10 +102,10 @@ async function handleRecommendedVideos(context, method) {
         || userContext.vocabWords.length || userContext.topChannels.length
         || userContext.favorites.length || userContext.dominantTier);
 
-    const cacheKey = `${lang}_${tier || 'all'}_${category || 'all'}_${limit}_${offset}_${query || ''}_${sessionSeed}`;
+    const cacheKey = `${lang}_${tier || 'all'}_${category || 'all'}_${limit}_${offset}_${sessionSeed}`;
 
-    // 1. Fast in-memory cache check (warm isolate) for generic unpersonalized requests
-    if (!isRefresh && !isPersonalized) {
+    // 1. Fast in-memory cache check (warm isolate) for generic unpersonalized browse requests (no search query)
+    if (!isRefresh && !isPersonalized && !query) {
         const cached = memCache.get(cacheKey);
         if (cached && cached.videos && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
             return jsonResponse({
@@ -111,7 +113,7 @@ async function handleRecommendedVideos(context, method) {
                 language: lang,
                 tier: tier || undefined,
                 category: category || undefined,
-                query: query || undefined,
+                query: undefined,
                 count: cached.videos.length,
                 offset,
                 hasMore: cached.hasMore ?? (cached.videos.length >= limit),
@@ -122,7 +124,7 @@ async function handleRecommendedVideos(context, method) {
                 'Cache-Control': CACHE_CONTROL_HEADER
             });
         }
-    } else if (!isPersonalized) {
+    } else if (!isPersonalized && !query) {
         memCache.delete(cacheKey);
     }
 
@@ -184,8 +186,8 @@ async function handleRecommendedVideos(context, method) {
         }
     }
 
-    // Save unpersonalized results to isolate memory cache
-    if (!isPersonalized && videos.length > 0 && !isRefresh) {
+    // Save unpersonalized browse results to isolate memory cache (reserve cache slots for default feed)
+    if (!isPersonalized && !query && videos.length > 0 && !isRefresh) {
         if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
             const oldestKey = memCache.keys().next().value;
             if (oldestKey) memCache.delete(oldestKey);

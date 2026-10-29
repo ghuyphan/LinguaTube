@@ -1,5 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 import { GrammarService } from '../../services/grammar.service';
 import { StorageService } from './storage.service';
 import { SupabaseService } from './supabase.service';
@@ -9,7 +10,12 @@ import {
     VideoLevelInfo,
     ProficiencyLevelTier,
     SupportedGrammarLang,
-    Playlist
+    Playlist,
+    deriveLevelTier,
+    normalizeLevelScore,
+    levelToScore,
+    scoreToLevelLabel,
+    scoreToTier
 } from '../../models';
 
 const STORAGE_KEY = 'voca_video_levels';
@@ -54,7 +60,7 @@ export class VideoLevelService {
      * Map a level string (e.g. "JLPT N4", "HSK 2", "CEFR B1") to a tier
      */
     labelToTier(label: string): ProficiencyLevelTier {
-        return this.buildInfoFromLabel(label, 'title').tier;
+        return deriveLevelTier(label);
     }
 
     /**
@@ -228,9 +234,9 @@ export class VideoLevelService {
                 const s = serverLevel as VideoLevelInfo;
                 info = {
                     level: s.level,
-                    tier: s.tier || this.labelToTier(s.level),
-                    score: s.score,
-                    confidence: s.confidence ?? 0.85,
+                    tier: s.tier || deriveLevelTier(s.level),
+                    score: normalizeLevelScore(s.score, lang),
+                    confidence: typeof s.confidence === 'number' ? s.confidence : 0.85,
                     grammarCount: s.grammarCount ?? 0,
                     speechRateCpm: s.speechRateCpm,
                     detectedFrom: 'server',
@@ -531,146 +537,38 @@ export class VideoLevelService {
                 finalScore += 0.3;
             }
 
-            confidence = Math.min(0.95, Math.max(0.72, 0.68 + (totalPatterns * 0.02) + (cueCount > 30 ? 0.08 : 0)));
+            confidence = Math.min(0.85, Math.max(0.70, 0.65 + (totalPatterns * 0.02) + (cueCount > 30 ? 0.08 : 0)));
         }
 
-        const levelString = this.numericToLevel(Math.round(finalScore), lang);
+        finalScore = normalizeLevelScore(finalScore, lang);
+        const levelString = this.numericToLevel(finalScore, lang);
         const tier = this.scoreToTier(finalScore, lang);
 
         return { level: levelString, tier, score: Math.round(finalScore * 10) / 10, confidence: Math.round(confidence * 100) / 100 };
     }
 
-    private levelToNumeric(level: string, lang: SupportedGrammarLang): number {
-        const clean = level.toUpperCase();
-        if (lang === 'ja') {
-            if (clean.includes('N5')) return 1;
-            if (clean.includes('N4')) return 2;
-            if (clean.includes('N3')) return 3;
-            if (clean.includes('N2')) return 4;
-            if (clean.includes('N1')) return 5;
-        } else if (lang === 'zh') {
-            const m = clean.match(/(\d)/);
-            if (m) return parseInt(m[1], 10);
-        } else if (lang === 'ko') {
-            const m = clean.match(/(\d)/);
-            if (m) return parseInt(m[1], 10);
-        } else if (lang === 'en') {
-            if (clean.includes('A1')) return 1;
-            if (clean.includes('A2')) return 2;
-            if (clean.includes('B1')) return 3;
-            if (clean.includes('B2')) return 4;
-            if (clean.includes('C1')) return 5;
-            if (clean.includes('C2')) return 6;
-        }
-        return 2;
+    private levelToNumeric(level: string, _lang: SupportedGrammarLang): number {
+        return levelToScore(level);
     }
 
     private numericToLevel(score: number, lang: SupportedGrammarLang): string {
-        const clamped = Math.max(1, score);
-        if (lang === 'ja') {
-            const n = Math.min(5, Math.max(1, 6 - Math.round(clamped))); // 1 -> N5, 5 -> N1
-            return `JLPT N${n}`;
-        }
-        if (lang === 'zh') {
-            const n = Math.min(6, Math.max(1, Math.round(clamped)));
-            return `HSK ${n}`;
-        }
-        if (lang === 'ko') {
-            const n = Math.min(6, Math.max(1, Math.round(clamped)));
-            return `TOPIK ${n}`;
-        }
-        if (lang === 'en') {
-            const cefr = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-            return `CEFR ${cefr[Math.min(5, Math.max(0, Math.round(clamped) - 1))]}`;
-        }
-        return `Level ${Math.round(clamped)}`;
+        return scoreToLevelLabel(score, lang);
     }
 
     private scoreToTier(score: number, lang: SupportedGrammarLang): ProficiencyLevelTier {
-        const max = (lang === 'zh' || lang === 'ko' || lang === 'en') ? 6 : 5;
-        const normalized = score / max;
-        if (normalized <= 0.25) return 'beginner';
-        if (normalized <= 0.45) return 'elementary';
-        if (normalized <= 0.65) return 'intermediate';
-        if (normalized <= 0.85) return 'upper_intermediate';
-        return 'advanced';
+        return scoreToTier(score, lang);
     }
 
     private buildInfoFromLabel(label: string, detectedFrom: 'title' | 'server'): VideoLevelInfo {
         const clean = (label || '').trim();
-        const upper = clean.toUpperCase();
-        let tier: ProficiencyLevelTier = 'intermediate';
-        let score = 3.0;
-
-        // 1. Beginner
-        if (
-            /\b(?:JLPT\s*)?N5\b/i.test(clean) ||
-            /\bHSK\s*1\b/i.test(clean) ||
-            /\bTOPIK\s*(?:1|I)\b/i.test(clean) ||
-            /\bCEFR\s*A1\b/i.test(clean) ||
-            /\bA1\b/i.test(clean) ||
-            upper.includes('BEGINNER') ||
-            upper.includes('SƠ CẤP') ||
-            upper.includes('NHẬP MÔN') ||
-            /入門|初級|초급\s*1|입문/.test(clean)
-        ) {
-            tier = 'beginner';
-            score = 1.0;
-        } else if (
-            /\b(?:JLPT\s*)?N4\b/i.test(clean) ||
-            /\bHSK\s*2\b/i.test(clean) ||
-            /\bTOPIK\s*2\b/i.test(clean) ||
-            /\bCEFR\s*A2\b/i.test(clean) ||
-            /\bA2\b/i.test(clean) ||
-            upper.includes('ELEMENTARY') ||
-            /초급\s*2|초급/.test(clean)
-        ) {
-            tier = 'elementary';
-            score = 2.0;
-        } else if (
-            /\b(?:JLPT\s*)?N2\b/i.test(clean) ||
-            /\bHSK\s*5\b/i.test(clean) ||
-            /\bTOPIK\s*5\b/i.test(clean) ||
-            /\bCEFR\s*B2\b/i.test(clean) ||
-            /\bB2\b/i.test(clean) ||
-            upper.includes('UPPER') ||
-            upper.includes('TRUNG CAO CẤP') ||
-            /中上級|中高级|中高級|중고급/.test(clean)
-        ) {
-            tier = 'upper_intermediate';
-            score = 4.0;
-        } else if (
-            /\b(?:JLPT\s*)?N1\b/i.test(clean) ||
-            /\bHSK\s*6\b/i.test(clean) ||
-            /\bTOPIK\s*(?:6|II)\b/i.test(clean) ||
-            /\bCEFR\s*C[12]\b/i.test(clean) ||
-            /\bC[12]\b/i.test(clean) ||
-            upper.includes('ADVANCED') ||
-            upper.includes('CAO CẤP') ||
-            upper.includes('FLUENT') ||
-            /上級|高级|高級|고급/.test(clean)
-        ) {
-            tier = 'advanced';
-            score = 5.0;
-        } else if (
-            /\b(?:JLPT\s*)?N3\b/i.test(clean) ||
-            /\bHSK\s*[34]\b/i.test(clean) ||
-            /\bTOPIK\s*[34]\b/i.test(clean) ||
-            /\bCEFR\s*B1\b/i.test(clean) ||
-            /\bB1\b/i.test(clean) ||
-            upper.includes('INTERMEDIATE') ||
-            upper.includes('TRUNG CẤP') ||
-            /中級|中级|중급/.test(clean)
-        ) {
-            tier = 'intermediate';
-            score = 3.0;
-        }
+        const tier = deriveLevelTier(clean);
+        const score = levelToScore(clean);
 
         return {
-            level: label,
+            level: clean || 'JLPT N3',
             tier,
             score,
-            confidence: detectedFrom === 'server' ? 0.95 : 0.9,
+            confidence: detectedFrom === 'server' ? 0.90 : 0.85,
             grammarCount: 0,
             detectedFrom
         };
@@ -719,17 +617,20 @@ export class VideoLevelService {
     }
 
     private async saveToServer(videoId: string, language: string, info: VideoLevelInfo): Promise<void> {
-        const method = info.detectedFrom === 'title' ? 'metadata' : 'linguistics';
+        const method = 'linguistics';
+        const safeConfidence = Math.min(0.85, Math.max(0.65, info.confidence || 0.8));
+        const normalizedScore = typeof info.score === 'number' ? normalizeLevelScore(info.score, language) : levelToScore(info.level);
+
         const payload: Record<string, unknown> = {
             videoId,
             language,
             level: info.level,
-            confidence: info.confidence,
+            confidence: safeConfidence,
             method
         };
 
         if (info.tier) payload['tier'] = info.tier;
-        if (typeof info.score === 'number') payload['score'] = info.score;
+        payload['score'] = normalizedScore;
         if (typeof info.grammarCount === 'number') payload['grammarCount'] = info.grammarCount;
         if (typeof info.speechRateCpm === 'number') payload['speechRateCpm'] = info.speechRateCpm;
         if (info.breakdown) payload['breakdown'] = info.breakdown;
@@ -741,15 +642,63 @@ export class VideoLevelService {
                     video_id: videoId,
                     language,
                     level: info.level,
-                    confidence: info.confidence,
+                    confidence: safeConfidence,
                     method,
                     user_id: user.id
                 });
 
                 // Sync to edge endpoint (Cloudflare D1 / local dev server) when authenticated
-                void this.http.post('/api/video-level', payload)
-                    .toPromise()
-                    .catch(() => {});
+                const response = await firstValueFrom(
+                    this.http.post<{
+                        success: boolean;
+                        videoId: string;
+                        language: string;
+                        level: string;
+                        confidence: number;
+                        method: string;
+                        details?: {
+                            score?: number;
+                            tier?: ProficiencyLevelTier;
+                            grammarCount?: number;
+                            speechRateCpm?: number;
+                            breakdown?: Record<string, number>;
+                        };
+                        levels?: Record<string, unknown>;
+                    }>('/api/video-level', payload)
+                ).catch(() => null);
+
+                // Reconcile client cache with canonical server state (e.g. protected high-confidence records or EMA blending)
+                if (response && response.success && response.level) {
+                    const canonicalLevel = response.level;
+                    const canonicalTier = (response.details?.tier || deriveLevelTier(canonicalLevel)) as ProficiencyLevelTier;
+                    const canonicalScore = typeof response.details?.score === 'number'
+                        ? normalizeLevelScore(response.details.score, language)
+                        : levelToScore(canonicalLevel);
+                    const canonicalConf = typeof response.confidence === 'number'
+                        ? response.confidence
+                        : safeConfidence;
+
+                    const canonicalInfo: VideoLevelInfo = {
+                        level: canonicalLevel,
+                        tier: canonicalTier,
+                        score: canonicalScore,
+                        confidence: canonicalConf,
+                        grammarCount: typeof response.details?.grammarCount === 'number'
+                            ? response.details.grammarCount
+                            : (info.grammarCount ?? 0),
+                        speechRateCpm: typeof response.details?.speechRateCpm === 'number'
+                            ? response.details.speechRateCpm
+                            : info.speechRateCpm,
+                        detectedFrom: 'server',
+                        breakdown: response.details?.breakdown || info.breakdown
+                    };
+
+                    const cacheKey = `${videoId}_${language}`;
+                    this.setCache(cacheKey, canonicalInfo);
+                    if (this.currentLevel()?.level !== canonicalLevel) {
+                        this.currentLevel.set(canonicalInfo);
+                    }
+                }
             }
         } catch { }
     }

@@ -9,7 +9,7 @@ import { matchesSecret } from '../utils/secret-auth.js';
  */
 
 import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
-import { saveVideoLevel, detectLevelFromMetadata, labelToTier } from '../data/video-info-db.js';
+import { saveVideoLevel, detectLevelFromMetadata, levelToScore, labelToTier } from '../data/video-info-db.js';
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { validateAuthToken } from '../middlewares/auth.js';
@@ -117,12 +117,7 @@ export async function onRequest(context) {
                 // Priority 1: Ground truth from title metadata
                 if (hasTitleMeta) {
                     const tier = labelToTier(titleMeta.level) || 'intermediate';
-                    let defaultScore = 2.5;
-                    if (tier === 'beginner') defaultScore = 1.0;
-                    else if (tier === 'elementary') defaultScore = 2.0;
-                    else if (tier === 'intermediate') defaultScore = 3.0;
-                    else if (tier === 'upper_intermediate') defaultScore = 4.0;
-                    else if (tier === 'advanced') defaultScore = 5.0;
+                    const defaultScore = levelToScore(titleMeta.level);
 
                     const oldLevel = existing?.level || 'None';
                     const oldScore = existing?.score ?? null;

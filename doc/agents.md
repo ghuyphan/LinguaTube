@@ -472,3 +472,8 @@ Apply `20261026_video_metadata_details.sql` after the verified-duration migratio
 ## Dictionary result authority (2026-10-28)
 
 Naver source/target direction comes from each result's provider language metadata, not the request endpoint or script guessing. Preserve per-entry definitionLanguage/definitionKind; translate homogeneous source-language groups under the shared bounded deadline and retain truthful fallback metadata on partial failures. Missing/malformed provider metadata is unavailable, not a negative-cache miss. Internal dictionary cache v6 does not invalidate cached public URLs: coordinate a CDN purge or expiry before verifying deployed semantic fixes. See doc/backend-api.md for validation and rollback.
+
+
+## Video level authority and calibration (2026-10-29)
+
+Community `/api/video-level` submissions always use server-assigned `linguistics` provenance and confidence at most 0.85; grammar telemetry cannot establish trust or enable `forceUpdate`. Preserve verified records at confidence >= 0.90 and reserve overrides for trusted ingestion/admin callers. Resolve tiers from canonical level labels. Japanese score boundaries are 1.85/2.75/3.70/4.60; HSK, TOPIK and CEFR boundaries are 1.85/2.85/3.85/4.85/5.85. Keep the mobile mapping aligned. Missing scores derive from explicit levels, including level 6.

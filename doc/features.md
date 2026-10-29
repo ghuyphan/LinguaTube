@@ -325,9 +325,10 @@ graph TD
      - **Grammar Pattern Density (45%)**: Scans cue tokens against curated language databases (`grammar-ja.ts`, `grammar-ko.ts`, `grammar-zh.ts`, `grammar-en.ts`).
      - **Vocabulary & Kanji Complexity (40%)**: Analyzes kanji density, kango multi-kanji compounds, Chinese 4-character idioms (Chengyu), word length distributions, and advanced lexical tiers.
      - **Speech Rate (15%)**: Measures spoken characters per minute (CPM) or words per minute (WPM), applying speed penalties/bonuses for rapid native speech (>280 CPM).
-3. **Protected D1 Write-Back (`POST /api/video-level`)**:
-   - The client reports the computed level with confidence score (`confidence >= 0.65`).
-   - The backend validates the payload and prevents lower-confidence client submissions from overwriting verified levels in D1.
+3. **Protected D1 Write-Back & Canonical Reconciliation (`POST /api/video-level`)**:
+   - The client reports the computed level with confidence score (`confidence >= 0.65`, capped at `0.85` max for community submissions).
+   - **Calibrated Scale & Boundary Alignment**: Scores are normalized to 1.0–5.0 for Japanese (cutoffs at 1.85, 2.75, 3.70, 4.60) and 1.0–6.0 for Chinese, Korean, and English (cutoffs at 1.85, 2.85, 3.85, 4.85, 5.85). Equality selects the next higher level.
+   - **Canonical Server Reconciliation**: If D1 holds protected creator metadata ($\ge 0.90$ confidence) or blended EMA scores, the endpoint returns the canonical level, tier, and score, which `VideoLevelService` immediately adopts in client cache and reactive signals.
 
 ---
 

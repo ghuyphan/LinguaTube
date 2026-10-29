@@ -8,7 +8,7 @@
  * Designed for Cloudflare Pages Functions & local Node.js server.
  */
 
-import { detectLevelFromMetadata, labelToTier, scoreToLevelLabel, scoreToTier } from '../data/video-info-db.js';
+import { detectLevelFromMetadata, levelToScore, labelToTier, scoreToLevelLabel, scoreToTier } from '../data/video-info-db.js';
 
 export { scoreToLevelLabel, scoreToTier };
 
@@ -82,12 +82,7 @@ export function estimateTranscriptLevel(segments = [], lang = 'en', metadata = {
         const metaMatch = detectLevelFromMetadata(title, channel);
         if (metaMatch && metaMatch.lang === cleanLang) {
             const tier = labelToTier(metaMatch.level) || 'intermediate';
-            let defaultScore = 2.5;
-            if (tier === 'beginner') defaultScore = 1.0;
-            else if (tier === 'elementary') defaultScore = 2.0;
-            else if (tier === 'intermediate') defaultScore = 3.0;
-            else if (tier === 'upper_intermediate') defaultScore = 4.0;
-            else if (tier === 'advanced') defaultScore = 5.0;
+            const defaultScore = levelToScore(metaMatch.level);
 
             return {
                 level: metaMatch.level,
