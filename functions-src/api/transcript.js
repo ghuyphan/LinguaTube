@@ -336,37 +336,19 @@ export async function onRequestPost(context) {
                 }, 202);
             }
 
+            let nativeSkipReason = null;
             if (forceRefresh) {
                 await deleteNoTranscript(db, cleanVideoId, lang, 'native');
-            } else {
-                // 1. Negative cache hit (specific lang or global '*')
-                if (await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
-                    return jsonResponse({
-                        success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                        errorCode: 'NO_NATIVE', error: 'No native captions.', availableLanguages, whisperAvailable: diamondStatus.diamonds > 0,
-                        ...diamondInfo, timing: elapsed()
-                    }, 200, { 'X-Cache': 'NEG' });
-                }
-
-                // 3. Video known to have native captions, but requested language is not among them (e.g. video has en/ja, user asked for zh)
-                if (knownInfo && Array.isArray(knownInfo.availableLanguages) && knownInfo.availableLanguages.length > 0) {
-                    const normLang = lang.split('-')[0].toLowerCase();
-                    const hasLang = knownInfo.availableLanguages.some(l => l.split('-')[0].toLowerCase() === normLang);
-                    if (!hasLang) {
-                        return jsonResponse({
-                            success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                            languageMismatch: true,
-                            availableLanguages,
-                            subLanguages: knownInfo.subLanguages || [],
-                            whisperAvailable: diamondStatus.diamonds > 0,
-                            errorCode: 'NO_NATIVE', error: 'No native captions in requested language.',
-                            ...diamondInfo, timing: elapsed()
-                        }, 200, { 'X-Cache': 'LANG_MISMATCH' });
-                    }
-                }
+            } else if (await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
+                nativeSkipReason = 'negative';
+            } else if (knownInfo?.availableLanguages?.length > 0) {
+                const normLang = normalizeLanguageCode(lang);
+                const hasLang = knownInfo.availableLanguages.some(l => normalizeLanguageCode(l) === normLang);
+                if (!hasLang) nativeSkipReason = 'language';
             }
 
-            const nativeResult = await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang, {
+            // A known native miss skips the provider, but still allows R2 alternatives.
+            const nativeResult = nativeSkipReason ? null : await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang, {
                 title: body.title,
                 channel: body.channel,
                 duration: body.duration,
@@ -434,6 +416,18 @@ export async function onRequestPost(context) {
                         ...diamondInfo, timing: elapsed()
                     }, 200, { 'X-Cache': 'LANG_MISMATCH' });
                 }
+            }
+
+            if (nativeSkipReason) {
+                const isLanguageMismatch = nativeSkipReason === 'language';
+                return jsonResponse({
+                    success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
+                    ...(isLanguageMismatch ? { languageMismatch: true, subLanguages: knownInfo.subLanguages || [] } : {}),
+                    availableLanguages, whisperAvailable: diamondStatus.diamonds > 0, ...diamondInfo,
+                    errorCode: 'NO_NATIVE',
+                    error: isLanguageMismatch ? 'No native captions in requested language.' : 'No native captions.',
+                    timing: elapsed()
+                }, 200, { 'X-Cache': isLanguageMismatch ? 'LANG_MISMATCH' : 'NEG' });
             }
 
             return jsonResponse({

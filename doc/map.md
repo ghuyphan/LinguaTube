@@ -602,3 +602,8 @@ Dictionary provider direction: `DictionaryProvider` passes the requested pair to
 ### Video level consistency (2026-10-29)
 
 Community reports cannot choose trusted provenance or overwrite verified difficulty records. Backend and Flutter share calibrated boundaries and label-derived tiers; responses return canonical saved values. See the video level hardening section in `backend-api.md` for contracts and validation. No migration or automatic regrading is needed.
+
+
+### Transcript correctness update (2026-10-30)
+
+The transcript endpoint preserves requested-native priority while allowing known native misses to reach cross-language R2 discovery. `TranscriptService.quoteAIJob` shares submission's AI-only cache reuse rule. Regression scenarios are in `tests/diamond-enforcement.integration.mjs`; contract details are in `doc/backend-api.md`. No schema or UI changes are involved.

@@ -23,13 +23,25 @@ export async function onRequestGet(context) {
         const metadata = official.snippet;
         const existing = await getVideoLanguages(db, videoId);
         let levels = existing?.levels || {};
-        if (Object.keys(levels).length === 0) {
-            const detected = detectLevelFromMetadata(metadata.title, metadata.channel);
-            if (detected) {
+        const detected = detectLevelFromMetadata(metadata.title, metadata.channel);
+        if (detected) {
+            const existingForLang = levels[detected.lang];
+            const shouldOverride = !existingForLang ||
+                existingForLang.method === 'server_heuristic' ||
+                (typeof existingForLang.confidence === 'number' && existingForLang.confidence < 0.90);
+            if (shouldOverride) {
                 const tier = labelToTier(detected.level) || 'intermediate';
-                levels = { [detected.lang]: { level: detected.level, tier,
-                    score: { beginner: 1, elementary: 2, intermediate: 3, upper_intermediate: 4, advanced: 5 }[tier],
-                    confidence: 0.95, method: 'metadata', updatedAt: official.verifiedAt } };
+                levels = {
+                    ...levels,
+                    [detected.lang]: {
+                        level: detected.level,
+                        tier,
+                        score: { beginner: 1, elementary: 2, intermediate: 3, upper_intermediate: 4, advanced: 5 }[tier],
+                        confidence: 0.95,
+                        method: 'metadata',
+                        updatedAt: official.verifiedAt
+                    }
+                };
             }
         }
         const inferredCategory = detectVideoCategory(metadata);
@@ -40,7 +52,7 @@ export async function onRequestGet(context) {
             VALUES(?,'[]','[]',0,?,'youtube_data_api',?,?,?,?, 'official_mapping',?,'youtube_data_api',?,strftime('%s','now'),strftime('%s','now'))
             ON CONFLICT(video_id) DO UPDATE SET
                 title=excluded.title,channel=excluded.channel,duration_seconds=excluded.duration_seconds,duration_source=excluded.duration_source,
-                levels=CASE WHEN video_languages.levels IS NULL OR video_languages.levels='{}' THEN excluded.levels ELSE video_languages.levels END,
+                levels=excluded.levels,
                 category=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category ELSE excluded.category END,
                 category_source=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category_source ELSE excluded.category_source END,
                 tags=excluded.tags,metadata_source=excluded.metadata_source,metadata_observed_at=excluded.metadata_observed_at

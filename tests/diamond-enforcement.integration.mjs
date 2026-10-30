@@ -3,6 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fixture } from './fixtures/transcription-db.mjs';
 import { onRequestPost } from '../functions-src/api/transcript.js';
+import { TranscriptService } from '../functions-src/services/transcript.service.js';
 import { DiamondService } from '../functions-src/services/diamond.service.js';
 import { recoverJobRefund } from '../functions-src/services/refund-recovery.js';
 import { atomicFailAndRefundAiJob } from '../functions-src/data/transcript-db.js';
@@ -15,7 +16,7 @@ async function endpoint(t, { tier = 'anonymous', duration = 120, youtube = null,
     const videoId = `diamond${String(++sequence).padStart(4, '0')}`;
     const token = `${btoa('{}')}.${btoa(JSON.stringify({ sub: uid, exp: Math.floor(Date.now() / 1000) + 3600 }))}.fixture`;
     const env = { VOCAB_DB: state.db, YOUTUBE_DATA_API_KEY: 'fixture-youtube', GLADIA_API_KEY: 'fixture', TURNSTILE_SECRET_KEY: 'fixture', SUPABASE_SERVICE_ROLE_KEY: 'fixture',
-        TRANSCRIPT_STORAGE: { get: async () => cached ? { customMetadata: { source: 'ai' }, json: async () => ({ segments: [{ start: 0, duration: 1, text: 'Hello', tokens: [{ surface: 'Hello' }] }] }) } : null } };
+        TRANSCRIPT_STORAGE: { get: async () => cached ? { customMetadata: { source: typeof cached === 'string' ? cached : 'ai' }, json: async () => ({ segments: [{ start: 0, duration: 1, text: 'Hello', tokens: [{ surface: 'Hello' }] }] }) } : null } };
     t.mock.method(globalThis, 'fetch', async (input, init = {}) => {
         const url = new URL(input); calls.push({ host: url.hostname, path: url.pathname, method: init.method || 'GET' });
         if (url.hostname === 'www.googleapis.com') {
@@ -263,4 +264,111 @@ test('missing official configuration fails without creating or charging a job', 
     const r = await f.invoke();
     assert.equal(r.status, 503); assert.equal(r.body.errorCode, 'VIDEO_METADATA_NOT_CONFIGURED');
     assert.equal(f.charges.length, 0); assert.equal(f.providerPosts(), 0);
+});
+
+
+test('native-only cache quotes the paid price and accepts that confirmed price', async t => {
+    const f = await endpoint(t, { cached: 'supadata', tier: 'premium', duration: 601 });
+    const quote = await f.invoke({ quoteOnly: true });
+    assert.equal(quote.body.cost, 2);
+    assert.equal(quote.body.canGenerate, true);
+    assert.equal(f.charges.length, 0);
+    const submitted = await f.invoke({ expectedDiamondCost: quote.body.cost });
+    assert.equal(submitted.status, 202);
+    assert.equal(f.charges[0].p_amount, 2);
+    assert.equal(f.providerPosts(), 1);
+});
+
+test('native-only cache does not bypass quote eligibility', async t => {
+    const f = await endpoint(t, { cached: 'supadata', tier: 'free', duration: 601 });
+    const quote = await f.invoke({ quoteOnly: true });
+    assert.equal(quote.body.cost, 2);
+    assert.equal(quote.body.canGenerate, false);
+    assert.equal(quote.body.reason, 'VIDEO_TOO_LONG');
+    assert.equal(f.providerPosts(), 0);
+});
+
+for (const skip of ['language', 'negative', 'wildcard', 'provider']) {
+    for (const hasAlternative of [true, false]) {
+        test(`native ${skip} miss ${hasAlternative ? 'reuses R2 alternative' : 'preserves empty response'}`, async t => {
+            const f = await endpoint(t);
+            f.sqlite.prepare('INSERT INTO video_languages(video_id,available_languages,sub_languages) VALUES(?,?,?)')
+                .run(f.videoId, skip === 'language' ? '["en"]' : '["ja","en"]', '["en"]');
+            if (skip === 'negative' || skip === 'wildcard') {
+                f.sqlite.prepare("INSERT INTO no_transcript_cache(video_id,language,source) VALUES(?,?,'native')")
+                    .run(f.videoId, skip === 'wildcard' ? '*' : 'ja');
+            }
+            const reads = [];
+            f.env.TRANSCRIPT_STORAGE.get = async key => {
+                reads.push(key);
+                return hasAlternative && key.endsWith('/en.json') ? {
+                    customMetadata: { source: 'ai' },
+                    json: async () => ({ segments: [{ start: 0, duration: 1, text: 'Hello', tokens: [{ surface: 'Hello' }] }] })
+                } : null;
+            };
+            let nativeCalls = 0;
+            t.mock.method(TranscriptService.prototype, 'fetchNativeCaptions', async () => {
+                nativeCalls++;
+                return { segments: [], availableLangs: ['en'] };
+            });
+            const response = await f.invoke({ preferAI: false, lang: 'ja' });
+            assert.equal(response.status, 200);
+            assert.equal(nativeCalls, skip === 'provider' ? 1 : 0);
+            assert.ok(reads.some(key => key.endsWith('/en.json')));
+            assert.equal(response.body.success, hasAlternative);
+            if (hasAlternative) {
+                assert.equal(response.body.language, 'en');
+                assert.equal(response.body.requestedLanguage, 'ja');
+                assert.equal(response.body.languageMismatch, true);
+                assert.equal(response.body.source, 'cache');
+                assert.equal(response.body.segments[0].text, 'Hello');
+            } else {
+                assert.deepEqual(response.body.segments, []);
+                assert.equal(response.body.errorCode, 'NO_NATIVE');
+                if (skip === 'language') assert.equal(response.body.languageMismatch, true);
+            }
+            assert.equal(f.providerPosts(), 0);
+        });
+    }
+}
+
+test('requested native captions take priority over alternative R2 captions', async t => {
+    const f = await endpoint(t);
+    f.sqlite.prepare('INSERT INTO video_languages(video_id,available_languages,sub_languages) VALUES(?,?,?)')
+        .run(f.videoId, '["ja","en"]', '["en"]');
+    const reads = [];
+    f.env.TRANSCRIPT_STORAGE.get = async key => { reads.push(key); return null; };
+    t.mock.method(TranscriptService.prototype, 'fetchNativeCaptions', async () => ({
+        segments: [{ start: 0, duration: 1, text: '日本語' }], detectedLang: 'ja', availableLangs: ['ja', 'en']
+    }));
+    const response = await f.invoke({ preferAI: false, lang: 'ja' });
+    assert.equal(response.body.source, 'native');
+    assert.equal(response.body.language, 'ja');
+    assert.equal(reads.some(key => key.endsWith('/en.json')), false);
+});
+
+test('force refresh retries native captions despite a negative cache', async t => {
+    const f = await endpoint(t);
+    f.sqlite.prepare("INSERT INTO no_transcript_cache(video_id,language,source) VALUES(?,'ja','native')").run(f.videoId);
+    let nativeCalls = 0;
+    t.mock.method(TranscriptService.prototype, 'fetchNativeCaptions', async () => {
+        nativeCalls++;
+        return { segments: [{ start: 0, duration: 1, text: '日本語' }], detectedLang: 'ja' };
+    });
+    const response = await f.invoke({ preferAI: false, lang: 'ja', forceRefresh: true });
+    assert.equal(response.body.source, 'native');
+    assert.equal(nativeCalls, 1);
+});
+
+test('explicit AI never reuses alternative-language R2 captions', async t => {
+    const f = await endpoint(t);
+    f.sqlite.prepare('INSERT INTO video_languages(video_id,available_languages,sub_languages) VALUES(?,?,?)')
+        .run(f.videoId, '["en"]', '["en"]');
+    const reads = [];
+    f.env.TRANSCRIPT_STORAGE.get = async key => { reads.push(key); return null; };
+    t.mock.method(TranscriptService.prototype, 'fetchNativeCaptions', async () => { throw new Error('Unexpected native fetch'); });
+    const response = await f.invoke({ lang: 'ja', expectedDiamondCost: 1 });
+    assert.equal(response.status, 202);
+    assert.equal(reads.some(key => key.endsWith('/en.json')), false);
+    assert.equal(f.providerPosts(), 1);
 });

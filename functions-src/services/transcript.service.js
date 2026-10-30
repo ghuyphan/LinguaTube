@@ -212,7 +212,7 @@ export class TranscriptService {
         const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
         const normalizedLang = normalizeLanguageCode(lang);
         const cached = await getTranscriptFromR2(r2, videoId, normalizedLang);
-        const reusable = Boolean(cached?.segments?.length > 0) ||
+        const reusable = (cached?.source === 'ai' && cached.segments?.length > 0) ||
             Boolean(await getActiveAiJob(db, videoId, normalizedLang));
         if (reusable) return { cost: 0, ...diamondInfo, canGenerate: true, reason: null };
         const price = await this._verifiedAIPrice(context, videoId, user);

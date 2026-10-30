@@ -477,3 +477,8 @@ Naver source/target direction comes from each result's provider language metadat
 ## Video level authority and calibration (2026-10-29)
 
 Community `/api/video-level` submissions always use server-assigned `linguistics` provenance and confidence at most 0.85; grammar telemetry cannot establish trust or enable `forceUpdate`. Preserve verified records at confidence >= 0.90 and reserve overrides for trusted ingestion/admin callers. Resolve tiers from canonical level labels. Japanese score boundaries are 1.85/2.75/3.70/4.60; HSK, TOPIK and CEFR boundaries are 1.85/2.85/3.85/4.85/5.85. Keep the mobile mapping aligned. Missing scores derive from explicit levels, including level 6.
+
+
+## Transcript quote and fallback parity (2026-10-30)
+
+AI quotes are free only for a nonempty requested-language AI cache or an active AI job, matching submission reuse. Native negative caches and known-language exclusions skip provider requests but still allow alternative-language R2 discovery before an empty response. Requested native tracks retain priority; explicit AI requests never reuse native or alternative-language captions. No UI changes accompany this correction.

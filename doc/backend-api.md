@@ -698,3 +698,16 @@ The authenticated community endpoint ignores caller-supplied provenance/override
 Scores clamp to 1–5 for Japanese and 1–6 for Chinese, Korean and English before storage/blending. Missing scores derive from explicit level labels rather than five-tier defaults. Tiers derive from resolved labels (HSK/TOPIK 3 and 4 are intermediate; CEFR C1 and C2 are advanced). Japanese boundaries: 1.85, 2.75, 3.70, 4.60; other languages: 1.85, 2.85, 3.85, 4.85, 5.85. Equality selects the next level. Flutter uses the same boundaries.
 
 Validation: `npm run test:backend`, targeted backend ESLint, `npm run build:functions`, and both `cloudflare-routes-edge-cases.integration.mjs` / `cloudflare-review-validation.integration.mjs` with externally installed Miniflare via `VOCA_MINIFLARE_MODULE`. No database migration or automatic catalog regrading is required. This patch does not run an administrative repair.
+
+
+### Transcript quote and fallback corrections (2026-10-30)
+
+`POST /api/transcript` AI quotes return zero only when the requested language has a nonempty AI transcript in R2 or an active AI job. Native-only caches still require verified YouTube duration, tier eligibility and diamond pricing; the quoted `expectedDiamondCost` therefore matches the subsequent paid request. No request/response schema changes or migrations are needed.
+
+Native negative-cache hits and known language mismatches skip unnecessary native provider work but continue checking alternative-language R2 transcripts. An available alternative returns the existing successful cache response with `languageMismatch: true`. Without an alternative, existing negative/mismatch empty-response semantics remain. Eligible requested native captions are fetched before alternatives; explicit AI requests retain exact-language AI-only reuse.
+
+Regression coverage lives in `tests/diamond-enforcement.integration.mjs` and uses injected providers plus local SQLite ledgers; it does not spend production credits. Validate with that suite, `npm run test:backend`, `npm run lint`, `npm run build:functions`, and the optional all-route workerd suite.
+
+Production verification (2026-10-30): deployed tested, uncommitted source based on `a3411ce` to Pages production deployment `1367c246-ea8e-4904-98b2-1f7ecb4f7cb2` (`https://1367c246.lingua-tube.pages.dev`), confirmed canonical for `https://voca.study`. Existing production bindings, compatibility settings and environment names/types were preserved. Previous production deployment `9225d963-c10a-41f7-8a94-3c1bd86c7af6` remains the rollback target.
+
+Local validation passed: 239 backend tests, 78 billing/transcript integration tests, 362 workerd checks, lint and the production build. Flutter passed 1,342 tests and analysis with zero issues; UI file hashes remained unchanged. Seven production POST smoke checks passed: native cache retrieval, exact-language AI reuse with confirmed cost zero, cross-language fallback, native-only paid quote/tier eligibility, free AI-cache quote, invalid video rejection and fresh Korean native retrieval. Native-only `0zbPeoZzcPg/en` quoted three diamonds with `VIDEO_TOO_LONG` for the anonymous tier; `BZRT37f8zZY/ko` returned the cached Japanese alternative with an explicit mismatch; `-moW9jvvMr4/ko` returned 301 native cues from Supadata. No paid Gladia jobs were created by production verification.

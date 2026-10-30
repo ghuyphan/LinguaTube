@@ -191,3 +191,6 @@ Dictionary results preserve provider-reported direction and actual per-entry def
 ### Video level consistency (2026-10-29)
 
 Community reports cannot choose trusted provenance or overwrite verified difficulty records. Backend and Flutter share calibrated boundaries and label-derived tiers; responses return canonical saved values. See the video level hardening section in `doc/backend-api.md` for contracts and validation. No migration or automatic regrading is needed.
+
+
+Transcript correctness checks: AI quotes distinguish native caches from reusable AI output, and native-caption misses still discover cached alternative languages. See `doc/backend-api.md` for the unchanged API contract and run `node --test tests/diamond-enforcement.integration.mjs` for billing/fallback regressions without live provider spending.

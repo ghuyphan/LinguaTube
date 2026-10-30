@@ -118,26 +118,32 @@ export async function saveVideoLanguages(db, videoId, languages, duration = null
         // Missing public details are hydrated through the official metadata endpoint;
         // caption persistence must not trigger an unrelated oEmbed/scraping request.
 
+        const autoDetected = detectLevelFromMetadata(resolvedTitle || '', resolvedChannel || '');
         if (levels === null) {
             existingLevels = existing?.levels || {};
-            if (Object.keys(existingLevels).length === 0) {
-                const autoDetected = detectLevelFromMetadata(resolvedTitle || '', resolvedChannel || '');
-                if (autoDetected) {
-                    const tier = labelToTier(autoDetected.level) || 'intermediate';
-                    existingLevels = {
-                        [autoDetected.lang]: {
-                            level: autoDetected.level,
-                            tier,
-                            score: tier === 'beginner' ? 1.0 : (tier === 'elementary' ? 2.0 : (tier === 'intermediate' ? 3.0 : (tier === 'upper_intermediate' ? 4.0 : 5.0))),
-                            confidence: 0.95,
-                            method: 'metadata',
-                            updatedAt: Math.floor(Date.now() / 1000)
-                        }
-                    };
-                }
-            }
         } else {
             existingLevels = levels;
+        }
+
+        if (autoDetected) {
+            const existingForLang = existingLevels[autoDetected.lang];
+            const shouldAnchorMetadata = !existingForLang ||
+                existingForLang.method === 'server_heuristic' ||
+                (typeof existingForLang.confidence === 'number' && existingForLang.confidence < 0.90);
+            if (shouldAnchorMetadata) {
+                const tier = labelToTier(autoDetected.level) || 'intermediate';
+                existingLevels = {
+                    ...existingLevels,
+                    [autoDetected.lang]: {
+                        level: autoDetected.level,
+                        tier,
+                        score: tier === 'beginner' ? 1.0 : (tier === 'elementary' ? 2.0 : (tier === 'intermediate' ? 3.0 : (tier === 'upper_intermediate' ? 4.0 : 5.0))),
+                        confidence: 0.95,
+                        method: 'metadata',
+                        updatedAt: Math.floor(Date.now() / 1000)
+                    }
+                };
+            }
         }
         if (existing?.subLanguages?.length) {
             existingSubLangs = existing.subLanguages;
