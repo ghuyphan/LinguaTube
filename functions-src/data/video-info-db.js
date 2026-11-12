@@ -304,8 +304,8 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
                     `).bind(serialized, videoId, row.levels, row.sub_languages, row.title, row.channel).run()
                     : await db.prepare(`
                         INSERT INTO video_languages (levels, video_id, available_languages)
-                        VALUES (?, ?, ?) ON CONFLICT(video_id) DO NOTHING
-                    `).bind(serialized, videoId, JSON.stringify([language])).run();
+                        VALUES (?, ?, '[]') ON CONFLICT(video_id) DO NOTHING
+                    `).bind(serialized, videoId).run();
                 if (result.success === false) return null;
                 if (result.meta?.changes === 0) return undefined;
                 recommendationCandidates.delete(db);
