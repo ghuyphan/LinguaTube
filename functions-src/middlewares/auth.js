@@ -5,7 +5,10 @@ import { serviceRoleRequest } from '../services/supabase-rest.js';
  */
 
 const DEFAULT_SUPABASE_URL = 'https://edbkvzviqeulwzcnrrlb.supabase.co';
-const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkYmt2enZpcWV1bHd6Y25ycmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NTI5NjAsImV4cCI6MjEwNTAyODk2MH0.F2Js6UWUyUX-uVfDMVCNLJBG7eL6Clo9EGimjh2wgUg';
+// Fallback key only active in local Node test runner when env bindings are omitted
+const TEST_FALLBACK_ANON_KEY = typeof process !== 'undefined'
+    ? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkYmt2enZpcWV1bHd6Y25ycmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NTI5NjAsImV4cCI6MjEwNTAyODk2MH0.F2Js6UWUyUX-uVfDMVCNLJBG7eL6Clo9EGimjh2wgUg'
+    : '';
 
 /**
  * Base64URL decode
@@ -37,9 +40,14 @@ const TOKEN_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
  * Verify Supabase JWT token and load user profile
  */
 async function verifySupabaseToken(token, env) {
-    const supabaseUrl = env.SUPABASE_URL || DEFAULT_SUPABASE_URL;
-    const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY || env.SUPABASE_ANON_KEY || DEFAULT_SUPABASE_ANON_KEY;
+    const supabaseUrl = env?.SUPABASE_URL || DEFAULT_SUPABASE_URL;
+    const supabaseKey = env?.SUPABASE_SERVICE_ROLE_KEY || env?.SUPABASE_ANON_KEY || TEST_FALLBACK_ANON_KEY;
     const now = Date.now();
+
+    if (!supabaseKey) {
+        console.error('[Auth] Supabase API key missing in environment bindings');
+        return { valid: false, unavailable: true, error: 'Authentication configuration unavailable' };
+    }
 
     if (!token || typeof token !== 'string') {
         return { valid: false, error: 'Missing token' };
@@ -64,7 +72,12 @@ async function verifySupabaseToken(token, env) {
                 headers: { apikey: supabaseKey, Authorization: `Bearer ${token}` },
                 signal: AbortSignal.timeout(4000), redirect: 'manual'
             });
-            if (!response.ok) return { valid: false, error: 'Invalid or forged authentication token' };
+            if (!response.ok) {
+                if (response.status === 401 || response.status === 403) {
+                    return { valid: false, error: 'Invalid or forged authentication token' };
+                }
+                throw new Error(`Auth service returned ${response.status}`);
+            }
             authUser = await response.json();
             if (!authUser || authUser.id !== payload.sub) return { valid: false, error: 'Token user identity mismatch' };
             if (memTokenCache.size >= 200) memTokenCache.delete(memTokenCache.keys().next().value);
@@ -102,7 +115,7 @@ async function verifySupabaseToken(token, env) {
         return result;
     } catch (error) {
         console.error('[Auth] Supabase verification error:', error.message);
-        return { valid: false, error: 'Authentication service unavailable' };
+        return { valid: false, unavailable: true, error: 'Authentication service unavailable' };
     }
 }
 
@@ -128,7 +141,19 @@ export async function validateAuthToken(request, env) {
     }
 
     const token = authHeader.substring(7);
-    return await verifySupabaseToken(token, env);
+    const result = await verifySupabaseToken(token, env);
+    if (result.unavailable) {
+        result.response = new Response(JSON.stringify({ error: result.error, code: 'AUTH_UNAVAILABLE' }), {
+            status: 503,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Cache-Control': 'no-store',
+                'Retry-After': '5'
+            }
+        });
+    }
+    return result;
 }
 
 /**
@@ -153,7 +178,7 @@ export function unauthorizedResponse(message = 'Unauthorized') {
 export async function requireAuth(request, env) {
     const result = await validateAuthToken(request, env);
     if (!result.valid) {
-        return { response: unauthorizedResponse(result.error) };
+        return { response: result.response || unauthorizedResponse(result.error) };
     }
     return { user: { ...result.user, userId: result.userId } };
 }

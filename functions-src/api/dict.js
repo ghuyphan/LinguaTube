@@ -27,13 +27,9 @@ const CACHE_VERSION = 'v6';
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
 const memNegDictCache = new SimpleLRUCache(1000, 60000);
 
-export async function onRequest(context) {
+export async function onRequestGet(context) {
     const { request, env } = context;
     const deadline = Date.now() + 12000;
-
-    if (request.method === 'OPTIONS') {
-        return handleOptions(['GET', 'OPTIONS']);
-    }
 
     const url = new URL(request.url);
     const word = sanitizeWord(url.searchParams.get('word'));
@@ -56,6 +52,7 @@ export async function onRequest(context) {
 
     // Rate limiting
     const authResult = await validateAuthToken(request, env);
+    if (authResult.response) return authResult.response;
     const clientId = getClientIdentifier(request, authResult);
     const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateCheck.allowed) {
@@ -110,3 +107,5 @@ export async function onRequest(context) {
         return jsonResponse({ error: 'Dictionary providers unavailable' }, 503, { 'Cache-Control': 'no-store' });
     }
 }
+
+export const onRequest = onRequestGet;

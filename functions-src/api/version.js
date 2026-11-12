@@ -22,10 +22,6 @@ let currentEtag = `"${APP_VERSION_DATA.version}-${APP_VERSION_DATA.buildDate}"`;
 let lastKvCheckTime = 0;
 const KV_CHECK_INTERVAL_MS = 60_000; // 60s warm isolate TTL to conserve KV reads
 
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'OPTIONS']);
-}
-
 export async function onRequestGet(context) {
     const { request, env } = context;
 

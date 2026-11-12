@@ -4,10 +4,14 @@
  */
 
 import { checkBot } from '../middlewares/bot-defense.js';
-import { jsonResponse } from '../utils/utils.js';
+import { jsonResponse, handleOptions } from '../utils/utils.js';
 
 export async function onRequest(context) {
     const { request, next } = context;
+
+    if (request.method === 'OPTIONS') {
+        return handleOptions(['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], request);
+    }
 
     const path = new URL(request.url).pathname.replace(/\/$/, '');
     const webhook = ['/api/payment/webhook', '/api/payment/revenuecat-webhook', '/api/gladia-webhook', '/api/internal/reconcile'].includes(path);
@@ -44,6 +48,12 @@ export async function onRequest(context) {
             chunks.push(value);
         }
     } finally { reader.releaseLock(); }
+    // HTTP ingress may expose Content-Length: 0 as a stream even on GET/HEAD.
+    // Fetch Request construction forbids forwarding a body for these methods.
+    if (request.method === 'GET' || request.method === 'HEAD') {
+        if (size > 0) return jsonResponse({ error: 'Request body not allowed for GET or HEAD' }, 400);
+        return next(new Request(request, { body: null }));
+    }
     const body = new Uint8Array(size);
     let offset = 0;
     for (const chunk of chunks) { body.set(chunk, offset); offset += chunk.byteLength; }
@@ -52,13 +62,18 @@ export async function onRequest(context) {
     // API body handlers consume JSON objects. Reject malformed/scalar payloads
     // before they become 500s or accidentally select a default mutation.
     // Forward the original bytes unchanged for webhook signature verification.
+    let parsedBody;
     if (['POST', 'PUT', 'PATCH'].includes(request.method) && !emptyMaintenance) {
         try {
-            const parsed = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(body));
-            if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('Object required');
+            parsedBody = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(body));
+            if (!parsedBody || typeof parsedBody !== 'object' || Array.isArray(parsedBody)) throw new Error('Object required');
         } catch {
             return jsonResponse({ error: 'Invalid JSON object' }, 400);
         }
+    }
+    context.data = context.data || {};
+    if (parsedBody !== undefined) {
+        context.data.parsedBody = parsedBody;
     }
     return next(new Request(request, { body }));
 }

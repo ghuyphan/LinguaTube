@@ -8,23 +8,15 @@
  * Route: POST /api/recommended-videos (with rich learner context payload)
  */
 
-import { jsonResponse, handleOptions } from '../utils/utils.js';
+import { jsonResponse, handleOptions, getRequestJson } from '../utils/utils.js';
 import { isLanguageSupported, resolveVideoChannelAvatar, getVideoMetadata } from '../middlewares/video-validator.js';
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 import { normalizeRecommendationContext } from '../services/recommendation.service.js';
 import { VALID_CATEGORIES } from '../services/category.service.js';
 
-// In-memory cache across warm Worker isolate requests for unpersonalized requests (30s TTL)
-const memCache = new Map();
-const MAX_MEM_CACHE_ENTRIES = 50;
-const MEM_CACHE_TTL_MS = 30 * 1000;
 const VALID_TIERS = new Set(['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced']);
 
 const CACHE_CONTROL_HEADER = 'no-cache, no-store, must-revalidate';
-
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'POST', 'OPTIONS']);
-}
 
 export async function onRequestGet(context) {
     return handleRecommendedVideos(context, 'GET');
@@ -41,24 +33,18 @@ async function handleRecommendedVideos(context, method) {
     let body = {};
     if (method === 'POST') {
         try {
-            const reader = request.body?.getReader();
-            if (!reader) return jsonResponse({ success: false, error: 'JSON body required' }, 400);
-            const chunks = [];
-            let size = 0;
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) break;
-                size += value.byteLength;
-                if (size > 65536) {
-                    await reader.cancel();
+            if (context?.data?.parsedBody !== undefined) {
+                body = context.data.parsedBody;
+                if (JSON.stringify(body).length > 65536) {
                     return jsonResponse({ success: false, error: 'Recommendation context too large' }, 413);
                 }
-                chunks.push(value);
+            } else {
+                const text = await request.text();
+                if (text.length > 65536) {
+                    return jsonResponse({ success: false, error: 'Recommendation context too large' }, 413);
+                }
+                body = JSON.parse(text);
             }
-            const bytes = new Uint8Array(size);
-            let position = 0;
-            for (const chunk of chunks) { bytes.set(chunk, position); position += chunk.byteLength; }
-            body = JSON.parse(new TextDecoder().decode(bytes));
             if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('Invalid body');
         } catch {
             return jsonResponse({ success: false, error: 'Invalid JSON object' }, 400);
@@ -102,43 +88,17 @@ async function handleRecommendedVideos(context, method) {
         || userContext.vocabWords.length || userContext.topChannels.length
         || userContext.favorites.length || userContext.dominantTier);
 
-    const cacheKey = `${lang}_${tier || 'all'}_${category || 'all'}_${limit}_${offset}_${sessionSeed}`;
-
-    // 1. Fast in-memory cache check (warm isolate) for generic unpersonalized browse requests (no search query)
-    if (!isRefresh && !isPersonalized && !query) {
-        const cached = memCache.get(cacheKey);
-        if (cached && cached.videos && (Date.now() - cached.timestamp < MEM_CACHE_TTL_MS)) {
-            return jsonResponse({
-                success: true,
-                language: lang,
-                tier: tier || undefined,
-                category: category || undefined,
-                query: undefined,
-                count: cached.videos.length,
-                offset,
-                hasMore: cached.hasMore ?? (cached.videos.length >= limit),
-                videos: cached.videos,
-                source: 'cache:memory'
-            }, 200, {
-                'X-Cache': 'HIT-MEMORY',
-                'Cache-Control': CACHE_CONTROL_HEADER
-            });
-        }
-    } else if (!isPersonalized && !query) {
-        memCache.delete(cacheKey);
-    }
-
-    // 2. Query Cloudflare (D1 database + R2 storage) with server-side candidate ranking
     const db = env?.VOCAB_DB;
     const r2 = env?.TRANSCRIPT_STORAGE;
     const shouldShuffle = isRefresh || offset === 0;
 
     let videos;
     let hasMore;
+    const metrics = {};
     try {
         ({ videos, hasMore } = await getRecommendedVideosFromCloudflare(
             db, r2, lang, limit, tier, shouldShuffle, offset, query,
-            { context: userContext, sessionSeed, category, isRefresh, includePage: true }
+            { context: userContext, sessionSeed, category, isRefresh, includePage: true, metrics }
         ));
     } catch (error) {
         console.error('[Recommendations] Retrieval failed:', error.message);
@@ -151,52 +111,32 @@ async function handleRecommendedVideos(context, method) {
         const needsHealing = videos.filter(v => v.videoId && (!v.channelAvatar || !v.title || !v.channel));
         if (needsHealing.length > 0) {
             context.waitUntil((async () => {
-                for (const v of needsHealing.slice(0, 5)) {
-                    try {
-                        if (!v.channelAvatar) {
-                            const avatar = await resolveVideoChannelAvatar(v.videoId);
-                            if (avatar) {
-                                await db.prepare(`
-                                    UPDATE video_languages 
-                                    SET channel_avatar = ?
-                                    WHERE video_id = ?
-                                `).bind(avatar, v.videoId).run();
-                                v.channelAvatar = avatar;
-                            }
-                        }
-                        if (!v.title || !v.channel) {
-                            const meta = await getVideoMetadata(v.videoId, context);
-                            if (meta) {
-                                const newTitle = v.title || meta.title || null;
-                                const newChannel = v.channel || meta.author_name || null;
-                                if (newTitle || newChannel) {
-                                    await db.prepare(`
-                                        UPDATE video_languages
-                                        SET title = COALESCE(?, title), channel = COALESCE(?, channel)
-                                        WHERE video_id = ?
-                                    `).bind(newTitle, newChannel, v.videoId).run();
-                                    if (newTitle) v.title = newTitle;
-                                    if (newChannel) v.channel = newChannel;
-                                }
-                            }
-                        }
-                    } catch { }
+                const pending = needsHealing.slice(0, 5);
+                const deadline = Date.now() + 15_000;
+                // Two videos at a time: bounded provider work fits the post-response budget.
+                for (let i = 0; i < pending.length; i += 2) {
+                    if (Date.now() >= deadline) break;
+                    await Promise.allSettled(pending.slice(i, i + 2).map(async v => {
+                        const [avatar, meta] = await Promise.all([
+                            !v.channelAvatar ? resolveVideoChannelAvatar(v.videoId) : null,
+                            !v.title || !v.channel ? getVideoMetadata(v.videoId, context) : null
+                        ]);
+                        const title = !v.title ? meta?.title || null : null;
+                        const channel = !v.channel ? meta?.author_name || null : null;
+                        if (!avatar && !title && !channel) return;
+                        // Fill missing fields only; never overwrite fresher catalog data or
+                        // change discovery timestamps while repairing presentation metadata.
+                        await db.prepare(`
+                            UPDATE video_languages
+                            SET channel_avatar = COALESCE(NULLIF(channel_avatar, ''), ?),
+                                title = CASE WHEN title IS NULL OR TRIM(title) = '' THEN COALESCE(?, title) ELSE title END,
+                                channel = CASE WHEN channel IS NULL OR TRIM(channel) = '' THEN COALESCE(?, channel) ELSE channel END
+                            WHERE video_id = ?
+                        `).bind(avatar, title, channel, v.videoId).run();
+                    }));
                 }
             })());
         }
-    }
-
-    // Save unpersonalized browse results to isolate memory cache (reserve cache slots for default feed)
-    if (!isPersonalized && !query && videos.length > 0 && !isRefresh) {
-        if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
-            const oldestKey = memCache.keys().next().value;
-            if (oldestKey) memCache.delete(oldestKey);
-        }
-        memCache.set(cacheKey, {
-            videos,
-            hasMore,
-            timestamp: Date.now()
-        });
     }
 
     return jsonResponse({
@@ -214,7 +154,8 @@ async function handleRecommendedVideos(context, method) {
             ? 'cloudflare:personalized'
             : (isRefresh ? 'cloudflare:refresh' : 'cloudflare')
     }, 200, {
-        'X-Cache': isPersonalized ? 'BYPASS-PERSONALIZED' : (isRefresh ? 'BYPASS' : 'MISS'),
+        'X-Cache': isPersonalized ? 'BYPASS-PERSONALIZED' : (isRefresh ? 'BYPASS' : metrics.candidateCache === 'HIT' ? 'HIT-CANDIDATES' : 'MISS'),
+        'X-Candidate-Cache': metrics.candidateCache || 'NOT-QUERIED',
         'Cache-Control': isRefresh ? 'no-cache, no-store, must-revalidate' : CACHE_CONTROL_HEADER
     });
 }

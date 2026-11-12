@@ -32,18 +32,20 @@ function validateMetadata(item, videoId) {
     }
     const duration = parseYouTubeDuration(item.contentDetails?.duration);
     if (broadcastState === 'none' && !duration) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
-    return { duration, broadcastState, isLive: broadcastState !== 'none', source: SOURCE };
+    const embeddable = item.status?.embeddable !== false;
+    return { duration, broadcastState, isLive: broadcastState !== 'none', embeddable, source: SOURCE };
 }
 
-function videoSnippet(snippet) {
+function videoSnippet(snippet, status) {
     if (typeof snippet?.title !== 'string' || !snippet.title.trim() ||
         typeof snippet.channelTitle !== 'string' || !snippet.channelTitle.trim() ||
         typeof snippet.channelId !== 'string' || !/^UC[a-zA-Z0-9_-]{22}$/.test(snippet.channelId) ||
         typeof snippet.categoryId !== 'string' || !/^\d{1,3}$/.test(snippet.categoryId)) return null;
     const tags = Array.isArray(snippet.tags) ? snippet.tags.filter(tag => typeof tag === 'string').slice(0, 100) : [];
     const thumbnail = snippet.thumbnails?.high?.url || snippet.thumbnails?.medium?.url || snippet.thumbnails?.default?.url || null;
+    const embeddable = status?.embeddable !== false;
     return { title: snippet.title.trim(), channel: snippet.channelTitle.trim(), channelId: snippet.channelId,
-        youtubeCategoryId: snippet.categoryId, tags, thumbnail: typeof thumbnail === 'string' && thumbnail.startsWith('https://i.ytimg.com/') ? thumbnail : null };
+        youtubeCategoryId: snippet.categoryId, tags, thumbnail: typeof thumbnail === 'string' && thumbnail.startsWith('https://i.ytimg.com/') ? thumbnail : null, embeddable };
 }
 
 // Separate from display metadata: client reports and subtitle estimates never write this table.
@@ -59,10 +61,11 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
     let snippet = null;
     try { snippet = cached?.snippet_json ? JSON.parse(cached.snippet_json) : null; } catch { /* Older/incomplete metadata must refresh for display. */ }
     if (!fresh && (!includeDisplay || (snippet?.title && snippet?.channel && snippet?.channelId && snippet?.youtubeCategoryId && Array.isArray(snippet.tags))) && cached?.source === SOURCE && cached.refresh_after > now && cached.verified_at <= now && cached.verified_at > now - QUOTE_TTL_SECONDS) {
+        const embeddable = snippet?.embeddable !== false;
         if (cached.broadcast_state === 'none' && Number.isSafeInteger(cached.duration_seconds) && cached.duration_seconds > 0) {
-            return { duration: cached.duration_seconds, broadcastState: 'none', isLive: false, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, snippet };
+            return { duration: cached.duration_seconds, broadcastState: 'none', isLive: false, embeddable, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, snippet };
         }
-        if (['live', 'upcoming'].includes(cached.broadcast_state)) return { duration: null, broadcastState: cached.broadcast_state, isLive: true, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, snippet };
+        if (['live', 'upcoming'].includes(cached.broadcast_state)) return { duration: null, broadcastState: cached.broadcast_state, isLive: true, embeddable, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, snippet };
     }
     const state = await db.prepare("SELECT blocked_until FROM video_metadata_provider_state WHERE provider='youtube'").first();
     if (state?.blocked_until > now) throw metadataError('VIDEO_DURATION_UNAVAILABLE', 503, state.blocked_until - now);
@@ -84,8 +87,8 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
     try {
         const url = new URL('https://www.googleapis.com/youtube/v3/videos');
         url.searchParams.set('id', videoId);
-        url.searchParams.set('part', 'contentDetails,snippet,liveStreamingDetails');
-        url.searchParams.set('fields', 'items(id,contentDetails/duration,snippet(title,channelTitle,channelId,categoryId,tags,thumbnails,liveBroadcastContent),liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))');
+        url.searchParams.set('part', 'contentDetails,snippet,liveStreamingDetails,status');
+        url.searchParams.set('fields', 'items(id,contentDetails/duration,status/embeddable,snippet(title,channelTitle,channelId,categoryId,tags,thumbnails,liveBroadcastContent),liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))');
         const signal = AbortSignal.timeout(4000);
         const response = await fetch(url, {
             headers: { 'X-Goog-Api-Key': env.YOUTUBE_DATA_API_KEY, Accept: 'application/json' },
@@ -106,7 +109,7 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
         if (data.items.length === 0) throw metadataError('VIDEO_UNAVAILABLE', 404, 0);
         if (data.items.length !== 1) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
         const details = validateMetadata(data.items[0], videoId);
-        snippet = videoSnippet(data.items[0].snippet);
+        snippet = videoSnippet(data.items[0].snippet, data.items[0].status);
         if (includeDisplay && !snippet) throw metadataError('VIDEO_METADATA_UNAVAILABLE');
         const ttl = details.isLive ? 30 : QUOTE_TTL_SECONDS;
         // Millisecond observation order prevents a slower old request from replacing newer evidence.

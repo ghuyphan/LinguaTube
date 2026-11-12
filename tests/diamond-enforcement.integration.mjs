@@ -7,18 +7,21 @@ import { TranscriptService } from '../functions-src/services/transcript.service.
 import { DiamondService } from '../functions-src/services/diamond.service.js';
 import { recoverJobRefund } from '../functions-src/services/refund-recovery.js';
 import { atomicFailAndRefundAiJob } from '../functions-src/data/transcript-db.js';
+import { getTranscriptFromR2, saveTranscriptToR2 } from '../functions-src/data/transcript-r2.js';
 
 const uid = '11111111-1111-4111-8111-111111111111';
 let sequence = 0;
-async function endpoint(t, { tier = 'anonymous', duration = 120, youtube = null, charge = null, cached = false, balance = 25 } = {}) {
+async function endpoint(t, { tier = 'anonymous', duration = 120, youtube = null, charge = null, cached = false, balance = 25, supadata = null } = {}) {
     const state = await fixture(t);
     const calls = [], charges = [], refunds = [];
     const videoId = `diamond${String(++sequence).padStart(4, '0')}`;
     const token = `${btoa('{}')}.${btoa(JSON.stringify({ sub: uid, exp: Math.floor(Date.now() / 1000) + 3600 }))}.fixture`;
     const env = { VOCAB_DB: state.db, YOUTUBE_DATA_API_KEY: 'fixture-youtube', GLADIA_API_KEY: 'fixture', TURNSTILE_SECRET_KEY: 'fixture', SUPABASE_SERVICE_ROLE_KEY: 'fixture',
+        ...(supadata ? { SUPADATA_API_KEY: 'fixture-supadata' } : {}),
         TRANSCRIPT_STORAGE: { get: async () => cached ? { customMetadata: { source: typeof cached === 'string' ? cached : 'ai' }, json: async () => ({ segments: [{ start: 0, duration: 1, text: 'Hello', tokens: [{ surface: 'Hello' }] }] }) } : null } };
     t.mock.method(globalThis, 'fetch', async (input, init = {}) => {
         const url = new URL(input); calls.push({ host: url.hostname, path: url.pathname, method: init.method || 'GET' });
+        if (url.hostname === 'api.supadata.ai' && supadata) return supadata(url);
         if (url.hostname === 'www.googleapis.com') {
             assert.equal(init.headers['X-Goog-Api-Key'], 'fixture-youtube');
             assert.equal(url.searchParams.get('id'), videoId);
@@ -45,7 +48,7 @@ async function endpoint(t, { tier = 'anonymous', duration = 120, youtube = null,
             'Content-Type': 'application/json', 'CF-Connecting-IP': `198.51.100.${sequence}`, ...(tier === 'anonymous' ? {} : { Authorization: `Bearer ${token}` })
         }, body: JSON.stringify({ videoId, lang: 'en', preferAI: true, turnstileToken: 'fixture', ...body }) });
         const response = await onRequestPost({ request, env });
-        return { status: response.status, body: await response.json() };
+        return { status: response.status, headers: response.headers, body: await response.json() };
     };
     const providerPosts = () => calls.filter(c => c.host === 'api.gladia.io' && c.method === 'POST').length;
     return { ...state, env, calls, charges, refunds, invoke, providerPosts, videoId,
@@ -345,6 +348,140 @@ test('requested native captions take priority over alternative R2 captions', asy
     assert.equal(response.body.source, 'native');
     assert.equal(response.body.language, 'ja');
     assert.equal(reads.some(key => key.endsWith('/en.json')), false);
+});
+
+test('English captions mislabeled Korean are rejected before refresh and never republished', async t => {
+    const lyrics = [
+        "We're no strangers to love",
+        'You know the rules and so do I',
+        "I'm never gonna give you up",
+        "Don't tell me that you want to leave"
+    ];
+    const f = await endpoint(t, { supadata: url => {
+        assert.equal(url.searchParams.get('lang'), 'ko');
+        assert.equal(url.searchParams.get('mode'), 'native');
+        return Response.json({
+            lang: 'ko', availableLangs: ['en', 'ja'],
+            content: lyrics.map((text, i) => ({ text, offset: i * 3000, duration: 2500 }))
+        });
+    } });
+    const segments = lyrics.map((text, i) => ({ text, start: i * 3, duration: 2.5 }));
+    const writes = [];
+    f.env.TRANSCRIPT_STORAGE = {
+        async get(key) {
+            const language = key.endsWith('/ko.json') ? 'ko' : key.endsWith('/en.json') ? 'en' : null;
+            return language && { customMetadata: { source: 'supadata' }, json: async () => ({ language, segments }) };
+        },
+        async put(key) { writes.push(key); }
+    };
+    f.sqlite.prepare('INSERT INTO video_languages(video_id,available_languages,sub_languages) VALUES(?,?,?)')
+        .run(f.videoId, '["en","ja"]', '["ko","en"]');
+
+    for (const forceRefresh of [false, true, false]) {
+        const response = await f.invoke({ preferAI: false, lang: 'ko', forceRefresh });
+        assert.equal(response.status, 200);
+        assert.equal(response.body.language, 'en');
+        assert.equal(response.body.languageMismatch, true);
+        assert.equal(response.body.segments[0].text, lyrics[0]);
+        assert.equal(response.headers.get('Cache-Control'), 'no-store');
+    }
+    assert.equal(f.calls.filter(call => call.host === 'api.supadata.ai').length, 1);
+    assert.equal(f.providerPosts(), 0);
+    assert.deepEqual(writes, []);
+});
+
+for (const [label, supadata] of [
+    ['broken advertised captions', () => Response.json({
+        lang: 'ko', availableLangs: ['ko', 'en'],
+        content: [{ text: '[]', offset: 0, duration: 1000 }, { text: '한국어', offset: -1, duration: 1000 }]
+    })],
+    ['missing provider language', () => Response.json({
+        availableLangs: ['ko'],
+        content: [{ text: '한국어', offset: 0, duration: 1000 }]
+    })],
+    ['provider outage', () => new Response(null, { status: 503 })]
+]) {
+    test(`${label} returns a retryable failure without negative caching`, async t => {
+        const f = await endpoint(t, { supadata });
+        const response = await f.invoke({ preferAI: false, lang: 'ko', forceRefresh: true });
+        assert.equal(response.status, 503);
+        assert.equal(response.body.errorCode, 'NATIVE_PROVIDER_UNAVAILABLE');
+        assert.equal(response.headers.get('Retry-After'), '10');
+        assert.equal(f.sqlite.prepare('SELECT count(*) AS n FROM no_transcript_cache').get().n, 0);
+        assert.equal(f.providerPosts(), 0);
+    });
+}
+
+test('provider track variant survives refresh and cache with a mixed-language intro', async t => {
+    const content = [
+        'You know what we are learning today',
+        'I want you to have the right answer',
+        "We're going to start with the introduction",
+        '我們現在開始學習繁體中文'
+    ].map((text, i) => ({ text, offset: i * 3000, duration: 2500 }));
+    const f = await endpoint(t, { supadata: () => Response.json({
+        lang: 'zh-Hant', availableLangs: ['zh-Hans', 'zh-Hant'], content
+    }) });
+    const objects = new Map();
+    f.env.TRANSCRIPT_STORAGE = {
+        async get(key) { return objects.get(key) ?? null; },
+        async head(key) { return objects.get(key) ?? null; },
+        async put(key, value, options) {
+            assert.deepEqual(options.onlyIf, { etagDoesNotMatch: '*' });
+            objects.set(key, { ...options, etag: 'saved', json: async () => JSON.parse(value) });
+            return objects.get(key);
+        }
+    };
+    const refreshed = await f.invoke({ preferAI: false, lang: 'zh', forceRefresh: true });
+    const cached = await f.invoke({ preferAI: false, lang: 'zh' });
+    assert.equal(refreshed.body.source, 'native');
+    assert.equal(cached.body.source, 'cache');
+    for (const response of [refreshed, cached]) {
+        assert.equal(response.body.language, 'zh');
+        assert.equal(response.body.trackLanguage, 'zh-Hant');
+        assert.equal(response.body.languageMismatch, false);
+    }
+    assert.equal(f.calls.filter(call => call.host === 'api.supadata.ai').length, 1);
+});
+
+test('a native write cannot replace a saved AI transcript or win an R2 race', async () => {
+    const segments = [{ text: '한국어 자막', start: 0, duration: 1 }];
+    const aiObject = { etag: 'ai', customMetadata: { source: 'ai' } };
+    const nativeObject = { etag: 'native', customMetadata: { source: 'supadata' } };
+    const bucket = {
+        async head() { return aiObject; },
+        async put() { assert.fail('should preserve the AI transcript'); }
+    };
+    assert.equal(await saveTranscriptToR2(bucket, 'dQw4w9WgXcQ', 'ko', segments, 'supadata', null, 'ko'), false);
+    bucket.head = async () => nativeObject;
+    bucket.put = async (_, __, options) => {
+        assert.deepEqual(options.onlyIf, { etagMatches: 'native' });
+        return null;
+    };
+    assert.equal(await saveTranscriptToR2(bucket, 'dQw4w9WgXcQ', 'ko', segments, 'supadata', null, 'ko'), false);
+});
+
+test('R2 rejects conflicting stored language and malformed cached cues', async () => {
+    const cue = { text: '안녕하세요', start: 0, duration: 1 };
+    const bucket = { get: async () => ({ json: async () => ({ language: 'en', segments: [cue] }) }) };
+    assert.equal(await getTranscriptFromR2(bucket, 'dQw4w9WgXcQ', 'ko'), null);
+    bucket.get = async () => ({ json: async () => ({ language: 'ko', segments: [null, cue] }) });
+    assert.equal(await getTranscriptFromR2(bucket, 'dQw4w9WgXcQ', 'ko'), null);
+});
+
+test('refresh uses saved captions after one provider timeout', async t => {
+    const f = await endpoint(t, {
+        cached: 'supadata',
+        supadata: () => { throw new DOMException('Timed out', 'TimeoutError'); }
+    });
+    f.env.SUPADATA_API_KEY_2 = 'fixture-backup';
+    f.sqlite.prepare('INSERT INTO video_languages(video_id,available_languages,sub_languages) VALUES(?,?,?)')
+        .run(f.videoId, '["en"]', '["en"]');
+    const response = await f.invoke({ preferAI: false, forceRefresh: true });
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get('X-Cache'), 'STALE');
+    assert.equal(response.body.refreshDeferred, true);
+    assert.equal(f.calls.filter(call => call.host === 'api.supadata.ai').length, 1);
 });
 
 test('force refresh retries native captions despite a negative cache', async t => {

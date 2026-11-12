@@ -363,6 +363,33 @@ export function normalizeLanguageCode(lang) {
     return clean;
 }
 
+const NATIVE_CJK_SCRIPTS = {
+    ja: /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u,
+    zh: /[\p{Script=Han}\p{Script=Bopomofo}]/u,
+    ko: /[\p{Script=Hangul}\p{Script=Han}]/u
+};
+
+// Reject clear English-only contradictions. Short, romanized and mixed tracks
+// are inconclusive, so this check never assigns a new language to their cues.
+export function contradictsNativeLanguage(segments, language) {
+    if (!Object.hasOwn(NATIVE_CJK_SCRIPTS, language) || !Array.isArray(segments)) return false;
+    const expectedScript = NATIVE_CJK_SCRIPTS[language];
+    const count = Math.min(segments.length, 32);
+    const englishWords = new Set();
+    let englishCues = 0;
+    for (let i = 0; i < count; i++) {
+        const index = Math.floor(i * (segments.length - 1) / Math.max(count - 1, 1));
+        const cue = cleanCueText(segments[index]?.text?.slice?.(0, 512));
+        if (expectedScript.test(cue)) return false;
+        const words = cue.toLowerCase().match(/\b(?:the|you|your|and|with|this|that|were|have|never|know|what|when|want|will|are|don't|we're|gonna)\b/g);
+        if (words) {
+            englishCues++;
+            for (const word of words) englishWords.add(word);
+        }
+    }
+    return englishCues >= 3 && englishWords.size >= 5;
+}
+
 /**
  * Robustly extract segments from Gladia v2 response schemas.
  * Gladia V2 returns `item.sentence` for semantic sentences (not `item.text`),
@@ -447,4 +474,39 @@ export function extractGladiaDetectedLanguage(resultData, defaultLang = 'ja') {
 
     return normalizeLanguageCode(rawLang) || defaultLang;
 }
+
+/**
+ * Adjust availableLanguages to ensure accurate partitioning between native and AI tracks.
+ * When a transcript has source 'ai', its language MUST be in ai and NOT in native.
+ *
+ * @param {{ native?: string[], ai?: string[] } | null | undefined} availableLanguages
+ * @param {string} language
+ * @param {string} source - e.g. 'ai', 'supadata', 'youtube'
+ * @returns {{ native: string[], ai: string[] }}
+ */
+export function adjustAvailableLanguages(availableLanguages, language, source) {
+    const norm = normalizeLanguageCode(language);
+    const currentNative = (availableLanguages?.native || []).map(normalizeLanguageCode).filter(Boolean);
+    const currentAi = (availableLanguages?.ai || []).map(normalizeLanguageCode).filter(Boolean);
+
+    if (!norm) {
+        return {
+            native: Array.from(new Set(currentNative)),
+            ai: Array.from(new Set(currentAi))
+        };
+    }
+
+    if (source === 'ai') {
+        return {
+            native: Array.from(new Set(currentNative)),
+            ai: Array.from(new Set([...currentAi, norm]))
+        };
+    }
+
+    return {
+        native: Array.from(new Set([...currentNative, norm])),
+        ai: Array.from(new Set(currentAi))
+    };
+}
+
 

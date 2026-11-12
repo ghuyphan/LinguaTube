@@ -181,6 +181,7 @@ Bucket binding: `TRANSCRIPT_STORAGE` (`linguatube-transcripts`)
 
 ### 3.1. Transcript Object Format
 - **Key**: `transcripts/{videoId}/{lang}.json`
+- **Native writes**: Exact normalized-language matches can publish to R2 and retain the original tag in optional `trackLanguage`. Foreign fallback cues are served with a mismatch flag and do not publish to R2. Conditional writes use the current ETag and preserve an existing AI object. Suspect legacy native objects are rejected on read; valid existing objects remain usable. A rollback to an older reader requires quarantining any confirmed bad objects first or retaining the read validation.
 - **Content-Type**: `application/json`
 - **JSON Structure (Pre-Baked Rich Subtitles)**:
   ```json
@@ -710,3 +711,15 @@ No new KV namespace, key family, Supabase migration or R2 key layout is introduc
 ## Diamond authority verification
 
 Existing PostgreSQL service-only credit RPCs and private ledgers, the profile protection trigger/RLS, and atomic D1 credit triggers remain the authority. This hardening introduces no schema migration. Read-only audit SQL is in `db/operations/diamond-authority-audit.sql` and `db/operations/diamond-recovery-audit.d1.sql`; see [deployment prerequisites](diamond-enforcement-2026-10-26.md).
+
+## Recommendation ordering index (2026-11-04)
+
+Apply `db/migrations/d1/20261104_video_languages_coalesce_order_index.sql` through the D1 migration workflow. It adds `idx_video_languages_coalesce_order` on `(COALESCE(updated_at, 0) DESC, video_id ASC)`, matching current discovery sorting/cursors without changing null timestamp semantics. The base schema includes the same index for fresh environments. Existing bare-column indexes and legacy bootstrap tables remain for compatibility; current vocabulary authority is Supabase and transcript object storage is R2. No table removal is authorized by an absence of Functions callers alone.
+
+Local EXPLAIN verifies removal of the temporary sort for tested first-page/cursor queries; row-read/latency improvements remain workload-dependent. See [verification and rollout](backend-audit-verification-2026-11-04.md).
+
+Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and the matching D1 expression index are live. Existing API success payloads and web assets are preserved; no Flutter release is required. See [deployment verification](backend-audit-deployment-2026-11-04.md).
+
+Video grading uses `video_grading_jobs` for lease, retry, review and rollback state.
+The confirmed grade and diagnostics live in the language entry of
+`video_languages.levels`. Caption content stays in R2.

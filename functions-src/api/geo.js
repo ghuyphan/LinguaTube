@@ -2,11 +2,7 @@
  * Geo-IP Lookup API (Cloudflare Pages Function)
  * Returns the client's 2-letter ISO country code from Cloudflare Edge GeoIP.
  */
-import { jsonResponse, handleOptions } from '../utils/utils.js';
-
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'OPTIONS']);
-}
+import { jsonResponse } from '../utils/utils.js';
 
 export async function onRequestGet(context) {
     const { request } = context;

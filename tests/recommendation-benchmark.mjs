@@ -26,11 +26,15 @@ const result = {};
 for (const [name, recommend] of Object.entries({ baseline, revised })) {
     const elapsed = [];
     let videos;
+    let coldDatabaseQueries;
+    let coldFivePageMs;
     for (let run = 0; run < 20; run++) {
         videos = []; queries = 0;
         const started = performance.now();
         for (let offset = 0; offset < 120; offset += 24) videos.push(...await recommend(db, null, 'ja', 24, null, offset === 0, offset, null, { sessionSeed: 1111 }));
-        elapsed.push(performance.now() - started);
+        const elapsedMs = performance.now() - started;
+        if (run === 0) { coldDatabaseQueries = queries; coldFivePageMs = Math.round(elapsedMs * 100) / 100; }
+        elapsed.push(elapsedMs);
     }
     elapsed.sort((a, b) => a - b);
     const channels = new Map();
@@ -39,7 +43,7 @@ for (const [name, recommend] of Object.entries({ baseline, revised })) {
         duplicates: videos.length - new Set(videos.map(v => v.videoId)).size,
         discoveryWindowCoverage: new Set(videos.map(v => v.videoId)).size / 200,
         firstPageMaxCreatorShare: Math.max(...channels.values()) / 24,
-        requests: 5, databaseQueries: queries, medianFivePageMs: Math.round(elapsed[10] * 100) / 100 };
+        requests: 5, coldDatabaseQueries, coldFivePageMs, warmDatabaseQueries: queries, medianFivePageMs: Math.round(elapsed[10] * 100) / 100 };
 }
 sqlite.exec(`UPDATE video_languages SET levels = CASE WHEN updated_at > 9800 THEN '{"ja":"N1"}' ELSE '{"ja":"N5"}' END`);
 for (const [name, recommend] of Object.entries({ baseline, revised })) {

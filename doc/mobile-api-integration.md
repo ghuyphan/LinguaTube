@@ -1859,3 +1859,36 @@ Show a Modal Bottom Sheet with two options:
 - [ ] **Supabase Row Level Security**: Verify all user queries include authenticated bearer token and adhere to RLS policies.
 - [ ] **Offline Card Creation**: Save flashcards in Airplane Mode; verify IDs match `generateDeterministicRecordId([userId, word, lang])` and sync without 409 conflict errors.
 - [ ] **VietQR Intent**: Verify clicking "Pay with Mobile Banking" successfully triggers bank app deep links with valid payload descriptions (`VOCA{orderCode}`).
+
+
+## Recommendation ranking polish (2026-11-01)
+
+Browse ranking prioritizes unfinished videos, then avoids known content two or more tiers above the learner when no difficulty filter is selected. Search retains weighted text relevance; explicit difficulty filters remain strict. Creator spacing may only promote candidates in the same completion/difficulty group and within 12 score points of the next ranked candidate.
+
+Responses include additive per-video `recommendationScore` (finite numeric weighted score), `isCompleted` (boolean, completion threshold 85%), and `difficultyGap` (signed canonical tier distance; zero if learner/video tier is unknown). Scores are relative within a request, not calibrated probabilities. Clients may combine a bounded content-similarity bonus with this score, but should retain completion/difficulty priority. These fields derive only from the request's bounded context; personalized cache isolation remains unchanged. Existing web consumers can ignore them.
+
+The fixed 200-candidate discovery window, twenty 200-row scan batches, ten R2 probes, stable seeds/context, pagination and outage behavior remain unchanged. This improves ordering, not catalog recall. No schema migration, new dependency, deployment, or web service/UI change accompanies this work. Deploy the backend before the Flutter client to enable the new ranking hints; older responses remain parseable.
+
+
+## Recommendation discovery optimization (2026-11-01)
+
+The Edge API validates the levels of cached browse candidates against D1 before ranking a page. Tier filters discover current eligibility on each request. The fixed candidate window and scan/probe limits are unchanged.
+
+Recommendations retain `level` and can include a `levels` entry for the exact subtitle language. Transcript responses and level submissions use the same stored record. The object includes `language`, `method`, and `isProvisional`. Flutter treats a plain feed or playlist label as a hint until it has an exact-language confirmed record.
+
+The benchmark now reports cold and warm database queries separately. On the 400-video/five-page fixture: cold discovery queries fall from five to one; warm discovery queries fall from five to zero. One recorded local run measured warm median five-page processing at 4.06 ms baseline and 0.50 ms revised. These exclude networking, cold starts and real D1/R2 latency; they are not production latency or engagement claims.
+
+
+Production recommendation deployment (2026-11-01): `4e6ad152-0421-4b8d-a9e9-3b3c2168b11e`. The exact previous web manifest/assets and production configuration were preserved. Backend tests: 246 passed; isolated Flutter release tests: 1,432 passed; signed test APK prepared. See [deployment and benchmark evidence](recommendation-optimization-deployment-2026-11-01.md).
+
+### Authentication availability (2026-11-04)
+
+503 `AUTH_UNAVAILABLE` with `Retry-After: 5` and `Cache-Control: no-store` means supplied credentials could not be checked because the authentication/access-state service is unavailable. Keep the current session and retry according to operation safety; do not interpret this as an invalid token or resubmit a chargeable job without its existing operation/job identity. Optional-auth endpoints also fail with this response instead of using anonymous quotas. Explicit token rejection remains separate. See [backend verification](backend-audit-verification-2026-11-04.md).
+
+Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and the matching D1 expression index are live. Existing API success payloads and web assets are preserved; no Flutter release is required. See [deployment verification](backend-audit-deployment-2026-11-04.md).
+
+Server-owned transcript responses include `gradingStatus`. While a selected track
+is pending, clients may poll `GET /api/video-level?videoId=…&language=…` with
+backoff. A ready result includes the stored diagnostics, including
+`speechRateUnit` and `graderVersion`. Stop polling when playback leaves the
+track or the player is hidden.

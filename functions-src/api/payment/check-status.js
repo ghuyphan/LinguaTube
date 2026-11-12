@@ -14,10 +14,6 @@ const RATE_LIMIT_CONFIG = {
     keyPrefix: 'pay_status'
 };
 
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'OPTIONS']);
-}
-
 export async function onRequestGet(context) {
     const { request, env } = context;
     const url = new URL(request.url);
@@ -28,6 +24,7 @@ export async function onRequestGet(context) {
     }
 
     const auth = await validateAuthToken(request, env);
+    if (auth.response) return auth.response;
     if (!auth.valid || !auth.user) return unauthorizedResponse();
     const kv = env.TRANSCRIPT_CACHE;
     const rateCheck = await consumeRateLimit(kv, auth.user.id, RATE_LIMIT_CONFIG, context);

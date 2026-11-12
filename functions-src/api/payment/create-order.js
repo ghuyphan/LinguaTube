@@ -7,7 +7,7 @@ import { serviceRoleRequest } from '../../services/supabase-rest.js';
 import { validateAuthToken, unauthorizedResponse } from '../../middlewares/auth.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../../middlewares/rate-limiter.js';
 import { createPayOsPaymentLink } from '../../providers/payos.js';
-import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, getRequestJson } from '../../utils/utils.js';
 
 const RATE_LIMIT_CONFIG = { max: 10, windowSeconds: 600, keyPrefix: 'pay_order' };
 
@@ -46,10 +46,6 @@ export const PLANS = {
     }
 };
 
-export async function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
-}
-
 export function isValidRedirectUrl(urlStr) {
     if (!urlStr || typeof urlStr !== 'string') return false;
     try {
@@ -69,6 +65,7 @@ export async function onRequestPost(context) {
 
     try {
         const authResult = await validateAuthToken(request, env);
+        if (authResult.response) return authResult.response;
         if (!authResult.valid || !authResult.user) {
             return unauthorizedResponse('Please sign in to support Voca');
         }
@@ -79,7 +76,7 @@ export async function onRequestPost(context) {
             return rateLimitResponse(rateLimit.resetAt);
         }
 
-        const body = await request.json().catch(() => ({}));
+        const body = (await getRequestJson(context)) || {};
         const planId = body.planId || 'pro_1m';
         const plan = Object.hasOwn(PLANS, planId) ? PLANS[planId] : null;
         if (!plan) return jsonResponse({ error: 'Unknown plan' }, 400);

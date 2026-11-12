@@ -1,11 +1,10 @@
 import { matchesSecret } from '../../utils/secret-auth.js';
 /** RevenueCat callbacks are authenticated and durably queued before acknowledgement. */
-import { jsonResponse, handleOptions } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, getRequestJson } from '../../utils/utils.js';
 import { recoverRevenueCatEvent } from '../../services/revenuecat-recovery.js';
 import { serviceRoleRequest } from '../../services/supabase-rest.js';
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-export function onRequestOptions() { return handleOptions(['POST', 'OPTIONS']); }
 
 export async function onRequestPost(context) {
     const { request, env } = context;
@@ -17,7 +16,7 @@ export async function onRequestPost(context) {
         if (!(await matchesSecret(actual, expected)) && !(await matchesSecret(actual, secret))) {
             return jsonResponse({ success: false, error: 'Unauthorized webhook' }, 401);
         }
-        const body = await request.json().catch(() => null);
+        const body = (await getRequestJson(context)) || null;
         const event = body?.event;
         if (!event || typeof event.type !== 'string') return jsonResponse({ error: 'Invalid event' }, 400);
         const eventType = event.type;

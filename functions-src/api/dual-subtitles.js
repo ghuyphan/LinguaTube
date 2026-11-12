@@ -4,7 +4,7 @@
  * Route: POST /api/dual-subtitles
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId, sanitizeLanguage, sha256 } from '../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId, sanitizeLanguage, sha256, getRequestJson } from '../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -43,10 +43,6 @@ const CACHE_HEADERS = {
     FRESH: 'public, max-age=3600',                               // 1h for fresh translations
     PARTIAL: 'no-store'                                          // Don't cache partial/failed
 };
-
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'POST', 'OPTIONS']);
-}
 
 export async function onRequestGet(context) {
     const { request, env } = context;
@@ -93,7 +89,7 @@ export async function onRequestGet(context) {
 
 export async function onRequestPost(context) {
     let body;
-    try { body = await context.request.json(); }
+    try { body = await getRequestJson(context); }
     catch { return jsonResponse({ error: 'Invalid JSON body' }, 400); }
     if (!body || typeof body !== 'object' || Array.isArray(body)) return jsonResponse({ error: 'Invalid request' }, 400);
     if (body.saveOnly || body.onlySave || body.onlyCache) return handlePost(context, body);
@@ -182,6 +178,7 @@ async function handlePost(context, body) {
 
         // 2. Auth & Rate Limit
         const authResult = await validateAuthToken(request, env);
+        if (authResult.response) return authResult.response;
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
         const isSave = Boolean(saveOnly || onlySave);
         const baseConfig = isSave ? RATE_LIMIT_SAVE_CONFIG : RATE_LIMIT_CONFIG;

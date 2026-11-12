@@ -2,10 +2,14 @@
  * Provider for Supadata Native Caption API
  */
 
-import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { cleanCueText, contradictsNativeLanguage, normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { readBoundedBody, requestSignal } from '../utils/response-body.js';
 
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
 const SUPADATA_TIMEOUT_MS = 4000; // 4 seconds is plenty for native caption availability checks
+const NATIVE_LOOKUP_BUDGET_MS = 6000;
+const MAX_TRANSCRIPT_BYTES = 8 * 1024 * 1024;
+const MAX_TRANSCRIPT_CUES = 20000;
 
 export class SupadataProvider {
     /**
@@ -22,31 +26,27 @@ export class SupadataProvider {
      * @param {string} videoId 
      * @param {string} lang 
      * @param {Object} cache - CF KV binding or CacheManager instance
-     * @returns {Promise<{segments: any[], source: string, availableLangs: string[], detectedLang: string, languageMismatch?: boolean, notFound?: boolean} | null>}
+     * @param {boolean} retryTimeout - Whether a slow lookup should try another key
+     * @returns {Promise<{segments: {id: number, start: number, duration: number, text: string}[], source?: string, availableLangs: string[], detectedLang?: string, trackLanguage?: string, languageMismatch?: boolean, notFound?: boolean, unavailable?: boolean} | null>}
      */
-    async fetchCaptions(videoId, lang, cache) {
+    async fetchCaptions(videoId, lang, cache, retryTimeout = true) {
         if (this.apiKeys.length === 0) {
             return null;
         }
 
         const attemptedKeys = [];
         const maxAttempts = this.apiKeys.length;
+        const deadline = Date.now() + (retryTimeout ? NATIVE_LOOKUP_BUDGET_MS : SUPADATA_TIMEOUT_MS);
 
         for (let attempt = 0; attempt < maxAttempts; attempt++) {
             // Get the next unattempted key (round-robin with cooldown awareness)
             const apiKey = await this.apiKeyRotator.getNextApiKey(cache, 'supadata', this.apiKeys, attemptedKeys);
-            if (!apiKey) break;
+            if (!apiKey || Date.now() >= deadline) break;
             attemptedKeys.push(apiKey);
 
             try {
-                const result = await this._executeFetch(videoId, lang, apiKey, 'native');
-                if (result?.notFound) {
-                    // Video genuinely has no captions on YouTube - do NOT retry other keys
-                    return { notFound: true, segments: [], availableLangs: [] };
-                }
-                if (result?.segments?.length > 0) {
-                    return result;
-                }
+                const result = await this._executeFetch(videoId, lang, apiKey, deadline);
+                if (result?.notFound || result?.segments?.length || result?.unavailable) return result;
             } catch (e) {
                 const errMsg = e.message || '';
                 const is429 = errMsg.includes('429') || errMsg.includes('rate');
@@ -64,7 +64,7 @@ export class SupadataProvider {
                     // Timeout -> 60 seconds cooldown to allow failover to alternative key
                     await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 60);
                     // On timeout, cap failover to prevent worker execution timeouts, but NEVER return notFound: true
-                    if (attempt >= 1) {
+                    if (!retryTimeout || attempt >= 1) {
                         return null;
                     }
                 }
@@ -75,22 +75,23 @@ export class SupadataProvider {
         return null;
     }
 
-    async _executeFetch(videoId, lang, apiKey, mode = 'native') {
+    async _executeFetch(videoId, lang, apiKey, deadline) {
         const url = new URL(SUPADATA_API_URL);
         url.searchParams.set('videoId', videoId);
         if (lang) {
             url.searchParams.set('lang', lang);
         }
         url.searchParams.set('text', 'false');
-        url.searchParams.set('mode', mode);
+        url.searchParams.set('mode', 'native');
 
+        const signal = requestSignal(deadline, SUPADATA_TIMEOUT_MS);
         const response = await fetch(url.toString(), {
             method: 'GET',
             headers: {
                 'x-api-key': apiKey,
                 'Accept': 'application/json'
             },
-            signal: AbortSignal.timeout(mode === 'generate' ? 25000 : SUPADATA_TIMEOUT_MS)
+            signal
         });
 
         // Supadata returns HTTP 206 (Partial Content) or 404 when no transcript exists for the video
@@ -114,56 +115,59 @@ export class SupadataProvider {
             throw new Error(`HTTP ${response.status}`);
         }
 
-        const data = await response.json();
+        const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(response, signal, MAX_TRANSCRIPT_BYTES)));
+        if (!data || typeof data !== 'object' || Array.isArray(data)) {
+            return { unavailable: true, segments: [], availableLangs: [] };
+        }
 
         // Check error payload in body (Supadata errors format)
         if (data.error === 'transcript-unavailable' || data.error === 'not-found') {
             return { notFound: true, segments: [], availableLangs: [] };
         }
 
-        if (!data.content?.length) {
-            return { notFound: true, segments: [], availableLangs: [] };
+        const rawDetectedLang = typeof data.lang === 'string' ? data.lang.trim() : '';
+        const normDetected = normalizeLanguageCode(rawDetectedLang);
+        const normRequested = normalizeLanguageCode(lang);
+        const availableLangs = Array.isArray(data.availableLangs)
+            ? data.availableLangs.filter(l => typeof l === 'string' && /^[a-z]{2,8}(?:[-_][a-z0-9]{1,8})*$/i.test(l))
+            : [];
+        const unavailable = () => ({
+            unavailable: true, segments: [], availableLangs,
+            languageMismatch: Boolean(normRequested && availableLangs.length &&
+                !availableLangs.some(l => normalizeLanguageCode(l) === normRequested))
+        });
+
+        if (!Array.isArray(data.content) || data.content.length > MAX_TRANSCRIPT_CUES || !normDetected ||
+            !/^[a-z]{2,8}(?:[-_][a-z0-9]{1,8})*$/i.test(rawDetectedLang)) return unavailable();
+
+        const segments = [];
+        for (const segment of data.content) {
+            if (!Number.isFinite(segment?.offset) || segment.offset < 0 ||
+                !Number.isFinite(segment.duration) || segment.duration < 0 ||
+                !/[\p{L}\p{N}]/u.test(cleanCueText(segment.text))) continue;
+            segments.push({
+                id: segments.length,
+                start: segment.offset / 1000,
+                duration: segment.duration / 1000,
+                text: segment.text.trim()
+            });
         }
 
-        const segments = data.content.map((segment, i) => ({
-            id: i,
-            start: segment.offset / 1000,
-            duration: segment.duration / 1000,
-            text: (segment.text || '').trim()
-        })).filter(s => s.text);
-
-        if (!segments.length) {
-            return { notFound: true, segments: [], availableLangs: [] };
-        }
-
-        const rawDetectedLang = data.lang || lang;
-        const normDetected = normalizeLanguageCode(rawDetectedLang) || rawDetectedLang;
-        const normRequested = normalizeLanguageCode(lang) || lang;
-
-        const availableLangs = Array.isArray(data.availableLangs) && data.availableLangs.length > 0
-            ? data.availableLangs
-            : [rawDetectedLang];
-
-        const isExactOrFamilyMatch = !normRequested ||
-            (normDetected === normRequested) ||
-            rawDetectedLang.toLowerCase().startsWith(normRequested.toLowerCase()) ||
-            normDetected.startsWith(normRequested);
-
-        if (!isExactOrFamilyMatch) {
-            return {
-                segments,
-                source: 'supadata',
-                availableLangs,
-                detectedLang: normDetected,
-                languageMismatch: true
-            };
+        if (!segments.length) return unavailable();
+        if (contradictsNativeLanguage(segments, normDetected)) {
+            console.warn(JSON.stringify({
+                event: 'native_transcript_language_rejected', videoId,
+                requestedLanguage: normRequested, reportedLanguage: normDetected
+            }));
+            return unavailable();
         }
 
         return {
             segments,
             source: 'supadata',
-            availableLangs,
-            detectedLang: normDetected
+            availableLangs: availableLangs.length ? availableLangs : [rawDetectedLang],
+            detectedLang: normDetected,
+            trackLanguage: rawDetectedLang
         };
     }
 }

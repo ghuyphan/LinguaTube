@@ -56,7 +56,7 @@ test('payOS missing configuration never returns a mock bank account', async () =
 test('admin maintenance rejects hardcoded secret and paid non-admin users', async t => {
     assert.equal((await heal({request:new Request('https://voca.study/api/heal-levels',{headers:{'x-admin-secret':'voca_heal_2026'}}),env:{}})).status,401);
     const token=`${btoa('{}')}.${btoa(JSON.stringify({sub:uid,exp:Math.floor(Date.now()/1000)+3600}))}.signature`;
-    t.mock.method(globalThis,'fetch',async url=>Response.json(url.includes('/auth/v1/user')?{id:uid}:[{subscription_tier:'premium'}]));
+    t.mock.method(globalThis,'fetch',async url=>Response.json(url.includes('/auth/v1/user')?{id:uid}:{id:uid,subscription_tier:'premium'}));
     assert.equal((await heal({request:new Request('https://voca.study/api/heal-levels',{headers:{Authorization:`Bearer ${token}`}}),env})).status,401);
 });
 test('diamond RPC failures never fall back to stale balance PATCHes', async t => {

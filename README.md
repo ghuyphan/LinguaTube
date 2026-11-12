@@ -175,6 +175,8 @@ The [Cloudflare edge-case suite](doc/reviews/cloudflare-edge-cases-2026-10-25.md
 
 ### Backend diamond authority
 
+Native caption refresh validates the fetched track before caching. See the [transcript API contract](doc/backend-api.md#31-unified-transcript-api) for fallback and retry behavior.
+
 Paid transcription pricing and duration limits use verified YouTube duration; unverifiable lengths block new paid jobs. Cached transcripts and existing jobs remain reusable. See the [implementation, validation and deployment checks](doc/diamond-enforcement-2026-10-26.md).
 
 AI pricing follow-up: `/api/transcript` supports the `quoteOnly` preview mode and an optional confirmed `expectedDiamondCost` for new paid jobs. Never trust that field as a price override; reject a changed price before reservation/charge. Cached/active reuse quotes zero. Deploy backend support before mobile quote consumers; see the diamond enforcement handoff for the contract and tests.
@@ -194,3 +196,16 @@ Community reports cannot choose trusted provenance or overwrite verified difficu
 
 
 Transcript correctness checks: AI quotes distinguish native caches from reusable AI output, and native-caption misses still discover cached alternative languages. See `doc/backend-api.md` for the unchanged API contract and run `node --test tests/diamond-enforcement.integration.mjs` for billing/fallback regressions without live provider spending.
+
+
+Recommendation ranking behavior and mobile integration: [ranking polish and compatibility](doc/backend-api.md#recommendation-ranking-polish-2026-11-01).
+
+Public recommendation discovery now uses a bounded 15-second metadata cache; see [optimization and benchmark limits](doc/backend-api.md#recommendation-discovery-optimization-2026-11-01).
+
+
+Production recommendation optimization and signed Android test build: [deployment record](doc/recommendation-optimization-deployment-2026-11-01.md).
+
+Backend audit verification: see [verified findings and local checks](doc/backend-audit-verification-2026-11-04.md) for auth outage handling, GET/HEAD ingress, lighter callback bundles, bounded metadata repair, and the additive D1 ordering-index migration. The backend and additive index are [deployed and verified in production](doc/backend-audit-deployment-2026-11-04.md); no Flutter release is required.
+
+Server video grading and the catalog backfill are documented in the
+[backend API guide](doc/backend-api.md#server-owned-video-grades).

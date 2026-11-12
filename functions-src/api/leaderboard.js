@@ -46,10 +46,6 @@ export const SEED_LEADERBOARD = [
     { user_id: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weekly_xp: 70, level: 1, streak: 1, badges_count: 1, target_lang: 'en', country: '🇺🇸' }
 ];
 
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'POST', 'OPTIONS']);
-}
-
 const memLeaderboardCache = new Map();
 const MEM_LEADERBOARD_TTL_MS = 60 * 1000;
 
@@ -360,6 +356,7 @@ export async function onRequestPost(context) {
 
     try {
         const authResult = await validateAuthToken(request, env);
+        if (authResult.response) return authResult.response;
         const clientId = getClientIdentifier(request, authResult);
 
         // Rate limit submissions: 15 per 10 minutes

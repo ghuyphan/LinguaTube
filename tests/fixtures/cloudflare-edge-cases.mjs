@@ -28,6 +28,10 @@ for (const route of ['video-category','video-level','payment/create-order']) {
   add(`unauthenticated write ${Authorization||'missing'}`,route,{method:'POST',body:{videoId:'abcdefghijk',category:'news',language:'en',level:'CEFR B1'},headers:Authorization?{Authorization}:{},status:401,noUpstream:true});
 }
 for(const route of ['dict','kanji','video-info','dual-subtitles','translate/[[path]]']) add('missing required query',route,{method:'GET',status:400,noUpstream:true});
+add('level status requires a video and language','video-level',{method:'GET',status:400,noUpstream:true});
+add('level status reads an unknown video without starting grading','video-level',{
+ method:'GET',query:{videoId:'abcdefghijk',language:'en'},status:200,noUpstream:true
+});
 for(const word of ['', ' ', '\u0000', '<>']) add(`empty sanitized word ${JSON.stringify(word)}`,'dict',{query:{word,from:'en',to:'vi'},status:400,noUpstream:true});
 for(const from of ['xx','../../en']) add('unsupported dictionary source '+from,'dict',{query:{word:'hello',from,to:'en'},status:400,noUpstream:true});
 for(const text of ['', 'x'.repeat(301)]) add('TTS length '+text.length,'tts',{query:{text,lang:'en'},status:400,noUpstream:true});
@@ -76,10 +80,10 @@ add('blank translation batch bypass','translate/batch',{body:{source:'en',target
 add('empty leaderboard falls back to seeds','leaderboard',{query:{limit:'-3'},status:200,providerOnly:true});
 add('version compiled fallback','version',{status:200,noUpstream:true});
 for (const mode of ['auth-outage','auth-redirect','auth-identity-mismatch','profile-outage'])
- add('authentication fails closed '+mode,'video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,fixture:mode,status:401,authOnly:true});
+ add('authentication fails closed '+mode,'video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,fixture:mode,status:mode==='auth-identity-mismatch'?401:503,authOnly:true});
 add('authenticated level rejects invalid video ID','video-level',{body:{videoId:'short',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:400,authOnly:true});
 add('authenticated category persistence','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,status:200,authOnly:true,expect:{category:'news'}});
-add('authenticated level confidence clamps','video-level',{body:{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{confidence:0.85,details:{score:10,grammarCount:10000,speechRateCpm:2000}}});
+add('authenticated level confidence clamps','video-level',{body:{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{confidence:0.85,details:{score:6,tier:'advanced',grammarCount:10000,speechRateCpm:2000}}});
 add('authenticated level ignores spoofed authority','video-level',{body:{videoId:'12345678901',language:'ja',level:'JLPT N4',confidence:1,grammarCount:100,method:'metadata',forceUpdate:true,details:{forceUpdate:true}},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{method:'linguistics',confidence:0.85,level:'JLPT N4'}});
 add('diamond rate limit exact boundary','diamonds',{repeat:61,status:429,initialStatus:200,noUpstream:true});
 add('version conditional ETag','version',{conditional:true,status:304,noUpstream:true});

@@ -1,3 +1,5 @@
+import { readGradeStatus, serverGradingEnabled } from '../services/video-grading-jobs.js';
+import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 /**
  * Video Level API (Cloudflare Function)
  * Stores and updates computed language difficulty levels for videos
@@ -6,7 +8,7 @@
  * Body: { videoId: string, language: string, level: string, details?: object }
  */
 
-import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage, errorResponse } from '../utils/utils.js';
+import { jsonResponse, sanitizeVideoId, sanitizeLanguage, errorResponse, getRequestJson } from '../utils/utils.js';
 import { saveVideoLevel, labelToTier } from '../data/video-info-db.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { validateAuthToken, unauthorizedResponse } from '../middlewares/auth.js';
@@ -42,8 +44,21 @@ export function normalizeIncomingTier(raw) {
     return null;
 }
 
-export async function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
+export async function onRequestGet(context) {
+    const { request, env } = context;
+    const params = new URL(request.url).searchParams;
+    const videoId = sanitizeVideoId(params.get('videoId'));
+    const language = sanitizeLanguage(normalizeLanguageCode(params.get('language')));
+    if (!videoId || !language) return jsonResponse({ error: 'Invalid video ID or language' }, 400);
+    const limit = await consumeRateLimit(env.TRANSCRIPT_CACHE, getClientIdentifier(request),
+        { max: 120, windowSeconds: 60, keyPrefix: 'video_level_status' }, context);
+    if (!limit.allowed) return rateLimitResponse(limit.resetAt);
+    try {
+        return jsonResponse({ videoId, language, ...await readGradeStatus(env, videoId, language) },
+            200, { 'Cache-Control': 'no-store' });
+    } catch {
+        return errorResponse('Video grade unavailable', 503);
+    }
 }
 
 export async function onRequestPost(context) {
@@ -58,14 +73,15 @@ export async function onRequestPost(context) {
 
     // Require authentication to submit video levels to prevent community catalog pollution
     const authResult = await validateAuthToken(request, env);
+    if (authResult.response) return authResult.response;
     if (!authResult.valid) {
         return unauthorizedResponse(authResult.error || 'Authentication required to submit video level');
     }
 
     try {
-        const body = await request.json();
+        const body = await getRequestJson(context);
         const videoId = sanitizeVideoId(body?.videoId);
-        const language = sanitizeLanguage(body?.language, ['ja', 'zh', 'ko', 'en']);
+        const language = sanitizeLanguage(normalizeLanguageCode(body?.language));
         const rawLevel = typeof body?.level === 'string' ? body.level.trim() : '';
         const level = normalizeIncomingLevel(rawLevel);
 
@@ -74,6 +90,11 @@ export async function onRequestPost(context) {
         }
         if (!language) {
             return jsonResponse({ error: 'Invalid language. Must be ja, zh, ko, or en' }, 400);
+        }
+        if (serverGradingEnabled(env)) {
+            const grade = await readGradeStatus(env, videoId, language);
+            return jsonResponse({ success: grade.gradingStatus === 'ready', videoId, language, ...grade },
+                grade.gradingStatus === 'ready' ? 200 : 202, { 'Cache-Control': 'no-store' });
         }
         if (!level || level.length > 30 || !VALID_LEVEL_REGEX.test(level)) {
             return jsonResponse({ error: 'Invalid level format. Must match standard proficiency levels (e.g. JLPT N4, HSK 2, CEFR B1)' }, 400);
@@ -151,10 +172,11 @@ export async function onRequestPost(context) {
             success: true,
             videoId,
             language,
-            level: typeof saved === 'string' ? saved : saved.level,
-            confidence: typeof saved === 'object' ? saved.confidence : confidence,
-            method: typeof saved === 'object' ? saved.method : method,
-            details: Object.keys(details).length > 0 ? details : undefined,
+            ...saved,
+            details: Object.fromEntries(
+                ['score', 'tier', 'grammarCount', 'speechRateCpm', 'breakdown']
+                    .filter(key => saved[key] !== undefined).map(key => [key, saved[key]])
+            ),
             levels: updatedLevels
         }, 200);
 

@@ -20,7 +20,7 @@ graph TB
         MW_Rate[Distributed Rate Limiter]
         MW_Auth[Supabase JWT Validator]
         
-        API_Transcript["/api/transcript"]
+        API_Transcript["/api/transcript · verified native tracks and AI jobs"]
         API_GladiaWebhook["/api/gladia-webhook"]
         API_Dict["/api/dict"]
         API_TTS["/api/tts (Edge Neural)"]
@@ -607,3 +607,22 @@ Community reports cannot choose trusted provenance or overwrite verified difficu
 ### Transcript correctness update (2026-10-30)
 
 The transcript endpoint preserves requested-native priority while allowing known native misses to reach cross-language R2 discovery. `TranscriptService.quoteAIJob` shares submission's AI-only cache reuse rule. Regression scenarios are in `tests/diamond-enforcement.integration.mjs`; contract details are in `doc/backend-api.md`. No schema or UI changes are involved.
+
+
+Recommendation ordering (2026-11-01): `functions-src/services/recommendation.service.js` owns completion/difficulty priority, weighted scores and relevance-bounded creator spacing. `/api/recommended-videos` exposes additive ranking hints for Flutter; discovery bounds and web clients are unchanged. See [API details](backend-api.md#recommendation-ranking-polish-2026-11-01).
+
+Recommendation discovery optimization (2026-11-01): `functions-src/data/video-info-db.js` owns bounded public browse-candidate caching; the API emits independent `X-Candidate-Cache` diagnostics. See [cache behavior and bounds](backend-api.md#recommendation-discovery-optimization-2026-11-01). Ranking and private response isolation remain separate.
+
+
+Recommendation production release: `4e6ad152-0421-4b8d-a9e9-3b3c2168b11e` (2026-11-01). [Validation, cache ownership and Android test build](recommendation-optimization-deployment-2026-11-01.md).
+
+Backend audit boundaries (2026-11-04): auth middleware classifies availability separately from token rejection; route callers propagate 503 before deriving anonymous ownership. Gladia recovery owns durable ingestion while transcript callers own optional enrichment. Recommendation discovery keeps COALESCE timestamp semantics with an additive matching expression index; metadata repair has bounded concurrency and conditional writes. See [verification report](backend-audit-verification-2026-11-04.md).
+
+Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and the matching D1 expression index are live. Existing API success payloads and web assets are preserved; no Flutter release is required. See [deployment verification](backend-audit-deployment-2026-11-04.md).
+
+
+The D1 `video_languages.levels` map is the shared source for transcript, recommendation, and level submission responses. `functions-src/data/video-info-db.js` normalizes track language keys, preserves existing entries on caption saves, and validates cached recommendation levels against the catalog.
+
+Server grading uses `services/video-grading-jobs.js` for job registration and status
+and `services/video-grading.js` for grading and publication. The maintenance
+route and native and AI caption flows share that job state.

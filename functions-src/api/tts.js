@@ -9,9 +9,9 @@ import { readBoundedBody } from '../utils/response-body.js';
  */
 
 import {
-  handleOptions,
   jsonResponse,
   sanitizeLanguage,
+  getRequestJson,
 } from '../utils/utils.js';
 import { synthesizeEdgeTts, normalizeVoiceName, getCachedAudio } from '../utils/edge-tts.js';
 
@@ -72,17 +72,13 @@ async function fetchGoogleTts(text, lang) {
 export async function onRequest(context) {
   const { request } = context;
 
-  if (request.method === 'OPTIONS') {
-    return handleOptions(['GET', 'POST', 'OPTIONS']);
-  }
-
   let text = '';
   let lang = 'ja';
   let voice = undefined;
 
   if (request.method === 'POST') {
     try {
-      const body = await request.json();
+      const body = await getRequestJson(context);
       text = body?.text || '';
       lang = body?.lang || body?.language || 'ja';
       voice = body?.voice;

@@ -1,0 +1,201 @@
+{
+  "deployment_id": "a59861b3-fd06-47de-a042-dc48650b8e81",
+  "url": "https://a59861b3.lingua-tube.pages.dev",
+  "environment": "production",
+  "status": "success",
+  "previous_deployment_id": "4e6ad152-0421-4b8d-a9e9-3b3c2168b11e",
+  "configuration_preserved": true,
+  "static_files_preserved": 206,
+  "web_asset_hashes_preserved": 197,
+  "service_worker_manifest_preserved": true,
+  "d1_index": "idx_video_languages_coalesce_order",
+  "d1_database": "linguatube-vocab",
+  "d1_database_id": "35b6faad-cba0-4ad0-8033-f55799d061aa",
+  "smoke_checks": [
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 200
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 304
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 200
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 400
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "HEAD",
+      "path": "/api/version",
+      "status": 200
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "GET",
+      "path": "/api/transcript",
+      "status": 200
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "POST",
+      "path": "/api/transcript",
+      "status": 400
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "POST",
+      "path": "/api/transcript",
+      "status": 400
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "GET",
+      "path": "/api/recommended-videos?lang=ja&limit=3&seed=99114",
+      "status": 200
+    },
+    {
+      "host": "a59861b3.lingua-tube.pages.dev",
+      "method": "POST",
+      "path": "/api/video-category",
+      "status": 401
+    },
+    {
+      "host": "voca.study",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 200
+    },
+    {
+      "host": "voca.study",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 304
+    },
+    {
+      "host": "voca.study",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 200
+    },
+    {
+      "host": "voca.study",
+      "method": "GET",
+      "path": "/api/version",
+      "status": 400
+    },
+    {
+      "host": "voca.study",
+      "method": "HEAD",
+      "path": "/api/version",
+      "status": 200
+    },
+    {
+      "host": "voca.study",
+      "method": "GET",
+      "path": "/api/transcript",
+      "status": 200
+    },
+    {
+      "host": "voca.study",
+      "method": "POST",
+      "path": "/api/transcript",
+      "status": 400
+    },
+    {
+      "host": "voca.study",
+      "method": "POST",
+      "path": "/api/transcript",
+      "status": 400
+    },
+    {
+      "host": "voca.study",
+      "method": "GET",
+      "path": "/api/recommended-videos?lang=ja&limit=3&seed=99114",
+      "status": 200
+    },
+    {
+      "host": "voca.study",
+      "method": "POST",
+      "path": "/api/video-category",
+      "status": 401
+    }
+  ],
+  "source_sha256": {
+    "functions-src/providers/dictionary-apis.js": "84c7695a1845d722b16f177ab98a59221cfd6c916ce15c33292b40a04a26fcb2",
+    "functions-src/providers/payos.js": "344ec3f11e8b626c7cc05398a8fcef514d4b8e611c9a6d62c3f083128337b43c",
+    "functions-src/providers/supadata.js": "e6b7910fa056541e7f421c5bdc47d5e90fa72921aaa1cf6ff3dbd7c0ba39b3c2",
+    "functions-src/providers/lingva.js": "e448ad6614a9d5a8adb346813955e595820d249af4c1eb7cd3c648b6c2b58df9",
+    "functions-src/providers/gladia.js": "d4dd089d58f350f4f041131218b5ea9b3722e4c31d20cb8badce0658ed21cd47",
+    "functions-src/middlewares/rate-limiter.js": "64ed49e09907389a34de83c9e816f5e751ff9ba27b7f70201b52f9c7ebe2536e",
+    "functions-src/middlewares/auth.js": "c73b2baa2a315e4e3a0cc6810dceb4e5e20588b167b5aefa68b61fea705c4571",
+    "functions-src/middlewares/bot-defense.js": "7a606e5254a247103d828fe9efb54454e8ddbb997608e5c40c576e9ef6d79a09",
+    "functions-src/middlewares/video-validator.js": "c7d3c724b3fd109b03e28836673038cd3e961c5fa6855ba20e781dffacb085d7",
+    "functions-src/utils/japanese-romaji.js": "591d1dfaa8d754b329b29f25026eb45037ad430263a3687071a4c054250b78b4",
+    "functions-src/utils/svix-verifier.js": "0dac28434ec9066ba298e0a3b93bbdbfb3f92775075e048d6e23239489bb7e75",
+    "functions-src/utils/response-body.js": "436d19473dfd372c15153fc791765aaa792712b78f2d4a7942522a1d12760181",
+    "functions-src/utils/cache-manager.js": "4c09b889e378c10f328543281424964bf66e75fdca74d9f6a51b75d6072d6450",
+    "functions-src/utils/api-key-rotator.js": "6a5964e318df77e2e67c4eaef07af20e9ae2604cdc7f6f346f94564aaf83394e",
+    "functions-src/utils/translation-cache.js": "484675fb193b65e8280bb5fd820352a93f2c8ead401027846eade9b0268a4aac",
+    "functions-src/utils/edge-tts.js": "e241af7b197bbc95bfa41f625d1a14075b46937b749fde9929f3d6a273b57783",
+    "functions-src/utils/level-estimator.js": "eeb88435d3b445a0420c261833b70a0b9b4d188732a8957c896c603d9e478600",
+    "functions-src/utils/utils.js": "22b979bf2003340eaf1d2949a5d90a3d82c87de1da4ac3c110e8b280049f508a",
+    "functions-src/utils/secret-auth.js": "892c3efcd456c86736b18656f7ccaad7d7401cb8e1709c69ebbebcf847427829",
+    "functions-src/utils/transcript-utils.js": "21f343c79c43afda12df11f1446623fa430af9a0de42fa065bb1ac9c25881ffc",
+    "functions-src/utils/tokenizer.js": "c1f9b6e9b748263726c6f6bd9373163a427b01dd77e1337a093524220232d331",
+    "functions-src/utils/dict-parsers.js": "d64ce53867a83453e611b4fd87a094359f2b3eeecfa17b58f6750e7ab2b1c52a",
+    "functions-src/api/recommended-videos.js": "b2ad83ab71006682c56f5070ad937f227e817796af5869a0433d62374b9b84c9",
+    "functions-src/api/tts.js": "e532e5303165d8791348cd039cfcda6fab02fbb8c261082615eec2c49888917b",
+    "functions-src/api/heal-levels.js": "2c87cc568ad29c258a1c4e044015ccbb16a9e3eb7036d53920ca27678a782f17",
+    "functions-src/api/geo.js": "4b5160b80c218a32e53ef7db43c4da1916f4c0ba9e3ebcd88f313e76e6b17582",
+    "functions-src/api/dual-subtitles.js": "3a66abb6f9ed82efdc7a9d67cb11aadae6ffd0935adb9f9be125ca15d943cdd2",
+    "functions-src/api/leaderboard.js": "9b6e02856b33f204f8e10c67f2e8d4090264989da8c8a0c954b4c2a133b39742",
+    "functions-src/api/transcript.js": "a2c967639619cad98a9b613efc31dfdd716bf56d583f525228ecbcb206fa0c33",
+    "functions-src/api/version.js": "8aa0ba97247911602773775cc994aaf78758ca887cc411af8b29a2537ac64e17",
+    "functions-src/api/video-info.js": "c0ba0558c0d771e5ec60035bf4b1914f998e8627dfbaecd070acf646e4b28819",
+    "functions-src/api/dict.js": "b796abcf1c07d06ff53ef74e18c9157fc1f2712dd7b5e47e64f35af36e0498b4",
+    "functions-src/api/diamonds.js": "5435979163b74f25b6a134587374a5f133cca5c10e9fb387bd84ae79284d3545",
+    "functions-src/api/video-category.js": "621b5e2480a7d0d336995cc823abfd584f3d9dfbc513bc02bb232af9ee3adf42",
+    "functions-src/api/_middleware.js": "10eca6198c69635bd88db95cabc69cc8343da31f4d1ef781a563c2c356fe1d4a",
+    "functions-src/api/video-level.js": "6c4fd36618ed49ec40291cd19c9d253da9ec5d8e54d9b55a4ed2f0140d125089",
+    "functions-src/api/gladia-webhook.js": "ab2d4c397b4327127972aae2b8639a2bd30a54407bf4b8d7e9e726af415bdf1a",
+    "functions-src/api/kanji.js": "a27457b90f3249d81738e885cebf14a046ff9144bfedce4379590fa625f4b9ef",
+    "functions-src/data/video-info-db.js": "c92ea2fc39680cad7435092a52978c396beda3fe9e72cb4235170a7c6c2d8308",
+    "functions-src/data/transcript-db.js": "f1f9c09d9d08b80ecf2f5e5b73d650164bfb2f0f216e59d50ce00a62bedc6245",
+    "functions-src/data/anonymous-credits.js": "431aaa6267a155d7d63a91d3376f7334c90a06fbc8949768ef817fdf093746f9",
+    "functions-src/data/transcript-r2.js": "6f68c1c31900564e454c715e8ca83020d82c81a5cbc2fd9ae442c7e3dd932b78",
+    "functions-src/services/transcript-enrichment.js": "41915ba75b9c5d95e964455036ea6ca4a94d627ffc812295726a579c6bddd804",
+    "functions-src/services/transcript.service.js": "c1ba8179bc585274fd5352f5825498550b8c584328b503d8234b4a0f8ceec429",
+    "functions-src/services/video-metadata.service.js": "93f09082f50a45a406c0e8d679b9d05ecd877048c018c2d75b30ead96fe65a21",
+    "functions-src/services/supabase-rest.js": "267f383ad421323e97c821d8a588497b7f3a2920d8b31019737aae25a37a69f5",
+    "functions-src/services/recommendation.service.js": "addf46ecc7fca29a54001e94609b647570789b1ebe81ebf3f8f19649022cf0c4",
+    "functions-src/services/dict.service.js": "e151001955e86017c85fbf703c52980b7ddcb36e32dfba6e50d202309d3039bf",
+    "functions-src/services/turnstile.service.js": "208dfb8135fb95a22fe63f373bda1c53c5ace2b4c22e8eef14103f9d0fb664cd",
+    "functions-src/services/refund-recovery.js": "1605f05342aeb9be9e12c4264a2a54cfa83ab2f0017d131b34f5047ae48f3128",
+    "functions-src/services/category.service.js": "2e323f611b808e54e568766f6a34e4fa516088618ea13026911cf535186f1462",
+    "functions-src/services/gladia-recovery.js": "44bfd2d833725fd1feb65639dfc0c5956950aabb9e172d1907b5334ee536aece",
+    "functions-src/services/diamond.service.js": "14f48650210f3a77fdcefe8365fec041e88662ffdc8d62a1e8c906700cd20123",
+    "functions-src/services/revenuecat-recovery.js": "2dbb9832e1dbe01d22aef95cf680c5f4a24589445a3146c57ad46388a6f45883",
+    "functions-src/api/translate/batch.js": "7364b9b9240c0cf27cda3d4f06a55f1a001f88d60350e07aee27bd9b77168618",
+    "functions-src/api/translate/[[path]].js": "0042d1f1a6700664738ee0f088af9d5fc9e1b14ca0bf9de2431f0720ebecb3ad",
+    "functions-src/api/payment/webhook.js": "ac33fa9a03b4b3ada1ba754abae642e8a5e441b93a5330496e3538d53a8d5e5d",
+    "functions-src/api/payment/revenuecat-webhook.js": "61d625546c6b4dd5ed25042a966ead8a01e4d26240dd6ddc51a4f3b767eb6497",
+    "functions-src/api/payment/check-status.js": "0ff9cf049eb1d077eee4017de25b73bb077e525f3251898bda7922497595d1cf",
+    "functions-src/api/payment/create-order.js": "3402834c4280b21dadcfca855e398fa352343a4c9c3ab77b02bb2a204a749fbc",
+    "functions-src/api/internal/reconcile.js": "b99cbc38de60cb81e1cd936acd5656539104a37b4d40f28234270f40f95e5f8d",
+    "functions-src/api/tokenize-batch/[lang].js": "4ae670cdd14214c1dc44d039ef20b588ea4e093c08da36d762cc2f4673506c87",
+    "functions-src/api/tokenize/[lang].js": "5bb8343fbaf9d9c81919c980700e914e76def003a8f753354f0c41144896fc96"
+  }
+}

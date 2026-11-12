@@ -1,3 +1,5 @@
+import { scheduleVideoGrade } from './video-grading.js';
+import { serverGradingEnabled } from './video-grading-jobs.js';
 import { resolveVerifiedVideoMetadata } from './video-metadata.service.js';
 import { enrichPublishedTranscript } from './transcript-enrichment.js';
 import { ingestGladiaJob, recoverGladiaSubmission } from './gladia-recovery.js';
@@ -27,11 +29,10 @@ import {
     saveTranscriptToR2
 } from '../data/transcript-r2.js';
 
-import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
+import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage, adjustAvailableLanguages } from '../utils/transcript-utils.js';
 import { resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig, transcriptionDiamondCost } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
-import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 
 const MAX_AI_VIDEO_DURATION_SECONDS = 45 * 60;   // 45 minutes (maximum ceiling across any tier)
 
@@ -57,14 +58,18 @@ export class TranscriptService {
         const { db, r2, cache, env, waitUntil } = context;
 
         // Fetch captions via Provider
-        const nativeResult = await this.supadataProvider.fetchCaptions(videoId, lang, cache);
+        const nativeResult = await this.supadataProvider.fetchCaptions(videoId, lang, cache, options.retryTimeout);
 
         if (nativeResult?.segments?.length > 0) {
-            const actualLang = normalizeLanguageCode(nativeResult.detectedLang) || normalizeLanguageCode(lang) || lang;
+            const actualLang = normalizeLanguageCode(nativeResult.detectedLang);
             const cleanedSegments = cleanTranscriptSegments(nativeResult.segments);
+            if (!actualLang || !cleanedSegments.length) {
+                return { unavailable: true, segments: [], availableLangs: [] };
+            }
+            const languageMismatch = actualLang !== normalizeLanguageCode(lang);
 
             const rawAvailable = nativeResult.availableLangs?.length > 0 ? nativeResult.availableLangs : [actualLang];
-            const availableLangs = Array.from(new Set(rawAvailable.map(l => normalizeLanguageCode(l) || l)));
+            const availableLangs = Array.from(new Set(rawAvailable.map(normalizeLanguageCode).filter(Boolean)));
             if (!availableLangs.includes(actualLang)) {
                 availableLangs.unshift(actualLang);
             }
@@ -80,8 +85,12 @@ export class TranscriptService {
             // Background async persistence and morphological enrichment
             // Persist useful captions before any optional enrichment work.
             const backgroundSaveTask = async () => {
-                const persisted = await saveTranscriptToR2(r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata');
-                const enrichedSegments = cleanedSegments;
+                const persisted = !languageMismatch && await saveTranscriptToR2(
+                    r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata', null, nativeResult.trackLanguage
+                );
+                if (persisted && serverGradingEnabled(env) && waitUntil) {
+                    waitUntil(scheduleVideoGrade(env, videoId, actualLang, { regrade: true }));
+                }
                 const savePromises = [
                     ...(persisted ? [addSubLanguage(db, videoId, actualLang)] : []),
                     deleteNoTranscript(db, videoId, actualLang, 'native')
@@ -91,9 +100,6 @@ export class TranscriptService {
                 if (!avatar && db && (options.title || options.channel || effectiveDuration)) {
                     try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
                 }
-                const estimatedLevel = estimateTranscriptLevel(enrichedSegments, actualLang, { title: options.title, channel: options.channel });
-                const levelsObj = estimatedLevel ? { [actualLang]: estimatedLevel } : null;
-
                 savePromises.push(saveVideoLanguages(
                     db,
                     videoId,
@@ -102,13 +108,18 @@ export class TranscriptService {
                     options.title || null,
                     options.channel || null,
                     false,
-                    levelsObj,
+                    null,
                     avatar,
                     persisted ? [actualLang] : null
                 ));
 
                 await Promise.allSettled(savePromises);
-                if (persisted) await enrichPublishedTranscript(r2, videoId, actualLang);
+                if (persisted) {
+                    if (serverGradingEnabled(env) && !waitUntil) {
+                        await scheduleVideoGrade(env, videoId, actualLang, { regrade: true });
+                    }
+                    await enrichPublishedTranscript(r2, videoId, actualLang);
+                }
             };
 
             if (waitUntil) {
@@ -121,13 +132,14 @@ export class TranscriptService {
                 ...nativeResult,
                 segments: cleanedSegments,
                 detectedLang: actualLang,
-                availableLangs
+                availableLangs,
+                languageMismatch
             };
         }
 
         // If native captions for requested lang were not found, but other languages are available (e.g. video is in zh, user asked for ja)
         if (nativeResult?.availableLangs?.length > 0) {
-            const normalizedAvailable = Array.from(new Set(nativeResult.availableLangs.map(l => normalizeLanguageCode(l) || l)));
+            const normalizedAvailable = Array.from(new Set(nativeResult.availableLangs.map(normalizeLanguageCode).filter(Boolean)));
             const savePromises = [];
             if (options.title || options.channel || options.duration) {
                 const saveLanguages = async () => {
@@ -159,7 +171,8 @@ export class TranscriptService {
             return {
                 segments: [],
                 availableLangs: normalizedAvailable,
-                languageMismatch: true
+                unavailable: nativeResult.unavailable,
+                languageMismatch: nativeResult.languageMismatch ?? !normalizedAvailable.includes(normalizeLanguageCode(lang))
             };
         }
 
@@ -245,7 +258,7 @@ export class TranscriptService {
                     segments: existingR2.segments,
                     source: 'ai',
                     sourceDetail: existingR2.source,
-                    availableLanguages: params.availableLanguages
+                    availableLanguages: adjustAvailableLanguages(params.availableLanguages, normalizedLang, 'ai')
                 }
             };
         }
@@ -388,7 +401,7 @@ export class TranscriptService {
                             segments: r2Transcript.segments,
                             source: 'ai',
                             sourceDetail: r2Transcript.source || 'gladia',
-                            availableLanguages,
+                            availableLanguages: adjustAvailableLanguages(availableLanguages, resolvedLang, 'ai'),
                             subLanguages: [resolvedLang],
                             whisperAvailable: Boolean(diamondInfo?.diamonds > 0)
                         }
@@ -416,7 +429,7 @@ export class TranscriptService {
                         segments: r2Transcript.segments,
                         source: 'ai',
                         sourceDetail: 'gladia',
-                        availableLanguages,
+                        availableLanguages: adjustAvailableLanguages(availableLanguages, targetLang, 'ai'),
                         subLanguages: [targetLang]
                     }
                 };
@@ -443,7 +456,10 @@ export class TranscriptService {
 
         if (jobAge > 15 && job.gladia_job_id && env.GLADIA_API_KEY) {
             try {
-                const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider, Date.now() + 20000, { waitUntil: context.waitUntil });
+                const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider, Date.now() + 20000);
+                if (outcome?.status === 'done' && context.waitUntil) {
+                    context.waitUntil(enrichPublishedTranscript(r2, targetVideoId, outcome.language));
+                }
                 if (outcome?.status === 'error') return outcome;
                 if (outcome?.status === 'done') return {
                     status: 'done', videoInfo: {
@@ -505,7 +521,7 @@ export class TranscriptService {
                             segments: enrichedSegments,
                             source: 'ai',
                             sourceDetail: 'gladia',
-                            availableLanguages,
+                            availableLanguages: adjustAvailableLanguages(availableLanguages, detectedLang || lang, 'ai'),
                             subLanguages: [detectedLang || lang]
                         }
                     };

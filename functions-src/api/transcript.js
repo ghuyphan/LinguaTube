@@ -13,7 +13,7 @@ import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
 import { validateVideoRequest } from '../middlewares/video-validator.js';
 import { getNextApiKey, markKeyRateLimited } from '../utils/api-key-rotator.js';
 import {
-    jsonResponse, handleOptions, errorResponse, logError, sanitizeVideoId
+    jsonResponse, handleOptions, errorResponse, logError, sanitizeVideoId, getRequestJson
 } from '../utils/utils.js';
 import { consumeRateLimit, getClientIdentifier, getTieredConfig, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
@@ -26,8 +26,10 @@ import {
 
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { getActiveAiJob } from '../data/transcript-db.js';
-import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { normalizeLanguageCode, adjustAvailableLanguages } from '../utils/transcript-utils.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
+import { scheduleVideoGrade } from '../services/video-grading.js';
+import { serverGradingActive, serverGradingEnabled } from '../services/video-grading-jobs.js';
 
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
@@ -47,13 +49,10 @@ const TRANSCRIPT_RATE_LIMIT = { max: { anonymous: 20, free: 40, pro: 80, premium
 const QUOTE_RATE_LIMIT = { max: { anonymous: 60, free: 120, pro: 180, premium: 240 }, windowSeconds: 3600, keyPrefix: 'transcript_quote' };
 const POLL_RATE_LIMIT = { max: { anonymous: 180, free: 240, pro: 360, premium: 480 }, windowSeconds: 3600, keyPrefix: 'transcript_poll' };
 const CACHE_CONTROL = {
-    R2_HIT: 'public, max-age=86400, stale-while-revalidate=86400',
-    NATIVE: 'public, max-age=604800, stale-while-revalidate=86400',
-    AI: 'public, max-age=604800, stale-while-revalidate=86400',
     NO_CACHE: 'no-store'
 };
 
-export function onRequestOptions() { return handleOptions(['GET', 'POST', 'OPTIONS']); }
+const MAX_FALLBACK_CACHE_READS = 6;
 
 export async function onRequestGet(context) {
     const { env } = context;
@@ -75,7 +74,7 @@ export async function onRequestPost(context) {
     const elapsed = timer();
 
     try {
-        const body = await request.json();
+        const body = await getRequestJson(context);
         if (!body || typeof body !== 'object' || Array.isArray(body) ||
             ['preferAI', 'forceRefresh', 'quoteOnly'].some(key => body[key] != null && typeof body[key] !== 'boolean') ||
             (body.expectedDiamondCost != null && (!Number.isInteger(body.expectedDiamondCost) || body.expectedDiamondCost < 0 || body.expectedDiamondCost > 4)) ||
@@ -149,6 +148,7 @@ export async function onRequestPost(context) {
         }
 
         const authResult = await validateAuthToken(request, env);
+        if (authResult.response) return authResult.response;
         const clientId = getClientIdentifier(request, authResult);
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
 
@@ -207,6 +207,40 @@ export async function onRequestPost(context) {
             }
         }
 
+        const resolveLevels = async (videoId, language, segments, info, snapshot) => {
+            const levels = info?.levels || {};
+            if (serverGradingEnabled(env)) {
+                if (waitUntil) waitUntil(scheduleVideoGrade(env, videoId, language, { snapshot }));
+                return levels;
+            }
+            if (levels[language] && !levels[language].isProvisional) return levels;
+            const estimated = estimateTranscriptLevel(segments, language, {
+                title: info?.title || '', channel: info?.channel || ''
+            });
+            if (!estimated) return levels;
+            const stored = await saveVideoLevel(db, null, videoId, language,
+                estimated.level, estimated.confidence, estimated.method, { ...estimated, onlyIfMissing: true });
+            return stored?.[language] ? stored : {
+                ...levels, [language]: { ...estimated, language, isProvisional: true }
+            };
+        };
+
+        const grading = (levels, language, eligible = true) => serverGradingEnabled(env)
+            ? { gradingStatus: levels[language] && !levels[language].isProvisional
+                ? 'ready' : eligible && serverGradingActive(env) ? 'pending' : 'unavailable' }
+            : {};
+
+        const aiResponse = async (videoInfo) => {
+            const info = await getVideoLanguages(db, videoInfo.videoId);
+            const language = normalizeLanguageCode(videoInfo.language);
+            const levels = await resolveLevels(videoInfo.videoId,
+                language, videoInfo.segments, info);
+            const responseAvailableLanguages = adjustAvailableLanguages(videoInfo.availableLanguages || availableLanguages, language, 'ai');
+            return jsonResponse({ success: true, ...videoInfo, availableLanguages: responseAvailableLanguages, levels,
+                ...grading(levels, language, !videoInfo.languageMismatch), ...diamondInfo, timing: elapsed() },
+                200, { 'Cache-Control': CACHE_CONTROL.NO_CACHE });
+        };
+
         // -------------------------------------------------------------
         // Polling existing AI (Opaque jobId or legacy resultUrl)
         // -------------------------------------------------------------
@@ -217,103 +251,53 @@ export async function onRequestPost(context) {
 
             if (aiRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiRes }, 202);
             if (aiRes.status === 'error') return jsonResponse({ success: false, errorCode: aiRes.errorCode || 'AI_JOB_FAILED', error: aiRes.error || 'AI transcription failed', ...diamondInfo, timing: elapsed() }, 400);
-            return jsonResponse({ success: true, ...aiRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
+            return await aiResponse(aiRes.videoInfo);
         }
 
-        // -------------------------------------------------------------
-        // Step 1: Cache (R2 Hit)
-        // -------------------------------------------------------------
+        const requestedLanguage = normalizeLanguageCode(lang);
+        const cachedResponse = async (saved, storageLanguage, cacheStatus) => {
+            const language = normalizeLanguageCode(saved.language);
+            const languageMismatch = language !== requestedLanguage;
+            const refreshDeferred = cacheStatus === 'STALE';
+            const levels = refreshDeferred || languageMismatch
+                ? knownInfo?.levels || {}
+                : await resolveLevels(cleanVideoId, language, saved.segments, knownInfo, saved);
+
+            if (!refreshDeferred) {
+                if (waitUntil && !saved.segments.every(cue => cue.tokens?.length)) {
+                    waitUntil(enrichPublishedTranscript(r2, cleanVideoId, storageLanguage));
+                }
+
+                // Caption duration is a display estimate. AI pricing uses official metadata.
+                if (!languageMismatch && !knownInfo?.durationSeconds && waitUntil && db) {
+                    const lastCue = saved.segments.at(-1);
+                    const inferredSec = Math.round(lastCue.start + lastCue.duration);
+                    if (inferredSec > 0) {
+                        waitUntil(Promise.resolve().then(() => db.prepare(`
+                            UPDATE video_languages SET duration_seconds=?, updated_at=unixepoch()
+                            WHERE video_id=? AND (duration_seconds IS NULL OR duration_seconds=0)
+                        `).bind(inferredSec, cleanVideoId).run()).catch(() => {}));
+                    }
+                }
+            }
+
+            const responseAvailableLanguages = adjustAvailableLanguages(availableLanguages, language, saved.source);
+
+            return jsonResponse({
+                success: true, videoId: cleanVideoId, language, requestedLanguage: lang, segments: saved.segments,
+                source: preferAI ? 'ai' : 'cache', sourceDetail: saved.source, trackLanguage: saved.trackLanguage,
+                availableLanguages: responseAvailableLanguages, subLanguages: knownInfo?.subLanguages || [language],
+                whisperAvailable: diamondInfo.diamonds > 0, languageMismatch, levels,
+                ...grading(levels, language, !languageMismatch),
+                ...(refreshDeferred ? { refreshDeferred } : {}),
+                ...diamondInfo, timing: elapsed()
+            }, 200, { 'X-Cache': cacheStatus, 'Cache-Control': CACHE_CONTROL.NO_CACHE });
+        };
+
         if (!forceRefresh) {
-            let cached = await getTranscriptFromR2(r2, cleanVideoId, lang);
-            let responseLang = lang;
-
-            // If user explicitly requests AI, only return an existing AI transcript for this exact language from R2.
-            // Never fall back to other languages in R2 or return native transcripts when preferAI is true!
-            if (preferAI) {
-                if (cached?.segments?.length > 0 && cached.source === 'ai') {
-                    const targetNormLang = (lang || '').split('-')[0].toLowerCase();
-                    if (waitUntil && !cached.segments.every(s => s.tokens?.length)) waitUntil(enrichPublishedTranscript(r2, cleanVideoId, lang));
-
-                    const responseLevels = { ...(knownInfo?.levels || {}) };
-                    const existingLvl = responseLevels[targetNormLang];
-                    const needsLvlRecalc = !existingLvl || existingLvl.method === 'server_heuristic' || existingLvl.method === 'metadata';
-                    if (needsLvlRecalc && cached.segments?.length > 0) {
-                        const estimated = estimateTranscriptLevel(cached.segments, targetNormLang, { title: body.title, channel: body.channel });
-                        if (estimated) {
-                            responseLevels[targetNormLang] = estimated;
-                            if (waitUntil && db) {
-                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, { ...estimated, forceUpdate: true }).catch(() => {}));
-                            }
-                        }
-                    }
-
-                    // Self-healing: if video_languages in D1 lacks duration, backfill it from cached segments
-                    if ((!knownInfo?.durationSeconds || knownInfo.durationSeconds === 0) && cached.segments?.length > 0 && waitUntil && db) {
-                        const lastCue = cached.segments[cached.segments.length - 1];
-                        const inferredSec = Math.round((lastCue.start || 0) + (lastCue.duration || 0));
-                        if (inferredSec > 0) {
-                            waitUntil(
-                                db.prepare('UPDATE video_languages SET duration_seconds = ?, updated_at = strftime("%s", "now") WHERE video_id = ? AND (duration_seconds IS NULL OR duration_seconds = 0)')
-                                    .bind(inferredSec, cleanVideoId)
-                                    .run()
-                                    .catch(() => {})
-                            );
-                        }
-                    }
-
-                    return jsonResponse({
-                        success: true, videoId: cleanVideoId, language: lang, requestedLanguage: lang, segments: cached.segments,
-                        source: 'ai', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [lang], whisperAvailable: diamondInfo.diamonds > 0,
-                        languageMismatch: false,
-                        levels: responseLevels,
-                        ...diamondInfo, timing: elapsed()
-                    }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.AI });
-                }
-                // If not in R2 as AI, bypass Step 1 and proceed to Step 3 (Gladia AI)
-            } else {
-                if (cached?.segments?.length > 0) {
-                    const normReq = normalizeLanguageCode(lang);
-                    const normRes = normalizeLanguageCode(responseLang);
-                    const isMismatch = Boolean(normReq && normRes && normReq !== normRes);
-
-                    const targetNormLang = (normRes || responseLang || '').split('-')[0].toLowerCase();
-                    if (waitUntil && !cached.segments.every(s => s.tokens?.length)) waitUntil(enrichPublishedTranscript(r2, cleanVideoId, responseLang));
-
-                    const responseLevels = { ...(knownInfo?.levels || {}) };
-                    const existingLvl = responseLevels[targetNormLang];
-                    const needsLvlRecalc = !existingLvl || existingLvl.method === 'server_heuristic' || existingLvl.method === 'metadata';
-                    if (needsLvlRecalc && cached.segments?.length > 0) {
-                        const estimated = estimateTranscriptLevel(cached.segments, targetNormLang, { title: body.title, channel: body.channel });
-                        if (estimated) {
-                            responseLevels[targetNormLang] = estimated;
-                            if (waitUntil && db) {
-                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, { ...estimated, forceUpdate: true }).catch(() => {}));
-                            }
-                        }
-                    }
-
-                    // Self-healing: if video_languages in D1 lacks duration, backfill it from cached segments
-                    if ((!knownInfo?.durationSeconds || knownInfo.durationSeconds === 0) && cached.segments?.length > 0 && waitUntil && db) {
-                        const lastCue = cached.segments[cached.segments.length - 1];
-                        const inferredSec = Math.round((lastCue.start || 0) + (lastCue.duration || 0));
-                        if (inferredSec > 0) {
-                            waitUntil(
-                                db.prepare('UPDATE video_languages SET duration_seconds = ?, updated_at = strftime("%s", "now") WHERE video_id = ? AND (duration_seconds IS NULL OR duration_seconds = 0)')
-                                    .bind(inferredSec, cleanVideoId)
-                                    .run()
-                                    .catch(() => {})
-                            );
-                        }
-                    }
-
-                    return jsonResponse({
-                        success: true, videoId: cleanVideoId, language: responseLang, requestedLanguage: lang, segments: cached.segments,
-                        source: 'cache', sourceDetail: cached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [responseLang], whisperAvailable: diamondInfo.diamonds > 0,
-                        languageMismatch: isMismatch,
-                        levels: responseLevels,
-                        ...diamondInfo, timing: elapsed()
-                    }, 200, { 'X-Cache': 'HIT', 'Cache-Control': CACHE_CONTROL.R2_HIT });
-                }
+            const cached = await getTranscriptFromR2(r2, cleanVideoId, lang);
+            if (cached && (!preferAI || cached.source === 'ai')) {
+                return await cachedResponse(cached, lang, 'HIT');
             }
         }
 
@@ -322,7 +306,7 @@ export async function onRequestPost(context) {
         // -------------------------------------------------------------
         if (!preferAI) {
             // Check if there is an active AI job for this video
-            const activeJob = await getActiveAiJob(db, cleanVideoId, lang, diamondService, env, context);
+            const activeJob = forceRefresh ? null : await getActiveAiJob(db, cleanVideoId, lang, diamondService, env, context);
             if (activeJob) {
                 return jsonResponse({
                     success: false,
@@ -342,8 +326,7 @@ export async function onRequestPost(context) {
             } else if (await isNoTranscript(db, cache, cleanVideoId, lang, 'native')) {
                 nativeSkipReason = 'negative';
             } else if (knownInfo?.availableLanguages?.length > 0) {
-                const normLang = normalizeLanguageCode(lang);
-                const hasLang = knownInfo.availableLanguages.some(l => normalizeLanguageCode(l) === normLang);
+                const hasLang = knownInfo.availableLanguages.some(l => normalizeLanguageCode(l) === requestedLanguage);
                 if (!hasLang) nativeSkipReason = 'language';
             }
 
@@ -352,89 +335,81 @@ export async function onRequestPost(context) {
                 title: body.title,
                 channel: body.channel,
                 duration: body.duration,
-                channelAvatar: body.channelAvatar
+                channelAvatar: body.channelAvatar,
+                retryTimeout: !forceRefresh || !subLanguages.some(l => normalizeLanguageCode(l) === requestedLanguage)
             });
+            if (nativeResult?.availableLangs?.length > 0) {
+                availableLanguages.native = nativeResult.availableLangs;
+            }
             if (nativeResult?.segments?.length > 0) {
-                const actualLang = nativeResult.detectedLang || lang;
-                const updatedInfo = await getVideoLanguages(db, cleanVideoId);
-                availableLanguages.native = updatedInfo?.availableLanguages || nativeResult.availableLangs || [actualLang];
+                const actualLang = nativeResult.detectedLang;
+                const levels = nativeResult.languageMismatch || serverGradingEnabled(env)
+                    ? knownInfo?.levels || {}
+                    : await resolveLevels(cleanVideoId, actualLang, nativeResult.segments,
+                        await getVideoLanguages(db, cleanVideoId));
 
                 return jsonResponse({
                     success: true, videoId: cleanVideoId, language: actualLang, requestedLanguage: lang, segments: nativeResult.segments,
-                    source: 'native', sourceDetail: nativeResult.source, availableLanguages, subLanguages: updatedInfo?.subLanguages || [actualLang], whisperAvailable: diamondInfo.diamonds > 0,
+                    source: 'native', sourceDetail: nativeResult.source, trackLanguage: nativeResult.trackLanguage, availableLanguages, subLanguages: knownInfo?.subLanguages || [actualLang], whisperAvailable: diamondInfo.diamonds > 0,
                     languageMismatch: nativeResult.languageMismatch || false,
-                    levels: updatedInfo?.levels || {},
+                    levels,
+                    ...grading(levels, actualLang, !nativeResult.languageMismatch),
                     ...diamondInfo, timing: elapsed()
-                }, 200, { 'Cache-Control': CACHE_CONTROL.NATIVE });
+                }, 200, { 'Cache-Control': CACHE_CONTROL.NO_CACHE });
             }
 
-            if (nativeResult?.availableLangs?.length > 0) {
-                availableLanguages.native = nativeResult.availableLangs;
+            // Keep an exact, verified saved copy usable during a provider outage.
+            // A confirmed miss or language mismatch can still reveal a track change.
+            if (forceRefresh && (!nativeResult || nativeResult.unavailable) && !nativeResult?.languageMismatch) {
+                const saved = await getTranscriptFromR2(r2, cleanVideoId, lang);
+                if (saved) return await cachedResponse(saved, lang, 'STALE');
             }
 
             // Fallback: If requested language is not available natively on YouTube,
             // check if another language was cached in R2 to offer as a language mismatch
             const allCandidateLangs = Array.from(new Set([
-                ...(nativeLanguages || []),
-                ...(availableLanguages.native || []),
-                ...(knownInfo?.subLanguages || [])
-            ])).filter(a => a !== lang);
+                ...subLanguages,
+                ...availableLanguages.native,
+                ...nativeLanguages
+            ])).filter(a => normalizeLanguageCode(a) !== requestedLanguage)
+                .slice(0, MAX_FALLBACK_CACHE_READS);
 
             if (allCandidateLangs.length > 0) {
                 const altResults = await Promise.all(
-                    allCandidateLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang).then(res => ({ altLang, res })))
+                    allCandidateLangs.map(altLang => getTranscriptFromR2(r2, cleanVideoId, altLang))
                 );
-                const found = altResults.find(item => item.res?.segments?.length > 0);
-                if (found) {
-                    const fallbackCached = found.res;
-                    const fallbackLang = found.altLang;
-                    const normReq = normalizeLanguageCode(lang);
-                    const normRes = normalizeLanguageCode(fallbackLang);
-                    const isMismatch = Boolean(normReq && normRes && normReq !== normRes);
-
-                    const targetNormLang = (normRes || fallbackLang || '').split('-')[0].toLowerCase();
-                    if (waitUntil && !fallbackCached.segments.every(s => s.tokens?.length)) waitUntil(enrichPublishedTranscript(r2, cleanVideoId, fallbackLang));
-
-                    const responseLevels = { ...(knownInfo?.levels || {}) };
-                    const existingLvl = responseLevels[targetNormLang];
-                    const needsLvlRecalc = !existingLvl || existingLvl.method === 'server_heuristic' || existingLvl.method === 'metadata';
-                    if (needsLvlRecalc && fallbackCached.segments?.length > 0) {
-                        const estimated = estimateTranscriptLevel(fallbackCached.segments, targetNormLang, { title: body.title, channel: body.channel });
-                        if (estimated) {
-                            responseLevels[targetNormLang] = estimated;
-                            if (waitUntil && db) {
-                                waitUntil(saveVideoLevel(db, null, cleanVideoId, targetNormLang, estimated.level, estimated.confidence, estimated.method, { ...estimated, forceUpdate: true }).catch(() => {}));
-                            }
-                        }
-                    }
-
-                    return jsonResponse({
-                        success: true, videoId: cleanVideoId, language: fallbackLang, requestedLanguage: lang, segments: fallbackCached.segments,
-                        source: 'cache', sourceDetail: fallbackCached.source, availableLanguages, subLanguages: knownInfo?.subLanguages || [fallbackLang], whisperAvailable: diamondInfo.diamonds > 0,
-                        languageMismatch: isMismatch,
-                        levels: responseLevels,
-                        ...diamondInfo, timing: elapsed()
-                    }, 200, { 'X-Cache': 'LANG_MISMATCH' });
+                const fallbackIndex = altResults.findIndex(Boolean);
+                if (fallbackIndex !== -1) {
+                    return await cachedResponse(altResults[fallbackIndex], allCandidateLangs[fallbackIndex], 'LANG_MISMATCH');
                 }
             }
 
-            if (nativeSkipReason) {
-                const isLanguageMismatch = nativeSkipReason === 'language';
+            if (nativeSkipReason || nativeResult?.languageMismatch) {
+                const isLanguageMismatch = nativeSkipReason === 'language' || nativeResult?.languageMismatch === true;
                 return jsonResponse({
                     success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                    ...(isLanguageMismatch ? { languageMismatch: true, subLanguages: knownInfo.subLanguages || [] } : {}),
+                    ...(isLanguageMismatch ? { languageMismatch: true, subLanguages } : {}),
                     availableLanguages, whisperAvailable: diamondStatus.diamonds > 0, ...diamondInfo,
                     errorCode: 'NO_NATIVE',
                     error: isLanguageMismatch ? 'No native captions in requested language.' : 'No native captions.',
                     timing: elapsed()
-                }, 200, { 'X-Cache': isLanguageMismatch ? 'LANG_MISMATCH' : 'NEG' });
+                }, 200, { 'X-Cache': isLanguageMismatch ? 'LANG_MISMATCH' : 'NEG', 'Cache-Control': CACHE_CONTROL.NO_CACHE });
+            }
+
+            if (!nativeResult || nativeResult.unavailable) {
+                return jsonResponse({
+                    success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
+                    availableLanguages, ...diamondInfo, errorCode: 'NATIVE_PROVIDER_UNAVAILABLE',
+                    error: 'Native captions could not be verified. Please retry.',
+                    timing: elapsed()
+                }, 503, { 'Cache-Control': CACHE_CONTROL.NO_CACHE, 'Retry-After': '10' });
             }
 
             return jsonResponse({
                 success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
                 availableLanguages, whisperAvailable: diamondStatus.diamonds > 0, ...diamondInfo,
                 errorCode: 'NO_NATIVE', error: 'No native captions found. AI available.', timing: elapsed()
-            });
+            }, 200, { 'Cache-Control': CACHE_CONTROL.NO_CACHE });
         }
 
         // -------------------------------------------------------------
@@ -468,7 +443,7 @@ export async function onRequestPost(context) {
             const aiJobRes = await transcriptService.startAIJob(serviceContext, orchestratorParams);
 
             if (aiJobRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiJobRes, ...(aiJobRes.diamondInfo || {}) }, 202);
-            return jsonResponse({ success: true, ...aiJobRes.videoInfo, ...diamondInfo, timing: elapsed() }, 200, { 'Cache-Control': CACHE_CONTROL.AI });
+            return await aiResponse(aiJobRes.videoInfo);
 
         } catch (aiErr) {
             let errorCode = aiErr.message.split(':')[0] || 'AI_SERVICE_ERROR';

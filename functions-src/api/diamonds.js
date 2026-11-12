@@ -15,15 +15,12 @@ const RATE_LIMIT_CONFIG = {
     keyPrefix: 'diamonds_api'
 };
 
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'OPTIONS']);
-}
-
 export async function onRequestGet(context) {
     const { request, env } = context;
 
     try {
         const authResult = await validateAuthToken(request, env);
+        if (authResult.response) return authResult.response;
         const clientId = getClientIdentifier(request, authResult);
         const user = authResult.valid ? authResult.user : null;
 

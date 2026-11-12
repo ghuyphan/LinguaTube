@@ -1,206 +1,164 @@
 import { matchesSecret } from '../utils/secret-auth.js';
-/**
- * Heal Video Levels API (Cloudflare Function)
- * Maintenance endpoint to audit and re-grade cached videos using the calibrated 4-language level estimator.
- * 
- * Route: POST or GET /api/heal-levels
- * Auth: Admin Supabase token or x-admin-secret header
- * Body/Query: { videoId?: string, limit?: number, offset?: number, forceAll?: boolean }
- */
-
-import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
-import { saveVideoLevel, detectLevelFromMetadata, levelToScore, labelToTier } from '../data/video-info-db.js';
-import { getTranscriptFromR2 } from '../data/transcript-r2.js';
-import { estimateTranscriptLevel } from '../utils/level-estimator.js';
+import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage } from '../utils/utils.js';
+import { getVideoLanguages, levelToScore } from '../data/video-info-db.js';
+import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { validateAuthToken } from '../middlewares/auth.js';
+import { calculateGrade, runVideoGrade } from '../services/video-grading.js';
+import {
+    enqueueVideoGrade, gradingLanguages, protectedGrade, readGradingTranscript, serverGradingActive, transcriptRevision
+} from '../services/video-grading-jobs.js';
 
-
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'POST', 'OPTIONS']);
+function restoreGrade(db, videoId, language, revision, version = null) {
+    const path = '$.' + language;
+    return db.prepare(`
+        UPDATE video_languages SET levels=(
+            SELECT CASE WHEN previous_grade IS NULL THEN json_remove(levels, ?)
+                ELSE json_set(levels, ?, json(previous_grade)) END
+            FROM video_grading_jobs WHERE video_id=? AND language=? AND revision=?
+        )
+        WHERE video_id=? AND levels -> ? = (
+            SELECT result FROM video_grading_jobs
+            WHERE video_id=? AND language=? AND revision=? AND state='ready'
+            AND (? IS NULL OR grader_version=?)
+        )
+    `).bind(path, path, videoId, language, revision, videoId, path, videoId, language, revision, version, version);
 }
 
-export async function onRequest(context) {
-    const { request, env } = context;
-    if (request.method === 'OPTIONS') {
-        return handleOptions(['GET', 'POST', 'OPTIONS']);
-    }
-
-    // 1. Authorize admin
+export async function onRequest({ request, env }) {
+    if (!['GET', 'POST'].includes(request.method)) return jsonResponse({ error: 'Method not allowed' }, 405);
     const authHeader = request.headers.get('Authorization') || '';
-    const adminSecret = request.headers.get('x-admin-secret') || '';
-    let isAuthorized = false;
-    if (env.HEAL_ADMIN_SECRET && adminSecret) isAuthorized = await matchesSecret(adminSecret, env.HEAL_ADMIN_SECRET);
-
-    if (!isAuthorized && authHeader) {
-        const authResult = await validateAuthToken(request, env);
-        const adminIds = (env.ADMIN_USER_IDS || '').split(',').map(id => id.trim()).filter(Boolean);
-        if (authResult.valid && adminIds.includes(authResult.user?.id)) {
-            isAuthorized = true;
-        }
+    const secret = request.headers.get('x-admin-secret') || '';
+    const params = new URL(request.url).searchParams;
+    const action = params.get('action') || 'backfill';
+    let authorized = Boolean(env.HEAL_ADMIN_SECRET && secret && await matchesSecret(secret, env.HEAL_ADMIN_SECRET));
+    if (!authorized && action === 'reconcile' && env.BACKEND_MAINTENANCE_SECRET) {
+        authorized = await matchesSecret(authHeader, 'Bearer ' + env.BACKEND_MAINTENANCE_SECRET);
     }
-
-    if (!isAuthorized) {
-        return jsonResponse({ error: 'Unauthorized. Admin credentials or valid secret required.' }, 401);
+    if (!authorized && authHeader) {
+        const auth = await validateAuthToken(request, env);
+        if (auth.response) return auth.response;
+        authorized = auth.valid && (env.ADMIN_USER_IDS || '').split(',').map(id => id.trim()).includes(auth.user?.id);
     }
-
-    const url = new URL(request.url);
-    let params = {};
-    if (request.method === 'POST') {
-        try {
-            params = await request.json();
-        } catch {
-            params = {};
-        }
-    }
-    const targetVideoId = sanitizeVideoId(params.videoId || url.searchParams.get('videoId'));
-    const limit = Math.min(200, Math.max(1, parseInt(params.limit || url.searchParams.get('limit') || '50', 10)));
-    const offset = Math.max(0, parseInt(params.offset || url.searchParams.get('offset') || '0', 10));
-    const forceAll = Boolean(params.forceAll || url.searchParams.get('forceAll') === 'true');
+    if (!authorized) return jsonResponse({ error: 'Unauthorized' }, 401);
 
     const db = env.VOCAB_DB;
-    const r2 = env.TRANSCRIPT_STORAGE;
-
-    if (!db) {
-        return jsonResponse({ error: 'Database VOCAB_DB binding missing' }, 500);
-    }
-
+    if (!db) return jsonResponse({ error: 'Database VOCAB_DB binding missing' }, 500);
+    const deadline = Date.now() + 12000;
     try {
-        let query = 'SELECT video_id, sub_languages, levels, title, channel FROM video_languages';
-        const bindings = [];
-
-        if (targetVideoId) {
-            query += ' WHERE video_id = ?';
-            bindings.push(targetVideoId);
-        } else {
-            query += ' ORDER BY updated_at DESC LIMIT ? OFFSET ?';
-            bindings.push(limit, offset);
+        if (action === 'reconcile') {
+            if (request.method !== 'POST' || !serverGradingActive(env)) {
+                return jsonResponse({ error: 'Grading reconciliation unavailable' }, 503);
+            }
+            let processed = 0;
+            while (processed < 5 && Date.now() < deadline && await runVideoGrade(env, { deadline })) processed++;
+            const backlog = await db.prepare(`
+                SELECT count(*) AS pending, min(created_at) AS oldest, max(attempts) AS maxAttempts
+                FROM video_grading_jobs WHERE state='pending'
+            `).first();
+            console.log(JSON.stringify({ event: 'video_grading_reconcile', processed, ...backlog }));
+            return jsonResponse({ success: true, processed, ...backlog }, 200);
         }
 
-        const stmt = db.prepare(query);
-        const { results } = await (bindings.length > 0 ? stmt.bind(...bindings).all() : stmt.all());
-
-        const healed = [];
-        let totalExamined = 0;
-
-        for (const row of (results || [])) {
-            totalExamined++;
-            const vId = row.video_id;
-            let currentLevels = {};
-            try {
-                currentLevels = typeof row.levels === 'string' ? JSON.parse(row.levels) : (row.levels || {});
-            } catch {
-                currentLevels = {};
+        const body = request.method === 'POST' ? await request.json().catch(() => ({})) : {};
+        const rawVideo = body.videoId ?? params.get('videoId');
+        const videoId = sanitizeVideoId(rawVideo);
+        const rawCursor = body.cursor ?? params.get('cursor');
+        const cursor = typeof rawCursor === 'string' && rawCursor.length <= 64 ? rawCursor : null;
+        const rawLang = body.language ?? params.get('language');
+        const language = sanitizeLanguage(normalizeLanguageCode(rawLang));
+        if ((rawVideo && !videoId) || (rawCursor && !cursor) || (rawLang && !language)) {
+            return jsonResponse({ error: 'Invalid video ID, cursor or language' }, 400);
+        }
+        const apply = request.method === 'POST' && body.dryRun === false;
+        if (apply && action !== 'rollback' && !serverGradingActive(env)) return jsonResponse({ error: 'Server grading is disabled' }, 503);
+        if (action === 'rollback') {
+            if (!apply) return jsonResponse({ error: 'Rollback requires an explicit apply' }, 400);
+            if (Number.isInteger(body.graderVersion) && body.graderVersion > 0 &&
+                !videoId && !language && !body.revision) {
+                const { results: rows } = await db.prepare(`
+                    SELECT video_id, language, revision FROM video_grading_jobs
+                    WHERE grader_version=? AND state='ready' AND result IS NOT NULL
+                    AND video_id IN (
+                        SELECT DISTINCT video_id FROM video_grading_jobs
+                        WHERE grader_version=? AND state='ready' AND result IS NOT NULL AND video_id>?
+                        ORDER BY video_id LIMIT 10
+                    )
+                    ORDER BY video_id, language
+                `).bind(body.graderVersion, body.graderVersion, cursor || '').all();
+                const results = rows.length ? await db.batch(rows.map(row =>
+                    restoreGrade(db, row.video_id, row.language, row.revision, body.graderVersion))) : [];
+                return jsonResponse({ success: true,
+                    restored: results.filter(result => result.meta?.changes === 1).length,
+                    nextCursor: rows.at(-1)?.video_id ?? null }, 200);
             }
-
-            let subLangs = [];
-            try {
-                subLangs = typeof row.sub_languages === 'string' ? JSON.parse(row.sub_languages) : (row.sub_languages || []);
-            } catch {
-                subLangs = [];
+            if (!videoId || !language || !/^[a-f0-9]{64}$/.test(body.revision || '')) {
+                return jsonResponse({ error: 'Rollback requires a grader version or an explicit video, language and revision' }, 400);
             }
-            if (!Array.isArray(subLangs) || subLangs.length === 0) {
-                subLangs = ['ja', 'zh', 'ko', 'en'];
-            }
+            const changed = await restoreGrade(db, videoId, language, body.revision).run();
+            return jsonResponse({ success: true, restored: changed.meta?.changes === 1 }, 200);
+        }
+        if (action !== 'backfill') return jsonResponse({ error: 'Invalid action' }, 400);
+        const approveRevision = body.approveRevision;
+        if (approveRevision != null && (!apply || !videoId || !language || !/^[a-f0-9]{64}$/.test(approveRevision))) {
+            return jsonResponse({ error: 'Approval requires an explicit video, language and revision' }, 400);
+        }
 
-            for (const lang of subLangs) {
-                const normLang = (lang || '').split('-')[0].toLowerCase();
-                if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) continue;
-
-                const existing = currentLevels[normLang];
-                const titleMeta = detectLevelFromMetadata(row.title || '', row.channel || '');
-                const hasTitleMeta = titleMeta && titleMeta.lang === normLang;
-                const titleMismatch = hasTitleMeta && existing?.level !== titleMeta.level;
-                const needsHeal = forceAll || !existing || existing.method === 'server_heuristic' || titleMismatch;
-
-                if (!needsHeal) continue;
-
-                // Priority 1: Ground truth from title metadata
-                if (hasTitleMeta) {
-                    const tier = labelToTier(titleMeta.level) || 'intermediate';
-                    const defaultScore = levelToScore(titleMeta.level);
-
-                    const oldLevel = existing?.level || 'None';
-                    const oldScore = existing?.score ?? null;
-
-                    await saveVideoLevel(
-                        db,
-                        null,
-                        vId,
-                        normLang,
-                        titleMeta.level,
-                        0.95,
-                        'metadata',
-                        { score: defaultScore, tier, forceUpdate: true }
-                    );
-
-                    healed.push({
-                        videoId: vId,
-                        language: normLang,
-                        oldLevel,
-                        oldScore,
-                        newLevel: titleMeta.level,
-                        newScore: defaultScore,
-                        tier,
-                        method: 'metadata'
-                    });
+        // A dry run tokenizes at most one video's tracks per request.
+        const limit = apply ? 10 : 1;
+        const { results: rows } = await db.prepare(`
+            SELECT video_id, sub_languages FROM video_languages
+            WHERE (? IS NULL OR video_id=?) AND video_id>? ORDER BY video_id LIMIT ?
+        `).bind(videoId, videoId, cursor || '', limit + 1).all();
+        const entries = [];
+        let last = cursor;
+        for (const row of rows.slice(0, limit)) {
+            const id = row.video_id;
+            const info = await getVideoLanguages(db, id);
+            const knownTracks = new Set([
+                ...(info?.subLanguages ?? []), ...(info?.availableLanguages ?? []), ...Object.keys(info?.levels ?? {}),
+            ].map(normalizeLanguageCode));
+            const tracks = language ? [language] : gradingLanguages.filter(lang => knownTracks.has(lang));
+            if (!tracks.length) entries.push({ videoId: id, status: 'no_known_tracks' });
+            for (const lang of tracks) {
+                const old = info?.levels[lang];
+                const entry = { videoId: id, language: lang, oldLevel: old?.level };
+                if (protectedGrade(old)) {
+                    entries.push({ ...entry, status: 'protected' });
                     continue;
                 }
-
-                // Priority 2: Check R2 for cached transcript
-                let cached = null;
-                if (r2) {
-                    cached = await getTranscriptFromR2(r2, vId, lang);
-                    if (!cached?.segments?.length && normLang !== lang) {
-                        cached = await getTranscriptFromR2(r2, vId, normLang);
-                    }
+                const saved = await readGradingTranscript(env, id, lang, info);
+                if (!saved) {
+                    entries.push({ ...entry, status: 'no_cached_captions' });
+                    continue;
                 }
-
-                if (cached?.segments?.length > 0) {
-                    const newEst = estimateTranscriptLevel(cached.segments, normLang, {
-                        title: row.title,
-                        channel: row.channel
-                    });
-
-                    if (newEst) {
-                        const oldLevel = existing?.level || 'None';
-                        const oldScore = existing?.score ?? null;
-
-                        await saveVideoLevel(
-                            db,
-                            null,
-                            vId,
-                            normLang,
-                            newEst.level,
-                            newEst.confidence,
-                            newEst.method,
-                            { ...newEst, forceUpdate: true }
-                        );
-
-                        healed.push({
-                            videoId: vId,
-                            language: normLang,
-                            oldLevel,
-                            oldScore,
-                            newLevel: newEst.level,
-                            newScore: newEst.score,
-                            tier: newEst.tier,
-                            method: newEst.method
-                        });
+                const revision = await transcriptRevision(saved.segments);
+                if (approveRevision && approveRevision !== revision) {
+                    return jsonResponse({ error: 'Transcript changed since review' }, 409);
+                }
+                if (apply) {
+                    const queued = await enqueueVideoGrade(env, id, lang, { snapshot: saved, regrade: true, approveRevision });
+                    entries.push({ ...entry, revision, status: queued ? 'queued_or_existing' : 'current' });
+                } else {
+                    let grade;
+                    try {
+                        grade = await calculateGrade(saved.segments, lang, deadline);
+                    } catch (error) {
+                        if (error.message !== 'grading_deadline') throw error;
+                        entries.push({ ...entry, revision, status: 'deadline' });
+                        continue;
                     }
+                    const review = old && grade && Math.abs(levelToScore(old.level) - levelToScore(grade.level)) >= 2;
+                    entries.push({ ...entry, revision, newLevel: grade?.level, confidence: grade?.confidence,
+                        status: !grade ? 'insufficient_captions' : review ? 'review' : 'candidate' });
                 }
             }
+            last = id;
+            if (Date.now() >= deadline) break;
         }
-
-        return jsonResponse({
-            success: true,
-            totalExamined,
-            totalHealed: healed.length,
-            healed,
-            nextOffset: targetVideoId ? null : (offset + limit)
-        }, 200);
-
-    } catch (err) {
-        console.error('[HealLevels] Execution error:', err);
-        return jsonResponse({ error: 'Healing failed', details: err.message }, 500);
+        const nextCursor = !videoId && rows.length && last !== rows.at(-1).video_id ? last : null;
+        return jsonResponse({ success: true, dryRun: !apply, entries, nextCursor }, 200);
+    } catch (error) {
+        console.warn(JSON.stringify({ event: 'video_grading_maintenance_failed', error: error.name }));
+        return jsonResponse({ error: 'Grading maintenance unavailable' }, 503);
     }
 }

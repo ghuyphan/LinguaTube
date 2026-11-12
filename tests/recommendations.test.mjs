@@ -24,7 +24,10 @@ function database(t, rows) {
     for (const row of rows) insert.run(...Object.values(row));
     let calls = 0;
     return { get calls() { return calls; }, prepare(sql) { return { bind(...args) { return {
-        async all() { calls++; return { results: sqlite.prepare(sql).all(...args), success: true }; }
+        async all() {
+            if (!sql.includes('SELECT video_id, levels')) calls++;
+            return { results: sqlite.prepare(sql).all(...args), success: true };
+        }
     }; } }; } };
 }
 const options = { skip: !DatabaseSync };
@@ -91,6 +94,7 @@ test('favorites-only and tier-only contexts bypass generic memory cache', option
     for (const context of [{ favorites: ['video_0001'] }, { dominantTier: 'beginner' }]) {
         const response = await onRequestPost({ request: new Request(url, { method: 'POST', body: JSON.stringify({ context }) }), env });
         assert.equal(response.headers.get('X-Cache'), 'BYPASS-PERSONALIZED');
+        assert.equal(response.headers.get('X-Candidate-Cache'), 'HIT');
         assert.equal((await response.json()).source, 'cloudflare:personalized');
     }
 });
@@ -167,4 +171,97 @@ test('search mode does not fail on sparse candidate sets under 200 items', optio
     const result = await getRecommendedVideosFromCloudflare(db, null, 'ja', 24, null, false, 0, 'Documentary');
     assert.ok(result.length >= 5);
     assert.ok(result.every(v => v.title.includes('Documentary')));
+});
+
+
+test('creator diversity never promotes completed or much lower scoring videos', () => {
+    const fresh = ['a1', 'a2', 'a3'].map(videoId => ({videoId, channel: 'A', title: 'Lesson', duration: 300}));
+    const completed = {videoId: 'done', channel: 'B', title: 'Lesson', duration: 300};
+    const ranked = rankVideos([...fresh, completed], {context: {watched: ['done']}});
+    assert.deepEqual(ranked.map(v => v.videoId), ['a1', 'a2', 'a3', 'done']);
+    assert.equal(ranked.at(-1).isCompleted, true);
+    const spaced = rankVideos([...fresh, {...completed, videoId: 'low', duration: 30}]);
+    assert.equal(spaced.at(-1).videoId, 'low');
+});
+
+test('learner safety wins over creator and vocabulary bonuses on browse feeds', () => {
+    const ranked = rankVideos([
+        {videoId: 'hard', channel: 'Favorite', title: '猫', tier: 'advanced', duration: 300},
+        {videoId: 'fit', channel: 'Other', title: 'Lesson', tier: 'beginner', duration: 300},
+    ], {context: {dominantTier: 'beginner', topChannels: ['Favorite'], vocabWords: ['猫']}});
+    assert.deepEqual(ranked.map(v => v.videoId), ['fit', 'hard']);
+    assert.equal(ranked[1].difficultyGap, 4);
+    assert.ok(ranked.every(v => Number.isFinite(v.recommendationScore)));
+});
+
+test('search retains exact-match relevance even for completed or difficult videos', () => {
+    const ranked = rankVideos([
+        {videoId: 'exact', title: 'Japanese cooking lesson tips', tier: 'advanced', channel: 'A'},
+        {videoId: 'other', title: 'Other', tier: 'beginner', channel: 'Japanese cooking lesson tips'},
+    ], {query: 'Japanese cooking lesson tips', context: {watched: ['exact'], dominantTier: 'beginner'}});
+    assert.equal(ranked[0].videoId, 'exact');
+});
+
+
+test('public candidate cache reuses discovery across personalized pages without sharing learner results', options, async t => {
+    const db = database(t, catalog());
+    const first = await getRecommendedVideosFromCloudflare(db, null, 'ja', 24, null, false, 0, null,
+        {sessionSeed: 123, context: {watched: ['video_0000']}});
+    first[0].languages.push('private');
+    first[0].title = 'mutated';
+    for (let offset = 24; offset < 120; offset += 24) {
+        await getRecommendedVideosFromCloudflare(db, null, 'ja', 24, null, false, offset, null,
+            {sessionSeed: 123, context: {watched: ['video_0000']}});
+    }
+    assert.equal(db.calls, 1);
+    const secondUser = await getRecommendedVideosFromCloudflare(db, null, 'ja', 50, null, false, 0, null,
+        {sessionSeed: 456, context: {favorites: ['video_0000']}});
+    assert.equal(db.calls, 1);
+    assert.equal(secondUser.find(v => v.videoId === 'video_0000').isCompleted, false);
+    assert.ok(secondUser.every(v => !v.languages.includes('private') && v.title !== 'mutated'));
+});
+
+test('candidate cache honors expiry, refresh, filters and storage binding ownership', options, async t => {
+    let now = Date.now();
+    t.mock.method(Date, 'now', () => now);
+    const db = database(t, catalog());
+    const get = (r2 = null, opts = {}, tier = null, category = null) =>
+        getRecommendedVideosFromCloudflare(db, r2, 'ja', 24, tier, false, 0, null, {...opts, category});
+    await get();
+    await get();
+    assert.equal(db.calls, 1);
+    now += 15001;
+    await get();
+    assert.equal(db.calls, 2);
+    await get(null, {isRefresh: true});
+    assert.equal(db.calls, 3);
+    await get({}, {});
+    assert.equal(db.calls, 4);
+    await get(null, {}, 'intermediate');
+    assert.equal(db.calls, 5);
+    await get(null, {}, null, 'education');
+    assert.equal(db.calls, 6);
+    const other = database(t, catalog());
+    await getRecommendedVideosFromCloudflare(other, null, 'ja');
+    assert.equal(other.calls, 1);
+});
+
+test('search candidates bypass shared cache and failed discovery is retried', options, async t => {
+    const backing = database(t, catalog());
+    let offline = true;
+    const db = {prepare(sql) { if (offline) throw Error('offline'); return backing.prepare(sql); }};
+    await assert.rejects(getRecommendedVideosFromCloudflare(db, null, 'ja'), /offline/);
+    offline = false;
+    await getRecommendedVideosFromCloudflare(db, null, 'ja');
+    assert.equal(backing.calls, 1);
+    for (let i = 0; i < 2; i++) await getRecommendedVideosFromCloudflare(db, null, 'ja', 24, null, false, 0, 'Japanese');
+    assert.equal(backing.calls, 3);
+});
+
+test('candidate cache retains at most twenty filter keys per database binding', options, async t => {
+    const db = database(t, catalog(1));
+    for (let i = 0; i < 21; i++) await getRecommendedVideosFromCloudflare(db, null, 'ja', 12, null, false, 0, null, {category: `category_${i}`});
+    assert.equal(db.calls, 21);
+    await getRecommendedVideosFromCloudflare(db, null, 'ja', 12, null, false, 0, null, {category: 'category_0'});
+    assert.equal(db.calls, 22);
 });

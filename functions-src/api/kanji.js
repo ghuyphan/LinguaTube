@@ -31,16 +31,8 @@ const memPosKanjiCache = new Map();
 const MAX_MEM_POS_KANJI = 1000;
 const MEM_POS_KANJI_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours warm memory cache
 
-export async function onRequest(context) {
+export async function onRequestGet(context) {
     const { request, env } = context;
-
-    if (request.method === 'OPTIONS') {
-        return handleOptions(['GET', 'OPTIONS']);
-    }
-
-    if (request.method !== 'GET') {
-        return jsonResponse({ error: 'Method not allowed' }, 405, {}, request);
-    }
 
     const url = new URL(request.url);
     const query = sanitizeWord(url.searchParams.get('query') || url.searchParams.get('char') || url.searchParams.get('word'));
@@ -60,6 +52,7 @@ export async function onRequest(context) {
 
     // Rate limiting
     const authResult = await validateAuthToken(request, env);
+    if (authResult.response) return authResult.response;
     const clientId = getClientIdentifier(request, authResult);
     const rateCheck = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateCheck.allowed) {
@@ -133,3 +126,6 @@ export async function onRequest(context) {
         return jsonResponse({ error: 'Kanji provider unavailable' }, ['TimeoutError','AbortError'].includes(err.name) ? 504 : 502, { 'Cache-Control': 'no-store' }, request);
     }
 }
+
+export const onRequest = onRequestGet;
+

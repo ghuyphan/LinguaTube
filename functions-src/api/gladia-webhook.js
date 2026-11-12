@@ -1,11 +1,7 @@
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { recordGladiaNotification, recoverGladiaBatch } from '../services/gladia-recovery.js';
 import { verifySvixSignature, verifyDerivedWebhookToken } from '../utils/svix-verifier.js';
-import { jsonResponse, handleOptions, sanitizeVideoId } from '../utils/utils.js';
-
-export function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
-}
+import { jsonResponse, sanitizeVideoId } from '../utils/utils.js';
 
 export async function onRequestPost(context) {
     const { request, env } = context;

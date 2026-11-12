@@ -26,11 +26,6 @@ import { translateText } from '../../providers/lingva.js';
 const memSingleTranslateCache = new SimpleLRUCache(1000);
 const CDN_CACHE_HEADER = 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400';
 
-// Handle preflight requests
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'OPTIONS']);
-}
-
 export async function onRequestGet(context) {
     const { request, env, params } = context;
     const deadline = Date.now() + 20000;
@@ -69,6 +64,7 @@ export async function onRequestGet(context) {
 
     // Rate limiting (Atomic)
     const authResult = await validateAuthToken(request, env);
+    if (authResult.response) return authResult.response;
     const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
 
     const rateLimitConfig = getTieredConfig(TRANSLATION_RATE_LIMIT, tier);

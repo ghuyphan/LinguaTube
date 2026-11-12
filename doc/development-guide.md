@@ -251,3 +251,8 @@ node --test tests/cloudflare-routes-edge-cases.integration.mjs
 ```
 
 Without `VOCA_MINIFLARE_MODULE`, this optional integration file reports a skip. The default suite still checks that every API route has an explicit inventory entry. All upstream responses are fixtures; local D1/R2/KV are ephemeral. The runtime report includes per-case statuses/outbound calls and SHA-256 source fingerprints, and rejects source changes during the run. See the [coverage and validation report](reviews/cloudflare-edge-cases-2026-10-25.md).
+
+
+Production recommendation deployment (2026-11-01): `4e6ad152-0421-4b8d-a9e9-3b3c2168b11e`. The exact previous web manifest/assets and production configuration were preserved. Backend tests: 246 passed; isolated Flutter release tests: 1,432 passed; signed test APK prepared. See [deployment and benchmark evidence](recommendation-optimization-deployment-2026-11-01.md).
+
+Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and the matching D1 expression index are live. Existing API success payloads and web assets are preserved; no Flutter release is required. See [deployment verification](backend-audit-deployment-2026-11-04.md).

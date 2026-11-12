@@ -180,6 +180,7 @@ export async function onRequest(context) {
 
                 // Cache MISS: Now check and consume rate limit quota (Atomic)
                 const authResult = await validateAuthToken(request, env);
+                if (authResult.response) return authResult.response;
                 const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
                 const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
 

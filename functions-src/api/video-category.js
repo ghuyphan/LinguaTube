@@ -6,17 +6,13 @@
  * Body: { videoId: string, category: string }
  */
 
-import { jsonResponse, handleOptions, sanitizeVideoId, errorResponse } from '../utils/utils.js';
+import { jsonResponse, sanitizeVideoId, errorResponse, getRequestJson } from '../utils/utils.js';
 import { saveVideoCategory } from '../data/video-info-db.js';
 import { VALID_CATEGORIES } from '../services/category.service.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { validateAuthToken, unauthorizedResponse } from '../middlewares/auth.js';
 
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_category' };
-
-export async function onRequestOptions() {
-    return handleOptions(['GET', 'POST', 'OPTIONS']);
-}
 
 export async function onRequestGet(context) {
     const { request, env } = context;
@@ -69,12 +65,13 @@ export async function onRequestPost(context) {
 
     // Require authentication
     const authResult = await validateAuthToken(request, env);
+    if (authResult.response) return authResult.response;
     if (!authResult.valid) {
         return unauthorizedResponse(authResult.error || 'Authentication required to submit video category');
     }
 
     try {
-        const body = await request.json();
+        const body = await getRequestJson(context);
         const videoId = sanitizeVideoId(body?.videoId);
         const rawCategory = typeof body?.category === 'string' ? body.category.toLowerCase().trim() : '';
 

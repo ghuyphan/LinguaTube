@@ -116,6 +116,7 @@ export async function onRequest(context) {
 
         // Cache MISS: Rate limiting (Atomic)
         const authResult = await validateAuthToken(request, env);
+        if (authResult.response) return authResult.response;
         const clientId = getClientIdentifier(request, authResult);
         const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, RATE_LIMIT_CONFIG, context);
         if (!rateCheck.allowed) {

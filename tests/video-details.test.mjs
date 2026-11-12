@@ -101,3 +101,43 @@ test('a mapping upgrade persists even when the official metadata observation is 
     assert.equal(body.category,'vlog');assert.equal(calls,1);
     assert.equal(f.sqlite.prepare('SELECT category FROM video_languages WHERE video_id=?').get(videoId).category,'vlog');
 });
+
+test('embeddable property is propagated when restricted or allowed', async t => {
+    const f = await fixture(t);
+    t.mock.method(globalThis, 'fetch', async () => Response.json({
+        items: [{
+            id: videoId,
+            contentDetails: { duration: 'PT1236S' },
+            status: { embeddable: false },
+            snippet: {
+                title: 'Restricted Title',
+                channelTitle: 'Restricted Channel',
+                channelId,
+                categoryId: '22',
+                tags: ['test'],
+                thumbnails: { high: { url: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` } },
+                liveBroadcastContent: 'none'
+            }
+        }]
+    }));
+    const res = await onRequestGet(context(f));
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.equal(body.embeddable, false);
+
+    // Warm cache preserves embeddable: false
+    const cachedRes = await onRequestGet(context(f));
+    assert.equal(cachedRes.status, 200);
+    const cachedBody = await cachedRes.json();
+    assert.equal(cachedBody.embeddable, false);
+});
+
+test('embeddable defaults to true when omitted from status', async t => {
+    const f = await fixture(t);
+    t.mock.method(globalThis, 'fetch', async () => Response.json({ items: [video()] }));
+    const res = await onRequestGet(context(f));
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.equal(body.embeddable, true);
+});
+

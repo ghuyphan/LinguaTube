@@ -376,8 +376,8 @@ test('labelToTier: standardizes proficiency levels to canonical tiers', async ()
   assert.equal(labelToTier(null), null);
 });
 
-test('getRecommendedVideosFromD1: queries and formats transcribed videos accurately with tier support', async () => {
-  const { getRecommendedVideosFromD1 } = await import('../functions-src/data/video-info-db.js');
+test('getRecommendedVideosFromCloudflare: queries and formats transcribed videos accurately with tier support', async () => {
+  const { getRecommendedVideosFromCloudflare } = await import('../functions-src/data/video-info-db.js');
 
   // Mock D1 database
   const mockDb = {
@@ -411,7 +411,7 @@ test('getRecommendedVideosFromD1: queries and formats transcribed videos accurat
     })
   };
 
-  const results = await getRecommendedVideosFromD1(mockDb, 'ja', 10);
+  const results = await getRecommendedVideosFromCloudflare(mockDb, null, 'ja', 10);
   assert.equal(results.length, 2);
   assert.equal(results[0].videoId, 'testVid1');
   assert.equal(results[0].level, 'JLPT N4');
@@ -423,24 +423,24 @@ test('getRecommendedVideosFromD1: queries and formats transcribed videos accurat
   assert.equal(results[1].tier, 'intermediate');
 
   // Server-side tier filtering: elementary matches testVid1 only
-  const elemResults = await getRecommendedVideosFromD1(mockDb, 'ja', 10, 'elementary');
+  const elemResults = await getRecommendedVideosFromCloudflare(mockDb, null, 'ja', 10, 'elementary');
   assert.equal(elemResults.length, 1);
   assert.equal(elemResults[0].videoId, 'testVid1');
   assert.equal(elemResults[0].tier, 'elementary');
 
   // Server-side tier filtering: intermediate matches testVid2 only
-  const interResults = await getRecommendedVideosFromD1(mockDb, 'ja', 10, 'intermediate');
+  const interResults = await getRecommendedVideosFromCloudflare(mockDb, null, 'ja', 10, 'intermediate');
   assert.equal(interResults.length, 1);
   assert.equal(interResults[0].videoId, 'testVid2');
   assert.equal(interResults[0].tier, 'intermediate');
 
   // Server-side tier filtering: advanced matches none
-  const advResults = await getRecommendedVideosFromD1(mockDb, 'ja', 10, 'advanced');
+  const advResults = await getRecommendedVideosFromCloudflare(mockDb, null, 'ja', 10, 'advanced');
   assert.equal(advResults.length, 0);
 
-  // Null/empty db or lang returns empty list safely
-  assert.deepEqual(await getRecommendedVideosFromD1(null, 'ja'), []);
-  assert.deepEqual(await getRecommendedVideosFromD1(mockDb, null), []);
+  // Missing discovery bindings remain an availability error.
+  await assert.rejects(getRecommendedVideosFromCloudflare(null, null, 'ja'), /unavailable/);
+  await assert.rejects(getRecommendedVideosFromCloudflare(mockDb, null, null), /unavailable/);
 });
 
 test('RateLimiter: optimizes KV writes by suppressing syncs when comfortably below quota', async () => {

@@ -229,7 +229,7 @@ lingua-tube/
 │   │   ├── recommended-videos.js # Target language video recommendations
 │   │   ├── tokenize/          # Single-text tokenization ([lang].js)
 │   │   ├── tokenize-batch/    # Batch tokenization ([lang].js)
-│   │   ├── transcript.js      # Unified transcript fetching & AI generation
+│   │   ├── transcript.js      # Verified native tracks, R2 fallback & AI generation
 │   │   ├── translate/         # Translation endpoints ([[path]].js, batch.js)
 │   │   ├── tts.js             # Edge Neural Text-to-Speech proxy
 │   │   ├── version.js         # App version & client compatibility check
@@ -482,3 +482,17 @@ Community `/api/video-level` submissions always use server-assigned `linguistics
 ## Transcript quote and fallback parity (2026-10-30)
 
 AI quotes are free only for a nonempty requested-language AI cache or an active AI job, matching submission reuse. Native negative caches and known-language exclusions skip provider requests but still allow alternative-language R2 discovery before an empty response. Requested native tracks retain priority; explicit AI requests never reuse native or alternative-language captions. No UI changes accompany this correction.
+
+
+## Recommendation ranking priorities (2026-11-01)
+
+Preserve completion and difficulty priority before creator diversification on browse feeds. Spacing may only promote within the same priority group and a 12-point score gap. Keep additive `recommendationScore`, `isCompleted`, and `difficultyGap` hints consistent with scoring and bounded request context; search remains text-ranked. The 200-candidate discovery and verification budgets remain unchanged. Flutter may add bounded similarity, preserving safety groups and backend tie order. Backend release precedes client use of ranking hints. Web services and UI are unchanged by this polish.
+
+
+Public recommendation candidate caching (2026-11-01): only successful verified browse metadata may enter the 15-second, 20-key-per-D1-binding cache. Match R2 ownership, bypass searches and explicit refresh, defensively copy nested fields, and never cache learner context/ranked responses or share in-flight discovery I/O. Preserve existing discovery limits and `X-Cache` personalized bypass; `X-Candidate-Cache` describes only public metadata reuse.
+
+## Backend audit verification (2026-11-04)
+
+Authentication service outages must propagate 503 `AUTH_UNAVAILABLE` with `Retry-After`, including optional-auth routes; never turn a failed authenticated lookup into anonymous billing/quota ownership. Every direct `validateAuthToken` caller checks its availability response. Empty GET/HEAD ingress streams are forwarded without bodies; nonempty ones return 400. Recovery must not import optional NLP enrichment: the transcript caller owns post-publication scheduling. Preserve null-as-zero recommendation ordering with the additive expression index; bounded metadata healing fills absent fields without overwriting newer catalog values or changing discovery timestamps.
+
+Backend audit production activation (2026-11-04): deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and additive recommendation expression index are verified live; no Flutter release is required. Preserve the existing web release and runtime bindings for backend-only deployment. See [deployment evidence](backend-audit-deployment-2026-11-04.md).

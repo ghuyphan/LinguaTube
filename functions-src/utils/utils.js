@@ -293,3 +293,21 @@ export async function sha256(message) {
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
+
+/**
+ * Efficiently retrieve JSON body from context without duplicate parsing
+ * Uses middleware-parsed body if available, otherwise falls back to request.json()
+ * @param {Object} context - Cloudflare execution context or Request
+ * @returns {Promise<any>}
+ */
+export async function getRequestJson(context) {
+    if (context?.data?.parsedBody !== undefined) {
+        return context.data.parsedBody;
+    }
+    const req = context?.request || context;
+    if (typeof req?.json === 'function') {
+        return await req.json();
+    }
+    return null;
+}
+

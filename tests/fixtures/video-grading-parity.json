@@ -1,0 +1,82 @@
+[
+  {
+    "language": "ja",
+    "text": "食べたい",
+    "tokens": [
+      {
+        "surface": "食べたい",
+        "partOfSpeech": "verb"
+      }
+    ],
+    "breakdown": {
+      "JLPT N5": 1
+    },
+    "score": 1.2,
+    "level": "JLPT N5"
+  },
+  {
+    "language": "zh",
+    "text": "因为下雨所以迟到",
+    "tokens": [
+      {
+        "surface": "因为"
+      },
+      {
+        "surface": "下雨"
+      },
+      {
+        "surface": "所以"
+      },
+      {
+        "surface": "迟到"
+      }
+    ],
+    "breakdown": {
+      "HSK 2": 1
+    },
+    "score": 1.7,
+    "level": "HSK 1"
+  },
+  {
+    "language": "ko",
+    "text": "먹고 싶어요",
+    "tokens": [
+      {
+        "surface": "먹고",
+        "partOfSpeech": "verb"
+      },
+      {
+        "surface": "싶어요"
+      }
+    ],
+    "breakdown": {
+      "Korean 2": 1
+    },
+    "score": 1.6,
+    "level": "TOPIK 1"
+  },
+  {
+    "language": "en",
+    "text": "I had been reading",
+    "tokens": [
+      {
+        "surface": "I"
+      },
+      {
+        "surface": "had"
+      },
+      {
+        "surface": "been"
+      },
+      {
+        "surface": "reading",
+        "partOfSpeech": "verb"
+      }
+    ],
+    "breakdown": {
+      "CEFR B2": 1
+    },
+    "score": 2.8,
+    "level": "CEFR A2"
+  }
+]

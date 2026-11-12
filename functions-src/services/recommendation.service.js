@@ -4,7 +4,7 @@
  * active vocabulary notebook overlap, creator affinity, and YouTube-style channel de-clustering.
  */
 
-const WEIGHTS = { completed: -70, resume: 35, started: 15, unseen: 40, favorite: 20,
+const WEIGHTS = { completed: -70, resume: 10, started: 5, unseen: 40, favorite: 20,
     channel: 30, vocabulary: 25, vocabularyWord: 5, vocabularyCap: 20,
     shortLesson: 20, longLesson: 10, extremeDuration: -10, currentTier: 20, nextTier: 12, tooHard: -20, jitter: 12 };
 
@@ -35,7 +35,7 @@ export function getDeterministicJitter(videoId, seed = 12345, amplitude = 4) {
 }
 
 /**
- * YouTube-style channel spacing: ensures consecutive video cards are from different creators
+ * Space comparable candidates across creators without overriding learner priority.
  */
 export function declusterChannels(videos) {
     if (!Array.isArray(videos) || videos.length <= 2) {
@@ -46,7 +46,14 @@ export function declusterChannels(videos) {
     const pool = [...videos];
     while (pool.length) {
         const previous = result.at(-1)?.channel?.trim().toLowerCase();
-        const different = previous ? pool.findIndex(v => v.channel?.trim().toLowerCase() !== previous) : 0;
+        // Diversity may only promote candidates with comparable relevance and safety.
+        const first = pool[0];
+        const different = previous ? pool.findIndex(v =>
+            v.channel?.trim().toLowerCase() !== previous
+            && Boolean(v.isCompleted) === Boolean(first.isCompleted)
+            && (v.difficultyGap >= 2) === (first.difficultyGap >= 2)
+            && (!Number.isFinite(first.recommendationScore) || !Number.isFinite(v.recommendationScore)
+                || first.recommendationScore - v.recommendationScore <= 12)) : 0;
         result.push(pool.splice(different < 0 ? 0 : different, 1)[0]);
     }
 
@@ -267,11 +274,24 @@ export function rankVideos(videos, options = {}) {
             score += getDeterministicJitter(vid || '', sessionSeed, WEIGHTS.jitter);
         }
 
+        v.recommendationScore = score;
+        v.isCompleted = watchedSet.has(vid) || (inProgressMap.get(vid) || 0) >= 85;
+        const learnerIndex = TIERS_ORDER.indexOf(dominantTier);
+        const videoIndex = TIERS_ORDER.indexOf(v.tier);
+        v.difficultyGap = learnerIndex >= 0 && videoIndex >= 0 ? videoIndex - learnerIndex : 0;
         return { video: v, score };
     });
 
-    // 3. Sort primarily by score descending, breaking ties by updatedAt DESC
+    // 3. Browse learner priority, then weighted relevance and deterministic ties.
     scored.sort((a, b) => {
+        if (!isSearchMode) {
+            const completed = Number(a.video.isCompleted) - Number(b.video.isCompleted);
+            if (completed) return completed;
+            if (!requestedTier) {
+                const tooHard = Number(a.video.difficultyGap >= 2) - Number(b.video.difficultyGap >= 2);
+                if (tooHard) return tooHard;
+            }
+        }
         if (b.score !== a.score) {
             return b.score - a.score;
         }

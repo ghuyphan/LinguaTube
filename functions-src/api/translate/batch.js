@@ -6,7 +6,7 @@ import { TRANSLATION_RATE_LIMIT } from '../../middlewares/rate-limiter.js';
  * Route: POST /api/translate/batch
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, sha256, sanitizeLanguage, validateBatchSize } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateBody, sha256, sanitizeLanguage, validateBatchSize, getRequestJson } from '../../utils/utils.js';
 import {
     consumeRateLimitUnits,
     getClientIdentifier,
@@ -37,15 +37,11 @@ function setInMemCache(source, target, text, translation) {
 const memBatchCache = new SimpleLRUCache(200);
 const inFlightBatches = new Map();
 
-export async function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
-}
-
 export async function onRequestPost(context) {
     const { request, env } = context;
     const deadline = Date.now() + 20000;
     try {
-        const body = await request.json();
+        const body = await getRequestJson(context);
 
         // Schema-based validation for security
         const validation = validateBody(body, {
@@ -138,6 +134,7 @@ export async function onRequestPost(context) {
 
             // Rate limit by number of unique texts
             const authResult = consumeAmount ? await validateAuthToken(request, env) : { valid: false };
+            if (authResult.response) return authResult.response;
             const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
             const rateLimitConfig = getTieredConfig(TRANSLATION_RATE_LIMIT, tier);
             const clientId = getClientIdentifier(request, authResult);

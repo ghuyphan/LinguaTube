@@ -1,8 +1,8 @@
+import { enqueueVideoGrade, serverGradingEnabled } from './video-grading-jobs.js';
 import { GladiaProvider } from '../providers/gladia.js';
 import { atomicFailAndRefundAiJob, completeAiJob, activateAiJob } from '../data/transcript-db.js';
 import { saveTranscriptToR2 } from '../data/transcript-r2.js';
 import { cleanTranscriptSegments, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
-import { enrichPublishedTranscript } from './transcript-enrichment.js';
 import { addSubLanguage, saveVideoLanguages } from '../data/video-info-db.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { recoverJobRefund } from './refund-recovery.js';
@@ -22,7 +22,7 @@ export async function recordGladiaNotification(db, { jobId, providerId, outcome,
 }
 
 /** Polling and inbox recovery share this per-job lease and terminal transition. */
-export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(env.GLADIA_API_KEY), deadline = Date.now() + 20000, { force = false, waitUntil = null } = {}) {
+export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(env.GLADIA_API_KEY), deadline = Date.now() + 20000, { force = false } = {}) {
     const db = env.VOCAB_DB;
     const lease = crypto.randomUUID();
     const job = await db.prepare(`UPDATE ai_transcription_jobs SET ingestion_lease=?,ingestion_lease_until=strftime('%s','now')+60
@@ -54,13 +54,18 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
         if (!(await saveTranscriptToR2(env.TRANSCRIPT_STORAGE, job.video_id, language, enriched, 'ai', { jobId: job.id, createdAt: job.created_at }))) throw new Error('Transcript persistence unavailable');
         if (!(await completeAiJob(db, job.id, language, lease))) throw new Error('Completion unconfirmed');
         const last = enriched[enriched.length - 1];
-        const level = estimateTranscriptLevel(enriched, language);
+        const gradingEnabled = serverGradingEnabled(env);
+        const level = gradingEnabled ? null : estimateTranscriptLevel(enriched, language);
         await Promise.allSettled([
             addSubLanguage(db, job.video_id, language),
             saveVideoLanguages(db, job.video_id, [], Math.round((last.start || 0) + (last.duration || 0)), null, null, false,
                 level ? { [language]: level } : null, null, [language])
         ]);
-        if (waitUntil) waitUntil(enrichPublishedTranscript(env.TRANSCRIPT_STORAGE, job.video_id, language));
+        if (gradingEnabled) {
+            await enqueueVideoGrade(env, job.video_id, language, { regrade: true }).catch(error => {
+                console.warn(JSON.stringify({ event: 'video_grade_deferred', videoId: job.video_id, language, error: error.name }));
+            });
+        }
         return { status: 'done', language, segments: enriched };
     } catch (error) {
         const delay = Math.min(300, Math.max(5, error.retryAfterSeconds || 15));

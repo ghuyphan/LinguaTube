@@ -46,4 +46,6 @@ lighthouse*.json
 *.db
 scripts/*.sql
 scripts/seed_data.sql
+scratch_*.sql
+
 

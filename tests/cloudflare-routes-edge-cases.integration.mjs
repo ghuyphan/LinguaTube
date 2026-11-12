@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { build } from 'esbuild';
 import { createHash } from 'node:crypto';
+import http from 'node:http';
 import { routes, cases, providerCases } from './fixtures/cloudflare-edge-cases.mjs';
 
 const modulePath=process.env.VOCA_MINIFLARE_MODULE;
@@ -143,6 +144,20 @@ test('all Pages routes: input, authentication, resource limits and failure contr
    evidence.push({route:c.route,name:c.name,status:response.status,outbound:[...outbound]});
   });
  }
+ await t.test('real HTTP ingress safely handles GET/HEAD empty and nonempty body streams', async()=>{
+  const address=new URL('/api/version',await mf.ready);
+  for(const method of ['GET','HEAD'])for(const body of [null,'','{}']){
+   const result=await new Promise((resolve,reject)=>{
+    const req=http.request(address,{method,headers:{'User-Agent':'Mozilla/5.0','x-test-route':'version',
+     ...(body===null?{}:{'Content-Length':Buffer.byteLength(body)})}},res=>{
+      let text='';res.on('data',chunk=>text+=chunk);res.on('end',()=>resolve({status:res.statusCode,text}));
+     });
+    req.on('error',reject);req.end(body);
+   });
+   assert.equal(result.status,body==='{}'?400:method==='GET'?200:405,`${method} body ${JSON.stringify(body)}`);
+   if(method==='HEAD')assert.equal(result.text,'');
+  }
+ });
  for(const source of sources)assert.equal(createHash('sha256').update(await readFile(join(root,source.file))).digest('hex'),source.sha256,'Source changed during runtime validation: '+source.file);
  if(process.env.VOCA_EDGE_OUTPUT)await writeFile(process.env.VOCA_EDGE_OUTPUT,JSON.stringify({node:process.version,routeCount:routes.length,caseCount:evidence.length,sources,evidence},null,2)+'\n');
 });

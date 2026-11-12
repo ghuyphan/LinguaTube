@@ -110,12 +110,13 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
       - **Pre-Baked Rich Subtitles**: Transcripts saved to Cloudflare R2 (`transcripts/{videoId}/{lang}.json`) are pre-baked with full morphological tokens (`tokens: Token[]`), character-level ruby parts, Pinyin, and lemmas (`enrichSegmentsWithTokens`). When clients fetch `/api/transcript`, the returned `segments` already include tokens, allowing the frontend player to render Furigana/Pinyin with 0ms delay and skip separate `/api/tokenize-batch` network calls entirely.
       - **Self-Healing Legacy Upgrade**: When reading a legacy transcript from R2 that lacks tokens, the server automatically enriches the segments and writes the upgraded rich transcript back to R2 in the background via `context.waitUntil(saveTranscriptToR2(...))`.
       - When `preferAI: true`, the backend strictly isolates the requested language: it checks R2 **only** for an existing AI transcript of the exact requested language (`cleanVideoId, lang`). It never falls back to other candidate languages in R2, ensuring user requests for AI generation are never hijacked by pre-cached transcripts in other languages.
-      - When `preferAI: false`, checks `transcripts/{videoId}/{lang}.json`. If absent, checks other known candidate languages (in both `subLanguages` and `nativeLanguages`) in R2 as a fallback. If found in R2, returns immediately (`X-Cache: HIT`), eliminating redundant API submissions. Also returns `levels` metadata directly from D1 to enable instant 0ms proficiency badge rendering on the client.
+      - For native requests, an exact-language R2 hit avoids the provider call. R2 rejects objects whose stored language disagrees with the key and legacy native objects whose sampled text strongly contradicts their CJK label. When needed, the route checks up to six alternative keys, prioritizing stored transcript languages. An alternative is flagged with `languageMismatch: true`. Transcript HTTP responses with per-request diamond information use `Cache-Control: no-store`; reuse occurs inside the service through R2.
       - The response payload returns `availableLanguages: { native: string[], ai: string[] }`, where `ai` tracks are derived from server-verified `subLanguages` (transcripts confirmed in R2) excluding native YouTube captions.
   2. **Native Captions Fetch (Supadata Multi-Key Failover & 4s Native Timeout)**: If `preferAI: false`, checks both D1 `video_languages`, `ai_transcription_jobs`, and `no_transcript_cache` before touching upstream APIs:
-     - **Active AI Job Short-Circuit**: Checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI transcription job was previously submitted and is still pending or processing (e.g. user refreshed the page, switched tabs, or backgrounded the browser), it immediately returns `{ status: 'processing', jobId }`, seamlessly connecting the client to the existing job without double-deducting diamonds or returning `NO_NATIVE`.
+     - **Active AI Job Short-Circuit**: On normal requests, checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI transcription job was previously submitted and is still pending or processing (e.g. user refreshed the page, switched tabs, or backgrounded the browser), it immediately returns `{ status: 'processing', jobId }`, seamlessly connecting the client to the existing job without double-deducting diamonds or returning `NO_NATIVE`.
      - **D1 Short-Circuit (< 20ms)**: If `video_languages` records `available_languages = '[]'` (video confirmed to have 0 native tracks) or if the requested language is not in the list (e.g. video has only `['en']` and user requested `zh`), returns immediately with `NO_NATIVE` or `languageMismatch: true`, completely bypassing upstream network latency.
-     - **Supadata Fast-Check**: Queries Supadata with a tight 4.0-second timeout. If the video has no captions (HTTP 206/404 or `transcript-unavailable`), the provider halts further key rotation and only marks that specific language as unavailable (avoiding negative cache poisoning on transient timeouts).
+     - **Supadata Fast-Check**: Each attempt allows up to four seconds and all attempts share a six-second lookup budget. A forced refresh with a saved track in the catalog uses a four-second budget and skips timeout failover. If the provider reports no captions (HTTP 206/404 or `transcript-unavailable`), it halts key rotation and only marks that language as unavailable. Transient timeouts leave negative caching alone.
+     - **Track verification**: The provider response must identify the track language and include usable cues. The API exposes the normalized `language` and preserves the provider tag as `trackLanguage` when known. `forceRefresh` uses native lookup even if an AI job is active. If fresh captions cannot be verified, refresh can return a validated saved copy in the requested language with `refreshDeferred: true` and `X-Cache: STALE`, including completed AI captions already available on normal reads. A confirmed miss or language mismatch follows the normal fallback path. Inconclusive or malformed results without a usable fallback return `503 NATIVE_PROVIDER_UNAVAILABLE` with `Retry-After`, and do not create negative cache records.
   3. **Global Negative Cache Defense & Automatic Eviction**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` supports both per-language and global wildcard (`*`) scopes. When a transcript is successfully fetched or requested with `forceRefresh: true`, both specific language and wildcard entries are automatically purged (`deleteNoTranscript`).
   4. **3-Tier Intelligent Speech Chunking & HTML Cleaning (`splitRunOnSegments` & `cleanCueText`)**:
      - Strips HTML/VTT tags, decodes XML/HTML entities (`&quot;`, `&#39;`, `&amp;`), and eliminates sound effect noise (`[Music]`, `♪`).
@@ -459,8 +460,9 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   - Non-destructive updates & EMA Blending: Verified high-confidence records (`>= 0.90`) cannot be overwritten by lower-confidence client payloads. If an existing record has a valid score, incoming reports are blended via Exponential Moving Average (EMA: $0.60 \times \text{existing} + 0.40 \times \text{new}$).
 - **Server-Side Ingestion-Time Level Estimator (`estimateTranscriptLevel`)**:
   - **Edge-Friendly Execution**: Runs in $< 1\text{ ms}$ CPU time with zero external dictionary files or heavy NLP dependencies. Evaluates speech rate (CPM/WPM), character/syllable complexity, and kanji/idiom distribution across sampled subtitle segments.
-  - **100% Catalog Coverage**: Automatically triggered inside `context.waitUntil(...)` whenever transcripts are ingested via native scraper (`fetchNativeCaptions`), Gladia AI (`pollAiJobStatus` / `gladia-webhook`), or self-healed on R2 cache hits (`POST /api/transcript`).
+  - **Catalog resolution**: Native, AI, and R2 transcript responses use the persisted level for the normalized track language. When a track has no stored level, the estimator can fill it. If persistence fails, the response marks the estimate provisional. Caption metadata writes fill missing entries without replacing other tracks or confirmed records.
   - **Full TOPIK & Framework Tier Parity**: `labelToTier()` supports comprehensive regex mapping for Japanese (JLPT N1-N5), Chinese (HSK 1-6), Korean (TOPIK 1-6 / I-II), English (CEFR A1-C2), and multilingual keywords (`sơ cấp`, `trung cấp`, `cao cấp`, `初級`, `中級`, `上級`, `초급`, `중급`, `고급`).
+  - **Shared response fields**: Recommendations retain `level` and add the exact-language `levels` entry when the catalog has one. Stored entries include `language`, `method`, and `isProvisional`. Level submissions return the winning persisted label and diagnostics, including when the existing record wins.
   - **Storage Strategy**: Persisted strictly to Cloudflare D1 `video_languages.levels` column as a canonical typed JSON object (Zero KV writes - Rule 2) and `server/transcripts_cache/video_levels.json` in local dev.
 - **Client Fast-Path**: The Angular client checks `serverLevels` first, achieving instant 0ms level resolution upon video open. When cached diagnostics are present, full diagnostic cards render immediately without requiring client cue re-analysis.
 
@@ -711,3 +713,94 @@ Regression coverage lives in `tests/diamond-enforcement.integration.mjs` and use
 Production verification (2026-10-30): deployed tested, uncommitted source based on `a3411ce` to Pages production deployment `1367c246-ea8e-4904-98b2-1f7ecb4f7cb2` (`https://1367c246.lingua-tube.pages.dev`), confirmed canonical for `https://voca.study`. Existing production bindings, compatibility settings and environment names/types were preserved. Previous production deployment `9225d963-c10a-41f7-8a94-3c1bd86c7af6` remains the rollback target.
 
 Local validation passed: 239 backend tests, 78 billing/transcript integration tests, 362 workerd checks, lint and the production build. Flutter passed 1,342 tests and analysis with zero issues; UI file hashes remained unchanged. Seven production POST smoke checks passed: native cache retrieval, exact-language AI reuse with confirmed cost zero, cross-language fallback, native-only paid quote/tier eligibility, free AI-cache quote, invalid video rejection and fresh Korean native retrieval. Native-only `0zbPeoZzcPg/en` quoted three diamonds with `VIDEO_TOO_LONG` for the anonymous tier; `BZRT37f8zZY/ko` returned the cached Japanese alternative with an explicit mismatch; `-moW9jvvMr4/ko` returned 301 native cues from Supadata. No paid Gladia jobs were created by production verification.
+
+
+## Recommendation ranking polish (2026-11-01)
+
+Browse ranking prioritizes unfinished videos, then avoids known content two or more tiers above the learner when no difficulty filter is selected. Search retains weighted text relevance; explicit difficulty filters remain strict. Creator spacing may only promote candidates in the same completion/difficulty group and within 12 score points of the next ranked candidate.
+
+Responses include additive per-video `recommendationScore` (finite numeric weighted score), `isCompleted` (boolean, completion threshold 85%), and `difficultyGap` (signed canonical tier distance; zero if learner/video tier is unknown). Scores are relative within a request, not calibrated probabilities. Clients may combine a bounded content-similarity bonus with this score, but should retain completion/difficulty priority. These fields derive only from the request's bounded context; personalized cache isolation remains unchanged. Existing web consumers can ignore them.
+
+The fixed 200-candidate discovery window, twenty 200-row scan batches, ten R2 probes, stable seeds/context, pagination and outage behavior remain unchanged. This improves ordering, not catalog recall. No schema migration, new dependency, deployment, or web service/UI change accompanies this work. Deploy the backend before the Flutter client to enable the new ranking hints; older responses remain parseable.
+
+
+## Recommendation discovery optimization (2026-11-01)
+
+Verified public browse candidates are cached for 15 seconds per D1 binding, with at most 20 language/category keys. A hit checks the cached candidates' level records in one bounded D1 read. If a record differs, discovery reruns. Tier filters discover current eligibility on each request. Search, explicit refresh, and R2 binding changes also trigger discovery.
+
+Ranking runs separately for each request and the API serves pages from that ranking. The fixed 200-candidate window and scan/probe limits are unchanged. `X-Candidate-Cache` reports `HIT`, `MISS`, or `BYPASS-SEARCH`.
+The benchmark now reports cold and warm database queries separately. On the 400-video/five-page fixture: cold discovery queries fall from five to one; warm discovery queries fall from five to zero. One recorded local run measured warm median five-page processing at 4.06 ms baseline and 0.50 ms revised. These exclude networking, cold starts and real D1/R2 latency; they are not production latency or engagement claims.
+
+
+Production recommendation deployment (2026-11-01): `4e6ad152-0421-4b8d-a9e9-3b3c2168b11e`. The exact previous web manifest/assets and production configuration were preserved. Backend tests: 246 passed; isolated Flutter release tests: 1,432 passed; signed test APK prepared. See [deployment and benchmark evidence](recommendation-optimization-deployment-2026-11-01.md).
+
+## Backend availability and audit corrections (2026-11-04)
+
+When supplied credentials cannot be verified because Auth/access-state services are unavailable, endpoints return 503 with `{error, code: "AUTH_UNAVAILABLE"}`, `Retry-After: 5`, and `Cache-Control: no-store`. This includes optional-auth rate/quota paths; availability failures must not use anonymous ownership. Missing/invalid credentials retain their existing route policy. `requireAuth` propagates the same availability response. Original signed request bytes remain unchanged; GET/HEAD empty ingress streams forward without a body and nonempty bodies return 400.
+
+Gladia recovery persists canonical results without importing optional tokenizers. Successful tracked polling schedules enrichment in the transcript service; cached reads and native persistence retain their existing enrichment. Recommendation healing processes at most five videos in groups of two, stops scheduling groups after 15 seconds, and uses one conditional update per video. It preserves nonempty catalog fields written concurrently and never changes discovery timestamps.
+
+See [verified audit findings](backend-audit-verification-2026-11-04.md) for measured bundles, regression coverage, rejected assumptions, and activation requirements.
+
+Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and the matching D1 expression index are live. Existing API success payloads and web assets are preserved; no Flutter release is required. See [deployment verification](backend-audit-deployment-2026-11-04.md).
+
+## Server-owned video grades
+
+`video_languages.levels` is the confirmed catalog for each video and normalized
+subtitle language. R2 owns caption text and timing. `video_grading_jobs` holds
+the latest requested transcript revision and grader version for each track.
+The revision hashes cue text and timing and stays stable when tokens are added.
+Published grades include diagnostics, speech-rate unit, version and revision.
+
+With `SERVER_VIDEO_GRADING=1`, successful transcript responses include
+`gradingStatus` alongside the existing `levels` map. The read-only
+`GET /api/video-level?videoId=…&language=…` returns `ready`, `pending`, or
+`unavailable`. A ready response includes the persisted level and diagnostics.
+Authenticated legacy submissions return the stored winner or HTTP 202 with the
+grading status. Caption requests can finish before grading starts. Metadata
+refreshes preserve the level map.
+
+### Staging and release
+
+1. Run the catalog compiler with the Flutter `assets/grammar` directory, then
+   build the Pages Functions. Use `--check` to verify the checked-in generated
+   catalog. Keep the parity fixtures in both repos synchronized and increment
+   `GRADER_VERSION` when the grading rules, inputs, or catalogs change.
+2. Apply `db/migrations/d1/20261112_video_grading_jobs.sql` to staging before
+   setting `SERVER_VIDEO_GRADING=1`. Add a second call to the existing
+   maintenance schedule for `POST /api/heal-levels?action=reconcile` using
+   the same `BACKEND_MAINTENANCE_SECRET` bearer credential. Grading runs
+   independently of the billing recovery invocation.
+3. Compare staging transcript latency with the pre-change baseline. Inspect
+   `video_grade_completed` and `video_grading_reconcile` logs for completion
+   time, attempts, pending count, and oldest job. Review real examples for all
+   four languages before enabling production. Apply the migration and configure
+   the scheduler before enabling the production flag. Release Flutter after
+   the backend is stable.
+
+### Backfill and rollback
+
+Run from a dev machine with `HEAL_ADMIN_SECRET` in the environment. Point
+`--origin` at the target environment. The dry run reads its cached R2 captions
+and reports candidate, protected, missing, and review results. It never writes a
+grade. For deadline entries, rerun the affected video and language separately.
+
+```sh
+node scripts/heal-video-levels.mjs --origin "$GRADING_STAGING_ORIGIN"
+node scripts/heal-video-levels.mjs --origin "$GRADING_STAGING_ORIGIN" --apply
+node scripts/heal-video-levels.mjs --origin "$GRADING_STAGING_ORIGIN" --cursor "$LAST_VIDEO_ID" --apply
+```
+
+Apply queues bounded pages and drains available jobs in batches. The scheduler
+retries work that remains. Manual records and unversioned records at confidence
+0.90 or higher are preserved. For a reviewed shift of two or more levels, run
+with `--apply --video "$VIDEO_ID" --language "$LANGUAGE" --approve "$REVISION"`.
+The approval is bound to the transcript revision.
+
+To suspend new writes while keeping server authority, set
+`SERVER_VIDEO_GRADING=paused`. Let in-flight leases settle before rolling back.
+Use `--apply --video "$VIDEO_ID" --language "$LANGUAGE" --rollback "$REVISION"`
+to restore the prior grade only if the catalog still contains the exact grade
+published by that job. Other languages and newer results are preserved.
+For a full version rollback, use `--apply --rollback-version "$GRADER_VERSION"`
+with the target origin. It uses the same exact-grade check in resumable pages.

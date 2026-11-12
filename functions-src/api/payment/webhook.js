@@ -6,17 +6,13 @@
 
 import { serviceRoleRequest } from '../../services/supabase-rest.js';
 import { verifyWebhookSignature } from '../../providers/payos.js';
-import { jsonResponse, handleOptions, errorResponse } from '../../utils/utils.js';
-
-export async function onRequestOptions() {
-    return handleOptions(['POST', 'OPTIONS']);
-}
+import { jsonResponse, handleOptions, errorResponse, getRequestJson } from '../../utils/utils.js';
 
 export async function onRequestPost(context) {
     const { request, env } = context;
 
     try {
-        const body = await request.json().catch(() => null);
+        const body = (await getRequestJson(context)) || null;
         if (!body) {
             return jsonResponse({ success: false, error: 'Empty payload' }, 400);
         }
