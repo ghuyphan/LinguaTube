@@ -1,5 +1,15 @@
+export const LEARNING_LANGUAGE_CODES = ['ja', 'zh', 'ko', 'en', 'vi'] as const;
+
+export type SupportedLearningLanguage = (typeof LEARNING_LANGUAGE_CODES)[number];
+
+export const LEARNING_LANGUAGE_SET: ReadonlySet<string> = new Set(LEARNING_LANGUAGE_CODES);
+
+export function isSupportedLearningLanguage(lang: unknown): lang is SupportedLearningLanguage {
+  return typeof lang === 'string' && LEARNING_LANGUAGE_SET.has(lang);
+}
+
 export interface SupportedLanguage {
-  code: 'ja' | 'zh' | 'ko' | 'en';
+  code: SupportedLearningLanguage;
   name: string;
   nativeName?: string;
   flag: string;
@@ -9,7 +19,8 @@ export const SUPPORTED_LANGUAGES: readonly SupportedLanguage[] = [
   { code: 'ja', name: '日本語', nativeName: '日本語', flag: '/flags/jp.svg' },
   { code: 'zh', name: '中文', nativeName: '中文', flag: '/flags/cn.svg' },
   { code: 'ko', name: '한국어', nativeName: '한국어', flag: '/flags/kr.svg' },
-  { code: 'en', name: 'English', nativeName: 'English', flag: '/flags/gb.svg' }
+  { code: 'en', name: 'English', nativeName: 'English', flag: '/flags/gb.svg' },
+  { code: 'vi', name: 'Tiếng Việt', nativeName: 'Tiếng Việt', flag: '/flags/vn.svg' }
 ] as const;
 
 export const LANGUAGE_FLAGS: Record<string, string> = {

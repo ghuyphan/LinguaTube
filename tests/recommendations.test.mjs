@@ -400,6 +400,11 @@ test('inferSpokenLanguage prioritizes official audio language over translated ti
         defaultAudioLanguage: 'vi',
         title: 'Nhạc Việt',
         subLanguages: ['vi', 'ja']
+    }), 'vi');
+    assert.equal(inferSpokenLanguage({
+        defaultAudioLanguage: 'th',
+        title: 'Thai Vlog',
+        subLanguages: ['th', 'en']
     }), 'other');
 });
 

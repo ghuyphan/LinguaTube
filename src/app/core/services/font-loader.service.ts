@@ -1,5 +1,6 @@
 import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import type { SupportedLearningLanguage } from '../../models/language.constants';
 
 /**
  * Font Loader Service
@@ -22,9 +23,9 @@ export class FontLoaderService {
      * Load the appropriate font for a given language
      * No-op if font is already loaded or in non-browser context
      */
-    loadFontForLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
-        // English uses Inter (already loaded), skip
-        if (lang === 'en') return;
+    loadFontForLanguage(lang: SupportedLearningLanguage): void {
+        // English and Vietnamese use system/Inter Latin fonts (already loaded), skip
+        if (lang === 'en' || lang === 'vi') return;
         if (!isPlatformBrowser(this.platformId)) return;
         if (this.loadedFonts.has(lang)) return;
 

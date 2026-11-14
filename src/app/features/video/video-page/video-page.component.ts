@@ -24,7 +24,7 @@ import { InfiniteScrollDirective } from '../../../shared/directives';
 import { HistoryService } from '../../history/history.service';
 import { AddToPlaylistDialogComponent } from '../../playlist/add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { PlaylistService } from '../../playlist/playlist.service';
-import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo } from '../../../models';
+import { Playlist, PlaylistWithVideos, Token, SupportedLearningLanguage, SubtitleCue, ProficiencyLevelTier, RecommendedVideo, isSupportedLearningLanguage, LEARNING_LANGUAGE_CODES } from '../../../models';
 import { VideoLevelService } from '../../../core/services/video-level.service';
 import { GrammarService } from '../../../services/grammar.service';
 import { LearningLanguageService } from '../../../services/learning-language.service';
@@ -598,7 +598,7 @@ export class VideoPageComponent implements OnInit {
     this.aiJobManager.jobCompleted$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(({ videoId, language, requestedLanguage, cues }) => {
       if (this.youtube.currentVideo()?.id === videoId) {
         const activeLang = (requestedLanguage || language) as SupportedLearningLanguage;
-        if (['ja', 'zh', 'ko', 'en'].includes(activeLang)) {
+        if (isSupportedLearningLanguage(activeLang)) {
           this.learningLanguage.switchLanguage(activeLang, { navigateHome: false });
         }
         this.handleCaptionsSuccess(cues, activeLang, language);
@@ -996,8 +996,8 @@ export class VideoPageComponent implements OnInit {
     if (!currentVideo) return;
 
     const targetLang = lang ? normalizeLanguageCode(lang) : normalizeLanguageCode(this.settings.settings().language);
-    const validLang: SupportedLearningLanguage = ['ja', 'zh', 'ko', 'en'].includes(targetLang)
-      ? (targetLang as SupportedLearningLanguage)
+    const validLang: SupportedLearningLanguage = isSupportedLearningLanguage(targetLang)
+      ? targetLang
       : (normalizeLanguageCode(this.settings.settings().language) as SupportedLearningLanguage) || 'ja';
 
     this.selectedAiLanguage.set(validLang);
@@ -1008,10 +1008,9 @@ export class VideoPageComponent implements OnInit {
   }
 
   onLanguageSwitchFromSubtitle(lang: string): void {
-    const validLangs: SupportedLearningLanguage[] = ['ja', 'zh', 'ko', 'en'];
-    if (validLangs.includes(lang as SupportedLearningLanguage)) {
+    if (isSupportedLearningLanguage(lang)) {
       this.skipNextMismatchDialog = true;
-      this.learningLanguage.switchLanguage(lang as SupportedLearningLanguage, { navigateHome: false });
+      this.learningLanguage.switchLanguage(lang, { navigateHome: false });
     }
   }
 
@@ -1213,13 +1212,12 @@ export class VideoPageComponent implements OnInit {
 
       if (availableNative && availableNative.length > 0) {
         // Find a preferred language to suggest
-        const preferred = ['ja', 'zh', 'ko', 'en'];
         const requested = this.settings.settings().language;
 
         // normalize function to match simpler codes
         const normalize = (l: string) => l.split('-')[0].toLowerCase();
 
-        let suggestion = availableNative.find(l => preferred.includes(normalize(l)));
+        let suggestion = availableNative.find(l => (LEARNING_LANGUAGE_CODES as readonly string[]).includes(normalize(l)));
         if (!suggestion) suggestion = availableNative[0]; // fallback to first available
 
         if (suggestion) {
@@ -1250,12 +1248,11 @@ export class VideoPageComponent implements OnInit {
     // Detect actual language returned by backend (or explicit override from async job)
     const detectedFull = detectedLangOverride || this.transcript.detectedLanguage();
     const detected = normalizeLanguageCode(detectedFull);
-    const validLangs = ['ja', 'zh', 'ko', 'en'];
 
     // Enrich history with verified server subtitle languages (sub_languages)
     const currentVideo = this.youtube.currentVideo();
     if (currentVideo) {
-      const resolvedLang = (detected && validLangs.includes(detected)) ? detected : (requestedLang || 'en');
+      const resolvedLang = isSupportedLearningLanguage(detected) ? detected : (requestedLang || 'en');
       const verifiedSubs = this.transcript.subLanguages();
       const langsToSave = verifiedSubs.length > 0 ? verifiedSubs : [resolvedLang];
       void this.historyService.updateLanguages(currentVideo.id, langsToSave);
@@ -1263,9 +1260,9 @@ export class VideoPageComponent implements OnInit {
 
     // Use detected language for tokenization (silently - no popup)
     let tokenPromise: Promise<void>;
-    if (detected && validLangs.includes(detected)) {
-      const targetLang = detected as 'ja' | 'zh' | 'ko' | 'en';
-      this.subtitles.setLanguageState(targetLang, requestedLang as 'ja' | 'zh' | 'ko' | 'en');
+    if (isSupportedLearningLanguage(detected)) {
+      const targetLang = detected;
+      this.subtitles.setLanguageState(targetLang, requestedLang as SupportedLearningLanguage);
       tokenPromise = this.subtitles.tokenizeAllCues(targetLang);
 
       // Check for mismatch: requested language differs from detected
@@ -1279,16 +1276,16 @@ export class VideoPageComponent implements OnInit {
       // Reset the skip flag after processing
       this.skipNextMismatchDialog = false;
     } else {
-      const lang = requestedLang as 'ja' | 'zh' | 'ko' | 'en';
+      const lang = requestedLang as SupportedLearningLanguage;
       this.subtitles.setLanguageState(lang, lang);
       tokenPromise = this.subtitles.tokenizeAllCues(lang);
       this.skipNextMismatchDialog = false;
     }
 
     // Evaluate difficulty level for video
-    const activeLang = (detected && validLangs.includes(detected))
-      ? (detected as 'ja' | 'zh' | 'ko' | 'en')
-      : (requestedLang as 'ja' | 'zh' | 'ko' | 'en');
+    const activeLang: SupportedLearningLanguage = isSupportedLearningLanguage(detected)
+      ? detected
+      : (requestedLang as SupportedLearningLanguage);
 
     const serverLevels = this.transcript.serverLevels();
 
@@ -1340,10 +1337,10 @@ export class VideoPageComponent implements OnInit {
     const detected = this.mismatchDetectedLang();
     if (detected) {
       const norm = normalizeLanguageCode(detected);
-      if (['ja', 'zh', 'ko', 'en'].includes(norm)) {
+      if (isSupportedLearningLanguage(norm)) {
         // Skip the dialog for the upcoming refetch triggered by language change
         this.skipNextMismatchDialog = true;
-        this.learningLanguage.switchLanguage(norm as SupportedLearningLanguage, { navigateHome: false });
+        this.learningLanguage.switchLanguage(norm, { navigateHome: false });
       }
     }
     this.showLanguageMismatchDialog.set(false);
@@ -1380,7 +1377,7 @@ export class VideoPageComponent implements OnInit {
     const rawLang = isAI ? trackStr.slice(3) : trackStr;
     const norm = normalizeLanguageCode(rawLang);
 
-    if (!['ja', 'zh', 'ko', 'en'].includes(norm)) {
+    if (!isSupportedLearningLanguage(norm)) {
       console.warn('[VideoPage] Unsupported track language selected:', rawLang);
       return;
     }
@@ -1390,7 +1387,7 @@ export class VideoPageComponent implements OnInit {
     this.skipNextMismatchDialog = true;
 
     // Switch active learning language without navigating home
-    this.learningLanguage.switchLanguage(norm as SupportedLearningLanguage, { navigateHome: false });
+    this.learningLanguage.switchLanguage(norm, { navigateHome: false });
 
     // Make sure subtitles are visible when a track is explicitly selected
     if (!this.subtitles.subtitlesVisible()) {

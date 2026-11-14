@@ -1,7 +1,7 @@
 // Explicit route inventory: the default suite rejects an unlisted future API file.
 export const routes = [
  ['diamonds','GET'], ['dict','GET'], ['dual-subtitles','POST'], ['geo','GET'],
- ['gladia-webhook','POST'], ['heal-levels','POST'], ['internal/reconcile','POST'],
+ ['gladia-webhook','POST'], ['grammar','GET'], ['heal-levels','POST'], ['internal/reconcile','POST'],
  ['kanji','GET'], ['leaderboard','GET'], ['payment/check-status','GET'],
  ['payment/create-order','POST'], ['payment/revenuecat-webhook','POST'], ['payment/webhook','POST'],
  ['recommended-videos','POST'], ['tokenize/[lang]','POST'], ['tokenize-batch/[lang]','POST'],
@@ -118,5 +118,7 @@ add('TTS fallback valid audio','tts',{query:{text:'Fixture valid speech',lang:'e
 add('single tokenizer accepts exact length boundary','tokenize/[lang]',{params:{lang:'en'},body:{text:'a'.repeat(10000)},status:200,noUpstream:true});
 add('batch tokenizer accepts 800 items for authenticated quota','tokenize-batch/[lang]',{params:{lang:'en'},body:{videoId:'abcdefghijk',texts:Array(800).fill('')},headers:signed,status:200,authOnly:true});
 add('translation accepts exact 80-item boundary without provider work','translate/batch',{body:{source:'en',target:'en',texts:Array(80).fill('hello')},status:200,noUpstream:true});
+add('invalid grammar language rejected','grammar',{query:{lang:'fr'},status:400,noUpstream:true});
+add('invalid grammar ui language rejected','grammar',{query:{lang:'vi',ui:'fr'},status:400,noUpstream:true});
 for (const [route,method] of routes.filter(([,method])=>method==='POST'))
  add('absent body is handled explicitly',route,{status:['heal-levels','internal/reconcile'].includes(route)?401:400,noUpstream:true});

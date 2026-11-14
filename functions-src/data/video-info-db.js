@@ -11,6 +11,7 @@ import { rankVideos } from '../services/recommendation.service.js';
 import { detectVideoCategory } from '../services/category.service.js';
 import { inferSpokenLanguage, normalizePrimaryLanguage } from '../services/video-language.service.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
 
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
@@ -38,7 +39,7 @@ function readCatalogLevels(raw) {
     for (const [key, value] of Object.entries(parseLevelMap(raw))) {
         if (key.endsWith('_meta')) continue;
         const language = normalizeLanguageCode(key);
-        if (!['ja', 'zh', 'ko', 'en', 'overall'].includes(language)) continue;
+        if (!SUPPORTED_LEARNING_LANGUAGE_SET.has(language) && language !== 'overall') continue;
         if (levels[language] && key !== language) continue;
         const level = typeof value === 'string' ? value : value?.level || value?.tier;
         if (typeof level !== 'string' || !level.trim() || level.trim().toLowerCase() === 'null') continue;
@@ -342,7 +343,7 @@ export async function addAiLanguage(db, videoId, lang) {
  */
 export async function saveVideoLevel(db, _kv, videoId, language, level, confidence = 0.8, method = 'linguistics', details = null) {
     language = normalizeLanguageCode(language);
-    if (!db || !videoId || !['ja', 'zh', 'ko', 'en'].includes(language) || !level) return null;
+    if (!db || !videoId || !SUPPORTED_LEARNING_LANGUAGE_SET.has(language) || !level) return null;
 
     try {
         for (let attempt = 0; attempt < 3; attempt++) {
@@ -534,7 +535,9 @@ export function detectLevelFromMetadata(title = '', channel = '', targetLang = n
 
     const checkEn = (explicitOnly = false) => {
         const cefrMatch = text.match(/\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*level)\b/i);
-        if (cefrMatch) return { lang: 'en', level: `CEFR ${(cefrMatch[1] || cefrMatch[2]).toUpperCase()}` };
+        if (cefrMatch && !/\bVietnamese\b|ti[eế]ng\s*vi[eệ]t/i.test(text)) {
+            return { lang: 'en', level: `CEFR ${(cefrMatch[1] || cefrMatch[2]).toUpperCase()}` };
+        }
         if (explicitOnly) return null;
         if (/\bupper[\s-]intermediate\b/i.test(text)) return { lang: 'en', level: 'CEFR B2' };
         if (/\b(?:for\s+)?intermediate\b/i.test(text)) return { lang: 'en', level: 'CEFR B1' };
@@ -544,23 +547,42 @@ export function detectLevelFromMetadata(title = '', channel = '', targetLang = n
         return null;
     };
 
-    const checks = { ja: checkJa, zh: checkZh, ko: checkKo, en: checkEn };
+    const checkVi = (explicitOnly = false) => {
+        const bacMatch = text.match(/\bb[ậâ]c\s*([1-6])\b/i);
+        if (bacMatch) {
+            return { lang: 'vi', level: LEVEL_SCALES.vi[Number(bacMatch[1]) - 1] };
+        }
+        const cefrMatch = text.match(/\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*level)\b/i);
+        if (cefrMatch && (cleanTarget === 'vi' || /\bVietnamese\b|ti[eế]ng\s*vi[eệ]t/i.test(text))) {
+            return { lang: 'vi', level: `CEFR ${(cefrMatch[1] || cefrMatch[2]).toUpperCase()}` };
+        }
+        if (explicitOnly) return null;
+        if (/trung cao c[aấ]p|\bupper[\s-]intermediate\b/i.test(text)) return { lang: 'vi', level: 'CEFR B2' };
+        if (/cao c[aấ]p|\b(?:advanced|fluent)\b/i.test(text)) return { lang: 'vi', level: 'CEFR C1' };
+        if (/trung c[aấ]p|\b(?:for\s+)?intermediate\b/i.test(text)) return { lang: 'vi', level: 'CEFR B1' };
+        if (/c[oơ]\s*b[aả]n|\b(?:for\s+)?elementary\b/i.test(text)) return { lang: 'vi', level: 'CEFR A2' };
+        if (/s[oơ]\s*c[aấ]p|nh[aậ]p\s*m[oô]n|\b(?:for\s+)?beginners?\b/i.test(text)) return { lang: 'vi', level: 'CEFR A1' };
+        return null;
+    };
+
+    const checks = { ja: checkJa, zh: checkZh, ko: checkKo, en: checkEn, vi: checkVi };
     const targetCheck = Object.hasOwn(checks, cleanTarget) ? checks[cleanTarget] : null;
     const explicit = targetCheck?.(true) ||
-        checkJa(true) || checkZh(true) || checkKo(true) || checkEn(true);
+        checkJa(true) || checkZh(true) || checkKo(true) || checkEn(true) || checkVi(true);
     if (explicit) return !targetCheck || explicit.lang === cleanTarget ? explicit : null;
 
     const namedLanguage =
         /\bJapanese\b|日本語/i.test(text) ? 'ja' :
         /\b(?:Mandarin|Chinese)\b|中文|汉语|漢語/i.test(text) ? 'zh' :
         /\bKorean\b|한국어|조선말/i.test(text) ? 'ko' :
+        /\bVietnamese\b|ti[eế]ng\s*vi[eệ]t/i.test(text) ? 'vi' :
         /\bEnglish\b/i.test(text) ? 'en' : null;
     if (namedLanguage) {
         return !targetCheck || namedLanguage === cleanTarget ? checks[namedLanguage]() : null;
     }
     if (targetCheck) return targetCheck();
 
-    return checkJa() || checkZh() || checkKo() || checkEn();
+    return checkJa() || checkZh() || checkKo() || checkEn() || checkVi();
 }
 
 /**
@@ -664,12 +686,20 @@ export function normalizeLevelScore(score, lang) {
     return Math.min(cleanLang === 'ja' ? 5 : 6, Math.max(1, Number.isFinite(score) ? score : 1));
 }
 
+const LEVEL_SCALES = {
+    ja: ['JLPT N5', 'JLPT N4', 'JLPT N3', 'JLPT N2', 'JLPT N1'],
+    zh: ['HSK 1', 'HSK 2', 'HSK 3', 'HSK 4', 'HSK 5', 'HSK 6'],
+    ko: ['TOPIK 1', 'TOPIK 2', 'TOPIK 3', 'TOPIK 4', 'TOPIK 5', 'TOPIK 6'],
+    en: ['CEFR A1', 'CEFR A2', 'CEFR B1', 'CEFR B2', 'CEFR C1', 'CEFR C2'],
+    vi: ['CEFR A1', 'CEFR A2', 'CEFR B1', 'CEFR B2', 'CEFR C1', 'CEFR C2']
+};
+
 /** Representative score for an explicit level, including the six-level scales. */
 export function levelToScore(level) {
     const clean = String(level || '').trim().toUpperCase();
     const jlpt = clean.match(/^(?:JLPT\s*)?N([1-5])$/);
     if (jlpt) return 6 - Number(jlpt[1]);
-    const numbered = clean.match(/^(?:HSK|TOPIK)\s*([1-6])/);
+    const numbered = clean.match(/^(?:HSK|TOPIK|B[ẬÂ]C)\s*([1-6])/);
     if (numbered) return Number(numbered[1]);
     if (/^TOPIK\s*II$/.test(clean)) return 6;
     if (/^TOPIK\s*I$/.test(clean)) return 1;
@@ -688,38 +718,12 @@ export function levelToScore(level) {
 export function scoreToLevelLabel(score, lang) {
     const clamped = normalizeLevelScore(score, lang);
     const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
-    if (cleanLang === 'ja') {
-        if (clamped < 1.85) return 'JLPT N5';
-        if (clamped < 2.75) return 'JLPT N4';
-        if (clamped < 3.70) return 'JLPT N3';
-        if (clamped < 4.60) return 'JLPT N2';
-        return 'JLPT N1';
-    }
-    if (cleanLang === 'zh') {
-        if (clamped < 1.85) return 'HSK 1';
-        if (clamped < 2.85) return 'HSK 2';
-        if (clamped < 3.85) return 'HSK 3';
-        if (clamped < 4.85) return 'HSK 4';
-        if (clamped < 5.85) return 'HSK 5';
-        return 'HSK 6';
-    }
-    if (cleanLang === 'ko') {
-        if (clamped < 1.85) return 'TOPIK 1';
-        if (clamped < 2.85) return 'TOPIK 2';
-        if (clamped < 3.85) return 'TOPIK 3';
-        if (clamped < 4.85) return 'TOPIK 4';
-        if (clamped < 5.85) return 'TOPIK 5';
-        return 'TOPIK 6';
-    }
-    if (cleanLang === 'en') {
-        if (clamped < 1.85) return 'CEFR A1';
-        if (clamped < 2.85) return 'CEFR A2';
-        if (clamped < 3.85) return 'CEFR B1';
-        if (clamped < 4.85) return 'CEFR B2';
-        if (clamped < 5.85) return 'CEFR C1';
-        return 'CEFR C2';
-    }
-    return `Level ${Math.round(clamped)}`;
+    const scale = LEVEL_SCALES[cleanLang];
+    if (!scale) return `Level ${Math.round(clamped)}`;
+
+    const cutoffs = cleanLang === 'ja' ? [1.85, 2.75, 3.70, 4.60] : [1.85, 2.85, 3.85, 4.85, 5.85];
+    const idx = cutoffs.findIndex(limit => clamped < limit);
+    return scale[idx === -1 ? scale.length - 1 : idx];
 }
 
 /**
@@ -1091,7 +1095,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
                     channelAvatar: row.channel_avatar || null,
                     duration: row.duration_seconds || 0,
                     thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
-                    languages: [...new Set(languages.filter(l => ['ja', 'zh', 'ko', 'en'].includes(l)))],
+                    languages: [...new Set(languages.filter(l => SUPPORTED_LEARNING_LANGUAGE_SET.has(l)))],
                     level: typeof level === 'string' ? level : level?.level,
                     levels: catalogLevel ? { [lang]: catalogLevel } : undefined,
                     tier: videoTier || undefined,

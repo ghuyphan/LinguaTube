@@ -11,10 +11,11 @@ describe('VideoLevelModel', () => {
         ja: { cuts: [1.85, 2.75, 3.70, 4.60], labels: ['JLPT N5', 'JLPT N4', 'JLPT N3', 'JLPT N2', 'JLPT N1'] },
         zh: { cuts: [1.85, 2.85, 3.85, 4.85, 5.85], labels: [1, 2, 3, 4, 5, 6].map(n => `HSK ${n}`) },
         ko: { cuts: [1.85, 2.85, 3.85, 4.85, 5.85], labels: [1, 2, 3, 4, 5, 6].map(n => `TOPIK ${n}`) },
-        en: { cuts: [1.85, 2.85, 3.85, 4.85, 5.85], labels: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map(l => `CEFR ${l}`) }
+        en: { cuts: [1.85, 2.85, 3.85, 4.85, 5.85], labels: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map(l => `CEFR ${l}`) },
+        vi: { cuts: [1.85, 2.85, 3.85, 4.85, 5.85], labels: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map(l => `CEFR ${l}`) }
     };
 
-    it('should clamp scores to [1, 5] for ja and [1, 6] for zh, ko, en', () => {
+    it('should clamp scores to [1, 5] for ja and [1, 6] for zh, ko, en, vi', () => {
         expect(normalizeLevelScore(-10, 'ja')).toBe(1);
         expect(normalizeLevelScore(10, 'ja')).toBe(5);
         expect(normalizeLevelScore(3.4, 'ja')).toBe(3.4);
@@ -23,9 +24,11 @@ describe('VideoLevelModel', () => {
         expect(normalizeLevelScore(10, 'zh')).toBe(6);
         expect(normalizeLevelScore(5.9, 'ko')).toBe(5.9);
         expect(normalizeLevelScore(7, 'en')).toBe(6);
+        expect(normalizeLevelScore(7, 'vi')).toBe(6);
     });
 
     it('should accurately map explicit level labels to representative scores', () => {
+        expect(levelToScore('Bậc 3')).toBe(3);
         expect(levelToScore('JLPT N5')).toBe(1);
         expect(levelToScore('JLPT N4')).toBe(2);
         expect(levelToScore('JLPT N3')).toBe(3);

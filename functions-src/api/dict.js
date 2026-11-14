@@ -33,7 +33,7 @@ export async function onRequestGet(context) {
 
     const url = new URL(request.url);
     const word = sanitizeWord(url.searchParams.get('word'));
-    const from = sanitizeLanguage(url.searchParams.get('from'), ['ja', 'zh', 'ko', 'en']);
+    const from = sanitizeLanguage(url.searchParams.get('from'));
     const to = sanitizeLanguage(url.searchParams.get('to'), ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
 
     // Validate parameters

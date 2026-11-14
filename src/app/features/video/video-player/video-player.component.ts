@@ -37,8 +37,8 @@ import {
   GrammarPattern,
   GrammarMatch,
   SupportedLearningLanguage,
-  SupportedGrammarLang,
-  ReadingDisplayMode
+  ReadingDisplayMode,
+  isSupportedLearningLanguage
 } from '../../../models';
 import {
   PlaybackSpeed,
@@ -103,7 +103,7 @@ export class VideoPlayerComponent implements OnDestroy {
 
   // Translation language state
   targetLang = computed(() => this.subtitles.dualSubtitleTargetLang());
-  isCJKLanguage = computed(() => ['ja', 'zh', 'ko', 'en'].includes(this.subtitles.activeLanguage()));
+  isCJKLanguage = computed(() => isSupportedLearningLanguage(this.subtitles.activeLanguage()));
 
   // Reading display state for settings
   supportsReadingDisplay = computed(() => ['ja', 'zh', 'ko'].includes(this.subtitles.activeLanguage()));
@@ -347,9 +347,9 @@ export class VideoPlayerComponent implements OnDestroy {
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
 
     const lang = this.activeSubtitleLanguage();
-    if (!lang || !['ja', 'zh', 'ko', 'en'].includes(lang)) return [];
+    if (!isSupportedLearningLanguage(lang)) return [];
 
-    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko' | 'en');
+    return this.grammar.detectPatterns(tokens, lang);
   });
 
   // Fullscreen grammar popup state
@@ -440,8 +440,8 @@ export class VideoPlayerComponent implements OnDestroy {
     effect(() => {
       const lang = this.activeSubtitleLanguage();
       const hasVideo = !!this.youtube.currentVideo();
-      if (hasVideo && lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
-        this.grammar.preloadPatterns(lang as SupportedGrammarLang);
+      if (hasVideo && isSupportedLearningLanguage(lang) && this.grammar.grammarModeEnabled()) {
+        this.grammar.preloadPatterns(lang);
       }
     });
 

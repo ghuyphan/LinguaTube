@@ -202,6 +202,9 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   - `en -> vi`: Naver English-Vietnamese (`envi`) $\rightarrow$ Glosbe
   - `en -> ja`: Naver English-Japanese (`enja`) $\rightarrow$ Jisho.org
   - `en -> ko`: Naver Oxford English-Korean (`enko`)
+  - `vi -> vi`: Vietnamese Wiktionary extract (`vi.wiktionary.org`, IPA + Vietnamese glosses)
+  - `vi -> en`: English Wiktionary REST API (`en.wiktionary.org`) $\rightarrow$ Glosbe
+  - `vi -> ja / ko / zh`: Glosbe bilingual dictionary with Wiktionary/GTX fallback
 - **Query Relevance Ranking & Multi-Reading Formatting**:
   - **Relevance Scoring**: Upstream dictionary results (Mazii, Jotoba) are dynamically scored against the query word: exact headword match (100 pts), primary reading match (85 pts), secondary reading match (50 pts), prefix match (40 pts), and `uk` (usually kana) bonus (+15 pts). This ensures kana queries (e.g. `いる`) prioritize true targets (`居る` / `要る`) over words where the query is only a secondary or archaic reading (`入る`).
   - **Clean Multi-Reading Delimiters**: Space-delimited upstream readings are parsed and formatted with clean slashes (`はいる / いる`) and converted to romanization (`hairu / iru`), preventing concatenated syllable runs in client display.
@@ -594,6 +597,23 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   ```
 - **Client Consumption**:
   - Consumed by `CountryService` in conjunction with browser locale heuristics (`navigator.language`, timezone) and user preference overrides in Settings Sheet.
+
+---
+
+### 3.19. Shared Grammar Pack & Lookup API
+- **Route**: `GET /api/grammar`
+- **Source**: `functions-src/api/grammar.js`, `functions-src/data/grammar-store.js` & `server/server.js` (Local Dev)
+- **Storage Resolution Priority** (0 KV writes):
+  1. Warm isolate LRU memory cache (`<0.1 ms`, `X-Cache: HIT-MEMORY`)
+  2. Cloudflare R2 (`TRANSCRIPT_STORAGE` under `grammar/patterns/{lang}.json` and `grammar/translations/{lang}/{ui}.json`) for hot updates without app releases
+  3. Cloudflare Pages static assets (`env.ASSETS` at `/data/grammar/...`) / local Node FS (`public/data/grammar/...`)
+- **Query Modes**:
+  - `?type=manifest` (default when `lang` omitted): Returns `manifest.json` (`languages`, `uiLanguages`, pattern counts, translation packs)
+  - `?lang={lang}` (`type=patterns`): Returns `GrammarPattern[]` for `ja | zh | ko | en | vi`
+  - `?lang={lang}&ui={ui}` (`type=translations`): Returns `Record<patternId, GrammarTranslation>` (empty `{}` when `ui=en`)
+  - `?lang={lang}&ui={ui}&type=all`: Returns `{ language, ui, patterns, translations }` in one request for Web/Flutter pack sync
+  - `?lang={lang}&id={patternId}[&ui={ui}]` (`type=pattern`): Returns a single localized pattern (`404` if missing)
+- **Caching**: `Cache-Control: public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400` + `ngsw-config.json` service-worker caching + IndexedDB persistence in `GrammarService`.
 
 ---
 

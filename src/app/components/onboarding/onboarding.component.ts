@@ -161,6 +161,14 @@ export class OnboardingComponent implements OnInit, OnDestroy {
             flag: '/flags/gb.svg',
             tag: 'Global Cinema & Idioms',
             defaultCompanion: 'ranger'
+        },
+        {
+            code: 'vi',
+            name: 'Vietnamese',
+            nativeName: 'Tiếng Việt',
+            flag: '/flags/vn.svg',
+            tag: 'Tones, Daily Vlogs & Street Talk',
+            defaultCompanion: 'ranger'
         }
     ];
 
@@ -467,7 +475,7 @@ export class OnboardingComponent implements OnInit, OnDestroy {
             if (tier === 'upper_intermediate') return 'TOPIK 5';
             return 'TOPIK 6';
         }
-        if (lang === 'en') {
+        if (lang === 'en' || lang === 'vi') {
             if (tier === 'beginner') return 'A1';
             if (tier === 'elementary') return 'A2';
             if (tier === 'intermediate') return 'B1';

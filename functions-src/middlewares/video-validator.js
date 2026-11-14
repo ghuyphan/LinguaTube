@@ -1,5 +1,6 @@
 import { resolveVerifiedVideoMetadata } from '../services/video-metadata.service.js';
 import { readBoundedBody } from '../utils/response-body.js';
+import { SUPPORTED_LEARNING_LANGUAGES } from '../utils/utils.js';
 
 const inFlightDetails = new Map();
 
@@ -8,8 +9,8 @@ const inFlightDetails = new Map();
  * Shared validation for language and duration before expensive API calls
  */
 
-// Supported languages for the app
-export const SUPPORTED_LANGUAGES = ['ja', 'ko', 'zh', 'en'];
+// Supported learning languages re-exported from utils.js
+export const SUPPORTED_LANGUAGES = SUPPORTED_LEARNING_LANGUAGES;
 
 // Max video duration limits (in seconds)
 export const MAX_DURATION = {

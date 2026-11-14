@@ -1,11 +1,14 @@
-import { sha256 } from '../../utils/utils.js';
-/**
- * Tokenization API (Cloudflare Function)
- * Single-text tokenization endpoint with optional caching
- */
-
-import { jsonResponse, handleOptions, errorResponse, validateTextLength, getRequestJson } from '../../utils/utils.js';
-import { tokenize, isKuromojiReady } from '../../utils/tokenizer.js';
+import {
+    sha256,
+    jsonResponse,
+    handleOptions,
+    errorResponse,
+    validateTextLength,
+    getRequestJson,
+    SUPPORTED_LEARNING_LANGUAGES,
+    SUPPORTED_LEARNING_LANGUAGE_SET
+} from '../../utils/utils.js';
+import { tokenize, isTokenizerReady } from '../../utils/tokenizer.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -15,7 +18,6 @@ import {
 
 import { validateAuthToken } from '../../middlewares/auth.js';
 
-const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
 const MAX_TEXT_LENGTH = 10000; // 10KB max
 
@@ -45,9 +47,9 @@ export async function onRequest(context) {
     }
 
     // Validate language
-    if (!SUPPORTED_LANGUAGES.has(lang)) {
+    if (!SUPPORTED_LEARNING_LANGUAGE_SET.has(lang)) {
         return jsonResponse(
-            { error: `Unsupported language: ${lang}. Supported: ja, ko, zh, en` },
+            { error: `Unsupported language: ${lang}. Supported: ${SUPPORTED_LEARNING_LANGUAGES.join(', ')}` },
             400
         );
     }
@@ -78,7 +80,7 @@ export async function onRequest(context) {
         const memHit = memTokenSingleCache.get(cacheKey);
         if (memHit) {
             const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));
-            const shouldUpgradeFallback = memHit.isFallback && (lang !== 'ja' || isKuromojiReady());
+            const shouldUpgradeFallback = memHit.isFallback && isTokenizerReady(lang);
             if (isExpired || shouldUpgradeFallback) {
                 memTokenSingleCache.delete(cacheKey);
             } else if (Array.isArray(memHit.tokens)) {
@@ -96,8 +98,8 @@ export async function onRequest(context) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 if (cached && Array.isArray(cached.tokens)) {
-                    const isDegradedJa = lang === 'ja' && isKuromojiReady() && cached.isFallback;
-                    if (!isDegradedJa) {
+                    const isDegraded = cached.isFallback && isTokenizerReady(lang);
+                    if (!isDegraded) {
                         if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
                             const oldest = memTokenSingleCache.keys().next().value;
                             if (oldest) memTokenSingleCache.delete(oldest);
@@ -132,8 +134,8 @@ export async function onRequest(context) {
         }
 
         // Tokenize using shared module
-        const isFallback = lang === 'ja' && !isKuromojiReady();
-        const tokens = await tokenize(text, lang);
+        const tokens = await tokenize(text, lang, { assets: env?.ASSETS, requestUrl: request.url });
+        const isFallback = !isTokenizerReady(lang);
         const result = { tokens, cachedAt: Date.now(), isFallback };
 
         // Save to warm in-memory cache (Rule 2: zero KV writes for micro tokenization)

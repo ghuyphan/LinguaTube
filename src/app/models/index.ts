@@ -1,4 +1,5 @@
 // Subtitle models
+import type { SupportedLearningLanguage } from './language.constants';
 export * from './grammar.model';
 export * from './history.model';
 export * from './playlist.model';
@@ -44,7 +45,7 @@ export interface VocabularyItem {
   pinyin?: string;
   romanization?: string;  // Japanese romaji / Korean romanization
   meaning: string;
-  language: 'ja' | 'zh' | 'ko' | 'en';
+  language: SupportedLearningLanguage;
   audio?: string;
   level: WordLevel;
   examples: string[];
@@ -75,6 +76,7 @@ export interface VocabularyStats {
   chinese: number;
   korean: number;
   english: number;
+  vietnamese: number;
 }
 
 export type WordLevel = 'new' | 'learning' | 'known' | 'ignored';
@@ -112,7 +114,6 @@ export interface VideoInfo {
   languages?: string[];
 }
 
-export type SupportedLearningLanguage = 'ja' | 'zh' | 'ko' | 'en';
 export type ReadingDisplayMode = 'native' | 'annotated' | 'reading' | 'annotatedRomanized' | 'romanized';
 // Settings
 export interface UserSettings {

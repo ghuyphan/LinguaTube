@@ -14,6 +14,7 @@ import { LearningLanguageService } from '../../services/learning-language.servic
 import { GamificationService } from '../../core/services/gamification.service';
 import { VideoRecommendationService } from '../../core/services/video-recommendation.service';
 import { IdlePreloadStrategy } from '../../core/strategies/idle-preload.strategy';
+import type { SupportedLearningLanguage } from '../../models';
 
 @Component({
     selector: 'app-sidebar',
@@ -150,13 +151,13 @@ export class SidebarComponent {
         this.settings.setSidebarCollapsed(!this.isCollapsed());
     }
 
-    setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
+    setLanguage(lang: SupportedLearningLanguage): void {
         this.showLangPicker.set(false);
         this.learningLanguage.switchLanguage(lang);
     }
 
     onLangSelected(value: string): void {
-        this.setLanguage(value as 'ja' | 'zh' | 'ko' | 'en');
+        this.setLanguage(value as SupportedLearningLanguage);
     }
 
     onFooterUserClick(): void {

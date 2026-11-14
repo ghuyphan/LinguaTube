@@ -1,8 +1,8 @@
-# Voca 📺 🎌 🇨🇳 🇰🇷 🇬🇧
+# Voca 📺 🎌 🇨🇳 🇰🇷 🇬🇧 🇻🇳
 
 **Turn any YouTube video into an interactive, high-retention language lesson.**
 
-Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (PWA) designed to help you master **Japanese**, **Chinese**, **Korean**, and **English** directly from authentic video content. It combines YouTube's massive library with cutting-edge language tools: interactive clickable subtitles, instant multi-source dictionary lookups, grammar pattern detection, an SM-2 spaced repetition system (SRS), and Gladia AI-powered audio transcription.
+Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (PWA) designed to help you master **Japanese**, **Chinese**, **Korean**, **English**, and **Vietnamese** directly from authentic video content. It combines YouTube's massive library with cutting-edge language tools: interactive clickable subtitles, instant multi-source dictionary lookups, grammar pattern detection, an SM-2 spaced repetition system (SRS), and Gladia AI-powered audio transcription.
 
 ![Angular 19](https://img.shields.io/badge/Angular-19-%23DD0031?style=flat-square&logo=angular)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-%233178C6?style=flat-square&logo=typescript)
@@ -27,12 +27,13 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
   - **Chinese**: Word boundary segmentation with `Intl.Segmenter` and `pinyin-pro` tone marks.
   - **Korean**: `Intl.Segmenter` paired with `hangul-romanization` (Revised Romanization).
   - **English**: Word and punctuation segmentation via `Intl.Segmenter`.
+  - **Vietnamese**: Longest-match multi-syllable compound merging (`vi-compounds.txt` from MIT `ipa-dict`) layered on `Intl.Segmenter('vi')`.
 - **Reading Display Modes**: Choose between **Native**, **Annotated Ruby** (Furigana/Pinyin), **Reading Only**, **Annotated Romanized**, or **Romanized** (Hepburn Romaji).
 - **Multi-Source Hybrid Dictionary**:
-  - Click any subtitle token for instant definitions, readings, audio pronunciations, and level indicators (JLPT, HSK, TOPIK).
-  - Backed by Jotoba, Mazii, Naver (En/Ko/Vi), MDBG, FreeDictionary, and Glosbe with automatic Google Translate GTX fallback.
+  - Click any subtitle token for instant definitions, readings, audio pronunciations, and level indicators (JLPT, HSK, TOPIK, CEFR).
+  - Backed by Jotoba, Mazii, Naver (En/Ko/Vi), MDBG, FreeDictionary, Wiktionary (`en.wiktionary.org` REST & `vi.wiktionary.org`), and Glosbe with automatic Google Translate GTX fallback.
 - **Grammar Pattern Recognition**:
-  - Automatically identifies grammatical structures across **Japanese** (JLPT N5–N1), **Korean** (TOPIK I–II), **Chinese** (HSK 1–6), and **English** (CEFR A1–C2).
+  - Automatically identifies grammatical structures across **Japanese** (JLPT N5–N1), **Korean** (TOPIK I–II), **Chinese** (HSK 1–6), **English** (CEFR A1–C2), and **Vietnamese** (CEFR A1–C1).
   - Includes multi-language explanations (translated into Vietnamese, Chinese, Japanese, Korean, and English) and native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`).
 - **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching. Powered by a centralized cache-first architecture (`/api/dual-subtitles?onlyCache=true`) with sliding-window lazy translation and zero playback start delay across player overlays and subtitle lists.
 

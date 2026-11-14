@@ -6,7 +6,7 @@ import { serviceRoleRequest } from '../services/supabase-rest.js';
 
 import { validateAuthToken } from '../middlewares/auth.js';
 import { consumeRateLimit, getClientIdentifier } from '../middlewares/rate-limiter.js';
-import { jsonResponse, handleOptions, getRequestJson } from '../utils/utils.js';
+import { jsonResponse, handleOptions, getRequestJson, SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
 
 export const SEED_LEADERBOARD = [
     // --- Japanese (JA) Learners ---
@@ -43,7 +43,16 @@ export const SEED_LEADERBOARD = [
     { user_id: 'seed_en_4', name: 'Oliver Smith', avatar: '', xp: 2650, weekly_xp: 260, level: 4, streak: 10, badges_count: 4, target_lang: 'en', country: '🇦🇺' },
     { user_id: 'seed_en_5', name: 'Yuto Nakamura', avatar: '', xp: 1650, weekly_xp: 190, level: 3, streak: 6, badges_count: 3, target_lang: 'en', country: '🇯🇵' },
     { user_id: 'seed_en_6', name: 'Emma Johnson', avatar: '', xp: 1050, weekly_xp: 140, level: 2, streak: 3, badges_count: 2, target_lang: 'en', country: '🇨🇦' },
-    { user_id: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weekly_xp: 70, level: 1, streak: 1, badges_count: 1, target_lang: 'en', country: '🇺🇸' }
+    { user_id: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weekly_xp: 70, level: 1, streak: 1, badges_count: 1, target_lang: 'en', country: '🇺🇸' },
+
+    // --- Vietnamese (VI) Learners ---
+    { user_id: 'seed_vi_1', name: 'Minh Nguyen', avatar: '', xp: 8940, weekly_xp: 610, level: 9, streak: 24, badges_count: 10, target_lang: 'vi', country: '🇻🇳' },
+    { user_id: 'seed_vi_2', name: 'Haruto Sato', avatar: '', xp: 5420, weekly_xp: 440, level: 6, streak: 14, badges_count: 6, target_lang: 'vi', country: '🇯🇵' },
+    { user_id: 'seed_vi_3', name: 'Soo-jin Park', avatar: '', xp: 3680, weekly_xp: 330, level: 4, streak: 9, badges_count: 5, target_lang: 'vi', country: '🇰🇷' },
+    { user_id: 'seed_vi_4', name: 'Daniel Kim', avatar: '', xp: 2290, weekly_xp: 250, level: 3, streak: 7, badges_count: 4, target_lang: 'vi', country: '🇺🇸' },
+    { user_id: 'seed_vi_5', name: 'Linh Tran', avatar: '', xp: 1480, weekly_xp: 185, level: 2, streak: 5, badges_count: 3, target_lang: 'vi', country: '🇻🇳' },
+    { user_id: 'seed_vi_6', name: 'Claire Moreau', avatar: '', xp: 940, weekly_xp: 120, level: 2, streak: 3, badges_count: 2, target_lang: 'vi', country: '🇫🇷' },
+    { user_id: 'seed_vi_7', name: 'Ethan Carter', avatar: '', xp: 480, weekly_xp: 65, level: 1, streak: 1, badges_count: 1, target_lang: 'vi', country: '🇦🇺' }
 ];
 
 const memLeaderboardCache = new Map();
@@ -61,7 +70,7 @@ const MEM_LEADERBOARD_TTL_MS = 60 * 1000;
  * @returns {Array} Sorted and ranked list of learners
  */
 export function mergeWithSeedLeaderboard(realUsers = [], lang = null, limit = 50, period = 'all_time') {
-    const isLangSpecific = lang && ['ja', 'ko', 'zh', 'en'].includes(lang);
+    const isLangSpecific = lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang);
 
     // Filter seeds by language if requested
     const filteredSeeds = isLangSpecific
@@ -150,7 +159,7 @@ export async function onRequestGet(context) {
                     `;
                     const params = [];
 
-                    if (lang && ['ja', 'ko', 'zh', 'en'].includes(lang)) {
+                    if (lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang)) {
                         query += ` WHERE target_lang = ?`;
                         params.push(lang);
                     }
@@ -186,7 +195,7 @@ export async function onRequestGet(context) {
                             FROM leaderboard
                         `;
                         const fbParams = [];
-                        if (lang && ['ja', 'ko', 'zh', 'en'].includes(lang)) {
+                        if (lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang)) {
                             fallbackQuery += ` WHERE target_lang = ?`;
                             fbParams.push(lang);
                         }
@@ -246,7 +255,7 @@ export async function onRequestGet(context) {
                                     level: row.level || Math.max(1, Math.floor(Math.sqrt((row.xp || 0) / 100)) + 1),
                                     streak: 0,
                                     badgesCount,
-                                    targetLang: lang && ['ja', 'ko', 'zh', 'en'].includes(lang) ? lang : 'ja',
+                                    targetLang: lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang) ? lang : 'ja',
                                     country: ''
                                 };
                             });
@@ -297,7 +306,7 @@ export async function onRequestGet(context) {
 
                 if (userEntry) {
                     // Count how many learners in the complete pool have higher score
-                    const isLangSpecific = lang && ['ja', 'ko', 'zh', 'en'].includes(lang);
+                    const isLangSpecific = lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang);
                     const poolSeeds = isLangSpecific
                         ? SEED_LEADERBOARD.filter(s => s.target_lang === lang)
                         : SEED_LEADERBOARD;
@@ -419,7 +428,7 @@ export async function onRequestPost(context) {
         const streak = Math.max(0, Number(streakRows?.[0]?.current_streak) || 0);
         const unlocked = verified?.unlocked_achievements;
         const badgesCount = unlocked && typeof unlocked === 'object' ? Object.keys(unlocked).length : 0;
-        const targetLang = ['ja', 'ko', 'zh', 'en'].includes(body.target_lang) ? body.target_lang : 'ja';
+        const targetLang = SUPPORTED_LEARNING_LANGUAGE_SET.has(body.target_lang) ? body.target_lang : 'ja';
         const country = typeof body.country === 'string' ? body.country.slice(0, 8) : '';
         const avatar = typeof body.avatar === 'string' && body.avatar.startsWith('http') ? body.avatar.slice(0, 250) : '';
 

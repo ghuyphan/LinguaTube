@@ -1,6 +1,6 @@
 import { Injectable, inject, signal, effect, untracked, computed } from '@angular/core';
 import { IVocabularyRepository } from './vocabulary.repository';
-import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats } from '../../models';
+import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats, SupportedLearningLanguage } from '../../models';
 import { AuthService, StorageService, SupabaseService } from '../services';
 import { mergeByTimestamp, generateDeterministicRecordId } from '../../shared/utils/sync.utils';
 import { getJapaneseRomaji } from '../../shared/utils/japanese-romaji';
@@ -26,7 +26,7 @@ interface SyncItem {
     pinyin?: string;
     romanization?: string;
     meaning: string;
-    language: 'ja' | 'zh' | 'ko' | 'en';
+    language: SupportedLearningLanguage;
     audio?: string;
     level: WordLevel;
     examples: string[];
@@ -51,7 +51,7 @@ interface VocabularyDbRow {
     pinyin?: string;
     romanization?: string;
     meaning: string;
-    language: 'ja' | 'zh' | 'ko' | 'en';
+    language: SupportedLearningLanguage;
     level: WordLevel;
     examples?: string[];
     created_at?: string;
@@ -82,7 +82,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     readonly isSyncing = signal(false);
 
     // Initial empty stats
-    private readonly initialStats: VocabularyStats = { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0, english: 0 };
+    private readonly initialStats: VocabularyStats = { total: 0, new: 0, learning: 0, known: 0, ignored: 0, japanese: 0, chinese: 0, korean: 0, english: 0, vietnamese: 0 };
     
     // Pure computed stats based on reactive vocabulary signal
     readonly stats = computed<VocabularyStats>(() => {
@@ -99,6 +99,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
                 else if (item.language === 'zh') acc.chinese++;
                 else if (item.language === 'ko') acc.korean++;
                 else if (item.language === 'en') acc.english++;
+                else if (item.language === 'vi') acc.vietnamese++;
                 return acc;
             },
             { ...this.initialStats }
@@ -146,7 +147,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     async addWord(
         word: string,
         meaning: string,
-        language: 'ja' | 'zh' | 'ko' | 'en',
+        language: SupportedLearningLanguage,
         reading?: string,
         pinyin?: string,
         romanization?: string,
@@ -195,7 +196,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
 
     async addFromDictionary(
         entry: DictionaryEntry,
-        language: 'ja' | 'zh' | 'ko' | 'en',
+        language: SupportedLearningLanguage,
         sourceSentence?: string,
         sourceVideoId?: string,
         sourceTimestamp?: number
@@ -671,7 +672,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
             pinyin: record.pinyin,
             romanization: record.romanization,
             meaning: record.meaning,
-            language: record.language as 'ja' | 'zh' | 'ko' | 'en',
+            language: record.language as SupportedLearningLanguage,
             level: record.level as WordLevel,
             examples: record.examples || [],
             created: record.created_at,
@@ -768,7 +769,7 @@ export class OfflineVocabularyRepository implements IVocabularyRepository {
     }
 
     private normalizeRomanization(
-        language: 'ja' | 'zh' | 'ko' | 'en',
+        language: SupportedLearningLanguage,
         reading?: string,
         romanization?: string,
         word?: string

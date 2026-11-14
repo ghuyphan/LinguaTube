@@ -6,7 +6,7 @@ import { OfflineStreakRepository } from '../repositories/offline-streak.reposito
 import { SupabaseService } from './supabase.service';
 import { StorageService } from './storage.service';
 import { CountryService } from './country.service';
-import { LeaderboardEntry } from '../../models/gamification.model';
+import { LeaderboardEntry, isSupportedLearningLanguage } from '../../models';
 import { mergeWithSeedLeaderboard } from '../../data/leaderboard-seeds';
 
 const STORAGE_KEY = 'voca_leaderboard_cache';
@@ -281,7 +281,7 @@ export class LeaderboardService {
         if (!user) return;
 
         const userLang = this.settings.settings().language || 'ja';
-        const targetLang = ['ja', 'ko', 'zh', 'en'].includes(userLang) ? userLang : 'ja';
+        const targetLang = isSupportedLearningLanguage(userLang) ? userLang : 'ja';
         const userCountry = this.countryService.effectiveCountry();
 
         try {

@@ -11,9 +11,9 @@ import { TranscriptService } from '../../../transcript.service';
 import { SubtitleService } from '../../../subtitle.service';
 import { LearningLanguageService } from '../../../../../services/learning-language.service';
 import { normalizeLanguageCode } from '../../../../../shared/utils/language.utils';
-import { getLanguageFlagUrl } from '../../../../../models';
+import { getLanguageFlagUrl, LEARNING_LANGUAGE_CODES } from '../../../../../models';
 
-const SUPPORTED_LANGUAGES = ['ja', 'zh', 'ko', 'en'];
+const SUPPORTED_LANGUAGES: readonly string[] = LEARNING_LANGUAGE_CODES;
 
 @Component({
   selector: 'app-video-header',

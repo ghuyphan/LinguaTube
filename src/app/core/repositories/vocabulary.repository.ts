@@ -1,4 +1,4 @@
-import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats } from '../../models';
+import { VocabularyItem, WordLevel, DictionaryEntry, VocabularyStats, SupportedLearningLanguage } from '../../models';
 
 export interface IVocabularyRepository {
     // Queries
@@ -8,8 +8,8 @@ export interface IVocabularyRepository {
     getStats(): VocabularyStats;
 
     // Mutations
-    addWord(word: string, meaning: string, language: 'ja' | 'zh' | 'ko' | 'en', reading?: string, pinyin?: string, romanization?: string, sourceSentence?: string, audio?: string, sourceVideoId?: string, sourceTimestamp?: number): Promise<VocabularyItem>;
-    addFromDictionary(entry: DictionaryEntry, language: 'ja' | 'zh' | 'ko' | 'en', sourceSentence?: string, sourceVideoId?: string, sourceTimestamp?: number): Promise<VocabularyItem>;
+    addWord(word: string, meaning: string, language: SupportedLearningLanguage, reading?: string, pinyin?: string, romanization?: string, sourceSentence?: string, audio?: string, sourceVideoId?: string, sourceTimestamp?: number): Promise<VocabularyItem>;
+    addFromDictionary(entry: DictionaryEntry, language: SupportedLearningLanguage, sourceSentence?: string, sourceVideoId?: string, sourceTimestamp?: number): Promise<VocabularyItem>;
 
     updateLevel(id: string, level: WordLevel): Promise<void>;
     updateMeaning(id: string, meaning: string): Promise<void>;

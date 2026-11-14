@@ -12,6 +12,7 @@ import {
     SupportedGrammarLang,
     Playlist,
     deriveLevelTier,
+    isSupportedLearningLanguage,
     normalizeLevelScore,
     levelToScore,
     scoreToLevelLabel,
@@ -323,6 +324,19 @@ export class VideoLevelService {
             if (/\b(?:for\s+)?elementary\b/i.test(text)) return 'CEFR A2';
             if (/\b(?:for\s+)?beginners?\b/i.test(text)) return 'CEFR A1';
             if (/\b(?:advanced|fluent)\b/i.test(text)) return 'CEFR C1';
+        } else if (lang === 'vi') {
+            const cefrMatch = text.match(/\b(?:CEFR\s*([A-C][1-2])|([A-C][1-2])\s*(?:level|tiếng\s*việt))\b/i);
+            if (cefrMatch) return `CEFR ${(cefrMatch[1] || cefrMatch[2]).toUpperCase()}`;
+            const bacMatch = text.match(/\bB[ẬÂ]C\s*([1-6])\b/i);
+            if (bacMatch) {
+                const scale = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+                return `CEFR ${scale[Number(bacMatch[1]) - 1]}`;
+            }
+            if (/\b(?:trung\s*cao\s*cấp|upper[\s-]intermediate)\b/i.test(text)) return 'CEFR B2';
+            if (/\b(?:trung\s*cấp|intermediate)\b/i.test(text)) return 'CEFR B1';
+            if (/\b(?:elementary)\b/i.test(text)) return 'CEFR A2';
+            if (/\b(?:sơ\s*cấp|nhập\s*môn|căn\s*bản|cơ\s*bản|for\s*beginners?)\b/i.test(text)) return 'CEFR A1';
+            if (/\b(?:cao\s*cấp|nâng\s*cao|chuyên\s*sâu|advanced|fluent)\b/i.test(text)) return 'CEFR C1';
         }
 
         return null;
@@ -353,12 +367,13 @@ export class VideoLevelService {
             }
         }
 
+        const isWordSpaced = lang === 'en' || lang === 'vi';
         for (const cue of evalCues) {
             const cueDuration = Math.max(0.2, (cue.endTime || 0) - (cue.startTime || 0));
             totalSpokenSeconds += cueDuration;
             const text = cue.text ? cue.text.trim() : '';
             totalChars += text.length;
-            if (lang === 'en' && text) {
+            if (isWordSpaced && text) {
                 totalWords += text.split(/\s+/).filter(Boolean).length;
             }
 
@@ -374,9 +389,9 @@ export class VideoLevelService {
             }
         }
 
-        // Calculate speech rate (WPM for English, CPM for CJK)
+        // Calculate speech rate (WPM for English/Vietnamese, CPM for CJK)
         const spokenMinutes = Math.max(0.1, totalSpokenSeconds / 60);
-        const cpm = lang === 'en'
+        const cpm = isWordSpaced
             ? Math.round(totalWords / spokenMinutes)
             : Math.round(totalChars / spokenMinutes);
 
@@ -450,13 +465,20 @@ export class VideoLevelService {
                         longWordsCount++;
                     }
                 }
-            } else if (lang === 'en') {
-                const words = text.toLowerCase().match(/[a-z']+/g) || [];
+            } else if (lang === 'en' || lang === 'vi') {
+                const words = text.toLowerCase().match(/\p{L}+/gu) || [];
                 totalWords += words.length;
                 for (const w of words) {
                     totalWordLength += w.length;
-                    if (w.length >= 8) {
+                    if (lang === 'en' && w.length >= 8) {
                         longWordsCount++;
+                    }
+                }
+                if (lang === 'vi' && cue.tokens?.length) {
+                    for (const t of cue.tokens) {
+                        if (!t.isPunctuation && t.surface.includes(' ')) {
+                            compoundWordsCount++;
+                        }
                     }
                 }
             }
@@ -492,6 +514,13 @@ export class VideoLevelService {
             return Math.min(6.0, Math.max(1.0, score));
         }
 
+        if (lang === 'vi') {
+            const avgSyllableLen = totalWords > 0 ? totalWordLength / totalWords : 3.2;
+            const compoundRatio = cues.length > 0 ? compoundWordsCount / cues.length : 0;
+            const score = 1.3 + Math.max(0, (avgSyllableLen - 3.0) * 1.6) + Math.min(2.0, compoundRatio * 0.7);
+            return Math.min(6.0, Math.max(1.0, score));
+        }
+
         return 2.5;
     }
 
@@ -506,9 +535,11 @@ export class VideoLevelService {
         vocabScore: number,
         cueCount: number
     ): { level: string; tier: ProficiencyLevelTier; score: number; confidence: number } | null {
-        // Speech rate score (1.0 = slow, 3.0 = normal, 5.0 = very fast native)
-        const isFastSpeech = (lang === 'en' ? cpm > 170 : cpm > 280);
-        const isSlowSpeech = (lang === 'en' ? cpm < 120 : cpm < 180);
+        // Speech rate score (WPM for EN/VI, CPM for CJK)
+        const fastThreshold = lang === 'vi' ? 190 : (lang === 'en' ? 170 : 280);
+        const slowThreshold = lang === 'vi' ? 130 : (lang === 'en' ? 120 : 180);
+        const isFastSpeech = cpm > fastThreshold;
+        const isSlowSpeech = cpm < slowThreshold;
         const speechRateScore = isSlowSpeech ? 1.0 : (isFastSpeech ? 4.0 : 2.5);
 
         let finalScore: number;
@@ -575,7 +606,7 @@ export class VideoLevelService {
     }
 
     private isSupportedGrammarLang(lang: string): lang is SupportedGrammarLang {
-        return ['ja', 'zh', 'ko', 'en'].includes(lang);
+        return isSupportedLearningLanguage(lang);
     }
 
     private saveDebounceTimer: ReturnType<typeof setTimeout> | null = null;

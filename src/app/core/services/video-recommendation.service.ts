@@ -1,7 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, timeout, Subject } from 'rxjs';
-import { RecommendedVideo, ProficiencyLevelTier } from '../../models';
+import { RecommendedVideo, ProficiencyLevelTier, LEARNING_LANGUAGE_SET } from '../../models';
 import { VideoLevelService } from './video-level.service';
 import { HistoryService } from '../../features/history/history.service';
 import { OfflineVocabularyRepository } from '../repositories/offline-vocabulary.repository';
@@ -403,12 +403,11 @@ export class VideoRecommendationService {
 
             const targetLang = (language || '').toLowerCase().trim();
             let langs = video.languages;
-            const SUPPORTED_CODES = new Set(['ja', 'zh', 'ko', 'en']);
             if (Array.isArray(langs) && langs.length > 0) {
                 const normalized = Array.from(new Set(
                     langs
                         .map(l => (typeof l === 'string' ? l.toLowerCase().trim().split('-')[0].split('_')[0] : ''))
-                        .filter(l => SUPPORTED_CODES.has(l))
+                        .filter(l => LEARNING_LANGUAGE_SET.has(l))
                 ));
                 if (targetLang && normalized.length > 1) {
                     normalized.sort((a, b) => (a === targetLang ? -1 : (b === targetLang ? 1 : 0)));

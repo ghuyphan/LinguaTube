@@ -1,6 +1,8 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { I18nService } from '../core/services/i18n.service';
+import { environment } from '../../environments/environment';
 import { GrammarPattern, GrammarMatch, GrammarTranslation, SupportedGrammarLang } from '../models/grammar.model';
+import { isSupportedLearningLanguage } from '../models/language.constants';
 import { Token } from '../models';
 
 interface SplitPatternRule {
@@ -28,6 +30,26 @@ const ZH_SPLIT_RULES: SplitPatternRule[] = [
     { start: '既', end: '又', patternKey: '既又' },
     { start: '不仅', end: '而且', patternKey: '不仅而且' },
 ];
+
+const VI_SPLIT_RULES: SplitPatternRule[] = [
+    { start: 'vì', end: 'nên', patternKey: 'vìnên', patternId: 'vi_a2_09' },
+    { start: 'nếu', end: 'thì', patternKey: 'nếuthì', patternId: 'vi_a2_10' },
+    { start: 'mặc dù', end: 'nhưng', patternKey: 'mặcdùnhưng', patternId: 'vi_b1_01' },
+    { start: 'tuy', end: 'nhưng', patternKey: 'tuynhưng', patternId: 'vi_b1_02' },
+    { start: 'không những', end: 'mà còn', patternKey: 'khôngnhữngmàcòn', patternId: 'vi_b1_03' },
+    { start: 'vừa', end: 'đã', patternKey: 'vừađã', patternId: 'vi_b1_04' },
+    { start: 'càng', end: 'càng', patternKey: 'càngcàng', patternId: 'vi_b1_05' },
+    { start: 'chỉ cần', end: 'là', patternKey: 'chỉcầnlà', patternId: 'vi_b2_01' },
+    { start: 'chỉ khi', end: 'mới', patternKey: 'chỉkhimới', patternId: 'vi_b2_02' },
+    { start: 'một mặt', end: 'mặt khác', patternKey: 'mộtmặtmặtkhác', patternId: 'vi_b2_05' },
+    { start: 'thà', end: 'còn hơn', patternKey: 'thàcònhơn', patternId: 'vi_b2_06' },
+    { start: 'không', end: 'cũng không', patternKey: 'khôngcũngkhông', patternId: 'vi_b2_16' },
+];
+
+const SPLIT_RULES_BY_LANG: Partial<Record<SupportedGrammarLang, SplitPatternRule[]>> = {
+    zh: ZH_SPLIT_RULES,
+    vi: VI_SPLIT_RULES,
+};
 
 interface EnglishNlpRule {
     id: string;
@@ -85,44 +107,27 @@ const EN_NLP_RULES: EnglishNlpRule[] = [
     { id: 'en_b2_11', match: 'it is (said|believed|thought|reported) that' },
 ];
 
+const GRAMMAR_CACHE_DB = 'lingua-tube-grammar-cache';
+const GRAMMAR_CACHE_STORE = 'packs';
+const GRAMMAR_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+const GRAMMAR_TRANSLATION_UI_LANGS = new Set(['vi', 'ja', 'ko', 'zh']);
+
+interface CachedGrammarPack<T> {
+    key: string;
+    data: T;
+    expiresAt: number;
+}
+
 /**
  * GrammarService
  * Detects grammar patterns in tokenized sentences and provides grammar explanations.
- * Grammar data is lazy-loaded by language.
+ * Grammar packs & translations are fetched from the shared `/api/grammar` endpoint (backed by R2/CDN)
+ * with IndexedDB offline persistence and static `/data/grammar/` fallback.
  */
 @Injectable({ providedIn: 'root' })
 export class GrammarService {
-    // Static registries for lazy loading - enables build-time code splitting per language
-    private static readonly PATTERN_LOADERS: Record<SupportedGrammarLang, () => Promise<GrammarPattern[]>> = {
-        ja: async () => (await import('../data/grammar-ja')).GRAMMAR_JA,
-        ko: async () => (await import('../data/grammar-ko')).GRAMMAR_KO,
-        zh: async () => (await import('../data/grammar-zh')).GRAMMAR_ZH,
-        en: async () => (await import('../data/grammar-en')).GRAMMAR_EN,
-    };
-
-    private static readonly TRANSLATION_LOADERS: Record<string, () => Promise<Record<string, GrammarTranslation>>> = {
-        en_vi: async () => (await import('../data/translations/en/vi')).GRAMMAR_EN_VI,
-        en_zh: async () => (await import('../data/translations/en/zh')).GRAMMAR_EN_ZH,
-        en_ja: async () => (await import('../data/translations/en/ja')).GRAMMAR_EN_JA,
-        en_ko: async () => (await import('../data/translations/en/ko')).GRAMMAR_EN_KO,
-
-        ja_vi: async () => (await import('../data/translations/ja/vi')).GRAMMAR_JA_VI,
-        ja_zh: async () => (await import('../data/translations/ja/zh')).GRAMMAR_JA_ZH,
-        ja_ko: async () => (await import('../data/translations/ja/ko')).GRAMMAR_JA_KO,
-        ja_ja: async () => (await import('../data/translations/ja/ja')).GRAMMAR_JA_JA,
-
-        ko_vi: async () => (await import('../data/translations/ko/vi')).GRAMMAR_KO_VI,
-        ko_zh: async () => (await import('../data/translations/ko/zh')).GRAMMAR_KO_ZH,
-        ko_ja: async () => (await import('../data/translations/ko/ja')).GRAMMAR_KO_JA,
-        ko_ko: async () => (await import('../data/translations/ko/ko')).GRAMMAR_KO_KO,
-
-        zh_vi: async () => (await import('../data/translations/zh/vi')).GRAMMAR_ZH_VI,
-        zh_ja: async () => (await import('../data/translations/zh/ja')).GRAMMAR_ZH_JA,
-        zh_ko: async () => (await import('../data/translations/zh/ko')).GRAMMAR_ZH_KO,
-        zh_zh: async () => (await import('../data/translations/zh/zh')).GRAMMAR_ZH_ZH,
-    };
-
     private readonly i18n = inject(I18nService);
+    private idbPromise: Promise<IDBDatabase | null> | null = null;
 
     // Grammar mode toggle
     readonly grammarModeEnabled = signal(true);
@@ -208,9 +213,12 @@ export class GrammarService {
         try {
             let patterns = this.patternsCache.get(lang);
             if (!patterns) {
-                const loader = GrammarService.PATTERN_LOADERS[lang];
-                if (!loader) return [];
-                patterns = await loader();
+                const baseApi = environment.api.grammar;
+                patterns = await this.fetchGrammarPack<GrammarPattern[]>(
+                    `patterns:${lang}`,
+                    `${baseApi}?lang=${encodeURIComponent(lang)}&type=patterns`,
+                    `/data/grammar/patterns/${lang}.json`
+                );
                 this.patternsCache.set(lang, patterns);
                 this.indicesCache.set(lang, this.buildIndex(patterns));
             }
@@ -228,6 +236,85 @@ export class GrammarService {
             this.patternPromises.delete(lang);
             throw err;
         }
+    }
+
+    private openGrammarCacheDb(): Promise<IDBDatabase | null> {
+        if (typeof indexedDB === 'undefined') return Promise.resolve(null);
+        if (this.idbPromise) return this.idbPromise;
+
+        this.idbPromise = new Promise((resolve) => {
+            try {
+                const req = indexedDB.open(GRAMMAR_CACHE_DB, 1);
+                req.onupgradeneeded = () => {
+                    const db = req.result;
+                    if (!db.objectStoreNames.contains(GRAMMAR_CACHE_STORE)) {
+                        db.createObjectStore(GRAMMAR_CACHE_STORE, { keyPath: 'key' });
+                    }
+                };
+                req.onsuccess = () => resolve(req.result);
+                req.onerror = () => resolve(null);
+            } catch {
+                resolve(null);
+            }
+        });
+        return this.idbPromise;
+    }
+
+    private async readCachedPack<T>(key: string): Promise<CachedGrammarPack<T> | null> {
+        const db = await this.openGrammarCacheDb();
+        if (!db) return null;
+        return new Promise((resolve) => {
+            try {
+                const tx = db.transaction(GRAMMAR_CACHE_STORE, 'readonly');
+                const req = tx.objectStore(GRAMMAR_CACHE_STORE).get(key);
+                req.onsuccess = () => resolve((req.result as CachedGrammarPack<T>) ?? null);
+                req.onerror = () => resolve(null);
+            } catch {
+                resolve(null);
+            }
+        });
+    }
+
+    private async writeCachedPack<T>(key: string, data: T): Promise<void> {
+        const db = await this.openGrammarCacheDb();
+        if (!db) return;
+        await new Promise<void>((resolve) => {
+            try {
+                const tx = db.transaction(GRAMMAR_CACHE_STORE, 'readwrite');
+                tx.objectStore(GRAMMAR_CACHE_STORE).put({
+                    key,
+                    data,
+                    expiresAt: Date.now() + GRAMMAR_CACHE_TTL_MS
+                } satisfies CachedGrammarPack<T>);
+                tx.oncomplete = () => resolve();
+                tx.onerror = () => resolve();
+            } catch {
+                resolve();
+            }
+        });
+    }
+
+    private async fetchGrammarPack<T>(cacheKey: string, apiUrl: string, staticFallbackUrl: string): Promise<T> {
+        const cached = await this.readCachedPack<T>(cacheKey);
+        if (cached && cached.expiresAt > Date.now()) {
+            return cached.data;
+        }
+
+        for (const url of [apiUrl, staticFallbackUrl]) {
+            try {
+                const res = await fetch(url);
+                if (!res.ok) continue;
+                const data = (await res.json()) as T;
+                void this.writeCachedPack(cacheKey, data);
+                return data;
+            } catch { /* try fallback URL or stale offline cache */ }
+        }
+
+        if (cached?.data !== undefined) {
+            return cached.data;
+        }
+
+        throw new Error(`[GrammarService] Unable to load grammar pack "${cacheKey}"`);
     }
 
     /**
@@ -277,6 +364,12 @@ export class GrammarService {
             let cleanPattern = pattern.pattern;
             if (pattern.language === 'ko' && cleanPattern.includes('[')) {
                 cleanPattern = cleanPattern.split('[')[0].trim();
+            }
+
+            // Vietnamese split correlative patterns ("vì ... nên", etc.) are detected via VI_SPLIT_RULES by patternId.
+            // Skip contiguous concatenation indexing so discontinuous clauses aren't matched as adjacent tokens.
+            if (pattern.language === 'vi' && cleanPattern.includes('...')) {
+                continue;
             }
 
             // Index by pattern text (both raw normalized and with placeholders stripped)
@@ -355,8 +448,8 @@ export class GrammarService {
         if (!pattern) return '';
         let text = pattern;
 
-        // For non-English languages, strip pedagogical placeholders with word boundaries before removing whitespace
-        if (stripPlaceholders && lang && lang !== 'en') {
+        // For non-English/Vietnamese languages, strip pedagogical placeholders with word boundaries before removing whitespace
+        if (stripPlaceholders && lang && lang !== 'en' && lang !== 'vi') {
             const stripped = text
                 .replace(/\b(adjective|adverb|adj|noun|verb)\b/gi, '')
                 .replace(/\b[nvabm](\d)?\b/gi, '')
@@ -377,7 +470,7 @@ export class GrammarService {
      * Lazy-load translation pack for a learning language and UI language
      */
     async loadTranslation(learningLang: SupportedGrammarLang, uiLang: string): Promise<Record<string, GrammarTranslation>> {
-        if (uiLang === 'en') {
+        if (uiLang === 'en' || !GRAMMAR_TRANSLATION_UI_LANGS.has(uiLang)) {
             return {};
         }
 
@@ -390,14 +483,14 @@ export class GrammarService {
             return this.translationPromises.get(key)!;
         }
 
-        const loader = GrammarService.TRANSLATION_LOADERS[key];
-        if (!loader) {
-            return {};
-        }
-
         const promise = (async () => {
             try {
-                const translations = await loader();
+                const baseApi = environment.api.grammar;
+                const translations = await this.fetchGrammarPack<Record<string, GrammarTranslation>>(
+                    `translations:${key}`,
+                    `${baseApi}?lang=${encodeURIComponent(learningLang)}&ui=${encodeURIComponent(uiLang)}&type=translations`,
+                    `/data/grammar/translations/${learningLang}/${uiLang}.json`
+                );
                 this.translationsCache.set(key, translations);
                 this.loadedTranslations.update(set => new Set(set).add(key));
                 return translations;
@@ -618,9 +711,10 @@ export class GrammarService {
             }
         }
 
-        // Strategy 4: Check split correlative patterns (Chinese)
-        if (lang === 'zh') {
-            matches.push(...this.detectSplitPatterns(tokens, ZH_SPLIT_RULES, index));
+        // Strategy 4: Check split correlative patterns (Chinese & Vietnamese)
+        const splitRules = SPLIT_RULES_BY_LANG[lang];
+        if (splitRules) {
+            matches.push(...this.detectSplitPatterns(tokens, splitRules, index));
         }
 
         // Remove duplicate patterns on same tokens
@@ -869,8 +963,8 @@ export class GrammarService {
      * Find a registered grammar pattern by ID, exact pattern text, or normalized pattern
      */
     findPattern(wordOrPattern: string, lang: string): GrammarPattern | undefined {
-        if (!wordOrPattern || !['ja', 'zh', 'ko', 'en'].includes(lang)) return undefined;
-        const gLang = lang as SupportedGrammarLang;
+        if (!wordOrPattern || !isSupportedLearningLanguage(lang)) return undefined;
+        const gLang = lang;
         const patterns = this.getPatterns(gLang);
         if (!patterns.length) {
             // Trigger background load if not yet cached

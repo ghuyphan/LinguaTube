@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SupabaseService, I18nService } from '../../core/services';
+import { isSupportedLearningLanguage } from '../../models';
 import { PanelComponent } from '../../shared/components/panel/panel.component';
 import { IconComponent } from '../../shared/components/icon/icon.component';
 import { EmptyStateComponent } from '../../shared/components/empty-state/empty-state.component';
@@ -59,7 +60,7 @@ export class LearnerPageComponent implements OnDestroy {
         const locale = this.i18n.currentLanguage();
         const country = /^[a-z]{2}$/i.test(profile.country || '')
             ? new Intl.DisplayNames([locale], { type: 'region' }).of(profile.country.toUpperCase()) : '';
-        const language = ['ja', 'zh', 'ko', 'en'].includes(profile.target_lang)
+        const language = isSupportedLearningLanguage(profile.target_lang)
             ? new Intl.DisplayNames([locale], { type: 'language' }).of(profile.target_lang) : '';
         return {
             ...profile,

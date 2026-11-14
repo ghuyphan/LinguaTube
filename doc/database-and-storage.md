@@ -637,6 +637,11 @@ The Supabase instance utilizes the `pg_cron` extension to manage automated serve
   - Automatic expiration check on read.
   - Automatically evicts stale dev mock transcript entries when opening real YouTube videos.
 
+### 6.1b. IndexedDB: `GrammarService` Grammar Cache & R2 `grammar/` Store
+- **Database Name**: `lingua-tube-grammar-cache` (Version `1`, Store `packs`, `keyPath: 'key'`)
+- **Keys & TTL**: `patterns:{lang}` and `translations:{lang}_{ui}` with `7`-day fresh TTL and offline stale fallback, populated lazily from `/api/grammar` (with `/data/grammar/` static fallback).
+- **Cloudflare R2 Override (`TRANSCRIPT_STORAGE`)**: Optional `grammar/patterns/{lang}.json`, `grammar/translations/{lang}/{ui}.json`, and `grammar/manifest.json` objects take precedence over static Pages `ASSETS` for zero-deploy updates shared across Web and Flutter (`npm run build:grammar`, `node scripts/upload-grammar-to-r2.mjs`).
+
 ### 6.2. LocalStorage Key Registry
 
 | Key | Service / Repository | Type / Schema | Purpose |

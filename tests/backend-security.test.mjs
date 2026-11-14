@@ -654,16 +654,16 @@ test('Leaderboard: mergeWithSeedLeaderboard correctly merges real users and base
   const { mergeWithSeedLeaderboard, SEED_LEADERBOARD } = await import('../functions-src/api/leaderboard.js');
 
   // 1. Baseline seeds count
-  assert.equal(SEED_LEADERBOARD.length, 28, 'Should have 28 baseline seeds across 4 languages');
+  assert.equal(SEED_LEADERBOARD.length, 35, 'Should have 35 baseline seeds across 5 languages');
 
   // 2. Pure seeds test (empty real users)
   const allSeeds = mergeWithSeedLeaderboard([], 'all', 50);
-  assert.equal(allSeeds.length, 28, 'Should return all 28 seeds for all');
+  assert.equal(allSeeds.length, 35, 'Should return all 35 seeds for all');
   assert.equal(allSeeds[0].rank, 1, 'Top seed should be rank 1');
   assert.equal(allSeeds[0].xp >= allSeeds[1].xp, true, 'Seeds must be strictly sorted by XP descending');
 
   // 3. Language filtering ensures podium is always populated
-  for (const lang of ['ja', 'ko', 'zh', 'en']) {
+  for (const lang of ['ja', 'ko', 'zh', 'en', 'vi']) {
     const langList = mergeWithSeedLeaderboard([], lang, 50);
     assert.ok(langList.length >= 7, `Language ${lang} must have at least 7 learners to support podium and list`);
     assert.equal(langList[0].rank, 1);
@@ -693,12 +693,12 @@ test('Leaderboard: mergeWithSeedLeaderboard correctly merges real users and base
   assert.equal(foundUserJa.rank, 7, 'User with 1,115 XP should rank #7 in JA (behind 6 higher XP seeds)');
   assert.equal(jaMerged.length, 8, 'Total JA learners should be 7 seeds + 1 real user = 8');
 
-  // In ALL: User should be ranked correctly among all 28 seeds + 1 real user
+  // In ALL: User should be ranked correctly among all 35 seeds + 1 real user
   const allMerged = mergeWithSeedLeaderboard([realUser], 'all', 50);
   const foundUserAll = allMerged.find(u => u.userId === 'real_user_huy');
   assert.ok(foundUserAll, 'Real user must be present in ALL leaderboard');
-  assert.equal(foundUserAll.rank, 24, 'User with 1,115 XP should rank #24 among all 28 seeds (23 seeds have > 1,115 XP)');
-  assert.equal(allMerged.length, 29, 'Total learners should be 28 seeds + 1 real user = 29');
+  assert.equal(foundUserAll.rank, 29, 'User with 1,115 XP should rank #29 among all 35 seeds (28 seeds have > 1,115 XP)');
+  assert.equal(allMerged.length, 36, 'Total learners should be 35 seeds + 1 real user = 36');
 
   // 5. High-XP user can take #1 rank
   const championUser = {

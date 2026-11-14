@@ -124,7 +124,7 @@ export function levelToScore(level?: string | null): number {
     const clean = String(level || '').trim().toUpperCase();
     const jlpt = clean.match(/^(?:JLPT\s*)?N([1-5])$/);
     if (jlpt) return 6 - Number(jlpt[1]);
-    const numbered = clean.match(/^(?:HSK|TOPIK)\s*([1-6])/);
+    const numbered = clean.match(/^(?:HSK|TOPIK|B[ẬÂ]C)\s*([1-6])/);
     if (numbered) return Number(numbered[1]);
     if (/^TOPIK\s*II$/.test(clean)) return 6;
     if (/^TOPIK\s*I$/.test(clean)) return 1;
@@ -142,47 +142,29 @@ export function levelToScore(level?: string | null): number {
     return tierMap[tier] || 3;
 }
 
+const SIX_LEVEL_THRESHOLDS = [1.85, 2.85, 3.85, 4.85, 5.85] as const;
+const JA_THRESHOLDS = [1.85, 2.75, 3.70, 4.60] as const;
+const LEVEL_SCALES: Record<string, { thresholds: readonly number[]; labels: readonly string[] }> = {
+    ja: { thresholds: JA_THRESHOLDS, labels: ['JLPT N5', 'JLPT N4', 'JLPT N3', 'JLPT N2', 'JLPT N1'] },
+    zh: { thresholds: SIX_LEVEL_THRESHOLDS, labels: ['HSK 1', 'HSK 2', 'HSK 3', 'HSK 4', 'HSK 5', 'HSK 6'] },
+    ko: { thresholds: SIX_LEVEL_THRESHOLDS, labels: ['TOPIK 1', 'TOPIK 2', 'TOPIK 3', 'TOPIK 4', 'TOPIK 5', 'TOPIK 6'] },
+    en: { thresholds: SIX_LEVEL_THRESHOLDS, labels: ['CEFR A1', 'CEFR A2', 'CEFR B1', 'CEFR B2', 'CEFR C1', 'CEFR C2'] },
+    vi: { thresholds: SIX_LEVEL_THRESHOLDS, labels: ['CEFR A1', 'CEFR A2', 'CEFR B1', 'CEFR B2', 'CEFR C1', 'CEFR C2'] },
+};
+
 /**
  * Maps numeric score (1.0 to 5.0/6.0) to calibrated standard language level label.
- * Japanese cutoffs: 1.85, 2.75, 3.70, 4.60.
- * Other languages (ZH, KO, EN): 1.85, 2.85, 3.85, 4.85, 5.85.
  * Equality selects the next higher level.
  */
 export function scoreToLevelLabel(score: number, lang?: string | null): string {
     const clamped = normalizeLevelScore(score, lang);
     const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
-    if (cleanLang === 'ja') {
-        if (clamped < 1.85) return 'JLPT N5';
-        if (clamped < 2.75) return 'JLPT N4';
-        if (clamped < 3.70) return 'JLPT N3';
-        if (clamped < 4.60) return 'JLPT N2';
-        return 'JLPT N1';
+    const scale = LEVEL_SCALES[cleanLang];
+    if (!scale) return `Level ${Math.round(clamped)}`;
+    for (let i = 0; i < scale.thresholds.length; i++) {
+        if (clamped < scale.thresholds[i]) return scale.labels[i];
     }
-    if (cleanLang === 'zh') {
-        if (clamped < 1.85) return 'HSK 1';
-        if (clamped < 2.85) return 'HSK 2';
-        if (clamped < 3.85) return 'HSK 3';
-        if (clamped < 4.85) return 'HSK 4';
-        if (clamped < 5.85) return 'HSK 5';
-        return 'HSK 6';
-    }
-    if (cleanLang === 'ko') {
-        if (clamped < 1.85) return 'TOPIK 1';
-        if (clamped < 2.85) return 'TOPIK 2';
-        if (clamped < 3.85) return 'TOPIK 3';
-        if (clamped < 4.85) return 'TOPIK 4';
-        if (clamped < 5.85) return 'TOPIK 5';
-        return 'TOPIK 6';
-    }
-    if (cleanLang === 'en') {
-        if (clamped < 1.85) return 'CEFR A1';
-        if (clamped < 2.85) return 'CEFR A2';
-        if (clamped < 3.85) return 'CEFR B1';
-        if (clamped < 4.85) return 'CEFR B2';
-        if (clamped < 5.85) return 'CEFR C1';
-        return 'CEFR C2';
-    }
-    return `Level ${Math.round(clamped)}`;
+    return scale.labels[scale.labels.length - 1];
 }
 
 /**

@@ -280,7 +280,7 @@ graph TD
   - Delegates all dual subtitle translation state and fetching to `SubtitleService`.
   - Dynamically synchronizes target translation language with changes to the application UI locale (`i18n.currentLanguage()`).
   - Seamlessly renders secondary translations both in the fullscreen video player overlay and within the scrolling `.subtitle-list` (`.cue-item > .cue-body > .cue-text + .cue-translation-text`).
-  - Supports English learners alongside Japanese, Chinese, and Korean (`['ja', 'zh', 'ko', 'en']`).
+  - Supports English and Vietnamese learners alongside Japanese, Chinese, and Korean (`LEARNING_LANGUAGE_CODES`: `['ja', 'zh', 'ko', 'en', 'vi']`).
 - **Grammar Match Highlights**: Tokens matching active grammar patterns receive visual underlines; clicking opens `GrammarPopupComponent`.
 - **Refined Responsive Controls Toolbar**:
   - `Loop`: Toggles cue loop playback with active iteration indicator (`1/5`).

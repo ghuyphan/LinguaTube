@@ -1,6 +1,7 @@
 // Grammar pattern models for language learning
+import type { SupportedLearningLanguage } from './language.constants';
 
-export type SupportedGrammarLang = 'ja' | 'zh' | 'ko' | 'en';
+export type SupportedGrammarLang = SupportedLearningLanguage;
 
 export interface GrammarPattern {
     id: string;

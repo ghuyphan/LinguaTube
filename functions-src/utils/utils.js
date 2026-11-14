@@ -148,18 +148,26 @@ export function sanitizeVideoId(id) {
 }
 
 /**
+ * Canonical learning languages supported across Voca backend routes & utilities.
+ */
+export const SUPPORTED_LEARNING_LANGUAGES = ['ja', 'zh', 'ko', 'en', 'vi'];
+export const SUPPORTED_LEARNING_LANGUAGE_SET = new Set(SUPPORTED_LEARNING_LANGUAGES);
+
+/**
  * Validate and sanitize language code for learning
- * Only Japanese, Chinese, Korean, and English are supported for learning
  * @param {string} lang - Language code
- * @param {string[]} allowed - Allowed language codes (default: learning languages only)
+ * @param {string[]|Set<string>} allowed - Allowed language codes (default: learning languages only)
  * @returns {string|null} - Valid language or null
  */
-export function sanitizeLanguage(lang, allowed = ['ja', 'zh', 'ko', 'en']) {
+export function sanitizeLanguage(lang, allowed = SUPPORTED_LEARNING_LANGUAGES) {
     if (!lang || typeof lang !== 'string') return null;
     const cleaned = lang.toLowerCase().trim().slice(0, 10);
     const base = cleaned.split(/[-_]/)[0];
-    if (allowed.includes(base)) return base;
-    if (allowed.includes(cleaned)) return cleaned;
+    const has = typeof allowed?.has === 'function'
+        ? (val) => allowed.has(val)
+        : (val) => allowed.includes(val);
+    if (has(base)) return base;
+    if (has(cleaned)) return cleaned;
     return null;
 }
 

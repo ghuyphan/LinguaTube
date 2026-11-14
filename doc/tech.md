@@ -90,12 +90,16 @@ Correct segmentation and pronunciation generation are central to Voca:
   - **Zero False Positives**: Removes over-eager single-pronoun, article, and contraction highlighting (`I`, `the`, `a`, `don't`), preserving word-level dictionary lookup and vocabulary saving.
   - **Syntax-Aware CEFR Detection**: Pinpoint matching of multi-word CEFR patterns (compound tenses, modal perfects, phrasal modals, correlatives) without tagging punctuation or whitespace.
 
-### 3.5. Multi-Language Grammar Engine & Translation Matrix
+### 3.5. Vietnamese Compound Tokenization (`Intl.Segmenter` + `ipa-dict` Lexicon)
+- Segments syllables with `Intl.Segmenter('vi', { granularity: 'word' })` and merges 2–4 syllable compound words using longest-match lookup (`mergeVietnameseCompounds`) against `public/data/vi-compounds.txt` (60,726 lowercase NFC compounds derived from MIT `open-dict-data/ipa-dict`, loaded by `functions-src/data/vi-compounds-loader.js` with offline core compound fallback).
+
+### 3.6. Multi-Language Grammar Engine & Translation Matrix
 - **Static Grammar Data**:
   - `grammar-ja.ts` (1,000+ JLPT N5–N1 rules)
   - `grammar-ko.ts` (TOPIK I–II rules)
   - `grammar-zh.ts` (HSK 1–6 rules)
   - `grammar-en.ts` (CEFR A1–C2 rules)
+  - `grammar-vi.ts` (80 CEFR A1–C1 rules)
 - **Multi-Strategy Detection Engine**:
   - Strategy 1: Normalized n-gram exact and prefix matching with bidirectional Latin placeholder stripping (`N`, `V`, `M`, `Adj`) and ASCII/CJK tilde stripping (`~`, `～`, `〜`).
   - Strategy 2: Language-specific verb & particle suffix matching (e.g. Japanese inflectional endings, Korean agglutinative particles `이/가`, `은/는`, `을/를`, `에게`, `에서`, `(으)로` and sequence suffixes).

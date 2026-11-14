@@ -1,6 +1,6 @@
 import { Injectable, inject, signal, Signal } from '@angular/core';
 import { IHistoryRepository } from './history.repository';
-import { HistoryItem, HistoryRecord } from '../../models';
+import { HistoryItem, HistoryRecord, LEARNING_LANGUAGE_CODES, type SupportedLearningLanguage } from '../../models';
 import { StorageService } from '../services/storage.service';
 import { SupabaseService } from '../services/supabase.service';
 import { AuthService } from '../services/auth.service';
@@ -11,8 +11,8 @@ const STORAGE_KEY = 'linguatube_history';
 const HISTORY_TOMBSTONES_KEY = 'linguatube_deleted_history_video_ids';
 const MAX_LOCAL_HISTORY = 50;
 
-const ALLOWED_LANGS = ['ja', 'zh', 'ko', 'en'] as const;
-type SupportedHistoryLang = typeof ALLOWED_LANGS[number];
+const ALLOWED_LANGS = LEARNING_LANGUAGE_CODES;
+type SupportedHistoryLang = SupportedLearningLanguage;
 
 function sanitizeLang(lang?: string | null): SupportedHistoryLang {
     if (!lang) return 'en';

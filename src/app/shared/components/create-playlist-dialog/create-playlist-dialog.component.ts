@@ -5,7 +5,7 @@ import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { PlaylistService } from '../../../features/playlist/playlist.service';
 import { AuthService, I18nService } from '../../../core/services';
 import { IconComponent } from '../icon/icon.component';
-import { Playlist, SUPPORTED_LANGUAGES } from '../../../models';
+import { Playlist, SUPPORTED_LANGUAGES, type SupportedLearningLanguage } from '../../../models';
 
 @Component({
     selector: 'app-create-playlist-dialog',
@@ -39,7 +39,7 @@ export class CreatePlaylistDialogComponent {
     readonly visibility = linkedSignal<'private' | 'unlisted' | 'published'>(() =>
         this.playlist()?.visibility || (this.auth.isLoggedIn() ? 'unlisted' : 'private')
     );
-    readonly language = linkedSignal<'ja' | 'zh' | 'ko' | 'en'>(() => this.playlist()?.language || 'ja');
+    readonly language = linkedSignal<SupportedLearningLanguage>(() => this.playlist()?.language || 'ja');
     readonly level = linkedSignal<string>(() => this.playlist()?.level || '');
     readonly isSubmitting = signal(false);
 
@@ -91,7 +91,7 @@ export class CreatePlaylistDialogComponent {
                 { value: 'TOPIK 6', label: `TOPIK 6 (${advanced}+)` },
             ];
         }
-        if (lang === 'en') {
+        if (lang === 'en' || lang === 'vi') {
             return [
                 { value: '', label: autoLabel },
                 { value: 'CEFR A1', label: `A1 (${beginner})` },

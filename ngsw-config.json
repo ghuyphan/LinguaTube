@@ -70,6 +70,17 @@
         "maxSize": 20,
         "maxAge": "6h"
       }
+    },
+    {
+      "name": "api-grammar",
+      "urls": [
+        "/api/grammar*"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 50,
+        "maxAge": "30d"
+      }
     }
   ]
 }

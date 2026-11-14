@@ -47,7 +47,7 @@ function checkInMemoryRateLimit(clientIp) {
 }
 
 async function fetchGoogleTts(text, lang) {
-  const tlMap = { ja: 'ja', zh: 'zh-CN', ko: 'ko', en: 'en' };
+  const tlMap = { ja: 'ja', zh: 'zh-CN', ko: 'ko', en: 'en', vi: 'vi' };
   const targetLang = tlMap[lang] || lang;
   const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${encodeURIComponent(targetLang)}&client=tw-ob`;
   const signal = AbortSignal.timeout(5000);
@@ -102,7 +102,7 @@ export async function onRequest(context) {
     return jsonResponse({ error: 'Text too long (max 300 characters)' }, 400);
   }
 
-  const cleanLang = sanitizeLanguage(lang, ['ja', 'zh', 'ko', 'en']) || 'ja';
+  const cleanLang = sanitizeLanguage(lang) || 'ja';
 
   // In-memory rate limiting check (0 KV operations)
   const clientIp = request.headers.get('CF-Connecting-IP') || 

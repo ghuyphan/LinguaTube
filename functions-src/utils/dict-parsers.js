@@ -802,6 +802,121 @@ async function rawKrdict(response) {
     }
 }
 
+function rawWiktionaryRest(data, queryWord = '', langCode = 'vi') {
+    const sections = data?.[langCode];
+    if (!Array.isArray(sections) || sections.length === 0) return [];
+
+    const entries = [];
+    for (const sec of sections) {
+        if (!Array.isArray(sec?.definitions)) continue;
+        const defs = [];
+        const examples = [];
+        for (const item of sec.definitions) {
+            const def = normalizeDictionaryText(item?.definition || '');
+            if (def && !defs.includes(def)) defs.push(def);
+            const rawExamples = item?.parsedExamples || item?.examples || [];
+            for (const ex of rawExamples) {
+                const text = typeof ex === 'string' ? ex : ex?.example;
+                const cleanEx = normalizeDictionaryText(text || '');
+                if (cleanEx && examples.length < 3 && !examples.includes(cleanEx)) {
+                    examples.push(cleanEx);
+                }
+            }
+        }
+        if (defs.length > 0) {
+            entries.push({
+                word: queryWord,
+                reading: '',
+                definitions: defs.slice(0, 5),
+                partOfSpeech: sec.partOfSpeech || '',
+                ...(examples.length > 0 ? { examples } : {})
+            });
+        }
+    }
+    return entries.slice(0, 4);
+}
+
+const VI_WIKTIONARY_NON_POS = new Set([
+    'tham khảo', 'liên kết ngoài', 'xem thêm', 'từ nguyên', 'ngữ âm',
+    'cách phát âm', 'dịch', 'hán-việt', 'đồng nghĩa', 'trái nghĩa',
+    'từ liên quan', 'từ ghép', 'chú thích', 'ghi chú', 'nguồn'
+]);
+
+function rawViWiktionaryExtract(data, queryWord = '') {
+    const pages = data?.query?.pages;
+    if (!pages || typeof pages !== 'object') return [];
+    const page = Object.values(pages).find(p => p && !('missing' in p) && typeof p.extract === 'string');
+    if (!page?.extract) return [];
+
+    // Isolate the top-level "== Tiếng Việt ==" section
+    const lines = page.extract.split(/\r?\n/);
+    let inVietnamese = false;
+    const viLines = [];
+    for (const line of lines) {
+        const h2 = /^==\s*([^=]+?)\s*==\s*$/.exec(line);
+        if (h2) {
+            if (inVietnamese) break;
+            inVietnamese = /^tiếng việt$/i.test(h2[1]);
+            continue;
+        }
+        if (inVietnamese) viLines.push(line);
+    }
+    if (viLines.length === 0) return [];
+
+    let reading = '';
+    let currentSection = '';
+    const byPos = new Map();
+
+    for (const rawLine of viLines) {
+        const line = rawLine.trim();
+        if (!line) continue;
+
+        const heading = /^={3,4}\s*([^=]+?)\s*={3,4}$/.exec(line);
+        if (heading) {
+            currentSection = heading[1].trim();
+            continue;
+        }
+
+        const sectionLower = currentSection.toLowerCase();
+        if (sectionLower.includes('phát âm') || sectionLower.includes('ngữ âm')) {
+            if (!reading) {
+                const ipa = line.match(/\/[^/\n]+\/|\[[^\]\n]+\]/);
+                if (ipa) reading = ipa[0];
+            }
+            continue;
+        }
+
+        if (!currentSection || VI_WIKTIONARY_NON_POS.has(sectionLower)) continue;
+        // Skip pronunciation/etymology metadata lines or standalone example prefixes
+        if (/^(?:ipa|ví dụ|vd|thí dụ|xem|hán[- ]việt)\s*:/i.test(line)) continue;
+
+        const cleaned = line
+            .replace(/^\d+[.)]\s*/, '')
+            .replace(/^[*•\-–]\s*/, '')
+            .trim();
+        if (!cleaned || cleaned.length < 2) continue;
+
+        if (!byPos.has(currentSection)) byPos.set(currentSection, []);
+        const defs = byPos.get(currentSection);
+        if (!defs.includes(cleaned) && defs.length < 5) {
+            defs.push(cleaned);
+        }
+    }
+
+    const entries = [];
+    for (const [pos, definitions] of byPos.entries()) {
+        if (definitions.length > 0) {
+            entries.push({
+                word: page.title || queryWord,
+                reading,
+                definitions,
+                partOfSpeech: pos
+            });
+        }
+    }
+    return entries.slice(0, 4);
+}
+
 function safeCodePoint(value) {
     return value >= 0 && value <= 0x10ffff ? String.fromCodePoint(value) : '\uFFFD';
 }
@@ -824,6 +939,7 @@ export function normalizeDictionaryText(value) {
 const POS_CODES = Object.assign(Object.create(null), {
     noun: 'n', verb: 'v', adjective: 'adj', adverb: 'adv', interjection: 'int', pronoun: 'pn',
     preposition: 'prep', article: 'art', conjunction: 'conj', numeral: 'num', determiner: 'det',
+    classifier: 'cl', particle: 'prt',
     'boundnoun': 'n', 'dependent noun': 'n', 'auxiliary verb': 'aux', 'auxiliary adjective': 'adj',
     '名词': 'n', '名詞': 'n', '代词': 'pn', '代名詞': 'pn', '依存名詞': 'n',
     '动词': 'v', '動詞': 'v', '及物动词': 'vt', '不及物动词': 'vi', '助动词': 'aux', '助動詞': 'aux',
@@ -836,10 +952,10 @@ const POS_CODES = Object.assign(Object.create(null), {
     '동사': 'v', '보조동사': 'aux', '형용사': 'adj', '보조형용사': 'adj',
     '부사': 'adv', '의문부사': 'adv', '부사적': 'adv', '감탄사': 'int',
     '전치사': 'prep', '접속사': 'conj', '관사': 'art', '조사': 'prt',
-    'Danh từ': 'n', 'Danh từ phụ thuộc': 'n', 'Đại từ': 'pn',
-    'Động từ': 'v', 'Trợ động từ': 'aux', 'Nội Động Từ': 'vi', 'Ngoại Động Từ': 'vt',
-    'Tính từ': 'adj', 'Trạng từ': 'adv', 'Phó từ': 'adv',
-    'Liên từ': 'conj', 'Giới từ': 'prep', 'Thán từ': 'int'
+    'danh từ': 'n', 'danh từ phụ thuộc': 'n', 'đại từ': 'pn', 'số từ': 'num', 'lượng từ': 'cl',
+    'động từ': 'v', 'trợ động từ': 'aux', 'nội động từ': 'vi', 'ngoại động từ': 'vt',
+    'tính từ': 'adj', 'trạng từ': 'adv', 'phó từ': 'adv', 'trợ từ': 'prt', 'tiểu từ': 'prt',
+    'liên từ': 'conj', 'giới từ': 'prep', 'thán từ': 'int'
 });
 function normalizeEntries(entries) {
     return entries.map(entry => ({ ...entry,
@@ -861,3 +977,5 @@ export async function parseMdbg(...args) { return normalizeEntries(await rawMdbg
 export async function parseGlosbe(...args) { return normalizeEntries(await rawGlosbe(...args)); }
 export function parseJisho(...args) { return normalizeEntries(rawJisho(...args)); }
 export async function parseKrdict(...args) { return normalizeEntries(await rawKrdict(...args)); }
+export function parseWiktionaryRest(...args) { return normalizeEntries(rawWiktionaryRest(...args)); }
+export function parseViWiktionaryExtract(...args) { return normalizeEntries(rawViWiktionaryExtract(...args)); }

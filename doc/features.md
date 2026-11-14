@@ -222,9 +222,9 @@ graph TD
   - $> 20$ to $35$ minutes: **3 Diamond credits**
   - $> 35$ to $45$ minutes: **4 Diamond credits**
 - **Multi-Language AI Transcription & Seamless Context Switching**:
-  - Learners can choose to transcribe any video into any supported learning language (Japanese `ja`, Chinese `zh`, Korean `ko`, or English `en`), even if YouTube native captions exist in another language or if the app's default learning language differs from the video's actual speech.
+  - Learners can choose to transcribe any video into any supported learning language (Japanese `ja`, Chinese `zh`, Korean `ko`, English `en`, or Vietnamese `vi`), even if YouTube native captions exist in another language or if the app's default learning language differs from the video's actual speech.
   - Available directly from the video header Subtitle Tracks menu (`__generate_ai:${code}__`) with national flag icons and language labels.
-  - The AI Generation confirmation dialog provides an interactive 4-language chip selector to confirm or change the transcription language before spending Diamond credits.
+  - The AI Generation confirmation dialog provides an interactive language chip selector to confirm or change the transcription language before spending Diamond credits.
   - Once transcription completes, the app automatically switches the active learning language context (`learningLanguage.switchLanguage(lang, { navigateHome: false })`) without navigating away, immediately activating appropriate tokenizers, furigana/pinyin/hangul romaji, grammar rules, and dictionaries.
 - **Clean Native Spinner Animation**:
   - In-player generating animation redesigned with Voca's conical mask spinner (`2.25rem` desktop, `1.75rem` mobile), matching the app's unified loading rings.
@@ -246,7 +246,7 @@ graph TD
 ## 4. Dual-Language Subtitles
 
 - Displays the **learning language** on top and the learner's **target translation language** underneath.
-- **Supported Learning Languages**: Japanese (`ja`), Chinese (`zh`), Korean (`ko`), and English (`en`).
+- **Supported Learning Languages**: Japanese (`ja`), Chinese (`zh`), Korean (`ko`), English (`en`), and Vietnamese (`vi`).
 - **Supported Target Languages**: English (`en`), Vietnamese (`vi`), Japanese (`ja`), Korean (`ko`), Chinese (`zh`).
 - **Centralized Orchestrator (`SubtitleService`)**: Single root singleton managing dual-sub state, in-memory cache, lazy loading batches, and subscriptions. Prevents desync between the video player overlay and subtitle list.
 - **Dynamic UI Locale Synchronization**: Dual subtitle target language dynamically syncs with the application UI language (`i18n.currentLanguage()`). If the user changes UI language, dual subtitles automatically update without requiring manual re-selection.
@@ -322,12 +322,12 @@ graph TD
    - **Stratified Cue Sampling**: Instead of iterating over 1,000+ cues on the main UI thread, `VideoLevelService` takes a stratified sample of 50 cues evenly distributed across the beginning, middle, and end of the video, cutting regex evaluations from 20,000+ to ~500 (<15ms) with zero UI stutter.
    - **Unified 3-Factor Composite Score**:
      $$\text{Composite Score} = 0.45 \times \text{Grammar} + 0.40 \times \text{Vocab/Kanji} + 0.15 \times \text{Speech Rate}$$
-     - **Grammar Pattern Density (45%)**: Scans cue tokens against curated language databases (`grammar-ja.ts`, `grammar-ko.ts`, `grammar-zh.ts`, `grammar-en.ts`).
+     - **Grammar Pattern Density (45%)**: Scans cue tokens against curated language databases (`grammar-ja.ts`, `grammar-ko.ts`, `grammar-zh.ts`, `grammar-en.ts`, `grammar-vi.ts`).
      - **Vocabulary & Kanji Complexity (40%)**: Analyzes kanji density, kango multi-kanji compounds, Chinese 4-character idioms (Chengyu), word length distributions, and advanced lexical tiers.
      - **Speech Rate (15%)**: Measures spoken characters per minute (CPM) or words per minute (WPM), applying speed penalties/bonuses for rapid native speech (>280 CPM).
 3. **Protected D1 Write-Back & Canonical Reconciliation (`POST /api/video-level`)**:
    - The client reports the computed level with confidence score (`confidence >= 0.65`, capped at `0.85` max for community submissions).
-   - **Calibrated Scale & Boundary Alignment**: Scores are normalized to 1.0–5.0 for Japanese (cutoffs at 1.85, 2.75, 3.70, 4.60) and 1.0–6.0 for Chinese, Korean, and English (cutoffs at 1.85, 2.85, 3.85, 4.85, 5.85). Equality selects the next higher level.
+   - **Calibrated Scale & Boundary Alignment**: Scores are normalized to 1.0–5.0 for Japanese (cutoffs at 1.85, 2.75, 3.70, 4.60) and 1.0–6.0 for Chinese, Korean, English, and Vietnamese (cutoffs at 1.85, 2.85, 3.85, 4.85, 5.85). Equality selects the next higher level.
    - **Canonical Server Reconciliation**: If D1 holds protected creator metadata ($\ge 0.90$ confidence) or blended EMA scores, the endpoint returns the canonical level, tier, and score, which `VideoLevelService` immediately adopts in client cache and reactive signals.
 
 ---
@@ -384,6 +384,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
   - **Korean**: 744 patterns across Korean levels 1 through 6 (`grammar-ko.ts`). All 54 previously corrupt patterns (where pattern had collapsed to `"~"`) have their authentic grammatical affixes extracted and indexed.
   - **Chinese**: 691 patterns across HSK 1 through 6 (`grammar-zh.ts`).
   - **English**: 143 patterns across CEFR A1 through C2 (`grammar-en.ts`), with pedagogical and non-English translation artifacts thoroughly purged.
+  - **Vietnamese**: 80 patterns across CEFR A1 through C1 (`grammar-vi.ts`), including 12 discontinuous correlative pairs (`vì ... nên`, `nếu ... thì`, `mặc dù ... nhưng`, `không những ... mà còn`, `chỉ khi ... mới`, etc.) and translations across Vietnamese, Japanese, Korean, and Chinese (`vi_vi`, `vi_ja`, `vi_ko`, `vi_zh`).
 - **Multi-Strategy Detection Pipeline**:
   - **Strategy 1: Exact Token Sequences**: Scans n-gram token windows (1 to 5 tokens for CJK, up to 8 tokens for EN).
   - **Strategy 1b: Korean Sequence Suffixes**: Matches attached verb-noun auxiliary sequences (e.g. `읽는 김에` $\rightarrow$ `~는 김에`, `도착했기 때문에` $\rightarrow$ `~기 때문에`, `할 리가 없다` $\rightarrow$ `~ㄹ 리가 없다`).
@@ -401,7 +402,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
   - Normalizes ASCII and CJK tildes (`~`, `～`, `〜`), expanding parentheses and slash alternatives.
   - Indexes English contractions (`isn't`, `aren't`, `don't`, `doesn't`, `I'm`, `you're`) while preserving single quotes so contractions don't fail dictionary lookups.
 - **Comprehensive Dynamic Translation Packs (100% Full UI Language Parity)**:
-  Grammar definitions are 100% translated across all learning languages and UI languages (JA, KO, ZH, EN into VI, ZH, KO, JA plus native-to-native explanations `ja_ja`, `ko_ko`, `zh_zh`), covering all 2,401 grammar patterns and 9,604 individual `GrammarTranslation` datasets. Every single pattern features fully localized titles, concise summaries, in-depth pedagogical explanations, 100% native grammatical terminology in formation formulas (Danh từ/Động từ, 名词/动词, 名詞/動詞, 명사/동사 with zero leftover English placeholders), and completely translated example sentences. Translation packs are code-split and dynamically imported on demand by `GrammarService` to preserve a sub-100KB initial bundle size. When a video's subtitles load, `GrammarService.preloadPatterns` automatically pre-fetches the single translation pack for the user's active UI language in the background, ensuring 0ms zero-flash popup display on the very first tap.
+  Grammar definitions are 100% translated across all learning languages and UI languages (JA, KO, ZH, EN, VI into VI, ZH, KO, JA plus native-to-native explanations `ja_ja`, `ko_ko`, `zh_zh`, `vi_vi`), covering all 2,486 grammar patterns across 20 translation packs. Every single pattern features fully localized titles, concise summaries, in-depth pedagogical explanations, native grammatical terminology in formation formulas, and completely translated example sentences. Grammar packs and translations are served from `/api/grammar` (R2 + Edge CDN with static `/data/grammar/` fallback) and persisted offline in IndexedDB (`lingua-tube-grammar-cache`), eliminating multi-megabyte grammar chunks from the JS build. When a video's subtitles load, `GrammarService.preloadPatterns` automatically pre-fetches the active language and UI translation pack in the background for 0ms popup display.
 - **Grammar Popup UI (`GrammarPopupComponent`)**: Hosted inside `BottomSheetComponent` with smooth dynamic height transitions as users explore formation rules, alternative explanations, or translated example sentences. Mounted globally in `AppComponent` under `@defer (when grammar.isPopupVisible(); prefetch on idle)` so that any component (video player, dictionary, vocabulary notebook, flashcards) can invoke `GrammarService.showPopup(pattern)` with 0ms overhead.
 - **1-Tap Grammar Saving**: Grammar popup features a dedicated "Save Grammar" (`savePattern`) action that captures the rule pattern, formation, and example sentence context into the user's notebook with localized toast feedback (`grammar.saveSuccess`).
 

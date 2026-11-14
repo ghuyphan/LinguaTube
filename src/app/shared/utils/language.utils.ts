@@ -4,6 +4,8 @@
  * Consolidated language detection, normalization, and text analysis functions.
  */
 
+import type { SupportedLearningLanguage } from '../../models/language.constants';
+
 // Unicode ranges for language detection
 export const UNICODE_RANGES = {
     // Japanese
@@ -19,6 +21,9 @@ export const UNICODE_RANGES = {
     // Chinese / Kanji (CJK Unified Ideographs, Extensions A-I, Compatibility Ideographs)
     hanzi: /\p{Script=Han}/u,
 
+    // Vietnamese-distinctive Latin diacritics (ă, đ, ơ, ư, tones on â/ê/ô/ă/ơ/ư, stacked tones)
+    vietnamese: /[àáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵăđơưÀÁẢÃẠẰẮẲẴẶẦẤẨẪẬÈÉẺẼẸỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌỒỐỔỖỘỜỚỞỠỢÙÚỦŨỤỪỨỬỮỰỲÝỶỸỴĂĐƠƯ]/,
+
     // Basic Latin
     latin: /[a-zA-Z]/,
 } as const;
@@ -26,8 +31,16 @@ export const UNICODE_RANGES = {
 // Comprehensive punctuation pattern for CJK + Western
 export const PUNCTUATION_REGEX = /^[\s\p{P}\p{S}【】「」『』（）〔〕［］｛｝〈〉《》〖〗〘〙〚〛｟｠、。・ー〜～！？：；，．""''…—–*]+$/u;
 
-export type SupportedLanguage = 'ja' | 'zh' | 'ko' | 'en';
+export type SupportedLanguage = SupportedLearningLanguage;
 export type SupportedLanguageCode = SupportedLanguage;
+
+const LANGUAGE_CODE_ALIASES: Record<string, SupportedLanguage> = {
+    ja: 'ja', japanese: 'ja', jpn: 'ja',
+    ko: 'ko', korean: 'ko', kor: 'ko',
+    zh: 'zh', chinese: 'zh', cmn: 'zh', mandarin: 'zh', yue: 'zh', zho: 'zh', chi: 'zh',
+    en: 'en', english: 'en', eng: 'en',
+    vi: 'vi', vietnamese: 'vi', vie: 'vi', vn: 'vi',
+};
 
 /**
  * Normalize language codes from YouTube, Gladia, or external providers to canonical 2-letter codes.
@@ -36,16 +49,13 @@ export type SupportedLanguageCode = SupportedLanguage;
 export function normalizeLanguageCode(lang?: string | null): string {
     if (!lang || typeof lang !== 'string') return '';
     const clean = lang.trim().toLowerCase().split('-')[0].split('_')[0];
-    if (clean === 'ja' || clean === 'japanese' || clean === 'jpn') return 'ja';
-    if (clean === 'ko' || clean === 'korean' || clean === 'kor') return 'ko';
-    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue' || clean === 'zho' || clean === 'chi') return 'zh';
-    if (clean === 'en' || clean === 'english' || clean === 'eng') return 'en';
-    return clean;
+    return LANGUAGE_CODE_ALIASES[clean] ?? clean;
 }
 
 /**
  * Detect language from text based on character types.
- * Context-aware: When pure Hanzi/Kanji is encountered, checks activeLanguage to distinguish Japanese Kanji from Chinese.
+ * Context-aware: When pure Hanzi/Kanji is encountered, checks contextLanguage to distinguish Japanese Kanji from Chinese,
+ * and distinguishes Vietnamese diacritics from plain English Latin script.
  */
 export function detectLanguage(text: string, contextLanguage?: string): SupportedLanguage {
     if (!text || text.trim().length === 0) return 'en';
@@ -64,9 +74,19 @@ export function detectLanguage(text: string, contextLanguage?: string): Supporte
     if (UNICODE_RANGES.hanzi.test(text)) {
         const normContext = normalizeLanguageCode(contextLanguage);
         if (normContext === 'ja' || normContext === 'zh') {
-            return normContext as SupportedLanguage;
+            return normContext;
         }
         return 'zh';
+    }
+
+    // Check for Vietnamese diacritics before defaulting to English
+    if (UNICODE_RANGES.vietnamese.test(text)) {
+        return 'vi';
+    }
+
+    const normContext = normalizeLanguageCode(contextLanguage);
+    if (normContext === 'vi' && UNICODE_RANGES.latin.test(text)) {
+        return 'vi';
     }
 
     // Default to English
@@ -77,14 +97,14 @@ export function detectLanguage(text: string, contextLanguage?: string): Supporte
  * Detect language of a subtitle cue list by sampling non-empty cues.
  */
 export function detectSubtitleLanguage(cues: { text: string }[], preferredLang?: string): SupportedLanguage {
+    const normPreferred = normalizeLanguageCode(preferredLang);
+    const fallback: SupportedLanguage = Object.hasOwn(LANGUAGE_CODE_ALIASES, normPreferred) ? LANGUAGE_CODE_ALIASES[normPreferred] : 'en';
     if (!cues || cues.length === 0) {
-        const norm = normalizeLanguageCode(preferredLang);
-        return (norm === 'ja' || norm === 'zh' || norm === 'ko' || norm === 'en') ? (norm as SupportedLanguage) : 'en';
+        return fallback;
     }
     const sample = cues.slice(0, 15).map(c => c.text).filter(Boolean).join(' ');
     if (!sample.trim()) {
-        const norm = normalizeLanguageCode(preferredLang);
-        return (norm === 'ja' || norm === 'zh' || norm === 'ko' || norm === 'en') ? (norm as SupportedLanguage) : 'en';
+        return fallback;
     }
     return detectLanguage(sample, preferredLang);
 }

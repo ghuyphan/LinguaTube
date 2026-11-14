@@ -289,14 +289,14 @@ export class SettingsSheetComponent {
     });
   }
 
-  setLanguage(lang: 'ja' | 'zh' | 'ko' | 'en'): void {
+  setLanguage(lang: SupportedLearningLanguage): void {
     this.showLearningLangPicker.set(false);
     this.sheet()?.close();
     this.learningLanguage.switchLanguage(lang);
   }
 
   onLearningLangSelected(value: string): void {
-    this.setLanguage(value as 'ja' | 'zh' | 'ko' | 'en');
+    this.setLanguage(value as SupportedLearningLanguage);
   }
 
   setUILanguage(lang: UILanguage): void {

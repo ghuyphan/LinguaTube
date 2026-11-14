@@ -337,6 +337,14 @@ function applyTiming(segments) {
     });
 }
 
+const LANGUAGE_ALIASES = Object.assign(Object.create(null), {
+    ja: 'ja', japanese: 'ja', jpn: 'ja', jp: 'ja',
+    ko: 'ko', korean: 'ko', kor: 'ko', kr: 'ko',
+    zh: 'zh', chinese: 'zh', cmn: 'zh', mandarin: 'zh', yue: 'zh', zho: 'zh', chi: 'zh', cn: 'zh',
+    en: 'en', english: 'en', eng: 'en',
+    vi: 'vi', vietnamese: 'vi', vie: 'vi', vn: 'vi'
+});
+
 /**
  * Normalize language codes from Gladia or external providers to canonical 2-letter codes
  * (e.g. 'cmn', 'mandarin', 'chinese', 'zh-CN' -> 'zh')
@@ -346,24 +354,21 @@ function applyTiming(segments) {
 export function normalizeLanguageCode(lang) {
     if (!lang || typeof lang !== 'string') return '';
     const clean = lang.trim().toLowerCase().split('-')[0].split('_')[0];
-    if (clean === 'ja' || clean === 'japanese' || clean === 'jpn') return 'ja';
-    if (clean === 'ko' || clean === 'korean' || clean === 'kor') return 'ko';
-    if (clean === 'zh' || clean === 'chinese' || clean === 'cmn' || clean === 'mandarin' || clean === 'yue' || clean === 'zho' || clean === 'chi') return 'zh';
-    if (clean === 'en' || clean === 'english' || clean === 'eng') return 'en';
-    return clean;
+    return LANGUAGE_ALIASES[clean] || clean;
 }
 
-const NATIVE_CJK_SCRIPTS = {
+const NATIVE_SCRIPTS = {
     ja: /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u,
     zh: /[\p{Script=Han}\p{Script=Bopomofo}]/u,
-    ko: /[\p{Script=Hangul}\p{Script=Han}]/u
+    ko: /[\p{Script=Hangul}\p{Script=Han}]/u,
+    vi: /[ăđơưĂĐƠƯàáảãạằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]/i
 };
 
 // Reject clear English-only contradictions. Short, romanized and mixed tracks
 // are inconclusive, so this check never assigns a new language to their cues.
 export function contradictsNativeLanguage(segments, language) {
-    if (!Object.hasOwn(NATIVE_CJK_SCRIPTS, language) || !Array.isArray(segments)) return false;
-    const expectedScript = NATIVE_CJK_SCRIPTS[language];
+    if (!Object.hasOwn(NATIVE_SCRIPTS, language) || !Array.isArray(segments)) return false;
+    const expectedScript = NATIVE_SCRIPTS[language];
     const count = Math.min(segments.length, 32);
     const englishWords = new Set();
     let englishCues = 0;

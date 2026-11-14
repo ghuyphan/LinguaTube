@@ -1,6 +1,6 @@
 import { Injectable, inject, computed, effect, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { HistoryItem, VideoInfo } from '../../models';
+import { HistoryItem, VideoInfo, LEARNING_LANGUAGE_SET, type SupportedLearningLanguage } from '../../models';
 import { YoutubeService } from '../video';
 import { OfflineHistoryRepository } from '../../core/repositories';
 import { AuthService, ToastService, I18nService } from '../../core/services';
@@ -285,15 +285,14 @@ export class HistoryService {
     // ==================== Private Methods ====================
 
     /**
-     * Filter and normalize language codes to only supported languages (CJK + EN)
+     * Filter and normalize language codes to only supported languages (CJK + EN + VI)
      * e.g., 'zh-TW' → 'zh', 'ja-JP' → 'ja'
      */
-    private filterSupportedLanguages(langs: string[]): ('ja' | 'zh' | 'ko' | 'en')[] {
-        const supported = ['ja', 'zh', 'ko', 'en'];
+    private filterSupportedLanguages(langs: string[]): SupportedLearningLanguage[] {
         const normalized = langs
             .map(l => l.split('-')[0].toLowerCase())
-            .filter(l => supported.includes(l));
+            .filter((l): l is SupportedLearningLanguage => LEARNING_LANGUAGE_SET.has(l));
         // Return unique values only
-        return [...new Set(normalized)] as ('ja' | 'zh' | 'ko' | 'en')[];
+        return [...new Set(normalized)];
     }
 }

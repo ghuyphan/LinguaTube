@@ -97,8 +97,8 @@ export class SettingsService implements OnDestroy {
     this.updateSettings({ theme });
   }
 
-  setLanguage(language: 'ja' | 'zh' | 'ko' | 'en'): void {
-    // Load the appropriate CJK font before changing language
+  setLanguage(language: SupportedLearningLanguage): void {
+    // Load the appropriate font before changing language
     this.fontLoader.loadFontForLanguage(language);
 
     let dualTarget = this.settings().dualSubtitleTargetLang;
@@ -133,7 +133,7 @@ export class SettingsService implements OnDestroy {
   }
 
   hasReadingSupport(language: SupportedLearningLanguage = this.settings().language): boolean {
-    return language !== 'en';
+    return language !== 'en' && language !== 'vi';
   }
 
   getReadingDisplayMode(language: SupportedLearningLanguage = this.settings().language): ReadingDisplayMode {

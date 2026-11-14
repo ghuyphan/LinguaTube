@@ -1,3 +1,5 @@
+import type { SupportedLearningLanguage } from './language.constants';
+
 /**
  * History model for tracking watched videos
  * Matches cloud 'history' table schema
@@ -9,8 +11,8 @@ export interface HistoryItem {
     thumbnail?: string;                      // Thumbnail URL
     channel?: string;                        // Channel name
     duration?: number;                       // Video duration in seconds
-    language: 'ja' | 'zh' | 'ko' | 'en';    // Content language (deprecated, use languages)
-    languages?: ('ja' | 'zh' | 'ko' | 'en')[];  // Available transcript languages (optional for backward compat)
+    language: SupportedLearningLanguage;     // Content language (deprecated, use languages)
+    languages?: SupportedLearningLanguage[]; // Available transcript languages (optional for backward compat)
     watched_at: Date;                        // Last watched timestamp
     progress: number;                        // Playback progress (0-100%)
     is_favorite: boolean;                    // Favorited flag
@@ -37,8 +39,8 @@ export interface HistoryRecord {
     thumbnail?: string;
     channel?: string;
     duration?: number;
-    language?: 'ja' | 'zh' | 'ko' | 'en';
-    languages?: ('ja' | 'zh' | 'ko' | 'en')[];
+    language?: SupportedLearningLanguage;
+    languages?: SupportedLearningLanguage[];
     level?: string;
     levels?: string | Record<string, string>;
     watched_at: string | Date;

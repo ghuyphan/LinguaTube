@@ -1,4 +1,3 @@
-import { sha256 } from '../../utils/utils.js';
 /**
  * Batch Tokenization API (Cloudflare Function)
  * Tokenizes multiple texts at once and caches as single entry per video
@@ -14,17 +13,18 @@ import {
 } from '../../middlewares/rate-limiter.js';
 import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
 import {
+    sha256,
     jsonResponse,
     handleOptions,
     errorResponse,
     sanitizeVideoId,
     validateBatchSize,
     validateBody,
-    getRequestJson
+    getRequestJson,
+    SUPPORTED_LEARNING_LANGUAGE_SET
 } from '../../utils/utils.js';
-import { tokenize, isKuromojiReady } from '../../utils/tokenizer.js';
+import { tokenize, isTokenizerReady } from '../../utils/tokenizer.js';
 
-const SUPPORTED_LANGUAGES = new Set(['ja', 'ko', 'zh', 'en']);
 // Tiered rate limiting - anonymous: 50/hr, free: 100/hr, premium: 1000/hr (effectively unlimited)
 const RATE_LIMIT_CONFIG = {
     max: { anonymous: 60, free: 150, pro: 1500, premium: 2000 },
@@ -65,7 +65,7 @@ export async function onRequest(context) {
         return handleOptions(['POST', 'OPTIONS']);
     }
 
-    if (!SUPPORTED_LANGUAGES.has(lang)) {
+    if (!SUPPORTED_LEARNING_LANGUAGE_SET.has(lang)) {
         return jsonResponse(
             { error: `Language "${lang}" not supported` },
             400
@@ -127,7 +127,7 @@ export async function onRequest(context) {
         const memHit = memTokenBatchCache.get(cacheKey);
         if (memHit) {
             const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));
-            const shouldUpgradeFallback = memHit.isFallback && (lang !== 'ja' || isKuromojiReady());
+            const shouldUpgradeFallback = memHit.isFallback && isTokenizerReady(lang);
             if (isExpired || shouldUpgradeFallback) {
                 memTokenBatchCache.delete(cacheKey);
             } else if (isValidTokensArray(memHit.tokens, texts.length)) {
@@ -145,8 +145,8 @@ export async function onRequest(context) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 if (cached && isValidTokensArray(cached.tokens, texts.length)) {
-                    const isDegradedJa = lang === 'ja' && isKuromojiReady() && cached.isFallback;
-                    if (!isDegradedJa) {
+                    const isDegraded = cached.isFallback && isTokenizerReady(lang);
+                    if (!isDegraded) {
                         console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
                         if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
                             const oldest = memTokenBatchCache.keys().next().value;
@@ -192,13 +192,14 @@ export async function onRequest(context) {
             inFlight = (async () => {
                 console.log(`[Tokenize Batch] Tokenizing ${texts.length} texts for ${videoId} (${lang}) [tier: ${tier}]`);
 
+                const tokenOpts = { assets: env?.ASSETS, requestUrl: request.url };
                 const allTokens = await Promise.all(
-                    texts.map(text => tokenize(text, lang))
+                    texts.map(text => tokenize(text, lang, tokenOpts))
                 );
                 const missingJaPos = lang === 'ja' && allTokens.some(line =>
                     line.some(t => t && !t.isPunctuation && !t.partOfSpeech)
                 );
-                const isFallback = lang === 'ja' && (!isKuromojiReady() || missingJaPos);
+                const isFallback = !isTokenizerReady(lang) || missingJaPos;
 
                 const computed = {
                     tokens: allTokens,

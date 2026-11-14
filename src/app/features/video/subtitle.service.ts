@@ -1,6 +1,6 @@
 import { Injectable, signal, computed, inject, effect, untracked } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SubtitleCue, Token } from '../../models';
+import { SubtitleCue, Token, SupportedLearningLanguage } from '../../models';
 import { YoutubeService } from './youtube.service';
 import { SettingsService } from '../../core/services/settings.service';
 import { I18nService } from '../../core/services/i18n.service';
@@ -173,7 +173,7 @@ export class SubtitleService {
   });
 
   // Language state tracking
-  readonly loadedLanguage = signal<'ja' | 'zh' | 'ko' | 'en' | null>(null);
+  readonly loadedLanguage = signal<SupportedLearningLanguage | null>(null);
   readonly requestedLanguage = signal<string | null>(null);
 
   /**
@@ -216,7 +216,7 @@ export class SubtitleService {
    * Update the language state (loaded vs requested)
    * This helps track if we have a mismatch and avoid refetching on navigation
    */
-  setLanguageState(loaded: 'ja' | 'zh' | 'ko' | 'en' | null, requested: string): void {
+  setLanguageState(loaded: SupportedLearningLanguage | null, requested: string): void {
     this.loadedLanguage.set(loaded);
     this.requestedLanguage.set(requested);
   }
@@ -239,7 +239,7 @@ export class SubtitleService {
    * Batch tokenize subtitle cues.
    * Tokenizes all cues for the video on load in full batches (up to 800 cues each).
    */
-  async tokenizeAllCues(lang: 'ja' | 'zh' | 'ko' | 'en' | null): Promise<void> {
+  async tokenizeAllCues(lang: SupportedLearningLanguage | null): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
@@ -270,7 +270,7 @@ export class SubtitleService {
   /**
    * Internal bulk tokenization implementation across all video cues
    */
-  private async tokenizeAllCuesInternal(lang: 'ja' | 'zh' | 'ko' | 'en' | null, videoId?: string): Promise<void> {
+  private async tokenizeAllCuesInternal(lang: SupportedLearningLanguage | null, videoId?: string): Promise<void> {
     const cues = this.subtitles();
     if (cues.length === 0) return;
 
@@ -363,7 +363,7 @@ export class SubtitleService {
    * Get tokens for a cue (pre-computed or fallback)
    * Detects if API returned a suspiciously single token and falls back
    */
-  getTokens(cue: SubtitleCue, lang: 'ja' | 'zh' | 'ko' | 'en' | null): Token[] {
+  getTokens(cue: SubtitleCue, lang: SupportedLearningLanguage | null): Token[] {
     // Check if we have tokens and they look valid
     if (cue.tokens?.length) {
       // Detect bad tokenization: if we only have 1 token for a long text,
@@ -1056,7 +1056,7 @@ export class SubtitleService {
     // Circuit breaker: If recently rate-limited, skip network calls and use local fallback
     if (Date.now() < this.rateLimitedUntil) {
       console.warn('[SubtitleService] Rate limit active, using local tokenization fallback');
-      return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en' | null));
+      return texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null));
     }
 
     // Try batch endpoint first (requires videoId)
@@ -1089,7 +1089,7 @@ export class SubtitleService {
           const retryAfterSec = parseInt(response.headers.get('Retry-After') || '60', 10);
           this.rateLimitedUntil = Date.now() + Math.max(30, retryAfterSec) * 1000;
           console.warn(`[SubtitleService] Tokenize rate limit hit (429). Circuit breaker enabled for ${retryAfterSec}s. Using local fallback.`);
-          return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en' | null));
+          return texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null));
         }
 
         if (response.ok) {
@@ -1097,7 +1097,7 @@ export class SubtitleService {
           if (data.tokens && Array.isArray(data.tokens) && data.tokens.length === texts.length) {
             return data.tokens.map((line: unknown, idx: number) => {
               if (Array.isArray(line)) return line;
-              return this.fallbackTokenize(texts[idx], lang as 'ja' | 'zh' | 'ko' | 'en' | null);
+              return this.fallbackTokenize(texts[idx], lang as SupportedLearningLanguage | null);
             });
           }
           console.warn(`[SubtitleService] Batch tokenize response shape mismatch: expected ${texts.length}, got ${data?.tokens?.length}`);
@@ -1115,12 +1115,12 @@ export class SubtitleService {
     // This is less accurate than server-side kuromoji for Japanese,
     // but prevents exhausting user's rate limit
     console.log('[SubtitleService] Using local fallback tokenization');
-    return texts.map(text => this.fallbackTokenize(text, lang as 'ja' | 'zh' | 'ko' | 'en' | null));
+    return texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null));
   }
 
 
 
-  private fallbackTokenize(text: string, lang: 'ja' | 'zh' | 'ko' | 'en' | null): Token[] {
+  private fallbackTokenize(text: string, lang: SupportedLearningLanguage | null): Token[] {
     if (!text.trim()) return [];
 
     switch (lang) {
@@ -1157,6 +1157,21 @@ export class SubtitleService {
           surface: str,
           isPunctuation: !/[a-zA-Z0-9]/.test(str)
         }));
+      case 'vi': {
+        if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
+          const segmenter = new Intl.Segmenter('vi', { granularity: 'word' });
+          return Array.from(segmenter.segment(text))
+            .filter(seg => seg.segment.trim().length > 0)
+            .map(seg => ({
+              surface: seg.segment,
+              isPunctuation: isPunctuation(seg.segment)
+            }));
+        }
+        return (text.match(/[\p{L}\p{N}'-]+|[^\p{L}\p{N}\s'-]+/gu) || []).map(str => ({
+          surface: str,
+          isPunctuation: isPunctuation(str)
+        }));
+      }
       case 'ja': {
         if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
           const segmenter = new Intl.Segmenter('ja', { granularity: 'word' });
@@ -1209,7 +1224,7 @@ export class SubtitleService {
     return token;
   }
 
-  private applyFallbackTokens(startIdx: number, endIdx: number, lang: 'ja' | 'zh' | 'ko' | 'en' | null): void {
+  private applyFallbackTokens(startIdx: number, endIdx: number, lang: SupportedLearningLanguage | null): void {
     const cues = this.subtitles();
     const updatedCues = cues.map((cue, idx) => {
       if (idx >= startIdx && idx <= endIdx && !cue.tokens) {

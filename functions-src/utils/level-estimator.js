@@ -9,6 +9,7 @@
  */
 
 import { detectLevelFromMetadata, levelToScore, labelToTier, scoreToLevelLabel, scoreToTier } from '../data/video-info-db.js';
+import { SUPPORTED_LEARNING_LANGUAGE_SET } from './utils.js';
 
 export { scoreToLevelLabel, scoreToTier };
 
@@ -46,6 +47,34 @@ const ELEMENTARY_ZH_CHARS = new Set(
 // Advanced Korean academic & complex grammatical connectives (TOPIK 4-6)
 const ADVANCED_KO_CONNECTIVES = /관련하여|대하여|통하여|불구하고|비롯하여|의하면|바람에|따르면|바에|탓에|미루어|불사하고|염두에|일환으로/g;
 
+// High-frequency elementary (A1/A2) Vietnamese syllables & function words
+const ELEMENTARY_VI_WORDS = new Set([
+    'tôi', 'bạn', 'anh', 'chị', 'em', 'chúng', 'mình', 'họ', 'ông', 'bà', 'cô', 'chú',
+    'là', 'có', 'không', 'chưa', 'đã', 'đang', 'sẽ', 'vừa', 'mới', 'rồi', 'của', 'và', 'hay', 'hoặc',
+    'ở', 'tại', 'trong', 'ngoài', 'trên', 'dưới', 'trước', 'sau', 'bên', 'giữa', 'với', 'cho', 'từ', 'đến', 'về',
+    'đi', 'làm', 'ăn', 'uống', 'học', 'nói', 'nghe', 'xem', 'đọc', 'viết', 'biết', 'hiểu', 'muốn', 'thích', 'yêu', 'cần',
+    'lấy', 'đưa', 'gặp', 'chơi', 'nghỉ', 'ngủ', 'dậy', 'mua', 'bán', 'hỏi', 'trả', 'lời', 'nhìn', 'thấy', 'cảm', 'ơn', 'xin', 'chào',
+    'rất', 'lắm', 'quá', 'nhiều', 'ít', 'hơn', 'nhất', 'cũng', 'vẫn', 'lại', 'đều', 'chỉ', 'nhưng', 'nên', 'vì', 'nếu', 'thì', 'mà',
+    'đây', 'đó', 'kia', 'này', 'nào', 'gì', 'ai', 'đâu', 'sao', 'bao', 'nhiêu', 'khi', 'nào', 'thế',
+    'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười', 'trăm', 'nghìn',
+    'người', 'nhà', 'nước', 'việt', 'nam', 'tiếng', 'tên', 'tuổi', 'ngày', 'đêm', 'hôm', 'nay', 'mai', 'qua',
+    'sáng', 'trưa', 'chiều', 'tối', 'tuần', 'tháng', 'giờ', 'phút', 'tiền', 'xe', 'trường', 'lớp',
+    'gia', 'đình', 'bố', 'mẹ', 'con', 'cơm', 'trà', 'cà', 'phê', 'sách', 'phim', 'nhạc',
+    'đẹp', 'tốt', 'hay', 'mới', 'cũ', 'lớn', 'to', 'nhỏ', 'cao', 'thấp', 'vui', 'buồn', 'khó', 'dễ', 'nhanh', 'chậm', 'nóng', 'lạnh', 'khỏe',
+    'ạ', 'nhé', 'nhỉ', 'đâu', 'đấy', 'thôi', 'vâng', 'dạ', 'ừ', 'à', 'ơi'
+]);
+
+// Formal Hán-Việt & academic discourse markers (B2-C2)
+const ADVANCED_VI_MARKERS = /tuy nhiên|mặc dù|dẫu vậy|bởi vậy|do đó|hơn nữa|ngoài ra|chẳng hạn|thông qua|đối với|liên quan|ảnh hưởng|phát triển|kinh tế|chính trị|xã hội|văn hóa|giáo dục|công nghệ|môi trường|nghiên cứu|phân tích|đánh giá|giải pháp|chiến lược|hiệu quả|trách nhiệm|quyền lợi|thực tiễn|tiềm năng|xu hướng|bền vững|cơ chế|chính sách|hệ thống|khả năng|chất lượng|vai trò|yếu tố|bối cảnh/gi;
+
+const SPEECH_RATE_THRESHOLDS = {
+    ja: [150, 240, 330, 410],
+    zh: [180, 260, 340, 420],
+    ko: [200, 300, 400, 480],
+    en: [120, 165, 200, 240],
+    vi: [140, 190, 240, 290]
+};
+
 
 /**
  * Estimate language difficulty level from subtitle segments and metadata
@@ -65,7 +94,7 @@ const ADVANCED_KO_CONNECTIVES = /관련하여|대하여|통하여|불구하고|�
  */
 export function estimateTranscriptLevel(segments = [], lang = 'en', metadata = {}) {
     const cleanLang = (lang || '').toLowerCase().trim().split('-')[0].split('_')[0];
-    if (!['ja', 'zh', 'ko', 'en'].includes(cleanLang)) {
+    if (!SUPPORTED_LEARNING_LANGUAGE_SET.has(cleanLang)) {
         return null;
     }
 
@@ -155,6 +184,15 @@ export function estimateTranscriptLevel(segments = [], lang = 'en', metadata = {
                     complexWordsCount++;
                 }
             }
+        } else if (cleanLang === 'vi') {
+            const words = text.toLowerCase().normalize('NFC').match(/\p{L}+/gu) || [];
+            totalWords += words.length;
+            for (const w of words) {
+                totalWordLength += w.length;
+                if (!ELEMENTARY_VI_WORDS.has(w)) {
+                    complexWordsCount++;
+                }
+            }
         }
     }
 
@@ -164,36 +202,17 @@ export function estimateTranscriptLevel(segments = [], lang = 'en', metadata = {
 
     const spokenMinutes = Math.max(0.1, totalSpokenSeconds / 60);
 
-    // Step 3: Speech Rate (CPM for CJK, WPM for English)
-    const speechRate = cleanLang === 'en'
+    // Step 3: Speech Rate (CPM for CJK, WPM for space-delimited Latin scripts)
+    const isWordDelimited = cleanLang === 'en' || cleanLang === 'vi';
+    const speechRate = isWordDelimited
         ? Math.round(totalWords / spokenMinutes)
         : Math.round(totalChars / spokenMinutes);
 
-    let speechRateScore = 3.0;
-    if (cleanLang === 'ja') {
-        if (speechRate < 150) speechRateScore = 1.0;
-        else if (speechRate < 240) speechRateScore = 2.0;
-        else if (speechRate < 330) speechRateScore = 3.0;
-        else if (speechRate < 410) speechRateScore = 4.0;
-        else speechRateScore = 5.0;
-    } else if (cleanLang === 'zh') {
-        if (speechRate < 180) speechRateScore = 1.0;
-        else if (speechRate < 260) speechRateScore = 2.0;
-        else if (speechRate < 340) speechRateScore = 3.0;
-        else if (speechRate < 420) speechRateScore = 4.0;
-        else speechRateScore = 5.0;
-    } else if (cleanLang === 'ko') {
-        if (speechRate < 200) speechRateScore = 1.0;
-        else if (speechRate < 300) speechRateScore = 2.0;
-        else if (speechRate < 400) speechRateScore = 3.0;
-        else if (speechRate < 480) speechRateScore = 4.0;
-        else speechRateScore = 5.0;
-    } else if (cleanLang === 'en') {
-        if (speechRate < 120) speechRateScore = 1.0;
-        else if (speechRate < 165) speechRateScore = 2.0;
-        else if (speechRate < 200) speechRateScore = 3.0;
-        else if (speechRate < 240) speechRateScore = 4.0;
-        else speechRateScore = 5.0;
+    const thresholds = SPEECH_RATE_THRESHOLDS[cleanLang];
+    let speechRateScore = 5.0;
+    if (thresholds) {
+        const idx = thresholds.findIndex(t => speechRate < t);
+        speechRateScore = idx === -1 ? 5.0 : idx + 1.0;
     }
 
     // Step 4: Lexical & Structural Complexity (1.0 to 5.0/6.0)
@@ -288,6 +307,27 @@ export function estimateTranscriptLevel(segments = [], lang = 'en', metadata = {
 
         lexicalScore = 1.0 + Math.max(0, (avgWordLen - 4.5) * 0.8) + hardScore;
         if (wordsPerSeg > 18) lexicalScore += 0.3;
+        lexicalScore = Math.min(6.0, Math.max(1.0, lexicalScore));
+    } else if (cleanLang === 'vi') {
+        const nonBasicRatio = totalWords > 0 ? complexWordsCount / totalWords : 0;
+        const wordsPerSeg = totalWords / Math.max(1, sampleSegments.length);
+        const advancedMarkerCount = (allText.match(ADVANCED_VI_MARKERS) || []).length;
+        const markerDensity = totalWords > 0 ? (advancedMarkerCount * 100) / totalWords : 0;
+
+        // Calibrated CEFR A1-C2 for Vietnamese: everyday A1/A2 dialogue (~25-40% non-core) -> academic C1/C2 (>65% + Hán-Việt markers)
+        let vocabScore = 1.0;
+        if (nonBasicRatio <= 0.30) {
+            vocabScore = 1.0 + (nonBasicRatio / 0.30) * 1.0; // A1-A2 (1.0 - 2.0)
+        } else if (nonBasicRatio <= 0.50) {
+            vocabScore = 2.0 + ((nonBasicRatio - 0.30) / 0.20) * 1.4; // A2-B1 (2.0 - 3.4)
+        } else if (nonBasicRatio <= 0.68) {
+            vocabScore = 3.4 + ((nonBasicRatio - 0.50) / 0.18) * 1.3; // B2-C1 (3.4 - 4.7)
+        } else {
+            vocabScore = 4.7 + Math.min(1.0, (nonBasicRatio - 0.68) * 4);
+        }
+
+        const markerBonus = Math.min(1.3, markerDensity * 0.35);
+        lexicalScore = vocabScore + markerBonus + (wordsPerSeg > 16 ? 0.3 : 0);
         lexicalScore = Math.min(6.0, Math.max(1.0, lexicalScore));
     }
 

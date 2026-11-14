@@ -53,7 +53,7 @@ export async function onRequestGet(context) {
         const rawTargetLang = url.searchParams.get('targetLang') || url.searchParams.get('target');
 
         const cleanVideoId = sanitizeVideoId(videoId);
-        const sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
+        const sourceLang = sanitizeLanguage(rawSourceLang);
         const targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
 
         if (!cleanVideoId || !sourceLang || !targetLang) {
@@ -123,7 +123,7 @@ async function handlePost(context, body) {
 
         const { videoId, sourceLang: rawSourceLang, targetLang: rawTargetLang, segments, forceRefresh, onlyCache, saveOnly, onlySave } = body;
         cleanVideoId = sanitizeVideoId(videoId);
-        sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
+        sourceLang = sanitizeLanguage(rawSourceLang);
         targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
 
         if (!cleanVideoId || !sourceLang || !targetLang) {

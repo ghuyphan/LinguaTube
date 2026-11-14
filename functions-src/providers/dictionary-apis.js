@@ -5,7 +5,8 @@ import { readBoundedBody, requestSignal } from '../utils/response-body.js';
 
 import {
     parseNaver, parseJotoba, parseMazii, parseFreeDictionary,
-    parseDatamuse, parseMdbg, parseGlosbe, parseJisho, parseKrdict
+    parseDatamuse, parseMdbg, parseGlosbe, parseJisho, parseKrdict,
+    parseWiktionaryRest, parseViWiktionaryExtract
 } from '../utils/dict-parsers.js';
 
 const PRIMARY_TIMEOUT_MS = 5000;
@@ -68,6 +69,25 @@ const DICT_SOURCES = {
         { url: 'https://en.dict.naver.com/api3/enzh/search', method: 'GET', parser: 'naver', referer: 'https://en.dict.naver.com/' },
         { url: 'https://www.mdbg.net/chinese/dictionary', method: 'GET', parser: 'mdbg', referer: 'https://www.mdbg.net/' },
         { url: 'https://glosbe.com/en/zh/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'en' }
+    ],
+
+    // Vietnamese sources (empirically verified against edge runtime)
+    'vi-en': [
+        { url: 'https://en.wiktionary.org/api/rest_v1/page/definition/', method: 'GET', parser: 'wiktionary_rest', referer: 'https://en.wiktionary.org/' },
+        { url: 'https://glosbe.com/vi/en/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'vi' }
+    ],
+    'vi-vi': [
+        { url: 'https://vi.wiktionary.org/w/api.php', method: 'GET', parser: 'vi_wiktionary', referer: 'https://vi.wiktionary.org/' }
+    ],
+    'vi-ko': [
+        { url: 'https://ko.dict.naver.com/api3/kovi/search', method: 'GET', parser: 'naver', referer: 'https://ko.dict.naver.com/' },
+        { url: 'https://glosbe.com/vi/ko/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'vi' }
+    ],
+    'vi-ja': [
+        { url: 'https://glosbe.com/vi/ja/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'vi' }
+    ],
+    'vi-zh': [
+        { url: 'https://glosbe.com/vi/zh/', method: 'GET', parser: 'glosbe', referer: 'https://glosbe.com/', from: 'vi' }
     ]
 };
 for (const [pair, sources] of Object.entries(DICT_SOURCES)) {
@@ -75,7 +95,7 @@ for (const [pair, sources] of Object.entries(DICT_SOURCES)) {
         const [from, to] = pair.split('-');
         source.from = from;
         source.to = to;
-        source.definitionLanguage = ['jisho', 'mdbg', 'jotoba', 'freedict', 'datamuse'].includes(source.parser) ? 'en' : to;
+        source.definitionLanguage = ['jisho', 'mdbg', 'jotoba', 'freedict', 'datamuse', 'wiktionary_rest'].includes(source.parser) ? 'en' : to;
     }
 }
 
@@ -151,6 +171,12 @@ export class DictionaryProvider {
             case 'krdict':
                 url = `${source.url}?nation=vie&nationCode=10&mainSearchWord=${encodeURIComponent(word)}`;
                 break;
+            case 'wiktionary_rest':
+                url = `${source.url}${encodeURIComponent(word)}`;
+                break;
+            case 'vi_wiktionary':
+                url = `${source.url}?action=query&prop=extracts&explaintext=1&redirects=1&titles=${encodeURIComponent(word)}&format=json`;
+                break;
         }
 
         const response = await fetch(url, {
@@ -161,7 +187,7 @@ export class DictionaryProvider {
         });
 
         if (!response.ok) {
-            if (response.status === 404 && ['freedict', 'glosbe'].includes(source.parser)) return [];
+            if (response.status === 404 && ['freedict', 'glosbe', 'wiktionary_rest'].includes(source.parser)) return [];
             throw new Error(`HTTP ${response.status}`);
         }
 
@@ -169,10 +195,16 @@ export class DictionaryProvider {
         const text = new TextDecoder().decode(bytes);
         const parsedResponse = new Response(text, { headers: response.headers });
         let data;
-        if (['naver','jotoba','mazii','freedict','datamuse','jisho'].includes(source.parser)) {
+        const jsonParsers = ['naver', 'jotoba', 'mazii', 'freedict', 'datamuse', 'jisho', 'wiktionary_rest', 'vi_wiktionary'];
+        if (jsonParsers.includes(source.parser)) {
             data = JSON.parse(text);
-            const valid = source.parser === 'naver' ? (typeof data?.searchResultMap?.searchResultListMap === 'object' && data.searchResultMap.searchResultListMap !== null && !Array.isArray(data.searchResultMap.searchResultListMap) && (data.searchResultMap.searchResultListMap.WORD == null || (typeof data.searchResultMap.searchResultListMap.WORD === 'object' && Array.isArray(data.searchResultMap.searchResultListMap.WORD.items)))) : source.parser === 'jotoba' ? Array.isArray(data?.words) :
-                source.parser === 'mazii' ? (Array.isArray(data?.data || data?.results) || data?.found === 0) : source.parser === 'jisho' ? Array.isArray(data?.data) : Array.isArray(data);
+            const valid = source.parser === 'naver' ? (typeof data?.searchResultMap?.searchResultListMap === 'object' && data.searchResultMap.searchResultListMap !== null && !Array.isArray(data.searchResultMap.searchResultListMap) && (data.searchResultMap.searchResultListMap.WORD == null || (typeof data.searchResultMap.searchResultListMap.WORD === 'object' && Array.isArray(data.searchResultMap.searchResultListMap.WORD.items))))
+                : source.parser === 'jotoba' ? Array.isArray(data?.words)
+                : source.parser === 'mazii' ? (Array.isArray(data?.data || data?.results) || data?.found === 0)
+                : source.parser === 'jisho' ? Array.isArray(data?.data)
+                : source.parser === 'wiktionary_rest' ? (data !== null && typeof data === 'object' && !Array.isArray(data))
+                : source.parser === 'vi_wiktionary' ? Boolean(data?.query?.pages && typeof data.query.pages === 'object')
+                : Array.isArray(data);
             if (!valid) throw new Error('Malformed dictionary response');
         } else if (!/<html|<!doctype/i.test(text)) throw new Error('Malformed dictionary document');
         // Parse response
@@ -186,6 +218,8 @@ export class DictionaryProvider {
             case 'glosbe': return checkedHtmlEntries(await parseGlosbe(parsedResponse, word, source.from || ''), text);
             case 'jisho': return parseJisho(data);
             case 'krdict': return checkedHtmlEntries(await parseKrdict(parsedResponse), text);
+            case 'wiktionary_rest': return parseWiktionaryRest(data, word, source.from);
+            case 'vi_wiktionary': return parseViWiktionaryExtract(data, word);
             default: return [];
         }
 

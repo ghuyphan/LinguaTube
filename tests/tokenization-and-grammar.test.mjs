@@ -2,7 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import {
+    tokenize,
     tokenizeEnglish,
+    tokenizeVietnamese,
+    mergeVietnameseCompounds,
     tokenizeKoreanChinese,
     isPunctuation,
     hasKanji,
@@ -14,7 +17,12 @@ import {
     enrichSegmentsWithTokens
 } from '../functions-src/utils/tokenizer.js';
 import { enrichPublishedTranscript } from '../functions-src/services/transcript-enrichment.js';
-import { splitRunOnSegments } from '../functions-src/utils/transcript-utils.js';
+import { splitRunOnSegments, contradictsNativeLanguage } from '../functions-src/utils/transcript-utils.js';
+import { parseWiktionaryRest, parseViWiktionaryExtract } from '../functions-src/utils/dict-parsers.js';
+import { estimateTranscriptLevel } from '../functions-src/utils/level-estimator.js';
+import { scoreVideoTranscript } from '../functions-src/utils/video-grader.js';
+import { onRequestGet as grammarGet } from '../functions-src/api/grammar.js';
+import { clearGrammarStoreCache } from '../functions-src/data/grammar-store.js';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../functions-src/utils/japanese-romaji.js';
 
 // ============================================================================
@@ -573,4 +581,166 @@ test('splitRunOnSegments: chunks unpunctuated Japanese Whisper lyrics within max
     }
     const combined = result.map(s => s.text).join('');
     assert.equal(combined, longLyric);
+});
+
+// ============================================================================
+// 5. VIETNAMESE SUPPORT TESTS (Tokenization, Dictionary, Validation, Grading)
+// ============================================================================
+
+test('Tokenizer (VI): longest-match compound merging preserves compounds & casing', async () => {
+    const tokens = await tokenize('Học sinh Việt Nam học tiếng Việt.', 'vi');
+    const words = tokens.filter(t => !t.isPunctuation).map(t => t.surface);
+    assert.deepEqual(words, ['Học sinh', 'Việt Nam', 'học', 'tiếng Việt']);
+
+    const manual = mergeVietnameseCompounds(
+        'Xin chào mọi người!',
+        new Set(['xin chào', 'mọi người'])
+    );
+    assert.deepEqual(manual.filter(t => !t.isPunctuation).map(t => t.surface), ['Xin chào', 'mọi người']);
+
+    assert.equal((await tokenizeVietnamese('Việt Nam!')).filter(t => t.isPunctuation).length, 1);
+});
+
+test('Dict Parsers (VI): parseWiktionaryRest and parseViWiktionaryExtract extract clean definitions', () => {
+    const restEntries = parseWiktionaryRest({
+        vi: [{
+            partOfSpeech: 'Noun',
+            definitions: [{
+                definition: '<i>language</i> language spoken in Vietnam',
+                parsedExamples: [{ example: 'Tôi học tiếng Việt.' }]
+            }]
+        }]
+    }, 'tiếng Việt', 'vi');
+    assert.equal(restEntries.length, 1);
+    assert.equal(restEntries[0].partOfSpeech, 'n');
+    assert.ok(restEntries[0].definitions[0].includes('language spoken in Vietnam'));
+    assert.deepEqual(restEntries[0].examples, ['Tôi học tiếng Việt.']);
+
+    const viWiktEntries = parseViWiktionaryExtract({
+        query: {
+            pages: {
+                '1': {
+                    title: 'xin chào',
+                    extract: '== Tiếng Việt ==\n=== Cách phát âm ===\nIPA: /sin˧˧ tɕaːw˨˩/\n=== Thán từ ===\n1. Lời chào hỏi thông thường.\n== Tiếng Anh ==\n=== Noun ===\nHello'
+                }
+            }
+        }
+    }, 'xin chào');
+    assert.equal(viWiktEntries.length, 1);
+    assert.equal(viWiktEntries[0].reading, '/sin˧˧ tɕaːw˨˩/');
+    assert.equal(viWiktEntries[0].partOfSpeech, 'int');
+    assert.deepEqual(viWiktEntries[0].definitions, ['Lời chào hỏi thông thường.']);
+});
+
+test('Transcript Validator & Video Grader (VI): language check, level estimation, and catalog scoring', async () => {
+    assert.equal(contradictsNativeLanguage([
+        { text: 'Xin chào các bạn hôm nay trời đẹp lắm.' },
+        { text: 'Chúng ta sẽ học tiếng Việt nhé.' },
+        { text: 'Cảm ơn mọi người đã theo dõi video.' }
+    ], 'vi'), false);
+
+    assert.equal(contradictsNativeLanguage([
+        { text: 'You will never know what they want with this.' },
+        { text: 'Your friends were going to want that too.' },
+        { text: 'And what have you done with your time today?' }
+    ], 'vi'), true);
+
+    const est = estimateTranscriptLevel([
+        { text: 'Xin chào các bạn, hôm nay trời đẹp.', duration: 4 },
+        { text: 'Tôi đang học tiếng Việt.', duration: 3 }
+    ], 'vi', { title: 'Vietnamese for Beginners A1' });
+    assert.equal(est?.level, 'CEFR A1');
+    assert.equal(est?.tier, 'beginner');
+
+    const cues = [
+        { text: 'Mặc dù trời mưa nhưng tôi vẫn đi học tiếng Việt.', duration: 5 },
+        { text: 'Nếu bạn chăm chỉ thì sẽ tiến bộ rất nhanh.', duration: 5 },
+    ];
+    for (const cue of cues) {
+        cue.tokens = await tokenize(cue.text, 'vi');
+    }
+    const graded = scoreVideoTranscript(cues, 'vi');
+    assert.ok(graded, 'Expected Vietnamese transcript grading result');
+    assert.equal(graded.method, 'server_linguistics');
+    assert.equal(graded.speechRateUnit, 'wpm');
+    assert.ok(graded.grammarCount > 0);
+});
+
+// ============================================================================
+// 6. SHARED SERVER GRAMMAR API TESTS (/api/grammar)
+// ============================================================================
+
+test('GET /api/grammar serves manifest, patterns, translations, combined packs, and single-ID lookups with zero KV writes', async () => {
+    clearGrammarStoreCache();
+    const envWithGuard = {
+        TRANSCRIPT_CACHE: {
+            async get() { return null; },
+            async put() { assert.fail('GET /api/grammar must not burn KV writes'); }
+        }
+    };
+
+    const manifestRes = await grammarGet({ request: new Request('https://voca.study/api/grammar'), env: envWithGuard });
+    assert.equal(manifestRes.status, 200);
+    assert.ok(manifestRes.headers.get('Cache-Control')?.includes('s-maxage=604800'));
+    const manifest = await manifestRes.json();
+    assert.equal(manifest.patterns.vi, 80);
+    assert.deepEqual(manifest.languages.includes('vi'), true);
+
+    const patternsRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi'), env: envWithGuard });
+    assert.equal(patternsRes.status, 200);
+    assert.equal(patternsRes.headers.get('X-Cache'), 'MISS');
+    const patterns = await patternsRes.json();
+    assert.equal(patterns.length, 80);
+
+    // Warm isolate hit skips rate limit & returns HIT-MEMORY
+    const cachedPatternsRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi'), env: envWithGuard });
+    assert.equal(cachedPatternsRes.status, 200);
+    assert.equal(cachedPatternsRes.headers.get('X-Cache'), 'HIT-MEMORY');
+
+    const transRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&ui=ja'), env: envWithGuard });
+    assert.equal(transRes.status, 200);
+    const trans = await transRes.json();
+    assert.ok(trans.vi_b1_01?.shortExplanation);
+
+    const enTransRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&ui=en'), env: envWithGuard });
+    assert.equal(enTransRes.status, 200);
+    assert.deepEqual(await enTransRes.json(), {});
+
+    const allRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&ui=ko&type=all'), env: envWithGuard });
+    assert.equal(allRes.status, 200);
+    const allBody = await allRes.json();
+    assert.equal(allBody.patterns.length, 80);
+    assert.ok(allBody.translations.vi_a1_01?.title);
+
+    const singleRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&id=vi_a1_01&ui=ja'), env: envWithGuard });
+    assert.equal(singleRes.status, 200);
+    const single = await singleRes.json();
+    assert.equal(single.id, 'vi_a1_01');
+    assert.ok(single.title.includes('コピュラ'));
+
+    const missingIdRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&id=vi_does_not_exist'), env: envWithGuard });
+    assert.equal(missingIdRes.status, 404);
+
+    // Validation guards
+    assert.equal((await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=es'), env: envWithGuard })).status, 400);
+    assert.equal((await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&ui=fr'), env: envWithGuard })).status, 400);
+    assert.equal((await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&id=../bad'), env: envWithGuard })).status, 400);
+
+    // R2 override takes priority when present
+    clearGrammarStoreCache();
+    const r2OverrideEnv = {
+        TRANSCRIPT_STORAGE: {
+            async get(key) {
+                if (key === 'grammar/patterns/vi.json') {
+                    return { async json() { return [{ id: 'vi_r2_custom', language: 'vi', pattern: 'r2', title: 'R2 Override', shortExplanation: 'From R2', longExplanation: 'From R2', formation: 'r2', level: 'CEFR A1', examples: [] }]; } };
+                }
+                return null;
+            }
+        }
+    };
+    const r2Res = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi'), env: r2OverrideEnv });
+    assert.equal(r2Res.status, 200);
+    const r2Patterns = await r2Res.json();
+    assert.equal(r2Patterns[0].id, 'vi_r2_custom');
+    clearGrammarStoreCache();
 });

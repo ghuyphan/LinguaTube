@@ -1,10 +1,21 @@
 /**
  * Shared Tokenization Utilities
- * Provides Japanese (kuromoji), Korean (Intl.Segmenter + romanization), and Chinese (Intl.Segmenter + pinyin) tokenization
+ * Provides Japanese (kuromoji), Korean (Intl.Segmenter + romanization),
+ * Chinese (Intl.Segmenter + pinyin), English (Intl.Segmenter + compromise),
+ * and Vietnamese (Intl.Segmenter + MIT compound longest-match) tokenization.
  */
 
 import * as kuromoji from '@patdx/kuromoji';
 import { getJapaneseRomaji, isJapaneseKanaText, katakanaToHiragana } from './japanese-romaji.js';
+import { SUPPORTED_LEARNING_LANGUAGE_SET } from './utils.js';
+import {
+    getVietnameseCompounds,
+    getLoadedVietnameseCompounds,
+    isVietnameseCompoundsReady,
+    setVietnameseCompounds
+} from '../data/vi-compounds-loader.js';
+
+export { isVietnameseCompoundsReady, setVietnameseCompounds };
 
 let nlpModule = null;
 async function getNlp() {
@@ -69,6 +80,12 @@ let kuromojiReady = false;
 
 export function isKuromojiReady() {
     return kuromojiReady;
+}
+
+export function isTokenizerReady(lang) {
+    if (lang === 'ja') return kuromojiReady;
+    if (lang === 'vi') return isVietnameseCompoundsReady();
+    return true;
 }
 
 const cdnLoader = {
@@ -604,10 +621,82 @@ export async function tokenizeEnglish(text) {
     });
 }
 
+const viSegmenter = new Intl.Segmenter('vi', { granularity: 'word' });
+const MAX_VI_COMPOUND_SYLLABLES = 4;
+
+/**
+ * Segment Vietnamese text using Intl.Segmenter('vi') plus greedy 4->2 syllable
+ * longest-match compound merging across contiguous whitespace-separated syllables.
+ */
+export function mergeVietnameseCompounds(text, compounds = getLoadedVietnameseCompounds()) {
+    if (!text || typeof text !== 'string') return [];
+
+    const rawSegments = [...viSegmenter.segment(text)];
+    const tokens = [];
+
+    for (let i = 0; i < rawSegments.length; i++) {
+        const seg = rawSegments[i];
+        if (!seg.isWordLike || isPunctuation(seg.segment)) {
+            if (seg.segment.trim()) {
+                tokens.push({ surface: seg.segment, isPunctuation: true });
+            }
+            continue;
+        }
+
+        // Collect up to 4 contiguous word-like segments separated strictly by whitespace
+        const wordIndices = [i];
+        let cursor = i + 1;
+        while (wordIndices.length < MAX_VI_COMPOUND_SYLLABLES && cursor + 1 < rawSegments.length) {
+            const gap = rawSegments[cursor];
+            const next = rawSegments[cursor + 1];
+            if (gap.isWordLike || gap.segment.trim() !== '') break;
+            if (!next.isWordLike || isPunctuation(next.segment)) break;
+            wordIndices.push(cursor + 1);
+            cursor += 2;
+        }
+
+        let matched = null;
+        for (let len = wordIndices.length; len >= 2; len--) {
+            const sliceIndices = wordIndices.slice(0, len);
+            const normalized = sliceIndices
+                .map(idx => rawSegments[idx].segment.normalize('NFC').toLowerCase())
+                .join(' ');
+            if (compounds.has(normalized)) {
+                const startIdx = rawSegments[sliceIndices[0]].index;
+                const lastSeg = rawSegments[sliceIndices[len - 1]];
+                const surface = text.slice(startIdx, lastSeg.index + lastSeg.segment.length);
+                matched = {
+                    token: normalized !== surface ? { surface, baseForm: normalized } : { surface },
+                    lastSegIndex: sliceIndices[len - 1]
+                };
+                break;
+            }
+        }
+
+        if (matched) {
+            tokens.push(matched.token);
+            i = matched.lastSegIndex;
+        } else {
+            const normalized = seg.segment.normalize('NFC').toLowerCase();
+            tokens.push(normalized !== seg.segment ? { surface: seg.segment, baseForm: normalized } : { surface: seg.segment });
+        }
+    }
+
+    return tokens;
+}
+
+export async function tokenizeVietnamese(text, options = {}) {
+    if (!text || typeof text !== 'string') return [];
+    const compounds = options?.compounds instanceof Set
+        ? options.compounds
+        : await getVietnameseCompounds(options);
+    return mergeVietnameseCompounds(text, compounds);
+}
+
 /**
  * Tokenize text based on language
  */
-export async function tokenize(text, lang) {
+export async function tokenize(text, lang, options = {}) {
     if (!text || typeof text !== 'string') {
         return [];
     }
@@ -618,6 +707,10 @@ export async function tokenize(text, lang) {
 
     if (lang === 'en') {
         return tokenizeEnglish(text);
+    }
+
+    if (lang === 'vi') {
+        return tokenizeVietnamese(text, options);
     }
 
     return tokenizeKoreanChinese(text, lang);
@@ -649,28 +742,28 @@ export function segmentNeedsEnrichment(segment, lang) {
 export function segmentsNeedEnrichment(segments, lang) {
     if (!Array.isArray(segments) || segments.length === 0) return false;
     const normLang = (lang || '').split('-')[0].toLowerCase();
-    if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) return false;
+    if (!SUPPORTED_LEARNING_LANGUAGE_SET.has(normLang)) return false;
     return segments.some(s => segmentNeedsEnrichment(s, normLang));
 }
 
 /**
  * Enrich an array of transcript segments with morphological tokens.
  * - Leaves already-rich segment.tokens untouched (idempotent).
- * - Only tokenizes supported languages (ja, zh, ko, en).
+ * - Only tokenizes supported learning languages (ja, zh, ko, en, vi).
  * - Safe against null/undefined segments or empty texts.
  *
  * @param {Array<{id?: number|string, text: string, start: number, duration: number, tokens?: Array}>} segments
  * @param {string} lang - Target language code
- * @param {{allowFallback?: boolean, kuromojiTimeoutMs?: number}} [options]
+ * @param {{allowFallback?: boolean, kuromojiTimeoutMs?: number, assets?: any, requestUrl?: string}} [options]
  * @returns {Promise<Array|null>} Enriched segments, or null if allowFallback is false and Kuromoji is unavailable
  */
-export async function enrichSegmentsWithTokens(segments, lang, { allowFallback = true, kuromojiTimeoutMs = 1500 } = {}) {
+export async function enrichSegmentsWithTokens(segments, lang, { allowFallback = true, kuromojiTimeoutMs = 1500, assets, requestUrl } = {}) {
     if (!Array.isArray(segments) || segments.length === 0) {
         return [];
     }
 
     const normLang = (lang || '').split('-')[0].toLowerCase();
-    if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) {
+    if (!SUPPORTED_LEARNING_LANGUAGE_SET.has(normLang)) {
         return segments;
     }
 
@@ -692,7 +785,9 @@ export async function enrichSegmentsWithTokens(segments, lang, { allowFallback =
     if (normLang === 'zh') await getPinyin().catch(() => null);
     if (normLang === 'ko') await getRomanizeKorean().catch(() => null);
     if (normLang === 'en') await getNlp().catch(() => null);
+    if (normLang === 'vi') await getVietnameseCompounds({ assets, requestUrl }).catch(() => null);
 
+    const tokenizeOptions = normLang === 'vi' ? { assets, requestUrl } : undefined;
     const enriched = await Promise.all(
         segments.map(async (segment) => {
             if (!segment) return segment;
@@ -708,7 +803,7 @@ export async function enrichSegmentsWithTokens(segments, lang, { allowFallback =
             try {
                 const tokens = (normLang === 'ja' && !kuromojiAvailable)
                     ? tokenizeJapaneseFast(text)
-                    : await tokenize(text, normLang);
+                    : await tokenize(text, normLang, tokenizeOptions);
                 return {
                     ...segment,
                     tokens: Array.isArray(tokens) ? tokens : []

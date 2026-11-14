@@ -4,10 +4,11 @@
  */
 
 import { getYouTubeThumbnail } from '../core/utils/format.utils';
+import type { SupportedLearningLanguage } from './language.constants';
 import { ProficiencyLevelTier } from './video-level.model';
 
 export type PlaylistVisibility = 'private' | 'unlisted' | 'published';
-export type PlaylistLanguage = 'ja' | 'zh' | 'ko' | 'en';
+export type PlaylistLanguage = SupportedLearningLanguage;
 
 /**
  * Core playlist interface matching cloud schema

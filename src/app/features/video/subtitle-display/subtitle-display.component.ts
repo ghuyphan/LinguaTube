@@ -10,7 +10,7 @@ import { VocabularyService } from '../../vocabulary';
 import { SettingsService, I18nService, KeyboardShortcutService } from '../../../core/services';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { GrammarService } from '../../../services';
-import { SubtitleCue, Token, GrammarMatch, GrammarPattern, SupportedLearningLanguage, SupportedGrammarLang } from '../../../models';
+import { SubtitleCue, Token, GrammarMatch, GrammarPattern, SupportedLearningLanguage, LEARNING_LANGUAGE_CODES, isSupportedLearningLanguage } from '../../../models';
 import { QuizService } from '../quiz.service';
 import { QuizInputComponent } from '../../quiz/quiz-input/quiz-input.component';
 import { BottomSheetComponent } from '../../../shared/components/bottom-sheet/bottom-sheet.component';
@@ -63,8 +63,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
 
   readonly firstAvailableNativeLanguage = computed(() => {
     const nativeLangs = this.transcript.availableLanguages().native || [];
-    const preferred = ['ja', 'zh', 'ko', 'en'];
-    for (const p of preferred) {
+    for (const p of LEARNING_LANGUAGE_CODES) {
       const match = nativeLangs.find(l => normalizeLanguageCode(l) === p);
       if (match) return normalizeLanguageCode(match);
     }
@@ -78,6 +77,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
       case 'zh': return this.i18n.t('settings.chinese') || 'Chinese';
       case 'ko': return this.i18n.t('settings.korean') || 'Korean';
       case 'en': return this.i18n.t('settings.english') || 'English';
+      case 'vi': return this.i18n.t('settings.vietnamese') || 'Vietnamese';
       default: return lang.toUpperCase();
     }
   }
@@ -144,7 +144,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
   effectiveLanguage = computed(() => this.subtitles.activeLanguage());
 
   readonly isDualSubSupportedLang = computed(() =>
-    ['ja', 'zh', 'ko', 'en'].includes(this.effectiveLanguage())
+    isSupportedLearningLanguage(this.effectiveLanguage())
   );
 
   readonly showDualSubs = computed(() =>
@@ -181,7 +181,7 @@ export class SubtitleDisplayComponent implements OnDestroy {
     // Track vocab modifications reactively so level badges update immediately
     this.vocab.lastModified?.();
 
-    const tokens = this.subtitles.getTokens(cue, lang as 'ja' | 'zh' | 'ko' | 'en');
+    const tokens = this.subtitles.getTokens(cue, lang as SupportedLearningLanguage);
 
     // Only create new objects when level actually differs from token's existing level
     return tokens.map(token => {
@@ -206,9 +206,9 @@ export class SubtitleDisplayComponent implements OnDestroy {
     if (tokens.length === 0 || !this.grammar.grammarModeEnabled()) return [];
 
     const lang = this.effectiveLanguage();
-    if (!lang || !['ja', 'zh', 'ko', 'en'].includes(lang)) return [];
+    if (!lang || !isSupportedLearningLanguage(lang)) return [];
 
-    return this.grammar.detectPatterns(tokens, lang as 'ja' | 'zh' | 'ko' | 'en');
+    return this.grammar.detectPatterns(tokens, lang);
   });
 
   grammarTokenIndices = computed(() => {
@@ -347,8 +347,8 @@ export class SubtitleDisplayComponent implements OnDestroy {
     effect(() => {
       const lang = this.effectiveLanguage();
       const hasCues = this.subtitles.subtitles().length > 0;
-      if (hasCues && lang && ['ja', 'zh', 'ko', 'en'].includes(lang) && this.grammar.grammarModeEnabled()) {
-        this.grammar.preloadPatterns(lang as SupportedGrammarLang);
+      if (hasCues && isSupportedLearningLanguage(lang) && this.grammar.grammarModeEnabled()) {
+        this.grammar.preloadPatterns(lang);
       }
     });
 

@@ -19,6 +19,7 @@ export const DEFAULT_VOICES = {
   zh: 'Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)',
   ko: 'Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)',
   en: 'Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)',
+  vi: 'Microsoft Server Speech Text to Speech Voice (vi-VN, HoaiMyNeural)',
 };
 
 const VOICE_NAME_REGEX = /^[a-zA-Z0-9_\-\s(),]+$/;

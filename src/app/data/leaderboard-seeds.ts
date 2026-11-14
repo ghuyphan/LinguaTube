@@ -1,4 +1,5 @@
 import { LeaderboardEntry } from '../models/gamification.model';
+import { isSupportedLearningLanguage, type SupportedLearningLanguage } from '../models/language.constants';
 
 export interface SeedLeaderboardEntry {
     user_id: string;
@@ -9,7 +10,7 @@ export interface SeedLeaderboardEntry {
     level: number;
     streak: number;
     badges_count: number;
-    target_lang: 'ja' | 'ko' | 'zh' | 'en';
+    target_lang: SupportedLearningLanguage;
     country: string;
 }
 
@@ -48,7 +49,16 @@ export const SEED_LEADERBOARD: SeedLeaderboardEntry[] = [
     { user_id: 'seed_en_4', name: 'Oliver Smith', avatar: '', xp: 2650, weekly_xp: 260, level: 4, streak: 10, badges_count: 4, target_lang: 'en', country: '🇦🇺' },
     { user_id: 'seed_en_5', name: 'Yuto Nakamura', avatar: '', xp: 1650, weekly_xp: 190, level: 3, streak: 6, badges_count: 3, target_lang: 'en', country: '🇯🇵' },
     { user_id: 'seed_en_6', name: 'Emma Johnson', avatar: '', xp: 1050, weekly_xp: 140, level: 2, streak: 3, badges_count: 2, target_lang: 'en', country: '🇨🇦' },
-    { user_id: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weekly_xp: 70, level: 1, streak: 1, badges_count: 1, target_lang: 'en', country: '🇺🇸' }
+    { user_id: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weekly_xp: 70, level: 1, streak: 1, badges_count: 1, target_lang: 'en', country: '🇺🇸' },
+
+    // --- Vietnamese (VI) Learners ---
+    { user_id: 'seed_vi_1', name: 'Minh Nguyen', avatar: '', xp: 10900, weekly_xp: 720, level: 10, streak: 25, badges_count: 10, target_lang: 'vi', country: '🇻🇳' },
+    { user_id: 'seed_vi_2', name: 'Linh Tran', avatar: '', xp: 7150, weekly_xp: 540, level: 7, streak: 17, badges_count: 7, target_lang: 'vi', country: '🇻🇳' },
+    { user_id: 'seed_vi_3', name: 'Daniel Kim', avatar: '', xp: 4380, weekly_xp: 410, level: 5, streak: 9, badges_count: 5, target_lang: 'vi', country: '🇰🇷' },
+    { user_id: 'seed_vi_4', name: 'Hana Kobayashi', avatar: '', xp: 2920, weekly_xp: 310, level: 4, streak: 11, badges_count: 4, target_lang: 'vi', country: '🇯🇵' },
+    { user_id: 'seed_vi_5', name: 'Claire Laurent', avatar: '', xp: 1890, weekly_xp: 220, level: 3, streak: 6, badges_count: 3, target_lang: 'vi', country: '🇫🇷' },
+    { user_id: 'seed_vi_6', name: 'Tuan Pham', avatar: '', xp: 1120, weekly_xp: 145, level: 2, streak: 4, badges_count: 2, target_lang: 'vi', country: '🇻🇳' },
+    { user_id: 'seed_vi_7', name: 'Ethan Wright', avatar: '', xp: 590, weekly_xp: 75, level: 1, streak: 2, badges_count: 1, target_lang: 'vi', country: '🇺🇸' }
 ];
 
 /**
@@ -62,7 +72,7 @@ export function mergeWithSeedLeaderboard(
     limit: number = 50,
     period: 'weekly' | 'all_time' = 'all_time'
 ): LeaderboardEntry[] {
-    const isLangSpecific = !!lang && ['ja', 'ko', 'zh', 'en'].includes(lang);
+    const isLangSpecific = isSupportedLearningLanguage(lang);
 
     // Filter seeds by language if requested
     const filteredSeeds = isLangSpecific

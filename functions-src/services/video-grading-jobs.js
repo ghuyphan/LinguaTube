@@ -1,11 +1,12 @@
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { getVideoLanguages } from '../data/video-info-db.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { SUPPORTED_LEARNING_LANGUAGES } from '../utils/utils.js';
 
 export const serverGradingActive = env => env?.SERVER_VIDEO_GRADING === '1';
 export const serverGradingEnabled = env => serverGradingActive(env) || env?.SERVER_VIDEO_GRADING === 'paused';
 export const GRADER_VERSION = 1;
-export const gradingLanguages = ['ja', 'zh', 'ko', 'en'];
+export const gradingLanguages = SUPPORTED_LEARNING_LANGUAGES;
 
 export async function transcriptRevision(segments) {
     const canonical = segments.map(({ text, start, duration }) =>

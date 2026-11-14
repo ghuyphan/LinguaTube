@@ -282,7 +282,35 @@ function parseNaverLocalItem(item) {
     };
 }
 
+let sharedDictServicePromise = null;
+async function getSharedDictService() {
+    if (!sharedDictServicePromise) {
+        sharedDictServicePromise = Promise.all([
+            import('../functions-src/providers/dictionary-apis.js'),
+            import('../functions-src/providers/lingva.js'),
+            import('../functions-src/services/dict.service.js')
+        ]).then(([{ DictionaryProvider }, { TranslationProvider }, { DictionaryService }]) =>
+            new DictionaryService(new DictionaryProvider(), new TranslationProvider())
+        ).catch(err => {
+            sharedDictServicePromise = null;
+            throw err;
+        });
+    }
+    return sharedDictServicePromise;
+}
+
 async function fetchDictLocal(word, from, to) {
+    if (from === 'vi') {
+        try {
+            const service = await getSharedDictService();
+            const res = await service.fetchWithFallback(word, from, to);
+            return { word, from, to, source: res.source || 'none', entries: res.entries || [], timestamp: Date.now() };
+        } catch (err) {
+            console.warn('[fetchDictLocal vi] Fallback error:', err.message);
+            return { word, from, to, source: 'none', entries: [], timestamp: Date.now() };
+        }
+    }
+
     const pair = `${from}-${to}`;
     let entries = [];
     let source = 'none';
@@ -655,6 +683,7 @@ const EDGE_DEFAULT_VOICES = {
     zh: 'Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoNeural)',
     ko: 'Microsoft Server Speech Text to Speech Voice (ko-KR, SunHiNeural)',
     en: 'Microsoft Server Speech Text to Speech Voice (en-US, JennyNeural)',
+    vi: 'Microsoft Server Speech Text to Speech Voice (vi-VN, HoaiMyNeural)',
 };
 
 function normalizeEdgeVoice(voice, lang = 'ja') {
@@ -900,7 +929,7 @@ async function synthesizeEdgeTtsLocal(text, options = {}) {
 }
 
 async function fetchGoogleTtsLocal(text, lang) {
-    const tlMap = { ja: 'ja', zh: 'zh-CN', ko: 'ko', en: 'en' };
+    const tlMap = { ja: 'ja', zh: 'zh-CN', ko: 'ko', en: 'en', vi: 'vi' };
     const targetLang = tlMap[lang] || lang;
     const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(text)}&tl=${encodeURIComponent(targetLang)}&client=tw-ob`;
     const res = await fetch(url, {
@@ -1090,8 +1119,17 @@ const devLeaderboard = [
     { userId: 'seed_en_4', name: 'Oliver Smith', avatar: '', xp: 2650, weeklyXp: 260, level: 4, streak: 10, badgesCount: 4, targetLang: 'en', country: '🇦🇺' },
     { userId: 'seed_en_5', name: 'Yuto Nakamura', avatar: '', xp: 1650, weeklyXp: 190, level: 3, streak: 6, badgesCount: 3, targetLang: 'en', country: '🇯🇵' },
     { userId: 'seed_en_6', name: 'Emma Johnson', avatar: '', xp: 1050, weeklyXp: 140, level: 2, streak: 3, badgesCount: 2, targetLang: 'en', country: '🇨🇦' },
-    { userId: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weeklyXp: 70, level: 1, streak: 1, badgesCount: 1, targetLang: 'en', country: '🇺🇸' }
+    { userId: 'seed_en_7', name: 'Noah Brown', avatar: '', xp: 520, weeklyXp: 70, level: 1, streak: 1, badgesCount: 1, targetLang: 'en', country: '🇺🇸' },
+
+    // VI
+    { userId: 'seed_vi_1', name: 'Minh Nguyen', avatar: '', xp: 8940, weeklyXp: 610, level: 9, streak: 24, badgesCount: 10, targetLang: 'vi', country: '🇻🇳' },
+    { userId: 'seed_vi_2', name: 'Haruto Sato', avatar: '', xp: 5420, weeklyXp: 440, level: 6, streak: 14, badgesCount: 6, targetLang: 'vi', country: '🇯🇵' },
+    { userId: 'seed_vi_3', name: 'Soo-jin Park', avatar: '', xp: 3680, weeklyXp: 330, level: 4, streak: 9, badgesCount: 5, targetLang: 'vi', country: '🇰🇷' },
+    { userId: 'seed_vi_4', name: 'Daniel Kim', avatar: '', xp: 2290, weeklyXp: 250, level: 3, streak: 7, badgesCount: 4, targetLang: 'vi', country: '🇺🇸' },
+    { userId: 'seed_vi_5', name: 'Linh Tran', avatar: '', xp: 1480, weeklyXp: 185, level: 2, streak: 5, badgesCount: 3, targetLang: 'vi', country: '🇻🇳' }
 ];
+
+const DEV_LEARNING_LANGS = ['ja', 'ko', 'zh', 'en', 'vi'];
 
 app.get('/api/leaderboard', (req, res) => {
     const lang = req.query.lang;
@@ -1099,7 +1137,7 @@ app.get('/api/leaderboard', (req, res) => {
     const period = req.query.period === 'all_time' ? 'all_time' : 'weekly';
     const limit = Math.max(1, Math.min(100, parseInt(req.query.limit, 10) || 50));
 
-    const isLangSpecific = lang && ['ja', 'ko', 'zh', 'en'].includes(lang);
+    const isLangSpecific = lang && DEV_LEARNING_LANGS.includes(lang);
     let list = devLeaderboard;
     if (isLangSpecific) {
         list = devLeaderboard.filter(item => item.targetLang === lang);
@@ -1144,7 +1182,7 @@ app.post('/api/leaderboard', (req, res) => {
     const xp = Math.max(0, parseInt(body.xp, 10) || 0);
     const weeklyXp = Math.max(0, parseInt(body.weekly_xp, 10) || 0);
     const level = Math.max(1, parseInt(body.level, 10) || Math.floor(Math.sqrt(xp / 100)) + 1);
-    const targetLang = ['ja', 'ko', 'zh', 'en'].includes(body.target_lang) ? body.target_lang : 'ja';
+    const targetLang = DEV_LEARNING_LANGS.includes(body.target_lang) ? body.target_lang : 'ja';
 
     if (existing) {
         existing.name = body.name || existing.name;
@@ -2067,7 +2105,7 @@ app.all('/api/recommended-videos', async (req, res) => {
                         const videoLangs = files
                             .filter(f => f.startsWith(videoPrefix) && f.endsWith('.json'))
                             .map(f => f.slice(videoPrefix.length, -'.json'.length))
-                            .filter(l => ['ja', 'zh', 'ko', 'en'].includes(l));
+                            .filter(l => DEV_LEARNING_LANGS.includes(l));
                         const subLangs = Array.from(new Set([lang, ...videoLangs]));
 
                         results.push({
@@ -3025,8 +3063,18 @@ const segmenters = {
     zh: new Intl.Segmenter('zh', { granularity: 'word' }),
     ja: new Intl.Segmenter('ja', { granularity: 'word' }),
     ko: new Intl.Segmenter('ko', { granularity: 'word' }),
-    en: new Intl.Segmenter('en', { granularity: 'word' })
+    en: new Intl.Segmenter('en', { granularity: 'word' }),
+    vi: new Intl.Segmenter('vi', { granularity: 'word' })
 };
+
+let sharedViTokenizer = null;
+import('../functions-src/utils/tokenizer.js')
+    .then(async mod => {
+        const loader = await import('../functions-src/data/vi-compounds-loader.js');
+        await loader.getVietnameseCompounds();
+        sharedViTokenizer = mod.mergeVietnameseCompounds;
+    })
+    .catch(() => {});
 
 let kuromojiDevTokenizer = null;
 let kuromojiDevPromise = null;
@@ -3154,6 +3202,9 @@ function buildDevToken(surface, isWordLike, lang) {
 
 function tokenizeTextDev(text, lang) {
     if (!text || typeof text !== 'string') return [];
+    if (lang === 'vi' && sharedViTokenizer) {
+        return sharedViTokenizer(text);
+    }
     if (lang === 'ja' && kuromojiDevTokenizer) {
         try {
             const kuromojiTokens = kuromojiDevTokenizer.tokenize(text);
@@ -3228,7 +3279,7 @@ function tokenizeTextDev(text, lang) {
 function enrichSegmentsWithTokensDev(segments, lang) {
     if (!Array.isArray(segments) || segments.length === 0) return [];
     const normLang = (lang || '').split('-')[0].toLowerCase();
-    if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) return segments;
+    if (!DEV_LEARNING_LANGS.includes(normLang)) return segments;
 
     const allHaveTokens = segments.every(s => s && Array.isArray(s.tokens) && s.tokens.length > 0);
     if (allHaveTokens) return segments;
@@ -3286,6 +3337,28 @@ app.post('/api/tokenize/:lang', (req, res) => {
     } catch (error) {
         console.error(`[Tokenize ${lang}] Error:`, error.message);
         res.status(500).json({ error: error.message });
+    }
+});
+
+/**
+ * GET /api/grammar
+ * Shared Grammar Pack & Lookup API delegating to Cloudflare Pages Function handler
+ */
+app.get('/api/grammar', async (req, res) => {
+    try {
+        const { onRequestGet } = await import('../functions-src/api/grammar.js');
+        const request = new Request(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
+        const response = await onRequestGet({ request, env: {}, waitUntil: () => {} });
+        res.status(response.status);
+        response.headers.forEach((value, key) => {
+            if (!key.toLowerCase().startsWith('access-control-allow-')) {
+                res.setHeader(key, value);
+            }
+        });
+        res.send(await response.text());
+    } catch (error) {
+        console.error('[Grammar Dev API] Error:', error.message);
+        res.status(500).json({ error: 'Failed to load grammar data' });
     }
 });
 

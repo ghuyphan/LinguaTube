@@ -164,17 +164,19 @@ function vocabularyScore(cues, lang) {
 
 function grammarNumber(label, lang) {
     if (lang === 'ja') return 6 - Number(label.match(/N([1-5])/i)?.[1] ?? 3.5);
-    if (lang === 'en') return (['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].indexOf(label.match(/[ABC][12]/i)?.[0]?.toUpperCase()) + 1) || 2.5;
+    if (lang === 'en' || lang === 'vi') return (['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].indexOf(label.match(/[ABC][12]/i)?.[0]?.toUpperCase()) + 1) || 2.5;
     return Number(label.match(/\d/)?.[0] ?? 2.5);
 }
 
 export function scoreVideoTranscript(cues, lang) {
-    if (!Object.hasOwn(catalog, lang) || !cues.some(cue => cue.text.trim())) return null;
+    if (!cues.some(cue => cue.text.trim())) return null;
+    if (!Object.hasOwn(catalog, lang)) return estimateTranscriptLevel(cues, lang);
     let units = 0, seconds = 0, grammarCount = 0, basic = 0, weighted = 0;
+    const isWordDelimited = lang === 'en' || lang === 'vi';
     const breakdown = {};
     for (const cue of cues) {
         const text = cue.text.trim();
-        units += lang === 'en' ? text.split(/\s+/).filter(Boolean).length : text.length;
+        units += isWordDelimited ? text.split(/\s+/).filter(Boolean).length : text.length;
         seconds += cue.duration > 0 ? cue.duration : 1;
         for (const label of grammarLevels(cue.tokens || [], lang)) {
             const score = grammarNumber(label, lang);
@@ -185,13 +187,13 @@ export function scoreVideoTranscript(cues, lang) {
         }
     }
     const speechRateCpm = Math.round(units / Math.max(0.1, seconds / 60));
-    const diagnostics = { grammarCount, breakdown, speechRateCpm, speechRateUnit: lang === 'en' ? 'wpm' : 'cpm' };
+    const diagnostics = { grammarCount, breakdown, speechRateCpm, speechRateUnit: isWordDelimited ? 'wpm' : 'cpm' };
     if (!grammarCount) {
         const fallback = estimateTranscriptLevel(cues, lang);
         return fallback && { ...fallback, ...diagnostics };
     }
-    const pace = speechRateCpm < (lang === 'en' ? 120 : 180) ? 1 :
-        speechRateCpm > (lang === 'en' ? 170 : 280) ? 4 : 2.5;
+    const pace = speechRateCpm < (isWordDelimited ? 120 : 180) ? 1 :
+        speechRateCpm > (isWordDelimited ? 170 : 280) ? 4 : 2.5;
     const composite = 0.60 * weighted / grammarCount + 0.25 * vocabularyScore(cues, lang) + 0.15 * pace;
     const score = Number((grammarCount >= 4 && basic / grammarCount >= 0.65 ? Math.min(composite, 2.5) : composite).toFixed(1));
     const level = scoreToLevelLabel(score, lang);

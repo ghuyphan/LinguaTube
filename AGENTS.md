@@ -6,7 +6,7 @@ This document provides essential instructions, architectural design, codebase ma
 
 ## 1. Executive Summary & Purpose
 
-**Voca** (formerly LinguaTube) is a high-performance Progressive Web Application (PWA) designed for language learners (specifically **Japanese**, **Chinese**, **Korean**, and **English**) using authentic YouTube videos. It combines interactive synchronized subtitles, morphological tokenization, multi-source dictionary lookups, grammar pattern detection, an SM-2 spaced repetition (SRS) vocabulary notebook, and Gladia AI-powered audio transcription.
+**Voca** (formerly LinguaTube) is a high-performance Progressive Web Application (PWA) designed for language learners (specifically **Japanese**, **Chinese**, **Korean**, **English**, and **Vietnamese**) using authentic YouTube videos. It combines interactive synchronized subtitles, morphological tokenization, multi-source dictionary lookups, grammar pattern detection, an SM-2 spaced repetition (SRS) vocabulary notebook, and Gladia AI-powered audio transcription.
 
 ### Key Metrics & Technologies
 - **Frontend**: Angular 19 (Standalone Components, Signals, `ChangeDetectionStrategy.OnPush`, RxJS 7.8, TypeScript 5.6)
@@ -161,6 +161,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │     GET  /api/leaderboard         -> Gamification XP Leaderboard
     │     GET  /api/diamonds            -> Diamond Token Quota & Regen Status
     │     GET  /api/geo                 -> Geo-IP country & region detection
+    │     GET  /api/grammar             -> Shared R2/CDN Grammar Packs & Pattern Lookup
     │     GET  /api/tts                 -> Edge Neural Text-to-Speech proxy
     │     GET  /api/version             -> App version & client compatibility check
     │     POST /api/payment/create-order-> PayOS Checkout Link Generator
@@ -316,8 +317,9 @@ lingua-tube/
    - `grammar-ko.ts` (~1.42MB)
    - `grammar-zh.ts` (~390KB)
    - `grammar-en.ts` (~136KB)
+   - `grammar-vi.ts` (80 CEFR A1–C1 rules)
 2. Grammar translations live in `src/app/data/translations/{source_lang}/{target_lang}.ts`.
-3. `GrammarService` dynamically imports these files on demand to keep the initial client bundle lightweight.
+3. Run `npm run build:grammar` to compile canonical JSON packs into `public/data/grammar/` (also uploaded to R2 via `scripts/upload-grammar-to-r2.mjs` when updating over-the-air). `GrammarService` fetches packs from `/api/grammar` (backing both Web and Flutter) with IndexedDB caching (`lingua-tube-grammar-cache`).
 4. Ensure patterns adhere to the `GrammarPattern` interface in `src/app/models/grammar.model.ts`.
 5. Update `doc/features.md` and `doc/tech.md`.
 

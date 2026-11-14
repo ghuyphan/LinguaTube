@@ -3,8 +3,9 @@
  * Prevents translated captions on foreign-audio videos from polluting target language feeds.
  */
 
-const TARGET_LANGUAGES = new Set(['ja', 'zh', 'ko', 'en']);
-const LANG_ALIASES = { jp: 'ja', jpn: 'ja', cn: 'zh', cmn: 'zh', zho: 'zh', kr: 'ko', kor: 'ko', eng: 'en' };
+import { SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
+
+const LANG_ALIASES = { jp: 'ja', jpn: 'ja', cn: 'zh', cmn: 'zh', zho: 'zh', kr: 'ko', kor: 'ko', eng: 'en', vie: 'vi', vn: 'vi' };
 
 const KANA_REGEX = /[\u3040-\u309F\u30A0-\u30FF]/g;
 const HANGUL_REGEX = /[\uAC00-\uD7AF\u1100-\u11FF]/g;
@@ -24,7 +25,7 @@ export function normalizePrimaryLanguage(raw) {
     if (cleaned === 'other') return 'other';
     const base = cleaned.split(/[-_]/)[0];
     const mapped = LANG_ALIASES[base] || base;
-    if (TARGET_LANGUAGES.has(mapped)) return mapped;
+    if (SUPPORTED_LEARNING_LANGUAGE_SET.has(mapped)) return mapped;
     return /^[a-z]{2,3}$/.test(mapped) ? 'other' : null;
 }
 
@@ -56,6 +57,7 @@ function detectTopicLanguageCue(text) {
     if (/(?<![a-z])(?:chinese|mandarin|cantonese|hsk|tocfl)(?![a-z])/i.test(text)) return 'zh';
     if (/(?<![a-z])(?:korean|topik)(?![a-z])/i.test(text)) return 'ko';
     if (/(?<![a-z])(?:english|cefr|bbc\s+learning\s+english|bbc\s+english)(?![a-z])/i.test(text)) return 'en';
+    if (/(?<![a-z])vietnamese(?![a-z])|ti[eế]ng\s*vi[eệ]t/i.test(text)) return 'vi';
     return null;
 }
 
@@ -127,19 +129,22 @@ export function inferSpokenLanguage(meta = {}) {
 
     const topicCue = detectTopicLanguageCue(combined);
     if (topicCue) {
-        // Guard non-target study recaps (e.g. Vietnamese JLPT prep only having Vietnamese captions)
-        if (VIETNAMESE_SPECIFIC_REGEX.test(combined) && !knownLangs.has(topicCue)) {
-            return 'other';
+        // Vietnamese narration about another language (e.g. JLPT prep in Vietnamese) with only Vietnamese captions
+        if (topicCue !== 'vi' && VIETNAMESE_SPECIFIC_REGEX.test(combined) && !knownLangs.has(topicCue)) {
+            return 'vi';
         }
         return topicCue;
     }
 
-    if (VIETNAMESE_SPECIFIC_REGEX.test(combined) || OTHER_NON_TARGET_SCRIPT_REGEX.test(combined)) {
+    if (VIETNAMESE_SPECIFIC_REGEX.test(combined)) {
+        return 'vi';
+    }
+    if (OTHER_NON_TARGET_SCRIPT_REGEX.test(combined)) {
         return 'other';
     }
 
     if (titleLatin >= 3 && knownLangs.has('en')) {
-        const hasOtherTargetSub = knownLangs.has('ja') || knownLangs.has('zh') || knownLangs.has('ko');
+        const hasOtherTargetSub = knownLangs.has('ja') || knownLangs.has('zh') || knownLangs.has('ko') || knownLangs.has('vi');
         if (!hasOtherTargetSub || /(?<![a-z])tedx?(?![a-z])/i.test(combined)) {
             return 'en';
         }

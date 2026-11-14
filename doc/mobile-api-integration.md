@@ -656,10 +656,13 @@ In Voca, grammar detection runs directly on the client over tokenized subtitle c
 
 | Language | Patterns Count | Level Standard | Database Location | Translation Pairs |
 | :--- | :---: | :---: | :--- | :--- |
-| **Japanese** | **800+** | JLPT N5, N4, N3, N2, N1 | `src/app/data/grammar-ja.ts` | `ja_vi`, `ja_zh`, `ja_ko`, `ja_ja` |
-| **Chinese** | **650+** | HSK 1, 2, 3, 4, 5, 6 | `src/app/data/grammar-zh.ts` | `zh_vi`, `zh_ja`, `zh_ko`, `zh_zh` |
-| **Korean** | **700+** | Korean Levels 1, 2, 3, 4, 5, 6 | `src/app/data/grammar-ko.ts` | `ko_vi`, `ko_zh`, `ko_ja`, `ko_ko` |
-| **English** | **140+** | CEFR A1, A2, B1, B2, C1, C2 | `src/app/data/grammar-en.ts` | `en_vi`, `en_zh`, `en_ja`, `en_ko` |
+| **Japanese** | **828** | JLPT N5, N4, N3, N2, N1 | `/api/grammar?lang=ja` (`src/app/data/grammar-ja.ts`) | `ja_vi`, `ja_zh`, `ja_ko`, `ja_ja` |
+| **Chinese** | **691** | HSK 1, 2, 3, 4, 5, 6 | `/api/grammar?lang=zh` (`src/app/data/grammar-zh.ts`) | `zh_vi`, `zh_ja`, `zh_ko`, `zh_zh` |
+| **Korean** | **744** | Korean Levels 1, 2, 3, 4, 5, 6 | `/api/grammar?lang=ko` (`src/app/data/grammar-ko.ts`) | `ko_vi`, `ko_zh`, `ko_ja`, `ko_ko` |
+| **English** | **143** | CEFR A1, A2, B1, B2, C1, C2 | `/api/grammar?lang=en` (`src/app/data/grammar-en.ts`) | `en_vi`, `en_zh`, `en_ja`, `en_ko` |
+| **Vietnamese** | **80** | CEFR A1, A2, B1, B2, C1 | `/api/grammar?lang=vi` (`src/app/data/grammar-vi.ts`) | `vi_vi`, `vi_ja`, `vi_ko`, `vi_zh` |
+
+> **Shared Grammar API (`GET /api/grammar`)**: Both Web and Flutter can fetch packs remotely from `/api/grammar?lang={lang}&ui={ui}&type=all` (or individually via `?lang={lang}`, `?lang={lang}&ui={ui}`, `?lang={lang}&id={id}&ui={ui}`) with Edge CDN (`s-maxage=604800`) and R2 backing, then cache locally on device rather than bundling full multi-MB JSON assets into app binaries.
 
 ### 5.2. Grammar Pattern Data Schema
 

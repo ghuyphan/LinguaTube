@@ -363,6 +363,7 @@ export class StudyModeComponent implements OnDestroy {
             case 'ja': return this.i18n.t('settings.japanese');
             case 'zh': return this.i18n.t('settings.chinese');
             case 'ko': return this.i18n.t('settings.korean');
+            case 'vi': return this.i18n.t('settings.vietnamese');
             default: return this.i18n.t('settings.english');
         }
     });

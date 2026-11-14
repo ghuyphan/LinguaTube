@@ -255,7 +255,7 @@ export class AudioService {
       this.activeUtterance = utterance;
 
       const langMap: Record<SupportedLearningLanguage, string> = {
-        ja: 'ja-JP', zh: 'zh-CN', ko: 'ko-KR', en: 'en-US'
+        ja: 'ja-JP', zh: 'zh-CN', ko: 'ko-KR', en: 'en-US', vi: 'vi-VN'
       };
       utterance.lang = langMap[language] || 'ja-JP';
       utterance.rate = 0.95;

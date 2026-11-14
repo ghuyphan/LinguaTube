@@ -208,4 +208,32 @@ describe('GrammarService', () => {
     expect(contractionMatches.length).toBeGreaterThan(0);
     expect(contractionMatches.some(m => m.pattern.id === 'en_b2_05')).toBeTrue();
   });
+
+  it('should load Vietnamese grammar patterns, translations, and detect split correlatives', async () => {
+    const patterns = await service.searchPatterns('mặc dù', 'vi');
+    expect(patterns.length).toBeGreaterThan(0);
+    expect(service.loadedLanguages().has('vi')).toBeTrue();
+
+    const viTranslations = await service.loadTranslation('vi', 'vi');
+    expect(viTranslations['vi_b1_01']?.shortExplanation).toBeTruthy();
+
+    const jaTranslations = await service.loadTranslation('vi', 'ja');
+    expect(jaTranslations['vi_b1_01']?.shortExplanation).toBeTruthy();
+
+    // Adjacent compound tokens + split correlative ("vì ... nên" -> vi_a2_09)
+    const tokens: Token[] = [
+      { surface: 'Vì' },
+      { surface: 'hôm nay' },
+      { surface: 'trời' },
+      { surface: 'mưa' },
+      { surface: 'nên' },
+      { surface: 'tôi' },
+      { surface: 'đang' },
+      { surface: 'ở' },
+      { surface: 'nhà' },
+    ];
+    const matches = service.detectPatterns(tokens, 'vi');
+    expect(matches.some(m => m.pattern.id === 'vi_a2_09')).toBeTrue();
+    expect(matches.some(m => m.pattern.id === 'vi_a1_04')).toBeTrue();
+  });
 });

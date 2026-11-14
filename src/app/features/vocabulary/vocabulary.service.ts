@@ -1,6 +1,6 @@
 import { Injectable, inject, computed, signal, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { VocabularyItem, WordLevel, DictionaryEntry } from '../../models';
+import { VocabularyItem, WordLevel, DictionaryEntry, SupportedLearningLanguage } from '../../models';
 import { OfflineVocabularyRepository } from '../../core/repositories';
 import { GamificationService } from '../../core/services/gamification.service';
 
@@ -51,7 +51,7 @@ export class VocabularyService {
 
     // Proxy Methods
 
-    getStatsByLanguage(language: 'ja' | 'zh' | 'ko' | 'en') {
+    getStatsByLanguage(language: SupportedLearningLanguage) {
         const items = this.vocabulary().filter(i => i.language === language);
         return {
             total: items.length,
@@ -75,7 +75,7 @@ export class VocabularyService {
 
     addFromDictionary(
         entry: DictionaryEntry,
-        language: 'ja' | 'zh' | 'ko' | 'en',
+        language: SupportedLearningLanguage,
         sourceSentence?: string,
         sourceVideoId?: string,
         sourceTimestamp?: number
@@ -88,7 +88,7 @@ export class VocabularyService {
     addWord(
         word: string,
         meaning: string,
-        language: 'ja' | 'zh' | 'ko' | 'en',
+        language: SupportedLearningLanguage,
         reading?: string,
         pinyin?: string,
         romanization?: string,
@@ -208,7 +208,7 @@ export class VocabularyService {
         return item?.level || null;
     }
 
-    getByLanguage(language: 'ja' | 'zh' | 'ko' | 'en'): VocabularyItem[] {
+    getByLanguage(language: SupportedLearningLanguage): VocabularyItem[] {
         return this.vocabulary().filter(item => item.language === language);
     }
 

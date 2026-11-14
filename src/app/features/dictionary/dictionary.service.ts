@@ -1,6 +1,6 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DictionaryEntry, DictionaryMeaning } from '../../models';
+import { DictionaryEntry, DictionaryMeaning, SupportedLearningLanguage } from '../../models';
 import { Observable, of, catchError, map, throwError } from 'rxjs';
 import { I18nService, SettingsService, UILanguage, GamificationService } from '../../core/services';
 import { environment } from '../../../environments/environment';
@@ -120,7 +120,7 @@ export class DictionaryService {
   /**
    * Helper to map a raw backend entry to a normalized DictionaryEntry
    */
-  private mapRawEntry(entry: UnifiedDictEntry, word: string, from: 'ja' | 'zh' | 'ko' | 'en'): DictionaryEntry {
+  private mapRawEntry(entry: UnifiedDictEntry, word: string, from: SupportedLearningLanguage): DictionaryEntry {
     const seenMeanings = new Set<string>();
     const meanings: DictionaryMeaning[] = [];
 
@@ -192,7 +192,7 @@ export class DictionaryService {
       definitionLanguage: entry.definitionLanguage,
       definitionKind: entry.definitionKind,
       word: entry.word || word,
-      reading: from === 'ja' || from === 'en' || from === 'ko' ? (formattedReading || undefined) : undefined,
+      reading: from === 'ja' || from === 'en' || from === 'ko' || from === 'vi' ? (formattedReading || undefined) : undefined,
       pinyin: from === 'zh' ? (entry.reading || '') : undefined,
       romanization: formattedRomaji,
       audio: entry.audio || undefined,
@@ -239,7 +239,7 @@ export class DictionaryService {
    * Returns first matching entry (compatible with word-popup and video-player)
    * Pure query: DOES NOT mutate global screen state!
    */
-  lookup(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry | null> {
+  lookup(word: string, language?: SupportedLearningLanguage): Observable<DictionaryEntry | null> {
     const fromLang = language || detectLanguage(word, this.settings.settings().language);
     const toLang = this.i18n.currentLanguage();
 
@@ -251,7 +251,7 @@ export class DictionaryService {
    * Returns all matching entries with audio, POS, levels, and definitions
    * Pure query: DOES NOT mutate global screen state!
    */
-  lookupEntries(word: string, language?: 'ja' | 'zh' | 'ko' | 'en'): Observable<DictionaryEntry[]> {
+  lookupEntries(word: string, language?: SupportedLearningLanguage): Observable<DictionaryEntry[]> {
     const fromLang = language || detectLanguage(word, this.settings.settings().language);
     const toLang = this.i18n.currentLanguage();
 
@@ -267,7 +267,7 @@ export class DictionaryService {
    */
   private lookupUnified(
     word: string,
-    from: 'ja' | 'zh' | 'ko' | 'en',
+    from: SupportedLearningLanguage,
     to: UILanguage
   ): Observable<DictionaryEntry | null> {
     return this.lookupUnifiedEntries(word, from, to).pipe(
@@ -280,7 +280,7 @@ export class DictionaryService {
    */
   private lookupUnifiedEntries(
     word: string,
-    from: 'ja' | 'zh' | 'ko' | 'en',
+    from: SupportedLearningLanguage,
     to: UILanguage
   ): Observable<DictionaryEntry[]> {
     const trimmed = word.trim();

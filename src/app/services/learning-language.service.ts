@@ -104,7 +104,8 @@ export class LearningLanguageService {
         ja: 'japanese',
         zh: 'chinese',
         ko: 'korean',
-        en: 'english'
+        en: 'english',
+        vi: 'vietnamese'
       };
       const localizedName = this.i18n.t(`settings.${langKeyMap[targetLang]}`) || targetLang;
       const config = SUPPORTED_LANGUAGES.find(l => l.code === targetLang);

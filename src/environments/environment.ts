@@ -9,8 +9,9 @@ export const environment = {
 
   // Centralized API Endpoints
   api: {
-    // Dictionary
+    // Dictionary & Grammar
     dict: '/api/dict',
+    grammar: '/api/grammar',
 
     // Subtitles & Translation
     tokenizeBatch: '/api/tokenize-batch',
