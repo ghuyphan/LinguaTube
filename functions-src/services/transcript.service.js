@@ -11,7 +11,6 @@ import { recoverJobRefund } from './refund-recovery.js';
 import {
     saveVideoLanguages,
     addVideoLanguages,
-    addSubLanguage,
     markNoTranscript,
     deleteNoTranscript
 } from '../data/video-info-db.js';
@@ -92,7 +91,6 @@ export class TranscriptService {
                     waitUntil(scheduleVideoGrade(env, videoId, actualLang, { regrade: true }));
                 }
                 const savePromises = [
-                    ...(persisted ? [addSubLanguage(db, videoId, actualLang)] : []),
                     deleteNoTranscript(db, videoId, actualLang, 'native')
                 ];
 
@@ -224,7 +222,7 @@ export class TranscriptService {
         const db = context.db || context.env?.VOCAB_DB;
         const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
         const normalizedLang = normalizeLanguageCode(lang);
-        const cached = await getTranscriptFromR2(r2, videoId, normalizedLang);
+        const cached = await getTranscriptFromR2(r2, videoId, normalizedLang, { preferAI: true });
         const reusable = (cached?.source === 'ai' && cached.segments?.length > 0) ||
             Boolean(await getActiveAiJob(db, videoId, normalizedLang));
         if (reusable) return { cost: 0, ...diamondInfo, canGenerate: true, reason: null };
@@ -247,7 +245,7 @@ export class TranscriptService {
         const normalizedLang = normalizeLanguageCode(lang);
 
         // 2. Check if an AI transcript already exists in R2 for this language (avoid duplicate diamond charges)
-        const existingR2 = await getTranscriptFromR2(r2, videoId, normalizedLang);
+        const existingR2 = await getTranscriptFromR2(r2, videoId, normalizedLang, { preferAI: true });
         if (existingR2?.segments?.length > 0 && existingR2.source === 'ai') {
             return {
                 status: 'done',
@@ -387,7 +385,7 @@ export class TranscriptService {
             const fallbackVideoId = videoId || params?.cleanVideoId;
             const fallbackLang = params?.lang || 'ja';
             if (fallbackVideoId) {
-                const r2Transcript = await getTranscriptFromR2(r2, fallbackVideoId, fallbackLang);
+                const r2Transcript = await getTranscriptFromR2(r2, fallbackVideoId, fallbackLang, { preferAI: true });
                 if (r2Transcript?.segments?.length > 0) {
                     const resolvedLang = r2Transcript.language || fallbackLang;
                     const isMismatch = normalizeLanguageCode(resolvedLang) !== normalizeLanguageCode(fallbackLang);
@@ -417,7 +415,7 @@ export class TranscriptService {
 
         // 1. Completed: Read transcript from R2
         if (job.status === 'completed') {
-            const r2Transcript = await getTranscriptFromR2(r2, targetVideoId, targetLang);
+            const r2Transcript = await getTranscriptFromR2(r2, targetVideoId, targetLang, { preferAI: true });
             if (r2Transcript?.segments?.length > 0) {
                 return {
                     status: 'done',
@@ -458,7 +456,7 @@ export class TranscriptService {
             try {
                 const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider, Date.now() + 20000);
                 if (outcome?.status === 'done' && context.waitUntil) {
-                    context.waitUntil(enrichPublishedTranscript(r2, targetVideoId, outcome.language));
+                    context.waitUntil(enrichPublishedTranscript(r2, targetVideoId, outcome.language, 3000, true));
                 }
                 if (outcome?.status === 'error') return outcome;
                 if (outcome?.status === 'done') return {

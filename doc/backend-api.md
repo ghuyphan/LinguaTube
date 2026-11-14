@@ -115,7 +115,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   2. **Native Captions Fetch (Supadata Multi-Key Failover & 4s Native Timeout)**: If `preferAI: false`, checks both D1 `video_languages`, `ai_transcription_jobs`, and `no_transcript_cache` before touching upstream APIs:
      - **Active AI Job Short-Circuit**: On normal requests, checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI transcription job was previously submitted and is still pending or processing (e.g. user refreshed the page, switched tabs, or backgrounded the browser), it immediately returns `{ status: 'processing', jobId }`, seamlessly connecting the client to the existing job without double-deducting diamonds or returning `NO_NATIVE`.
      - **D1 Short-Circuit (< 20ms)**: If `video_languages` records `available_languages = '[]'` (video confirmed to have 0 native tracks) or if the requested language is not in the list (e.g. video has only `['en']` and user requested `zh`), returns immediately with `NO_NATIVE` or `languageMismatch: true`, completely bypassing upstream network latency.
-     - **Supadata Fast-Check**: Each attempt allows up to four seconds and all attempts share a six-second lookup budget. A forced refresh with a saved track in the catalog uses a four-second budget and skips timeout failover. If the provider reports no captions (HTTP 206/404 or `transcript-unavailable`), it halts key rotation and only marks that language as unavailable. Transient timeouts leave negative caching alone.
+     - **Supadata Fast-Check**: The adapter sends the YouTube watch URL to [Supadata's transcript endpoint](https://docs.supadata.ai/get-transcript) with `mode=native`. Each attempt allows up to four seconds and all attempts share a six-second lookup budget. A forced refresh with a saved track in the catalog uses a four-second budget and skips timeout failover. HTTP 206 or an explicit `transcript-unavailable` response on HTTP 200 or 404 stops key rotation and marks that language as unavailable. A generic 404, a 202 job response, or a timeout leaves caption availability unverified and does not write a negative-cache entry.
      - **Track verification**: The provider response must identify the track language and include usable cues. The API exposes the normalized `language` and preserves the provider tag as `trackLanguage` when known. `forceRefresh` uses native lookup even if an AI job is active. If fresh captions cannot be verified, refresh can return a validated saved copy in the requested language with `refreshDeferred: true` and `X-Cache: STALE`, including completed AI captions already available on normal reads. A confirmed miss or language mismatch follows the normal fallback path. Inconclusive or malformed results without a usable fallback return `503 NATIVE_PROVIDER_UNAVAILABLE` with `Retry-After`, and do not create negative cache records.
   3. **Global Negative Cache Defense & Automatic Eviction**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` supports both per-language and global wildcard (`*`) scopes. When a transcript is successfully fetched or requested with `forceRefresh: true`, both specific language and wildcard entries are automatically purged (`deleteNoTranscript`).
   4. **3-Tier Intelligent Speech Chunking & HTML Cleaning (`splitRunOnSegments` & `cleanCueText`)**:
@@ -161,7 +161,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 - **Route**: `GET /api/dict?word={word}&from={learningLang}&to={uiLang}`
 - **Source**: `functions-src/api/dict.js`
 - **Supported `from` languages**: `ja`, `zh`, `ko`, `en`
-- **Supported `to` languages**: `ja`, `zh`, `ko`, `en`, `vi`
+- **Supported `to` languages**: `ja`, `zh`, `ko`, `en`, `vi`, `ru`
 - **Response Format**:
   ```json
   {
@@ -249,7 +249,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   - **Worker Timeout Protection**: Live translation requests in `/api/dual-subtitles` are capped at 40 segments (`BATCH_SIZE`) to prevent Cloudflare Worker 30-second execution timeouts. Larger transcripts stream upcoming cues via `/api/translate/batch` and commit via `saveOnly: true`.
   - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback.
   - **Fault-Tolerant XML Tag Extraction**: `decodeTaggedTranslations` tolerates machine-translated formatting anomalies, including unicode and curly quotation marks (`“`, `”`, `‘`, `’`, `«`, `»`), spacing irregularities, and out-of-order responses without crashing or dropping cues.
-- **Thundering Herd / Cache Stampede Defense (`inFlightTranslations`)**: An isolate-level promise map deduplicates concurrent batch translation requests for the same `videoId:sourceLang:targetLang`. When multiple users or components request translation for an un-cached video simultaneously, only one upstream job is dispatched; other concurrent requests await the identical promise, eliminating 429 upstream rate-limiting and CPU waste.
+- **Thundering Herd / Cache Stampede Defense (`inFlightTranslations`)**: After per-caller validation, R2 cache lookup, authentication, and rate-limit enforcement, an isolate-level promise map deduplicates concurrent batch translation requests for the same `videoId:sourceLang:targetLang` segment slice. When multiple users or components request translation for an un-cached video simultaneously, only one upstream job is dispatched; other concurrent requests await the shared translation result and attach their own rate-limit headers, eliminating 429 upstream rate-limiting and CPU waste without leaking rate-limit or auth state between callers.
 - **R2 Read-Modify-Write Serialization (`inFlightSaves`)**: In `translation-cache.js`, an isolate-level mutex serializes concurrent translation commits for the same subtitle object key. Concurrent writes are sequenced so each read-and-merge incorporates the previous write's updated cues instead of clobbering them.
 - **Rate Limiting**: 
   - Live Translation Quota: Tiered hourly quota (anonymous: 5, free: 15, pro: 60, premium: 120 requests/hr).
@@ -279,7 +279,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   }
   ```
 - **Max Batch Size**: 80 texts per request (optimized for Workers Paid).
-- **Supported Languages**: Validates source against `['auto', 'en', 'ja', 'zh', 'ko', 'vi', ...]` and target against supported learning/display languages. Source `'auto'` triggers automatic language detection in the upstream translation provider.
+- **Supported Languages**: Validates source against `['ja', 'zh', 'ko', 'en', 'vi', 'ru', 'auto']` and target against `['ja', 'zh', 'ko', 'en', 'vi', 'ru']`. Source `'auto'` triggers automatic language detection in the upstream translation provider.
 - **Rate Limiting**: Tiered hourly quota based on subscription (anonymous: 3,000, free: 8,000, pro: 35,000, premium: 100,000 texts/hr).
 - **Process & KV Quota Preservation (Rule 2)**:
   - Deduplicates texts before rate-limit unit deduction.
@@ -297,8 +297,9 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 - **Source**: `functions-src/api/tokenize/[lang].js`, `functions-src/api/tokenize-batch/[lang].js`
 - **Dual-Layer Cache Architecture**:
   - In-memory warm isolate cache (`memTokenBatchCache`, up to 100 videos) resolves repeated requests in $<0.1$ms (`X-Cache: HIT-MEM`).
-  - Cloudflare KV (`tokens:v5:{lang}:{videoId}:{textsHash}`) provides edge persistence across isolates.
+  - Cloudflare KV (`tokens:v6:{lang}:{videoId}:{textsHash}`) provides edge persistence across isolates.
   - Cache hits consume **0 rate limit quota** and return with `X-Cache: HIT`.
+  - **Isolated In-Flight Coalescing (`inFlightBatches`)**: Concurrent misses execute per-caller auth, rate-limit, and `request.signal` abort checks independently while sharing only the underlying tokenization work, preventing caller aborts or 429 states from poisoning other callers.
 - **Caching**: 30-day TTL in Cloudflare KV.
 - **Rate Limiting (Cache Miss Only)**:
   - Anonymous: 60 req/hr
@@ -386,11 +387,11 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   - Applies 6-factor heuristic scoring in Worker memory (production latency must be measured):
     1. **History & Completion**: Unwatched (+40 exploration bonus), In-progress (+35 resume boost), Completed ($\ge 85\%$, -70 demotion), Favorites (+20).
     2. **Creator Affinity**: Detects channels the user frequents, granting +10 to +30 points.
-    3. **Active Vocabulary Overlap**: Matches video titles against user's active flashcards (+25 to +45 points), attaching `matchedWords` tags directly to the response.
+    3. **Active Vocabulary Overlap**: Matches video titles and creator `tags` against user's active flashcards (+25 to +45 points), attaching `matchedWords` tags directly to the response (search mode also boosts token matches in `tags` by +20).
     4. **Duration Sweet Spot**: Optimal 3–12 min study sessions (+20), 12–20 mins (+10), penalizing $<1.5$ min or $>40$ min.
-    5. **Krashen $i+1$ Level Alignment**: Rewards comfortable level (+20) or +1 stretch level (+12); penalizes known videos at least two tiers above the learner (-20) when no explicit tier is requested.
+    5. **Full 5-Tier Krashen Curve**: Rewards comfortable level $i$ (+20), stretch level $i+1$ (+12), and review level $i-1$ (+6); penalizes overly basic videos ($\le i-2$, -10), ungraded videos for beginners (-5), and videos at least two tiers above the learner ($\ge i+2$, -20, plus hard comparator demotion) when no explicit tier is requested.
     6. **Deterministic Serendipity Jitter**: Seeded pseudo-random $\pm 12$ pts variation ensuring variety without breaking pagination.
-  - **YouTube-Style Channel De-Clustering**: Greedy pass chooses a different creator when available and retains within-creator relevance order.
+  - **2-Slot Channel De-Clustering**: Greedy sliding window inspects the previous two emitted creators (preferring a comparable 3rd creator when available, falling back to 1-slot separation) and retains within-creator relevance order.
   - Slices cleanly at `[offset, offset + limit]` with `hasMore: (offset + limit) < ranked.length`.
 - **Database & Cloudflare Storage Discovery**:
   - Queries Cloudflare D1 `video_languages` table for verified transcripts stored on our server (`sub_languages LIKE '%"lang"%'`), with fallback to `available_languages` only if `sub_languages` is unpopulated.
@@ -442,7 +443,7 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   - `GET /api/payment/check-status`
 - **Source**: `functions-src/api/payment/*.js`, `functions-src/providers/payos.js`
 - **Process & Security**:
-  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 450,000 VND, `premium_1m` for 119,000 VND, `premium_1y` for 990,000 VND). Uses non-commercial educational supporter order labels (`Ung ho Voca Pro 1T`, `Ung ho Voca Pro 1N`, `Ung ho Voca Premium 1T`, `Ung ho Voca Premium 1N`) with neutral transfer description `VOCA${orderCode}`. Enforces strict destination URL validation (`isValidRedirectUrl`) on `returnUrl` and `cancelUrl` against trusted application domains to eliminate open redirect vectors. Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). Caches pending order metadata in Cloudflare KV. All error outputs are sanitized to avoid leaking internal provider details.
+  1. `create-order`: Accepts `plan` (`pro_1m` for 49,000 VND, `pro_1y` for 450,000 VND, `premium_1m` for 119,000 VND, `premium_1y` for 990,000 VND). Uses non-commercial educational supporter order labels (`Ung ho Voca Pro 1T`, `Ung ho Voca Pro 1N`, `Ung ho Voca Premium 1T`, `Ung ho Voca Premium 1N`) with neutral transfer description `VOCA${orderCode}`. Enforces strict destination URL validation (`isValidRedirectUrl`) on `returnUrl` and `cancelUrl` against trusted application domains to eliminate open redirect vectors. Generates a cryptographically secure random 8-digit `orderCode` (`crypto.getRandomValues`), reserves the pending order directly in Supabase PostgreSQL (`orders` table with zero KV writes per Rule 2), builds an official payment link via payOS, converts raw EMVCo strings into rendered QR images via `api.qrserver.com` or `img.vietqr.io`, and returns structured bank fields (`accountNumber`, `accountName`, `bin`, `description`, `checkoutUrl`, `qrCode`). All error outputs are sanitized to avoid leaking internal provider details.
   2. `webhook`: Receives instant transaction confirmation from payOS. Validates `HMAC-SHA256` signature using `PAYOS_CHECKSUM_KEY` via constant-time comparison across all environments (development bypass eliminated). Enforces fail-closed verification, verifies `receivedAmount >= expectedAmount`, and enforces idempotency via `order_processed:{orderCode}` in KV. Automatically executes atomic Supabase PostgreSQL stored procedure `extend_user_subscription(p_user_id, p_tier, p_days, p_diamonds)` with row-level locks (`SELECT subscription_expires FROM profiles WHERE id = p_user_id FOR UPDATE`) and timestamp stacking (`GREATEST(subscription_expires, NOW()) + INTERVAL ...`), eliminating race conditions on duplicate webhook retries. Falls back gracefully to direct REST patch if RPC is unreachable.
   3. `check-status`: Rate-limited polling endpoint for the frontend `ProUpgradeDialogComponent` to detect payment completion in real time. Also supports local development simulation via `POST /api/payment/simulate-transfer`. All unexpected exceptions return sanitized error payloads.
 

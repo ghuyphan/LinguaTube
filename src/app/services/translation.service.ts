@@ -32,7 +32,8 @@ export const SUPPORTED_TARGET_LANGUAGES: ReadonlyArray<LanguageOption> = [
     { code: 'zh', name: '中文', flag: '🇨🇳', flagUrl: '/flags/cn.svg' },
     { code: 'ko', name: '한국어', flag: '🇰🇷', flagUrl: '/flags/kr.svg' },
     { code: 'en', name: 'English', flag: '🇬🇧', flagUrl: '/flags/gb.svg' },
-    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: '/flags/vn.svg' }
+    { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳', flagUrl: '/flags/vn.svg' },
+    { code: 'ru', name: 'Русский', flag: '🇷🇺', flagUrl: '/flags/ru.svg' }
 ] as const;
 
 interface BatchResponse {

@@ -54,8 +54,8 @@ export async function onRequestPost(context) {
         }
 
         const texts = body.texts;
-        const source = sanitizeLanguage(body.source, ['ja', 'zh', 'ko', 'en', 'vi', 'auto']);
-        const target = sanitizeLanguage(body.target, ['ja', 'zh', 'ko', 'en', 'vi']);
+        const source = sanitizeLanguage(body.source, ['ja', 'zh', 'ko', 'en', 'vi', 'ru', 'auto']);
+        const target = sanitizeLanguage(body.target, ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
 
         if (!source || !target) {
             return jsonResponse({ error: 'Invalid source or target language' }, 400);

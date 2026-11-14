@@ -1754,7 +1754,7 @@ app.post('/api/video-level', (req, res) => {
 const DEV_SEED_VIDEOS = {
     ja: [
         { videoId: 'kJQP7kiw5Fk', title: 'Luis Fonsi - Despacito (Japanese Cover)', channel: 'Music Japan', duration: 242, level: 'JLPT N5', tier: 'beginner' },
-        { videoId: 'dQw4w9WgXcQ', title: 'Japanese Conversation Practice for Beginners', channel: 'Nihongo Basics', duration: 212, level: 'JLPT N5', tier: 'beginner' },
+        { videoId: 'ja_demo_002', title: 'Japanese Conversation Practice for Beginners', channel: 'Nihongo Basics', duration: 212, level: 'JLPT N5', tier: 'beginner' },
         { videoId: '9bZkp7q19f0', title: 'Learn Japanese Grammar - N4 Masterclass', channel: 'Tokyo Sensei', duration: 255, level: 'JLPT N4', tier: 'elementary' },
         { videoId: 'fJ9rUzIMcZQ', title: 'Everyday Japanese Expressions You Must Know', channel: 'Japan Daily', duration: 200, level: 'JLPT N4', tier: 'elementary' },
         { videoId: 'JGwWNGJdvx8', title: 'Intermediate Japanese Story Listening', channel: 'Kanji Club', duration: 235, level: 'JLPT N3', tier: 'intermediate' },

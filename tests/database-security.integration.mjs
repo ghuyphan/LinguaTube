@@ -11,6 +11,7 @@ test('payment, diamond and proximity migrations execute with role isolation and 
     try {
         await db.exec(`
             CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role;
+            DO $$ BEGIN CREATE ROLE postgres SUPERUSER; EXCEPTION WHEN duplicate_object THEN NULL; END $$;
             CREATE SCHEMA auth;
             CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql AS $$ SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
             CREATE TABLE auth.users(id uuid PRIMARY KEY);
@@ -192,6 +193,7 @@ test('checked-in profile trigger blocks direct balance/subscription writes while
     const uid = '11111111-1111-4111-8111-111111111111';
     try {
         await db.exec(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role;
+            DO $$ BEGIN CREATE ROLE postgres SUPERUSER; EXCEPTION WHEN duplicate_object THEN NULL; END $$;
             CREATE SCHEMA auth;
             CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql AS $$ SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
             CREATE FUNCTION auth.role() RETURNS text LANGUAGE sql AS $$ SELECT current_setting('request.jwt.claim.role',true) $$;

@@ -204,13 +204,13 @@ sequenceDiagram
             Edge-->>TS: 200 OK (Source: cache)
         else Not in R2
             Edge->>D1: Check no_transcript_cache
-            Edge->>Supa: Fetch Native Captions
+            Edge->>Supa: GET /v1/transcript with YouTube URL and mode=native
             alt Native Captions Available
                 Supa-->>Edge: Return Timed Segments
                 Edge->>R2: Async Save to R2
                 Edge->>D1: Async Record in video_meta & video_languages
                 Edge-->>TS: 200 OK (Source: native)
-            else No Native Captions
+            else Confirmed No Native Captions
                 Edge->>D1: Mark no_transcript_cache (D1)
                 Edge-->>TS: 200 OK { errorCode: 'NO_NATIVE', whisperAvailable: true }
                 TS-->>Player: Display "No Subtitles - AI Available" UI

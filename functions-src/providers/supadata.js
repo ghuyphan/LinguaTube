@@ -5,10 +5,11 @@
 import { cleanCueText, contradictsNativeLanguage, normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { readBoundedBody, requestSignal } from '../utils/response-body.js';
 
-const SUPADATA_API_URL = 'https://api.supadata.ai/v1/youtube/transcript';
+const SUPADATA_API_URL = 'https://api.supadata.ai/v1/transcript';
 const SUPADATA_TIMEOUT_MS = 4000; // 4 seconds is plenty for native caption availability checks
 const NATIVE_LOOKUP_BUDGET_MS = 6000;
 const MAX_TRANSCRIPT_BYTES = 8 * 1024 * 1024;
+const MAX_ERROR_BYTES = 16 * 1024;
 const MAX_TRANSCRIPT_CUES = 20000;
 
 export class SupadataProvider {
@@ -77,7 +78,9 @@ export class SupadataProvider {
 
     async _executeFetch(videoId, lang, apiKey, deadline) {
         const url = new URL(SUPADATA_API_URL);
-        url.searchParams.set('videoId', videoId);
+        const videoUrl = new URL('https://www.youtube.com/watch');
+        videoUrl.searchParams.set('v', videoId);
+        url.searchParams.set('url', videoUrl.href);
         if (lang) {
             url.searchParams.set('lang', lang);
         }
@@ -94,12 +97,14 @@ export class SupadataProvider {
             signal
         });
 
-        // Supadata returns HTTP 206 (Partial Content) or 404 when no transcript exists for the video
-        if (response.status === 206 || response.status === 404) {
+        // Supadata documents 206 as Transcript Unavailable.
+        if (response.status === 206) {
+            await response.body?.cancel().catch(() => {});
             return { notFound: true, segments: [], availableLangs: [] };
         }
 
-        if (!response.ok) {
+        if (response.status !== 200 && response.status !== 404) {
+            await response.body?.cancel().catch(() => {});
             if (response.status === 429) {
                 throw new Error('429 Rate limited');
             }
@@ -115,14 +120,18 @@ export class SupadataProvider {
             throw new Error(`HTTP ${response.status}`);
         }
 
-        const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(response, signal, MAX_TRANSCRIPT_BYTES)));
+        const maxBytes = response.status === 404 ? MAX_ERROR_BYTES : MAX_TRANSCRIPT_BYTES;
+        const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(response, signal, maxBytes)));
         if (!data || typeof data !== 'object' || Array.isArray(data)) {
             return { unavailable: true, segments: [], availableLangs: [] };
         }
 
         // Check error payload in body (Supadata errors format)
-        if (data.error === 'transcript-unavailable' || data.error === 'not-found') {
+        if (data.error === 'transcript-unavailable') {
             return { notFound: true, segments: [], availableLangs: [] };
+        }
+        if (response.status === 404 || data.error) {
+            return { unavailable: true, segments: [], availableLangs: [] };
         }
 
         const rawDetectedLang = typeof data.lang === 'string' ? data.lang.trim() : '';

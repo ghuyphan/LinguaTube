@@ -51,7 +51,8 @@ export async function verifyTurnstileToken(token, secretKey, remoteIp, environme
         const res = await fetch(CLOUDFLARE_SITEVERIFY_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: formData.toString()
+            body: formData.toString(),
+            signal: AbortSignal.timeout(5000)
         });
 
         if (!res.ok) {

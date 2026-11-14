@@ -43,8 +43,8 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
     // 1. Music (Genre "Music" is almost 100% authoritative on YouTube)
     if (
         rawGenre.toLowerCase() === 'music' ||
-        /\b(?:mv|music\s*video|official\s*(?:video|audio|mv)|ost|bgm|cover)\b/i.test(allText) ||
-        /歌ってみた|主題歌|作詞|作曲|音楽|歌词|노래|음악/i.test(allText)
+        /\b(?:mv|m\/v|music\s*video|official\s*(?:video|audio|mv|music)|ost|bgm|cover)\b|the\s*first\s*take/i.test(allText) ||
+        /歌ってみた|歌回|弾き語り|主題歌|作詞|作曲|音楽|歌词|노래|음악|\bsing(?:ing)?\b/i.test(allText)
     ) {
         return 'music';
     }
@@ -52,7 +52,7 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
     // 2. Anime & Drama
     if (
         rawGenre.toLowerCase() === 'film & animation' ||
-        /アニメ|anime|漫画|manga|進撃の巨人|呪術廻戦|鬼滅の刃|チェンソーマン|動漫|애니|drama|ドラマ|kdrama|cdrama|jdrama/i.test(allText) ||
+        /\b(?:amv|mad)\b|アニメ|\banime\b|漫画|manga|進撃の巨人|呪術廻戦|鬼滅の刃|チェンソーマン|動漫|애니|drama|ドラマ|kdrama|cdrama|jdrama|opening\s*(?:theme|full)/i.test(allText) ||
         /animation|anime|toho|toei|kadokawa/i.test(rawChannel.toLowerCase())
     ) {
         return 'anime_drama';
@@ -61,15 +61,15 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
     // 3. News & Politics
     if (
         rawGenre.toLowerCase() === 'news & politics' ||
-        /ニュース|news|報道|新聞|ニュース7|뉴스/i.test(allText) ||
-        /nhk|annnews|fnn|tbs\s*news|日テレ|cctv|bbc|cnn|ytvnews/i.test(rawChannel.toLowerCase())
+        /ニュース|\bnews\b|報道|新聞|ニュース7|뉴스/i.test(allText) ||
+        /nhk|annnews|fnn|tbs\s*news|日テレ|cctv|\bbbc\s*news\b|cnn|ytvnews/i.test(rawChannel.toLowerCase())
     ) {
         return 'news';
     }
 
     // 4. Conversation & Podcasts (High educational value for language immersion)
     if (
-        /ポッドキャスト|podcast|会話|雑談|対談|インタビュー|interview|talk|日常会話|대화|聊天|talkshow/i.test(allText)
+        /ポッドキャスト|podcast|ラジオ|\bradio\b|会話|雑談|対談|インタビュー|interview|\btalk\b|speaking\s*practice|listening\s*practice|日常会話|대화|聊天|talkshow/i.test(allText)
     ) {
         return 'conversation';
     }
@@ -86,7 +86,7 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
     // 6. Education / Lessons
     if (
         rawGenre.toLowerCase() === 'education' ||
-        /文法|単語|解説|レッスン|lesson|grammar|jlpt|hsk|topik|tutorial/i.test(allText)
+        /文法|単語|解説|レッスン|lesson|grammar|jlpt|hsk|tocfl|topik|tutorial|learn\s+(?:japanese|english|korean|chinese)|bbc\s+learning/i.test(allText)
     ) {
         return 'education';
     }

@@ -3,7 +3,7 @@ import { GladiaProvider } from '../providers/gladia.js';
 import { atomicFailAndRefundAiJob, completeAiJob, activateAiJob } from '../data/transcript-db.js';
 import { saveTranscriptToR2 } from '../data/transcript-r2.js';
 import { cleanTranscriptSegments, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
-import { addSubLanguage, saveVideoLanguages } from '../data/video-info-db.js';
+import { addAiLanguage, saveVideoLanguages } from '../data/video-info-db.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { recoverJobRefund } from './refund-recovery.js';
 
@@ -57,7 +57,7 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
         const gradingEnabled = serverGradingEnabled(env);
         const level = gradingEnabled ? null : estimateTranscriptLevel(enriched, language);
         await Promise.allSettled([
-            addSubLanguage(db, job.video_id, language),
+            addAiLanguage(db, job.video_id, language),
             saveVideoLanguages(db, job.video_id, [], Math.round((last.start || 0) + (last.duration || 0)), null, null, false,
                 level ? { [language]: level } : null, null, [language])
         ]);

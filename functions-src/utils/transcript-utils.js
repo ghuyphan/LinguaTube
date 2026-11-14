@@ -136,80 +136,70 @@ const LATIN_MINOR_PUNCT_REGEX = /(?<=[,;:])\s+/;
 const CJK_DISCOURSE_REGEX = /(?=(?:而且|但是|所以|然后|如果|因为|就是|可是|不过|虽然|那么|首先|第二|就算|终于|这样子|对我来说|另外|其实|总之|只要|比如|けど|から|ので|のに|そして|しかし|また|だから|ただし))/;
 const JA_PARTICLE_REGEX = /(?<=[はがをにでへとからまで])(?=[^\s])/;
 
-/**
- * Sub-chunk a piece of text that has no punctuation using discourse markers or length boundaries
- * @param {string} text 
- * @param {boolean} isCJK 
- * @param {number} maxLen 
- * @returns {string[]}
- */
-function chunkUnpunctuatedText(text, isCJK, maxLen) {
-    if (!text || text.length <= maxLen) return [text];
-
-    // Try Level 2: CJK discourse markers
-    if (isCJK) {
-        const discourseParts = text.split(CJK_DISCOURSE_REGEX).map(p => p.trim()).filter(Boolean);
-        if (discourseParts.length > 1) {
-            const parts = [];
-            let buf = '';
-            for (const dp of discourseParts) {
-                if (buf && (buf.length + dp.length > maxLen)) {
-                    parts.push(buf);
-                    buf = dp;
-                } else {
-                    buf += dp;
-                }
-            }
-            if (buf) parts.push(buf);
-            if (parts.length > 1) return parts;
-        }
-
-        // Try Japanese particle boundaries
-        const particleParts = text.split(JA_PARTICLE_REGEX).map(p => p.trim()).filter(Boolean);
-        if (particleParts.length > 1) {
-            const parts = [];
-            let buf = '';
-            for (const pp of particleParts) {
-                if (buf && (buf.length + pp.length > maxLen)) {
-                    parts.push(buf);
-                    buf = pp;
-                } else {
-                    buf += pp;
-                }
-            }
-            if (buf) parts.push(buf);
-            if (parts.length > 1) return parts;
+function packParts(segments, maxLen, separator = '') {
+    const parts = [];
+    let buf = '';
+    for (const seg of segments) {
+        if (buf && (buf.length + separator.length + seg.length > maxLen)) {
+            parts.push(buf);
+            buf = seg;
+        } else {
+            buf = buf ? `${buf}${separator}${seg}` : seg;
         }
     }
+    if (buf) parts.push(buf);
+    return parts;
+}
 
-    // Level 3: Length fallback chunking (words for Latin, characters/spaces for CJK)
-    const chunks = [];
+function chunkByLength(text, isCJK, maxLen) {
+    if (!text || text.length <= maxLen) return [text];
     if (isCJK) {
+        const chunks = [];
         const targetLen = Math.min(maxLen, 22);
         let rem = text;
         while (rem.length > targetLen) {
-            // Check if there's a space within the window
             const spaceIdx = rem.lastIndexOf(' ', targetLen);
             const cutIdx = spaceIdx > 12 ? spaceIdx : targetLen;
             chunks.push(rem.slice(0, cutIdx).trim());
             rem = rem.slice(cutIdx).trim();
         }
         if (rem.length > 0) chunks.push(rem);
-    } else {
-        const words = text.split(/\s+/);
-        let buf = '';
-        for (const w of words) {
-            if (buf && (buf.length + 1 + w.length > maxLen)) {
-                chunks.push(buf);
-                buf = w;
-            } else {
-                buf = buf ? `${buf} ${w}` : w;
+        return chunks.length > 0 ? chunks : [text];
+    }
+    const chunks = packParts(text.split(/\s+/), maxLen, ' ');
+    return chunks.length > 0 ? chunks : [text];
+}
+
+/**
+ * Sub-chunk a piece of text that has no punctuation using discourse markers or length boundaries.
+ * Guarantees every resulting part respects maxLen unless a single unbroken token exceeds it.
+ * @param {string} text
+ * @param {boolean} isCJK
+ * @param {number} maxLen
+ * @returns {string[]}
+ */
+function chunkUnpunctuatedText(text, isCJK, maxLen) {
+    if (!text || text.length <= maxLen) return [text];
+
+    if (isCJK) {
+        const discourseParts = text.split(CJK_DISCOURSE_REGEX).map(p => p.trim()).filter(Boolean);
+        const stage1 = discourseParts.length > 1 ? packParts(discourseParts, maxLen) : [text];
+        const stage2 = [];
+        for (const piece of stage1) {
+            if (piece.length <= maxLen) {
+                stage2.push(piece);
+                continue;
+            }
+            const particleParts = piece.split(JA_PARTICLE_REGEX).map(p => p.trim()).filter(Boolean);
+            const packed = particleParts.length > 1 ? packParts(particleParts, maxLen) : [piece];
+            for (const sub of packed) {
+                stage2.push(...chunkByLength(sub, true, maxLen));
             }
         }
-        if (buf) chunks.push(buf);
+        return stage2.length > 0 ? stage2 : [text];
     }
 
-    return chunks.length > 0 ? chunks : [text];
+    return chunkByLength(text, false, maxLen);
 }
 
 /**

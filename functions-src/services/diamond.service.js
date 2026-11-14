@@ -172,7 +172,9 @@ export class DiamondService {
 
     async consumeDiamond(clientId, cost = 1, user = null, env = null, context = null, jobId = null) {
         if (!Number.isSafeInteger(cost) || cost <= 0) return { success: false, reason: 'invalid_cost' };
-        const current = await this.getDiamonds(clientId, user, env, context);
+        const current = user?.id && typeof user.diamonds === 'number'
+            ? { ...getTierDiamondConfig(this.resolveTier(user)), diamonds: user.diamonds, nextRegenAt: null }
+            : await this.getDiamonds(clientId, user, env, context);
         let result;
         if (user?.id) {
             result = jobId

@@ -624,16 +624,47 @@ export async function tokenize(text, lang) {
 }
 
 /**
+ * Whether a single transcript segment still needs morphological enrichment.
+ * Japanese segments require POS tags (and readings when kanji are present),
+ * so degraded Intl.Segmenter fallback tokens are re-enriched once Kuromoji is ready.
+ */
+export function segmentNeedsEnrichment(segment, lang) {
+    if (!segment) return false;
+    const text = segment.text || '';
+    if (!text.trim()) return false;
+    if (!Array.isArray(segment.tokens) || segment.tokens.length === 0) return true;
+    const normLang = (lang || '').split('-')[0].toLowerCase();
+    if (normLang === 'ja') {
+        const words = segment.tokens.filter(t => t && !t.isPunctuation && (t.surface || '').trim());
+        if (words.length > 0 && !words.some(t => typeof t.partOfSpeech === 'string' && t.partOfSpeech.trim())) {
+            return true;
+        }
+        if (hasKanji(text) && !segment.tokens.some(t => t.reading || t.rubyParts)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+export function segmentsNeedEnrichment(segments, lang) {
+    if (!Array.isArray(segments) || segments.length === 0) return false;
+    const normLang = (lang || '').split('-')[0].toLowerCase();
+    if (!['ja', 'zh', 'ko', 'en'].includes(normLang)) return false;
+    return segments.some(s => segmentNeedsEnrichment(s, normLang));
+}
+
+/**
  * Enrich an array of transcript segments with morphological tokens.
- * - Leaves non-empty segment.tokens untouched (idempotent).
+ * - Leaves already-rich segment.tokens untouched (idempotent).
  * - Only tokenizes supported languages (ja, zh, ko, en).
  * - Safe against null/undefined segments or empty texts.
  *
  * @param {Array<{id?: number|string, text: string, start: number, duration: number, tokens?: Array}>} segments
  * @param {string} lang - Target language code
- * @returns {Promise<Array>} Enriched segments
+ * @param {{allowFallback?: boolean, kuromojiTimeoutMs?: number}} [options]
+ * @returns {Promise<Array|null>} Enriched segments, or null if allowFallback is false and Kuromoji is unavailable
  */
-export async function enrichSegmentsWithTokens(segments, lang) {
+export async function enrichSegmentsWithTokens(segments, lang, { allowFallback = true, kuromojiTimeoutMs = 1500 } = {}) {
     if (!Array.isArray(segments) || segments.length === 0) {
         return [];
     }
@@ -643,15 +674,7 @@ export async function enrichSegmentsWithTokens(segments, lang) {
         return segments;
     }
 
-    // Check if every segment already has valid full tokens (not degraded fallback tokens)
-    const allHaveFullTokens = segments.every(s => {
-        if (!s || !Array.isArray(s.tokens) || s.tokens.length === 0) return false;
-        if (normLang === 'ja' && hasKanji(s.text)) {
-            return s.tokens.some(t => t.reading || t.rubyParts);
-        }
-        return true;
-    });
-    if (allHaveFullTokens) {
+    if (!segmentsNeedEnrichment(segments, normLang)) {
         return segments;
     }
 
@@ -660,8 +683,11 @@ export async function enrichSegmentsWithTokens(segments, lang) {
     if (normLang === 'ja') {
         kuromojiAvailable = await Promise.race([
             getKuromojiTokenizer().then(() => true),
-            new Promise(resolve => setTimeout(() => resolve(false), 1500))
+            new Promise(resolve => setTimeout(() => resolve(false), kuromojiTimeoutMs))
         ]).catch(() => false);
+        if (!kuromojiAvailable && !allowFallback) {
+            return null;
+        }
     }
     if (normLang === 'zh') await getPinyin().catch(() => null);
     if (normLang === 'ko') await getRomanizeKorean().catch(() => null);
@@ -670,9 +696,7 @@ export async function enrichSegmentsWithTokens(segments, lang) {
     const enriched = await Promise.all(
         segments.map(async (segment) => {
             if (!segment) return segment;
-            const hasFullTokens = Array.isArray(segment.tokens) && segment.tokens.length > 0 &&
-                (normLang !== 'ja' || !hasKanji(segment.text) || segment.tokens.some(t => t.reading || t.rubyParts));
-            if (hasFullTokens) {
+            if (!segmentNeedsEnrichment(segment, normLang)) {
                 return segment;
             }
 

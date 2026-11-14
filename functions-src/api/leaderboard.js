@@ -6,7 +6,7 @@ import { serviceRoleRequest } from '../services/supabase-rest.js';
 
 import { validateAuthToken } from '../middlewares/auth.js';
 import { consumeRateLimit, getClientIdentifier } from '../middlewares/rate-limiter.js';
-import { jsonResponse, handleOptions } from '../utils/utils.js';
+import { jsonResponse, handleOptions, getRequestJson } from '../utils/utils.js';
 
 export const SEED_LEADERBOARD = [
     // --- Japanese (JA) Learners ---
@@ -309,12 +309,28 @@ export async function onRequestGet(context) {
                         return s.xp > userEntry.xp;
                     }).length;
 
-                    higherCount += rawRealUsers.filter(u => {
-                        if (period === 'weekly') {
-                            return (u.weeklyXp ?? u.xp) > (userEntry.weeklyXp ?? userEntry.xp);
-                        }
-                        return u.xp > userEntry.xp;
-                    }).length;
+                    let higherRealCount = null;
+                    if (db && period !== 'weekly') {
+                        try {
+                            const countRow = isLangSpecific
+                                ? await db.prepare('SELECT COUNT(*) AS count FROM leaderboard WHERE target_lang = ? AND xp > ?')
+                                    .bind(lang, userEntry.xp).first()
+                                : await db.prepare('SELECT COUNT(*) AS count FROM leaderboard WHERE xp > ?')
+                                    .bind(userEntry.xp).first();
+                            if (countRow && typeof countRow.count === 'number') {
+                                higherRealCount = countRow.count;
+                            }
+                        } catch { }
+                    }
+                    if (higherRealCount === null) {
+                        higherRealCount = rawRealUsers.filter(u => {
+                            if (period === 'weekly') {
+                                return (u.weeklyXp ?? u.xp) > (userEntry.weeklyXp ?? userEntry.xp);
+                            }
+                            return u.xp > userEntry.xp;
+                        }).length;
+                    }
+                    higherCount += higherRealCount;
 
                     userRank = {
                         rank: higherCount + 1,
@@ -373,7 +389,7 @@ export async function onRequestPost(context) {
             }, 429);
         }
 
-        const body = await request.json().catch(() => ({}));
+        const body = (await getRequestJson(context).catch(() => ({}))) || {};
 
         // Guests compute rank locally; do not allow anonymous writes to the global competitive leaderboard
         if (!authResult.valid || !authResult.userId) {

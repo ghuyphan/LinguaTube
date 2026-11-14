@@ -9,8 +9,12 @@ import {
     katakanaToHiragana,
     segmentJapaneseRuby,
     detachKoreanParticle,
+    tokenizeJapaneseFast,
+    segmentsNeedEnrichment,
     enrichSegmentsWithTokens
 } from '../functions-src/utils/tokenizer.js';
+import { enrichPublishedTranscript } from '../functions-src/services/transcript-enrichment.js';
+import { splitRunOnSegments } from '../functions-src/utils/transcript-utils.js';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../functions-src/utils/japanese-romaji.js';
 
 // ============================================================================
@@ -500,4 +504,73 @@ test('enrichSegmentsWithTokens: pre-bakes rich tokens onto segments across all 4
     // 5. Idempotent: already enriched segments returned unchanged
     const doubleEnriched = await enrichSegmentsWithTokens(enrichedEn, 'en');
     assert.strictEqual(doubleEnriched, enrichedEn);
+});
+
+test('segmentsNeedEnrichment & enrichPublishedTranscript: detects and repairs degraded Japanese fallback tokens in R2', async () => {
+    const text = '繰り返す季節に慣れないまま';
+    const degradedTokens = tokenizeJapaneseFast(text);
+    assert.ok(degradedTokens.length > 0);
+    assert.equal(degradedTokens.some(t => Boolean(t.partOfSpeech)), false);
+
+    // Degraded JA tokens must be flagged as needing enrichment, unlike KO/ZH which omit POS by design
+    assert.equal(segmentsNeedEnrichment([{ start: 0, duration: 3, text, tokens: degradedTokens }], 'ja'), true);
+    assert.equal(
+        segmentsNeedEnrichment([{ start: 0, duration: 3, text: '한국어', tokens: [{ surface: '한국어', romanization: 'hangugeo', isPunctuation: false }] }], 'ko'),
+        false
+    );
+    assert.equal(
+        segmentsNeedEnrichment([{ start: 0, duration: 3, text: '季節', tokens: [{ surface: '季節', partOfSpeech: '名詞', hasKanji: true, isPunctuation: false }] }], 'ja'),
+        true
+    );
+
+    const store = new Map([
+        ['transcripts/ylLOn6KXzAc/ja.json', JSON.stringify({
+            videoId: 'ylLOn6KXzAc',
+            language: 'ja',
+            segments: [{ start: 0, duration: 3, text, tokens: degradedTokens }]
+        })]
+    ]);
+    let putCount = 0;
+    const mockBucket = {
+        async get(key) {
+            const raw = store.get(key);
+            if (!raw) return null;
+            return { async json() { return JSON.parse(raw); } };
+        },
+        async put(key, val) {
+            putCount++;
+            store.set(key, val);
+        }
+    };
+
+    const repaired = await enrichPublishedTranscript(mockBucket, 'ylLOn6KXzAc', 'ja', 5000, false);
+    assert.equal(repaired, true);
+    assert.equal(putCount, 1);
+
+    const updatedPayload = JSON.parse(store.get('transcripts/ylLOn6KXzAc/ja.json'));
+    assert.equal(segmentsNeedEnrichment(updatedPayload.segments, 'ja'), false);
+    assert.ok(updatedPayload.segments[0].tokens.some(t => Boolean(t.partOfSpeech)));
+
+    // Second pass must be a no-op (no extra R2 write) because R2 already holds full Kuromoji annotations
+    const secondPass = await enrichPublishedTranscript(mockBucket, 'ylLOn6KXzAc', 'ja', 5000, false);
+    assert.equal(secondPass, true);
+    assert.equal(putCount, 1);
+});
+
+test('splitRunOnSegments: chunks unpunctuated Japanese Whisper lyrics within maxLen with advancing timestamps', () => {
+    const longLyric = '君の前前前世から僕は君を探しはじめたよそのぶきっちょな笑い方をめがけてやってきたんだよ';
+    const result = splitRunOnSegments([{ start: 10.0, duration: 24.0, text: longLyric }]);
+
+    assert.ok(result.length > 1, 'Long unpunctuated lyric must split into multiple subtitle cues');
+    for (let i = 0; i < result.length; i++) {
+        assert.ok(result[i].text.length <= 22, `Cue ${i} exceeded CJK maxLen: ${result[i].text}`);
+        assert.ok(result[i].duration > 0);
+        assert.ok(result[i].start >= 10.0);
+        assert.ok(result[i].start + result[i].duration <= 34.01);
+        if (i > 0) {
+            assert.ok(result[i].start >= result[i - 1].start + result[i - 1].duration - 0.001, 'Split cues must advance monotonically without overlap');
+        }
+    }
+    const combined = result.map(s => s.text).join('');
+    assert.equal(combined, longLyric);
 });

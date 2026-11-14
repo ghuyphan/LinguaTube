@@ -36,8 +36,8 @@ export async function onRequestGet(context) {
         return jsonResponse({ error: 'Invalid path. Expected: /api/translate/{source}/{target}/{text}' }, 400);
     }
 
-    const source = sanitizeLanguage(pathSegments[0], ['ja', 'zh', 'ko', 'en', 'vi', 'auto']);
-    const target = sanitizeLanguage(pathSegments[1], ['ja', 'zh', 'ko', 'en', 'vi']);
+    const source = sanitizeLanguage(pathSegments[0], ['ja', 'zh', 'ko', 'en', 'vi', 'ru', 'auto']);
+    const target = sanitizeLanguage(pathSegments[1], ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
     let text = pathSegments.slice(2).join('/'); // Rejoin text that might contain slashes
     try {
         text = decodeURIComponent(text);

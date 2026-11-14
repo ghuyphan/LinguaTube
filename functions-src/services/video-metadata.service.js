@@ -44,8 +44,16 @@ function videoSnippet(snippet, status) {
     const tags = Array.isArray(snippet.tags) ? snippet.tags.filter(tag => typeof tag === 'string').slice(0, 100) : [];
     const thumbnail = snippet.thumbnails?.high?.url || snippet.thumbnails?.medium?.url || snippet.thumbnails?.default?.url || null;
     const embeddable = status?.embeddable !== false;
+    const defaultAudioLanguage = typeof snippet.defaultAudioLanguage === 'string' && snippet.defaultAudioLanguage.trim()
+        ? snippet.defaultAudioLanguage.trim()
+        : null;
+    const defaultLanguage = typeof snippet.defaultLanguage === 'string' && snippet.defaultLanguage.trim()
+        ? snippet.defaultLanguage.trim()
+        : null;
     return { title: snippet.title.trim(), channel: snippet.channelTitle.trim(), channelId: snippet.channelId,
-        youtubeCategoryId: snippet.categoryId, tags, thumbnail: typeof thumbnail === 'string' && thumbnail.startsWith('https://i.ytimg.com/') ? thumbnail : null, embeddable };
+        youtubeCategoryId: snippet.categoryId, tags, thumbnail: typeof thumbnail === 'string' && thumbnail.startsWith('https://i.ytimg.com/') ? thumbnail : null, embeddable,
+        ...(defaultAudioLanguage ? { defaultAudioLanguage } : {}),
+        ...(defaultLanguage ? { defaultLanguage } : {}) };
 }
 
 // Separate from display metadata: client reports and subtitle estimates never write this table.
@@ -88,7 +96,7 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
         const url = new URL('https://www.googleapis.com/youtube/v3/videos');
         url.searchParams.set('id', videoId);
         url.searchParams.set('part', 'contentDetails,snippet,liveStreamingDetails,status');
-        url.searchParams.set('fields', 'items(id,contentDetails/duration,status/embeddable,snippet(title,channelTitle,channelId,categoryId,tags,thumbnails,liveBroadcastContent),liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))');
+        url.searchParams.set('fields', 'items(id,contentDetails/duration,status/embeddable,snippet(title,channelTitle,channelId,categoryId,tags,thumbnails,liveBroadcastContent,defaultAudioLanguage,defaultLanguage),liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))');
         const signal = AbortSignal.timeout(4000);
         const response = await fetch(url, {
             headers: { 'X-Goog-Api-Key': env.YOUTUBE_DATA_API_KEY, Accept: 'application/json' },

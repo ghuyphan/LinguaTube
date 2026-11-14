@@ -165,18 +165,24 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
                 // R2 preconditions protect across isolates; the mutex only reduces local contention.
                 const existingObject = await bucket.get(key);
                 const existingData = existingObject ? await existingObject.json() : null;
-                const canonicalObject = await bucket.get(`transcripts/${videoId}/${srcLang}.json`);
-                const canonical = canonicalObject ? (await canonicalObject.json())?.segments : null;
-                if (requireCanonical && !canonical?.length) return null;
                 const cueKey = (seg, idx) => JSON.stringify([seg.start ?? `idx:${idx}`, seg.text || '']);
-                const incoming = new Map(segments.map((seg, idx) => [cueKey(seg, idx), seg]));
-                const base = canonical?.length ? canonical : existingData?.segments?.length ? existingData.segments : segments;
-                const known = new Set(base.map(cueKey));
-                if (canonical?.length && segments.some((seg, idx) => !known.has(cueKey(seg, idx)))) return null;
-                if (!canonical?.length && existingData?.segments?.length) {
-                    // Preserve a complete legacy object, refusing incompatible replacements.
-                    if (segments.some((seg, idx) => !known.has(cueKey(seg, idx)))) return null;
+                const matches = (known) => segments.every((seg, idx) => known.has(cueKey(seg, idx)));
+                const loadCanon = async (suffix) => {
+                    const obj = await bucket.get(`transcripts/${videoId}/${srcLang}${suffix}`);
+                    const segs = obj ? (await obj.json())?.segments : null;
+                    return segs?.length ? { segs, known: new Set(segs.map(cueKey)) } : null;
+                };
+                let canon = await loadCanon('.json');
+                if (!canon || !matches(canon.known)) {
+                    const aiCanon = await loadCanon('.ai.json');
+                    if (aiCanon && matches(aiCanon.known)) canon = aiCanon;
                 }
+                const canonical = canon?.segs || null;
+                if (requireCanonical && !canonical?.length) return null;
+                const incoming = new Map(segments.map((seg, idx) => [cueKey(seg, idx), seg]));
+                const base = canonical || (existingData?.segments?.length ? existingData.segments : segments);
+                const known = canon?.known || new Set(base.map(cueKey));
+                if ((canonical || existingData?.segments?.length) && !matches(known)) return null;
                 const existingByCue = new Map();
                 for (const [idx, seg] of (existingData?.segments || []).entries()) {
                     if (typeof seg?.translation === 'string' && seg.translation.trim()) {

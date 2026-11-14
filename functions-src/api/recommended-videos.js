@@ -78,10 +78,24 @@ async function handleRecommendedVideos(context, method) {
 
     const isRefresh = body.refresh === true || url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
 
-    const sessionSeedParam = parseInt(body.sessionSeed ?? url.searchParams.get('seed'), 10);
-    const sessionSeed = !isNaN(sessionSeedParam)
-        ? sessionSeedParam
-        : (isRefresh ? Math.floor(Math.random() * 1000000) : 12345);
+    const rawSeed = body.sessionSeed ?? url.searchParams.get('seed');
+    let sessionSeed;
+    if (typeof rawSeed === 'number' && Number.isFinite(rawSeed)) {
+        sessionSeed = Math.trunc(rawSeed);
+    } else if (typeof rawSeed === 'string' && rawSeed.trim().length > 0) {
+        const trimmedSeed = rawSeed.trim();
+        if (/^-?\d+$/.test(trimmedSeed)) {
+            sessionSeed = parseInt(trimmedSeed, 10);
+        } else {
+            let hash = 0;
+            for (let i = 0; i < trimmedSeed.length; i++) {
+                hash = (Math.imul(31, hash) + trimmedSeed.charCodeAt(i)) | 0;
+            }
+            sessionSeed = hash >>> 0;
+        }
+    } else {
+        sessionSeed = isRefresh ? Math.floor(Math.random() * 1000000) : 12345;
+    }
 
     const userContext = normalizeRecommendationContext(body.context);
     const isPersonalized = Boolean(userContext.watched.length || Object.keys(userContext.inProgress).length

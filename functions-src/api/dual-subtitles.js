@@ -54,7 +54,7 @@ export async function onRequestGet(context) {
 
         const cleanVideoId = sanitizeVideoId(videoId);
         const sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
-        const targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi']);
+        const targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
 
         if (!cleanVideoId || !sourceLang || !targetLang) {
             return jsonResponse({ error: 'Missing or invalid parameters' }, 400);
@@ -92,15 +92,7 @@ export async function onRequestPost(context) {
     try { body = await getRequestJson(context); }
     catch { return jsonResponse({ error: 'Invalid JSON body' }, 400); }
     if (!body || typeof body !== 'object' || Array.isArray(body)) return jsonResponse({ error: 'Invalid request' }, 400);
-    if (body.saveOnly || body.onlySave || body.onlyCache) return handlePost(context, body);
-    const key = await sha256(JSON.stringify([body.videoId, body.sourceLang, body.targetLang, body.segments, Boolean(body.forceRefresh)]));
-    const existing = inFlightTranslations.get(key);
-    if (existing) return (await existing).clone();
-    const pending = handlePost(context, body);
-    if (inFlightTranslations.size >= 100) return pending;
-    inFlightTranslations.set(key, pending);
-    try { return (await pending).clone(); }
-    finally { if (inFlightTranslations.get(key) === pending) inFlightTranslations.delete(key); }
+    return handlePost(context, body);
 }
 
 async function handlePost(context, body) {
@@ -132,7 +124,7 @@ async function handlePost(context, body) {
         const { videoId, sourceLang: rawSourceLang, targetLang: rawTargetLang, segments, forceRefresh, onlyCache, saveOnly, onlySave } = body;
         cleanVideoId = sanitizeVideoId(videoId);
         sourceLang = sanitizeLanguage(rawSourceLang, ['ja', 'zh', 'ko', 'en']);
-        targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi']);
+        targetLang = sanitizeLanguage(rawTargetLang, ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
 
         if (!cleanVideoId || !sourceLang || !targetLang) {
             return jsonResponse({ error: 'Invalid video ID or language format' }, 400);
@@ -244,90 +236,108 @@ async function handlePost(context, body) {
             }, 400);
         }
 
-        const textChunks = [];
-        for (let i = 0; i < segments.length; i += BATCH_SIZE) {
-            textChunks.push(segments.slice(i, i + BATCH_SIZE).map(s => s.text));
-        }
+        // Coalesce concurrent upstream translation work across callers after auth/rate-limit checks
+        const stampedeKey = await sha256(JSON.stringify([cleanVideoId, sourceLang, targetLang, segments, Boolean(forceRefresh)]));
+        let pending = inFlightTranslations.get(stampedeKey);
+        if (!pending) {
+            pending = (async () => {
+                const textChunks = [];
+                for (let i = 0; i < segments.length; i += BATCH_SIZE) {
+                    textChunks.push(segments.slice(i, i + BATCH_SIZE).map(s => s.text));
+                }
 
-        const translatedTexts = [];
-        const failedIndices = [];
+                const translatedTexts = [];
+                const failedIndices = [];
 
-        // Timeout check helper
-        const startTime = Date.now();
-        const checkTimeout = () => {
-            if (Date.now() - startTime > TIMEOUT_MS) {
-                throw new Error('Translation timed out');
-            }
-        };
-
-        // Process chunks
-        let currentIndex = 0;
-        for (const chunk of textChunks) {
-            checkTimeout();
-
-            try {
-                const translations = await translateBatch(chunk, sourceLang, targetLang);
-
-                // Track failed translations within this chunk
-                translations.forEach((t, i) => {
-                    if (t === null) {
-                        failedIndices.push(currentIndex + i);
+                // Timeout check helper
+                const startTime = Date.now();
+                const checkTimeout = () => {
+                    if (Date.now() - startTime > TIMEOUT_MS) {
+                        throw new Error('Translation timed out');
                     }
+                };
+
+                // Process chunks
+                let currentIndex = 0;
+                for (const chunk of textChunks) {
+                    checkTimeout();
+
+                    try {
+                        const translations = await translateBatch(chunk, sourceLang, targetLang);
+
+                        // Track failed translations within this chunk
+                        translations.forEach((t, i) => {
+                            if (t === null) {
+                                failedIndices.push(currentIndex + i);
+                            }
+                        });
+
+                        translatedTexts.push(...translations);
+                    } catch (e) {
+                        console.error('Chunk translation failed:', e);
+                        throw e; // Abort the whole request so we don't save a degraded/empty cache
+                    }
+
+                    currentIndex += chunk.length;
+                }
+
+                // 4. Merge Translations
+                const resultSegments = segments.map((seg, i) => {
+                    const tr = translatedTexts[i];
+                    const isValid = tr && (sourceLang === targetLang || tr.trim() !== (seg.text || '').trim());
+                    return {
+                        ...seg,
+                        translation: isValid ? tr : null
+                    };
                 });
 
-                translatedTexts.push(...translations);
-            } catch (e) {
-                console.error('Chunk translation failed:', e);
-                throw e; // Abort the whole request so we don't save a degraded/empty cache
+                // 5. Calculate Quality
+                const successCount = resultSegments.filter(s => s.translation).length;
+                const successRate = successCount / resultSegments.length;
+                const quality = Math.round(successRate * 100);
+                const shouldCache = successRate >= QUALITY_THRESHOLD;
+
+                // 6. Save to Cache (only if quality threshold met)
+                if (shouldCache) {
+                    const persist = async () => {
+                        const saved = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, resultSegments, quality, 'lingva', { requireCanonical: true });
+                        if (saved?.validCount && db) await recordTranslation(db, cleanVideoId, sourceLang, targetLang, saved.validCount);
+                    };
+                    if (waitUntil) waitUntil(persist().catch(() => {}));
+                    else await persist();
+                }
+
+                const cacheControl = shouldCache ? CACHE_HEADERS.FRESH : CACHE_HEADERS.PARTIAL;
+                const response = {
+                    videoId: cleanVideoId,
+                    sourceLang,
+                    targetLang,
+                    segments: resultSegments,
+                    cached: false,
+                    quality,
+                    failedSegments: failedIndices.length,
+                    timestamp: Date.now()
+                };
+
+                // Include failed indices for client-side retry (only if <= 20 failures)
+                if (failedIndices.length > 0 && failedIndices.length <= 20) {
+                    response.failedIndices = failedIndices;
+                }
+
+                return { response, cacheControl };
+            })();
+            if (inFlightTranslations.size < 100) {
+                inFlightTranslations.set(stampedeKey, pending);
+                pending.finally(() => {
+                    if (inFlightTranslations.get(stampedeKey) === pending) {
+                        inFlightTranslations.delete(stampedeKey);
+                    }
+                }).catch(() => {});
             }
-
-            currentIndex += chunk.length;
         }
 
-        // 4. Merge Translations
-        const resultSegments = segments.map((seg, i) => {
-            const tr = translatedTexts[i];
-            const isValid = tr && (sourceLang === targetLang || tr.trim() !== (seg.text || '').trim());
-            return {
-                ...seg,
-                translation: isValid ? tr : null
-            };
-        });
-
-        // 5. Calculate Quality
-        const successCount = resultSegments.filter(s => s.translation).length;
-        const successRate = successCount / resultSegments.length;
-        const quality = Math.round(successRate * 100);
-        const shouldCache = successRate >= QUALITY_THRESHOLD;
-
-        // 6. Save to Cache (only if quality threshold met)
-        if (shouldCache) {
-            const persist = async () => {
-                const saved = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, resultSegments, quality, 'lingva', { requireCanonical: true });
-                if (saved?.validCount && db) await recordTranslation(db, cleanVideoId, sourceLang, targetLang, saved.validCount);
-            };
-            if (waitUntil) waitUntil(persist().catch(() => {}));
-            else await persist();
-        }
-
-        // 7. Build response with appropriate headers
-        const cacheControl = shouldCache ? CACHE_HEADERS.FRESH : CACHE_HEADERS.PARTIAL;
-        const response = {
-            videoId: cleanVideoId,
-            sourceLang,
-            targetLang,
-            segments: resultSegments,
-            cached: false,
-            quality,
-            failedSegments: failedIndices.length,
-            timestamp: Date.now()
-        };
-
-        // Include failed indices for client-side retry (only if <= 20 failures)
-        if (failedIndices.length > 0 && failedIndices.length <= 20) {
-            response.failedIndices = failedIndices;
-        }
-
+        // 7. Build per-caller response with caller's own rate-limit headers
+        const { response, cacheControl } = await pending;
         return jsonResponse(response, 200, {
             'Cache-Control': cacheControl,
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)

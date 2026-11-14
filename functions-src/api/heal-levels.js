@@ -1,5 +1,5 @@
 import { matchesSecret } from '../utils/secret-auth.js';
-import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage } from '../utils/utils.js';
+import { jsonResponse, handleOptions, sanitizeVideoId, sanitizeLanguage, getRequestJson } from '../utils/utils.js';
 import { getVideoLanguages, levelToScore } from '../data/video-info-db.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { validateAuthToken } from '../middlewares/auth.js';
@@ -24,7 +24,8 @@ function restoreGrade(db, videoId, language, revision, version = null) {
     `).bind(path, path, videoId, language, revision, videoId, path, videoId, language, revision, version, version);
 }
 
-export async function onRequest({ request, env }) {
+export async function onRequest(context) {
+    const { request, env } = context;
     if (!['GET', 'POST'].includes(request.method)) return jsonResponse({ error: 'Method not allowed' }, 405);
     const authHeader = request.headers.get('Authorization') || '';
     const secret = request.headers.get('x-admin-secret') || '';
@@ -59,7 +60,7 @@ export async function onRequest({ request, env }) {
             return jsonResponse({ success: true, processed, ...backlog }, 200);
         }
 
-        const body = request.method === 'POST' ? await request.json().catch(() => ({})) : {};
+        const body = request.method === 'POST' ? ((await getRequestJson(context).catch(() => ({}))) || {}) : {};
         const rawVideo = body.videoId ?? params.get('videoId');
         const videoId = sanitizeVideoId(rawVideo);
         const rawCursor = body.cursor ?? params.get('cursor');

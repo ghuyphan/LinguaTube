@@ -4,7 +4,7 @@ import { sha256 } from '../../utils/utils.js';
  * Single-text tokenization endpoint with optional caching
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateTextLength } from '../../utils/utils.js';
+import { jsonResponse, handleOptions, errorResponse, validateTextLength, getRequestJson } from '../../utils/utils.js';
 import { tokenize, isKuromojiReady } from '../../utils/tokenizer.js';
 import {
     consumeRateLimit,
@@ -57,7 +57,8 @@ export async function onRequest(context) {
     }
 
     try {
-        const { text } = await request.json();
+        const body = await getRequestJson(context).catch(() => null);
+        const { text } = body || {};
 
         // Validate text input
         const textValidation = validateTextLength(text, MAX_TEXT_LENGTH);

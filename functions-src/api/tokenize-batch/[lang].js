@@ -19,7 +19,8 @@ import {
     errorResponse,
     sanitizeVideoId,
     validateBatchSize,
-    validateBody
+    validateBody,
+    getRequestJson
 } from '../../utils/utils.js';
 import { tokenize, isKuromojiReady } from '../../utils/tokenizer.js';
 
@@ -76,7 +77,7 @@ export async function onRequest(context) {
     }
 
     try {
-        const body = await request.json();
+        const body = await getRequestJson(context).catch(() => null);
 
         // Schema-based validation for security
         const validation = validateBody(body, {
@@ -139,110 +140,100 @@ export async function onRequest(context) {
             }
         }
 
-        // Deduplicate concurrent in-flight requests for the same cache key
+        // 2. Check KV cache before consuming per-caller rate limit quota
+        if (TOKEN_CACHE && !request.signal?.aborted) {
+            try {
+                const cached = await TOKEN_CACHE.get(cacheKey, 'json');
+                if (cached && isValidTokensArray(cached.tokens, texts.length)) {
+                    const isDegradedJa = lang === 'ja' && isKuromojiReady() && cached.isFallback;
+                    if (!isDegradedJa) {
+                        console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
+                        if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                            const oldest = memTokenBatchCache.keys().next().value;
+                            if (oldest) memTokenBatchCache.delete(oldest);
+                        }
+                        const entry = { ...cached, cachedAt: Date.now() };
+                        memTokenBatchCache.set(cacheKey, entry);
+                        return jsonResponse(entry, 200, {
+                            'Cache-Control': 'public, max-age=604800',
+                            'X-Cache': 'HIT'
+                        });
+                    }
+                } else if (cached) {
+                    console.log(`[Tokenize Batch] Cache mismatch or corrupt for ${videoId}`);
+                }
+            } catch {
+                // Cache read failed, continue
+            }
+        }
+
+        // 3. Cache MISS: Check auth and consume per-caller rate limit quota before coalescing work
+        const authResult = await validateAuthToken(request, env);
+        if (authResult.response) return authResult.response;
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
+        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+
+        const clientId = getClientIdentifier(request, authResult);
+        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig, context);
+        if (!rateCheck.allowed) {
+            return rateLimitResponse(rateCheck.resetAt);
+        }
+
+        if (request.signal?.aborted) {
+            return new Response(JSON.stringify({ error: 'Request aborted' }), {
+                status: 499,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+        // 4. Deduplicate concurrent in-flight tokenization work (isolated from caller abort/rate state)
         let inFlight = inFlightBatches.get(cacheKey);
         if (!inFlight) {
             inFlight = (async () => {
-                if (request.signal?.aborted) {
-                    return { aborted: true };
-                }
-
-                // 2. Check KV cache
-                if (TOKEN_CACHE && !request.signal?.aborted) {
-                    try {
-                        const cached = await TOKEN_CACHE.get(cacheKey, 'json');
-                        if (cached && isValidTokensArray(cached.tokens, texts.length)) {
-                            const isDegradedJa = lang === 'ja' && isKuromojiReady() && cached.isFallback;
-                            if (!isDegradedJa) {
-                                console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
-                                if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
-                                    const oldest = memTokenBatchCache.keys().next().value;
-                                    if (oldest) memTokenBatchCache.delete(oldest);
-                                }
-                                const entry = { ...cached, cachedAt: Date.now() };
-                                memTokenBatchCache.set(cacheKey, entry);
-                                return {
-                                    data: entry,
-                                    status: 200,
-                                    headers: {
-                                        'Cache-Control': 'public, max-age=604800',
-                                        'X-Cache': 'HIT'
-                                    }
-                                };
-                            }
-                        } else if (cached) {
-                            console.log(`[Tokenize Batch] Cache mismatch or corrupt for ${videoId}`);
-                        }
-                    } catch {
-                        // Cache read failed, continue
-                    }
-                }
-
-                // Cache MISS: Now check and consume rate limit quota (Atomic)
-                const authResult = await validateAuthToken(request, env);
-                if (authResult.response) return authResult.response;
-                const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
-                const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
-
-                const clientId = getClientIdentifier(request, authResult);
-                const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig, context);
-                if (!rateCheck.allowed) {
-                    return { rateLimited: true, resetAt: rateCheck.resetAt };
-                }
-
-                if (request.signal?.aborted) {
-                    return { aborted: true };
-                }
-
                 console.log(`[Tokenize Batch] Tokenizing ${texts.length} texts for ${videoId} (${lang}) [tier: ${tier}]`);
 
-                const isFallback = lang === 'ja' && !isKuromojiReady();
-
-                // Tokenize all texts using shared module
                 const allTokens = await Promise.all(
                     texts.map(text => tokenize(text, lang))
                 );
+                const missingJaPos = lang === 'ja' && allTokens.some(line =>
+                    line.some(t => t && !t.isPunctuation && !t.partOfSpeech)
+                );
+                const isFallback = lang === 'ja' && (!isKuromojiReady() || missingJaPos);
 
-                const result = {
+                const computed = {
                     tokens: allTokens,
                     cachedAt: Date.now(),
                     isFallback
                 };
 
-                // Save to warm in-memory cache
                 if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
                     const oldest = memTokenBatchCache.keys().next().value;
                     if (oldest) memTokenBatchCache.delete(oldest);
                 }
-                memTokenBatchCache.set(cacheKey, result);
+                memTokenBatchCache.set(cacheKey, computed);
 
-                return {
-                    data: result,
-                    status: 200,
-                    headers: {
-                        'Cache-Control': 'public, max-age=604800',
-                        ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
-                    }
-                };
+                return computed;
             })();
             inFlightBatches.set(cacheKey, inFlight);
+            inFlight.finally(() => {
+                if (inFlightBatches.get(cacheKey) === inFlight) {
+                    inFlightBatches.delete(cacheKey);
+                }
+            }).catch(() => {});
         }
 
-        try {
-            const out = await inFlight;
-            if (out.aborted) {
-                return new Response(JSON.stringify({ error: 'Request aborted' }), {
-                    status: 499,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
-            if (out.rateLimited) {
-                return rateLimitResponse(out.resetAt);
-            }
-            return jsonResponse(out.data, out.status, out.headers);
-        } finally {
-            inFlightBatches.delete(cacheKey);
+        const result = await inFlight;
+        if (request.signal?.aborted) {
+            return new Response(JSON.stringify({ error: 'Request aborted' }), {
+                status: 499,
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
+
+        return jsonResponse(result, 200, {
+            'Cache-Control': 'public, max-age=604800',
+            ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
+        });
 
     } catch (error) {
         console.error(`[Tokenize Batch ${lang.toUpperCase()}] Error:`, error);

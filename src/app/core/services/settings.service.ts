@@ -117,7 +117,7 @@ export class SettingsService implements OnDestroy {
         uiLang = navigator.language.split('-')[0];
       }
     }
-    const supported = ['vi', 'en', 'ja', 'zh', 'ko'];
+    const supported = ['vi', 'en', 'ja', 'zh', 'ko', 'ru'];
     if (uiLang && supported.includes(uiLang) && uiLang !== sourceLang) {
       return uiLang;
     }

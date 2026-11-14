@@ -4,6 +4,9 @@ import { encodeTaggedTexts, decodeTaggedTranslations, translateBatch } from '../
 import { validateBody, sanitizeLanguage } from '../functions-src/utils/utils.js';
 import { tokenizeJapaneseFast } from '../functions-src/utils/tokenizer.js';
 import { detectSubtitleLanguage } from '../src/app/shared/utils/language.utils.ts';
+import { onRequestGet as dualSubtitlesGet, onRequestPost as dualSubtitlesPost } from '../functions-src/api/dual-subtitles.js';
+import { onRequestPost as translateBatchPost } from '../functions-src/api/translate/batch.js';
+import { onRequestGet as translateSingleGet } from '../functions-src/api/translate/[[path]].js';
 
 test('encodeTaggedTexts: properly encodes array of strings with XML index tags and escapes entities', () => {
     const input = [
@@ -230,6 +233,7 @@ test('sanitizeLanguage: normalizes BCP-47 locale subtags', () => {
     assert.equal(sanitizeLanguage('en-US'), 'en');
     assert.equal(sanitizeLanguage('ko-KR'), 'ko');
     assert.equal(sanitizeLanguage('vi-VN', ['ja', 'zh', 'ko', 'en', 'vi']), 'vi');
+    assert.equal(sanitizeLanguage('ru-RU', ['ja', 'zh', 'ko', 'en', 'vi', 'ru']), 'ru');
     assert.equal(sanitizeLanguage('invalid', ['ja', 'zh', 'ko', 'en']), null);
 });
 
@@ -241,6 +245,48 @@ test('tokenizeJapaneseFast: segments Japanese text using Intl.Segmenter with rom
     assert.equal(tokens[0].romanization, 'konnichiha');
     const punc = tokens.find(t => t.surface === '！');
     assert.equal(punc?.isPunctuation, true);
+});
+
+test('Russian (ru) is accepted as dual-subtitle and translation target language', async () => {
+    const getRes = await dualSubtitlesGet({
+        request: new Request('https://voca.study/api/dual-subtitles?videoId=abcdefghijk&sourceLang=ja&targetLang=ru'),
+        env: {}
+    });
+    assert.equal(getRes.status, 200);
+    const getData = await getRes.json();
+    assert.equal(getData.targetLang, 'ru');
+    assert.equal(getData.cached, false);
+
+    const postRes = await dualSubtitlesPost({
+        request: new Request('https://voca.study/api/dual-subtitles', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ videoId: 'abcdefghijk', sourceLang: 'en', targetLang: 'ru', onlyCache: true })
+        }),
+        env: {}
+    });
+    assert.equal(postRes.status, 200);
+    const postData = await postRes.json();
+    assert.equal(postData.targetLang, 'ru');
+
+    const batchRes = await translateBatchPost({
+        request: new Request('https://voca.study/api/translate/batch', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ source: 'en', target: 'ru', texts: [''] })
+        }),
+        env: {}
+    });
+    assert.equal(batchRes.status, 200);
+    assert.deepEqual(await batchRes.json(), { translations: [''] });
+
+    const singleRes = await translateSingleGet({
+        request: new Request('https://voca.study/api/translate/ru/ru/%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82'),
+        env: {},
+        params: { path: ['ru', 'ru', '%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82'] }
+    });
+    assert.equal(singleRes.status, 200);
+    assert.deepEqual(await singleRes.json(), { translation: 'привет' });
 });
 
 

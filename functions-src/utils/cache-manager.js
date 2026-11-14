@@ -7,9 +7,18 @@
  * @returns {Promise<any>}
  */
 
-// Module-level warm in-memory cache (Rule 2: In-Memory First)
+// Module-level warm in-memory cache and in-flight coalescing map (Rule 2: In-Memory First)
 const memCache = new Map();
+const inFlightFetches = new Map();
 const MAX_MEM_CACHE_ENTRIES = 500;
+
+function setMemCache(key, data, ttl, timestamp = Date.now()) {
+    if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
+        const oldest = memCache.keys().next().value;
+        if (oldest) memCache.delete(oldest);
+    }
+    memCache.set(key, { data, timestamp, ttl });
+}
 
 export class CacheManager {
     /**
@@ -66,11 +75,7 @@ export class CacheManager {
                     const age = (Date.now() - parsed.timestamp) / 1000;
 
                     // Populate memory cache for subsequent requests in this isolate
-                    if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
-                        const oldest = memCache.keys().next().value;
-                        if (oldest) memCache.delete(oldest);
-                    }
-                    memCache.set(key, { data: parsed.data, timestamp: parsed.timestamp, ttl: parsed.ttl });
+                    setMemCache(key, parsed.data, parsed.ttl, parsed.timestamp);
 
                     // Data is fresh
                     if (age < parsed.ttl) {
@@ -80,10 +85,11 @@ export class CacheManager {
                     // Data is stale but within stale-while-revalidate window
                     // Serve immediately, fetch new in background
                     if (age < parsed.ttl + staleTtl) {
-                        context.waitUntil(
-                            this._refreshAndSet(key, fetchFn, ttl, skipKvWrite, ttlForData)
-                                .catch(err => console.error(`[CacheManager] Background refresh failed for ${key}:`, err))
-                        );
+                        const refreshPromise = this._refreshAndSet(key, fetchFn, ttl, skipKvWrite, ttlForData)
+                            .catch(err => console.error(`[CacheManager] Background refresh failed for ${key}:`, err));
+                        if (context?.waitUntil) {
+                            context.waitUntil(refreshPromise);
+                        }
                         return { data: parsed.data, cached: true, stale: true };
                     }
 
@@ -95,44 +101,57 @@ export class CacheManager {
             }
         }
 
-        // Cache miss or force refresh
-        const data = await fetchFn();
-        const effectiveTtl = data == null ? ttl : ttlForData(data);
+        // Cache miss or force refresh (coalesce concurrent fetches per key)
+        const coalesceKey = forceRefresh ? `refresh:${key}` : key;
+        const data = await this._coalesceFetch(coalesceKey, async () => {
+            const fetched = await fetchFn();
+            const effectiveTtl = fetched == null ? ttl : ttlForData(fetched);
 
-        if (this.kv && !skipKvWrite && data !== null && data !== undefined) {
-            context.waitUntil(
-                this.set(key, data, effectiveTtl)
-                    .catch(err => console.error(`[CacheManager] KV Write Error for ${key}:`, err))
-            );
-        } else if (data !== null && data !== undefined) {
-            // Still sync to warm in-memory cache across requests in this isolate
-            if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
-                const oldest = memCache.keys().next().value;
-                if (oldest) memCache.delete(oldest);
+            if (this.kv && !skipKvWrite && fetched !== null && fetched !== undefined) {
+                const putPromise = this.set(key, fetched, effectiveTtl)
+                    .catch(err => console.error(`[CacheManager] KV Write Error for ${key}:`, err));
+                if (context?.waitUntil) {
+                    context.waitUntil(putPromise);
+                } else {
+                    await putPromise;
+                }
+            } else if (fetched !== null && fetched !== undefined) {
+                setMemCache(key, fetched, effectiveTtl);
             }
-            memCache.set(key, { data, timestamp: Date.now(), ttl: effectiveTtl });
-        }
+
+            return fetched;
+        });
 
         return { data, cached: false, stale: false };
+    }
+
+    /**
+     * Coalesce concurrent async work for identical keys within the isolate
+     */
+    _coalesceFetch(key, fn) {
+        if (inFlightFetches.has(key)) return inFlightFetches.get(key);
+        const promise = Promise.resolve().then(fn).finally(() => {
+            if (inFlightFetches.get(key) === promise) inFlightFetches.delete(key);
+        });
+        inFlightFetches.set(key, promise);
+        return promise;
     }
 
     /**
      * Internally wrap fetch and set to KV
      */
     async _refreshAndSet(key, fetchFn, ttl, skipKvWrite = this.skipKvWrite, ttlForData = () => ttl) {
-        const data = await fetchFn();
-        const effectiveTtl = data == null ? ttl : ttlForData(data);
-        if (data !== null && data !== undefined) {
-            if (!skipKvWrite) {
-                await this.set(key, data, effectiveTtl);
-            } else {
-                if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
-                    const oldest = memCache.keys().next().value;
-                    if (oldest) memCache.delete(oldest);
+        return this._coalesceFetch(`swr:${key}`, async () => {
+            const data = await fetchFn();
+            const effectiveTtl = data == null ? ttl : ttlForData(data);
+            if (data !== null && data !== undefined) {
+                if (!skipKvWrite) {
+                    await this.set(key, data, effectiveTtl);
+                } else {
+                    setMemCache(key, data, effectiveTtl);
                 }
-                memCache.set(key, { data, timestamp: Date.now(), ttl: effectiveTtl });
             }
-        }
+        });
     }
 
     /**
@@ -142,12 +161,7 @@ export class CacheManager {
      * @param {number} [ttl] 
      */
     async set(key, data, ttl = this.defaultTtl) {
-        // Sync to warm memory cache
-        if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
-            const oldest = memCache.keys().next().value;
-            if (oldest) memCache.delete(oldest);
-        }
-        memCache.set(key, { data, timestamp: Date.now(), ttl });
+        setMemCache(key, data, ttl);
 
         if (!this.kv) return;
 

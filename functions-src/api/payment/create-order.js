@@ -87,27 +87,11 @@ export async function onRequestPost(context) {
         const orderCode = 10000000 + (randBuffer[0] % 90000000);
         const description = `VOCA${orderCode}`.slice(0, 25);
 
-        // Reserve the unique order in PostgreSQL before creating the provider link.
+        // Reserve the unique order in PostgreSQL before creating the provider link (zero KV writes - Rule 2).
         await serviceRoleRequest(env, 'orders', { method: 'POST', prefer: 'return=minimal', body: {
             order_code: orderCode, user_id: authResult.user.id, plan_id: plan.id,
             tier: plan.tier, amount: plan.amount, status: 'PENDING'
         } });
-
-        // Store pending order in KV with 7 days expiration (accommodates delayed bank transfers)
-        if (env.TRANSCRIPT_CACHE) {
-            const orderMeta = {
-                orderCode,
-                userId: authResult.user.id,
-                userEmail: authResult.user.email,
-                planId: plan.id,
-                tier: plan.tier,
-                durationDays: plan.durationDays,
-                diamonds: plan.diamonds,
-                amount: plan.amount,
-                createdAt: new Date().toISOString()
-            };
-            await env.TRANSCRIPT_CACHE.put(`order:${orderCode}`, JSON.stringify(orderMeta), { expirationTtl: 7 * 24 * 60 * 60 });
-        }
 
         const returnUrl = isValidRedirectUrl(body.returnUrl) ? body.returnUrl : 'https://voca.study/video';
         const cancelUrl = isValidRedirectUrl(body.cancelUrl) ? body.cancelUrl : 'https://voca.study/video';

@@ -390,6 +390,26 @@ test('English captions mislabeled Korean are rejected before refresh and never r
     assert.deepEqual(writes, []);
 });
 
+for (const [label, status] of [['documented empty response', 206], ['explicit absence code', 404]]) {
+    test(`Supadata ${label} returns NO_NATIVE through the native-only endpoint`, async t => {
+        const f = await endpoint(t, { supadata: url => {
+            assert.equal(url.pathname, '/v1/transcript');
+            assert.equal(url.searchParams.get('url'), `https://www.youtube.com/watch?v=${f.videoId}`);
+            assert.equal(url.searchParams.get('lang'), 'ko');
+            assert.equal(url.searchParams.get('mode'), 'native');
+            assert.equal(url.searchParams.get('text'), 'false');
+            return status === 206
+                ? new Response(null, { status })
+                : Response.json({ error: 'transcript-unavailable' }, { status });
+        } });
+        const response = await f.invoke({ preferAI: false, lang: 'ko' });
+        assert.equal(response.status, 200);
+        assert.equal(response.body.errorCode, 'NO_NATIVE');
+        assert.equal(f.sqlite.prepare('SELECT count(*) AS n FROM no_transcript_cache').get().n, 1);
+        assert.equal(f.providerPosts(), 0);
+    });
+}
+
 for (const [label, supadata] of [
     ['broken advertised captions', () => Response.json({
         lang: 'ko', availableLangs: ['ko', 'en'],
@@ -399,7 +419,9 @@ for (const [label, supadata] of [
         availableLangs: ['ko'],
         content: [{ text: '한국어', offset: 0, duration: 1000 }]
     })],
-    ['provider outage', () => new Response(null, { status: 503 })]
+    ['provider outage', () => new Response(null, { status: 503 })],
+    ['generic provider 404', () => Response.json({ error: 'not-found' }, { status: 404 })],
+    ['provider job without captions', () => Response.json({ jobId: 'fixture' }, { status: 202 })]
 ]) {
     test(`${label} returns a retryable failure without negative caching`, async t => {
         const f = await endpoint(t, { supadata });

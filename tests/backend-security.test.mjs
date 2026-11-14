@@ -2227,3 +2227,353 @@ test('video-level normalizer: auto-normalizes range strings and camelCase tier',
   assert.equal(normalizeIncomingTier('invalid_tier'), null);
 });
 
+test('addSubLanguage: CAS retry preserves concurrently written languages', async () => {
+  const { addSubLanguage } = await import('../functions-src/data/video-info-db.js');
+
+  let storedSubLanguages = '[]';
+  let updateAttempts = 0;
+
+  const mockDb = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async first() {
+              if (sql.includes('SELECT sub_languages FROM video_languages')) {
+                return { sub_languages: storedSubLanguages };
+              }
+              return null;
+            },
+            async run() {
+              if (sql.includes('UPDATE video_languages')) {
+                updateAttempts++;
+                const [nextJson, _videoId, expectedPrev] = args;
+                // Simulate concurrent writer adding 'en' before our first UPDATE commits
+                if (updateAttempts === 1) {
+                  storedSubLanguages = JSON.stringify(['en']);
+                }
+                if (storedSubLanguages !== expectedPrev) {
+                  return { success: true, meta: { changes: 0 } };
+                }
+                storedSubLanguages = nextJson;
+                return { success: true, meta: { changes: 1 } };
+              }
+              return { success: true, meta: { changes: 1 } };
+            }
+          };
+        }
+      };
+    }
+  };
+
+  await addSubLanguage(mockDb, 'dQw4w9WgXcQ', 'ja');
+  assert.equal(updateAttempts, 2, 'Should retry CAS UPDATE after concurrent conflict');
+  assert.deepEqual(JSON.parse(storedSubLanguages), ['en', 'ja'], 'Must retain concurrently added language');
+});
+
+test('CacheManager.getOrFetch: coalesces concurrent cold cache misses within isolate', async () => {
+  const { CacheManager } = await import('../functions-src/utils/cache-manager.js');
+
+  let fetchCount = 0;
+  let putCount = 0;
+  const tasks = [];
+  const kv = {
+    async get() { return null; },
+    async put() { putCount++; }
+  };
+  const context = { waitUntil(p) { tasks.push(p); } };
+  const cache = new CacheManager(kv);
+  const key = `coalesce-${crypto.randomUUID()}`;
+
+  const [r1, r2, r3] = await Promise.all([
+    cache.getOrFetch(context, key, async () => {
+      fetchCount++;
+      await new Promise(resolve => setTimeout(resolve, 15));
+      return { value: 42 };
+    }),
+    cache.getOrFetch(context, key, async () => {
+      fetchCount++;
+      return { value: 99 };
+    }),
+    cache.getOrFetch(context, key, async () => {
+      fetchCount++;
+      return { value: 100 };
+    })
+  ]);
+
+  await Promise.allSettled(tasks);
+  assert.equal(fetchCount, 1, 'Concurrent cold misses must coalesce into one upstream fetch');
+  assert.equal(putCount, 1, 'Coalesced miss must trigger at most one KV write');
+  assert.deepEqual(r1.data, { value: 42 });
+  assert.deepEqual(r2.data, { value: 42 });
+  assert.deepEqual(r3.data, { value: 42 });
+});
+
+test('tokenize-batch: isolates per-caller abort signal and rate limit from shared in-flight batch', async () => {
+  const { onRequest } = await import('../functions-src/api/tokenize-batch/[lang].js');
+
+  const controllerA = new AbortController();
+  let kvGets = 0;
+  const mockKv = {
+    async get() {
+      kvGets++;
+      if (kvGets === 1) {
+        // Abort Caller A right after initial checks while concurrent Caller B still runs
+        setTimeout(() => controllerA.abort(), 5);
+      }
+      await new Promise(resolve => setTimeout(resolve, 15));
+      return null;
+    },
+    async put() {}
+  };
+
+  const payload = { videoId: 'isoTestVid1', texts: ['Hello world from Voca!'] };
+  const reqA = new Request('https://voca.study/api/tokenize-batch/en', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'CF-Connecting-IP': '198.51.100.21' },
+    body: JSON.stringify(payload),
+    signal: controllerA.signal
+  });
+  const reqB = new Request('https://voca.study/api/tokenize-batch/en', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'CF-Connecting-IP': '198.51.100.22' },
+    body: JSON.stringify(payload)
+  });
+
+  const env = { TRANSCRIPT_CACHE: mockKv };
+  const [resA, resB] = await Promise.all([
+    onRequest({ request: reqA, params: { lang: 'en' }, env, waitUntil() {} }),
+    onRequest({ request: reqB, params: { lang: 'en' }, env, waitUntil() {} })
+  ]);
+
+  assert.equal(resA.status, 499, 'Aborted caller should receive 499');
+  assert.equal(resB.status, 200, 'Concurrent non-aborted caller must still receive 200');
+  const bodyB = await resB.json();
+  assert.equal(bodyB.tokens.length, 1);
+});
+
+test('verifyTurnstileToken: passes AbortSignal timeout to siteverify fetch', async t => {
+  const { verifyTurnstileToken } = await import('../functions-src/services/turnstile.service.js');
+
+  let capturedSignal = null;
+  t.mock.method(globalThis, 'fetch', async (_url, options) => {
+    capturedSignal = options?.signal;
+    return Response.json({ success: true });
+  });
+
+  const result = await verifyTurnstileToken('valid-token', 'prod-secret', '1.1.1.1', 'production');
+  assert.equal(result.valid, true);
+  assert.ok(capturedSignal instanceof AbortSignal, 'siteverify fetch must configure an AbortSignal timeout');
+});
+
+test('saveVideoLanguages: atomically unions JSON arrays on conflict, recovers invalid JSON, and invalidates recommendation cache', async t => {
+  let DatabaseSync;
+  try { ({ DatabaseSync } = await import('node:sqlite')); } catch { return t.skip('node:sqlite unavailable'); }
+  const { saveVideoLanguages, getVideoLanguages, getRecommendedVideosFromCloudflare } = await import('../functions-src/data/video-info-db.js');
+
+  const sqlite = new DatabaseSync(':memory:');
+  t.after(() => sqlite.close());
+  sqlite.exec(`
+    CREATE TABLE video_languages (
+      video_id TEXT PRIMARY KEY,
+      available_languages TEXT NOT NULL,
+      sub_languages TEXT DEFAULT '[]',
+      ai_languages TEXT DEFAULT '[]',
+      has_auto_captions INTEGER DEFAULT 0,
+      duration_seconds INTEGER,
+      duration_source TEXT,
+      title TEXT,
+      channel TEXT,
+      channel_avatar TEXT,
+      levels TEXT DEFAULT '{}',
+      category TEXT DEFAULT 'general',
+      category_source TEXT,
+      metadata_source TEXT,
+      tags TEXT DEFAULT '[]',
+      created_at INTEGER DEFAULT (strftime('%s', 'now')),
+      updated_at INTEGER DEFAULT (strftime('%s', 'now'))
+    )
+  `);
+
+  let injectConcurrentUpdate = false;
+  const db = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async first() { return sqlite.prepare(sql).get(...args) ?? null; },
+            async all() { return { results: sqlite.prepare(sql).all(...args), success: true }; },
+            async run() {
+              if (injectConcurrentUpdate && sql.includes('INSERT INTO video_languages')) {
+                injectConcurrentUpdate = false;
+                // Simulate another isolate committing between our read and ON CONFLICT write
+                sqlite.prepare(`
+                  UPDATE video_languages
+                  SET available_languages = '["en","ja"]',
+                      sub_languages = '["en","ja"]',
+                      tags = '["travel","food"]'
+                  WHERE video_id = ?
+                `).run(args[0]);
+              }
+              const info = sqlite.prepare(sql).run(...args);
+              return { success: true, meta: { changes: Number(info.changes) } };
+            }
+          };
+        }
+      };
+    }
+  };
+
+  await saveVideoLanguages(db, 'concUnion01', ['en'], 120, 'Japanese food tour', 'Creator', false, null, null, ['en'], 'general', ['travel']);
+
+  // Prime recommendationCandidates cache and confirm HIT before saveVideoLanguages invalidates it
+  const firstMetrics = {};
+  await getRecommendedVideosFromCloudflare(db, null, 'en', 12, null, false, 0, null, { metrics: firstMetrics });
+  assert.equal(firstMetrics.candidateCache, 'MISS');
+  const hitMetrics = {};
+  await getRecommendedVideosFromCloudflare(db, null, 'en', 12, null, false, 0, null, { metrics: hitMetrics });
+  assert.equal(hitMetrics.candidateCache, 'HIT');
+
+  injectConcurrentUpdate = true;
+  await saveVideoLanguages(db, 'concUnion01', ['en', 'ko'], 120, null, null, false, null, null, ['en', 'ko'], 'general', ['vlog']);
+
+  const saved = await getVideoLanguages(db, 'concUnion01');
+  assert.deepEqual(saved.availableLanguages, ['en', 'ja', 'ko'], 'ON CONFLICT union must preserve concurrent available_languages');
+  assert.deepEqual(saved.subLanguages, ['en', 'ja', 'ko'], 'ON CONFLICT union must preserve concurrent sub_languages');
+  assert.deepEqual(saved.tags, ['travel', 'food', 'vlog'], 'ON CONFLICT union must preserve concurrent tags');
+
+  const afterSaveMetrics = {};
+  await getRecommendedVideosFromCloudflare(db, null, 'en', 12, null, false, 0, null, { metrics: afterSaveMetrics });
+  assert.equal(afterSaveMetrics.candidateCache, 'MISS', 'saveVideoLanguages must invalidate recommendationCandidates');
+
+  // Corrupt/NULL/non-array JSON stored in SQLite should recover cleanly on conflict update
+  sqlite.prepare(`
+    UPDATE video_languages
+    SET available_languages = '{bad-json', sub_languages = NULL, tags = '{"not":"array"}'
+    WHERE video_id = 'concUnion01'
+  `).run();
+  await saveVideoLanguages(db, 'concUnion01', ['ja'], null, null, null, false, null, null, ['ja'], 'general', ['recovered']);
+  const recovered = await getVideoLanguages(db, 'concUnion01');
+  assert.deepEqual(recovered.availableLanguages, ['ja']);
+  assert.deepEqual(recovered.subLanguages, ['ja']);
+  assert.deepEqual(recovered.tags, ['recovered']);
+});
+
+test('leaderboard GET: computes accurate out-of-window userRank via indexed D1 COUNT(*)', async t => {
+  let DatabaseSync;
+  try { ({ DatabaseSync } = await import('node:sqlite')); } catch { return t.skip('node:sqlite unavailable'); }
+  const { onRequestGet, SEED_LEADERBOARD } = await import('../functions-src/api/leaderboard.js');
+
+  const sqlite = new DatabaseSync(':memory:');
+  t.after(() => sqlite.close());
+  sqlite.exec(`
+    CREATE TABLE leaderboard (
+      user_id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      avatar TEXT,
+      xp INTEGER DEFAULT 0,
+      weekly_xp INTEGER DEFAULT 0,
+      level INTEGER DEFAULT 1,
+      streak INTEGER DEFAULT 0,
+      badges_count INTEGER DEFAULT 0,
+      target_lang TEXT,
+      country TEXT,
+      updated_at INTEGER DEFAULT (strftime('%s', 'now'))
+    )
+  `);
+
+  const rows = [
+    ['u_rank_1', 'User 1', 20000, 'ja'],
+    ['u_rank_2', 'User 2', 18000, 'ja'],
+    ['u_rank_3', 'User 3', 10000, 'ja'],
+    ['u_rank_4', 'User 4', 5000, 'ja'],
+    ['u_rank_5', 'User 5', 100, 'ja'],
+    ['u_rank_en', 'English Top', 25000, 'en']
+  ];
+  const stmt = sqlite.prepare('INSERT INTO leaderboard (user_id, name, xp, weekly_xp, level, streak, badges_count, target_lang) VALUES (?, ?, ?, ?, 1, 1, 0, ?)');
+  for (const [id, name, xp, lang] of rows) {
+    stmt.run(id, name, xp, xp, lang);
+  }
+
+  const db = {
+    prepare(sql) {
+      return {
+        bind(...args) {
+          return {
+            async first() { return sqlite.prepare(sql).get(...args) ?? null; },
+            async all() { return { results: sqlite.prepare(sql).all(...args), success: true }; }
+          };
+        }
+      };
+    }
+  };
+
+  // Language-filtered all_time with limit=2: only u_rank_1 & u_rank_2 enter topLearners/rawRealUsers,
+  // while 4 real 'ja' users + all 7 'ja' seeds outrank u_rank_5 (xp 100).
+  const resJa = await onRequestGet({
+    request: new Request('https://voca.study/api/leaderboard?lang=ja&period=all_time&limit=2&userId=u_rank_5&refresh=true'),
+    env: { VOCAB_DB: db }
+  });
+  assert.equal(resJa.status, 200);
+  const bodyJa = await resJa.json();
+  const higherJaSeeds = SEED_LEADERBOARD.filter(s => s.target_lang === 'ja' && s.xp > 100).length;
+  assert.equal(bodyJa.userRank?.userId, 'u_rank_5');
+  assert.equal(bodyJa.userRank?.rank, 4 + higherJaSeeds + 1);
+
+  // Global all_time with limit=2: all 5 other real users + all 28 seeds outrank u_rank_5
+  const resAll = await onRequestGet({
+    request: new Request('https://voca.study/api/leaderboard?period=all_time&limit=2&userId=u_rank_5&refresh=true'),
+    env: { VOCAB_DB: db }
+  });
+  assert.equal(resAll.status, 200);
+  const bodyAll = await resAll.json();
+  const higherAllSeeds = SEED_LEADERBOARD.filter(s => s.xp > 100).length;
+  assert.equal(bodyAll.userRank?.rank, 5 + higherAllSeeds + 1);
+});
+
+test('DiamondService.consumeDiamond: skips redundant profile read when user.diamonds is pre-populated', async t => {
+  const { DiamondService } = await import('../functions-src/services/diamond.service.js');
+
+  const calls = [];
+  t.mock.method(globalThis, 'fetch', async (url, init) => {
+    calls.push({ url: String(url), method: init?.method || 'GET', body: init?.body ? JSON.parse(init.body) : null });
+    if (String(url).includes('rpc/consume_transcription_credits')) {
+      const reqBody = JSON.parse(init.body);
+      if (reqBody.p_user_id === 'user-insufficient') {
+        return Response.json({ success: false, diamonds: 1, reason: 'insufficient_diamonds' });
+      }
+      return Response.json({ success: true, diamonds: 3, state: 'charged' });
+    }
+    if (String(url).includes('rpc/get_user_access_state')) {
+      return Response.json({ id: 'user-no-balance', diamonds: 5, diamonds_updated_at: new Date().toISOString(), subscription_tier: 'free' });
+    }
+    return new Response(null, { status: 404 });
+  });
+
+  const env = { SUPABASE_URL: 'https://example.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'service-key' };
+  const svc = new DiamondService(null);
+
+  const userWithBalance = { id: 'user-fast', subscriptionTier: 'pro', diamonds: 5 };
+  const resOk = await svc.consumeDiamond('client-1', 2, userWithBalance, env, null, 'job-fast-1');
+  assert.equal(resOk.success, true);
+  assert.equal(resOk.diamonds, 3);
+  assert.equal(userWithBalance.diamonds, 3);
+  assert.equal(calls.length, 1, 'Must only call atomic RPC when user.diamonds is already populated');
+  assert.ok(calls[0].url.includes('rpc/consume_transcription_credits'));
+
+  calls.length = 0;
+  const userLow = { id: 'user-insufficient', subscriptionTier: 'free', diamonds: 1 };
+  const resLow = await svc.consumeDiamond('client-2', 2, userLow, env, null, 'job-fast-2');
+  assert.equal(resLow.success, false);
+  assert.equal(resLow.reason, 'insufficient_diamonds');
+  assert.equal(resLow.diamonds, 1);
+  assert.equal(calls.length, 1, 'Must still skip access-state RPC on rejection when user.diamonds is present');
+
+  calls.length = 0;
+  const userWithoutBalance = { id: 'user-no-balance', subscriptionTier: 'free' };
+  await svc.consumeDiamond('client-3', 1, userWithoutBalance, env, null, 'job-slow-3');
+  assert.equal(calls.length, 2, 'Falls back to fetching access state before RPC when user.diamonds is absent');
+  assert.ok(calls[0].url.includes('rpc/get_user_access_state'));
+});
+
+

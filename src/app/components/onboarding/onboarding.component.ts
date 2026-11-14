@@ -109,13 +109,14 @@ export class OnboardingComponent implements OnInit, OnDestroy {
         this.settings.settings().showDualSubtitles ?? true
     );
 
-    /** Available translation languages matching app UI locales */
+    /** Available translation languages matching supported dual subtitle targets */
     readonly translationLanguages = [
         { code: 'vi' as const, name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '/flags/vn.svg' },
         { code: 'en' as const, name: 'English', nativeName: 'English', flag: '/flags/gb.svg' },
         { code: 'ja' as const, name: 'Japanese', nativeName: '日本語', flag: '/flags/jp.svg' },
         { code: 'ko' as const, name: 'Korean', nativeName: '한국어', flag: '/flags/kr.svg' },
-        { code: 'zh' as const, name: 'Chinese', nativeName: '中文', flag: '/flags/cn.svg' }
+        { code: 'zh' as const, name: 'Chinese', nativeName: '中文', flag: '/flags/cn.svg' },
+        { code: 'ru' as const, name: 'Russian', nativeName: 'Русский', flag: '/flags/ru.svg' }
     ];
 
     /** Touch gesture coordinates for swipe navigation */
