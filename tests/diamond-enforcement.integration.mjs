@@ -491,6 +491,26 @@ test('R2 rejects conflicting stored language and malformed cached cues', async (
     assert.equal(await getTranscriptFromR2(bucket, 'dQw4w9WgXcQ', 'ko'), null);
 });
 
+test('a cold lookup recovers from a transient timeout with one Supadata key', async t => {
+    let attempts = 0;
+    const f = await endpoint(t, {
+        supadata: () => {
+            if (++attempts === 1) throw new DOMException('Timed out', 'TimeoutError');
+            return Response.json({
+                lang: 'en',
+                availableLangs: ['en'],
+                content: [{ text: 'Recovered native captions.', offset: 0, duration: 1000 }]
+            });
+        }
+    });
+    const response = await f.invoke({ preferAI: false });
+    assert.equal(response.status, 200);
+    assert.equal(response.body.source, 'native');
+    assert.equal(response.body.segments[0].text, 'Recovered native captions.');
+    assert.equal(attempts, 2);
+    assert.equal(f.providerPosts(), 0);
+});
+
 test('refresh uses saved captions after one provider timeout', async t => {
     const f = await endpoint(t, {
         cached: 'supadata',

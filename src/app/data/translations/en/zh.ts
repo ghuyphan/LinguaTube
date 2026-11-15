@@ -2113,5 +2113,1545 @@ export const GRAMMAR_EN_ZH: Record<string, GrammarTranslation> = {
         "translation": "这项研究探讨了社交媒体如何对行为产生影响。"
       }
     ]
+  },
+  "en_a1_25": {
+    "title": "Let's + 动词原形（提出共同建议）",
+    "shortExplanation": "用于邀请对方和自己一起做某事。",
+    "longExplanation": "“Let's”是“Let us”的缩写，后面必须接动词原形（不加 to 或 -ing）。否定形式用“Let's not + 动词原形”，表示“我们别……”。",
+    "formation": "Let's (+ not) + 动词原形",
+    "examples": [
+      {
+        "translation": "下一课开始前我们先休息一会儿吧。"
+      },
+      {
+        "translation": "我们别再等了，火车五分钟后就要开了。"
+      }
+    ]
+  },
+  "en_a1_26": {
+    "title": "How about / What about + 名词 / V-ing?（友好提议）",
+    "shortExplanation": "用于轻松提出建议、备选方案或询问对方意见。",
+    "longExplanation": "日常对话中，“How about...?”与“What about...?”后面接名词、代词或动词 -ing 形式。“What about you?”也常用来反问对方“你呢？”。",
+    "formation": "How about / What about + 名词 / 动词 -ing?",
+    "examples": [
+      {
+        "translation": "今晚晚饭点披萨怎么样？"
+      },
+      {
+        "translation": "三点左右在咖啡馆见面如何？"
+      }
+    ]
+  },
+  "en_a1_27": {
+    "title": "Would like (+ to V)（礼貌表达想要或邀请）",
+    "shortExplanation": "比 want 更礼貌地表达自己的需求，或客气地询问对方意愿。",
+    "longExplanation": "在餐厅点餐、商店购物或提出请求时，常用“I'd like”（I would like）代替直接的“I want”。如果后面接动词，必须加上不定式“to”。",
+    "formation": "主语 + would like + 名词 / to + 动词原形",
+    "examples": [
+      {
+        "translation": "请给我来一杯无糖绿茶。"
+      },
+      {
+        "translation": "您想坐在靠窗的位置吗？"
+      }
+    ]
+  },
+  "en_a1_28": {
+    "title": "Be going to + 动词原形（计划与有依据的预测）",
+    "shortExplanation": "表示已经打算好的计划，或根据眼前迹象作出的即将发生的预测。",
+    "longExplanation": "根据主语变化 be 动词（am/is/are），后接“going to + 动词原形”。在日常口语中，“going to”常连读为“gonna”。",
+    "formation": "主语 + am/is/are + going to + 动词原形",
+    "examples": [
+      {
+        "translation": "我打算明天启用一个新的生词本。"
+      },
+      {
+        "translation": "看那些乌云——马上就要下雨了。"
+      }
+    ]
+  },
+  "en_a1_29": {
+    "title": "Want to / Need to + 动词原形（愿望与需要）",
+    "shortExplanation": "直接表达想要做某事（want to）或需要做某事（need to）。",
+    "longExplanation": "接续第二个动作时要用不定式“to + 动词原形”；否定形式用“don't/doesn't want/need to”。在轻松的口语中，“want to”常连读成“wanna”。",
+    "formation": "主语 + want(s) / need(s) + to + 动词原形",
+    "examples": [
+      {
+        "translation": "更改语言后，你需要重启应用。"
+      },
+      {
+        "translation": "我今年想提高自己的听力反应速度。"
+      }
+    ]
+  },
+  "en_a2_27": {
+    "title": "Be able to + 动词原形（全时态的“能够”）",
+    "shortExplanation": "用来代替“can”，尤其用于将来时、完成时或不定式等“can”无法使用的结构中。",
+    "longExplanation": "情态动词 can 只有现在式和过去式，在 will、might、to 或完成时后面需用“be able to”。表示过去某次具体情况中“设法做到了某事”时，“was/were able to”也比“could”更地道。",
+    "formation": "主语 + be 动词（随时间变化）+ able to + 动词原形",
+    "examples": [
+      {
+        "translation": "每天练习的话，你就能听懂母语者的播客了。"
+      },
+      {
+        "translation": "幸运的是，我们在演示前成功修复了这个故障。"
+      }
+    ]
+  },
+  "en_a2_28": {
+    "title": "Have to / Don't have to（客观必须 vs 不必）",
+    "shortExplanation": "“have to”表示规则或外界要求必须做；“don't have to”表示“没必要”，而非禁止。",
+    "longExplanation": "否定含义差别很大：“mustn't”是“严禁做”，而“don't have to”则是“不必做，做不做由你决定”。",
+    "formation": "主语 + (don't/doesn't/didn't) + have to + 动词原形",
+    "examples": [
+      {
+        "translation": "我们必须把这张表里的每个单词都背下来吗？"
+      },
+      {
+        "translation": "你不用马上付款，第一周是免费的。"
+      }
+    ]
+  },
+  "en_a2_29": {
+    "title": "Too + 形容词/副词 + to V（太……而不能……）",
+    "shortExplanation": "表示程度超出限度，导致后面的动作无法实现。",
+    "longExplanation": "该句型本身带有否定结果含义。如果需要说明针对谁，可在“to + 动词”前加入“for + 宾语”。",
+    "formation": "too + 形容词/副词 + (for + 宾语) + to + 动词原形",
+    "examples": [
+      {
+        "translation": "这个箱子太重了，我一个人搬不上楼。"
+      },
+      {
+        "translation": "他说得太快，初学者听不清每一句话。"
+      }
+    ]
+  },
+  "en_a2_30": {
+    "title": "形容词/副词 + enough + to V（足够……可以……）",
+    "shortExplanation": "表示达到所需程度，足以完成后面的动作。",
+    "longExplanation": "注意词序！修饰形容词或副词时，“enough”放在后面（如 warm enough）；修饰名词时通常放在名词前面（如 enough time）。",
+    "formation": "形容词/副词 + enough + (for + 宾语) + to + 动词原形",
+    "examples": [
+      {
+        "translation": "这段音频够清晰，能让你听清声调吗？"
+      },
+      {
+        "translation": "她年纪还不够，还不能独自开车。"
+      }
+    ]
+  },
+  "en_a2_31": {
+    "title": "关联连词（Both...and / Either...or / Neither...nor）",
+    "shortExplanation": "将两个对等成分成对连接，分别表示“两者都”“二者择一”或“两者都不”。",
+    "longExplanation": "“Both A and B”作主语时谓语一律用复数；“Either A or B”和“Neither A nor B”采用就近原则，与 B 保持单复数一致。“neither...nor”本身已含否定，不要再加 not。",
+    "formation": "Both A and B / Either A or B / Neither A nor B",
+    "examples": [
+      {
+        "translation": "要么你今天交初稿，要么我们推迟发布。"
+      },
+      {
+        "translation": "汤姆和莎拉都不知道会议已经改到线上了。"
+      }
+    ]
+  },
+  "en_a2_32": {
+    "title": "Make / Let + 宾语 + 动词原形（使役与允许）",
+    "shortExplanation": "“make sb do”表示促使、迫使某人产生动作或反应；“let sb do”表示允许某人做某事。",
+    "longExplanation": "在主动语态中，第二个动词前绝不加“to”（说“let me explain”，不能说“let me to explain”），这与需要“to”的“allow sb to do”不同。",
+    "formation": "主语 + make / let + 宾语 + 动词原形",
+    "examples": [
+      {
+        "translation": "在你做决定前，请让我解释一下发生了什么。"
+      },
+      {
+        "translation": "那个突如其来的反转令全场观众倒吸一口凉气。"
+      }
+    ]
+  },
+  "en_a2_33": {
+    "title": "Each other / One another（相互代词：彼此）",
+    "shortExplanation": "表示两个或多人之间互相施受的动作。",
+    "longExplanation": "不要与反身代词“themselves”（各自对各自）混淆。传统语法中“each other”多指两人，“one another”多指三人及以上，现代口语中常可互换。",
+    "formation": "复数主语 + 动词 (+ 介词) + each other / one another",
+    "examples": [
+      {
+        "translation": "好的语伴总是会友善地互相纠正错误。"
+      },
+      {
+        "translation": "他们自大学毕业后就一直没见过彼此。"
+      }
+    ]
+  },
+  "en_a2_34": {
+    "title": "As soon as + 从句（一……就……）",
+    "shortExplanation": "连接两个紧接着发生的动作，前一件事刚结束，后一件事立刻发生。",
+    "longExplanation": "即使谈论将来，时间状语从句“as soon as”内部也要用一般现在时表示将来，而不用“will”（说“as soon as I land”，不说“will land”）。",
+    "formation": "主句 + as soon as + 主语 + 动词（一般现在时/过去时）",
+    "examples": [
+      {
+        "translation": "你安全到家后马上给我发消息。"
+      },
+      {
+        "translation": "字幕一加载出来，她就开始跟读了。"
+      }
+    ]
+  },
+  "en_a2_35": {
+    "title": "So + 形容词/副词 + that + 从句（如此……以至于……）",
+    "shortExplanation": "说明某种性质或状态达到很高程度，从而引发明显的结果。",
+    "longExplanation": "注意与修饰名词短语的“such + (a/an) + 名词 + that”区分。口语中常可省略“that”。",
+    "formation": "so + 形容词/副词 + (that) + 结果从句",
+    "examples": [
+      {
+        "translation": "我太累了，片头还没放完就睡着了。"
+      },
+      {
+        "translation": "他把这个习语解释得非常清楚，大家都听懂并笑了起来。"
+      }
+    ]
+  },
+  "en_b1_28": {
+    "title": "Had better + 动词原形（强烈建议/警告：最好……）",
+    "shortExplanation": "提出紧迫的建议或提醒，常隐含“不这样做就会带来麻烦”的意味。",
+    "longExplanation": "虽然带有“had”，但它指代现在或眼前的将来，口语中常缩写为“'d better”。否定形式必须是“had better not + 动词原形”。",
+    "formation": "主语 + had better ('d better) (+ not) + 动词原形",
+    "examples": [
+      {
+        "translation": "在更新设置前，你最好先存一份备份。"
+      },
+      {
+        "translation": "明天要考试了，我们今晚最好别在外面待太晚。"
+      }
+    ]
+  },
+  "en_b1_29": {
+    "title": "Would rather + 动词原形 (+ than)（宁愿……而不……）",
+    "shortExplanation": "表达在具体情境下更倾向于做某事，而非另一种选择。",
+    "longExplanation": "“would rather（'d rather）”后直接接动词原形（不带 to）。引出对比项时用“than + 动词原形”；委婉拒绝时用“would rather not + 动词原形”。",
+    "formation": "主语 + would rather ('d rather) (+ not) + 动词原形 (+ than + 动词原形)",
+    "examples": [
+      {
+        "translation": "我宁愿开着目标语言字幕看视频，也不想只看摘要。"
+      },
+      {
+        "translation": "谢谢邀请，不过我今晚更想待在家里。"
+      }
+    ]
+  },
+  "en_b1_30": {
+    "title": "Be supposed to + 动词原形（按理应当 / 原定……）",
+    "shortExplanation": "表示按规定、安排或常理应当做的事，常暗含实际情况并非如此。",
+    "longExplanation": "现在时表示职责、规则或普遍评价；过去式“was/were supposed to”通常暗示原本计划好却最终没能如期发生。",
+    "formation": "主语 + be 动词 + supposed to + 动词原形",
+    "examples": [
+      {
+        "translation": "按要求你应该在周五中午前提交摘要。"
+      },
+      {
+        "translation": "我们的航班原定一小时前就该降落了。"
+      }
+    ]
+  },
+  "en_b1_31": {
+    "title": "Be allowed to + 动词原形（获准 / 被允许做某事）",
+    "shortExplanation": "在包括将来时和过去时在内的所有时态中表达规章或他人的许可。",
+    "longExplanation": "就像“be able to”补全“can”的时态一样，“be allowed to”可自由搭配将来时和完成时；否定形式“aren't allowed to”常用来明示禁令。",
+    "formation": "主语 + be 动词 (+ not) + allowed to + 动词原形",
+    "examples": [
+      {
+        "translation": "展馆内不允许游客使用闪光灯拍照。"
+      },
+      {
+        "translation": "学生们将被允许带词典参加这次考试吗？"
+      }
+    ]
+  },
+  "en_b1_32": {
+    "title": "Be / Get used to + 名词 / V-ing（习惯于 / 逐渐适应）",
+    "shortExplanation": "“be used to”表示已经习以为常；“get used to”表示逐步适应的过程。",
+    "longExplanation": "核心易错点：这里的“to”是介词，后面只能接名词或动名词（V-ing），绝不能接动词原形。注意区别于表示过去习惯的“used to + 动词原形”。",
+    "formation": "主语 + be / get + used to + 名词 / 动词 -ing",
+    "examples": [
+      {
+        "translation": "花了一个月时间，我终于逐渐习惯听快语速的英语了。"
+      },
+      {
+        "translation": "她早已习惯在紧凑的截止日期下工作。"
+      }
+    ]
+  },
+  "en_b1_33": {
+    "title": "By the time + 从句（到……的时候已经……）",
+    "shortExplanation": "表示在过去或将来的某个时间点之前，另一件事已经完成或形成某种状态。",
+    "longExplanation": "回溯过去时，“by the time + 一般过去时”主句多配过去完成时（had + 过去分词）；展望未来时，“by the time + 一般现在时”主句常配将来完成时（will have + 过去分词）。",
+    "formation": "By the time + 从句（现在时/过去时）, 主句（will have / had + 过去分词）",
+    "examples": [
+      {
+        "translation": "等我们赶到电影院时，开场戏已经开始了。"
+      },
+      {
+        "translation": "晚饭做好之前，我应该就把所有词卡复习完了。"
+      }
+    ]
+  },
+  "en_b1_34": {
+    "title": "Prefer A to B / Prefer to V rather than V（更喜欢 A 而非 B）",
+    "shortExplanation": "表达一贯的偏好或习惯性选择。",
+    "longExplanation": "比较两个名词或动名词（V-ing）时，中间用介词“to”而不用“than”（如 prefer tea to coffee）；比较两个动词动作时，使用“prefer to V rather than V”。",
+    "formation": "prefer + 名词/V-ing + to + 名词/V-ing  |  prefer to V + rather than + V",
+    "examples": [
+      {
+        "translation": "比起死记硬背孤立的单词表，我更喜欢听真实的播客。"
+      },
+      {
+        "translation": "她宁愿在家办公，也不想每天花两小时通勤。"
+      }
+    ]
+  },
+  "en_b1_35": {
+    "title": "Get + 某人 + to + 动词原形（劝说、请托某人做某事）",
+    "shortExplanation": "表示设法说服、请动或安排某人去做某件事。",
+    "longExplanation": "对比三大主动使役结构：“make/have sb do”不带 to，而“get sb to do”必须保留“to”。",
+    "formation": "主语 + get + 某人 + to + 动词原形",
+    "examples": [
+      {
+        "translation": "你是怎么说动你哥哥来帮忙剪辑视频的？"
+      },
+      {
+        "translation": "我终于让发音教练把播放速度放慢了。"
+      }
+    ]
+  },
+  "en_b2_30": {
+    "title": "Can't help + V-ing（情不自禁 / 忍不住……）",
+    "shortExplanation": "表示无法控制自己去做某事或产生某种情绪。",
+    "longExplanation": "“can't help”（过去式“couldn't help”）后面固定搭配动名词（V-ing），不能接 to 不定式；另有正式一点的同义表达“can't help but + 动词原形”。",
+    "formation": "主语 + can't / couldn't help + 动词 -ing",
+    "examples": [
+      {
+        "translation": "看到猫咪跳上他的键盘时，我忍不住笑出了声。"
+      },
+      {
+        "translation": "她总是情不自禁地注意到电影字幕里的小语法错误。"
+      }
+    ]
+  },
+  "en_b2_31": {
+    "title": "It's no use / There's no point (in) + V-ing（做某事没用）",
+    "shortExplanation": "表示某项举动毫无益处，只会白费力气或时间。",
+    "longExplanation": "这两个句型后面都接动名词（V-ing）而不是 to 不定式。“There's no point (in) + V-ing”中的介词“in”可加可不加。",
+    "formation": "It's no use + 动词 -ing  |  There's no point (in) + 动词 -ing",
+    "examples": [
+      {
+        "translation": "为已经改正的错误一直焦虑是没有用的。"
+      },
+      {
+        "translation": "再等下去也没意义了——末班车刚刚开走。"
+      }
+    ]
+  },
+  "en_b2_32": {
+    "title": "Be bound to + 动词原形（注定会 / 肯定会……）",
+    "shortExplanation": "根据事理推断某事几乎必然发生、无可避免。",
+    "longExplanation": "说话人常用来笃定地鼓励他人（如“你肯定会进步”），或指出客观上难免发生的问题。",
+    "formation": "主语 + be 动词 + bound to + 动词原形",
+    "examples": [
+      {
+        "translation": "如果你每天坚持听，水平一定会提高的。"
+      },
+      {
+        "translation": "说一门新语言时，小误会是难免会发生的。"
+      }
+    ]
+  },
+  "en_b2_33": {
+    "title": "Be about to + 动词原形（正要 / 即将……）",
+    "shortExplanation": "说明某事在几秒钟内或下一刻马上就要发生。",
+    "longExplanation": "不能搭配“next week”之类较远的时间状语，专指眼前的紧迫瞬间（常搭配“just”）。否定式“not about to”有时习语化地表示“绝不打算……”。",
+    "formation": "主语 + be 动词 (+ just) + about to + 动词原形",
+    "examples": [
+      {
+        "translation": "等一下——直播马上就要开始了！"
+      },
+      {
+        "translation": "你打来电话时，我正准备给你发消息呢。"
+      }
+    ]
+  },
+  "en_b2_34": {
+    "title": "The + 比较级, the + 比较级（越……越……）",
+    "shortExplanation": "表达两件事物相互关联、成比例递增或递减的关系。",
+    "longExplanation": "前后两部分均以“The + 比较级”开头；简短格言中也常见“The sooner, the better（越快越好）”等省略主谓的用法。",
+    "formation": "The + 比较级 (+ 主语 + 谓语), the + 比较级 (+ 主语 + 谓语)",
+    "examples": [
+      {
+        "translation": "你大声朗读得越多，说话的节奏感就越自然。"
+      },
+      {
+        "translation": "我们越早开始准备，截止日期前感受到的压力就越小。"
+      }
+    ]
+  },
+  "en_b2_35": {
+    "title": "No matter + 疑问词（无论…… / 不管……）",
+    "shortExplanation": "无论条件、程度、人物或时间如何变化，主句的结果都不受影响。",
+    "longExplanation": "“no matter”可搭配 how、what、who、where、when，相当于“however / whatever”等让步引导词；从句中通常用一般现在时表示将来。",
+    "formation": "No matter + 疑问词 (+ 形容词/副词) + 主语 + 谓语",
+    "examples": [
+      {
+        "translation": "不管那一周有多忙，试着复习十张词卡。"
+      },
+      {
+        "translation": "不管几点，随时马上给我打电话。"
+      }
+    ]
+  },
+  "en_b2_36": {
+    "title": "Have / Get + 宾语 + 过去分词（请人做某事 / 遭遇不幸）",
+    "shortExplanation": "表示委托他人为自己提供修理等服务，或自己名下物品遭遇意外损失。",
+    "longExplanation": "宾语与后面动作呈被动关系，因此末尾必须用过去分词（V3）。日常口语中用“get”比“have”更随意自然。",
+    "formation": "主语 + have / get + 宾语 + 过去分词 (V3)",
+    "examples": [
+      {
+        "translation": "我们自驾游之前，我得找人把车修好。"
+      },
+      {
+        "translation": "她在拥挤的车站被人偷走了护照。"
+      }
+    ]
+  },
+  "en_c1_18": {
+    "title": "Not until ... + 倒装（直到……才……）",
+    "shortExplanation": "戏剧性地强调某件事直到某个关键时刻之后才最终发生或被察觉。",
+    "longExplanation": "注意倒装位置：“until”引导的时间短语或从句本身不倒装，只将后面的【主句】助动词（did/had/could）提前到主语之前。",
+    "formation": "Not until + 时间/从句 + 助动词 + 主语 + 动词",
+    "examples": [
+      {
+        "translation": "直到重新播放那段视频，她才察觉到那个巧妙的双关语。"
+      },
+      {
+        "translation": "直到半夜，街上的喧闹声才终于平息下来。"
+      }
+    ]
+  },
+  "en_c1_19": {
+    "title": "Little did + 主语 + know / realize（毫不知情 / 殊不知……）",
+    "shortExplanation": "叙事句型，戏剧性地烘托出当事人当时对即将到来的转折一无所知。",
+    "longExplanation": "否定副词“Little”置于句首触发部分倒装（did + 主语 + 动词原形），常用于纪录片、故事讲述与视频解说。",
+    "formation": "Little + did/does + 主语 + know / realize (+ that + 从句)",
+    "examples": [
+      {
+        "translation": "他当时绝不会想到，一段十分钟的视频竟会开启他的职业生涯。"
+      },
+      {
+        "translation": "他们全然没有意识到截止日期正飞快临近。"
+      }
+    ]
+  },
+  "en_c1_20": {
+    "title": "No sooner ... than / Hardly ... when（刚一……就……）",
+    "shortExplanation": "强调前一个动作刚刚结束，紧接着立刻发生下一件事。",
+    "longExplanation": "必须严格配对：“No sooner”固定搭配“than”，“Hardly/Scarcely”固定搭配“when”，且句首之后倒装为“had + 主语 + 过去分词”。",
+    "formation": "No sooner had S V3 than S V2  |  Hardly had S V3 when S V2",
+    "examples": [
+      {
+        "translation": "我们刚坐下准备吃饭，电话就响了起来。"
+      },
+      {
+        "translation": "演讲者刚把主题介绍完，台下就纷纷举起手来。"
+      }
+    ]
+  },
+  "en_c1_21": {
+    "title": "Were + 主语 + to + 动词原形（正式虚拟条件倒装）",
+    "shortExplanation": "比“If + 主语 + were to”更正式的书面及商务表达，用于探讨不太可能或假设性的方案。",
+    "longExplanation": "省略连词“if”，将“Were”直接提到主语前，常见于商业提案、学术写作与正式演讲。",
+    "formation": "Were + 主语 + to + 动词原形, 主语 + would/could/might + 动词原形",
+    "examples": [
+      {
+        "translation": "倘若我们接受那份提议，就需要扩充团队人手。"
+      },
+      {
+        "translation": "倘若平台取消离线缓存，通勤用户将会十分不便。"
+      }
+    ]
+  },
+  "en_c1_22": {
+    "title": "But for + 名词短语（要不是 / 如果没有……）",
+    "shortExplanation": "比“Without”更书面、比“If it hadn't been for”更精炼的虚拟条件表达。",
+    "longExplanation": "“But for”后接名词短语，主句配虚拟语气“would / would have + 过去分词”，常用来表达感激或点明关键因素。",
+    "formation": "But for + 名词短语, 主语 + would (have) + 动词/过去分词",
+    "examples": [
+      {
+        "translation": "要不是你及时发来提醒，我就走错房间了。"
+      },
+      {
+        "translation": "若没有社区持续不断的反馈，这个项目恐怕早就停滞了。"
+      }
+    ]
+  },
+  "en_c2_21": {
+    "title": "修辞性让步与高度概括（Be that as it may / Suffice it to say）",
+    "shortExplanation": "高阶话语衔接套语，用于委婉让步后拉回主旨，或略过细节直接点明要害。",
+    "longExplanation": "“Be that as it may（即便如此）”先承认前文事实再转回核心立场；“Suffice it to say（简而言之 / 只需说明一点）”用于精炼收束，直奔结论。",
+    "formation": "Be that as it may, + 主句  |  Suffice it to say, + 核心总结句",
+    "examples": [
+      {
+        "translation": "时间表看似紧张；即便如此，我们的整个团队已准备就绪。"
+      },
+      {
+        "translation": "简而言之，听完那场主旨演讲后，没有一个人不深受鼓舞。"
+      }
+    ]
+  },
+  "en_a2_36": {
+    "title": "wake up（醒来 / 叫醒）",
+    "shortExplanation": "从睡眠中醒来，或把某人叫醒。",
+    "longExplanation": "叫醒别人时可将代词放在中间（“wake me up”）；也可引申为清醒过来。",
+    "formation": "Subject + wake (sb) up",
+    "examples": [
+      {
+        "translation": "我通常七点左右醒来，然后去煮咖啡。"
+      },
+      {
+        "translation": "如果我在火车上睡着了，能叫醒我吗？"
+      }
+    ]
+  },
+  "en_a2_37": {
+    "title": "go back（回去 / 回到）",
+    "shortExplanation": "返回原来的地方、时间或谈话中先前提到的内容。",
+    "longExplanation": "后面接地点或话题时常加“to”；习语“go back years”表示“认识很多年”。",
+    "formation": "Subject + go back (+ to + Place/Topic)",
+    "examples": [
+      {
+        "translation": "我们先回到上一张幻灯片看一下。"
+      },
+      {
+        "translation": "她计划下个月回老家。"
+      }
+    ]
+  },
+  "en_a2_38": {
+    "title": "go out（出去玩 / 熄灭 / 约会）",
+    "shortExplanation": "出门社交娱乐、灯光或火熄灭，或与某人交往约会。",
+    "longExplanation": "高频日常短语：根据语境可指外出用餐、停电熄灯或谈恋爱。",
+    "formation": "Subject + go out (+ with + Person)",
+    "examples": [
+      {
+        "translation": "下课后你想不想出去吃面？"
+      },
+      {
+        "translation": "暴风雨期间，所有路灯突然都灭了。"
+      }
+    ]
+  },
+  "en_a2_39": {
+    "title": "come on（快点/加油 / 得了吧 / 启动）",
+    "shortExplanation": "催促鼓励别人（快点！）、表示难以置信（得了吧！），或灯光/节目开始运作。",
+    "longExplanation": "影视和日常视频里极高频的口语感叹词，需结合语气分辨鼓励还是吐槽。",
+    "formation": "Come on! / Subject + come on",
+    "examples": [
+      {
+        "translation": "快点啦，我们要错过开场预告片了！"
+      },
+      {
+        "translation": "拜托，你不会真信那个谣言吧？"
+      }
+    ]
+  },
+  "en_a2_40": {
+    "title": "look after（照顾 / 照料）",
+    "shortExplanation": "照看人、宠物、植物，或妥善爱护身体与物品。",
+    "longExplanation": "不可拆分的短语动词，宾语一律放在“after”后面（如 look after him），同义于“take care of”。",
+    "formation": "Subject + look after + Noun/Person",
+    "examples": [
+      {
+        "translation": "我这周出差，你能帮我照看一下花草吗？"
+      },
+      {
+        "translation": "熬夜学习时记得爱护好眼睛。"
+      }
+    ]
+  },
+  "en_a2_41": {
+    "title": "look up（查阅 / 好转）",
+    "shortExplanation": "在词典或网上检索单词或信息；作不及物动词时还可表示形势好转。",
+    "longExplanation": "查信息时可拆分（“look it up”）。语言学习场景极高频。",
+    "formation": "Subject + look up + Info  |  look + Info + up",
+    "examples": [
+      {
+        "translation": "只需点击字幕上的任意单词即可立即查词。"
+      },
+      {
+        "translation": "经历寒冷的冬天后，销量终于开始好转了。"
+      }
+    ]
+  },
+  "en_a2_42": {
+    "title": "put on（穿上/戴上 / 播放 / 长胖）",
+    "shortExplanation": "穿戴衣物配件、打开设备播放，或体重增加。",
+    "longExplanation": "与“take off”相反；人称代词必须放中间（“put it on”）。",
+    "formation": "Subject + put on + Noun / Weight / Show",
+    "examples": [
+      {
+        "translation": "戴上耳机，这样你就能听清每一个辅音。"
+      },
+      {
+        "translation": "假期长了一点体重也不用太焦虑。"
+      }
+    ]
+  },
+  "en_a2_43": {
+    "title": "take off（脱掉 / 起飞 / 走红腾飞 / 休假）",
+    "shortExplanation": "脱去衣物鞋帽、飞机起飞、请假，或事业/频道突然大红大紫。",
+    "longExplanation": "作“脱下”讲时可拆分（take it off）；作不及物动词表示起飞或快速成功。",
+    "formation": "Subject + take off (+ Noun)",
+    "examples": [
+      {
+        "translation": "请把湿鞋脱在门口附近。"
+      },
+      {
+        "translation": "那条短视频爆火之后，她的美食频道一下子火了起来。"
+      }
+    ]
+  },
+  "en_a2_44": {
+    "title": "turn on（打开 / 开启）",
+    "shortExplanation": "打开电器、灯光开关或软件某项功能。",
+    "longExplanation": "与“turn off”相反。接代词作宾语时必须放在中间：“turn it on”。",
+    "formation": "Subject + turn on + Device / turn + Device + on",
+    "examples": [
+      {
+        "translation": "如果对话太快，可以打开双语字幕。"
+      },
+      {
+        "translation": "天渐渐黑了，能帮我打开台灯吗？"
+      }
+    ]
+  },
+  "en_a2_45": {
+    "title": "write down（写下 / 记下来）",
+    "shortExplanation": "把文字、号码或想法记录到纸上或笔记里以免忘记。",
+    "longExplanation": "可拆分使用，接代词时用“write them down”。",
+    "formation": "Subject + write down + Noun / write + Noun + down",
+    "examples": [
+      {
+        "translation": "每个视频里都记下两个你听到的新表达。"
+      },
+      {
+        "translation": "等一下，我拿支笔把你的地址记下来。"
+      }
+    ]
+  },
+  "en_a2_46": {
+    "title": "pick up（捡起 / 接某人 / 自然习得 / 加速）",
+    "shortExplanation": "拿起物品、开车接人、在耳濡目染中自然学会，或速度加快。",
+    "longExplanation": "极其高频实用的短语动词！外语学习里常说“pick up idioms naturally”（自然而然习得习语）。",
+    "formation": "Subject + pick up + Noun / Speed / Skill",
+    "examples": [
+      {
+        "translation": "光听真实对话就能自然掌握地道语调节奏。"
+      },
+      {
+        "translation": "我七点钟到车站外面接你。"
+      }
+    ]
+  },
+  "en_a2_47": {
+    "title": "grow up（长大 / 成长 / 成熟）",
+    "shortExplanation": "从孩童逐渐成长为成年人，或指心智变得成熟。",
+    "longExplanation": "不及物动词，后面不接宾语。要区分“grow up（自己长大）”和“bring up（抚养孩子长大）”。",
+    "formation": "Subject + grow up",
+    "examples": [
+      {
+        "translation": "她从小在家里同时说着越南语和英语长大。"
+      },
+      {
+        "translation": "该成熟起来，为自己的选择负责了。"
+      }
+    ]
+  },
+  "en_b1_36": {
+    "title": "find out（查明 / 发现真相 / 得知）",
+    "shortExplanation": "通过询问、查看或调查得知原先不知道的事实或信息。",
+    "longExplanation": "区别于找东西的“find”，“find out”强调发现真相或信息，常接 that/what/who 从句。",
+    "formation": "Subject + find out (+ about + Noun / Clause)",
+    "examples": [
+      {
+        "translation": "看到最后，看看究竟是什么引发了那个故障。"
+      },
+      {
+        "translation": "你最终查出是谁留的那条匿名评论了吗？"
+      }
+    ]
+  },
+  "en_b1_37": {
+    "title": "give up（放弃 / 戒掉）",
+    "shortExplanation": "因困难停止尝试，或彻底戒掉某种习惯。",
+    "longExplanation": "重要语法点：后接动词时必须用动名词 V-ing（“give up trying”），不能用不定式 to V。",
+    "formation": "Subject + give up (+ Noun / V-ing)",
+    "examples": [
+      {
+        "translation": "别因为前几个片段语速快就轻易放弃。"
+      },
+      {
+        "translation": "他三个月前彻底戒掉了含糖饮料。"
+      }
+    ]
+  },
+  "en_b1_38": {
+    "title": "go on（继续 / 发生 / 接着做）",
+    "shortExplanation": "继续当前动作、发生某种情况（What's going on?），或转入下一阶段。",
+    "longExplanation": "注意区分：“go on V-ing”指继续做同一件事；“go on to V”指做完一件事后接着做另一件。",
+    "formation": "Subject + go on (+ V-ing / to + Verb)",
+    "examples": [
+      {
+        "translation": "院子里现在正发生什么事呢？"
+      },
+      {
+        "translation": "别停——继续把你的核心想法讲下去！"
+      }
+    ]
+  },
+  "en_b1_39": {
+    "title": "hold on（等一下 / 抓紧）",
+    "shortExplanation": "（尤其在通话或对话中）稍等片刻，或紧紧抓住某物不放。",
+    "longExplanation": "表示“抓住某物”时后面要加介词“to”（“hold on to the handrail”）。",
+    "formation": "Hold on (+ a second) / Subject + hold on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "等一下——我把字幕重新打开。"
+      },
+      {
+        "translation": "在出站前请抓紧你的车票，别弄丢了。"
+      }
+    ]
+  },
+  "en_b1_40": {
+    "title": "keep on（坚持继续 / 不断做某事）",
+    "shortExplanation": "不顾困难地持续做某事，或某种情况反复不断地发生。",
+    "longExplanation": "后接动词 -ing 形式。相比单纯的 keep，更突出顽强坚持或反复频率。",
+    "formation": "Subject + keep on + V-ing",
+    "examples": [
+      {
+        "translation": "坚持跟读短视频，你的口音会越来越放松自然。"
+      },
+      {
+        "translation": "为什么我的手机老是不断断开蓝牙连接？"
+      }
+    ]
+  },
+  "en_b1_41": {
+    "title": "keep up（跟上 / 保持不掉队）",
+    "shortExplanation": "跟上速度、潮流或他人步伐（常搭配 with），或维持良好的状态与习惯。",
+    "longExplanation": "常用鼓励用语：“Keep it up!”（继续保持/加油！）。",
+    "formation": "Subject + keep up (+ with + Noun/Person)",
+    "examples": [
+      {
+        "translation": "就连母语者有时也得暂停一下才能跟上高速抛梗。"
+      },
+      {
+        "translation": "明天你的连续学习记录就满三十天了——继续保持！"
+      }
+    ]
+  },
+  "en_b1_42": {
+    "title": "break down（抛锚故障 / 情绪崩溃 / 拆解分析）",
+    "shortExplanation": "车辆机器出故障、情绪失控崩溃，或把复杂知识拆分成小块以便理解。",
+    "longExplanation": "在教学视频中，“break something down”极常用来指“把难点逐层拆解”。",
+    "formation": "Subject + break down (+ Noun)",
+    "examples": [
+      {
+        "translation": "我们的大巴在山路半途抛锚了。"
+      },
+      {
+        "translation": "我们把这个长句拆成三个好理解的小意群吧。"
+      }
+    ]
+  },
+  "en_b1_43": {
+    "title": "bring up（提出话题 / 抚养长大）",
+    "shortExplanation": "在谈话中提及某事，或养育孩子成长。",
+    "longExplanation": "可拆分使用（“Don't bring it up”）；注意与不及物的“grow up（长大）”区分。",
+    "formation": "Subject + bring up + Topic/Child",
+    "examples": [
+      {
+        "translation": "她干嘛要在吃午饭时提起那件陈年争执？"
+      },
+      {
+        "translation": "我祖父母在一个海滨小镇把我抚养长大。"
+      }
+    ]
+  },
+  "en_b1_44": {
+    "title": "carry on（继续做 / 坚持下去）",
+    "shortExplanation": "在被打断或遇到波折后，继续做原先的事情。",
+    "longExplanation": "常搭配 V-ing（“carry on talking”）或“with + 名词”。",
+    "formation": "Subject + carry on (+ V-ing / with + Noun)",
+    "examples": [
+      {
+        "translation": "抱歉打断了你——请继续讲你的故事吧。"
+      },
+      {
+        "translation": "喝了一口水后，主持人继续回答问题。"
+      }
+    ]
+  },
+  "en_b1_45": {
+    "title": "carry out（执行 / 开展 / 实施）",
+    "shortExplanation": "具体执行并完成既定的计划、研究、调查、实验或命令。",
+    "longExplanation": "非常常用于“carry out a study / survey / plan / test”等学术和工作搭配中。",
+    "formation": "Subject + carry out + Plan/Task/Study",
+    "examples": [
+      {
+        "translation": "研究人员针对字幕阅读习惯开展了一项大型研究。"
+      },
+      {
+        "translation": "团队一丝不苟地执行了清单上的每一步。"
+      }
+    ]
+  },
+  "en_b1_46": {
+    "title": "catch up（赶上 / 叙旧聊近况 / 补回）",
+    "shortExplanation": "落后后追赶上来，或与老友见面互聊近况。",
+    "longExplanation": "接人或进展时配“with”（catch up with）；接落下的睡眠、剧集、工作时配“on”（catch up on）。",
+    "formation": "Subject + catch up (+ with + Person/Work)",
+    "examples": [
+      {
+        "translation": "改天一起喝杯咖啡好好叙叙旧吧！"
+      },
+      {
+        "translation": "我周日下午一直在补看积压的未读邮件。"
+      }
+    ]
+  },
+  "en_b1_47": {
+    "title": "come across（偶遇 / 偶然发现 / 给人的印象是……）",
+    "shortExplanation": "无意中碰到某人或发现某物；也可表示给人留下某种印象。",
+    "longExplanation": "不可拆分，宾语一律在后；表示印象时常说“come across as + 形容词/名词”。",
+    "formation": "Subject + come across + Noun / Adjective",
+    "examples": [
+      {
+        "translation": "我在看一个旅游 Vlog 时偶然看到一句很棒的习语。"
+      },
+      {
+        "translation": "即使在直播压力下，她给人的印象也非常沉稳。"
+      }
+    ]
+  },
+  "en_b1_48": {
+    "title": "come up（突然发生 / 被提及 / come up with 想出）",
+    "shortExplanation": "事情或问题突然出现、被提到或即将登场；加上“with”则指想出主意或方案。",
+    "longExplanation": "常用区分：something came up（突发状况） vs come up with an idea（想出点子）。",
+    "formation": "Subject + come up (+ with + Idea)",
+    "examples": [
+      {
+        "translation": "公司临时出了急事，所以我得早点走。"
+      },
+      {
+        "translation": "你能用这个短语想出两个例句吗？"
+      }
+    ]
+  },
+  "en_b1_49": {
+    "title": "count on（指望 / 信赖 / 依靠）",
+    "shortExplanation": "完全信任并依靠某人或期待某事按预期发生。",
+    "longExplanation": "不可拆分；含义接近“rely on”，但口语色彩更亲切地道。",
+    "formation": "Subject + count on + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "遇到难懂的台词时，你随时可以找我帮忙。"
+      },
+      {
+        "translation": "四月份户外野餐别太指望天气会一直完美。"
+      }
+    ]
+  },
+  "en_b1_50": {
+    "title": "cut down（削减 / 减少摄入或开销）",
+    "shortExplanation": "减少某物的数量、频率或开支（如咖啡因、熬夜、费用）。",
+    "longExplanation": "表示减少习惯性消耗时，习惯搭配介词“on”：“cut down on + 名词”。",
+    "formation": "Subject + cut down (+ on + Noun)",
+    "examples": [
+      {
+        "translation": "我正在努力减少睡前深夜刷手机的时间。"
+      },
+      {
+        "translation": "关闭自动播放有助于减少浪费在屏幕上的时间。"
+      }
+    ]
+  },
+  "en_b1_51": {
+    "title": "cut off（打断说话 / 切断供应 / 隔绝）",
+    "shortExplanation": "粗鲁或意外地打断他人发言、切断水电通信，或使某地与外界隔绝。",
+    "longExplanation": "可拆分使用（“cut me off”）；也常以被动语态出现。",
+    "formation": "Subject + cut off + Noun / cut + Noun + off",
+    "examples": [
+      {
+        "translation": "抱歉，我的麦克风刚才断了五秒——你们听到了吗？"
+      },
+      {
+        "translation": "请别在她还没说完前打断她。"
+      }
+    ]
+  },
+  "en_b1_52": {
+    "title": "deal with（处理 / 应对 / 涉及主题）",
+    "shortExplanation": "解决困难问题、应对客户，或指文章、视频讲述某一主题。",
+    "longExplanation": "不可拆分。既能表达“处理事务”，也常用来说明作品内容主旨。",
+    "formation": "Subject + deal with + Noun",
+    "examples": [
+      {
+        "translation": "每天学习感到倦怠时，你是怎么应对的？"
+      },
+      {
+        "translation": "这集视频的后半部分主要讲礼貌道歉的表达。"
+      }
+    ]
+  },
+  "en_b1_53": {
+    "title": "end up（最终结果却是 / 到头来变成）",
+    "shortExplanation": "经历一番过程后，最终意外陷入某种结果、状态或来到某地。",
+    "longExplanation": "后面接动词时绝不用 to 不定式，只能用 V-ing、介词短语或形容词。",
+    "formation": "Subject + end up + V-ing / Place / Adjective",
+    "examples": [
+      {
+        "translation": "我们坐过站了，结果最后走了二十分钟才走回家。"
+      },
+      {
+        "translation": "他本来只想看一个短视频，结果不知不觉学了一个小时。"
+      }
+    ]
+  },
+  "en_b1_54": {
+    "title": "figure out（想明白 / 弄懂 / 解决）",
+    "shortExplanation": "经过思考琢磨后搞清楚原因，或找出解决棘手问题的办法。",
+    "longExplanation": "可拆分使用（“figure it out”），地道口语中比“solve/understand”更自然。",
+    "formation": "Subject + figure out + Noun/Clause / figure + Noun + out",
+    "examples": [
+      {
+        "translation": "给我五分钟——我来查出音频为什么不同步。"
+      },
+      {
+        "translation": "你最后结合语境弄明白那个习语是什么意思了吗？"
+      }
+    ]
+  },
+  "en_b1_55": {
+    "title": "fit in（融入群体 / 挤出时间或空间）",
+    "shortExplanation": "融入某个圈子或集体，或者在紧凑安排中抽出时间/腾出空间。",
+    "longExplanation": "表示“融入某群体”时常搭配“with”（“fit in with teammates”）。",
+    "formation": "Subject + fit in (+ with + Group/Schedule)",
+    "examples": [
+      {
+        "translation": "哪怕只有专注的十分钟，也能轻松安排进午休时间里。"
+      },
+      {
+        "translation": "她很快就在新工作团队里和大家打成一片。"
+      }
+    ]
+  },
+  "en_b1_56": {
+    "title": "follow up（跟进 / 追查 / 后续衔接）",
+    "shortExplanation": "在初步沟通或行动后再次联系确认进展，或进行后续补充。",
+    "longExplanation": "作动词短语不加连字符（“follow up on”），作定语或名词时写成“follow-up”。",
+    "formation": "Subject + follow up (+ on + Noun / with + Person)",
+    "examples": [
+      {
+        "translation": "如果团队还没回复，我明天早上会再跟进一下。"
+      },
+      {
+        "translation": "她在讲座之后又接着做了五组实用练习。"
+      }
+    ]
+  },
+  "en_b1_57": {
+    "title": "get away（逃离 / 外出度假 / get away with 侥幸逃脱惩罚）",
+    "shortExplanation": "离开脱身、外出度个短假；搭配“with”指做错事却未受追究。",
+    "longExplanation": "三词组合“get away with something”在影视台词中极其高频。",
+    "formation": "Subject + get away (+ from + Place / with + Noun)",
+    "examples": [
+      {
+        "translation": "我们希望这个周末能去海边度个安静的小假。"
+      },
+      {
+        "translation": "你老是跳过复习是不可能一直蒙混过关的！"
+      }
+    ]
+  },
+  "en_b1_58": {
+    "title": "get back（回来 / 稍后回复 / 拿回）",
+    "shortExplanation": "回到住处或原地、查证后再答复某人（get back to sb），或找回丢失的东西。",
+    "longExplanation": "职场与社交高配句：“I'll get back to you”（我稍后回复你）。",
+    "formation": "Subject + get back (+ to + Place/Person)",
+    "examples": [
+      {
+        "translation": "我先核对一下日程，今晚再回复你。"
+      },
+      {
+        "translation": "昨晚你最后几点才回到家？"
+      }
+    ]
+  },
+  "en_b1_59": {
+    "title": "get over（克服 / 痊愈 / 释怀 / 惊叹）",
+    "shortExplanation": "从生病、打击、失望或震惊中恢复过来；也可感叹“简直不敢相信”。",
+    "longExplanation": "不可拆分。感叹句“I can't get over how...”常用来表达欣喜惊艳。",
+    "formation": "Subject + get over + Illness/Setback/Surprise",
+    "examples": [
+      {
+        "translation": "他花了两周才从那场顽固的夏末感冒中恢复过来。"
+      },
+      {
+        "translation": "你的发音进步得太神速了，我到现在还惊叹不已！"
+      }
+    ]
+  },
+  "en_b1_60": {
+    "title": "get through（度过/完成 / 接通电话 / 让某人明白）",
+    "shortExplanation": "熬过难关或做完繁重任务、打通电话，或搭配“to”表示把道理讲通让人听进去。",
+    "longExplanation": "一词多用，从完成任务到通话联络皆可使用。",
+    "formation": "Subject + get through (+ to + Person / Exam/Task)",
+    "examples": [
+      {
+        "translation": "听短播客帮我轻松熬过了漫长的通勤时间。"
+      },
+      {
+        "translation": "我试着打了两次电话，但一直没能接通前台。"
+      }
+    ]
+  },
+  "en_b1_61": {
+    "title": "hand in（上交 / 递交）",
+    "shortExplanation": "把完成的作业、报告、表格或辞呈交到老师、上级或机构手里。",
+    "longExplanation": "可拆分使用（“hand it in”），同义于“turn in”或偏正式的“submit”。",
+    "formation": "Subject + hand in + Homework/Report/Resignation",
+    "examples": [
+      {
+        "translation": "请务必在周五午夜前交作业。"
+      },
+      {
+        "translation": "找到远程办公岗位后，他决定递交辞职信。"
+      }
+    ]
+  },
+  "en_b1_62": {
+    "title": "hang on（稍等一下 / 别挂断 / 抓紧）",
+    "shortExplanation": "比“hold on”更轻松口语的“等一下”，也可指紧紧抓住不松手。",
+    "longExplanation": "在日常聊天里反应过来某事时常脱口而出：“Hang on—really?”。",
+    "formation": "Hang on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "等一下，我把刚才那句调慢速度再放一遍！"
+      },
+      {
+        "translation": "小船冲过这几道大浪时抓紧扶手啊。"
+      }
+    ]
+  },
+  "en_b1_63": {
+    "title": "look back（回首往事 / 回顾）",
+    "shortExplanation": "回忆过去经历、过往时光或从中反思经验教训。",
+    "longExplanation": "后面接具体的往事时常用“look back on”。",
+    "formation": "Subject + look back (+ on + Past Event)",
+    "examples": [
+      {
+        "translation": "以后回头看这些最初的学习时光，你一定会会心一笑。"
+      },
+      {
+        "translation": "现在回想起来，以前跳过休息其实反而拖慢了我的进度。"
+      }
+    ]
+  },
+  "en_b1_64": {
+    "title": "make up（编造 / 和好 / 构成占比 / 弥补）",
+    "shortExplanation": "编造借口或故事、争吵后言归于好（with）、组成总体比例，或弥补遗憾（make up for）。",
+    "longExplanation": "注意搭配区别：“make up with”（与某人和好） vs “make up for”（弥补损失）。",
+    "formation": "Subject + make up (+ Story/Mind/Group)  |  make up with",
+    "examples": [
+      {
+        "translation": "别编借口了——直接告诉我发生了什么吧。"
+      },
+      {
+        "translation": "听力练习几乎占了我每天学习计划的一半。"
+      }
+    ]
+  },
+  "en_b1_65": {
+    "title": "move on（进入下一话题 / 向前看、走出阴影）",
+    "shortExplanation": "结束当前阶段或话题转入下一部分，或指从失落中走出来开启新生活。",
+    "longExplanation": "讲师和视频博主过渡转场高频句：“Let's move on to...”（接下来我们看……）。",
+    "formation": "Subject + move on (+ to + Next Topic)",
+    "examples": [
+      {
+        "translation": "掌握了这些元音之后，我们就进入自然节奏练习。"
+      },
+      {
+        "translation": "刚开始会难受，但人最终总要放下过去继续前行。"
+      }
+    ]
+  },
+  "en_b1_66": {
+    "title": "open up（敞开心扉倾诉 / 开辟新机会）",
+    "shortExplanation": "坦诚吐露内心感受、开门营业，或打开新的视野与机遇。",
+    "longExplanation": "既常指人“敞开心扉（open up about...）”，也指技能等“开辟（新天地）”。",
+    "formation": "Subject + open up (+ about + Topic)",
+    "examples": [
+      {
+        "translation": "学习另一门语言能为你开启意想不到的友谊。"
+      },
+      {
+        "translation": "即使面对挚友，他也很少敞开心扉谈论自己的童年。"
+      }
+    ]
+  },
+  "en_b1_67": {
+    "title": "point out（指出 / 提醒注意）",
+    "shortExplanation": "点出别人可能忽略的重要事实、细节或错误。",
+    "longExplanation": "接短代词时可拆分（“point that out”）；后接 that 长从句时保持连用。",
+    "formation": "Subject + point out + Noun / that-Clause",
+    "examples": [
+      {
+        "translation": "谢谢你指出字幕里那个不起眼的拼写错误。"
+      },
+      {
+        "translation": "专家指出，每天短时复习胜过周末突击恶补。"
+      }
+    ]
+  },
+  "en_b1_68": {
+    "title": "put off（推迟拖延 / 使人打退堂鼓）",
+    "shortExplanation": "把事情往后拖延，或令某人失去兴趣、望而却步。",
+    "longExplanation": "语法关键：后接动词必须用 V-ing（“put off doing”），绝不能接 to V。",
+    "formation": "Subject + put off + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "别再拖延那节有点难的语法课了——先学五分钟试试。"
+      },
+      {
+        "translation": "别让长单词吓退你，不敢看母语纪录片。"
+      }
+    ]
+  },
+  "en_b1_69": {
+    "title": "run into（偶遇 / 遭遇困难或麻烦）",
+    "shortExplanation": "意外碰到熟人，或突然撞上棘手的麻烦或故障。",
+    "longExplanation": "不可拆分，直接接人或问题作宾语。",
+    "formation": "Subject + run into + Person/Problem",
+    "examples": [
+      {
+        "translation": "我在附近书店偶遇了我以前的老师。"
+      },
+      {
+        "translation": "如果下载离线包时遇到任何麻烦，记得告诉我。"
+      }
+    ]
+  },
+  "en_b1_70": {
+    "title": "run out（用完 / 耗尽 / 到期）",
+    "shortExplanation": "把某种东西消耗殆尽，或时间、耐心、期限耗尽。",
+    "longExplanation": "注意主语不同：“人 + run out of + 东西”（某人用光了某物） vs “东西 + run out”（某物耗尽了）。",
+    "formation": "Subject + run out (+ of + Resource)",
+    "examples": [
+      {
+        "translation": "我们时间不多了——来总结最后一条规则吧。"
+      },
+      {
+        "translation": "剧才看半季，我笔记本里的空白页就全写满了。"
+      }
+    ]
+  },
+  "en_b1_71": {
+    "title": "work out（锻炼身体 / 算出想出 / 进展顺利）",
+    "shortExplanation": "体育健身、计算或推敲出方案，或事情最终圆满解决。",
+    "longExplanation": "非常实用地道的鼓励语：“Everything will work out.”（一切都会顺利解决的。）",
+    "formation": "Subject + work out (+ Noun)",
+    "examples": [
+      {
+        "translation": "下班后哪怕散步二十分钟也算锻炼身体了。"
+      },
+      {
+        "translation": "起初看着挺让人头疼，不过最后一切都进行得很顺利。"
+      }
+    ]
+  },
+  "en_b1_72": {
+    "title": "sort out（整理分类 / 妥善解决）",
+    "shortExplanation": "把杂乱的物品或信息分门别类理顺，或彻底解决麻烦、误会。",
+    "longExplanation": "可拆分使用（“sort it out”），在英式、澳式及日常英语中都非常常见。",
+    "formation": "Subject + sort out + Mess/Problem",
+    "examples": [
+      {
+        "translation": "趁通话还没开始，先把 Wi-Fi 问题解决好吧。"
+      },
+      {
+        "translation": "她按难度等级把自己的词汇标签整理好了。"
+      }
+    ]
+  },
+  "en_b2_37": {
+    "title": "account for（解释原因 / 占……比例）",
+    "shortExplanation": "说明某现象产生的原因，或在整体中占据特定百分比。",
+    "longExplanation": "不可拆分，常见于新闻报道、数据分析与纪录片解说。",
+    "formation": "Subject + account for + Noun",
+    "examples": [
+      {
+        "translation": "短视频占据了移动网络流量的百分之七十以上。"
+      },
+      {
+        "translation": "对于这次考试成绩突然大幅提升，你作何解释？"
+      }
+    ]
+  },
+  "en_b2_38": {
+    "title": "add up（积少成多 / 相加 / 合情合理）",
+    "shortExplanation": "零星数量累积成总数，或用否定形式“doesn't add up”指“说不通、有蹊跷”。",
+    "longExplanation": "既适合鼓励坚持微习惯，也常用于推理或质疑漏洞。",
+    "formation": "Subject + add up (+ Noun)",
+    "examples": [
+      {
+        "translation": "每天十分钟听着不多，但长期累积起来很快就很可观。"
+      },
+      {
+        "translation": "再核对一遍时间线——他的不在场证明有点说不通。"
+      }
+    ]
+  },
+  "en_b2_39": {
+    "title": "ask out（约某人出去约会）",
+    "shortExplanation": "怀着好感邀请某人一起喝咖啡、吃饭或看电影约会。",
+    "longExplanation": "受邀人几乎总是放在动词与副词中间：“ask her out”。",
+    "formation": "Subject + ask + Person + out",
+    "examples": [
+      {
+        "translation": "他紧张了好几个星期，终于约她出去喝咖啡了。"
+      },
+      {
+        "translation": "有人在语言交换活动刚结束时就约你出去约会过吗？"
+      }
+    ]
+  },
+  "en_b2_40": {
+    "title": "back up（备份数据 / 佐证支持 / 倒车）",
+    "shortExplanation": "保存文件副本以防丢失、用证据支持观点，或把车往后倒。",
+    "longExplanation": "名词写成一词“backup”，动词短语分写“back up”且可拆分（back it up）。",
+    "formation": "Subject + back up (+ Data/Claim/Car)",
+    "examples": [
+      {
+        "translation": "更换设备前一定要先把你的学习卡片组备份好。"
+      },
+      {
+        "translation": "她从文中举了三个清晰的例子来佐证自己的观点。"
+      }
+    ]
+  },
+  "en_b2_41": {
+    "title": "back down（退让 / 放弃立场 / 认输）",
+    "shortExplanation": "面对强烈反对或压力时收回要求、放弃原有立场。",
+    "longExplanation": "不及物动词，后面不直接接宾语，常说“refuse to back down”。",
+    "formation": "Subject + back down (+ from + Stand)",
+    "examples": [
+      {
+        "translation": "哪怕批评声很猛烈，导演也绝不肯退让。"
+      },
+      {
+        "translation": "在漫长的辩论中，双方似乎都不愿让步。"
+      }
+    ]
+  },
+  "en_b2_42": {
+    "title": "break through（突破瓶颈 / 冲破障碍）",
+    "shortExplanation": "强行冲破物理阻隔，或克服长期停滞的心理/技能平台期。",
+    "longExplanation": "名词形式为合并一词的“breakthrough”（重大突破）。",
+    "formation": "Subject + break through (+ Barrier)",
+    "examples": [
+      {
+        "translation": "每天坚持听能帮你突破中级阶段的瓶颈期。"
+      },
+      {
+        "translation": "阳光终于穿透了清晨的浓雾。"
+      }
+    ]
+  },
+  "en_b2_43": {
+    "title": "bring about（促成 / 带来变化或结果）",
+    "shortExplanation": "促使重大变革、好转或某种结果发生，偏正式但新闻和演讲高频。",
+    "longExplanation": "常与“change、shift、reform”等抽象结果搭配，类似“cause”。",
+    "formation": "Subject + bring about + Change/Result",
+    "examples": [
+      {
+        "translation": "带字幕的视频媒体给自学方式带来了巨大转变。"
+      },
+      {
+        "translation": "是什么促使团队士气发生了如此戏剧性的好转？"
+      }
+    ]
+  },
+  "en_b2_44": {
+    "title": "come about（发生 / 产生 / 由来）",
+    "shortExplanation": "某种情况如何出现或起源，最常用于问“How did this come about?”。",
+    "longExplanation": "纯不及物动词，绝不能用被动语态。",
+    "formation": "Subject + come about",
+    "examples": [
+      {
+        "translation": "双语字幕的想法最初是怎么诞生的？"
+      },
+      {
+        "translation": "采纳听众反馈后，不少喜人的改进随之落地。"
+      }
+    ]
+  },
+  "en_b2_45": {
+    "title": "do without（没有……也行 / 将就应付 / 宁愿不要）",
+    "shortExplanation": "在缺少某样常用物品的情况下也能应付，或者用“I could do without...”表示“真不想要/省省吧”。",
+    "longExplanation": "固定不可拆；反义常见搭配是“can't do without（缺一不可）”。",
+    "formation": "Subject + do without + Noun",
+    "examples": [
+      {
+        "translation": "离线学习者照样能流畅复习——没 Wi-Fi 也能应付。"
+      },
+      {
+        "translation": "真诚的建议很受欢迎，但粗鲁的评论我宁可不要。"
+      }
+    ]
+  },
+  "en_b2_46": {
+    "title": "draw on（利用 / 借鉴 / 动用储备）",
+    "shortExplanation": "调动或借助自己积累的经验、知识、数据或积蓄来完成任务。",
+    "longExplanation": "不可拆分，访谈与深度文章中极常见。",
+    "formation": "Subject + draw on + Experience/Data/Savings",
+    "examples": [
+      {
+        "translation": "优秀的译者不仅依靠语法，还充分调动深厚的文化直觉。"
+      },
+      {
+        "translation": "该系列取材于五个城市的真实街头采访。"
+      }
+    ]
+  },
+  "en_b2_47": {
+    "title": "draw up（起草 / 拟定计划、清单或合同）",
+    "shortExplanation": "认真编写一份正式的方案、清单、日程表或法律合同。",
+    "longExplanation": "可拆分，比随手写下更强调经过斟酌的系统起草。",
+    "formation": "Subject + draw up + Contract/List/Plan",
+    "examples": [
+      {
+        "translation": "我们一起来拟定一份切实可行的四周听力计划吧。"
+      },
+      {
+        "translation": "他们的法务团队起草了一份清晰的开源许可协议。"
+      }
+    ]
+  },
+  "en_b2_48": {
+    "title": "enter into（达成协议 / 开始深入讨论 / 成为考量因素）",
+    "shortExplanation": "正式签署协议合同、展开认真商谈，或作为影响决定的考量因素。",
+    "longExplanation": "常见搭配有“enter into an agreement / talks / details”。",
+    "formation": "Subject + enter into + Agreement/Discussion/Detail",
+    "examples": [
+      {
+        "translation": "两家工作室去年春天达成了联合制作合作关系。"
+      },
+      {
+        "translation": "去海外做志愿者的决定里，金钱根本不在她的考虑范围内。"
+      }
+    ]
+  },
+  "en_b2_49": {
+    "title": "factor in（把……因素考虑在内）",
+    "shortExplanation": "在测算成本、时间或制定计划时把额外变量计入其中。",
+    "longExplanation": "可拆分使用（“factor it in”），在规划与商务沟通中极为实用。",
+    "formation": "Subject + factor in + Variable / factor + Noun + in",
+    "examples": [
+      {
+        "translation": "选早班火车时，你把路上的通勤时间算进去了吗？"
+      },
+      {
+        "translation": "定目标时务必把日常的小分心因素考虑进去，才容易坚持。"
+      }
+    ]
+  },
+  "en_b2_50": {
+    "title": "give in（屈服 / 让步 / 抵不住诱惑）",
+    "shortExplanation": "放弃抵抗，最终向别人的软磨硬泡、压力或诱惑妥协。",
+    "longExplanation": "重点区分：“give up”= 放弃追求或戒掉习惯；“give in (to)”= 向人、压力或诱惑妥协让步。",
+    "formation": "Subject + give in (+ to + Pressure/Temptation)",
+    "examples": [
+      {
+        "translation": "被软磨硬泡了十分钟后，我终于妥协分了她一半薯条。"
+      },
+      {
+        "translation": "别向急躁妥协——自然的流利度来自持续积累。"
+      }
+    ]
+  },
+  "en_b2_51": {
+    "title": "go through（经历磨难 / 逐一仔细检查 / 走完流程）",
+    "shortExplanation": "经历艰难阶段、从头到尾细看核对内容，或通过审核手续。",
+    "longExplanation": "不可拆分，老师讲解或团队核对清单时极高频。",
+    "formation": "Subject + go through + Hardship/Process/Notes",
+    "examples": [
+      {
+        "translation": "我们一行一行地一起把这些难懂的习语过一遍吧。"
+      },
+      {
+        "translation": "在能顺畅开口之前，每个人都会经历一段沉默积累期。"
+      }
+    ]
+  },
+  "en_b2_52": {
+    "title": "hand over（移交 / 交出 / 递给）",
+    "shortExplanation": "把物品亲手交出去，或把职务、权力、责任正式移交给他人。",
+    "longExplanation": "可拆分使用（“hand it over”），兼顾实物交接和工作交接。",
+    "formation": "Subject + hand over + Item/Control (+ to + Person)",
+    "examples": [
+      {
+        "translation": "培训完新主持人后，她欣然移交了话筒。"
+      },
+      {
+        "translation": "请将登机牌交给登机口工作人员。"
+      }
+    ]
+  },
+  "en_b2_53": {
+    "title": "lay down（制定规则原则 / 放下）",
+    "shortExplanation": "确立明确的规定、准则，或把工具、武器放到地上。",
+    "longExplanation": "注意不要与表示自己躺下的“lie down”混淆。",
+    "formation": "Subject + lay down + Rules/Principles/Tool",
+    "examples": [
+      {
+        "translation": "俱乐部制定了简单规则，好让新手敢于开口。"
+      },
+      {
+        "translation": "别把“lie down（躺下）”和“lay down（放下/定规矩）”弄混了。"
+      }
+    ]
+  },
+  "en_b2_54": {
+    "title": "phase in（分阶段逐步推行 / 逐步引入）",
+    "shortExplanation": "有计划地分步骤逐步引入新政策、新系统或新产品。",
+    "longExplanation": "反义词为“phase out”（逐步淘汰），常见于新闻与产品发布。",
+    "formation": "Subject + phase in + Policy/System",
+    "examples": [
+      {
+        "translation": "学校将在三个学期内逐步推行口语考试。"
+      },
+      {
+        "translation": "所有市区线路正在分批引入电动公交车。"
+      }
+    ]
+  },
+  "en_b2_55": {
+    "title": "put up（留宿 / 张贴 / 提高 / put up with 忍受）",
+    "shortExplanation": "留客人过夜、张贴布告、涨价；而“put up with”则表示耐心忍受烦人的事。",
+    "longExplanation": "三词组合“put up with + 烦心事”日常极为高频。",
+    "formation": "Subject + put up (+ with + Annoyance / Friend / Sign)",
+    "examples": [
+      {
+        "translation": "这周末你能留你表弟在家住两晚吗？"
+      },
+      {
+        "translation": "我受不了每读一句就弹出广告打断我。"
+      }
+    ]
+  },
+  "en_b2_56": {
+    "title": "rule out（排除可能性 / 否定方案）",
+    "shortExplanation": "从逻辑或正式评估中排除某种原因、嫌疑或选项。",
+    "longExplanation": "可拆分使用（“Don't rule it out”），新闻、推理与决策分析常用。",
+    "formation": "Subject + rule out + Possibility/Option",
+    "examples": [
+      {
+        "translation": "医生做了两项检查，以排除季节性过敏的可能。"
+      },
+      {
+        "translation": "别只因为语速自然就把原生视频排除在学习材料之外。"
+      }
+    ]
+  },
+  "en_b2_57": {
+    "title": "set out（出发 / 着手致力于 / 清晰阐述）",
+    "shortExplanation": "启程上路、抱定目标开始做某事（set out to do），或条理分明地陈述安排。",
+    "longExplanation": "“set out to + 动词”非常适合交代项目或故事的初衷。",
+    "formation": "Subject + set out (+ to + Verb / on + Journey)",
+    "examples": [
+      {
+        "translation": "他们黎明时分就出发了，好避开假期高速拥堵。"
+      },
+      {
+        "translation": "这份指南清晰列出了培养听力耐力的三个日常习惯。"
+      }
+    ]
+  },
+  "en_b2_58": {
+    "title": "settle down（安静下来 / 坐稳专注 / 定居安定）",
+    "shortExplanation": "喧闹平静下来、安顿好专心做事，或在某地长久定居成家。",
+    "longExplanation": "既常用于让嘈杂场面静下来，也常指人生安顿定居。",
+    "formation": "Subject + settle down",
+    "examples": [
+      {
+        "translation": "咖啡馆音乐一放轻，大家都静下心来专心学习了。"
+      },
+      {
+        "translation": "在四个国家工作过后，他决定在大阪定居下来。"
+      }
+    ]
+  },
+  "en_b2_59": {
+    "title": "show up（露面 / 到场 / 显现出来）",
+    "shortExplanation": "到达约定地点（尤指迟到或意外现身），或使隐藏瑕疵显现出来。",
+    "longExplanation": "口语中比“arrive”更常用，接近“turn up”。",
+    "formation": "Subject + show up (+ late/early)",
+    "examples": [
+      {
+        "translation": "因为下大雨，学习小组只有一半人到场。"
+      },
+      {
+        "translation": "他因为排练迟到二十分钟道了歉。"
+      }
+    ]
+  },
+  "en_b2_60": {
+    "title": "stand for（代表字母缩写 / 象征主张 / 容忍）",
+    "shortExplanation": "表示缩略词的完整含义、代表核心理念，或（多用于否定）容忍某事。",
+    "longExplanation": "学习问答必备：“What does X stand for?”（X 代表什么缩写？）。",
+    "formation": "Subject + stand for + Meaning/Values",
+    "examples": [
+      {
+        "translation": "记忆复习软件里的 SRS 是什么的缩写？"
+      },
+      {
+        "translation": "优秀的导师代表耐心引导，而不是催促追求完美。"
+      }
+    ]
+  },
+  "en_b2_61": {
+    "title": "take on（承担重任 / 雇用 / 呈现新面貌）",
+    "shortExplanation": "接下新工作或责任、招聘人员，或使事物呈现出新的意味与面貌。",
+    "longExplanation": "可拆分（“take too much on”），也常用于形容词义或色彩焕然一新。",
+    "formation": "Subject + take on + Work/Role/Challenger",
+    "examples": [
+      {
+        "translation": "别在同一个月里一下子揽下五门硬课。"
+      },
+      {
+        "translation": "听出语气之后，连日常片段也会呈现出全新的意味。"
+      }
+    ]
+  },
+  "en_b2_62": {
+    "title": "take over（接管 / 接替 / 占主导）",
+    "shortExplanation": "从别人手中接替工作、驾驶、管理权或控制权。",
+    "longExplanation": "可及物也可不及物；指明前任时搭配“from + 某人”。",
+    "formation": "Subject + take over (+ from + Person / Company/Role)",
+    "examples": [
+      {
+        "translation": "旅程最后两个小时由我妹妹接替开车。"
+      },
+      {
+        "translation": "你放心出去休息吧——聊天区管理我来接手。"
+      }
+    ]
   }
 };

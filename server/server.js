@@ -3068,13 +3068,19 @@ const segmenters = {
 };
 
 let sharedViTokenizer = null;
-import('../functions-src/utils/tokenizer.js')
+let sharedViTagger = null;
+let sharedEnTokenizer = null;
+let sharedCompounds = null;
+const sharedTokenizerPromise = import('../functions-src/utils/tokenizer.js')
     .then(async mod => {
         const loader = await import('../functions-src/data/vi-compounds-loader.js');
-        await loader.getVietnameseCompounds();
+        sharedCompounds = await loader.getVietnameseCompounds();
         sharedViTokenizer = mod.mergeVietnameseCompounds;
+        sharedViTagger = mod.tagVietnameseTokens;
+        sharedEnTokenizer = mod.tokenizeEnglish;
+        return mod;
     })
-    .catch(() => {});
+    .catch(() => null);
 
 let kuromojiDevTokenizer = null;
 let kuromojiDevPromise = null;
@@ -3203,7 +3209,8 @@ function buildDevToken(surface, isWordLike, lang) {
 function tokenizeTextDev(text, lang) {
     if (!text || typeof text !== 'string') return [];
     if (lang === 'vi' && sharedViTokenizer) {
-        return sharedViTokenizer(text);
+        const merged = sharedViTokenizer(text, sharedCompounds);
+        return sharedViTagger ? sharedViTagger(merged) : merged;
     }
     if (lang === 'ja' && kuromojiDevTokenizer) {
         try {
@@ -3298,11 +3305,21 @@ function enrichSegmentsWithTokensDev(segments, lang) {
     });
 }
 
+async function tokenizeTextDevAsync(text, lang) {
+    if (!text || typeof text !== 'string') return [];
+    const normLang = (lang || '').split('-')[0].toLowerCase();
+    await sharedTokenizerPromise;
+    if (normLang === 'en' && sharedEnTokenizer) {
+        return sharedEnTokenizer(text);
+    }
+    return tokenizeTextDev(text, normLang);
+}
+
 /**
  * POST /api/tokenize-batch/:lang
  * Batch tokenization for subtitles in local dev
  */
-app.post('/api/tokenize-batch/:lang', (req, res) => {
+app.post('/api/tokenize-batch/:lang', async (req, res) => {
     const { lang } = req.params;
     const { texts } = req.body;
 
@@ -3311,7 +3328,7 @@ app.post('/api/tokenize-batch/:lang', (req, res) => {
     }
 
     try {
-        const tokens = texts.map(text => tokenizeTextDev(text, lang));
+        const tokens = await Promise.all(texts.map(text => tokenizeTextDevAsync(text, lang)));
         res.json({ tokens });
     } catch (error) {
         console.error('[Tokenize Batch] Error:', error.message);
@@ -3321,9 +3338,9 @@ app.post('/api/tokenize-batch/:lang', (req, res) => {
 
 /**
  * POST /api/tokenize/:lang
- * Unified tokenization using Intl.Segmenter (ja, zh, ko, en)
+ * Unified tokenization using shared EN/VI/Intl/Kuromoji tokenizers
  */
-app.post('/api/tokenize/:lang', (req, res) => {
+app.post('/api/tokenize/:lang', async (req, res) => {
     const { lang } = req.params;
     const { text } = req.body;
 
@@ -3332,7 +3349,7 @@ app.post('/api/tokenize/:lang', (req, res) => {
     }
 
     try {
-        const tokens = tokenizeTextDev(text, lang);
+        const tokens = await tokenizeTextDevAsync(text, lang);
         res.json({ tokens });
     } catch (error) {
         console.error(`[Tokenize ${lang}] Error:`, error.message);
@@ -3359,6 +3376,32 @@ app.get('/api/grammar', async (req, res) => {
     } catch (error) {
         console.error('[Grammar Dev API] Error:', error.message);
         res.status(500).json({ error: 'Failed to load grammar data' });
+    }
+});
+
+/**
+ * POST /api/grammar-detect
+ * Stateless EN/VI Grammar Pattern Detection API delegating to Cloudflare Pages Function handler
+ */
+app.post('/api/grammar-detect', async (req, res) => {
+    try {
+        const { onRequestPost } = await import('../functions-src/api/grammar-detect.js');
+        const request = new Request(`${req.protocol}://${req.get('host')}${req.originalUrl}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(req.body || {})
+        });
+        const response = await onRequestPost({ request, env: {}, waitUntil: () => {} });
+        res.status(response.status);
+        response.headers.forEach((value, key) => {
+            if (!key.toLowerCase().startsWith('access-control-allow-')) {
+                res.setHeader(key, value);
+            }
+        });
+        res.send(await response.text());
+    } catch (error) {
+        console.error('[Grammar Detect Dev API] Error:', error.message);
+        res.status(500).json({ error: 'Failed to detect grammar patterns' });
     }
 });
 

@@ -406,6 +406,12 @@ test('inferSpokenLanguage prioritizes official audio language over translated ti
         title: 'Thai Vlog',
         subLanguages: ['th', 'en']
     }), 'other');
+    assert.equal(inferSpokenLanguage({
+        defaultAudioLanguage: 'en',
+        defaultLanguage: 'vi',
+        title: 'BẮC BLING (BẮC NINH) | OFFICIAL MV',
+        channel: 'Hòa Minzy'
+    }), 'vi');
 });
 
 test('small numeric seeds and distinct string seeds disperse rankings instead of colliding', options, async () => {

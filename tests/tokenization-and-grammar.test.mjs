@@ -22,6 +22,7 @@ import { parseWiktionaryRest, parseViWiktionaryExtract } from '../functions-src/
 import { estimateTranscriptLevel } from '../functions-src/utils/level-estimator.js';
 import { scoreVideoTranscript } from '../functions-src/utils/video-grader.js';
 import { onRequestGet as grammarGet } from '../functions-src/api/grammar.js';
+import { onRequestPost as grammarDetectPost } from '../functions-src/api/grammar-detect.js';
 import { clearGrammarStoreCache } from '../functions-src/data/grammar-store.js';
 import { getJapaneseRomaji, isJapaneseKanaText } from '../functions-src/utils/japanese-romaji.js';
 
@@ -683,19 +684,38 @@ test('GET /api/grammar serves manifest, patterns, translations, combined packs, 
     assert.equal(manifestRes.status, 200);
     assert.ok(manifestRes.headers.get('Cache-Control')?.includes('s-maxage=604800'));
     const manifest = await manifestRes.json();
-    assert.equal(manifest.patterns.vi, 80);
+    assert.equal(manifest.patterns.vi, 180);
+    assert.equal(manifest.patterns.en, 253);
     assert.deepEqual(manifest.languages.includes('vi'), true);
+    assert.deepEqual(manifest.rules, ['en', 'vi']);
 
     const patternsRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi'), env: envWithGuard });
     assert.equal(patternsRes.status, 200);
     assert.equal(patternsRes.headers.get('X-Cache'), 'MISS');
     const patterns = await patternsRes.json();
-    assert.equal(patterns.length, 80);
+    assert.equal(patterns.length, 180);
 
     // Warm isolate hit skips rate limit & returns HIT-MEMORY
     const cachedPatternsRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi'), env: envWithGuard });
     assert.equal(cachedPatternsRes.status, 200);
     assert.equal(cachedPatternsRes.headers.get('X-Cache'), 'HIT-MEMORY');
+
+    const enRulesRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=en&type=rules'), env: envWithGuard });
+    assert.equal(enRulesRes.status, 200);
+    const enRules = await enRulesRes.json();
+    assert.equal(enRules.language, 'en');
+    assert.ok(Array.isArray(enRules.nlpRules) && Array.isArray(enRules.splitRules) && Array.isArray(enRules.phrasalVerbs));
+    assert.ok(enRules.nlpRules.length + enRules.splitRules.length + enRules.phrasalVerbs.length >= 100);
+
+    const viRulesRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&type=rules'), env: envWithGuard });
+    assert.equal(viRulesRes.status, 200);
+    const viRules = await viRulesRes.json();
+    assert.equal(viRules.language, 'vi');
+    assert.ok(Array.isArray(viRules.sequenceRules) && Array.isArray(viRules.splitRules));
+    assert.ok(viRules.sequenceRules.length + viRules.splitRules.length >= 80);
+
+    const jaRulesRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=ja&type=rules'), env: envWithGuard });
+    assert.equal(jaRulesRes.status, 404);
 
     const transRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&ui=ja'), env: envWithGuard });
     assert.equal(transRes.status, 200);
@@ -709,7 +729,7 @@ test('GET /api/grammar serves manifest, patterns, translations, combined packs, 
     const allRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&ui=ko&type=all'), env: envWithGuard });
     assert.equal(allRes.status, 200);
     const allBody = await allRes.json();
-    assert.equal(allBody.patterns.length, 80);
+    assert.equal(allBody.patterns.length, 180);
     assert.ok(allBody.translations.vi_a1_01?.title);
 
     const singleRes = await grammarGet({ request: new Request('https://voca.study/api/grammar?lang=vi&id=vi_a1_01&ui=ja'), env: envWithGuard });
@@ -743,4 +763,114 @@ test('GET /api/grammar serves manifest, patterns, translations, combined packs, 
     const r2Patterns = await r2Res.json();
     assert.equal(r2Patterns[0].id, 'vi_r2_custom');
     clearGrammarStoreCache();
+});
+
+test('EN & VI pack translations have full ID parity across vi, ja, ko, and zh', async () => {
+    clearGrammarStoreCache();
+    const checks = [
+        { lang: 'en', expectedCount: 253 },
+        { lang: 'vi', expectedCount: 180 }
+    ];
+    for (const { lang, expectedCount } of checks) {
+        const pRes = await grammarGet({ request: new Request(`https://voca.study/api/grammar?lang=${lang}&type=patterns`), env: {} });
+        assert.equal(pRes.status, 200);
+        const patterns = await pRes.json();
+        assert.equal(patterns.length, expectedCount, `Expected ${expectedCount} patterns for ${lang}`);
+        const ids = patterns.map(p => p.id);
+
+        for (const ui of ['vi', 'ja', 'ko', 'zh']) {
+            const tRes = await grammarGet({ request: new Request(`https://voca.study/api/grammar?lang=${lang}&ui=${ui}&type=translations`), env: {} });
+            assert.equal(tRes.status, 200);
+            const trans = await tRes.json();
+            for (const id of ids) {
+                assert.ok(trans[id]?.title, `Missing ${lang} -> ${ui} title for ${id}`);
+                assert.ok(trans[id]?.shortExplanation, `Missing ${lang} -> ${ui} shortExplanation for ${id}`);
+            }
+        }
+    }
+    clearGrammarStoreCache();
+});
+
+test('Upgraded EN/VI tokenization preserves contractions, root lemmas, VTB compound boundaries, and POS tags', async () => {
+    const enTokens = await tokenizeEnglish("She doesn't know if she's been running well-known tests.");
+    const surfaces = enTokens.map(t => t.surface);
+    assert.ok(surfaces.includes('doesn') || surfaces.includes("doesn't"), 'Contraction should remain well-formed');
+    const runningTok = enTokens.find(t => t.surface.toLowerCase() === 'running');
+    assert.ok(runningTok, 'Should tokenize running');
+    assert.equal(runningTok.baseForm, 'run');
+    assert.ok(runningTok.partOfSpeech, 'EN token should include partOfSpeech tag');
+
+    const viPossessive = await tokenizeVietnamese('Đây là sách của tôi.');
+    assert.ok(viPossessive.some(t => t.surface === 'của') && viPossessive.some(t => t.surface === 'tôi'), 'Must keep "của tôi" split');
+
+    const viResult = await tokenizeVietnamese('Anh ấy đã tìm ra đáp án rồi.');
+    assert.ok(viResult.some(t => t.surface === 'tìm') && viResult.some(t => t.surface === 'ra'), 'Must keep "tìm ra" split for directional grammar');
+    const timTok = viResult.find(t => t.surface === 'tìm');
+    assert.equal(timTok?.partOfSpeech, 'Verb');
+});
+
+test('POST /api/grammar-detect detects EN syntactic + split phrasal rules and VI aspectual/clause-bounded rules', async () => {
+    const envWithGuard = {
+        TRANSCRIPT_CACHE: {
+            async get() { return null; },
+            async put() { assert.fail('POST /api/grammar-detect must not write to KV under threshold'); }
+        }
+    };
+
+    const enReq = new Request('https://voca.study/api/grammar-detect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            language: 'en',
+            cues: [
+                { index: 0, text: 'She has been practicing piano all morning.' },
+                { index: 1, text: 'Please wake me up before seven.' },
+                { index: 2, text: 'Not until midnight did he realize his mistake.' }
+            ]
+        })
+    });
+    const enRes = await grammarDetectPost({ request: enReq, env: envWithGuard, waitUntil: () => {} });
+    assert.equal(enRes.status, 200);
+    const enBody = await enRes.json();
+    assert.equal(enBody.language, 'en');
+    assert.equal(enBody.results.length, 3);
+    assert.ok(enBody.results[0].matches.some(m => m.patternId === 'en_b1_05'), 'Should detect Present Perfect Continuous');
+    assert.ok(enBody.results[1].matches.some(m => m.patternId === 'en_a2_36'), 'Should detect separated phrasal verb wake ... up');
+    assert.ok(enBody.results[2].matches.some(m => m.patternId === 'en_c1_18'), 'Should detect Not until ... inversion');
+
+    const viReq = new Request('https://voca.study/api/grammar-detect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            language: 'vi',
+            cues: [
+                { index: 0, text: 'Họ đã tìm ra câu trả lời và làm xong bài tập.' },
+                { index: 1, text: 'Bạn có thích món này không?' },
+                { index: 2, text: 'Tuy khó nhưng mà họ vẫn cố gắng.' },
+                { index: 3, text: 'Điều đó vô hình trung tạo ra áp lực.' },
+                { index: 4, text: 'Tuy không dễ. Nhưng họ vẫn thử.' }
+            ]
+        })
+    });
+    const viRes = await grammarDetectPost({ request: viReq, env: envWithGuard, waitUntil: () => {} });
+    assert.equal(viRes.status, 200);
+    const viBody = await viRes.json();
+    assert.equal(viBody.language, 'vi');
+    const cue0Ids = viBody.results[0].matches.map(m => m.patternId);
+    assert.ok(cue0Ids.includes('vi_a2_17') && cue0Ids.includes('vi_a2_24'), 'Should detect V + ra and V + xong resultatives');
+    assert.ok(viBody.results[1].matches.some(m => m.patternId === 'vi_a1_21'), 'Should detect ... không? yes/no question');
+    assert.ok(viBody.results[2].matches.some(m => m.patternId === 'vi_b1_02'), 'Should detect same-clause Tuy ... nhưng ...');
+    assert.ok(viBody.results[3].matches.some(m => m.patternId === 'vi_c2_12'), 'Should detect C2 formal marker vô hình trung');
+    assert.equal(viBody.results[4].matches.some(m => m.patternId === 'vi_b1_02'), false, 'Must not match Tuy ... nhưng across sentence boundary');
+
+    // Validation guards
+    const badLang = await grammarDetectPost({
+        request: new Request('https://voca.study/api/grammar-detect', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ language: 'ja', text: 'テスト' })
+        }),
+        env: envWithGuard
+    });
+    assert.equal(badLang.status, 400);
 });

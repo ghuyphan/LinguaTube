@@ -6,8 +6,9 @@ import { cleanCueText, contradictsNativeLanguage, normalizeLanguageCode } from '
 import { readBoundedBody, requestSignal } from '../utils/response-body.js';
 
 const SUPADATA_API_URL = 'https://api.supadata.ai/v1/transcript';
-const SUPADATA_TIMEOUT_MS = 4000; // 4 seconds is plenty for native caption availability checks
-const NATIVE_LOOKUP_BUDGET_MS = 6000;
+const SAVED_TRACK_TIMEOUT_MS = 4000;
+const NATIVE_ATTEMPT_TIMEOUT_MS = 7000;
+const NATIVE_LOOKUP_BUDGET_MS = 14500;
 const MAX_TRANSCRIPT_BYTES = 8 * 1024 * 1024;
 const MAX_ERROR_BYTES = 16 * 1024;
 const MAX_TRANSCRIPT_CUES = 20000;
@@ -27,56 +28,66 @@ export class SupadataProvider {
      * @param {string} videoId 
      * @param {string} lang 
      * @param {Object} cache - CF KV binding or CacheManager instance
-     * @param {boolean} retryTimeout - Whether a slow lookup should try another key
+     * @param {boolean} retryTimeout - Whether to allow a second transient attempt before falling back
      * @returns {Promise<{segments: {id: number, start: number, duration: number, text: string}[], source?: string, availableLangs: string[], detectedLang?: string, trackLanguage?: string, languageMismatch?: boolean, notFound?: boolean, unavailable?: boolean} | null>}
      */
     async fetchCaptions(videoId, lang, cache, retryTimeout = true) {
-        if (this.apiKeys.length === 0) {
-            return null;
-        }
-
+        const startedAt = Date.now();
+        const attemptTimeout = retryTimeout ? NATIVE_ATTEMPT_TIMEOUT_MS : SAVED_TRACK_TIMEOUT_MS;
+        const deadline = startedAt + (retryTimeout ? NATIVE_LOOKUP_BUDGET_MS : attemptTimeout);
         const attemptedKeys = [];
-        const maxAttempts = this.apiKeys.length;
-        const deadline = Date.now() + (retryTimeout ? NATIVE_LOOKUP_BUDGET_MS : SUPADATA_TIMEOUT_MS);
-
-        for (let attempt = 0; attempt < maxAttempts; attempt++) {
-            // Get the next unattempted key (round-robin with cooldown awareness)
-            const apiKey = await this.apiKeyRotator.getNextApiKey(cache, 'supadata', this.apiKeys, attemptedKeys);
+        const failures = [];
+        let retryKey;
+        while (Date.now() < deadline) {
+            const nextKey = await this.apiKeyRotator.getNextApiKey(cache, 'supadata', this.apiKeys, attemptedKeys);
+            const apiKey = nextKey || retryKey;
             if (!apiKey || Date.now() >= deadline) break;
+            retryKey = undefined;
             attemptedKeys.push(apiKey);
 
+            const attemptStartedAt = Date.now();
             try {
-                const result = await this._executeFetch(videoId, lang, apiKey, deadline);
-                if (result?.notFound || result?.segments?.length || result?.unavailable) return result;
-            } catch (e) {
-                const errMsg = e.message || '';
-                const is429 = errMsg.includes('429') || errMsg.includes('rate');
-                const is402 = errMsg.includes('402') || errMsg.includes('quota') || errMsg.includes('credit');
-                const is401 = errMsg.includes('401') || errMsg.includes('unauthorized');
-                const isTimeout = e.name === 'TimeoutError' || e.name === 'AbortError' || errMsg.includes('timeout');
-
-                if (is402 || is401) {
-                    // Out of credits or invalid key -> 1 hour cooldown
-                    await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 3600);
-                } else if (is429) {
-                    // Rate limited -> 5 minutes cooldown
-                    await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 300);
-                } else if (isTimeout) {
-                    // Timeout -> 60 seconds cooldown to allow failover to alternative key
-                    await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, 60);
-                    // On timeout, cap failover to prevent worker execution timeouts, but NEVER return notFound: true
-                    if (!retryTimeout || attempt >= 1) {
-                        return null;
+                const result = await this._executeFetch(videoId, lang, apiKey, deadline, attemptTimeout);
+                if (result?.notFound || result?.segments?.length) {
+                    if (failures.length || Date.now() - attemptStartedAt >= SAVED_TRACK_TIMEOUT_MS) {
+                        this._logLookup(videoId, lang, startedAt, failures, result.notFound ? 'not_found' : 'found');
                     }
+                    return result;
                 }
-                // Try next unattempted key in subsequent loop iteration
+                failures.push({ reason: result?.reason || 'unusable_payload', elapsedMs: Date.now() - attemptStartedAt });
+                this._logLookup(videoId, lang, startedAt, failures, 'unavailable');
+                return result;
+            } catch (e) {
+                const status = e.status;
+                const timeout = e.name === 'TimeoutError' || e.name === 'AbortError';
+                const reason = status ? 'http' : timeout ? 'timeout' : e instanceof SyntaxError ? 'invalid_json' : 'transport';
+                failures.push({ reason, status, elapsedMs: Date.now() - attemptStartedAt });
+                const cooldown = status === 401 || status === 402 ? 3600 : status === 429 ? 300 : 0;
+                if (cooldown) {
+                    await this.apiKeyRotator.markKeyRateLimited(cache, 'supadata', apiKey, cooldown);
+                    continue;
+                }
+                // A slow video is not a key failure. Try another key if available,
+                // or retry the same key once for timeout, transport or upstream 5xx.
+                if (!retryTimeout || attemptedKeys.length >= 2 ||
+                    !(timeout || reason === 'transport' || status >= 500)) break;
+                retryKey = apiKey;
             }
         }
 
+        this._logLookup(videoId, lang, startedAt, failures, 'unavailable');
         return null;
     }
 
-    async _executeFetch(videoId, lang, apiKey, deadline) {
+    _logLookup(videoId, lang, startedAt, failures, outcome) {
+        console.info(JSON.stringify({
+            event: 'native_caption_lookup', videoId, language: lang, outcome,
+            elapsedMs: Date.now() - startedAt, failures,
+            ...(this.apiKeys.length === 0 ? { reason: 'unconfigured' } : {})
+        }));
+    }
+
+    async _executeFetch(videoId, lang, apiKey, deadline, timeoutMs) {
         const url = new URL(SUPADATA_API_URL);
         const videoUrl = new URL('https://www.youtube.com/watch');
         videoUrl.searchParams.set('v', videoId);
@@ -87,7 +98,7 @@ export class SupadataProvider {
         url.searchParams.set('text', 'false');
         url.searchParams.set('mode', 'native');
 
-        const signal = requestSignal(deadline, SUPADATA_TIMEOUT_MS);
+        const signal = requestSignal(deadline, timeoutMs);
         const response = await fetch(url.toString(), {
             method: 'GET',
             headers: {
@@ -105,19 +116,7 @@ export class SupadataProvider {
 
         if (response.status !== 200 && response.status !== 404) {
             await response.body?.cancel().catch(() => {});
-            if (response.status === 429) {
-                throw new Error('429 Rate limited');
-            }
-            if (response.status === 402) {
-                throw new Error('402 Quota exceeded');
-            }
-            if (response.status === 401) {
-                throw new Error('401 Unauthorized');
-            }
-            if (response.status >= 500) {
-                throw new Error(`${response.status} Upstream server error`);
-            }
-            throw new Error(`HTTP ${response.status}`);
+            throw Object.assign(new Error('Supadata transcript request failed'), { status: response.status });
         }
 
         const maxBytes = response.status === 404 ? MAX_ERROR_BYTES : MAX_TRANSCRIPT_BYTES;
@@ -131,7 +130,8 @@ export class SupadataProvider {
             return { notFound: true, segments: [], availableLangs: [] };
         }
         if (response.status === 404 || data.error) {
-            return { unavailable: true, segments: [], availableLangs: [] };
+            return { unavailable: true, segments: [], availableLangs: [],
+                reason: response.status === 404 ? 'not_found' : 'provider_error' };
         }
 
         const rawDetectedLang = typeof data.lang === 'string' ? data.lang.trim() : '';

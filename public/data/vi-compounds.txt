@@ -7029,6 +7029,7 @@ chính khí ca
 chính kiến
 chính kịch
 chính luận
+chính là
 chính lý
 chính lệnh
 chính lộ
@@ -15344,6 +15345,7 @@ dự ứng lực
 dựa dẫm
 dựa hồn dựa cốt
 dựa kề
+dựa trên
 dựng cảnh
 dựng hình
 dựng ngược
@@ -19209,6 +19211,7 @@ hòn đảo
 hòn đốc
 hó háy
 hó hé
+hóa ra
 hóc búa
 hóc cột
 hóc hiểm
@@ -21019,7 +21022,6 @@ khi khu
 khi không
 khi mô
 khi mạn
-khi nào
 khi nãy
 khi nên
 khi quân
@@ -21909,7 +21911,6 @@ không nên cơm cháo
 không nên không phải
 không nói không rằng
 không phép
-không phải
 không phận
 không quân
 không quốc tịch
@@ -24128,7 +24129,6 @@ làm giả
 làm giấy
 làm giặc
 làm gái
-làm gì
 làm gương
 làm hàng
 làm hư
@@ -24228,7 +24228,6 @@ làm vương làm tướng
 làm vườn
 làm vầy
 làm vậy
-làm xong
 làm xằng
 làm ân nên oán
 làm ăn
@@ -28983,6 +28982,7 @@ ngay cán tàn
 ngay cả
 ngay gian
 ngay họng
+ngay khi
 ngay lành
 ngay lưng
 ngay lập tức
@@ -31951,7 +31951,6 @@ nhật ấn
 nhậu nhẹt
 nhắc chừng
 nhắc cò cò
-nhắc lại
 nhắc nhu
 nhắc nhỏm
 nhắc nhở
@@ -32659,7 +32658,6 @@ nói giấu
 nói giễu
 nói giời nói đất
 nói giỡn
-nói gì
 nói gì thì nói
 nói gạt
 nói gần nói xa
@@ -48329,7 +48327,6 @@ tì ố
 tìm hiểu
 tìm hỏi
 tìm kiếm
-tìm ra
 tìm thấy
 tìm tòi
 tình anh em
@@ -50322,6 +50319,7 @@ từ thực
 từ trong trứng
 từ trong trứng nước
 từ trái nghĩa
+từ trước
 từ trường
 từ trần
 từ trễ
@@ -52579,6 +52577,7 @@ về già
 về hùa
 về hưu
 về không
+về mặt
 về phần
 về quê
 về sau
@@ -53686,6 +53685,7 @@ xét nghiệm
 xét nét
 xét nết
 xét soi
+xét về
 xét xử
 xét đoán
 xét đến cùng

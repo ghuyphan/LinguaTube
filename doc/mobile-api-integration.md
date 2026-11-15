@@ -659,10 +659,10 @@ In Voca, grammar detection runs directly on the client over tokenized subtitle c
 | **Japanese** | **828** | JLPT N5, N4, N3, N2, N1 | `/api/grammar?lang=ja` (`src/app/data/grammar-ja.ts`) | `ja_vi`, `ja_zh`, `ja_ko`, `ja_ja` |
 | **Chinese** | **691** | HSK 1, 2, 3, 4, 5, 6 | `/api/grammar?lang=zh` (`src/app/data/grammar-zh.ts`) | `zh_vi`, `zh_ja`, `zh_ko`, `zh_zh` |
 | **Korean** | **744** | Korean Levels 1, 2, 3, 4, 5, 6 | `/api/grammar?lang=ko` (`src/app/data/grammar-ko.ts`) | `ko_vi`, `ko_zh`, `ko_ja`, `ko_ko` |
-| **English** | **143** | CEFR A1, A2, B1, B2, C1, C2 | `/api/grammar?lang=en` (`src/app/data/grammar-en.ts`) | `en_vi`, `en_zh`, `en_ja`, `en_ko` |
-| **Vietnamese** | **80** | CEFR A1, A2, B1, B2, C1 | `/api/grammar?lang=vi` (`src/app/data/grammar-vi.ts`) | `vi_vi`, `vi_ja`, `vi_ko`, `vi_zh` |
+| **English** | **253** | CEFR A1, A2, B1, B2, C1, C2 | `/api/grammar?lang=en` (`src/app/data/grammar-en.ts`) | `en_vi`, `en_zh`, `en_ja`, `en_ko` |
+| **Vietnamese** | **180** | CEFR A1, A2, B1, B2, C1, C2 | `/api/grammar?lang=vi` (`src/app/data/grammar-vi.ts`) | `vi_vi`, `vi_ja`, `vi_ko`, `vi_zh` |
 
-> **Shared Grammar API (`GET /api/grammar`)**: Both Web and Flutter can fetch packs remotely from `/api/grammar?lang={lang}&ui={ui}&type=all` (or individually via `?lang={lang}`, `?lang={lang}&ui={ui}`, `?lang={lang}&id={id}&ui={ui}`) with Edge CDN (`s-maxage=604800`) and R2 backing, then cache locally on device rather than bundling full multi-MB JSON assets into app binaries.
+> **Shared Grammar API (`GET /api/grammar`)**: Both Web and Flutter can fetch packs remotely from `/api/grammar?lang={lang}&ui={ui}&type=all` (or individually via `?lang={lang}`, `?lang={lang}&ui={ui}`, `?lang={lang}&type=rules` for EN/VI, `?lang={lang}&id={id}&ui={ui}`) with Edge CDN (`s-maxage=604800`) and R2 backing, then cache locally on device rather than bundling full multi-MB JSON assets into app binaries.
 
 ### 5.2. Grammar Pattern Data Schema
 
@@ -734,11 +734,17 @@ export interface GrammarMatch {
 4. **Chinese (ZH) Split Correlative Strategy**:
    - Detects discontinuous pattern pairs across a sentence:
      `虽然...但是`, `因为...所以`, `如果...就`, `不但...而且`, `越...越`, `一边...一边`, `除了...以外`, `是...的`, `既...又`.
-5. **English (EN) Syntax & Modal Rules**:
-   - Compound tenses: `(have|has) been #Gerund`, `had #PastTense`, `will have #PastTense`.
-   - Modal perfects: `should have #PastTense`, `must have #PastTense`, `could have #PastTense`.
-   - Phrasal modals: `used to #Verb`, `be used to #Gerund`, `have to #Verb`.
-   - Correlatives: `neither...nor`, `either...or`, `not only...but also`.
+5. **English (EN) Syntax, Modal & Phrasal Rules (`GET /api/grammar?lang=en&type=rules` & `POST /api/grammar-detect`)**:
+   - Compound tenses & aspect: `(have|has) been #Gerund`, `had #PastTense`, `will have #PastTense`.
+   - Modal perfects, conditionals, subjunctives, and inversion: `should have #PastTense`, `must have #PastTense`, `not only...but also`, `not until ... did`.
+   - Separable and inseparable phrasal verbs (`wake [me] up`, `look forward to`, `figure [it] out`).
+6. **Vietnamese (VI) Constructions, VTB POS & Clause-Bounded Rules (`GET /api/grammar?lang=vi&type=rules` & `POST /api/grammar-detect`)**:
+   - Tokenization merges `60,726` compounds while preserving function-word boundaries (`của tôi`, `tìm ra`) and tagging words with `UD_Vietnamese-VTB` POS classes via `vi-vtb-lexicon.js`.
+   - Detects aspectual/resultative structures (`V + ra/được/xong`), sentence-final interrogatives (`... không?`, `... chưa?`), and clause-bounded split correlatives (`Tuy ... nhưng ...`, `Không những ... mà còn ...`), plus C2 formal/literary connectors (`Dầu vậy`, `Ví thử`).
+
+#### `POST /api/grammar-detect` (Stateless Edge Detection for `en` & `vi`)
+- **Single cue or text**: `{ "language": "en" | "vi", "text": "...", "tokens": [...] }` -> `{ "language": "en", "matches": [{ "patternId", "matchedText", "tokenIndices", "startChar", "endChar", "priority", "source" }] }`
+- **Batch cues (up to 250 cues)**: `{ "language": "en" | "vi", "cues": [{ "index": 0, "text": "...", "tokens": [...] }] }` -> `{ "language": "en", "results": [{ "cueIndex": 0, "matches": [...] }] }`
 
 ---
 

@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import ts from 'typescript';
+import { buildGrammarRules } from './build-grammar-rules.mjs';
 
 const ROOT = process.cwd();
 const SRC_DATA_DIR = path.join(ROOT, 'src', 'app', 'data');
@@ -67,6 +68,8 @@ function main() {
         }
     }
 
+    const ruleLangs = buildGrammarRules(OUT_DIR);
+
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     const manifest = {
         version: pkg.version || '1.0.0',
@@ -74,7 +77,8 @@ function main() {
         languages: LEARNING_LANGS,
         uiLanguages: ['en', ...UI_LANGS],
         patterns: patternsManifest,
-        translations: translationsManifest
+        translations: translationsManifest,
+        rules: ruleLangs
     };
     writeMinifiedJson(path.join(OUT_DIR, 'manifest.json'), manifest);
 

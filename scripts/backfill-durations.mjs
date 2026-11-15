@@ -68,7 +68,7 @@ async function resolveFromYouTube(videoId) {
  * Fallback: Resolve duration from last cue in transcript API
  */
 async function resolveFromTranscript(videoId) {
-    const candidateLangs = ['ja', 'en', 'zh', 'ko'];
+    const candidateLangs = ['ja', 'en', 'zh', 'ko', 'vi'];
     for (const lang of candidateLangs) {
         try {
             const res = await fetch('https://voca.study/api/transcript', {

@@ -161,7 +161,8 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │     GET  /api/leaderboard         -> Gamification XP Leaderboard
     │     GET  /api/diamonds            -> Diamond Token Quota & Regen Status
     │     GET  /api/geo                 -> Geo-IP country & region detection
-    │     GET  /api/grammar             -> Shared R2/CDN Grammar Packs & Pattern Lookup
+    │     GET  /api/grammar             -> Shared R2/CDN Grammar Packs, EN/VI Rules & Pattern Lookup
+    │     POST /api/grammar-detect      -> Stateless EN/VI Edge Grammar Detection (Single & Batch Cues)
     │     GET  /api/tts                 -> Edge Neural Text-to-Speech proxy
     │     GET  /api/version             -> App version & client compatibility check
     │     POST /api/payment/create-order-> PayOS Checkout Link Generator
@@ -225,6 +226,8 @@ lingua-tube/
 │   │   ├── dual-subtitles.js  # Dual-language subtitle generator
 │   │   ├── geo.js             # Geo-IP country & region detection
 │   │   ├── gladia-webhook.js  # Dual-auth webhook receiver with sub-40ms ack & waitUntil
+│   │   ├── grammar.js         # Shared grammar packs, rules (?type=rules) & pattern lookup
+│   │   ├── grammar-detect.js  # Stateless EN/VI grammar pattern detection endpoint
 │   │   ├── leaderboard.js     # Gamification XP leaderboard
 │   │   ├── payment/           # Payment processing (create-order, webhook, check-status)
 │   │   ├── recommended-videos.js # Target language video recommendations
@@ -238,8 +241,8 @@ lingua-tube/
 │   │   └── video-level.js     # CEFR/JLPT/HSK/TOPIK level detection
 │   ├── middlewares/           # auth.js, bot-defense.js, rate-limiter.js, video-validator.js
 │   ├── providers/             # gladia.js, supadata.js, lingva.js, dictionary-apis.js, payos.js
-│   ├── services/              # transcript.service.js, dict.service.js, diamond.service.js, turnstile.service.js, recommendation.service.js
-│   ├── data/                  # transcript-db.js, transcript-r2.js, video-info-db.js
+│   ├── services/              # transcript.service.js, dict.service.js, diamond.service.js, grammar-detector.js, turnstile.service.js, recommendation.service.js
+│   ├── data/                  # transcript-db.js, transcript-r2.js, video-info-db.js, grammar-store.js, grammar-rules.js, vi-vtb-lexicon.js
 │   └── utils/                 # svix-verifier.js, tokenizer.js, japanese-romaji.js, cache-manager.js, api-key-rotator.js, utils.js
 │
 ├── functions/                 # COMPILED FUNCTIONS (DO NOT EDIT DIRECTLY)
@@ -316,10 +319,10 @@ lingua-tube/
    - `grammar-ja.ts` (~1.37MB)
    - `grammar-ko.ts` (~1.42MB)
    - `grammar-zh.ts` (~390KB)
-   - `grammar-en.ts` (~136KB)
-   - `grammar-vi.ts` (80 CEFR A1–C1 rules)
+   - `grammar-en.ts` (253 CEFR A1–C2 syntactic & phrasal-verb rules)
+   - `grammar-vi.ts` (180 CEFR A1–C2 construction rules)
 2. Grammar translations live in `src/app/data/translations/{source_lang}/{target_lang}.ts`.
-3. Run `npm run build:grammar` to compile canonical JSON packs into `public/data/grammar/` (also uploaded to R2 via `scripts/upload-grammar-to-r2.mjs` when updating over-the-air). `GrammarService` fetches packs from `/api/grammar` (backing both Web and Flutter) with IndexedDB caching (`lingua-tube-grammar-cache`).
+3. Run `npm run build:grammar` to compile canonical JSON packs and EN/VI rule files into `public/data/grammar/` (also uploaded to R2 via `scripts/upload-grammar-to-r2.mjs` when updating over-the-air). `GrammarService` fetches packs from `/api/grammar` (backing both Web and Flutter) with IndexedDB caching (`lingua-tube-grammar-cache`), and `POST /api/grammar-detect` serves stateless EN/VI grammar highlighting.
 4. Ensure patterns adhere to the `GrammarPattern` interface in `src/app/models/grammar.model.ts`.
 5. Update `doc/features.md` and `doc/tech.md`.
 

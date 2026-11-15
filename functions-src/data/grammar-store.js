@@ -71,7 +71,13 @@ async function fetchGrammarArtifactFromSources(env, relativePath, requestUrl) {
         } catch { /* fallback below */ }
     }
 
-    // 3. Same-origin static asset fetch fallback (if runtime provides URL without ASSETS binding)
+    // 3. Local Node filesystem fallback (dev server & test runner; no-op in CF Worker isolates)
+    const localData = await readLocalJsonInNode(relativePath);
+    if (localData !== null && localData !== undefined) {
+        return localData;
+    }
+
+    // 4. Same-origin static asset fetch fallback (if runtime provides URL without ASSETS binding or Node FS)
     if (requestUrl && /^https?:\/\//i.test(requestUrl) && typeof globalThis.fetch === 'function') {
         try {
             const assetUrl = new URL(`/data/grammar/${relativePath}`, requestUrl);
@@ -81,11 +87,10 @@ async function fetchGrammarArtifactFromSources(env, relativePath, requestUrl) {
                     return await res.json();
                 }
             }
-        } catch { /* fallback below */ }
+        } catch { /* unavailable */ }
     }
 
-    // 4. Local Node filesystem fallback (dev server & test runner)
-    return readLocalJsonInNode(relativePath);
+    return null;
 }
 
 /**
@@ -129,6 +134,15 @@ export async function loadGrammarPatterns(env, lang, requestUrl) {
         return null;
     }
     return loadArtifact(env, `patterns/${lang}.json`, requestUrl);
+}
+
+const RULES_LANGUAGES = new Set(['en', 'vi']);
+
+export async function loadGrammarRules(env, lang, requestUrl) {
+    if (!RULES_LANGUAGES.has(lang) || !SAFE_SEGMENT_RE.test(lang)) {
+        return null;
+    }
+    return loadArtifact(env, `rules/${lang}.json`, requestUrl);
 }
 
 export async function loadGrammarTranslations(env, lang, ui, requestUrl) {

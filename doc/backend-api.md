@@ -112,10 +112,10 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
       - When `preferAI: true`, the backend strictly isolates the requested language: it checks R2 **only** for an existing AI transcript of the exact requested language (`cleanVideoId, lang`). It never falls back to other candidate languages in R2, ensuring user requests for AI generation are never hijacked by pre-cached transcripts in other languages.
       - For native requests, an exact-language R2 hit avoids the provider call. R2 rejects objects whose stored language disagrees with the key and legacy native objects whose sampled text strongly contradicts their CJK label. When needed, the route checks up to six alternative keys, prioritizing stored transcript languages. An alternative is flagged with `languageMismatch: true`. Transcript HTTP responses with per-request diamond information use `Cache-Control: no-store`; reuse occurs inside the service through R2.
       - The response payload returns `availableLanguages: { native: string[], ai: string[] }`, where `ai` tracks are derived from server-verified `subLanguages` (transcripts confirmed in R2) excluding native YouTube captions.
-  2. **Native Captions Fetch (Supadata Multi-Key Failover & 4s Native Timeout)**: If `preferAI: false`, checks both D1 `video_languages`, `ai_transcription_jobs`, and `no_transcript_cache` before touching upstream APIs:
+  2. **Native Captions Fetch (Supadata and bounded failover)**: If `preferAI: false`, checks D1 `video_languages`, `ai_transcription_jobs`, and `no_transcript_cache` before touching upstream APIs:
      - **Active AI Job Short-Circuit**: On normal requests, checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI transcription job was previously submitted and is still pending or processing (e.g. user refreshed the page, switched tabs, or backgrounded the browser), it immediately returns `{ status: 'processing', jobId }`, seamlessly connecting the client to the existing job without double-deducting diamonds or returning `NO_NATIVE`.
      - **D1 Short-Circuit (< 20ms)**: If `video_languages` records `available_languages = '[]'` (video confirmed to have 0 native tracks) or if the requested language is not in the list (e.g. video has only `['en']` and user requested `zh`), returns immediately with `NO_NATIVE` or `languageMismatch: true`, completely bypassing upstream network latency.
-     - **Supadata Fast-Check**: The adapter sends the YouTube watch URL to [Supadata's transcript endpoint](https://docs.supadata.ai/get-transcript) with `mode=native`. Each attempt allows up to four seconds and all attempts share a six-second lookup budget. A forced refresh with a saved track in the catalog uses a four-second budget and skips timeout failover. HTTP 206 or an explicit `transcript-unavailable` response on HTTP 200 or 404 stops key rotation and marks that language as unavailable. A generic 404, a 202 job response, or a timeout leaves caption availability unverified and does not write a negative-cache entry.
+     - **Supadata lookup**: The adapter sends the YouTube watch URL to [Supadata's transcript endpoint](https://docs.supadata.ai/get-transcript) with `mode=native`. Cold lookups allow up to seven seconds per attempt, with a shared 14.5-second budget. A transient failure can trigger one recovery attempt, using the next key when available. Only HTTP 401, 402 and 429 trigger key cooldowns. A forced refresh with a saved track in the catalog retains the four-second budget and skips transient retries. HTTP 206 or an explicit `transcript-unavailable` response on HTTP 200 or 404 confirms a miss. A generic 404, a 202 job response, or exhausted retries leave caption availability unverified. Structured `native_caption_lookup` events record failure categories and attempt timings.
      - **Track verification**: The provider response must identify the track language and include usable cues. The API exposes the normalized `language` and preserves the provider tag as `trackLanguage` when known. `forceRefresh` uses native lookup even if an AI job is active. If fresh captions cannot be verified, refresh can return a validated saved copy in the requested language with `refreshDeferred: true` and `X-Cache: STALE`, including completed AI captions already available on normal reads. A confirmed miss or language mismatch follows the normal fallback path. Inconclusive or malformed results without a usable fallback return `503 NATIVE_PROVIDER_UNAVAILABLE` with `Retry-After`, and do not create negative cache records.
   3. **Global Negative Cache Defense & Automatic Eviction**: Negative caching (`markNoTranscript`) in D1 `no_transcript_cache` supports both per-language and global wildcard (`*`) scopes. When a transcript is successfully fetched or requested with `forceRefresh: true`, both specific language and wildcard entries are automatically purged (`deleteNoTranscript`).
   4. **3-Tier Intelligent Speech Chunking & HTML Cleaning (`splitRunOnSegments` & `cleanCueText`)**:
@@ -608,12 +608,22 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
   2. Cloudflare R2 (`TRANSCRIPT_STORAGE` under `grammar/patterns/{lang}.json` and `grammar/translations/{lang}/{ui}.json`) for hot updates without app releases
   3. Cloudflare Pages static assets (`env.ASSETS` at `/data/grammar/...`) / local Node FS (`public/data/grammar/...`)
 - **Query Modes**:
-  - `?type=manifest` (default when `lang` omitted): Returns `manifest.json` (`languages`, `uiLanguages`, pattern counts, translation packs)
-  - `?lang={lang}` (`type=patterns`): Returns `GrammarPattern[]` for `ja | zh | ko | en | vi`
+  - `?type=manifest` (default when `lang` omitted): Returns `manifest.json` (`languages`, `uiLanguages`, pattern counts, `rules` languages `['en', 'vi']`, translation packs)
+  - `?lang={lang}` (`type=patterns`): Returns `GrammarPattern[]` for `ja | zh | ko | en | vi` (`en`: 253 CEFR A1–C2, `vi`: 180 CEFR A1–C2)
+  - `?lang={lang}&type=rules`: Returns compiled declarative rule descriptors for `en` and `vi` (`grammar/rules/{lang}.json`) shared with Flutter & `/api/grammar-detect`
   - `?lang={lang}&ui={ui}` (`type=translations`): Returns `Record<patternId, GrammarTranslation>` (empty `{}` when `ui=en`)
   - `?lang={lang}&ui={ui}&type=all`: Returns `{ language, ui, patterns, translations }` in one request for Web/Flutter pack sync
   - `?lang={lang}&id={patternId}[&ui={ui}]` (`type=pattern`): Returns a single localized pattern (`404` if missing)
 - **Caching**: `Cache-Control: public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400` + `ngsw-config.json` service-worker caching + IndexedDB persistence in `GrammarService`.
+
+---
+
+### 3.20. Stateless Edge Grammar Detection API (`en` & `vi`)
+- **Route**: `POST /api/grammar-detect`
+- **Source**: `functions-src/api/grammar-detect.js`, `functions-src/services/grammar-detector.js`, `functions-src/data/grammar-rules.js` & `server/server.js` (Local Dev)
+- **Behavior**:
+  - Evaluates single `{ language, text, tokens? }` or batch `{ language, cues: [{ index?, text, tokens? }] }` (max 250 cues) using `compromise` (`en`) and `UD_Vietnamese-VTB` token POS + clause-bounded pattern matching (`vi`).
+  - Returns `patternId`, `matchedText`, `tokenIndices`, character offsets (`startChar`, `endChar`), `priority`, and `source` (`400` for unsupported languages or oversized payloads; zero KV writes below rate-limit thresholds).
 
 ---
 

@@ -2113,5 +2113,1545 @@ export const GRAMMAR_EN_JA: Record<string, GrammarTranslation> = {
         "translation": "本研究では、ソーシャルメディアが行動にどのような影響を与えるかを検証しています。"
       }
     ]
+  },
+  "en_a1_25": {
+    "title": "Let's + 動詞の原形（誘い・提案）",
+    "shortExplanation": "話し相手と一緒に何かをしようと誘うときに使います。",
+    "longExplanation": "「Let's」は「Let us」の短縮形で、後ろには必ず動詞の原形を置きます（toや-ingは付けません）。「〜するのはやめよう」と言うときは「Let's not + 動詞の原形」を使います。",
+    "formation": "Let's (+ not) + 動詞の原形",
+    "examples": [
+      {
+        "translation": "次のレッスンの前に少し休憩しましょう。"
+      },
+      {
+        "translation": "もう待たずに行こう。電車は5分後に出発します。"
+      }
+    ]
+  },
+  "en_a1_26": {
+    "title": "How about / What about + 名詞 / V-ing?（提案・意見の打診）",
+    "shortExplanation": "アイデアや選択肢を気軽に提案したり、相手の意向を尋ねたりするときに使います。",
+    "longExplanation": "「〜はどうですか？」と提案する表現で、後ろには名詞や動名詞（V-ing）を置きます。「What about you?（あなたはどう？）」のように質問を相手に向けるときにも使われます。",
+    "formation": "How about / What about + 名詞 / V-ing?",
+    "examples": [
+      {
+        "translation": "今晩の夕食はピザを注文するのはどうですか？"
+      },
+      {
+        "translation": "3時ごろカフェで会うというのはどうかな？"
+      }
+    ]
+  },
+  "en_a1_27": {
+    "title": "Would like (+ to V)（丁寧な希望・勧め）",
+    "shortExplanation": "want より丁寧に「〜が欲しい」「〜したい」「〜はいかがですか」と伝える表現です。",
+    "longExplanation": "レストランの注文や買い物、依頼の場面で非常によく使われます。短縮形「I'd like」が会話の定番で、動詞を続ける場合は必ず「to + 原形」にします。",
+    "formation": "主語 + would like + 名詞 / to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "無糖の緑茶を一杯いただきたいのですが。"
+      },
+      {
+        "translation": "窓際のお席はいかがですか？"
+      }
+    ]
+  },
+  "en_a1_28": {
+    "title": "Be going to + 動詞の原形（予定・根拠のある予測）",
+    "shortExplanation": "すでに決まっている予定や、目の前の状況から判断できる未来の予測を表します。",
+    "longExplanation": "主語に合わせて be動詞（am/is/are）を変化させ、「going to + 動詞の原形」を続けます。くだけた会話では「going to」が「gonna」と発音されることもよくあります。",
+    "formation": "主語 + am/is/are + going to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "明日、単語用の新しいノートを始めるつもりです。"
+      },
+      {
+        "translation": "あの黒い雲を見て。もうすぐ雨が降りそうだ。"
+      }
+    ]
+  },
+  "en_a1_29": {
+    "title": "Want to / Need to + 動詞の原形（願望と必要）",
+    "shortExplanation": "「〜したい（want to）」や「〜する必要がある（need to）」を表す基本構文です。",
+    "longExplanation": "後ろに別の動詞を続けるときは必ず「to + 動詞の原形」を使います。否定文では don't / doesn't を前に置きます。会話では「want to」が「wanna」と発音されることがあります。",
+    "formation": "主語 + want(s) / need(s) + to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "言語を変更したあと、アプリを再起動する必要があります。"
+      },
+      {
+        "translation": "今年はリスニングの処理スピードを上げたいです。"
+      }
+    ]
+  },
+  "en_a2_27": {
+    "title": "Be able to + 動詞の原形（あらゆる時制での可能）",
+    "shortExplanation": "「will can」などが使えない未来形や完了形などで「〜できる」を表すときに使います。",
+    "longExplanation": "助動詞 can には未来形や不定詞の形がないため、will や might、現在完了などの後ろでは「be able to」を使います。また、過去の特定の場面で「なんとか〜できた」と述べる場合にも「was/were able to」が自然です。",
+    "formation": "主語 + be動詞（時制に応じて変化）+ able to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "毎日練習すれば、ネイティブ向けのポッドキャストが聞き取れるようになります。"
+      },
+      {
+        "translation": "幸運にも、デモの前にバグを修正することができました。"
+      }
+    ]
+  },
+  "en_a2_28": {
+    "title": "Have to / Don't have to（義務と不必要）",
+    "shortExplanation": "「have to」は外的な義務・必要、「don't have to」は「〜しなくてもよい（任意）」を表します。",
+    "longExplanation": "否定形の違いに注意してください。「mustn't」は「〜してはいけない（禁止）」ですが、「don't have to」は「〜する必要はない（してもしなくてもよい）」という意味です。",
+    "formation": "主語 + (don't / doesn't / didn't) have to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "このリストの単語をすべて丸暗記しなければなりませんか？"
+      },
+      {
+        "translation": "今すぐ支払う必要はありません。最初の1週間は無料です。"
+      }
+    ]
+  },
+  "en_a2_29": {
+    "title": "Too + 形容詞/副詞 + to V（〜すぎて…できない）",
+    "shortExplanation": "程度が過度であるため、後の動作ができないという否定的な結果を表します。",
+    "longExplanation": "「not」がなくても「〜できない」という否定の意味になる点に注意しましょう。「誰にとって」を明示したい場合は、to の直前に「for + 人」を置きます。",
+    "formation": "too + 形容詞/副詞 + (for + 人) + to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "その箱は重すぎて、私ひとりでは2階へ運べませんでした。"
+      },
+      {
+        "translation": "彼は話すのが速すぎて、初心者にはすべての表現を聞き取れませんでした。"
+      }
+    ]
+  },
+  "en_a2_30": {
+    "title": "形容詞/副詞 + enough + to V（〜するのに十分なほど…）",
+    "shortExplanation": "ある行動をとるのに必要な程度を満たしていることを表します。",
+    "longExplanation": "語順に注意が必要です。形容詞・副詞を修飾するときは「後ろ」（warm enough）に置き、名詞を修飾するときは「前」（enough time）に置きます。",
+    "formation": "形容詞/副詞 + enough + (for + 人) + to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "音声は声調が聞き取れるくらい十分にクリアですか？"
+      },
+      {
+        "translation": "彼女はまだ一人で運転できる年齢に達していません。"
+      }
+    ]
+  },
+  "en_a2_31": {
+    "title": "相関接続詞（Both...and / Either...or / Neither...nor）",
+    "shortExplanation": "「AもBも両方」「AかBのどちらか」「AもBもどちらも〜ない」と2つを対比・結合します。",
+    "longExplanation": "「Both A and B」は常に複数扱いですが、「Either A or B」と「Neither A nor B」では近いほうの B に動詞の数を一致させます。neither 自体が否定なので二重否定にしないよう注意します。",
+    "formation": "Both A and B / Either A or B / Neither A nor B",
+    "examples": [
+      {
+        "translation": "今日中に下書きを提出するか、公開を延期するかのどちらかです。"
+      },
+      {
+        "translation": "トムもサラも、会議がオンラインに切り替わったことを知りませんでした。"
+      }
+    ]
+  },
+  "en_a2_32": {
+    "title": "Make / Let + 目的語 + 動詞の原形（強制・許可の使役）",
+    "shortExplanation": "make は「（無理に・思わず）〜させる」、let は「（望みどおりに）〜させてあげる」を表します。",
+    "longExplanation": "能動態では後ろの動詞に「to」を付けず原形を使います（let me explain は◎、let me to explain は×）。allow + 人 + to V とは形が違う点に注意しましょう。",
+    "formation": "主語 + make / let + 目的語 + 動詞の原形",
+    "examples": [
+      {
+        "translation": "決断する前に、何が起きたのか説明させてください。"
+      },
+      {
+        "translation": "その突然の展開に観客全員が息をのみました。"
+      }
+    ]
+  },
+  "en_a2_33": {
+    "title": "Each other / One another（相互代名詞：お互いに）",
+    "shortExplanation": "2人以上が相手に対して相互に行動し合うことを表します。",
+    "longExplanation": "「themselves（自分自身に）」と混同しないようにしましょう。伝統的には2人には each other、3人以上には one another を使うとされますが、現代の会話ではどちらもしばしば互換的に使われます。",
+    "formation": "複数主語 + 動詞 (+ 前置詞) + each other / one another",
+    "examples": [
+      {
+        "translation": "良い語学パートナーはいつもお互いに優しく間違いを直し合います。"
+      },
+      {
+        "translation": "彼らは大学卒業以来、お互いに会っていませんでした。"
+      }
+    ]
+  },
+  "en_a2_34": {
+    "title": "As soon as + 節（〜するとすぐに）",
+    "shortExplanation": "1つ目の出来事が終わった直後に、間を置かず2つ目が起きることを表します。",
+    "longExplanation": "未来のことを述べる場合でも、as soon as が導く時を表す節の中では will を使わず現在形にします（as soon as I land となり、will land にはしません）。",
+    "formation": "主節 + as soon as + 主語 + 動詞（現在形/過去形）",
+    "examples": [
+      {
+        "translation": "無事にお家に着いたらすぐメッセージを送ってね。"
+      },
+      {
+        "translation": "字幕が読み込まれるやいなや、彼女はシャドーイングを始めました。"
+      }
+    ]
+  },
+  "en_a2_35": {
+    "title": "So + 形容詞/副詞 + that + 節（とても〜なので…だ）",
+    "shortExplanation": "形容詞や副詞の強い程度が原因となって、ある結果が生じることを表します。",
+    "longExplanation": "「such + (a/an) + 名詞 + that」との使い分けに注意しましょう。口語では接続詞の that がよく省略されます（I was so tired I fell asleep）。",
+    "formation": "so + 形容詞/副詞 + (that) + 結果を表す節",
+    "examples": [
+      {
+        "translation": "あまりに疲れすぎて、イントロが終わる前に眠ってしまいました。"
+      },
+      {
+        "translation": "彼がそのイディオムをとても分かりやすく説明したので、みんな思わず微笑みました。"
+      }
+    ]
+  },
+  "en_b1_28": {
+    "title": "Had better + 動詞の原形（〜したほうがよい・忠告）",
+    "shortExplanation": "「そうしないとまずいことになる」という切迫感や警告を含んだ強い助言を表します。",
+    "longExplanation": "過去形の had が含まれますが、意味は現在・近い未来です。会話では「'd better」と短縮されるのが普通で、否定は「had better not + 原形」にします。",
+    "formation": "主語 + had better ('d better) (+ not) + 動詞の原形",
+    "examples": [
+      {
+        "translation": "設定を更新する前にバックアップを保存しておいたほうがいいですよ。"
+      },
+      {
+        "translation": "明日の試験の前にあまり遅くまで出歩かないほうがよさそうだ。"
+      }
+    ]
+  },
+  "en_b1_29": {
+    "title": "Would rather + 動詞の原形 (+ than)（むしろ〜したい）",
+    "shortExplanation": "具体的な場面で「他の選択肢より〜するほうがよい」と好みを表します。",
+    "longExplanation": "「would rather（'d rather）」の後ろには to を付けず動詞の原形を置きます。比較対象を挙げる場合は「than + 動詞の原形」、丁寧に断るときは「would rather not + 原形」を使います。",
+    "formation": "主語 + would rather ('d rather) (+ not) + 動詞の原形 (+ than + 動詞の原形)",
+    "examples": [
+      {
+        "translation": "要約を読むより、学習言語の字幕付きで動画を見るほうが好きです。"
+      },
+      {
+        "translation": "お誘いありがとう、でも今夜は家にいたいです。"
+      }
+    ]
+  },
+  "en_b1_30": {
+    "title": "Be supposed to + 動詞の原形（〜することになっている・はずだ）",
+    "shortExplanation": "規則・予定・一般的な期待を表し、しばしば「実際はそうでない」というニュアンスも含みます。",
+    "longExplanation": "現在形では決まりや評判（〜ということになっている）、過去形「was/were supposed to」では「〜するはずだったのに（実際にはできなかった）」という食い違いをよく表します。",
+    "formation": "主語 + be動詞 + supposed to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "金曜日の正午までに要約を提出することになっています。"
+      },
+      {
+        "translation": "私たちの便は1時間前に到着する予定だったのですが。"
+      }
+    ]
+  },
+  "en_b1_31": {
+    "title": "Be allowed to + 動詞の原形（許可：〜することが許される）",
+    "shortExplanation": "ルールや規則による許可を、未来形や過去形を含むあらゆる時制で表します。",
+    "longExplanation": "can / may と異なり、未来や完了形でも使えるのが利点です。否定の「aren't allowed to」は「〜は禁止されている」と規則をはっきり伝える定型表現です。",
+    "formation": "主語 + be動詞 (+ not) + allowed to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "展示室内ではフラッシュ撮影が許可されていません。"
+      },
+      {
+        "translation": "試験に辞書の持ち込みは認められますか？"
+      }
+    ]
+  },
+  "en_b1_32": {
+    "title": "Be / Get used to + 名詞 / V-ing（〜に慣れている・慣れてくる）",
+    "shortExplanation": "「be used to」はすでに慣れている状態、「get used to」は次第に慣れていく変化を表します。",
+    "longExplanation": "最大の注意点：この「to」は前置詞なので、後ろには必ず名詞か動名詞（V-ing）を置きます（原形は不可）。過去の習慣を表す「used to + 動詞の原形」と混同しないようにしましょう。",
+    "formation": "主語 + be / get + used to + 名詞 / V-ing",
+    "examples": [
+      {
+        "translation": "1か月かかりましたが、ようやく速い話し方を聞くのに慣れました。"
+      },
+      {
+        "translation": "彼女は厳しい締め切りの中で働くことに慣れています。"
+      }
+    ]
+  },
+  "en_b1_33": {
+    "title": "By the time + 節（〜するころまでにはすでに）",
+    "shortExplanation": "過去または未来のある時点より前に、別の動作が完了していることを示します。",
+    "longExplanation": "過去なら「by the time + 過去形」に「過去完了（had + 過去分詞）」を、未来なら「by the time + 現在形」に「未来完了（will have + 過去分詞）」を合わせるのが定石です。",
+    "formation": "By the time + 節（現在形/過去形）, 主節（will have / had + 過去分詞）",
+    "examples": [
+      {
+        "translation": "私たちが劇場に着いたときには、冒頭のシーンはすでに始まっていました。"
+      },
+      {
+        "translation": "夕食の準備ができるころには、フラッシュカードをすべて復習し終えているはずです。"
+      }
+    ]
+  },
+  "en_b1_34": {
+    "title": "Prefer A to B / Prefer to V rather than V（〜より…を好む）",
+    "shortExplanation": "一般的な好みや習慣として、BよりもAを選ぶことを表します。",
+    "longExplanation": "名詞や動名詞（V-ing）を比べるときは than ではなく前置詞「to」でつなぎます（prefer A to B）。「to + 動詞」を比べるときは「rather than + 原形」を使います。",
+    "formation": "prefer + 名詞/V-ing + to + 名詞/V-ing  |  prefer to V + rather than + V",
+    "examples": [
+      {
+        "translation": "私は単語リストを丸暗記するより、実際のポッドキャストを聴くほうが好きです。"
+      },
+      {
+        "translation": "彼女は毎日2時間かけて通勤するより、在宅勤務するほうを好みます。"
+      }
+    ]
+  },
+  "en_b1_35": {
+    "title": "Get + 人 + to + 動詞の原形（説得して〜してもらう）",
+    "shortExplanation": "相手を説得したり頼み込んだりして、ある行動をしてもらうときに使います。",
+    "longExplanation": "make / have + 人 + 原形 とは異なり、get を能動の使役で使う場合は必ず「to + 動詞の原形」が必要です。",
+    "formation": "主語 + get + 人 + to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "どうやってお兄さんに動画編集を手伝ってもらったの？"
+      },
+      {
+        "translation": "ようやく発音コーチに再生速度を落としてもらえました。"
+      }
+    ]
+  },
+  "en_b2_30": {
+    "title": "Can't help + V-ing（〜せずにはいられない）",
+    "shortExplanation": "自分の意志では止められないほど、つい〜してしまう・感じてしまうことを表します。",
+    "longExplanation": "「can't help（過去なら couldn't help）」の後ろには必ず動名詞（V-ing）が続きます。同義の表現として「can't help but + 動詞の原形」も使われます。",
+    "formation": "主語 + can't / couldn't help + V-ing",
+    "examples": [
+      {
+        "translation": "猫が彼のキーボードに飛び乗ったとき、思わず笑ってしまいました。"
+      },
+      {
+        "translation": "彼女は映画の字幕のちょっとした文法ミスについ気づいてしまいます。"
+      }
+    ]
+  },
+  "en_b2_31": {
+    "title": "It's no use / There's no point (in) + V-ing（〜しても無駄だ）",
+    "shortExplanation": "時間や労力をかけても意味がなく、結果につながらないことを表します。",
+    "longExplanation": "どちらの構文も不定詞ではなく動名詞（V-ing）をとります。「There's no point」のあとの前置詞「in」は省略してもかまいません。",
+    "formation": "It's no use + V-ing  |  There's no point (in) + V-ing",
+    "examples": [
+      {
+        "translation": "すでに直したミスをいつまでも気にしても仕方がありません。"
+      },
+      {
+        "translation": "これ以上待っても意味がないよ。終バスは出たばかりだ。"
+      }
+    ]
+  },
+  "en_b2_32": {
+    "title": "Be bound to + 動詞の原形（きっと〜する・〜に違いない）",
+    "shortExplanation": "物事の筋道や性質からして「ほぼ確実に・必然的に〜になる」と述べるときに使います。",
+    "longExplanation": "「きっと上達するよ」と励ます場面でも、「ミスは起きるものだ」と当然の結果を語る場面でもよく使われる自然な表現です。",
+    "formation": "主語 + be動詞 + bound to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "毎日コンスタントに聴いていれば、必ず上達するはずです。"
+      },
+      {
+        "translation": "新しい言語を話すときには、小さな誤解はどうしても起きるものです。"
+      }
+    ]
+  },
+  "en_b2_33": {
+    "title": "Be about to + 動詞の原形（まさに〜しようとしている）",
+    "shortExplanation": "ほんの数秒後・直後に何かが起きようとしている切迫した瞬間を表します。",
+    "longExplanation": "「来週」のような遠い未来の語とは一緒に使いません（「just」とよく組み合わされます）。否定の「not about to」には「絶対に〜するつもりはない」という慣用表現もあります。",
+    "formation": "主語 + be動詞 (+ just) + about to + 動詞の原形",
+    "examples": [
+      {
+        "translation": "ちょっと待って、ライブ配信がもうすぐ始まるよ！"
+      },
+      {
+        "translation": "電話が鳴ったとき、ちょうど君にメッセージを送ろうとしていたところだった。"
+      }
+    ]
+  },
+  "en_b2_34": {
+    "title": "The + 比較級, the + 比較級（〜すればするほど、ますます…）",
+    "shortExplanation": "一方の度合いに比例して、もう一方も変化することを表します。",
+    "longExplanation": "両方の節の先頭で「The + 比較級（more / sooner / easier など）」を置きます。「The sooner, the better（早ければ早いほどよい）」のような短い決まり文句でも頻出です。",
+    "formation": "The + 比較級 (+ 主語 + 動詞), the + 比較級 (+ 主語 + 動詞)",
+    "examples": [
+      {
+        "translation": "声に出して読めば読むほど、話し方のリズムが自然になります。"
+      },
+      {
+        "translation": "準備を早く始めれば始めるほど、締め切り前のストレスは減ります。"
+      }
+    ]
+  },
+  "en_b2_35": {
+    "title": "No matter + 疑問詞（たとえ〜でも）",
+    "shortExplanation": "状況・程度・時間・人に関わらず結論が変わらないことを強調します。",
+    "longExplanation": "no matter の後に how, what, who, where, when を続けます。意味は however / whatever などと同じで、節の中では未来のことでも現在形を使います。",
+    "formation": "No matter + 疑問詞 (+ 形容詞/副詞) + 主語 + 動詞",
+    "examples": [
+      {
+        "translation": "その週がどんなに忙しくても、カードを10枚復習するよう心がけてください。"
+      },
+      {
+        "translation": "何時であっても構わないから、すぐ電話してね。"
+      }
+    ]
+  },
+  "en_b2_36": {
+    "title": "Have / Get + もの + 過去分詞（〜してもらう／〜される）",
+    "shortExplanation": "修理などのサービスを業者や他人に頼んでしてもらう場合や、思わぬ被害を受けた場合に使います。",
+    "longExplanation": "目的語（もの）が「される」側なので後ろには必ず過去分詞（V3）が来ます（I had my laptop fixed＝パソコンを直してもらった）。会話では get が少し砕けた響きになります。",
+    "formation": "主語 + have / get + 目的語 + 過去分詞",
+    "examples": [
+      {
+        "translation": "ドライブ旅行の前に車を修理に出す必要があります。"
+      },
+      {
+        "translation": "彼女は混雑した駅でパスポートを盗まれてしまいました。"
+      }
+    ]
+  },
+  "en_c1_18": {
+    "title": "Not until ... + 倒置（〜して初めて…した）",
+    "shortExplanation": "ある時点まで起きなかった出来事や気づきをドラマチックに強調する構文です。",
+    "longExplanation": "倒置が起きる位置に注意してください。until の節の中ではなく、後ろに来る「主節」の主語と助動詞（did / had / was など）が倒置します。",
+    "formation": "Not until + 時 / 節 + 助動詞 + 主語 + 動詞",
+    "examples": [
+      {
+        "translation": "そのクリップを再生し直して初めて、彼女は巧妙な言葉遊びに気づきました。"
+      },
+      {
+        "translation": "真夜中になってようやく通りの騒音が静まりました。"
+      }
+    ]
+  },
+  "en_c1_19": {
+    "title": "Little did + 主語 + know / realize（〜とは夢にも思わなかった）",
+    "shortExplanation": "後に大きな展開が待っているとはまったく気づいていなかったことを物語調で強調します。",
+    "longExplanation": "準否定語 Little を文頭に置くため、後ろで「did + 主語 + 動詞の原形」の倒置が起きます。ドキュメンタリーや解説動画のナレーションで頻出です。",
+    "formation": "Little + did/does + 主語 + know / realize (+ that + 節)",
+    "examples": [
+      {
+        "translation": "その10分間の動画1本が自分のキャリアを切り開くことになろうとは、彼は夢にも思いませんでした。"
+      },
+      {
+        "translation": "締め切りがどれほど急速に迫っているか、彼らはほとんど気づいていませんでした。"
+      }
+    ]
+  },
+  "en_c1_20": {
+    "title": "No sooner ... than / Hardly ... when（〜するやいなや）",
+    "shortExplanation": "1つ目の動作が終わったまさにその瞬間に次の出来事が起きたことを強調します。",
+    "longExplanation": "固定のペアを正確に組み合わせます：「No sooner」は必ず「than」と、「Hardly / Scarcely」は必ず「when」と組みます。文頭に置くと「had + 主語 + 過去分詞」の倒置になります。",
+    "formation": "No sooner had S V3 than S V2  |  Hardly had S V3 when S V2",
+    "examples": [
+      {
+        "translation": "食事にしようと席に着くやいなや、電話が鳴りました。"
+      },
+      {
+        "translation": "講演者がテーマを紹介し終えるやいなや、手が挙がりました。"
+      }
+    ]
+  },
+  "en_c1_21": {
+    "title": "Were + 主語 + to + 動詞の原形（仮定法未来の倒置）",
+    "shortExplanation": "「もし仮に〜するとしたら」と、フォーマルに仮定のシナリオを提示する表現です。",
+    "longExplanation": "「If + 主語 + were to」から if を省き、Were を文頭に倒置させた洗練された構文です。ビジネス提案や論文、スピーチなどで重宝されます。",
+    "formation": "Were + 主語 + to + 原形, 主語 + would/could/might + 原形",
+    "examples": [
+      {
+        "translation": "もし私たちがその申し出を受けることになれば、チームを拡大する必要があるでしょう。"
+      },
+      {
+        "translation": "仮にそのプラットフォームがオフライン保存をなくせば、通勤者は困るはずです。"
+      }
+    ]
+  },
+  "en_c1_22": {
+    "title": "But for + 名詞句（もし〜がなければ／なかったら）",
+    "shortExplanation": "「If it weren't for / If it hadn't been for」をすっきり一言で言い換える表現です。",
+    "longExplanation": "But for の後ろに名詞句を置き、主節には仮定法（would / would have + 過去分詞）を続けます。決定的な支えへの感謝や要因を述べる場面でよく使われます。",
+    "formation": "But for + 名詞句, 主語 + would (have) + 動詞/過去分詞",
+    "examples": [
+      {
+        "translation": "あなたの素早いメモがなかったら、間違った部屋に入るところでした。"
+      },
+      {
+        "translation": "コミュニティからの継続的な意見がなければ、この計画は停滞していたかもしれません。"
+      }
+    ]
+  },
+  "en_c2_21": {
+    "title": "修辞的な譲歩と要約（Be that as it may / Suffice it to say）",
+    "shortExplanation": "前の主張を認めつつ本題へ切り返す表現と、細部を省いて結論だけを述べる格調高い表現です。",
+    "longExplanation": "「Be that as it may（それはそうとしても）」は譲歩後の転換、「Suffice it to say（一言で言えば〜だけで十分だろう）」は要点の凝縮に用います。",
+    "formation": "Be that as it may, + 主節  |  Suffice it to say, + 結論節",
+    "examples": [
+      {
+        "translation": "日程はタイトに見えますが、それはそれとしてチーム全員の準備は整っています。"
+      },
+      {
+        "translation": "一言で言えば、その基調講演を聴いて刺激を受けずに帰った人は一人もいませんでした。"
+      }
+    ]
+  },
+  "en_a2_36": {
+    "title": "wake up（目を覚ます・起こす）",
+    "shortExplanation": "眠りから覚める、または誰かを起こすときに使います。",
+    "longExplanation": "人を起こすときは「wake 人 up」と語順を分けられます。意識がはっきりするときにも使います。",
+    "formation": "Subject + wake (sb) up",
+    "examples": [
+      {
+        "translation": "普段は7時ごろ起きてからコーヒーを淹れます。"
+      },
+      {
+        "translation": "電車で寝てしまったら起こしてくれますか？"
+      }
+    ]
+  },
+  "en_a2_37": {
+    "title": "go back（戻る・さかのぼる）",
+    "shortExplanation": "元の場所や話題、以前の時点に戻ることを表します。",
+    "longExplanation": "目的地や話題を示すときは「to」を続けます。「We go back years」は長年の知り合いという意味の定番表現です。",
+    "formation": "Subject + go back (+ to + Place/Topic)",
+    "examples": [
+      {
+        "translation": "少し前のスライドに戻りましょう。"
+      },
+      {
+        "translation": "彼女は来月、地元へ帰る予定です。"
+      }
+    ]
+  },
+  "en_a2_38": {
+    "title": "go out（出かける・消える・付き合う）",
+    "shortExplanation": "食事や遊びに出かける、明かりが消える、誰かと交際するなどを表します。",
+    "longExplanation": "日常会話で頻出の多義表現です。文脈（人・電気・流行）で意味を見分けましょう。",
+    "formation": "Subject + go out (+ with + Person)",
+    "examples": [
+      {
+        "translation": "授業のあと、麺類を食べに出かけませんか？"
+      },
+      {
+        "translation": "嵐のあいだ、街灯が突然すべて消えてしまいました。"
+      }
+    ]
+  },
+  "en_a2_39": {
+    "title": "come on（さあ・おいおい・始まる）",
+    "shortExplanation": "相手を急かしたり励ましたり、「まさか！」と呆れたり、照明や番組が始まったりするときに使います。",
+    "longExplanation": "映画やVlogで最もよく聞く間投表現のひとつです。声のトーンで意味を判断しましょう。",
+    "formation": "Come on! / Subject + come on",
+    "examples": [
+      {
+        "translation": "ほら急いで、冒頭の予告編に遅れちゃうよ！"
+      },
+      {
+        "translation": "えっ、ちょっと待って、まさかその噂を本気で信じてるわけじゃないよね？"
+      }
+    ]
+  },
+  "en_a2_40": {
+    "title": "look after（世話をする・気をつける）",
+    "shortExplanation": "人やペット・植物の面倒を見たり、体調や物を大切に管理したりすることを表します。",
+    "longExplanation": "目的語を間に入れない不可分の句動詞で、「look after + 名詞」の語順を守ります。",
+    "formation": "Subject + look after + Noun/Person",
+    "examples": [
+      {
+        "translation": "今週旅行に行くあいだ、観葉植物の世話を頼めますか？"
+      },
+      {
+        "translation": "夜遅くまで勉強するときは目のケアも忘れずにね。"
+      }
+    ]
+  },
+  "en_a2_41": {
+    "title": "look up（調べる・上向く）",
+    "shortExplanation": "辞書やネットで言葉や情報を調べたり、状況が好転したりすることを表します。",
+    "longExplanation": "情報を調べる用法では「look 語 up」と分離可能です。自動詞では「見上げる／上向く」になります。",
+    "formation": "Subject + look up + Info  |  look + Info + up",
+    "examples": [
+      {
+        "translation": "字幕のどの単語でもタップすればすぐに意味を調べられます。"
+      },
+      {
+        "translation": "厳しい冬のあと、売上がようやく上向いてきました。"
+      }
+    ]
+  },
+  "en_a2_42": {
+    "title": "put on（身につける・かける・体重が増える）",
+    "shortExplanation": "服や眼鏡・イヤホンなどを身につける、音楽や照明をつける、体重が増えるという意味で使います。",
+    "longExplanation": "「take off（脱ぐ）」の反対です。代名詞を目的語にするときは「put it on」と間に入れます。",
+    "formation": "Subject + put on + Noun / Weight / Show",
+    "examples": [
+      {
+        "translation": "すべての音素を聞き取れるよう、ヘッドホンを着けてください。"
+      },
+      {
+        "translation": "休暇中に少し体重が増えても気にしないで。"
+      }
+    ]
+  },
+  "en_a2_43": {
+    "title": "take off（脱ぐ・離陸する・急成長する）",
+    "shortExplanation": "服や靴を脱ぐ、飛行機が離陸する、休暇を取る、人気や事業が急に伸びることを表します。",
+    "longExplanation": "他動詞（〜を脱ぐ）では分離可能で、自動詞では「離陸する／飛躍する」という意味になります。",
+    "formation": "Subject + take off (+ Noun)",
+    "examples": [
+      {
+        "translation": "濡れた靴は玄関の近くで脱いでくださいね。"
+      },
+      {
+        "translation": "あの短い動画がバズってから、彼女の料理チャンネルは一気に伸びました。"
+      }
+    ]
+  },
+  "en_a2_44": {
+    "title": "turn on（電源や機能をつける・オンにする）",
+    "shortExplanation": "照明、家電、字幕機能などのスイッチを入れて動かすときに使います。",
+    "longExplanation": "「turn off」の反対です。代名詞「it」を使うときは必ず「turn it on」の間に置きます。",
+    "formation": "Subject + turn on + Device / turn + Device + on",
+    "examples": [
+      {
+        "translation": "会話が速すぎるときは二言語字幕をオンにしてみてください。"
+      },
+      {
+        "translation": "暗くなってきたので、デスクライトをつけてもらえますか？"
+      }
+    ]
+  },
+  "en_a2_45": {
+    "title": "write down（書き留める・メモする）",
+    "shortExplanation": "忘れないように言葉や番号・アイデアを紙やノートに書き記すことです。",
+    "longExplanation": "「write them down」のように目的語を間に挟むことができます。",
+    "formation": "Subject + write down + Noun / write + Noun + down",
+    "examples": [
+      {
+        "translation": "どの動画でも、聞き取った新しい表現を2つ書き留めましょう。"
+      },
+      {
+        "translation": "ちょっと待って、ペンを取って住所を書き留めるね。"
+      }
+    ]
+  },
+  "en_a2_46": {
+    "title": "pick up（拾う・迎えに行く・自然に身につける）",
+    "shortExplanation": "物を拾い上げる、車で迎えに行く、勉強ではなく耳や経験から自然に覚える、勢いが増すなどを表します。",
+    "longExplanation": "語学学習では「pick up expressions naturally（表現を自然に吸収する）」のように定番で使われます。",
+    "formation": "Subject + pick up + Noun / Speed / Skill",
+    "examples": [
+      {
+        "translation": "実際の会話を聴くだけで、自然なリズムを身につけることができます。"
+      },
+      {
+        "translation": "7時に駅の外まで車で迎えに行きますね。"
+      }
+    ]
+  },
+  "en_a2_47": {
+    "title": "grow up（育つ・大人になる・成長する）",
+    "shortExplanation": "子どもから大人へ成長する、あるいは考え方が大人びることを表します。",
+    "longExplanation": "自動詞なので目的語は取りません。「（子どもを）育てる」と言う場合は他動詞「bring up」を使います。",
+    "formation": "Subject + grow up",
+    "examples": [
+      {
+        "translation": "彼女は家でベトナム語と英語の両方を話して育ちました。"
+      },
+      {
+        "translation": "もう大人になって、自分の選択に責任を持つべき時ですよ。"
+      }
+    ]
+  },
+  "en_b1_36": {
+    "title": "find out（突き止める・調べて知る・判明する）",
+    "shortExplanation": "調べたり尋ねたりして、それまで知らなかった事実や真実を明らかにすることです。",
+    "longExplanation": "無くした物を見つける「find」に対し、「find out」は情報や事実を発見するときに使います。",
+    "formation": "Subject + find out (+ about + Noun / Clause)",
+    "examples": [
+      {
+        "translation": "不具合の原因が何だったのか、最後まで見て確かめてください。"
+      },
+      {
+        "translation": "あの匿名コメントを書いたのが誰か、結局わかりましたか？"
+      }
+    ]
+  },
+  "en_b1_37": {
+    "title": "give up（諦める・やめる）",
+    "shortExplanation": "難しいことへの挑戦を断念する、または長年の習慣をやめることを表します。",
+    "longExplanation": "重要な文法ルール：後ろに動詞を置く場合は必ず動名詞（V-ing）にします（give up trying）。",
+    "formation": "Subject + give up (+ Noun / V-ing)",
+    "examples": [
+      {
+        "translation": "最初の数シーンが速く感じたからといって諦めないでください。"
+      },
+      {
+        "translation": "彼は3か月前に甘い飲み物をきっぱりやめました。"
+      }
+    ]
+  },
+  "en_b1_38": {
+    "title": "go on（続く・続ける・起きる）",
+    "shortExplanation": "同じ作業を続ける、何かが起こっている（What's going on?）、次の段階へ進むことを表します。",
+    "longExplanation": "「go on V-ing」は同じことの継続、「go on to V」は次に別の行為へ移る違いに注意しましょう。",
+    "formation": "Subject + go on (+ V-ing / to + Verb)",
+    "examples": [
+      {
+        "translation": "今、中庭で何が起きているんですか？"
+      },
+      {
+        "translation": "待って、止めないで、要点の説明を続けて！"
+      }
+    ]
+  },
+  "en_b1_39": {
+    "title": "hold on（ちょっと待つ・しっかりつかまる）",
+    "shortExplanation": "通話中などに少し待ってもらうときや、手すり・物をしっかり握るときに使います。",
+    "longExplanation": "「〜につかまる／手放さない」と言う場合は後ろに「to」を付けて「hold on to」にします。",
+    "formation": "Hold on (+ a second) / Subject + hold on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "ちょっと待って、今字幕をオンに戻すから。"
+      },
+      {
+        "translation": "駅を出るまで切符をしっかり持っていてください。"
+      }
+    ]
+  },
+  "en_b1_40": {
+    "title": "keep on（〜し続ける）",
+    "shortExplanation": "困難があっても粘り強く続けたり、同じことが何度も繰り返し起きたりすることを強調します。",
+    "longExplanation": "後ろには必ず動名詞（V-ing）を置きます。単なる keep よりも反復や粘りのニュアンスが強まります。",
+    "formation": "Subject + keep on + V-ing",
+    "examples": [
+      {
+        "translation": "短いクリップのシャドーイングを続ければ、発音がだんだんこなれてきますよ。"
+      },
+      {
+        "translation": "どうして私のスマホはBluetoothが切れ続けるんだろう？"
+      }
+    ]
+  },
+  "en_b1_41": {
+    "title": "keep up（遅れずについていく・維持する）",
+    "shortExplanation": "スピードや流行に遅れずについていく（keep up with）、または良い調子を保つことを表します。",
+    "longExplanation": "「Keep it up!（その調子！）」は励ましの決まり文句です。",
+    "formation": "Subject + keep up (+ with + Noun/Person)",
+    "examples": [
+      {
+        "translation": "ネイティブでさえ、速いジョークについていくために一時停止することがあります。"
+      },
+      {
+        "translation": "明日で連続学習30日ですね。その調子で頑張ってください！"
+      }
+    ]
+  },
+  "en_b1_42": {
+    "title": "break down（故障する・感情が崩れる・分解する）",
+    "shortExplanation": "車や機械が故障する、感極まって泣き崩れる、複雑な内容を細かく分解して説明することを表します。",
+    "longExplanation": "解説動画では「情報をわかりやすくかみ砕く」意味の他動詞（break ~ down）が頻出です。",
+    "formation": "Subject + break down (+ Noun)",
+    "examples": [
+      {
+        "translation": "私たちの乗ったバスは峠道の途中で故障してしまいました。"
+      },
+      {
+        "translation": "この長い文を扱いやすい3つの塊に分けてみましょう。"
+      }
+    ]
+  },
+  "en_b1_43": {
+    "title": "bring up（話題を持ち出す・育てる）",
+    "shortExplanation": "会話の中で特定の話題を切り出すこと、または親などが子どもを育て上げることを表します。",
+    "longExplanation": "「bring it up」と分離できます。主語自身が育つ「grow up」との対比がポイントです。",
+    "formation": "Subject + bring up + Topic/Child",
+    "examples": [
+      {
+        "translation": "なぜ彼女は昼食の席であの古い口論の話を持ち出したんだろう？"
+      },
+      {
+        "translation": "祖父母が海辺の小さな町で私を育ててくれました。"
+      }
+    ]
+  },
+  "en_b1_44": {
+    "title": "carry on（続ける・続行する）",
+    "shortExplanation": "中断や困難があっても、そのまま作業や話などを続けるときに使います。",
+    "longExplanation": "動詞を続ける場合は「carry on V-ing」、名詞なら「carry on with ~」の形をとります。",
+    "formation": "Subject + carry on (+ V-ing / with + Noun)",
+    "examples": [
+      {
+        "translation": "遮ってしまってごめんなさい。どうぞお話の続きを。"
+      },
+      {
+        "translation": "水を一口飲んだあと、司会者は質疑応答を続けました。"
+      }
+    ]
+  },
+  "en_b1_45": {
+    "title": "carry out（実行する・実施する）",
+    "shortExplanation": "計画・実験・調査・約束などを実際にやり遂げるときに使う、やや改まった定番表現です。",
+    "longExplanation": "「research / survey / test / plan」などと相性がよく、ビジネスや学術動画で頻出します。",
+    "formation": "Subject + carry out + Plan/Task/Study",
+    "examples": [
+      {
+        "translation": "研究者たちは字幕の読み方に関する大規模な調査を実施しました。"
+      },
+      {
+        "translation": "チームはチェックリストのすべての手順を慎重に実行しました。"
+      }
+    ]
+  },
+  "en_b1_46": {
+    "title": "catch up（追いつく・近況を語り合う）",
+    "shortExplanation": "遅れを取り戻して追いつく、または久しぶりの友人と近況報告し合うときに使います。",
+    "longExplanation": "相手や本流に追いつくなら「with」、溜まった睡眠や仕事を取り戻すなら「on」を続けます。",
+    "formation": "Subject + catch up (+ with + Person/Work)",
+    "examples": [
+      {
+        "translation": "近いうちにコーヒーでも飲んで、お互いの近況をゆっくり話そうよ！"
+      },
+      {
+        "translation": "日曜の午後は未読メールの片付けに追われて過ごしました。"
+      }
+    ]
+  },
+  "en_b1_47": {
+    "title": "come across（偶然見つける・〜という印象を与える）",
+    "shortExplanation": "探していたわけではないのにふと出会うこと、または「〜のように見える／印象を与える」を表します。",
+    "longExplanation": "目的語を挟まない不可分表現です。印象を表すときは「come across as + 形容詞/名詞」が定番です。",
+    "formation": "Subject + come across + Noun / Adjective",
+    "examples": [
+      {
+        "translation": "旅行のVlogを見ていたときに、素敵なイディオムに偶然出会いました。"
+      },
+      {
+        "translation": "彼女は生放送のプレッシャーの中でもとても落ち着いた印象を与えます。"
+      }
+    ]
+  },
+  "en_b1_48": {
+    "title": "come up（持ち上がる・話題に出る／come up with で思いつく）",
+    "shortExplanation": "予定外の用件や問題が急に起きる、話題に上ることを表します。with が付くと「アイデアなどを思いつく」になります。",
+    "longExplanation": "ニュース番組などの「Coming up next（続いてはこちら）」も定番の用法です。",
+    "formation": "Subject + come up (+ with + Idea)",
+    "examples": [
+      {
+        "translation": "職場で急な用件が入ったので、早退しなければなりません。"
+      },
+      {
+        "translation": "この表現を使った例文を2つ思いつけますか？"
+      }
+    ]
+  },
+  "en_b1_49": {
+    "title": "count on（当てにする・頼りにする）",
+    "shortExplanation": "人や条件がきっと助けてくれる・期待どおりになると信頼して当てにすることです。",
+    "longExplanation": "rely on とほぼ同義ですが、日常会話では count on が温かみがあり自然です。",
+    "formation": "Subject + count on + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "難しいフレーズで詰まったら、いつでも私を頼っていいですよ。"
+      },
+      {
+        "translation": "4月の屋外ピクニックに完璧な晴天を当てにしすぎないほうがいいですね。"
+      }
+    ]
+  },
+  "en_b1_50": {
+    "title": "cut down（削減する・減らす）",
+    "shortExplanation": "量・回数・費用（砂糖、カフェイン、スマホ時間など）を意識して減らすときに使います。",
+    "longExplanation": "「〜を控える」と言うときは「cut down on + 名詞」の形が定番です。",
+    "formation": "Subject + cut down (+ on + Noun)",
+    "examples": [
+      {
+        "translation": "寝る前の深夜スマホをなるべく減らそうとしています。"
+      },
+      {
+        "translation": "自動再生をオフにすると無駄な視聴時間を減らせます。"
+      }
+    ]
+  },
+  "en_b1_51": {
+    "title": "cut off（話を遮る・供給を絶つ・孤立させる）",
+    "shortExplanation": "話の途中で口を挟む、電気・通信を切る、雪などで地域を孤立させるという意味で使います。",
+    "longExplanation": "分離可能で「cut me off（私の話を遮る）」が日常会話でよく出ます。",
+    "formation": "Subject + cut off + Noun / cut + Noun + off",
+    "examples": [
+      {
+        "translation": "ごめん、マイクが5秒ほど切れたみたい—今の聞こえましたか？"
+      },
+      {
+        "translation": "彼女が考えを言い終える前に話を遮らないでください。"
+      }
+    ]
+  },
+  "en_b1_52": {
+    "title": "deal with（対処する・取り扱う）",
+    "shortExplanation": "問題やストレスを処理する、顧客に対応する、あるいは本・動画があるテーマを扱うときに使います。",
+    "longExplanation": "不可分の句動詞で、実務の対応から作品テーマの説明まで幅広く活躍します。",
+    "formation": "Subject + deal with + Noun",
+    "examples": [
+      {
+        "translation": "毎日勉強していて燃え尽きそうになったとき、どうやって対処していますか？"
+      },
+      {
+        "translation": "エピソードの後半では丁寧な謝り方を扱っています。"
+      }
+    ]
+  },
+  "en_b1_53": {
+    "title": "end up（結局〜することになる・〜に行き着く）",
+    "shortExplanation": "いろいろあった末に、思いがけない結果や場所・状態に落ち着くことを表します。",
+    "longExplanation": "後ろに動詞を置くときは必ず動名詞（V-ing）を使い、to不定詞は使いません。",
+    "formation": "Subject + end up + V-ing / Place / Adjective",
+    "examples": [
+      {
+        "translation": "降りる駅を乗り過ごして、結局20分歩いて帰ることになりました。"
+      },
+      {
+        "translation": "1本だけ見るつもりが、結局1時間も勉強してしまいました。"
+      }
+    ]
+  },
+  "en_b1_54": {
+    "title": "figure out（考え抜いて理解する・解決策を見つける）",
+    "shortExplanation": "頭を使って考えた末に、仕組みを理解したり答えを見つけ出したりすることを表します。",
+    "longExplanation": "日常会話での使用率が非常に高く、「figure it out」と代名詞を間に挟めます。",
+    "formation": "Subject + figure out + Noun/Clause / figure + Noun + out",
+    "examples": [
+      {
+        "translation": "5分ちょうだい、音声がずれている原因を突き止めるから。"
+      },
+      {
+        "translation": "文脈の中でそのイディオムがどういう意味か、ようやくわかりましたか？"
+      }
+    ]
+  },
+  "en_b1_55": {
+    "title": "fit in（溶け込む・都合をつける・収まる）",
+    "shortExplanation": "グループになじむこと、または忙しい予定や狭い場所にうまく時間・スペースを作ることです。",
+    "longExplanation": "グループに溶け込む場合は「fit in with ~」と with を添えます。",
+    "formation": "Subject + fit in (+ with + Group/Schedule)",
+    "examples": [
+      {
+        "translation": "集中できる10分だけでも、昼休みに無理なく組み込めますよ。"
+      },
+      {
+        "translation": "彼女は職場の新しいチームメンバーにすぐ溶け込みました。"
+      }
+    ]
+  },
+  "en_b1_56": {
+    "title": "follow up（フォローアップする・追跡確認する）",
+    "shortExplanation": "一度やり取りしたあとに、経過確認や追加連絡、さらなる調査を行うことです。",
+    "longExplanation": "名詞「follow-up（後続の連絡・追跡）」はハイフン付きで書かれる点も覚えましょう。",
+    "formation": "Subject + follow up (+ on + Noun / with + Person)",
+    "examples": [
+      {
+        "translation": "チームから返信がなければ、明日の朝もう一度連絡して確認します。"
+      },
+      {
+        "translation": "彼女は講義のあとに5つの実践練習でフォローアップしました。"
+      }
+    ]
+  },
+  "en_b1_57": {
+    "title": "get away（抜け出す・息抜きに出かける・やりおおせる）",
+    "shortExplanation": "その場から逃げる・離れる、小旅行に出る、また「get away with」で悪いことをして罰を免れるという意味になります。",
+    "longExplanation": "日常では「日常を離れてリフレッシュする」意味でも大変よく使われます。",
+    "formation": "Subject + get away (+ from + Place / with + Noun)",
+    "examples": [
+      {
+        "translation": "今週末はどこか静かな海辺へ息抜きに出かけたいなと思っています。"
+      },
+      {
+        "translation": "復習をサボり続けてずっと見逃してもらえるわけがないですよ！"
+      }
+    ]
+  },
+  "en_b1_58": {
+    "title": "get back（戻る・後で返事をする・取り戻す）",
+    "shortExplanation": "帰る・元の状態に戻る、確認して後ほど連絡する（get back to 人）、失った物を取り返すことを表します。",
+    "longExplanation": "メールや仕事で「I'll get back to you（後ほど折り返します）」は必須表現です。",
+    "formation": "Subject + get back (+ to + Place/Person)",
+    "examples": [
+      {
+        "translation": "予定を確認して、今夜また折り返しご連絡しますね。"
+      },
+      {
+        "translation": "昨夜は結局何時に帰宅したんですか？"
+      }
+    ]
+  },
+  "en_b1_59": {
+    "title": "get over（乗り越える・回復する）",
+    "shortExplanation": "病気や失恋・ショック・落胆から立ち直ることを表します。",
+    "longExplanation": "「I can't get over how...!」は「〜だなんて驚きが収まらない（本当にすごい）」という定番の褒め方です。",
+    "formation": "Subject + get over + Illness/Setback/Surprise",
+    "examples": [
+      {
+        "translation": "しつこい夏風邪が治るのに2週間もかかりました。"
+      },
+      {
+        "translation": "君の発音がどれだけ上達したか、いまだに驚きが収まらないよ！"
+      }
+    ]
+  },
+  "en_b1_60": {
+    "title": "get through（やり終える・乗り切る・電話がつながる）",
+    "shortExplanation": "大変な課題や時期を乗り越える、電話がつながる、相手（get through to 人）に思いが伝わることを表します。",
+    "longExplanation": "作業の完遂から通話・意思疎通まで幅広く使われる実力派表現です。",
+    "formation": "Subject + get through (+ to + Person / Exam/Task)",
+    "examples": [
+      {
+        "translation": "短いポッドキャストを聴くことで、長い通勤時間を乗り切れました。"
+      },
+      {
+        "translation": "2回かけてみましたが、受付に電話がつながりませんでした。"
+      }
+    ]
+  },
+  "en_b1_61": {
+    "title": "hand in（提出する）",
+    "shortExplanation": "宿題、レポート、申込書、辞表などを先生や上司に手渡し・提出するときに使います。",
+    "longExplanation": "「hand it in」と分離可能です。「turn in」ともほぼ同じ意味です。",
+    "formation": "Subject + hand in + Homework/Report/Resignation",
+    "examples": [
+      {
+        "translation": "金曜日の深夜までに必ず課題を提出してください。"
+      },
+      {
+        "translation": "リモートワークの仕事が見つかったため、彼は退職届を出すことにしました。"
+      }
+    ]
+  },
+  "en_b1_62": {
+    "title": "hang on（ちょっと待って・しっかりつかまる）",
+    "shortExplanation": "「hold on」の少しカジュアルな言い方で、会話で「待って！」と呼び止めたり、しっかり握ったりするときに使います。",
+    "longExplanation": "動画で聞き返したいとき「Hang on—what did he say?」のように頻出します。",
+    "formation": "Hang on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "ちょっと待って、今のセリフをゆっくりめで再生し直すね！"
+      },
+      {
+        "translation": "ボートが大きな波を越えるあいだ、しっかりつかまっていて。"
+      }
+    ]
+  },
+  "en_b1_63": {
+    "title": "look back（振り返る・思い返す）",
+    "shortExplanation": "過去の思い出、経験、当時の選択などをしみじみと思い返して振り返ることです。",
+    "longExplanation": "具体的な出来事を挙げるときは「look back on + 過去の出来事」とします。",
+    "formation": "Subject + look back (+ on + Past Event)",
+    "examples": [
+      {
+        "translation": "いつかこうした初期の勉強時間を振り返って微笑む日が来ますよ。"
+      },
+      {
+        "translation": "今振り返ってみると、休憩を削ったのはかえって上達を遅らせていました。"
+      }
+    ]
+  },
+  "en_b1_64": {
+    "title": "make up（作り上げる・仲直りする・構成する・補う）",
+    "shortExplanation": "言い訳や物語を作る、喧嘩から仲直りする（with）、全体の割合を占める、遅れを取り戻す（for）など多才な表現です。",
+    "longExplanation": "前置詞「with（仲直り）」や「for（埋め合わせ）」の有無で意味がくっきり分かれます。",
+    "formation": "Subject + make up (+ Story/Mind/Group)  |  make up with",
+    "examples": [
+      {
+        "translation": "言い訳を作らないで、何が起きたのか正直に教えてください。"
+      },
+      {
+        "translation": "リスニングは私の毎日の学習ルーティンのほぼ半分を占めています。"
+      }
+    ]
+  },
+  "en_b1_65": {
+    "title": "move on（次へ進む・気持ちを切り替えて前に進む）",
+    "shortExplanation": "ひとつの話題や段階を終えて次へ移ること、または過去の出来事を引きずらず前に進むことです。",
+    "longExplanation": "解説動画では「Let's move on to ~（それでは〜に移りましょう）」と頻繁に聞こえます。",
+    "formation": "Subject + move on (+ to + Next Topic)",
+    "examples": [
+      {
+        "translation": "これらの母音をマスターしたら、次は自然なリズムの練習に移ります。"
+      },
+      {
+        "translation": "最初はつらくても、いずれ誰もが前に進まなければなりません。"
+      }
+    ]
+  },
+  "en_b1_66": {
+    "title": "open up（心を開く・打ち明ける・可能性を切り開く）",
+    "shortExplanation": "本音や悩みを正直に話す、店を開ける、新しい世界やチャンスを広げることを表します。",
+    "longExplanation": "人の心情（open up about ~）にもチャンスの拡大（open up possibilities）にもよく使われます。",
+    "formation": "Subject + open up (+ about + Topic)",
+    "examples": [
+      {
+        "translation": "別の言語を学ぶと、想像もしなかった友情の扉が開かれます。"
+      },
+      {
+        "translation": "彼は親しい友人にさえ、子ども時代のことをめったに打ち明けません。"
+      }
+    ]
+  },
+  "en_b1_67": {
+    "title": "point out（指摘する・気づかせる）",
+    "shortExplanation": "見落としがちな大切な事実、細部、あるいは間違いに相手の注意を向けさせるときに使います。",
+    "longExplanation": "短い名詞なら「point it out」と分離でき、長い that節なら「point out that ...」と続けます。",
+    "formation": "Subject + point out + Noun / that-Clause",
+    "examples": [
+      {
+        "translation": "字幕のちょっとした打ち間違いを指摘してくれてありがとうございます。"
+      },
+      {
+        "translation": "専門家は、毎日の短い復習が週末の詰め込み学習に勝ると指摘しています。"
+      }
+    ]
+  },
+  "en_b1_68": {
+    "title": "put off（先延ばしにする・やる気を削ぐ）",
+    "shortExplanation": "仕事や予定をあと回しにすること、または気が進まなくさせることを表します。",
+    "longExplanation": "後ろの動詞は必ず動名詞（V-ing）にします（put off doing）。to不定詞は使えません。",
+    "formation": "Subject + put off + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "難しそうな文法レッスンを先延ばしにするのはやめて、まずは5分から始めましょう。"
+      },
+      {
+        "translation": "長い単語があるからといって、ネイティブ向けドキュメンタリーを見るのを敬遠しないで。"
+      }
+    ]
+  },
+  "en_b1_69": {
+    "title": "run into（偶然出くわす・問題に直面する）",
+    "shortExplanation": "街で知り合いにばったり会うこと、または予想外のトラブルや壁にぶつかることを表します。",
+    "longExplanation": "不可分の句動詞で、人や困難（trouble / problem / bug）が目的語になります。",
+    "formation": "Subject + run into + Person/Problem",
+    "examples": [
+      {
+        "translation": "近所の本屋さんで昔の先生にばったり会いました。"
+      },
+      {
+        "translation": "オフラインパックのダウンロード中に何かトラブルに遭ったら教えてくださいね。"
+      }
+    ]
+  },
+  "en_b1_70": {
+    "title": "run out（切らす・尽きる・期限が切れる）",
+    "shortExplanation": "コーヒーや時間・充電などが使い果たされて底をつくことを表します。",
+    "longExplanation": "「人が〜を切らす」なら「run out of + 名詞」、「時間・資源そのものが尽きる」なら of なしで「Time ran out」と言います。",
+    "formation": "Subject + run out (+ of + Resource)",
+    "examples": [
+      {
+        "translation": "時間がなくなってきたので、最後のルールをまとめましょう。"
+      },
+      {
+        "translation": "シーズンの途中でノートの白紙ページを使い切ってしまいました。"
+      }
+    ]
+  },
+  "en_b1_71": {
+    "title": "work out（運動する・解決策を練り出す・うまくいく）",
+    "shortExplanation": "ジムなどで運動する、計算や解決策を導き出す、また「結果的にうまく運ぶ」ことを表します。",
+    "longExplanation": "悩む友達への「It'll all work out.（きっとうまくいくよ）」は覚えておきたい応援フレーズです。",
+    "formation": "Subject + work out (+ Noun)",
+    "examples": [
+      {
+        "translation": "仕事帰りに20分歩くだけでも十分な運動になりますよ。"
+      },
+      {
+        "translation": "最初は大変そうに見えましたが、結局すべて順調に運びました。"
+      }
+    ]
+  },
+  "en_b1_72": {
+    "title": "sort out（整理整頓する・問題を解決する）",
+    "shortExplanation": "散らかった物やデータを分類して片付けること、または誤解やトラブルを解決して収拾をつけることです。",
+    "longExplanation": "「sort it out」と分離可能で、イギリス英語や日常会話全般でよく登場します。",
+    "formation": "Subject + sort out + Mess/Problem",
+    "examples": [
+      {
+        "translation": "通話が始まる前にWi-Fiの不具合を片付けておきましょう。"
+      },
+      {
+        "translation": "彼女は単語タグを難易度別に整理しました。"
+      }
+    ]
+  },
+  "en_b2_37": {
+    "title": "account for（原因を説明する・割合を占める）",
+    "shortExplanation": "現象の理由を説明すること、または全体のうち特定の割合を占めることを表します。",
+    "longExplanation": "不可分の句動詞で、ニュース・統計解説・ドキュメンタリーの頻出表現です。",
+    "formation": "Subject + account for + Noun",
+    "examples": [
+      {
+        "translation": "動画クリップはモバイル通信量の70%以上を占めています。"
+      },
+      {
+        "translation": "テストの点数が急に上がった理由をどう説明しますか？"
+      }
+    ]
+  },
+  "en_b2_38": {
+    "title": "add up（積み重なる・合計する・つじつまが合う）",
+    "shortExplanation": "少しずつ増えて大きな量になる、合計を出す、また否定形で「話のつじつまが合わない」を表します。",
+    "longExplanation": "小さな習慣の積み重ねを語るときにも、疑問点を指摘するときにも便利です。",
+    "formation": "Subject + add up (+ Noun)",
+    "examples": [
+      {
+        "translation": "1日10分は大したことに聞こえませんが、積み重なるとすぐ大きな時間になります。"
+      },
+      {
+        "translation": "時系列をもう一度確認して。彼のアリバイはどこかつじつまが合いません。"
+      }
+    ]
+  },
+  "en_b2_39": {
+    "title": "ask out（デートに誘う）",
+    "shortExplanation": "恋愛的な関心を持って食事や映画・カフェに誰かを誘うときに使います。",
+    "longExplanation": "人の目的語はほとんど常に間に挟みます（ask her out）。",
+    "formation": "Subject + ask + Person + out",
+    "examples": [
+      {
+        "translation": "彼は何週間も緊張した末に、ようやく彼女をコーヒーデートに誘いました。"
+      },
+      {
+        "translation": "語学交換会のあとで誰かにデートに誘われたことはありますか？"
+      }
+    ]
+  },
+  "en_b2_40": {
+    "title": "back up（バックアップする・裏付ける・後退する）",
+    "shortExplanation": "データの控えを保存する、証拠を出して主張を裏付ける、車をバックさせることを表します。",
+    "longExplanation": "名詞「a backup」は1語、句動詞「back up」は2語です。",
+    "formation": "Subject + back up (+ Data/Claim/Car)",
+    "examples": [
+      {
+        "translation": "端末を替える前に、必ず学習デッキをバックアップしておきましょう。"
+      },
+      {
+        "translation": "彼女は本文から3つの明確な例を挙げて自説を裏付けました。"
+      }
+    ]
+  },
+  "en_b2_41": {
+    "title": "back down（引き下がる・譲歩する・主張を取り下げる）",
+    "shortExplanation": "強い反対や圧力に押されて、それまでの主張や立場から退くときに使います。",
+    "longExplanation": "自動詞なので後ろに直接目的語をとりません。",
+    "formation": "Subject + back down (+ from + Stand)",
+    "examples": [
+      {
+        "translation": "批判が激しくても、その監督は決して引き下がりませんでした。"
+      },
+      {
+        "translation": "長い議論のあいだ、どちらの側も譲歩する気配を見せませんでした。"
+      }
+    ]
+  },
+  "en_b2_42": {
+    "title": "break through（突破する・壁を打ち破る）",
+    "shortExplanation": "物理的な壁や停滞期（伸び悩みの壁）を突き破って前に進むことを表します。",
+    "longExplanation": "1語の名詞「breakthrough（飛躍的進歩）」も重要です。",
+    "formation": "Subject + break through (+ Barrier)",
+    "examples": [
+      {
+        "translation": "毎日の継続的なリスニングが中級の壁を突破する助けになります。"
+      },
+      {
+        "translation": "ようやく朝の濃い霧を突き抜けて日差しが差してきました。"
+      }
+    ]
+  },
+  "en_b2_43": {
+    "title": "bring about（変化や結果をもたらす・引き起こす）",
+    "shortExplanation": "大きな変化・改革・結果を生じさせるという、知的で書き言葉・解説でもよく使う表現です。",
+    "longExplanation": "「change / shift / reform」など抽象的な結果と結びつきます。",
+    "formation": "Subject + bring about + Change/Result",
+    "examples": [
+      {
+        "translation": "字幕付きメディアは独学の習慣に大きな変化をもたらしました。"
+      },
+      {
+        "translation": "チームの士気がこれほど劇的に回復したきっかけは何だったのでしょうか？"
+      }
+    ]
+  },
+  "en_b2_44": {
+    "title": "come about（起こる・生じる・誕生する）",
+    "shortExplanation": "物事がどのように始まったのか・生じたのかを表す表現で、「How did it come about?」が定番です。",
+    "longExplanation": "自動詞のため受動態（was come about）にはなりません。",
+    "formation": "Subject + come about",
+    "examples": [
+      {
+        "translation": "二言語字幕のアイデアは最初どのようにして生まれたのですか？"
+      },
+      {
+        "translation": "リスナーからの意見を受けて、いくつか嬉しい改善が実現しました。"
+      }
+    ]
+  },
+  "en_b2_45": {
+    "title": "do without（〜なしで済ます・我慢してやっていく）",
+    "shortExplanation": "普段あるものがなくてもやり繰りすること、また「I could do without ~」で「〜はごめんだ」という皮肉にもなります。",
+    "longExplanation": "逆に「can't do without」は「〜なしではやっていけない」という意味です。",
+    "formation": "Subject + do without + Noun",
+    "examples": [
+      {
+        "translation": "オフライン学習者ならWi-Fiがなくても問題なく復習できます。"
+      },
+      {
+        "translation": "率直なフィードバックは助かりますが、失礼なコメントだけは勘弁してほしいです。"
+      }
+    ]
+  },
+  "en_b2_46": {
+    "title": "draw on（経験・知識・資金などを活用する・引き出す）",
+    "shortExplanation": "蓄えてきた経験・資料・スキル・貯金などを必要に応じて活かして使うことを表します。",
+    "longExplanation": "インタビューやエッセイでよく選ばれる知的な表現です。",
+    "formation": "Subject + draw on + Experience/Data/Savings",
+    "examples": [
+      {
+        "translation": "優れた翻訳者は文法だけでなく深い文化的直感も活用します。"
+      },
+      {
+        "translation": "このシリーズは5都市で行った本物の街頭インタビューをもとに構成されています。"
+      }
+    ]
+  },
+  "en_b2_47": {
+    "title": "draw up（計画・リスト・契約書を作成する）",
+    "shortExplanation": "正式な計画表・リスト・契約書などをきちんと書き起こすときに使います。",
+    "longExplanation": "ただメモするよりも「体系立てて起草・作成する」というニュアンスを持ちます。",
+    "formation": "Subject + draw up + Contract/List/Plan",
+    "examples": [
+      {
+        "translation": "現実的な4週間のリスニング計画を一緒に立てましょう。"
+      },
+      {
+        "translation": "法務チームは明確なオープンソースライセンス契約書を作成しました。"
+      }
+    ]
+  },
+  "en_b2_48": {
+    "title": "enter into（契約・議論に入る・考慮要素になる）",
+    "shortExplanation": "正式な契約を結ぶ、真剣な話し合いを始める、または判断材料に入ることを表します。",
+    "longExplanation": "否定文で「詳細に立ち入る」や「考慮に入る」としてもよく使われます。",
+    "formation": "Subject + enter into + Agreement/Discussion/Detail",
+    "examples": [
+      {
+        "translation": "両スタジオは昨春、共同制作のパートナーシップを結びました。"
+      },
+      {
+        "translation": "海外ボランティアをする決断に、お金のことは一切関係ありませんでした。"
+      }
+    ]
+  },
+  "en_b2_49": {
+    "title": "factor in（要因として計算・計画に織り込む）",
+    "shortExplanation": "見落としがちな費用・移動時間・リスクなどの変数をあらかじめ計算に含めることです。",
+    "longExplanation": "ビジネス・計画・家計の話で非常に重宝する分離可能な表現です。",
+    "formation": "Subject + factor in + Variable / factor + Noun + in",
+    "examples": [
+      {
+        "translation": "朝の電車を選ぶとき、移動時間も計算に入れましたか？"
+      },
+      {
+        "translation": "現実的な目標を保つため、日々のちょっとした気晴らしの時間も織り込んでおきましょう。"
+      }
+    ]
+  },
+  "en_b2_50": {
+    "title": "give in（折れる・屈する・誘惑に負ける）",
+    "shortExplanation": "説得・圧力・誘惑などに抵抗しきれず、ついに同意したり負けたりすることです。",
+    "longExplanation": "「give up（諦める）」と区別し、「圧力に折れる（give in to ~）」として覚えましょう。",
+    "formation": "Subject + give in (+ to + Pressure/Temptation)",
+    "examples": [
+      {
+        "translation": "10分間せがまれた末に折れて、フライドポテトを分けてあげました。"
+      },
+      {
+        "translation": "焦りに負けないでください。自然な流暢さは継続的なインプットから生まれます。"
+      }
+    ]
+  },
+  "en_b2_51": {
+    "title": "go through（経験する・一通り目を通す・手続きを経る）",
+    "shortExplanation": "つらい時期を経験する、リストや文章を順番に精査する、承認手続きを通過することを表します。",
+    "longExplanation": "授業や復習で「順番に確認しよう（Let's go through ~）」と頻繁に使われます。",
+    "formation": "Subject + go through + Hardship/Process/Notes",
+    "examples": [
+      {
+        "translation": "難しいイディオムを1行ずつ一緒に確認していきましょう。"
+      },
+      {
+        "translation": "スムーズに話せるようになる前には、誰もがインプットだけの静かな時期を経験します。"
+      }
+    ]
+  },
+  "en_b2_52": {
+    "title": "hand over（引き渡す・引き継ぐ）",
+    "shortExplanation": "物や鍵を相手の手に渡すこと、または役職・権限を次の人に引き継ぐときに使います。",
+    "longExplanation": "「hand it over」と分離できます。物理的な受け渡しにも業務引き継ぎにも使われます。",
+    "formation": "Subject + hand over + Item/Control (+ to + Person)",
+    "examples": [
+      {
+        "translation": "新しい司会者を育成したあと、彼女は喜んでマイクを引き継ぎました。"
+      },
+      {
+        "translation": "搭乗券をゲートの係員にお渡しください。"
+      }
+    ]
+  },
+  "en_b2_53": {
+    "title": "lay down（規則を定める・下に置く）",
+    "shortExplanation": "明確なルールや方針を打ち立てること、または道具・武器などを置くときに使います。",
+    "longExplanation": "自動詞「lie down（横になる）」との混同に注意しましょう。",
+    "formation": "Subject + lay down + Rules/Principles/Tool",
+    "examples": [
+      {
+        "translation": "初心者でも安心して話せるよう、クラブはシンプルなルールを定めました。"
+      },
+      {
+        "translation": "「lie down（横になる）」と「lay down（置く・定める）」を混同しないようにしましょう。"
+      }
+    ]
+  },
+  "en_b2_54": {
+    "title": "phase in（段階的に導入する）",
+    "shortExplanation": "新しい制度や仕組み・製品を一度にではなく、計画的に段階を追って取り入れることです。",
+    "longExplanation": "反対語は「phase out（段階的に廃止する）」です。",
+    "formation": "Subject + phase in + Policy/System",
+    "examples": [
+      {
+        "translation": "学校では3学期かけてスピーキング試験を段階的に導入する予定です。"
+      },
+      {
+        "translation": "市内中心部の全路線で電気バスが段階的に導入されています。"
+      }
+    ]
+  },
+  "en_b2_55": {
+    "title": "put up（泊める・掲示する／put up with で我慢する）",
+    "shortExplanation": "家に泊めてあげる、ポスターを貼る、価格を上げる、また with が続くと「不快なことを我慢する」という意味になります。",
+    "longExplanation": "特に「put up with ~（〜に耐える）」は日常会話の重要表現です。",
+    "formation": "Subject + put up (+ with + Annoyance / Friend / Sign)",
+    "examples": [
+      {
+        "translation": "今週末、いとこを2泊泊めてあげられますか？"
+      },
+      {
+        "translation": "一文ごとにポップアップ広告が割り込んでくるのにはもう我慢できません。"
+      }
+    ]
+  },
+  "en_b2_56": {
+    "title": "rule out（可能性を排除する・除外する）",
+    "shortExplanation": "ある原因・選択肢・仮説があり得ない、または対象外だと判断して外すときに使います。",
+    "longExplanation": "「Don't rule it out（その可能性を捨てないで）」のように分離もできます。",
+    "formation": "Subject + rule out + Possibility/Option",
+    "examples": [
+      {
+        "translation": "医師たちは季節性アレルギーの可能性を除外するため2つの検査を行いました。"
+      },
+      {
+        "translation": "話し方が自然で速いからといって、ネイティブ動画の活用を最初から諦めないでください。"
+      }
+    ]
+  },
+  "en_b2_57": {
+    "title": "set out（出発する・〜しようと乗り出す・整理して示す）",
+    "shortExplanation": "旅に出る、明確な目的を持って着手する（set out to V）、考えや項目を分かりやすく並べることを表します。",
+    "longExplanation": "「We set out to build...（私たちは〜を作るために動き出した）」は語りの定番です。",
+    "formation": "Subject + set out (+ to + Verb / on + Journey)",
+    "examples": [
+      {
+        "translation": "連休の高速道路の渋滞を避けるため、彼らは夜明けとともに出発しました。"
+      },
+      {
+        "translation": "そのガイドはリスニング持久力をつける3つの日課をわかりやすく示しています。"
+      }
+    ]
+  },
+  "en_b2_58": {
+    "title": "settle down（落ち着く・腰を据える・定住する）",
+    "shortExplanation": "騒がしさが静まる、腰を落ち着けて作業に入る、仕事や家庭を持って一か所に定住することを表します。",
+    "longExplanation": "学校で「静かにしよう」と言うときから人生の転機まで幅広く使われます。",
+    "formation": "Subject + settle down",
+    "examples": [
+      {
+        "translation": "カフェのBGMが静かになると、みんな落ち着いて勉強を始めました。"
+      },
+      {
+        "translation": "4か国で働いたあと、彼は大阪に腰を据えることにしました。"
+      }
+    ]
+  },
+  "en_b2_59": {
+    "title": "show up（現れる・姿を見せる・はっきり浮き出る）",
+    "shortExplanation": "約束の場所にやって来る（特に遅刻や予想外の登場）、または欠点などが目に見えることを表します。",
+    "longExplanation": "「arrive」より会話らしい表現で、「turn up」とほぼ同じ感覚で使えます。",
+    "formation": "Subject + show up (+ late/early)",
+    "examples": [
+      {
+        "translation": "激しい雨のせいで、勉強会に姿を見せたのは半分だけでした。"
+      },
+      {
+        "translation": "彼はリハーサルに20分遅れて現れたことを謝りました。"
+      }
+    ]
+  },
+  "en_b2_60": {
+    "title": "stand for（〜の略である・象徴する・我慢する）",
+    "shortExplanation": "頭字語が何の略かを表す、理念や価値観を象徴する、また否定文で「我慢して許す」を意味します。",
+    "longExplanation": "「What does ~ stand for?（〜は何の略ですか？）」は必ず覚えたい質問表現です。",
+    "formation": "Subject + stand for + Meaning/Values",
+    "examples": [
+      {
+        "translation": "記憶復習アプリの SRS とは何の略ですか？"
+      },
+      {
+        "translation": "良いメンターは即座の完璧さを急かすのではなく、忍耐という価値観を体現しています。"
+      }
+    ]
+  },
+  "en_b2_61": {
+    "title": "take on（引き受ける・雇う・新たな意味合いを帯びる）",
+    "shortExplanation": "仕事や責任を引き受ける、スタッフを雇う、また言葉や場面が新しいニュアンスを帯びることを表します。",
+    "longExplanation": "「take on too much（抱え込みすぎる）」は日常でもビジネスでもよく出ます。",
+    "formation": "Subject + take on + Work/Role/Challenger",
+    "examples": [
+      {
+        "translation": "同じ月に難しい講座を5つも引き受けすぎないでくださいね。"
+      },
+      {
+        "translation": "ありふれたクリップでも、トーンを聞き取れると新しいニュアンスを帯びて聞こえます。"
+      }
+    ]
+  },
+  "en_b2_62": {
+    "title": "take over（引き継ぐ・乗っ取る・主導権を握る）",
+    "shortExplanation": "他の人から運転・司会・会社経営などの役割や主導権を引き継いで担当することです。",
+    "longExplanation": "自動詞・他動詞の両方で使え、前任者を言うときは「from + 人」を添えます。",
+    "formation": "Subject + take over (+ from + Person / Company/Role)",
+    "examples": [
+      {
+        "translation": "旅の最後の2時間は、妹が運転を引き継いでくれました。"
+      },
+      {
+        "translation": "席を外して大丈夫ですよ。チャット管理は私が引き継ぎます。"
+      }
+    ]
   }
 };

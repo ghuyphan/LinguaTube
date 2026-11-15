@@ -3011,5 +3011,2205 @@ export const GRAMMAR_EN: GrammarPattern[] = [
         "translation": "The study examines how social media influences behavior."
       }
     ]
+  },
+  {
+    "id": "en_a1_25",
+    "language": "en",
+    "pattern": "Let's + Verb",
+    "title": "Let's + Verb (Making Suggestions)",
+    "shortExplanation": "Used to invite someone to do something together with you right now or soon.",
+    "longExplanation": "\"Let's\" is the short form of \"Let us\". Always follow it with the base form of a verb (no \"to\", no \"-ing\"). In negative suggestions, use \"Let's not + Verb\".",
+    "formation": "Let's + Base Verb (+ Object)",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "Let's take a quick break before the next lesson.",
+        "translation": "Shall we take a short break before the next lesson?"
+      },
+      {
+        "sentence": "Let's not wait any longer; the train leaves in five minutes.",
+        "translation": "Let us not wait longer because the train departs in five minutes."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_26",
+    "language": "en",
+    "pattern": "How about / What about + Noun / V-ing?",
+    "title": "How about / What about + Noun / V-ing?",
+    "shortExplanation": "Friendly way to suggest an idea, offer an option, or check how someone feels about something.",
+    "longExplanation": "In everyday conversation, both \"How about...?\" and \"What about...?\" are followed by a noun, pronoun, or an -ing verb (gerund). \"What about\" can also redirect a question back to someone (e.g. \"I'm fine, what about you?\").",
+    "formation": "How about / What about + Noun / V-ing?",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "How about ordering pizza for dinner tonight?",
+        "translation": "Would you like to order pizza for dinner tonight?"
+      },
+      {
+        "sentence": "What about meeting at the café around three?",
+        "translation": "Should we meet at the coffee shop around three o'clock?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_27",
+    "language": "en",
+    "pattern": "Would like (to + Verb)",
+    "title": "Would like + Noun / to + Verb (Polite Desires & Offers)",
+    "shortExplanation": "Polite way to say what you want or to offer something to someone.",
+    "longExplanation": "Instead of \"I want\", speakers use \"I would like\" (often contracted to \"I'd like\") to sound polite and natural in restaurants, shops, and requests. Always include \"to\" before a verb.",
+    "formation": "Subject + would like + Noun / to + Base Verb",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I'd like a cup of green tea without sugar, please.",
+        "translation": "Could I please have a cup of unsweetened green tea?"
+      },
+      {
+        "sentence": "Would you like to sit near the window?",
+        "translation": "Do you prefer sitting by the window?"
+      }
+    ]
+  },
+  {
+    "id": "en_a1_28",
+    "language": "en",
+    "pattern": "Be going to + Verb",
+    "title": "Be going to + Verb (Planned Future & Present Evidence)",
+    "shortExplanation": "Expresses plans you have already decided on, or predictions based on signs right in front of you.",
+    "longExplanation": "Conjugate \"be\" (am/is/are) to match the subject, then add \"going to\" + base verb. In fast spoken English, \"going to\" often sounds like \"gonna\".",
+    "formation": "Subject + am/is/are + going to + Base Verb",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "I'm going to start a new notebook for vocabulary tomorrow.",
+        "translation": "My plan is to begin a fresh vocabulary notebook tomorrow."
+      },
+      {
+        "sentence": "Look at those dark clouds—it's going to rain soon.",
+        "translation": "Those dark clouds show that rain is coming soon."
+      }
+    ]
+  },
+  {
+    "id": "en_a1_29",
+    "language": "en",
+    "pattern": "Want to / Need to + Verb",
+    "title": "Want to / Need to + Verb (Wishes & Necessities)",
+    "shortExplanation": "Combines a desire (want) or necessity (need) directly with a second action using \"to\".",
+    "longExplanation": "Both verbs connect to another verb through \"to + base verb\". In negative sentences, use \"don't/doesn't want to\" or \"don't/doesn't need to\". Watch out: \"want to\" often reduces to \"wanna\" in casual speech.",
+    "formation": "Subject + want(s)/need(s) + to + Base Verb",
+    "level": "CEFR A1",
+    "examples": [
+      {
+        "sentence": "You need to restart the app after changing the language.",
+        "translation": "Restarting the app is required once you switch languages."
+      },
+      {
+        "sentence": "I want to improve my listening speed this year.",
+        "translation": "My goal this year is to understand faster speech."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_27",
+    "language": "en",
+    "pattern": "Be able to + Verb",
+    "title": "Be able to + Verb (Ability Across All Tenses)",
+    "shortExplanation": "Works just like \"can\", especially in future, perfect, and infinitive forms where \"can\" is missing.",
+    "longExplanation": "Because modal \"can\" only has present (can) and past (could) forms, use \"be able to\" after \"will\", \"might\", \"have been\", or \"to\". For a single difficult past achievement, \"was/were able to\" sounds more natural than \"could\".",
+    "formation": "Subject + be (am/is/are/was/were/will be) + able to + Base Verb",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "With daily practice, you'll be able to follow native podcasts.",
+        "translation": "Daily practice will give you the ability to understand native podcasts."
+      },
+      {
+        "sentence": "Luckily, we were able to fix the bug before the demo.",
+        "translation": "Fortunately, we managed to solve the bug prior to the presentation."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_28",
+    "language": "en",
+    "pattern": "Have to / Don't have to + Verb",
+    "title": "Have to / Don't have to + Verb (Obligation vs. No Necessity)",
+    "shortExplanation": "\"Have to\" states a rule or outside necessity; \"don't have to\" means it is optional, NOT forbidden.",
+    "longExplanation": "Notice the huge difference in the negative: \"mustn't\" means it is forbidden, whereas \"don't have to\" means you are free to choose—it isn't necessary.",
+    "formation": "Subject + (don't / doesn't / didn't) have to + Base Verb",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Do we have to memorize every single word on this list?",
+        "translation": "Is memorizing every single word in the list required?"
+      },
+      {
+        "sentence": "You don't have to pay right away; the first week is free.",
+        "translation": "Immediate payment isn't required since the first week costs nothing."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_29",
+    "language": "en",
+    "pattern": "Too + adj/adv + to + Verb",
+    "title": "Too + Adjective/Adverb + (for someone) + to + Verb",
+    "shortExplanation": "Means something goes beyond the right limit, making an action impossible or undesirable.",
+    "longExplanation": "\"Too\" has a negative result here: the suitcase is so heavy that you cannot lift it. Optionally insert \"for + person\" before \"to + Verb\" to specify who is affected.",
+    "formation": "too + Adjective/Adverb + (for + Object) + to + Base Verb",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "The box was too heavy for me to carry upstairs alone.",
+        "translation": "Because the box was excessively heavy, I couldn't bring it upstairs by myself."
+      },
+      {
+        "sentence": "He spoke too fast for beginners to catch every phrase.",
+        "translation": "His speech was too rapid for beginners to understand each phrase."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_30",
+    "language": "en",
+    "pattern": "Adj/Adv + enough + (to + Verb)",
+    "title": "Adjective/Adverb + enough + (for someone) + to + Verb",
+    "shortExplanation": "Means having the required degree or amount to make something possible.",
+    "longExplanation": "Watch the word order! With adjectives and adverbs, \"enough\" goes AFTER the word (\"warm enough\", NOT \"enough warm\"). With nouns, \"enough\" normally goes BEFORE the noun (\"enough time\").",
+    "formation": "Adjective/Adverb + enough + (for + Object) + to + Base Verb",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Is the audio clear enough for you to hear the tone?",
+        "translation": "Can you hear the tone clearly from this audio?"
+      },
+      {
+        "sentence": "She isn't old enough to drive on her own yet.",
+        "translation": "She has not reached the legal age for solo driving yet."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_31",
+    "language": "en",
+    "pattern": "Both ... and / Either ... or / Neither ... nor",
+    "title": "Correlative Conjunctions (Both...and / Either...or / Neither...nor)",
+    "shortExplanation": "Pairs two equal items to include both, offer an A-or-B choice, or exclude both.",
+    "longExplanation": "\"Both A and B\" always takes a plural verb. With \"either A or B\" and \"neither A nor B\", the verb agrees with B (the closer noun). Avoid double negatives after \"neither...nor\".",
+    "formation": "Both A and B / Either A or B / Neither A nor B",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Either you turn in the draft today or we postpone the launch.",
+        "translation": "You must submit the draft today, otherwise the launch gets delayed."
+      },
+      {
+        "sentence": "Neither Tom nor Sarah knew the meeting had moved online.",
+        "translation": "Both Tom and Sarah were unaware that the meeting switched online."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_32",
+    "language": "en",
+    "pattern": "Make / Let + Object + Base Verb",
+    "title": "Make / Let + Object + Base Verb (Causative & Permission)",
+    "shortExplanation": "\"Make someone do\" means causing or forcing a reaction; \"let someone do\" means allowing them.",
+    "longExplanation": "Notice there is NO \"to\" before the second verb in active sentences (say \"let me explain\", NEVER \"let me to explain\"). For permission, \"allow someone to do\" requires \"to\", while \"let\" drops it.",
+    "formation": "Subject + make/let + Object + Base Verb",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Please let me explain what happened before you decide.",
+        "translation": "Allow me to explain the situation prior to making a decision."
+      },
+      {
+        "sentence": "That sudden twist made the whole audience gasp.",
+        "translation": "The unexpected twist caused everyone in the audience to gasp."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_33",
+    "language": "en",
+    "pattern": "Each other / One another",
+    "title": "Each other / One another (Reciprocal Pronouns)",
+    "shortExplanation": "Shows a mutual action shared back and forth between two or more people.",
+    "longExplanation": "Do not confuse \"themselves\" (each acts on self) with \"each other\" (A acts on B and B acts on A). Traditionally \"each other\" fits two people and \"one another\" fits three or more, though modern speakers often interchange them.",
+    "formation": "Plural Subject + Verb (+ Preposition) + each other / one another",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Good language partners always correct each other kindly.",
+        "translation": "Supportive study partners give gentle corrections back and forth."
+      },
+      {
+        "sentence": "They hadn't seen one another since university graduation.",
+        "translation": "All of them had remained out of touch since graduating from college."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_34",
+    "language": "en",
+    "pattern": "As soon as + Clause",
+    "title": "As soon as + Clause (Immediate Sequence)",
+    "shortExplanation": "Links two events where the second happens right after the first completes.",
+    "longExplanation": "Even when talking about the future, use present simple (NOT \"will\") inside the \"as soon as\" clause: \"I'll call you as soon as I land\" (NOT \"as soon as I will land\").",
+    "formation": "Main Clause + as soon as + Subject + Present/Past Verb",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Text me as soon as you get back home safely.",
+        "translation": "Send me a message right after arriving home safely."
+      },
+      {
+        "sentence": "As soon as the subtitles loaded, she started shadowing.",
+        "translation": "The moment the subtitles appeared, she began repeating after the speaker."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_35",
+    "language": "en",
+    "pattern": "So + adj/adv + that + Clause",
+    "title": "So + Adjective/Adverb + that + Clause (Cause & Extreme Result)",
+    "shortExplanation": "Shows how an intense quality leads directly to a noticeable result.",
+    "longExplanation": "Compare \"so + adjective/adverb + that\" with \"such + (a/an) + noun phrase + that\". In casual speech, \"that\" is frequently dropped (\"I was so tired I fell asleep immediately\").",
+    "formation": "so + Adjective/Adverb + (that) + Result Clause",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I was so exhausted that I fell asleep before the intro ended.",
+        "translation": "Extreme tiredness caused me to fall asleep before the intro finished."
+      },
+      {
+        "sentence": "He explained the idiom so clearly that everyone smiled.",
+        "translation": "His explanation of the idiom was clear enough for all listeners to get it."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_28",
+    "language": "en",
+    "pattern": "Had better + Verb",
+    "title": "Had better + Verb (Strong Advice & Warning)",
+    "shortExplanation": "Gives urgent advice about what someone should do now, often implying trouble if they don't.",
+    "longExplanation": "Even though \"had\" looks past, \"had better\" (almost always contracted to \"'d better\") refers to the present or immediate future. Negate it as \"had better not + Verb\" (never \"hadn't better\").",
+    "formation": "Subject + had better ('d better) (+ not) + Base Verb",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "You'd better save a backup copy before updating the settings.",
+        "translation": "It's wise to back up your copy now so nothing goes wrong during the update."
+      },
+      {
+        "sentence": "We had better not stay out too late before tomorrow's exam.",
+        "translation": "We really shouldn't stay out late tonight given tomorrow's exam."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_29",
+    "language": "en",
+    "pattern": "Would rather + Verb (than)",
+    "title": "Would rather + Verb (+ than) (Personal Preference)",
+    "shortExplanation": "States what you prefer to do in a specific situation rather than another option.",
+    "longExplanation": "Follow \"would rather\" ('d rather) directly with a base verb (no \"to\"). Use \"than\" + base verb for the less preferred choice, or \"would rather not + Verb\" to decline politely.",
+    "formation": "Subject + would rather ('d rather) (+ not) + Base Verb (+ than + Base Verb)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I'd rather watch with target-language captions than read a summary.",
+        "translation": "I prefer watching videos with target-language captions over reading summaries."
+      },
+      {
+        "sentence": "Thanks for inviting me, but I'd rather stay home tonight.",
+        "translation": "I appreciate the invite, though my preference is to stay in tonight."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_30",
+    "language": "en",
+    "pattern": "Be supposed to + Verb",
+    "title": "Be supposed to + Verb (Expectation, Schedule & Rules)",
+    "shortExplanation": "Describes what is expected, scheduled, or considered the right rule—often hinting reality differs.",
+    "longExplanation": "In present tense it conveys duty or common belief (\"this dish is supposed to be spicy\"). In past tense (\"was/were supposed to\"), it usually implies the plan didn't actually happen.",
+    "formation": "Subject + be + supposed to + Base Verb",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "You're supposed to submit your summary by Friday noon.",
+        "translation": "The expectation is that your summary is handed in before noon on Friday."
+      },
+      {
+        "sentence": "Our flight was supposed to arrive an hour ago.",
+        "translation": "The schedule had our flight landing an hour earlier, but it is delayed."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_31",
+    "language": "en",
+    "pattern": "Be allowed to + Verb",
+    "title": "Be allowed to + Verb (Permission Across Tenses)",
+    "shortExplanation": "Expresses official or social permission in any tense, including future and past.",
+    "longExplanation": "Just as \"be able to\" covers all tenses for \"can\", \"be allowed to\" supplies past, future, and perfect forms for permission. Negative forms (\"aren't allowed to\") state rules clearly.",
+    "formation": "Subject + be (+ not) + allowed to + Base Verb",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Visitors aren't allowed to use flash photography inside the gallery.",
+        "translation": "Flash photos are prohibited for visitors in the gallery."
+      },
+      {
+        "sentence": "Will students be allowed to bring dictionaries to the test?",
+        "translation": "Are students permitted to use dictionaries during the upcoming test?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_32",
+    "language": "en",
+    "pattern": "Be / Get used to + Noun / V-ing",
+    "title": "Be used to / Get used to + Noun / V-ing (Familiarity vs. Adapting)",
+    "shortExplanation": "\"Be used to\" means something already feels normal; \"get used to\" describes the process of adapting.",
+    "longExplanation": "CRITICAL TRAP: Here \"to\" is a preposition, NOT an infinitive marker! Therefore it is followed by a NOUN or V-ing (\"I'm used to waking up early\"), never a base verb. Contrast with \"used to + Base Verb\" (past habit).",
+    "formation": "Subject + be / get + used to + Noun / V-ing",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "It took a month, but I finally got used to hearing fast speech.",
+        "translation": "After a month, rapid speech gradually started feeling normal to me."
+      },
+      {
+        "sentence": "She's used to working under tight deadlines.",
+        "translation": "Tight deadlines already feel completely normal to her."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_33",
+    "language": "en",
+    "pattern": "By the time + Clause",
+    "title": "By the time + Clause (Completion Before Another Point)",
+    "shortExplanation": "Shows that one event finishes or reaches a state before another moment in past or future time.",
+    "longExplanation": "Pair past-reference \"by the time + Past Simple\" with Past Perfect (\"had + V3\") in the main clause. Pair future-reference \"by the time + Present Simple\" with Future Perfect (\"will have + V3\") or a future state.",
+    "formation": "By the time + S1 + Verb (Present/Past), S2 + will have V3 / had V3",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "By the time we reached the theater, the opening scene had already started.",
+        "translation": "The opening scene started prior to our arrival at the theater."
+      },
+      {
+        "sentence": "I'll have reviewed all the flashcards by the time dinner is ready.",
+        "translation": "Before dinner is served, my flashcard review will be complete."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_34",
+    "language": "en",
+    "pattern": "Prefer A to B / Prefer to V rather than V",
+    "title": "Prefer A to B / Prefer to V rather than V (General Preferences)",
+    "shortExplanation": "Expresses lasting likes and preferences between nouns, activities, or actions.",
+    "longExplanation": "Use \"to\" (NOT \"than\") between two nouns or V-ing forms (\"prefer tea to coffee\", \"prefer reading to watching\"). Between two base-verb actions, use \"prefer to + V + rather than (+ V)\".",
+    "formation": "prefer + Noun/V-ing + to + Noun/V-ing  |  prefer to + V + rather than + V",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I prefer listening to real podcasts to memorizing isolated word lists.",
+        "translation": "I like learning through podcasts more than rote word-list study."
+      },
+      {
+        "sentence": "She prefers to work from home rather than commute two hours a day.",
+        "translation": "Working remotely suits her better than spending two hours commuting."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_35",
+    "language": "en",
+    "pattern": "Get + Object + to + Verb",
+    "title": "Get + Object + to + Verb (Persuasive Causative)",
+    "shortExplanation": "Means convincing, asking, or arranging for someone to do something—unlike \"make\", it requires \"to\".",
+    "longExplanation": "Compare the three causatives: \"make sb do\" (force/cause, no to), \"have sb do\" (assign/request, no to), and \"get sb to do\" (persuade or manage to convince someone, WITH \"to\").",
+    "formation": "Subject + get + Person + to + Base Verb",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "How did you get your brother to help with the video edit?",
+        "translation": "How did you persuade your brother to assist with editing the video?"
+      },
+      {
+        "sentence": "I finally got my pronunciation coach to slow down the playback.",
+        "translation": "I managed to ask my coach to reduce the playback speed."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_30",
+    "language": "en",
+    "pattern": "Can't help + V-ing",
+    "title": "Can't help + V-ing (Uncontrollable Impulse)",
+    "shortExplanation": "Means you cannot stop yourself from doing or feeling something, even if you try.",
+    "longExplanation": "Always follow \"can't help\" (or past \"couldn't help\") with a gerund (V-ing), never a to-infinitive. Wait—watch out for the idiom \"can't help it\" (\"I couldn't help it!\"). An alternative formal variant is \"can't help but + Base Verb\".",
+    "formation": "Subject + can't / couldn't help + V-ing",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I couldn't help laughing when the cat jumped onto his keyboard.",
+        "translation": "It was impossible for me to hold back my laugh when the cat hopped on his keyboard."
+      },
+      {
+        "sentence": "She can't help noticing small grammar slips in movie subtitles.",
+        "translation": "She automatically notices tiny subtitle mistakes without trying."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_31",
+    "language": "en",
+    "pattern": "It's no use / There's no point + V-ing",
+    "title": "It's no use / There's no point (in) + V-ing (Futility)",
+    "shortExplanation": "Says an action brings no benefit and is a waste of time or effort.",
+    "longExplanation": "Both frames take a gerund (V-ing) rather than a to-infinitive. With \"There's no point\", the preposition \"in\" is optional before V-ing.",
+    "formation": "It's no use + V-ing  |  There's no point (in) + V-ing",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "It's no use worrying about mistakes you already corrected.",
+        "translation": "Fretting over mistakes that have already been fixed achieves nothing."
+      },
+      {
+        "sentence": "There's no point waiting any longer—the last bus just left.",
+        "translation": "Waiting further is pointless since the final bus already departed."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_32",
+    "language": "en",
+    "pattern": "Be bound to + Verb",
+    "title": "Be bound to + Verb (Near Certainty)",
+    "shortExplanation": "States that something is almost certain or inevitable based on how things work.",
+    "longExplanation": "Speakers use \"be bound to\" when they feel confident about an outcome—either reassuring someone (\"you're bound to improve\") or warning of predictable snags (\"mistakes are bound to happen\").",
+    "formation": "Subject + be + bound to + Base Verb",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "If you listen consistently every day, you're bound to improve.",
+        "translation": "Daily consistent listening practically guarantees improvement."
+      },
+      {
+        "sentence": "Small misunderstandings are bound to happen when speaking a new language.",
+        "translation": "Minor misunderstandings inevitably occur when practicing a new language."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_33",
+    "language": "en",
+    "pattern": "Be about to + Verb",
+    "title": "Be about to + Verb (Immediate Future)",
+    "shortExplanation": "Signals an action that is only seconds or moments away from happening.",
+    "longExplanation": "Do NOT add specific time expressions like \"next week\" with \"be about to\"—it is strictly for the immediate moment (often paired with \"just\"). In negative form (\"not about to\"), it can idiomatically mean refusing to do something.",
+    "formation": "Subject + be (+ just) + about to + Base Verb",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Hold on—the live stream is about to start!",
+        "translation": "Wait a moment because the live broadcast begins in seconds."
+      },
+      {
+        "sentence": "I was just about to text you when you called.",
+        "translation": "I was moments away from messaging you right when your call came in."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_34",
+    "language": "en",
+    "pattern": "The + comparative, the + comparative",
+    "title": "The + Comparative ..., the + Comparative ... (Proportional Change)",
+    "shortExplanation": "Shows that two things rise or fall together in direct proportion.",
+    "longExplanation": "Place a comparative adjective/adverb (\"more\", \"sooner\", \"harder\", \"easier\") right after \"The\" in both halves. Very common in short proverbs like \"The sooner, the better\".",
+    "formation": "The + Comparative (+ S + V), the + Comparative (+ S + V)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "The more you read aloud, the more natural your rhythm becomes.",
+        "translation": "Increased reading aloud directly improves how natural your rhythm sounds."
+      },
+      {
+        "sentence": "The sooner we start preparing, the less stressful the deadline will feel.",
+        "translation": "Starting early reduces stress as the deadline approaches."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_35",
+    "language": "en",
+    "pattern": "No matter + wh-word",
+    "title": "No matter + Wh-word (Universal Concession)",
+    "shortExplanation": "Means the main point remains true regardless of the situation, degree, or person.",
+    "longExplanation": "Pair \"no matter\" with \"how\", \"what\", \"who\", \"where\", or \"when\". Keep present simple (NOT future \"will\") inside the clause: \"no matter what happens\" (equally interchangeable with \"whatever happens\").",
+    "formation": "No matter + how/what/who/where/when (+ adj/adv) + Subject + Verb",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "No matter how busy the week gets, try to review ten cards.",
+        "translation": "Even during your busiest week, aim to review ten flashcards."
+      },
+      {
+        "sentence": "Call me right away, no matter what time it is.",
+        "translation": "Feel free to phone me immediately regardless of the hour."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_36",
+    "language": "en",
+    "pattern": "Have / Get + Object + Past Participle (V3)",
+    "title": "Have / Get + Object + Past Participle (Causative Passive)",
+    "shortExplanation": "Used when you arrange for someone else to do a service for you, or when something unfortunate happens to you.",
+    "longExplanation": "Focus on the object receiving the action (past participle V3), not who performs it (\"I had my laptop fixed\", meaning a technician fixed it). \"Get\" sounds slightly more informal than \"have\".",
+    "formation": "Subject + have / get + Object + Past Participle (V3)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "I need to get my car repaired before our road trip.",
+        "translation": "I must arrange for a mechanic to fix my car prior to our trip."
+      },
+      {
+        "sentence": "She had her passport stolen at the crowded station.",
+        "translation": "Her passport was unfortunately stolen while she was at the station."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_18",
+    "language": "en",
+    "pattern": "Not until ... did + S + Verb",
+    "title": "Not until ... + Auxiliary Inversion (Delayed Realization)",
+    "shortExplanation": "Dramatically highlights the exact moment when something finally happened after a long delay.",
+    "longExplanation": "Notice WHERE inversion happens: NOT in the first \"until\" phrase/clause, ONLY in the MAIN clause! Put \"did/had/was/could\" right before the main subject.",
+    "formation": "Not until + Time / Clause + did/had/aux + Subject + Verb",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Not until she replayed the clip did she notice the subtle pun.",
+        "translation": "She only caught the subtle wordplay once she watched the clip again."
+      },
+      {
+        "sentence": "Not until midnight did the street noise finally die down.",
+        "translation": "The loud street noise continued all evening until midnight."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_19",
+    "language": "en",
+    "pattern": "Little did + S + know / realize",
+    "title": "Little did + Subject + know / realize (Dramatic Unawareness)",
+    "shortExplanation": "Narrative structure highlighting how unaware someone was of a major looming surprise.",
+    "longExplanation": "Placing negative adverb \"Little\" first triggers auxiliary inversion (\"did/does + Subject + base verb\"). Frequent in storytelling, documentaries, and YouTube commentary.",
+    "formation": "Little + did/does + Subject + know/realize/suspect (+ that + Clause)",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Little did he know that one ten-minute video would spark his career.",
+        "translation": "He had no idea at the time that a short video would launch his career."
+      },
+      {
+        "sentence": "Little did they realize how fast the deadline was approaching.",
+        "translation": "They completely underestimated how close the deadline was."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_20",
+    "language": "en",
+    "pattern": "No sooner ... than / Hardly ... when",
+    "title": "No sooner ... than / Hardly ... when (Instant Succession)",
+    "shortExplanation": "Emphasizes that the second event happened almost the very second the first finished.",
+    "longExplanation": "Keep the fixed pairs strictly matched: \"No sooner\" ALWAYS pairs with \"than\", while \"Hardly / Scarcely\" ALWAYS pairs with \"when\". Inverted \"had + Subject + V3\" follows the opener.",
+    "formation": "No sooner had S V3 than S V2  |  Hardly had S V3 when S V2",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "No sooner had we sat down to eat than the phone rang.",
+        "translation": "The phone rang the exact instant we took our seats to eat."
+      },
+      {
+        "sentence": "Hardly had the speaker finished introducing the topic when hands went up.",
+        "translation": "Questions started immediately upon finishing the topic intro."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_21",
+    "language": "en",
+    "pattern": "Were + Subject + to + Verb",
+    "title": "Were + Subject + to + Verb (Inverted Hypothetical Conditional)",
+    "shortExplanation": "Formal alternative to \"If + Subject + were to + Verb\" for unlikely or strategic scenarios.",
+    "longExplanation": "Drop \"if\" and invert \"Were\" before the subject—ideal in business proposals, academic essays, and diplomatic discussions.",
+    "formation": "Were + Subject + to + Base Verb, Subject + would/could/might + Base Verb",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "Were we to accept that offer, we would need to expand the team.",
+        "translation": "If we decided to accept that offer, expanding the team would be necessary."
+      },
+      {
+        "sentence": "Were the platform to lose offline caching, commuters would struggle.",
+        "translation": "If offline caching disappeared from the platform, commuters would face issues."
+      }
+    ]
+  },
+  {
+    "id": "en_c1_22",
+    "language": "en",
+    "pattern": "But for + Noun Phrase",
+    "title": "But for + Noun Phrase (Counterfactual 'Without')",
+    "shortExplanation": "Formal concise way to say \"If it hadn't been for...\" or \"Without...\".",
+    "longExplanation": "Follow \"But for\" with a noun phrase, then state the imagined outcome with \"would / would have + V3\". Frequently expresses gratitude or credits a decisive factor.",
+    "formation": "But for + Noun Phrase, Subject + would (have) + Verb/V3",
+    "level": "CEFR C1",
+    "examples": [
+      {
+        "sentence": "But for your quick note, I would have walked into the wrong room.",
+        "translation": "If not for your quick message, I'd have entered the wrong room."
+      },
+      {
+        "sentence": "But for steady community feedback, the project might have stalled.",
+        "translation": "Without ongoing input from the community, the project could have stopped."
+      }
+    ]
+  },
+  {
+    "id": "en_c2_21",
+    "language": "en",
+    "pattern": "Be that as it may / Suffice it to say",
+    "title": "Rhetorical Concession & Summation (Be that as it may / Suffice it to say)",
+    "shortExplanation": "High-register discourse frames that pivot gracefully after conceding a point or condense a complex story.",
+    "longExplanation": "Use \"Be that as it may\" (= even so, regardless) to acknowledge an earlier claim while steering back to your main argument. Use \"Suffice it to say\" (= all you really need to know is...) to skip minor details and deliver the punchline.",
+    "formation": "Be that as it may, + Main Clause  |  Suffice it to say, + Key Summary Clause",
+    "level": "CEFR C2",
+    "examples": [
+      {
+        "sentence": "The timeline looks aggressive; be that as it may, we have the full team ready.",
+        "translation": "The schedule is tight; nevertheless, our entire team is prepared."
+      },
+      {
+        "sentence": "Suffice it to say, nobody left that keynote feeling uninspired.",
+        "translation": "To sum it up briefly, everyone walked out inspired by the keynote."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_36",
+    "language": "en",
+    "pattern": "wake up",
+    "title": "wake up (Phrasal Verb)",
+    "shortExplanation": "Stop sleeping, or rouse someone from sleep.",
+    "longExplanation": "Separable phrasal verb when waking another person (\"wake me up\"). In everyday speech it can also mean suddenly becoming alert or aware.",
+    "formation": "Subject + wake (sb) up",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "I usually wake up around seven before making coffee.",
+        "translation": "I usually wake up around seven before making coffee."
+      },
+      {
+        "sentence": "Could you wake me up if I fall asleep on the train?",
+        "translation": "Could you wake me up if I fall asleep on the train?"
+      }
+    ]
+  },
+  {
+    "id": "en_a2_37",
+    "language": "en",
+    "pattern": "go back",
+    "title": "go back (Phrasal Verb)",
+    "shortExplanation": "Return to an earlier place, time, or previous point in a discussion.",
+    "longExplanation": "Often takes \"to\" before a destination or earlier topic. In idiomatic speech, \"We go back years\" means we have known each other for years.",
+    "formation": "Subject + go back (+ to + Place/Topic)",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Let's go back to the previous slide for a moment.",
+        "translation": "Let's go back to the previous slide for a moment."
+      },
+      {
+        "sentence": "She plans to go back to her hometown next month.",
+        "translation": "She plans to go back to her hometown next month."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_38",
+    "language": "en",
+    "pattern": "go out",
+    "title": "go out (Phrasal Verb)",
+    "shortExplanation": "Leave home for social fun, stop burning/shining, or date someone.",
+    "longExplanation": "A top everyday verb: going out with friends for dinner, lights going out in a storm, or trends going out of fashion.",
+    "formation": "Subject + go out (+ with + Person)",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Do you want to go out for noodles after class?",
+        "translation": "Do you want to go out for noodles after class?"
+      },
+      {
+        "sentence": "All the street lights suddenly went out during the storm.",
+        "translation": "All the street lights suddenly went out during the storm."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_39",
+    "language": "en",
+    "pattern": "come on",
+    "title": "come on (Phrasal Verb)",
+    "shortExplanation": "Encourage someone (\"Hurry up / Try it!\"), express disbelief (\"Seriously?\"), or start operating.",
+    "longExplanation": "One of the most frequent spoken fillers in movies and vlogs—listen to the speaker's tone to tell encouragement from playful disbelief.",
+    "formation": "Come on! / Subject + come on",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Come on, we're going to miss the opening trailer!",
+        "translation": "Come on, we're going to miss the opening trailer!"
+      },
+      {
+        "sentence": "Oh come on, you don't really believe that rumor, do you?",
+        "translation": "Oh come on, you don't really believe that rumor, do you?"
+      }
+    ]
+  },
+  {
+    "id": "en_a2_40",
+    "language": "en",
+    "pattern": "look after",
+    "title": "look after (Phrasal Verb)",
+    "shortExplanation": "Take care of a person, pet, plant, or keep something in good condition.",
+    "longExplanation": "Inseparable phrasal verb: the object always stays AFTER \"after\" (\"look after him\", never \"look him after\"). Synonym of \"take care of\".",
+    "formation": "Subject + look after + Noun/Person",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Can you look after my plants while I travel this week?",
+        "translation": "Can you look after my plants while I travel this week?"
+      },
+      {
+        "sentence": "Remember to look after your eyes when studying late.",
+        "translation": "Remember to look after your eyes when studying late."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_41",
+    "language": "en",
+    "pattern": "look up",
+    "title": "look up (Phrasal Verb)",
+    "shortExplanation": "Search for a word or fact in a dictionary/online, or gradually improve (\"things are looking up\").",
+    "longExplanation": "Separable when looking up information (\"look it up in the dictionary\"). Intransitive when meaning \"improve\".",
+    "formation": "Subject + look up + Info  |  look + Info + up",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Just tap any subtitle word to look up its meaning right away.",
+        "translation": "Just tap any subtitle word to look up its meaning right away."
+      },
+      {
+        "sentence": "After a rough winter, sales are finally looking up.",
+        "translation": "After a rough winter, sales are finally looking up."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_42",
+    "language": "en",
+    "pattern": "put on",
+    "title": "put on (Phrasal Verb)",
+    "shortExplanation": "Wear clothes/accessories, turn on equipment, gain weight, or stage a performance.",
+    "longExplanation": "Separable verb with pronouns inside (\"put it on\"). Opposite of \"take off\" for clothing and glasses.",
+    "formation": "Subject + put on + Noun / Weight / Show",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Put on your headphones so you can catch every consonant.",
+        "translation": "Put on your headphones so you can catch every consonant."
+      },
+      {
+        "sentence": "Don't worry about putting on a bit of weight over the holidays.",
+        "translation": "Don't worry about putting on a bit of weight over the holidays."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_43",
+    "language": "en",
+    "pattern": "take off",
+    "title": "take off (Phrasal Verb)",
+    "shortExplanation": "Remove clothes/shoes, leave the ground (airplane), quickly become successful, or take time away from work.",
+    "longExplanation": "Both separable (\"take your jacket off\") and intransitive (\"the plane took off\"). Notice how business/channel growth uses \"take off\" (= soar).",
+    "formation": "Subject + take off (+ Noun)",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Please take off your wet shoes near the doorway.",
+        "translation": "Please take off your wet shoes near the doorway."
+      },
+      {
+        "sentence": "Her cooking channel really took off after that short clip went viral.",
+        "translation": "Her cooking channel really took off after that short clip went viral."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_44",
+    "language": "en",
+    "pattern": "turn on",
+    "title": "turn on (Phrasal Verb)",
+    "shortExplanation": "Switch a machine, light, or subtitle feature on so it starts working.",
+    "longExplanation": "Opposite of \"turn off\". Remember pronoun placement: always \"turn it on\", NEVER \"turn on it\" (unless meaning \"attack suddenly\").",
+    "formation": "Subject + turn on + Device / turn + Device + on",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Turn on dual subtitles if a dialogue moves too quickly.",
+        "translation": "Turn on dual subtitles if a dialogue moves too quickly."
+      },
+      {
+        "sentence": "Could you turn on the desk lamp? It's getting dark.",
+        "translation": "Could you turn on the desk lamp? It's getting dark."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_45",
+    "language": "en",
+    "pattern": "write down",
+    "title": "write down (Phrasal Verb)",
+    "shortExplanation": "Record words, numbers, or ideas on paper (or in notes) so you do not forget them.",
+    "longExplanation": "Separable with object or pronoun inside (\"write them down\"). Slightly more concrete than just \"note\".",
+    "formation": "Subject + write down + Noun / write + Noun + down",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "Write down two fresh phrases you hear in every video.",
+        "translation": "Write down two fresh phrases you hear in every video."
+      },
+      {
+        "sentence": "Hold on, let me grab a pen and write your address down.",
+        "translation": "Hold on, let me grab a pen and write your address down."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_46",
+    "language": "en",
+    "pattern": "pick up",
+    "title": "pick up (Phrasal Verb)",
+    "shortExplanation": "Lift something up, collect someone by car, learn naturally without formal study, or speed up.",
+    "longExplanation": "One of English's highest-utility verbs! Separable when lifting/collecting (\"pick me up at six\") and great for language learning (\"pick up slang naturally\").",
+    "formation": "Subject + pick up + Noun / Speed / Skill",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "You can pick up natural rhythm just by listening to real conversations.",
+        "translation": "You can pick up natural rhythm just by listening to real conversations."
+      },
+      {
+        "sentence": "I'll pick you up outside the station at seven.",
+        "translation": "I'll pick you up outside the station at seven."
+      }
+    ]
+  },
+  {
+    "id": "en_a2_47",
+    "language": "en",
+    "pattern": "grow up",
+    "title": "grow up (Phrasal Verb)",
+    "shortExplanation": "Gradually change from a child into an adult, or become more mature in behavior.",
+    "longExplanation": "Intransitive: NEVER use an object after \"grow up\"! Compare \"grow up\" (person becoming an adult) with \"bring up\" (parent raising a child).",
+    "formation": "Subject + grow up",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "She grew up speaking both Vietnamese and English at home.",
+        "translation": "She grew up speaking both Vietnamese and English at home."
+      },
+      {
+        "sentence": "It's time to grow up and take responsibility for your choices.",
+        "translation": "It's time to grow up and take responsibility for your choices."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_36",
+    "language": "en",
+    "pattern": "find out",
+    "title": "find out (Phrasal Verb)",
+    "shortExplanation": "Discover a hidden or previously unknown fact after checking, reading, or asking.",
+    "longExplanation": "Contrast with \"find\" (finding lost keys vs discovering information). Often opens \"that / what / how / if\" clauses.",
+    "formation": "Subject + find out (+ about + Noun / Clause)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Watch until the end to find out what caused the glitch.",
+        "translation": "Watch until the end to find out what caused the glitch."
+      },
+      {
+        "sentence": "Did you ever find out who left that anonymous comment?",
+        "translation": "Did you ever find out who left that anonymous comment?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_37",
+    "language": "en",
+    "pattern": "give up",
+    "title": "give up (Phrasal Verb)",
+    "shortExplanation": "Stop trying to do something difficult, or quit a regular habit.",
+    "longExplanation": "CRITICAL GRAMMAR: Always follow \"give up\" with a NOUN or V-ing (gerund)—never a to-infinitive (\"give up smoking\", NEVER \"give up to smoke\").",
+    "formation": "Subject + give up (+ Noun / V-ing)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Don't give up just because the first few scenes feel fast.",
+        "translation": "Don't give up just because the first few scenes feel fast."
+      },
+      {
+        "sentence": "He gave up sugary drinks completely three months ago.",
+        "translation": "He gave up sugary drinks completely three months ago."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_38",
+    "language": "en",
+    "pattern": "go on",
+    "title": "go on (Phrasal Verb)",
+    "shortExplanation": "Continue doing something, happen (\"What's going on?\"), or move on to the next stage.",
+    "longExplanation": "Distinguish \"go on V-ing\" (continue the SAME task) vs \"go on to + Verb\" (finish step A and shift to step B).",
+    "formation": "Subject + go on (+ V-ing / to + Verb)",
+    "level": "CEFR A2",
+    "examples": [
+      {
+        "sentence": "What's going on in the courtyard right now?",
+        "translation": "What's going on in the courtyard right now?"
+      },
+      {
+        "sentence": "Wait—don't stop, go on explaining your main idea!",
+        "translation": "Wait—don't stop, go on explaining your main idea!"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_39",
+    "language": "en",
+    "pattern": "hold on",
+    "title": "hold on (Phrasal Verb)",
+    "shortExplanation": "Wait briefly (especially on phone/video calls), grip tightly, or stay strong.",
+    "longExplanation": "Used nonstop in everyday English when pausing someone gently (\"Hold on a sec\") or clutching something (\"Hold on to the handrail\").",
+    "formation": "Hold on (+ a second) / Subject + hold on (+ to + Noun)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Hold on a second—let me turn the captions back on.",
+        "translation": "Hold on a second—let me turn the captions back on."
+      },
+      {
+        "sentence": "Hold on to your ticket until you exit the station.",
+        "translation": "Hold on to your ticket until you exit the station."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_40",
+    "language": "en",
+    "pattern": "keep on",
+    "title": "keep on (Phrasal Verb)",
+    "shortExplanation": "Continue doing something stubbornly, repeatedly, or despite obstacles.",
+    "longExplanation": "Always takes V-ing directly after \"keep on\". Adds a stronger feeling of persistence or repetition than plain \"keep\".",
+    "formation": "Subject + keep on + V-ing",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Keep on shadowing short clips and your accent will loosen up.",
+        "translation": "Keep on shadowing short clips and your accent will loosen up."
+      },
+      {
+        "sentence": "Why does my phone keep on disconnecting from Bluetooth?",
+        "translation": "Why does my phone keep on disconnecting from Bluetooth?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_41",
+    "language": "en",
+    "pattern": "keep up",
+    "title": "keep up (Phrasal Verb)",
+    "shortExplanation": "Stay at the same speed/level as someone, maintain good habits, or continue good work.",
+    "longExplanation": "Add \"with\" before a person, trend, or schedule (\"keep up with rapid speech\"). Alone as encouragement: \"Keep it up!\"",
+    "formation": "Subject + keep up (+ with + Noun/Person)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Even native speakers sometimes pause to keep up with rapid jokes.",
+        "translation": "Even native speakers sometimes pause to keep up with rapid jokes."
+      },
+      {
+        "sentence": "Your streak hits thirty days tomorrow—keep it up!",
+        "translation": "Your streak hits thirty days tomorrow—keep it up!"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_42",
+    "language": "en",
+    "pattern": "break down",
+    "title": "break down (Phrasal Verb)",
+    "shortExplanation": "Stop working (vehicle/machine), lose emotional control, or split complex info into smaller parts.",
+    "longExplanation": "Both intransitive (\"the car broke down\") and separable transitive (\"let's break the sentence down chunk by chunk\").",
+    "formation": "Subject + break down (+ Noun)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Our bus broke down halfway up the mountain pass.",
+        "translation": "Our bus broke down halfway up the mountain pass."
+      },
+      {
+        "sentence": "Let's break this long sentence down into three manageable chunks.",
+        "translation": "Let's break this long sentence down into three manageable chunks."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_43",
+    "language": "en",
+    "pattern": "bring up",
+    "title": "bring up (Phrasal Verb)",
+    "shortExplanation": "Mention a subject in conversation, or raise and educate a child.",
+    "longExplanation": "Separable: \"Don't bring it up right now.\" Watch how context separates \"mention a topic\" from \"raise children\".",
+    "formation": "Subject + bring up + Topic/Child",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Why did she bring up that old argument during lunch?",
+        "translation": "Why did she bring up that old argument during lunch?"
+      },
+      {
+        "sentence": "My grandparents brought me up in a small coastal town.",
+        "translation": "My grandparents brought me up in a small coastal town."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_44",
+    "language": "en",
+    "pattern": "carry on",
+    "title": "carry on (Phrasal Verb)",
+    "shortExplanation": "Keep doing something after an interruption, or behave excitedly/noisily (British informal).",
+    "longExplanation": "Frequently used with V-ing (\"carry on talking\") or \"with\" (\"carry on with your plan\"). Common across both British and global English.",
+    "formation": "Subject + carry on (+ V-ing / with + Noun)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Sorry for interrupting—please carry on with your story.",
+        "translation": "Sorry for interrupting—please carry on with your story."
+      },
+      {
+        "sentence": "After sipping some water, the host carried on answering questions.",
+        "translation": "After sipping some water, the host carried on answering questions."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_45",
+    "language": "en",
+    "pattern": "carry out",
+    "title": "carry out (Phrasal Verb)",
+    "shortExplanation": "Actually perform and complete a planned task, experiment, promise, or instruction.",
+    "longExplanation": "Separable with formal nouns like \"research\", \"survey\", \"test\", \"orders\", \"plan\". Much more natural in academic/work speech than \"do a research\".",
+    "formation": "Subject + carry out + Plan/Task/Study",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Researchers carried out a large study on subtitle reading habits.",
+        "translation": "Researchers carried out a large study on subtitle reading habits."
+      },
+      {
+        "sentence": "The team carefully carried out every step of the checklist.",
+        "translation": "The team carefully carried out every step of the checklist."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_46",
+    "language": "en",
+    "pattern": "catch up",
+    "title": "catch up (Phrasal Verb)",
+    "shortExplanation": "Reach the same level after falling behind, or chat with a friend to share recent news.",
+    "longExplanation": "Pair with \"with\" before a person or backlog (\"catch up with work\") and \"on\" before missed tasks (\"catch up on sleep / episodes\").",
+    "formation": "Subject + catch up (+ with + Person/Work)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Let's grab coffee soon and catch up properly!",
+        "translation": "Let's grab coffee soon and catch up properly!"
+      },
+      {
+        "sentence": "I spent Sunday afternoon catching up on unread emails.",
+        "translation": "I spent Sunday afternoon catching up on unread emails."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_47",
+    "language": "en",
+    "pattern": "come across",
+    "title": "come across (Phrasal Verb)",
+    "shortExplanation": "Find someone or something unexpectedly by chance, or create a certain impression on others.",
+    "longExplanation": "Inseparable: always \"come across a great phrase\" (never \"come a phrase across\"). Meaning 2 uses adjectives/\"as\": \"He comes across as friendly.\"",
+    "formation": "Subject + come across + Noun / Adjective",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I came across a great idiom while watching a travel vlog.",
+        "translation": "I came across a great idiom while watching a travel vlog."
+      },
+      {
+        "sentence": "She comes across as very calm even under live pressure.",
+        "translation": "She comes across as very calm even under live pressure."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_48",
+    "language": "en",
+    "pattern": "come up",
+    "title": "come up (Phrasal Verb)",
+    "shortExplanation": "Arise unexpectedly (problem/opportunity), get mentioned in talk, or approach (\"coming up next\").",
+    "longExplanation": "Add \"with\" when inventing an idea or solution (\"come up with a plan\"). Without \"with\", it means arise/happen.",
+    "formation": "Subject + come up (+ with + Idea)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Something urgent came up at work, so I have to leave early.",
+        "translation": "Something urgent came up at work, so I have to leave early."
+      },
+      {
+        "sentence": "Can you come up with two example sentences using this phrase?",
+        "translation": "Can you come up with two example sentences using this phrase?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_49",
+    "language": "en",
+    "pattern": "count on",
+    "title": "count on (Phrasal Verb)",
+    "shortExplanation": "Trust and rely completely on someone or something to support you or happen.",
+    "longExplanation": "Inseparable. Same meaning as \"rely on\", slightly warmer and more conversational.",
+    "formation": "Subject + count on + Noun / V-ing",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "You can always count on me if you get stuck on a tricky line.",
+        "translation": "You can always count on me if you get stuck on a tricky line."
+      },
+      {
+        "sentence": "Don't count on perfect weather for an outdoor picnic in April.",
+        "translation": "Don't count on perfect weather for an outdoor picnic in April."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_50",
+    "language": "en",
+    "pattern": "cut down",
+    "title": "cut down (Phrasal Verb)",
+    "shortExplanation": "Reduce the amount, frequency, or cost of something (such as sugar, screen time, expenses).",
+    "longExplanation": "Add \"on\" before the item being reduced when intransitive (\"cut down on caffeine\"), or omit \"on\" when direct object (\"cut expenses down\").",
+    "formation": "Subject + cut down (+ on + Noun)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I'm trying to cut down on late-night scrolling before bed.",
+        "translation": "I'm trying to cut down on late-night scrolling before bed."
+      },
+      {
+        "sentence": "Turning off autoplay helps cut down wasted screen time.",
+        "translation": "Turning off autoplay helps cut down wasted screen time."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_51",
+    "language": "en",
+    "pattern": "cut off",
+    "title": "cut off (Phrasal Verb)",
+    "shortExplanation": "Interrupt someone speaking, disconnect power/supply, or isolate a place/person.",
+    "longExplanation": "Separable: \"Don't cut me off mid-sentence!\" Also common passively: \"The town was cut off by floods.\"",
+    "formation": "Subject + cut off + Noun / cut + Noun + off",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Sorry, my mic cut off for five seconds—did you hear that?",
+        "translation": "Sorry, my mic cut off for five seconds—did you hear that?"
+      },
+      {
+        "sentence": "Please don't cut her off before she finishes her thought.",
+        "translation": "Please don't cut her off before she finishes her thought."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_52",
+    "language": "en",
+    "pattern": "deal with",
+    "title": "deal with (Phrasal Verb)",
+    "shortExplanation": "Handle a problem, talk/work with a client, or be about a topic (article/video).",
+    "longExplanation": "Inseparable. Works cleanly both for practical problem-solving (\"deal with stress\") and describing content (\"this chapter deals with tone\").",
+    "formation": "Subject + deal with + Noun",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "How do you deal with burnout when studying every day?",
+        "translation": "How do you deal with burnout when studying every day?"
+      },
+      {
+        "sentence": "The second half of the episode deals with polite apologies.",
+        "translation": "The second half of the episode deals with polite apologies."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_53",
+    "language": "en",
+    "pattern": "end up",
+    "title": "end up (Phrasal Verb)",
+    "shortExplanation": "Finally reach an unexpected outcome, situation, or destination after a chain of events.",
+    "longExplanation": "Never put a to-infinitive after \"end up\"! Follow it with V-ing, a place phrase, \"with + noun\", or an adjective.",
+    "formation": "Subject + end up + V-ing / Place / Adjective",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "We missed our stop and ended up walking twenty minutes home.",
+        "translation": "We missed our stop and ended up walking twenty minutes home."
+      },
+      {
+        "sentence": "He only meant to watch one clip, yet ended up studying for an hour.",
+        "translation": "He only meant to watch one clip, yet ended up studying for an hour."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_54",
+    "language": "en",
+    "pattern": "figure out",
+    "title": "figure out (Phrasal Verb)",
+    "shortExplanation": "Understand or solve something tricky after thinking about it carefully.",
+    "longExplanation": "Separable (\"figure it out\"). Much more natural in everyday American and global English than \"comprehend\".",
+    "formation": "Subject + figure out + Noun/Clause / figure + Noun + out",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Give me five minutes—I'll figure out why the audio isn't syncing.",
+        "translation": "Give me five minutes—I'll figure out why the audio isn't syncing."
+      },
+      {
+        "sentence": "Did you finally figure out what that idiom meant in context?",
+        "translation": "Did you finally figure out what that idiom meant in context?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_55",
+    "language": "en",
+    "pattern": "fit in",
+    "title": "fit in (Phrasal Verb)",
+    "shortExplanation": "Feel accepted as part of a group, or find space/time in a tight schedule.",
+    "longExplanation": "Also separable when making room for something (\"Can we fit one quick review session in?\").",
+    "formation": "Subject + fit in (+ with + Group/Schedule)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Even ten focused minutes can fit in easily during a lunch break.",
+        "translation": "Even ten focused minutes can fit in easily during a lunch break."
+      },
+      {
+        "sentence": "She quickly fit in with the new teammates at work.",
+        "translation": "She quickly fit in with the new teammates at work."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_56",
+    "language": "en",
+    "pattern": "follow up",
+    "title": "follow up (Phrasal Verb)",
+    "shortExplanation": "Take a second step later to check progress, confirm details, or investigate further.",
+    "longExplanation": "Note noun/adj counterpart \"a follow-up email\" (hyphenated) vs two-word phrasal verb \"follow up on it\".",
+    "formation": "Subject + follow up (+ on + Noun / with + Person)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I'll follow up tomorrow morning if the team hasn't replied.",
+        "translation": "I'll follow up tomorrow morning if the team hasn't replied."
+      },
+      {
+        "sentence": "She followed up the lecture with five practical drills.",
+        "translation": "She followed up the lecture with five practical drills."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_57",
+    "language": "en",
+    "pattern": "get away",
+    "title": "get away (Phrasal Verb)",
+    "shortExplanation": "Escape from somewhere, take a short holiday, or avoid punishment (\"get away with\").",
+    "longExplanation": "Notice the three-word upgrade \"get away with + something\" (= do something wrong and escape blame).",
+    "formation": "Subject + get away (+ from + Place / with + Noun)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "We're hoping to get away to the coast for a quiet weekend.",
+        "translation": "We're hoping to get away to the coast for a quiet weekend."
+      },
+      {
+        "sentence": "You won't get away with skipping your reviews forever!",
+        "translation": "You won't get away with skipping your reviews forever!"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_58",
+    "language": "en",
+    "pattern": "get back",
+    "title": "get back (Phrasal Verb)",
+    "shortExplanation": "Return home/to a place, reply to someone later (\"get back to you\"), or recover something lost.",
+    "longExplanation": "\"I'll get back to you\" is one of the most polite, natural phrases in English messages and calls (= I'll check and reply).",
+    "formation": "Subject + get back (+ to + Place/Person)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Let me double-check the schedule and get back to you tonight.",
+        "translation": "Let me double-check the schedule and get back to you tonight."
+      },
+      {
+        "sentence": "What time did you finally get back home last night?",
+        "translation": "What time did you finally get back home last night?"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_59",
+    "language": "en",
+    "pattern": "get over",
+    "title": "get over (Phrasal Verb)",
+    "shortExplanation": "Recover emotionally or physically from an illness, breakup, disappointment, or shock.",
+    "longExplanation": "Inseparable: always \"get over it / the flu / the shock\". Also heard as disbelief: \"I can't get over how clear that was!\"",
+    "formation": "Subject + get over + Illness/Setback/Surprise",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "It took him two weeks to get over a stubborn summer cold.",
+        "translation": "It took him two weeks to get over a stubborn summer cold."
+      },
+      {
+        "sentence": "I still can't get over how much your pronunciation improved!",
+        "translation": "I still can't get over how much your pronunciation improved!"
+      }
+    ]
+  },
+  {
+    "id": "en_b1_60",
+    "language": "en",
+    "pattern": "get through",
+    "title": "get through (Phrasal Verb)",
+    "shortExplanation": "Finish a tough task/period, make phone contact, or make someone truly understand you (\"get through to\").",
+    "longExplanation": "Great flexibility: \"get through a tough chapter\", \"get through to customer support\", or \"get through to someone emotionally\".",
+    "formation": "Subject + get through (+ to + Person / Exam/Task)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Listening to short podcasts helped me get through long commutes.",
+        "translation": "Listening to short podcasts helped me get through long commutes."
+      },
+      {
+        "sentence": "I tried calling twice, but couldn't get through to the front desk.",
+        "translation": "I tried calling twice, but couldn't get through to the front desk."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_61",
+    "language": "en",
+    "pattern": "hand in",
+    "title": "hand in (Phrasal Verb)",
+    "shortExplanation": "Submit completed homework, an application, a form, or a resignation notice to an authority.",
+    "longExplanation": "Separable: \"hand your essay in before five\". Synonym of \"turn in\" or \"submit\".",
+    "formation": "Subject + hand in + Homework/Report/Resignation",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Make sure you hand in your assignment before Friday midnight.",
+        "translation": "Make sure you hand in your assignment before Friday midnight."
+      },
+      {
+        "sentence": "He decided to hand in his notice after finding a remote role.",
+        "translation": "He decided to hand in his notice after finding a remote role."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_62",
+    "language": "en",
+    "pattern": "hang on",
+    "title": "hang on (Phrasal Verb)",
+    "shortExplanation": "Casual spoken way to ask someone to pause/wait briefly, or cling tightly to something.",
+    "longExplanation": "Friendly, informal twin of \"hold on\". Often starts spontaneous reactions: \"Hang on—what did she just say?\"",
+    "formation": "Hang on (+ to + Noun)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Hang on, let me replay that line at slower speed!",
+        "translation": "Hang on, let me replay that line at slower speed!"
+      },
+      {
+        "sentence": "Hang on tight while the boat crosses those bigger waves.",
+        "translation": "Hang on tight while the boat crosses those bigger waves."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_63",
+    "language": "en",
+    "pattern": "look back",
+    "title": "look back (Phrasal Verb)",
+    "shortExplanation": "Think back about memories, experiences, or lessons from the past.",
+    "longExplanation": "When mentioning the specific memory, add \"on\" (or \"at\"): \"Looking back on my first trip...\".",
+    "formation": "Subject + look back (+ on + Past Event)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "You'll look back on these early study sessions and smile.",
+        "translation": "You'll look back on these early study sessions and smile."
+      },
+      {
+        "sentence": "Looking back, skipping breaks actually slowed my progress down.",
+        "translation": "Looking back, skipping breaks actually slowed my progress down."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_64",
+    "language": "en",
+    "pattern": "make up",
+    "title": "make up (Phrasal Verb)",
+    "shortExplanation": "Invent an excuse/story, reconcile after an argument, form part of a whole, or compensate for missed work.",
+    "longExplanation": "Four high-value senses: \"make up a story\" (invent), \"make up with a friend\" (forgive), \"make up 30%\" (constitute), and \"make up for lost time\" (compensate).",
+    "formation": "Subject + make up (+ Story/Mind/Group)  |  make up with",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Please don't make up an excuse—just tell me what happened.",
+        "translation": "Please don't make up an excuse—just tell me what happened."
+      },
+      {
+        "sentence": "Listening makes up nearly half of my daily study routine.",
+        "translation": "Listening makes up nearly half of my daily study routine."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_65",
+    "language": "en",
+    "pattern": "move on",
+    "title": "move on (Phrasal Verb)",
+    "shortExplanation": "Leave a finished topic/phase behind and advance to the next one, or recover emotionally.",
+    "longExplanation": "Teachers, podcast hosts, and creators say \"Let's move on to...\" constantly as a clean section transition.",
+    "formation": "Subject + move on (+ to + Next Topic)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Once you master these vowels, we'll move on to natural rhythm.",
+        "translation": "Once you master these vowels, we'll move on to natural rhythm."
+      },
+      {
+        "sentence": "It hurts at first, yet eventually everyone has to move on.",
+        "translation": "It hurts at first, yet eventually everyone has to move on."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_66",
+    "language": "en",
+    "pattern": "open up",
+    "title": "open up (Phrasal Verb)",
+    "shortExplanation": "Speak honestly about private feelings, unlock a new opportunity, or physically unlock a door/shop.",
+    "longExplanation": "Can be intransitive (\"He finally opened up about his worries\") or separable (\"Reading opened up new worlds\").",
+    "formation": "Subject + open up (+ about + Topic)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Learning another language opens up friendships you never imagined.",
+        "translation": "Learning another language opens up friendships you never imagined."
+      },
+      {
+        "sentence": "He rarely opens up about his childhood even to close friends.",
+        "translation": "He rarely opens up about his childhood even to close friends."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_67",
+    "language": "en",
+    "pattern": "point out",
+    "title": "point out (Phrasal Verb)",
+    "shortExplanation": "Draw attention to an important fact, detail, or mistake someone might have missed.",
+    "longExplanation": "Separable with short noun objects (\"point that out\"), and keeps \"point out\" together before a longer \"that\" clause.",
+    "formation": "Subject + point out + Noun / that-Clause",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Thanks for pointing out that subtle typo in the caption.",
+        "translation": "Thanks for pointing out that subtle typo in the caption."
+      },
+      {
+        "sentence": "Experts point out that short daily review beats weekend cramming.",
+        "translation": "Experts point out that short daily review beats weekend cramming."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_68",
+    "language": "en",
+    "pattern": "put off",
+    "title": "put off (Phrasal Verb)",
+    "shortExplanation": "Delay or postpone an event/task to a later time, or make someone lose interest/enthusiasm.",
+    "longExplanation": "GRAMMAR RULE: Always follow \"put off\" with a NOUN or V-ing (\"put off replying\"), NEVER \"to + Verb\"!",
+    "formation": "Subject + put off + Noun / V-ing",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Stop putting off that tricky grammar lesson—start with five minutes.",
+        "translation": "Stop putting off that tricky grammar lesson—start with five minutes."
+      },
+      {
+        "sentence": "Don't let long words put you off watching native documentaries.",
+        "translation": "Don't let long words put you off watching native documentaries."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_69",
+    "language": "en",
+    "pattern": "run into",
+    "title": "run into (Phrasal Verb)",
+    "shortExplanation": "Meet a friend completely by surprise, or unexpectedly face a problem or obstacle.",
+    "longExplanation": "Inseparable. Twin everyday contexts: bumping into a colleague on the street, or running into an unexpected bug/trouble.",
+    "formation": "Subject + run into + Person/Problem",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "I ran into my former teacher at the neighborhood bookstore.",
+        "translation": "I ran into my former teacher at the neighborhood bookstore."
+      },
+      {
+        "sentence": "Let me know if you run into any trouble downloading the offline pack.",
+        "translation": "Let me know if you run into any trouble downloading the offline pack."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_70",
+    "language": "en",
+    "pattern": "run out",
+    "title": "run out (Phrasal Verb)",
+    "shortExplanation": "Use up all of something so none remains, or expire (time/ticket/patience).",
+    "longExplanation": "Use \"of\" when naming what is finished (\"We ran out of coffee\"), and no \"of\" when the resource itself is the subject (\"Time is running out\").",
+    "formation": "Subject + run out (+ of + Resource)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "We're running out of time—let's summarize the last rule.",
+        "translation": "We're running out of time—let's summarize the last rule."
+      },
+      {
+        "sentence": "My notebook ran out of blank pages halfway through the season.",
+        "translation": "My notebook ran out of blank pages halfway through the season."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_71",
+    "language": "en",
+    "pattern": "work out",
+    "title": "work out (Phrasal Verb)",
+    "shortExplanation": "Exercise physically, find an answer/calculation, or end successfully (\"everything worked out\").",
+    "longExplanation": "Super versatile: exercise at the gym, solve a budget/puzzle, or turn out well in the end.",
+    "formation": "Subject + work out (+ Noun)",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Even a twenty-minute walk counts as working out after work.",
+        "translation": "Even a twenty-minute walk counts as working out after work."
+      },
+      {
+        "sentence": "It looked stressful at first, yet everything worked out nicely.",
+        "translation": "It looked stressful at first, yet everything worked out nicely."
+      }
+    ]
+  },
+  {
+    "id": "en_b1_72",
+    "language": "en",
+    "pattern": "sort out",
+    "title": "sort out (Phrasal Verb)",
+    "shortExplanation": "Organize messy items into order, or fix a misunderstanding/logistics issue.",
+    "longExplanation": "Separable (\"sort it out\"). Very frequent in British and Australian English as well as everyday global usage.",
+    "formation": "Subject + sort out + Mess/Problem",
+    "level": "CEFR B1",
+    "examples": [
+      {
+        "sentence": "Let's sort out the Wi-Fi issue before the call begins.",
+        "translation": "Let's sort out the Wi-Fi issue before the call begins."
+      },
+      {
+        "sentence": "She sorted out her vocabulary tags by difficulty level.",
+        "translation": "She sorted out her vocabulary tags by difficulty level."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_37",
+    "language": "en",
+    "pattern": "account for",
+    "title": "account for (Phrasal Verb)",
+    "shortExplanation": "Explain the reason behind something, or form a specific proportion of a total.",
+    "longExplanation": "Inseparable. Very common in news, data analysis, and documentaries (\"exports account for 40%\" or \"how do you account for this shift?\").",
+    "formation": "Subject + account for + Noun",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Video clips account for over seventy percent of mobile traffic.",
+        "translation": "Over seventy percent of mobile traffic comes from video clips."
+      },
+      {
+        "sentence": "How do you account for this sudden jump in test scores?",
+        "translation": "What explanation do you have for this abrupt improvement in scores?"
+      }
+    ]
+  },
+  {
+    "id": "en_b2_38",
+    "language": "en",
+    "pattern": "add up",
+    "title": "add up (Phrasal Verb)",
+    "shortExplanation": "Gradually reach a large total, calculate a sum, or make logical sense together (\"something doesn't add up\").",
+    "longExplanation": "When meaning \"make sense\", \"add up\" is almost always negative or in a question (\"His story just doesn't add up\").",
+    "formation": "Subject + add up (+ Noun)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Ten minutes a day doesn't sound huge, yet those hours soon add up.",
+        "translation": "Small daily blocks of ten minutes accumulate into many hours over time."
+      },
+      {
+        "sentence": "Check the timeline again—something about his alibi doesn't add up.",
+        "translation": "Review the timeline because his excuse lacks logical consistency."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_39",
+    "language": "en",
+    "pattern": "ask out",
+    "title": "ask out (Phrasal Verb)",
+    "shortExplanation": "Invite someone on a date to a café, dinner, or movie.",
+    "longExplanation": "Nearly always puts the person between \"ask\" and \"out\" (\"He finally asked her out\").",
+    "formation": "Subject + ask + Person + out",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "He was nervous for weeks before finally asking her out for coffee.",
+        "translation": "After weeks of hesitation, he invited her on a coffee date."
+      },
+      {
+        "sentence": "Has anyone ever asked you out right after a language exchange?",
+        "translation": "Did someone invite you on a date following a language meetup?"
+      }
+    ]
+  },
+  {
+    "id": "en_b2_40",
+    "language": "en",
+    "pattern": "back up",
+    "title": "back up (Phrasal Verb)",
+    "shortExplanation": "Save a safety copy of files, support a claim with evidence, or reverse a car.",
+    "longExplanation": "Note noun/adj \"a backup\" (one word) vs phrasal verb \"back up\" (two words). Separable (\"back your claim up\").",
+    "formation": "Subject + back up (+ Data/Claim/Car)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Always back up your study deck before switching devices.",
+        "translation": "Save an extra copy of your study cards prior to changing devices."
+      },
+      {
+        "sentence": "She backed up her argument with three clear examples from the text.",
+        "translation": "Her point was supported by three concrete examples in the reading."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_41",
+    "language": "en",
+    "pattern": "back down",
+    "title": "back down (Phrasal Verb)",
+    "shortExplanation": "Stop defending a demand or position when faced with strong pressure or resistance.",
+    "longExplanation": "Intransitive: NEVER takes a direct object (say \"refused to back down\", NOT \"back down it\").",
+    "formation": "Subject + back down (+ from + Stand)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Even when critics pushed hard, the director wouldn't back down.",
+        "translation": "The director held firm despite heavy criticism."
+      },
+      {
+        "sentence": "Neither side seemed willing to back down during the long debate.",
+        "translation": "Both parties stood their ground throughout the debate."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_42",
+    "language": "en",
+    "pattern": "break through",
+    "title": "break through (Phrasal Verb)",
+    "shortExplanation": "Force a way past a physical wall or overcome a stubborn mental/skill plateau.",
+    "longExplanation": "Also forms noun \"a breakthrough\" (= major discovery or sudden progress after feeling stuck).",
+    "formation": "Subject + break through (+ Barrier)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Consistent daily listening helps you break through the intermediate plateau.",
+        "translation": "Daily listening lets you push past getting stuck at intermediate level."
+      },
+      {
+        "sentence": "Sunlight finally broke through the thick morning fog.",
+        "translation": "The sun pierced past the dense morning mist at last."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_43",
+    "language": "en",
+    "pattern": "bring about",
+    "title": "bring about (Phrasal Verb)",
+    "shortExplanation": "Cause an important change, reform, or outcome to happen.",
+    "longExplanation": "Usually pairs with abstract results like \"change\", \"reform\", \"recovery\", \"peace\". Formal alternative to \"cause\".",
+    "formation": "Subject + bring about + Change/Result",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Subtitled media has brought about a huge shift in self-study habits.",
+        "translation": "Media with subtitles caused a major change in how people study alone."
+      },
+      {
+        "sentence": "What brought about such a dramatic turnaround in team morale?",
+        "translation": "What caused team morale to improve so sharply?"
+      }
+    ]
+  },
+  {
+    "id": "en_b2_44",
+    "language": "en",
+    "pattern": "come about",
+    "title": "come about (Phrasal Verb)",
+    "shortExplanation": "Happen or start to exist—often asked when wondering how an unexpected situation started.",
+    "longExplanation": "Strictly intransitive (NEVER passive: NEVER say \"was come about\"). Frequent with \"How did that come about?\"",
+    "formation": "Subject + come about",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "How did the idea for dual-language captions first come about?",
+        "translation": "How did the concept of bilingual captions originate?"
+      },
+      {
+        "sentence": "Several welcome improvements came about after listener feedback.",
+        "translation": "Several helpful upgrades happened as a result of user feedback."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_45",
+    "language": "en",
+    "pattern": "do without",
+    "title": "do without (Phrasal Verb)",
+    "shortExplanation": "Manage comfortably—or cope—when you do not have something you normally use.",
+    "longExplanation": "Also heard humorously or firmly in \"I could do without that noise!\" (= that really annoys me).",
+    "formation": "Subject + do without + Noun",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Offline learners can still review smoothly—no Wi-Fi? They'll do without.",
+        "translation": "Offline learners manage fine even without a Wi-Fi connection."
+      },
+      {
+        "sentence": "Honest feedback helps, though I could do without rude comments.",
+        "translation": "Helpful feedback is great, whereas rude remarks are unwelcome."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_46",
+    "language": "en",
+    "pattern": "draw on",
+    "title": "draw on (Phrasal Verb)",
+    "shortExplanation": "Use a reserve of experience, knowledge, research, or money when tackling a task.",
+    "longExplanation": "Inseparable. Intellectual/professional tone common in interviews and essays.",
+    "formation": "Subject + draw on + Experience/Data/Savings",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Great translators draw on deep cultural intuition as well as grammar.",
+        "translation": "Skilled translators rely on cultural insight alongside grammar rules."
+      },
+      {
+        "sentence": "The series draws on authentic street interviews from five cities.",
+        "translation": "The show makes use of real street interviews recorded across five cities."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_47",
+    "language": "en",
+    "pattern": "draw up",
+    "title": "draw up (Phrasal Verb)",
+    "shortExplanation": "Prepare and write out an official plan, list, schedule, or legal contract.",
+    "longExplanation": "Separable (\"draw a shortlist up\"). Usually implies thoughtful drafting rather than casual scribbling.",
+    "formation": "Subject + draw up + Contract/List/Plan",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Let's draw up a realistic four-week listening plan together.",
+        "translation": "Let's draft a practical four-week schedule for listening practice."
+      },
+      {
+        "sentence": "Their legal team drew up a clear open-source license agreement.",
+        "translation": "Their lawyers drafted an unambiguous open-source licensing document."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_48",
+    "language": "en",
+    "pattern": "enter into",
+    "title": "enter into (Phrasal Verb)",
+    "shortExplanation": "Start an official agreement/contract, begin serious talks, or become a factor in a decision.",
+    "longExplanation": "Also very common negatively: \"I don't have time to enter into every minor detail.\"",
+    "formation": "Subject + enter into + Agreement/Discussion/Detail",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Both studios entered into a co-production partnership last spring.",
+        "translation": "The two studios signed a joint production agreement in spring."
+      },
+      {
+        "sentence": "Money didn't even enter into her decision to volunteer abroad.",
+        "translation": "Financial reasons played no part in her choice to volunteer."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_49",
+    "language": "en",
+    "pattern": "factor in",
+    "title": "factor in (Phrasal Verb)",
+    "shortExplanation": "Include an extra cost, delay, or variable when calculating or planning accurately.",
+    "longExplanation": "Separable (\"Don't forget to factor inflation in\"). Great everyday business/planning vocabulary.",
+    "formation": "Subject + factor in + Variable / factor + Noun + in",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Did you factor in travel time when picking the morning train?",
+        "translation": "Did your plan account for getting to the station on time?"
+      },
+      {
+        "sentence": "Always factor in small daily distractions so goals stay realistic.",
+        "translation": "Keep daily interruptions in mind when setting realistic goals."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_50",
+    "language": "en",
+    "pattern": "give in",
+    "title": "give in (Phrasal Verb)",
+    "shortExplanation": "Stop resisting and finally agree or surrender to pressure, persuasion, or temptation.",
+    "longExplanation": "Contrast carefully: \"give UP\" = stop trying a goal/habit; \"give IN\" = yield to pressure or someone's insistence.",
+    "formation": "Subject + give in (+ to + Pressure/Temptation)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "After ten minutes of begging, I gave in and shared my fries.",
+        "translation": "Unable to resist the pleading, I eventually shared my fries."
+      },
+      {
+        "sentence": "Don't give in to impatience—natural fluency takes steady input.",
+        "translation": "Resist feeling impatient because true fluency grows through steady exposure."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_51",
+    "language": "en",
+    "pattern": "go through",
+    "title": "go through (Phrasal Verb)",
+    "shortExplanation": "Experience a difficult event, examine/review items carefully, or complete an official procedure.",
+    "longExplanation": "Inseparable. Used constantly by teachers/reviewers (\"Let's go through today's sentences together\").",
+    "formation": "Subject + go through + Hardship/Process/Notes",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Let's go through the tricky idioms line by line together.",
+        "translation": "We will inspect each challenging idiom carefully line by line."
+      },
+      {
+        "sentence": "Everyone goes through a silent phase before speaking feels smooth.",
+        "translation": "Every learner experiences a quiet stage prior to speaking smoothly."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_52",
+    "language": "en",
+    "pattern": "hand over",
+    "title": "hand over (Phrasal Verb)",
+    "shortExplanation": "Give an object, key, role, or responsibility directly into someone else's control.",
+    "longExplanation": "Separable (\"hand it over\"). Covers both physical items (keys/bag) and leadership transitions.",
+    "formation": "Subject + hand over + Item/Control (+ to + Person)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "After training the new host, she happily handed over the mic.",
+        "translation": "Once the new presenter was ready, she passed on hosting duties."
+      },
+      {
+        "sentence": "Please hand over your boarding pass to the gate attendant.",
+        "translation": "Give your boarding pass directly to the staff member at the gate."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_53",
+    "language": "en",
+    "pattern": "lay down",
+    "title": "lay down (Phrasal Verb)",
+    "shortExplanation": "Establish strict rules or official guidelines, or put tools/weapons down to stop.",
+    "longExplanation": "Separable in literal sense; keeps together with formal rules (\"lay down strict guidelines\").",
+    "formation": "Subject + lay down + Rules/Principles/Tool",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "The club laid down simple rules so beginners felt safe speaking.",
+        "translation": "Club organizers set clear guidelines to help newcomers speak comfortably."
+      },
+      {
+        "sentence": "Don't confuse \"lie down\" (rest) with \"lay down\" (set rules or objects down).",
+        "translation": "Remember the difference between resting (lie down) and placing/setting (lay down)."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_54",
+    "language": "en",
+    "pattern": "phase in",
+    "title": "phase in (Phrasal Verb)",
+    "shortExplanation": "Introduce a new system, rule, or curriculum gradually in carefully planned stages.",
+    "longExplanation": "Opposite of \"phase out\" (gradually remove). Frequent in tech rollouts, city transit, and policy updates.",
+    "formation": "Subject + phase in + Policy/System",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "The school will phase in spoken exams over three semesters.",
+        "translation": "Oral assessments will be rolled out gradually across three terms."
+      },
+      {
+        "sentence": "Electric buses are being phased in across all downtown routes.",
+        "translation": "City routes are switching step by step to electric buses."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_55",
+    "language": "en",
+    "pattern": "put up",
+    "title": "put up (Phrasal Verb)",
+    "shortExplanation": "Host someone overnight, hang a sign/poster, raise a price/hand, or tolerate annoyance (\"put up with\").",
+    "longExplanation": "Notice the crucial three-word extension \"put up with + X\" = tolerate something unpleasant patiently.",
+    "formation": "Subject + put up (+ with + Annoyance / Friend / Sign)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Can you put your cousin up for two nights this weekend?",
+        "translation": "Could your cousin stay as an overnight guest for two nights?"
+      },
+      {
+        "sentence": "I refuse to put up with pop-up ads interrupting every sentence.",
+        "translation": "I won't tolerate constant pop-ups breaking up every line."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_56",
+    "language": "en",
+    "pattern": "rule out",
+    "title": "rule out (Phrasal Verb)",
+    "shortExplanation": "Decide officially or logically that an option, cause, or suspect is impossible.",
+    "longExplanation": "Separable (\"Don't rule it out yet!\"). Frequently appears in news, detective shows, and medical or strategic talks.",
+    "formation": "Subject + rule out + Possibility/Option",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Doctors ran two tests to rule out a seasonal allergy.",
+        "translation": "Physicians ordered two tests to eliminate allergy as the cause."
+      },
+      {
+        "sentence": "Don't rule out immersion clips just because speakers talk naturally.",
+        "translation": "Avoid dismissing native clips merely due to natural speech pace."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_57",
+    "language": "en",
+    "pattern": "set out",
+    "title": "set out (Phrasal Verb)",
+    "shortExplanation": "Begin a journey, start with a clear goal (\"set out to explain\"), or arrange facts/items clearly.",
+    "longExplanation": "Use \"set out to + Base Verb\" to describe what someone originally intended to accomplish.",
+    "formation": "Subject + set out (+ to + Verb / on + Journey)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "They set out early at dawn to beat the holiday highway traffic.",
+        "translation": "They left at sunrise hoping to avoid holiday traffic."
+      },
+      {
+        "sentence": "The guide sets out three daily habits for building listening stamina.",
+        "translation": "The guide lays out three clear daily habits to improve stamina."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_58",
+    "language": "en",
+    "pattern": "settle down",
+    "title": "settle down (Phrasal Verb)",
+    "shortExplanation": "Become calmer/quieter, get comfortable in a chair, or establish a steady adult home/life.",
+    "longExplanation": "Usually intransitive; teachers tell noisy classes \"Okay, settle down now\", and vloggers talk about settling down in a city.",
+    "formation": "Subject + settle down",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Once the café music softened, everyone settled down to study.",
+        "translation": "After the background music quieted, people focused calmly on studying."
+      },
+      {
+        "sentence": "After working in four countries, he decided to settle down in Osaka.",
+        "translation": "Having lived in four countries, he chose Osaka as his long-term home."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_59",
+    "language": "en",
+    "pattern": "show up",
+    "title": "show up (Phrasal Verb)",
+    "shortExplanation": "Arrive at a place (especially late or unexpectedly), or make hidden flaws visible.",
+    "longExplanation": "Everyday twin of \"turn up\" (= arrive). Also used figuratively when small errors \"show up clearly on camera\".",
+    "formation": "Subject + show up (+ late/early)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Only half the study group showed up because of the heavy rain.",
+        "translation": "Just half of the group arrived due to the downpour."
+      },
+      {
+        "sentence": "He apologized after showing up twenty minutes late for rehearsal.",
+        "translation": "He said sorry for arriving twenty minutes behind schedule."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_60",
+    "language": "en",
+    "pattern": "stand for",
+    "title": "stand for (Phrasal Verb)",
+    "shortExplanation": "Be an abbreviation for words, represent core values, or tolerate (usually negative: \"won't stand for\").",
+    "longExplanation": "Inseparable. Every learner needs \"What does VIP stand for?\" plus \"What values does this brand stand for?\"",
+    "formation": "Subject + stand for + Meaning/Values",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "What does SRS stand for in memory-review apps?",
+        "translation": "Which full phrase do the letters SRS represent in study apps?"
+      },
+      {
+        "sentence": "Good mentors stand for patience rather than rushing perfection.",
+        "translation": "Great teachers represent patience instead of demanding instant perfection."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_61",
+    "language": "en",
+    "pattern": "take on",
+    "title": "take on (Phrasal Verb)",
+    "shortExplanation": "Accept new work or responsibility, employ staff, develop a new quality, or compete against someone.",
+    "longExplanation": "Separable with work/staff/rivals (\"take too much on\"). Frequent when warning against overcommitting.",
+    "formation": "Subject + take on + Work/Role/Challenger",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "Don't take on five hard courses in the exact same month.",
+        "translation": "Avoid accepting too many demanding classes simultaneously."
+      },
+      {
+        "sentence": "Even a routine clip takes on fresh nuance when you catch the tone.",
+        "translation": "Ordinary clips reveal richer meaning once you notice speaker tone."
+      }
+    ]
+  },
+  {
+    "id": "en_b2_62",
+    "language": "en",
+    "pattern": "take over",
+    "title": "take over (Phrasal Verb)",
+    "shortExplanation": "Assume control, leadership, or responsibility of a task, role, or company from someone else.",
+    "longExplanation": "Works with or without an object (\"Can you take over driving?\" / \"A new editor took over last week\").",
+    "formation": "Subject + take over (+ from + Person / Company/Role)",
+    "level": "CEFR B2",
+    "examples": [
+      {
+        "sentence": "My sister took over driving for the last two hours of the trip.",
+        "translation": "My sister assumed driving duties for the final two hours."
+      },
+      {
+        "sentence": "Feel free to step out—I'll take over moderating the chat.",
+        "translation": "You can leave now since I'll handle chat moderation from here."
+      }
+    ]
   }
 ];

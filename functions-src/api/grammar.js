@@ -10,6 +10,7 @@
  * - (none) or ?type=manifest               -> Grammar manifest JSON (counts, supported languages)
  * - ?lang=vi[&type=patterns]               -> Array of GrammarPattern for `lang`
  * - ?lang=vi&ui=ja[&type=translations]     -> Record<patternId, GrammarTranslation>
+ * - ?lang=vi&type=rules                    -> Declarative grammar matching rules (en, vi)
  * - ?lang=vi&ui=ja&type=all                -> { language, ui, patterns, translations }
  * - ?lang=vi&id=vi_b1_01[&ui=ja]           -> Single localized GrammarPattern (404 if missing)
  */
@@ -31,12 +32,13 @@ import {
     GRAMMAR_UI_LANGUAGES,
     loadGrammarManifest,
     loadGrammarPatterns,
+    loadGrammarRules,
     loadGrammarTranslations,
     mergePatternWithTranslation
 } from '../data/grammar-store.js';
 
 const RATE_LIMIT_CONFIG = { max: 120, windowSeconds: 3600, keyPrefix: 'grammar' };
-const VALID_TYPES = new Set(['manifest', 'patterns', 'translations', 'all', 'pattern']);
+const VALID_TYPES = new Set(['manifest', 'patterns', 'translations', 'rules', 'all', 'pattern']);
 const SAFE_ID_RE = /^[a-z0-9_.-]{1,80}$/i;
 const PUBLIC_CACHE_HEADERS = {
     'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400'
@@ -93,6 +95,12 @@ export async function onRequestGet(context) {
         }
     } else if (type === 'patterns') {
         const res = await loadGrammarPatterns(env, lang, request.url);
+        if (res) {
+            payload = res.data;
+            cacheHit = res.cacheHit;
+        }
+    } else if (type === 'rules') {
+        const res = await loadGrammarRules(env, lang, request.url);
         if (res) {
             payload = res.data;
             cacheHit = res.cacheHit;

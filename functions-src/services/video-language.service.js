@@ -61,20 +61,43 @@ function detectTopicLanguageCue(text) {
     return null;
 }
 
+function hasStrongScriptCue(text, lang) {
+    if (!text) return false;
+    if (lang === 'vi') return VIETNAMESE_SPECIFIC_REGEX.test(text);
+    if (lang === 'ja') return KANA_REGEX.test(text);
+    if (lang === 'ko') return HANGUL_REGEX.test(text);
+    if (lang === 'zh') return (text.match(HANZI_REGEX) || []).length >= 2 && !KANA_REGEX.test(text) && !HANGUL_REGEX.test(text);
+    return false;
+}
+
 /**
  * Infer a video's primary spoken/sung language from official audio metadata, scripts, and AI tracks.
  * Returns null only when evidence is genuinely absent/ambiguous.
  * @param {object} meta
- * @returns {'ja' | 'zh' | 'ko' | 'en' | 'other' | null}
+ * @returns {'ja' | 'zh' | 'ko' | 'en' | 'vi' | 'other' | null}
  */
 export function inferSpokenLanguage(meta = {}) {
-    const stored = normalizePrimaryLanguage(meta.primaryLanguage)
-        || normalizePrimaryLanguage(meta.defaultAudioLanguage);
-    if (stored) return stored;
+    const storedPrimary = normalizePrimaryLanguage(meta.primaryLanguage);
+    if (storedPrimary) return storedPrimary;
 
     const title = typeof meta.title === 'string' ? meta.title.trim() : '';
     const channel = typeof meta.channel === 'string' ? meta.channel.trim() : '';
     const tags = Array.isArray(meta.tags) ? meta.tags.filter(t => typeof t === 'string').join(' ') : '';
+    const combined = `${title} ${channel} ${tags}`.trim();
+
+    const audioLang = normalizePrimaryLanguage(meta.defaultAudioLanguage);
+    if (audioLang) {
+        const defaultDocLang = normalizePrimaryLanguage(meta.defaultLanguage);
+        // YouTube creators frequently leave defaultAudioLanguage at the Studio 'en' default
+        // even when defaultLanguage and title/channel script clearly match a non-English language.
+        if (audioLang === 'en' && defaultDocLang && defaultDocLang !== 'en' && defaultDocLang !== 'other'
+            && !detectExplicitSpokenCue(combined)
+            && hasStrongScriptCue(`${title} ${channel}`, defaultDocLang)) {
+            return defaultDocLang;
+        }
+        return audioLang;
+    }
+
     const aiLanguages = Array.isArray(meta.aiLanguages) ? meta.aiLanguages : [];
     const availableLanguages = Array.isArray(meta.availableLanguages) ? meta.availableLanguages : [];
     const subLanguages = Array.isArray(meta.subLanguages) ? meta.subLanguages : [];
@@ -84,7 +107,6 @@ export function inferSpokenLanguage(meta = {}) {
         : availableLanguages;
     const knownLangs = new Set(primaryTrackSource.map(normalizePrimaryLanguage).filter(Boolean));
 
-    const combined = `${title} ${channel} ${tags}`.trim();
     if (!combined) {
         if (aiLanguages.length === 1) return normalizePrimaryLanguage(aiLanguages[0]);
         return null;

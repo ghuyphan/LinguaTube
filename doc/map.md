@@ -204,7 +204,7 @@ sequenceDiagram
             Edge-->>TS: 200 OK (Source: cache)
         else Not in R2
             Edge->>D1: Check no_transcript_cache
-            Edge->>Supa: GET /v1/transcript with YouTube URL and mode=native
+            Edge->>Supa: Native-only lookup with bounded transient retry
             alt Native Captions Available
                 Supa-->>Edge: Return Timed Segments
                 Edge->>R2: Async Save to R2
@@ -509,9 +509,9 @@ sequenceDiagram
 | `src/app/components/achievements-dialog` | UI Shell | Modal dialog displaying RPG rank crests, 10-tier level progression, daily missions, 41 achievement badges, and Global Leaderboard podium & rankings |
 | `src/app/components/onboarding` | UI Shell | Mobile-native 4-stage game-style FTUE onboarding (Realm & Subtitle Cipher, Companion Spirit Summoning, 5-Tier Rank Ladder, Holographic Adventurer License & Starter Loot Cache with zero background scroll bleed) |
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
-| `src/app/data` | Static Data | Large CJK grammar rules, single-source version & release metadata (`version-info.json`, `changelog.data.ts`) |
-| `src/app/data/translations` | Localization Data | Multi-language grammar translations (16 combinations across JA, KO, ZH, EN into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, geo, dual-subtitles, tokenize, translate, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
+| `src/app/data` | Static Data | CJK, English (`253`), and Vietnamese (`180`) grammar rules, single-source version & release metadata (`version-info.json`, `changelog.data.ts`) |
+| `src/app/data/translations` | Localization Data | Multi-language grammar translations (20 pairs across JA, KO, ZH, EN, VI into VI, ZH, KO, JA) |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, geo, dual-subtitles, tokenize, translate, grammar, grammar-detect, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, Supabase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |

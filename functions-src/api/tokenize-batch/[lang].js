@@ -121,7 +121,7 @@ export async function onRequest(context) {
 
         // Check cache first - include hash of texts to differentiate subtitle versions
         const textsHash = await sha256(JSON.stringify(texts));
-        const cacheKey = `tokens:v6:${lang}:${videoId}:${textsHash}`;
+        const cacheKey = `tokens:v7:${lang}:${videoId}:${textsHash}`;
 
         // 1. Check warm in-memory cache (0 KV ops, < 0.1ms)
         const memHit = memTokenBatchCache.get(cacheKey);

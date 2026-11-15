@@ -14,6 +14,7 @@ import {
     isVietnameseCompoundsReady,
     setVietnameseCompounds
 } from '../data/vi-compounds-loader.js';
+import { VI_VTB_LEXICON } from '../data/vi-vtb-lexicon.js';
 
 export { isVietnameseCompoundsReady, setVietnameseCompounds };
 
@@ -555,9 +556,78 @@ export async function tokenizeKoreanChinese(text, lang) {
         });
 }
 
+const EN_CONTRACTIONS = Object.freeze({
+    "don't": { pos: 'Verb', baseForm: 'do' },
+    "doesn't": { pos: 'Verb', baseForm: 'do' },
+    "didn't": { pos: 'Verb', baseForm: 'do' },
+    "won't": { pos: 'Verb', baseForm: 'will' },
+    "wouldn't": { pos: 'Verb', baseForm: 'would' },
+    "can't": { pos: 'Verb', baseForm: 'can' },
+    "cannot": { pos: 'Verb', baseForm: 'can' },
+    "couldn't": { pos: 'Verb', baseForm: 'can' },
+    "shouldn't": { pos: 'Verb', baseForm: 'should' },
+    "mustn't": { pos: 'Verb', baseForm: 'must' },
+    "mightn't": { pos: 'Verb', baseForm: 'might' },
+    "shan't": { pos: 'Verb', baseForm: 'shall' },
+    "needn't": { pos: 'Verb', baseForm: 'need' },
+    "isn't": { pos: 'Verb', baseForm: 'be' },
+    "aren't": { pos: 'Verb', baseForm: 'be' },
+    "wasn't": { pos: 'Verb', baseForm: 'be' },
+    "weren't": { pos: 'Verb', baseForm: 'be' },
+    "ain't": { pos: 'Verb', baseForm: 'be' },
+    "haven't": { pos: 'Verb', baseForm: 'have' },
+    "hasn't": { pos: 'Verb', baseForm: 'have' },
+    "hadn't": { pos: 'Verb', baseForm: 'have' },
+    "i'm": { pos: 'Pronoun', baseForm: 'i' },
+    "you're": { pos: 'Pronoun', baseForm: 'you' },
+    "we're": { pos: 'Pronoun', baseForm: 'we' },
+    "they're": { pos: 'Pronoun', baseForm: 'they' },
+    "i've": { pos: 'Pronoun', baseForm: 'i' },
+    "you've": { pos: 'Pronoun', baseForm: 'you' },
+    "we've": { pos: 'Pronoun', baseForm: 'we' },
+    "they've": { pos: 'Pronoun', baseForm: 'they' },
+    "i'll": { pos: 'Pronoun', baseForm: 'i' },
+    "you'll": { pos: 'Pronoun', baseForm: 'you' },
+    "he'll": { pos: 'Pronoun', baseForm: 'he' },
+    "she'll": { pos: 'Pronoun', baseForm: 'she' },
+    "it'll": { pos: 'Pronoun', baseForm: 'it' },
+    "we'll": { pos: 'Pronoun', baseForm: 'we' },
+    "they'll": { pos: 'Pronoun', baseForm: 'they' },
+    "i'd": { pos: 'Pronoun', baseForm: 'i' },
+    "you'd": { pos: 'Pronoun', baseForm: 'you' },
+    "he'd": { pos: 'Pronoun', baseForm: 'he' },
+    "she'd": { pos: 'Pronoun', baseForm: 'she' },
+    "we'd": { pos: 'Pronoun', baseForm: 'we' },
+    "they'd": { pos: 'Pronoun', baseForm: 'they' },
+    "it's": { pos: 'Pronoun', baseForm: 'it' },
+    "he's": { pos: 'Pronoun', baseForm: 'he' },
+    "she's": { pos: 'Pronoun', baseForm: 'she' },
+    "that's": { pos: 'Determiner', baseForm: 'that' },
+    "there's": { pos: 'Pronoun', baseForm: 'there' },
+    "here's": { pos: 'Adverb', baseForm: 'here' },
+    "what's": { pos: 'Pronoun', baseForm: 'what' },
+    "who's": { pos: 'Pronoun', baseForm: 'who' },
+    "where's": { pos: 'Adverb', baseForm: 'where' },
+    "let's": { pos: 'Verb', baseForm: 'let' },
+    "should've": { pos: 'Verb', baseForm: 'should' },
+    "shouldn't've": { pos: 'Verb', baseForm: 'should' },
+    "could've": { pos: 'Verb', baseForm: 'could' },
+    "couldn't've": { pos: 'Verb', baseForm: 'could' },
+    "would've": { pos: 'Verb', baseForm: 'would' },
+    "wouldn't've": { pos: 'Verb', baseForm: 'would' },
+    "must've": { pos: 'Verb', baseForm: 'must' },
+    "might've": { pos: 'Verb', baseForm: 'might' },
+    "gonna": { pos: 'Verb', baseForm: 'go' },
+    "wanna": { pos: 'Verb', baseForm: 'want' },
+    "gotta": { pos: 'Verb', baseForm: 'get' }
+});
+
+const EN_COPULA_FORMS = new Set(['am', 'is', 'are', 'was', 'were', 'been', 'being']);
+
 /**
- * Tokenize English text using Intl.Segmenter and Compromise NLP
- * Attaches partOfSpeech and baseForm (lemmatization) to word tokens
+ * Tokenize English text using Intl.Segmenter and Compromise NLP.
+ * Attaches span-accurate partOfSpeech and baseForm (lemmatization),
+ * including contraction and possessive resolution.
  */
 export async function tokenizeEnglish(text) {
     if (!text || typeof text !== 'string') return [];
@@ -566,7 +636,10 @@ export async function tokenizeEnglish(text) {
     const segments = [...segmenter.segment(text)];
     const nlp = await getNlp();
     const doc = nlp(text);
-    const json = doc.json({ terms: true, offset: true });
+    if (typeof doc.compute === 'function') {
+        doc.compute('root');
+    }
+    const json = doc.json({ terms: true, offset: true, root: true });
     const terms = json.flatMap(s => s.terms || []).filter(t => t.text && t.offset);
 
     const filteredSegments = segments.filter(seg => seg.isWordLike || seg.segment.trim());
@@ -575,6 +648,24 @@ export async function tokenizeEnglish(text) {
         const token = { surface: seg.segment };
         if (!seg.isWordLike || isPunctuation(seg.segment)) {
             token.isPunctuation = true;
+            return token;
+        }
+
+        const normalizedApostrophe = seg.segment.replace(/’/g, "'").toLowerCase();
+        const contraction = EN_CONTRACTIONS[normalizedApostrophe];
+        if (contraction) {
+            token.partOfSpeech = contraction.pos;
+            if (contraction.baseForm && contraction.baseForm !== token.surface.toLowerCase()) {
+                token.baseForm = contraction.baseForm;
+            }
+            return token;
+        }
+
+        // Possessive nouns (e.g. John's, teachers')
+        const possessiveMatch = seg.segment.match(/^(.+?)(?:['’]s|['’])$/);
+        if (possessiveMatch && possessiveMatch[1]) {
+            token.partOfSpeech = 'Noun';
+            token.baseForm = possessiveMatch[1];
             return token;
         }
 
@@ -599,22 +690,28 @@ export async function tokenizeEnglish(text) {
             return token;
         }
 
-        if (primaryTerm.tags && primaryTerm.tags.length > 0) {
-            token.partOfSpeech = primaryTerm.tags[0];
+        const tags = primaryTerm.tags || [];
+        if (tags.length > 0) {
+            token.partOfSpeech = tags.includes('Pronoun') ? 'Pronoun' : tags[0];
         }
 
         const normal = primaryTerm.normal || primaryTerm.text.toLowerCase();
-        let lemma = normal;
-        if (primaryTerm.tags && primaryTerm.tags.includes('Verb')) {
-            lemma = doc.match(primaryTerm.text).verbs().conjugate()[0]?.Infinitive || normal;
-        } else if (primaryTerm.tags && primaryTerm.tags.includes('Noun')) {
-            lemma = doc.match(primaryTerm.text).nouns().conjugate()[0]?.Singular || normal;
-        } else if (primaryTerm.tags && (primaryTerm.tags.includes('Adjective') || primaryTerm.tags.includes('Comparative') || primaryTerm.tags.includes('Superlative'))) {
-            lemma = doc.match(primaryTerm.text).adjectives().conjugate()[0]?.Adjective || normal;
+        let lemma = primaryTerm.root || normal;
+
+        if (EN_COPULA_FORMS.has(normal)) {
+            lemma = 'be';
+        } else if (!primaryTerm.root && tags.length > 0) {
+            if (tags.includes('Verb') && (tags.includes('PastTense') || tags.includes('Gerund') || tags.includes('Participle'))) {
+                lemma = nlp(primaryTerm.text).verbs().toInfinitive().text().toLowerCase() || normal;
+            } else if (tags.includes('Noun') && tags.includes('Plural')) {
+                lemma = nlp(primaryTerm.text).nouns().toSingular().text().toLowerCase() || normal;
+            } else if (tags.includes('Comparative') || tags.includes('Superlative')) {
+                lemma = nlp(primaryTerm.text).adjectives().conjugate()[0]?.Adjective || normal;
+            }
         }
 
         if (lemma && lemma.toLowerCase() !== token.surface.toLowerCase()) {
-            token.baseForm = lemma;
+            token.baseForm = tags.includes('ProperNoun') ? lemma : lemma.toLowerCase();
         }
 
         return token;
@@ -624,14 +721,93 @@ export async function tokenizeEnglish(text) {
 const viSegmenter = new Intl.Segmenter('vi', { granularity: 'word' });
 const MAX_VI_COMPOUND_SYLLABLES = 4;
 
+const VI_PROPER_COMPOUNDS = new Set([
+    'việt nam', 'hà nội', 'hồ chí minh', 'đà nẵng', 'sài gòn', 'huế',
+    'tiếng việt', 'tiếng anh', 'tiếng nhật', 'tiếng hàn', 'tiếng trung'
+]);
+
+const VI_LEADING_BOUNDARY_WORDS = new Set([
+    'đã', 'đang', 'sẽ', 'vừa', 'mới', 'không', 'chưa', 'của', 'cho', 'với',
+    'từ', 'về', 'nếu', 'vì', 'khi', 'mà', 'thì', 'là', 'cũng', 'vẫn'
+]);
+
+const VI_ALLOWED_FUNCTION_COMPOUNDS = new Set([
+    'không khí', 'không gian', 'không những', 'không chỉ', 'không phải', 'không thể', 'không ngờ', 'không khỏi',
+    'đã từng', 'đang khi', 'sẽ không', 'vừa mới', 'mới đây', 'vì vậy', 'vì sao', 'vì thế', 'cho nên',
+    'từ trước', 'từ lâu', 'về mặt', 'nếu như', 'khi nào', 'mà còn', 'thì ra', 'cũng như'
+]);
+
+const VI_PRONOUNS = new Set([
+    'tôi', 'bạn', 'mình', 'ta', 'chúng tôi', 'chúng ta', 'họ', 'chúng',
+    'nó', 'hắn', 'anh ấy', 'cô ấy', 'chị ấy', 'ông ấy', 'bà ấy', 'em ấy',
+    'người ta', 'ai', 'gì', 'đâu', 'nào', 'đây', 'đó', 'kia', 'này', 'ấy', 'mọi người', 'các bạn'
+]);
+
+const VI_AUXILIARIES = new Set([
+    'đang', 'đã', 'sẽ', 'sắp', 'vừa', 'từng', 'đã từng', 'vẫn', 'còn',
+    'có thể', 'không thể', 'phải', 'cần', 'nên', 'hãy', 'đừng', 'chớ', 'bị', 'được'
+]);
+
+const VI_CLASSIFIERS = new Set([
+    'cái', 'con', 'chiếc', 'cuốn', 'quyển', 'bức', 'tấm', 'tờ', 'bài', 'ngôi',
+    'cây', 'quả', 'trái', 'bông', 'đóa', 'căn', 'tòa', 'chiến', 'viên', 'hạt',
+    'bộ', 'đôi', 'cặp', 'món', 'vụ', 'cuộc', 'cơn', 'trận', 'chuyến', 'người'
+]);
+
+const VI_CONJUNCTIONS = new Set([
+    'và', 'hay', 'hoặc', 'nhưng', 'nhưng mà', 'tuy', 'tuy nhiên', 'mặc dù', 'dù', 'dẫu',
+    'vì', 'bởi vì', 'nên', 'cho nên', 'vì vậy', 'do đó', 'nếu', 'thì', 'mà', 'song',
+    'ngoài ra', 'hơn nữa', 'đồng thời', 'miễn là', 'trừ khi', 'trừ phi', 'hóa ra', 'tóm lại', 'trái lại'
+]);
+
+const VI_PREPOSITIONS = new Set([
+    'của', 'ở', 'tại', 'trong', 'ngoài', 'trên', 'dưới', 'trước', 'sau', 'bên', 'giữa',
+    'với', 'cho', 'từ', 'đến', 'tới', 'về', 'theo', 'bằng', 'qua', 'sang', 'đối với', 'so với', 'dựa trên', 'xét về', 'về mặt'
+]);
+
+const VI_ADVERBS = new Set([
+    'không', 'chưa', 'chẳng', 'chả', 'rất', 'hơi', 'quá', 'lắm', 'khá', 'cực kỳ', 'vô cùng',
+    'cũng', 'đều', 'chỉ', 'lại', 'luôn', 'ngay', 'thậm chí', 'dần dần', 'hầu như', 'đặc biệt', 'thường xuyên'
+]);
+
+const VI_DEGREE_ADVERBS = new Set(['rất', 'hơi', 'khá', 'quá', 'cực kỳ', 'vô cùng', 'hết sức']);
+
+const VI_FINAL_PARTICLES = new Set([
+    'nhé', 'nha', 'nhỉ', 'ạ', 'à', 'ư', 'hả', 'đấy', 'đó', 'cơ', 'chứ', 'thôi', 'đâu', 'vậy', 'sao', 'nữa'
+]);
+
+const VI_INTERJECTIONS = new Set([
+    'xin chào', 'chào', 'cảm ơn', 'tạm biệt', 'xin lỗi', 'vâng', 'dạ', 'ừ', 'ờ', 'ôi', 'trời ơi', 'á'
+]);
+
+const VI_NUMERALS = new Set([
+    'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười',
+    'trăm', 'nghìn', 'ngàn', 'triệu', 'tỷ', 'vài', 'mấy', 'nhiều', 'ít', 'mỗi', 'mọi', 'từng', 'những', 'các'
+]);
+
+const VI_SENTENCE_END_RE = /^[.!?…]$/;
+
+function isStartsUpper(str) {
+    if (!str) return false;
+    const first = str[0];
+    return first !== first.toLowerCase() && first === first.toUpperCase();
+}
+
+function getVtbFreq(phrase) {
+    const entry = VI_VTB_LEXICON[phrase];
+    return entry ? entry[0] : 0;
+}
+
 /**
- * Segment Vietnamese text using Intl.Segmenter('vi') plus greedy 4->2 syllable
- * longest-match compound merging across contiguous whitespace-separated syllables.
+ * Segment Vietnamese text using Intl.Segmenter('vi') plus corpus-informed
+ * 4->2 syllable compound merging with proper-name and function-word boundary guards.
  */
 export function mergeVietnameseCompounds(text, compounds = getLoadedVietnameseCompounds()) {
     if (!text || typeof text !== 'string') return [];
 
     const rawSegments = [...viSegmenter.segment(text)];
+    // Normalize each word-like syllable once to avoid repeated NFC + lowercase work inside lookahead loops
+    const normSegments = rawSegments.map(s => (s.isWordLike ? s.segment.normalize('NFC').toLowerCase() : ''));
     const tokens = [];
 
     for (let i = 0; i < rawSegments.length; i++) {
@@ -657,27 +833,66 @@ export function mergeVietnameseCompounds(text, compounds = getLoadedVietnameseCo
 
         let matched = null;
         for (let len = wordIndices.length; len >= 2; len--) {
-            const sliceIndices = wordIndices.slice(0, len);
-            const normalized = sliceIndices
-                .map(idx => rawSegments[idx].segment.normalize('NFC').toLowerCase())
-                .join(' ');
-            if (compounds.has(normalized)) {
-                const startIdx = rawSegments[sliceIndices[0]].index;
-                const lastSeg = rawSegments[sliceIndices[len - 1]];
-                const surface = text.slice(startIdx, lastSeg.index + lastSeg.segment.length);
-                matched = {
-                    token: normalized !== surface ? { surface, baseForm: normalized } : { surface },
-                    lastSegIndex: sliceIndices[len - 1]
-                };
-                break;
+            let normalized = normSegments[wordIndices[0]];
+            let hasLowerToUpperBoundary = false;
+            const firstUpper = isStartsUpper(rawSegments[wordIndices[0]].segment);
+            for (let k = 1; k < len; k++) {
+                const idx = wordIndices[k];
+                normalized += ' ' + normSegments[idx];
+                if (!firstUpper && isStartsUpper(rawSegments[idx].segment)) {
+                    hasLowerToUpperBoundary = true;
+                }
             }
+
+            if (!compounds.has(normalized) && !VI_VTB_LEXICON[normalized]) continue;
+
+            // Guard 1: Do not glue lowercase function/pronoun word to capitalized mid-sentence proper noun
+            if (hasLowerToUpperBoundary && !VI_PROPER_COMPOUNDS.has(normalized)) {
+                continue;
+            }
+
+            // Guard 2: Protect core leading function markers unless compound is verified in VTB or allowlist
+            const firstLower = normSegments[wordIndices[0]];
+            if (
+                VI_LEADING_BOUNDARY_WORDS.has(firstLower) &&
+                !VI_ALLOWED_FUNCTION_COMPOUNDS.has(normalized) &&
+                getVtbFreq(normalized) < 3
+            ) {
+                continue;
+            }
+
+            // Guard 3: If candidate is absent from gold VTB corpus, yield to a frequent VTB compound starting at syllable 2
+            if (getVtbFreq(normalized) === 0 && wordIndices.length >= 3) {
+                let tailHasStrongVtb = false;
+                for (let tailLen = Math.min(wordIndices.length - 1, 3); tailLen >= 2; tailLen--) {
+                    let tailNorm = normSegments[wordIndices[1]];
+                    for (let k = 2; k <= tailLen; k++) {
+                        tailNorm += ' ' + normSegments[wordIndices[k]];
+                    }
+                    if (getVtbFreq(tailNorm) >= 5) {
+                        tailHasStrongVtb = true;
+                        break;
+                    }
+                }
+                if (tailHasStrongVtb) continue;
+            }
+
+            const startIdx = seg.index;
+            const lastIdx = wordIndices[len - 1];
+            const lastSeg = rawSegments[lastIdx];
+            const surface = text.slice(startIdx, lastSeg.index + lastSeg.segment.length);
+            matched = {
+                token: normalized !== surface ? { surface, baseForm: normalized } : { surface },
+                lastSegIndex: lastIdx
+            };
+            break;
         }
 
         if (matched) {
             tokens.push(matched.token);
             i = matched.lastSegIndex;
         } else {
-            const normalized = seg.segment.normalize('NFC').toLowerCase();
+            const normalized = normSegments[i];
             tokens.push(normalized !== seg.segment ? { surface: seg.segment, baseForm: normalized } : { surface: seg.segment });
         }
     }
@@ -685,12 +900,156 @@ export function mergeVietnameseCompounds(text, compounds = getLoadedVietnameseCo
     return tokens;
 }
 
+/**
+ * Attach contextual Part-of-Speech tags to Vietnamese tokens using the compiled
+ * UD_Vietnamese-VTB lexicon, closed-class lexicons, and neighbor disambiguation.
+ */
+export function tagVietnameseTokens(tokens) {
+    if (!Array.isArray(tokens) || tokens.length === 0) return tokens;
+
+    const wordPositions = [];
+    for (let i = 0; i < tokens.length; i++) {
+        if (!tokens[i].isPunctuation) wordPositions.push(i);
+    }
+
+    const posByIdx = new Array(tokens.length).fill(undefined);
+
+    // Pass 1: Closed-class & VTB lexical lookup
+    for (const idx of wordPositions) {
+        const t = tokens[idx];
+        const norm = (t.baseForm || t.surface).normalize('NFC').toLowerCase();
+
+        if (/^\d+(?:[.,:/-]\d+)*$/.test(norm)) {
+            posByIdx[idx] = 'Numeral';
+            continue;
+        }
+        if (VI_INTERJECTIONS.has(norm)) {
+            posByIdx[idx] = 'Interjection';
+            continue;
+        }
+        if (VI_AUXILIARIES.has(norm)) {
+            posByIdx[idx] = 'Auxiliary';
+            continue;
+        }
+        if (VI_PRONOUNS.has(norm)) {
+            posByIdx[idx] = 'Pronoun';
+            continue;
+        }
+        if (VI_CONJUNCTIONS.has(norm)) {
+            posByIdx[idx] = 'Conjunction';
+            continue;
+        }
+        if (VI_PREPOSITIONS.has(norm)) {
+            posByIdx[idx] = 'Preposition';
+            continue;
+        }
+        if (VI_ADVERBS.has(norm)) {
+            posByIdx[idx] = 'Adverb';
+            continue;
+        }
+        if (VI_NUMERALS.has(norm)) {
+            posByIdx[idx] = 'Numeral';
+            continue;
+        }
+
+        const vtb = VI_VTB_LEXICON[norm];
+        if (vtb) {
+            posByIdx[idx] = vtb[1];
+        } else if (VI_CLASSIFIERS.has(norm)) {
+            posByIdx[idx] = 'Classifier';
+        } else if (VI_FINAL_PARTICLES.has(norm)) {
+            posByIdx[idx] = 'Particle';
+        }
+    }
+
+    // Pass 2: Neighbor-based contextual disambiguation
+    for (let w = 0; w < wordPositions.length; w++) {
+        const idx = wordPositions[w];
+        const t = tokens[idx];
+        const norm = (t.baseForm || t.surface).normalize('NFC').toLowerCase();
+        const prevIdx = w > 0 ? wordPositions[w - 1] : -1;
+        const nextIdx = w + 1 < wordPositions.length ? wordPositions[w + 1] : -1;
+        const prevNorm = prevIdx !== -1 ? (tokens[prevIdx].baseForm || tokens[prevIdx].surface).toLowerCase() : '';
+        const nextNorm = nextIdx !== -1 ? (tokens[nextIdx].baseForm || tokens[nextIdx].surface).toLowerCase() : '';
+        const nextRawToken = idx + 1 < tokens.length ? tokens[idx + 1] : null;
+        const atClauseEnd = nextIdx === -1 || (nextRawToken?.isPunctuation && VI_SENTENCE_END_RE.test(nextRawToken.surface.trim()));
+
+        if (atClauseEnd && (VI_FINAL_PARTICLES.has(norm) || norm === 'không' || norm === 'chưa' || norm === 'rồi')) {
+            posByIdx[idx] = 'Particle';
+            continue;
+        }
+
+        if (norm === 'hay') {
+            if (VI_DEGREE_ADVERBS.has(prevNorm)) {
+                posByIdx[idx] = 'Adjective';
+            } else if (posByIdx[nextIdx] === 'Verb' && (posByIdx[prevIdx] === 'Pronoun' || posByIdx[prevIdx] === 'Noun')) {
+                posByIdx[idx] = 'Adverb';
+            } else {
+                posByIdx[idx] = 'Conjunction';
+            }
+            continue;
+        }
+
+        if (norm === 'mới') {
+            if (posByIdx[prevIdx] === 'Noun' && (atClauseEnd || posByIdx[nextIdx] === 'Preposition' || posByIdx[nextIdx] === 'Conjunction')) {
+                posByIdx[idx] = 'Adjective';
+            } else if (posByIdx[nextIdx] === 'Verb' || posByIdx[nextIdx] === 'Auxiliary') {
+                posByIdx[idx] = 'Adverb';
+            }
+            continue;
+        }
+
+        if (norm === 'vừa') {
+            if (VI_DEGREE_ADVERBS.has(prevNorm) || (posByIdx[prevIdx] === 'Verb' && atClauseEnd)) {
+                posByIdx[idx] = 'Adjective';
+            } else if (posByIdx[nextIdx] === 'Verb' || posByIdx[nextIdx] === 'Adjective') {
+                posByIdx[idx] = 'Adverb';
+            }
+            continue;
+        }
+
+        if (norm === 'được' || norm === 'bị') {
+            if (VI_DEGREE_ADVERBS.has(prevNorm) || (norm === 'được' && nextNorm === 'rồi')) {
+                posByIdx[idx] = 'Adjective';
+            } else if (posByIdx[nextIdx] === 'Verb' || posByIdx[nextIdx] === 'Noun' || posByIdx[nextIdx] === 'Pronoun' || posByIdx[prevIdx] === 'Verb') {
+                posByIdx[idx] = 'Auxiliary';
+            } else {
+                posByIdx[idx] = 'Verb';
+            }
+            continue;
+        }
+
+        if (VI_CLASSIFIERS.has(norm)) {
+            if (nextIdx !== -1 && (posByIdx[nextIdx] === 'Noun' || !posByIdx[nextIdx])) {
+                posByIdx[idx] = 'Classifier';
+                if (!posByIdx[nextIdx]) posByIdx[nextIdx] = 'Noun';
+            } else if (!posByIdx[idx]) {
+                posByIdx[idx] = 'Noun';
+            }
+            continue;
+        }
+
+        if (!posByIdx[idx]) {
+            if (posByIdx[prevIdx] === 'Classifier' || prevNorm === 'những' || prevNorm === 'các' || prevNorm === 'mỗi') {
+                posByIdx[idx] = 'Noun';
+            } else if (VI_DEGREE_ADVERBS.has(prevNorm)) {
+                posByIdx[idx] = 'Adjective';
+            } else if (posByIdx[prevIdx] === 'Auxiliary' && prevNorm !== 'được' && prevNorm !== 'bị') {
+                posByIdx[idx] = 'Verb';
+            }
+        }
+    }
+
+    return tokens.map((t, i) => (posByIdx[i] && !t.isPunctuation) ? { ...t, partOfSpeech: posByIdx[i] } : t);
+}
+
 export async function tokenizeVietnamese(text, options = {}) {
     if (!text || typeof text !== 'string') return [];
     const compounds = options?.compounds instanceof Set
         ? options.compounds
         : await getVietnameseCompounds(options);
-    return mergeVietnameseCompounds(text, compounds);
+    const merged = mergeVietnameseCompounds(text, compounds);
+    return tagVietnameseTokens(merged);
 }
 
 /**

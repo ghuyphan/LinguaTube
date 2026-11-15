@@ -27,12 +27,23 @@ const SUPPLEMENT = [
     'gia đình', 'bạn bè', 'bố mẹ', 'anh chị', 'ông bà',
     'thành phố', 'bệnh viện', 'siêu thị', 'nhà hàng', 'khách sạn', 'sân bay', 'nhà ga',
     'giới thiệu', 'chuẩn bị', 'quyết định', 'giải thích', 'hiểu biết', 'thú vị', 'tuyệt vời',
-    'quan trọng', 'đặc biệt', 'thường xuyên', 'bình thường', 'hạnh phúc', 'kinh nghiệm'
+    'quan trọng', 'đặc biệt', 'thường xuyên', 'bình thường', 'hạnh phúc', 'kinh nghiệm',
+    'chẳng hạn', 'đối với', 'vốn dĩ', 'thành ra', 'thành thử', 'hóa ra', 'tóm lại', 'trái lại',
+    'đồng thời', 'ngay lập tức', 'suýt nữa', 'lẽ ra', 'đáng lẽ', 'từ trước', 'xét về', 'về mặt',
+    'tức là', 'dẫu sao', 'huống chi', 'huống hồ', 'hầu như', 'trở nên', 'trở thành', 'chính là',
+    'hình như', 'có vẻ', 'dần dần', 'nhờ có', 'so với', 'dựa trên', 'miễn là', 'trừ khi', 'trừ phi',
+    'ngày càng', 'quả thật', 'nói cách khác', 'ngay khi', 'thay vì', 'chẳng qua'
 ];
 
-// Transparent Verb+Noun phrases learners expect clickable as individual tokens.
+// Transparent phrases learners expect clickable as individual tokens (not glued compounds).
 const STOPLIST = new Set([
-    'ăn cơm', 'uống nước', 'đi học', 'đi làm', 'về nhà', 'đọc sách', 'xem phim', 'nghe nhạc'
+    'ăn cơm', 'uống nước', 'đi học', 'đi làm', 'về nhà', 'đọc sách', 'xem phim', 'nghe nhạc',
+    'của tôi', 'của bạn', 'của anh', 'của chị', 'của em', 'của họ', 'của mình', 'của chúng ta',
+    'cho tôi', 'cho bạn', 'với tôi', 'với bạn', 'từ tôi', 'về tôi',
+    'làm gì', 'đi đâu', 'ăn gì', 'uống gì', 'nói gì', 'có gì', 'ở đâu', 'khi nào', 'lúc nào',
+    'không có', 'đã có', 'sẽ có', 'đang có', 'chưa có', 'vẫn có', 'cũng có',
+    'không biết', 'không hiểu', 'không thích', 'không muốn', 'không cần', 'không phải',
+    'đã từng', 'sẽ đi', 'đang làm', 'tìm ra', 'làm xong', 'quên mất', 'nói lại', 'nhắc lại'
 ]);
 
 export function extractVietnameseCompounds(rawText) {

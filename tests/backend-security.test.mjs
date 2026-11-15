@@ -782,7 +782,7 @@ test('SupadataProvider: multi-key failover on quota/rate-limit/timeout errors', 
   provider._executeFetch = async (videoId, lang, apiKey) => {
     if (apiKey === 'key_bad') {
       badKeyCalled = true;
-      throw new Error('402 Quota exceeded');
+      throw Object.assign(new Error('Quota exceeded'), { status: 402 });
     }
     if (apiKey === 'key_good') {
       goodKeyCalled = true;

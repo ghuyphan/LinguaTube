@@ -2113,5 +2113,1545 @@ export const GRAMMAR_EN_VI: Record<string, GrammarTranslation> = {
         "translation": "Nghiên cứu này xem xét cách thức mạng xã hội tác động đến hành vi."
       }
     ]
+  },
+  "en_a1_25": {
+    "title": "Let's + Động từ (Đề nghị cùng làm gì)",
+    "shortExplanation": "Dùng để rủ rê hoặc đề xuất mọi người cùng làm một việc gì đó với mình.",
+    "longExplanation": "\"Let's\" là dạng viết tắt của \"Let us\". Luôn dùng với động từ nguyên mẫu không \"to\". Khi phủ định (rủ đừng làm gì), dùng \"Let's not + Động từ nguyên mẫu\".",
+    "formation": "Let's (+ not) + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Chúng ta hãy nghỉ giải lao một lát trước bài học tiếp theo nhé."
+      },
+      {
+        "translation": "Đừng chờ thêm nữa; tàu sẽ rời bến trong năm phút nữa đấy."
+      }
+    ]
+  },
+  "en_a1_26": {
+    "title": "How about / What about + Danh từ / V-ing? (Gợi ý lựa chọn)",
+    "shortExplanation": "Cách hỏi thân mật để đề xuất ý tưởng, đưa ra phương án thay thế hoặc hỏi thăm lại ai đó.",
+    "longExplanation": "Sau \"How about\" hoặc \"What about\" có thể dùng danh từ, đại từ hoặc động từ đuôi -ing. Ngoài ra \"What about you?\" rất phổ biến để hỏi ngược lại đối phương.",
+    "formation": "How about / What about + Danh từ / V-ing?",
+    "examples": [
+      {
+        "translation": "Tối nay gọi pizza ăn tối thì sao nhỉ?"
+      },
+      {
+        "translation": "Còn việc gặp nhau ở quán cà phê khoảng ba giờ thì thế nào?"
+      }
+    ]
+  },
+  "en_a1_27": {
+    "title": "Would like (+ to V) (Mong muốn, đề nghị lịch sự)",
+    "shortExplanation": "Cách nói lịch sự thay cho \"want\" khi gọi món, yêu cầu hoặc mời ai đó.",
+    "longExplanation": "Trong giao tiếp hằng ngày ở quán ăn, cửa hàng hoặc khi nhờ vả, \"I'd like\" (I would like) nghe nhẹ nhàng và lịch sự hơn \"I want\". Nếu đi với động từ, luôn phải có \"to\" ở giữa.",
+    "formation": "Chủ ngữ + would like + Danh từ / to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Làm ơn cho tôi một tách trà xanh không đường ạ."
+      },
+      {
+        "translation": "Bạn có muốn ngồi gần cửa sổ không?"
+      }
+    ]
+  },
+  "en_a1_28": {
+    "title": "Be going to + Động từ (Dự định tương lai & Dự đoán có căn cứ)",
+    "shortExplanation": "Diễn tả kế hoạch đã định sẵn từ trước hoặc dự đoán dựa trên dấu hiệu rõ ràng ngay trước mắt.",
+    "longExplanation": "Chia động từ \"be\" (am/is/are) theo chủ ngữ rồi ghép \"going to + động từ nguyên mẫu\". Trong văn nói nhanh, người bản xứ thường đọc lướt thành \"gonna\".",
+    "formation": "Chủ ngữ + am/is/are + going to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Ngày mai tôi sẽ bắt đầu một cuốn sổ mới để ghi từ vựng."
+      },
+      {
+        "translation": "Nhìn những đám mây đen kìa — trời sắp mưa rồi đấy."
+      }
+    ]
+  },
+  "en_a1_29": {
+    "title": "Want to / Need to + Động từ (Mong muốn & Nhu cầu)",
+    "shortExplanation": "Diễn tả điều bạn muốn làm (want to) hoặc cần phải làm (need to).",
+    "longExplanation": "Khi nối hai động từ này với một hành động khác, luôn dùng \"to + động từ nguyên mẫu\". Phủ định dùng trợ động từ \"don't / doesn't\". Trong văn nói thân mật, \"want to\" hay đọc nối thành \"wanna\".",
+    "formation": "Chủ ngữ + want(s) / need(s) + to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Bạn cần khởi động lại ứng dụng sau khi đổi ngôn ngữ."
+      },
+      {
+        "translation": "Năm nay tôi muốn cải thiện tốc độ nghe hiểu của mình."
+      }
+    ]
+  },
+  "en_a2_27": {
+    "title": "Be able to + Động từ (Khả năng ở mọi thì)",
+    "shortExplanation": "Thay thế cho \"can\" ở các thì tương lai, hoàn thành hoặc sau các động từ khuyết thiếu khác.",
+    "longExplanation": "Do \"can\" chỉ có dạng hiện tại và quá khứ (could), ta dùng \"be able to\" sau \"will\", \"might\", \"to\" hoặc ở thì hoàn thành. Khi kể việc khó đã xoay xở làm được trong một lần cụ thể ở quá khứ, \"was/were able to\" tự nhiên hơn \"could\".",
+    "formation": "Chủ ngữ + be (chia theo thì) + able to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Luyện tập mỗi ngày, bạn sẽ có thể nghe hiểu podcast bản xứ."
+      },
+      {
+        "translation": "May mắn là chúng tôi đã kịp sửa lỗi trước buổi thuyết trình."
+      }
+    ]
+  },
+  "en_a2_28": {
+    "title": "Have to / Don't have to (Bắt buộc vs Không cần thiết)",
+    "shortExplanation": "\"Have to\" chỉ nghĩa vụ từ hoàn cảnh hoặc quy định; \"don't have to\" nghĩa là không cần phải làm (tự do lựa chọn).",
+    "longExplanation": "Lưu ý sự khác biệt lớn ở thể phủ định: \"mustn't\" là cấm tuyệt đối, còn \"don't have to\" chỉ đơn giản là không bắt buộc, bạn làm hay không cũng được.",
+    "formation": "Chủ ngữ + (don't/doesn't/didn't) + have to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Chúng ta có phải học thuộc từng từ một trong danh sách này không?"
+      },
+      {
+        "translation": "Bạn không cần trả tiền ngay đâu; tuần đầu tiên được miễn phí."
+      }
+    ]
+  },
+  "en_a2_29": {
+    "title": "Too + Tính/Trạng từ + to V (Quá ... đến nỗi không thể ...)",
+    "shortExplanation": "Diễn tả mức độ vượt quá giới hạn khiến một hành động không thể thực hiện được.",
+    "longExplanation": "Cấu trúc \"too ... to ...\" mang nghĩa phủ định ngầm (quá đến mức không thể). Có thể thêm \"for + tân ngữ\" trước \"to V\" để chỉ rõ đối tượng bị tác động.",
+    "formation": "too + Tính từ / Trạng từ + (for + Tân ngữ) + to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Chiếc hộp quá nặng nên một mình tôi không thể bê lên lầu nổi."
+      },
+      {
+        "translation": "Anh ấy nói quá nhanh khiến người mới học không thể bắt kịp từng cụm từ."
+      }
+    ]
+  },
+  "en_a2_30": {
+    "title": "Tính/Trạng từ + enough + to V (Đủ ... để làm gì)",
+    "shortExplanation": "Diễn tả có đủ mức độ hoặc điều kiện cần thiết để thực hiện một việc.",
+    "longExplanation": "Chú ý vị trí từ: \"enough\" đứng SAU tính từ hoặc trạng từ (\"warm enough\"), nhưng đứng TRƯỚC danh từ (\"enough time\"). Có thể thêm \"for + tân ngữ\" trước \"to V\".",
+    "formation": "Tính từ / Trạng từ + enough + (for + Tân ngữ) + to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Âm thanh có đủ rõ để bạn nghe được thanh điệu không?"
+      },
+      {
+        "translation": "Cô ấy vẫn chưa đủ tuổi để tự lái xe một mình."
+      }
+    ]
+  },
+  "en_a2_31": {
+    "title": "Liên từ tương quan (Both...and / Either...or / Neither...nor)",
+    "shortExplanation": "Ghép hai đối tượng để chọn cả hai (both...and), chọn một trong hai (either...or) hoặc phủ nhận cả hai (neither...nor).",
+    "longExplanation": "\"Both A and B\" luôn chia động từ số nhiều. Với \"Either A or B\" và \"Neither A nor B\", động từ chia theo chủ ngữ B gần hơn. Không dùng thêm \"not\" sau \"neither...nor\".",
+    "formation": "Both A and B / Either A or B / Neither A nor B",
+    "examples": [
+      {
+        "translation": "Hoặc là bạn nộp bản nháp hôm nay, hoặc là chúng ta hoãn ngày ra mắt."
+      },
+      {
+        "translation": "Cả Tom lẫn Sarah đều không biết cuộc họp đã chuyển sang trực tuyến."
+      }
+    ]
+  },
+  "en_a2_32": {
+    "title": "Make / Let + Tân ngữ + Động từ nguyên mẫu (Sai khiến & Cho phép)",
+    "shortExplanation": "\"Make + O + V\" diễn tả việc khiến ai đó phải làm gì hoặc tạo phản ứng; \"let + O + V\" nghĩa là cho phép ai làm gì.",
+    "longExplanation": "Lưu ý không có \"to\" trước động từ thứ hai ở câu chủ động (nói \"let me explain\", không nói \"let me to explain\"). Khác với \"allow someone to V\" bắt buộc phải có \"to\".",
+    "formation": "Chủ ngữ + make / let + Tân ngữ + Động từ nguyên mẫu (không to)",
+    "examples": [
+      {
+        "translation": "Xin hãy để tôi giải thích chuyện gì đã xảy ra trước khi bạn quyết định."
+      },
+      {
+        "translation": "Cú ngoặt bất ngờ đó khiến cả khán phòng sững sờ."
+      }
+    ]
+  },
+  "en_a2_33": {
+    "title": "Each other / One another (Đại từ tương hỗ: lẫn nhau)",
+    "shortExplanation": "Diễn tả hành động qua lại giữa hai hay nhiều người với nhau.",
+    "longExplanation": "Tránh nhầm với đại từ phản thân \"themselves\" (tự làm cho chính mình). Theo truyền thống \"each other\" dùng cho hai người và \"one another\" cho từ ba người trở lên, nhưng trong giao tiếp hiện đại cả hai thường thay thế được cho nhau.",
+    "formation": "Chủ ngữ số nhiều + Động từ (+ Giới từ) + each other / one another",
+    "examples": [
+      {
+        "translation": "Những người bạn đồng hành học ngôn ngữ tốt luôn sửa lỗi cho nhau một cách nhẹ nhàng."
+      },
+      {
+        "translation": "Họ đã không gặp lại nhau kể từ khi tốt nghiệp đại học."
+      }
+    ]
+  },
+  "en_a2_34": {
+    "title": "As soon as + Mệnh đề (Ngay khi...)",
+    "shortExplanation": "Diễn tả hành động thứ hai xảy ra tức thì ngay sau khi hành động thứ nhất vừa xong.",
+    "longExplanation": "Dù nói về tương lai, mệnh đề đi sau \"as soon as\" chỉ chia thì hiện tại đơn chứ không dùng \"will\": nói \"as soon as I land\", không nói \"as soon as I will land\".",
+    "formation": "Mệnh đề chính + as soon as + Chủ ngữ + Động từ (hiện tại / quá khứ)",
+    "examples": [
+      {
+        "translation": "Nhắn cho mình ngay khi bạn về đến nhà an toàn nhé."
+      },
+      {
+        "translation": "Ngay khi phụ đề tải xong, cô ấy bắt đầu luyện nói đuổi theo."
+      }
+    ]
+  },
+  "en_a2_35": {
+    "title": "So + Tính/Trạng từ + that + Mệnh đề (Quá ... đến nỗi mà...)",
+    "shortExplanation": "Nhấn mạnh mức độ cao của một tính chất dẫn đến một kết quả cụ thể.",
+    "longExplanation": "Phân biệt với \"such + (a/an) + cụm danh từ + that\". Trong giao tiếp thân mật, người nói thường lược bỏ chữ \"that\" (ví dụ: \"I was so tired I fell asleep\").",
+    "formation": "so + Tính từ / Trạng từ + (that) + Mệnh đề kết quả",
+    "examples": [
+      {
+        "translation": "Tôi mệt rã rời đến mức ngủ thiếp đi trước khi đoạn mở đầu kết thúc."
+      },
+      {
+        "translation": "Anh ấy giải thích thành ngữ rõ ràng đến nỗi ai cũng mỉm cười gật gù."
+      }
+    ]
+  },
+  "en_b1_28": {
+    "title": "Had better + Động từ (Lời khuyên mạnh / Cảnh báo: Nên... kẻo...)",
+    "shortExplanation": "Đưa ra lời khuyên cấp bách cho hiện tại hoặc tương lai gần, hàm ý sẽ có rắc rối nếu không làm.",
+    "longExplanation": "Dù chứa chữ \"had\", cụm này (thường viết tắt là \"'d better\") luôn nói về hiện tại hoặc sắp tới. Dạng phủ định là \"had better not + V\" chứ không dùng \"hadn't better\".",
+    "formation": "Chủ ngữ + had better ('d better) (+ not) + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Tốt hơn hết bạn nên lưu một bản sao lưu trước khi cập nhật cài đặt."
+      },
+      {
+        "translation": "Chúng ta không nên thức khuya ngoài đường trước kỳ thi ngày mai đâu."
+      }
+    ]
+  },
+  "en_b1_29": {
+    "title": "Would rather + V (+ than + V) (Thích làm gì hơn)",
+    "shortExplanation": "Nêu rõ lựa chọn bạn thích hơn trong một tình huống cụ thể.",
+    "longExplanation": "Sau \"would rather\" ('d rather) dùng trực tiếp động từ nguyên mẫu không \"to\". Dùng \"than + động từ nguyên mẫu\" cho phương án kém ưu tiên hơn, và \"would rather not + V\" để từ chối khéo.",
+    "formation": "Chủ ngữ + would rather ('d rather) (+ not) + V (+ than + V)",
+    "examples": [
+      {
+        "translation": "Tôi thà xem video kèm phụ đề tiếng gốc còn hơn là đọc bản tóm tắt."
+      },
+      {
+        "translation": "Cảm ơn lời mời, nhưng tối nay tôi thích ở nhà hơn."
+      }
+    ]
+  },
+  "en_b1_30": {
+    "title": "Be supposed to + Động từ (Đáng lẽ / Theo quy định hoặc lịch trình)",
+    "shortExplanation": "Diễn tả điều được kỳ vọng, quy định hoặc theo lịch trình (thường ngụ ý thực tế lại khác đi).",
+    "longExplanation": "Ở hiện tại dùng để nói về bổn phận hoặc lời đồn phổ biến. Ở quá khứ (\"was/were supposed to\"), thường hàm ý việc đó đáng lẽ phải xảy ra nhưng rốt cuộc đã không diễn ra như dự kiến.",
+    "formation": "Chủ ngữ + be + supposed to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Theo quy định, bạn phải nộp bản tóm tắt trước trưa thứ Sáu."
+      },
+      {
+        "translation": "Chuyến bay của chúng tôi đáng lẽ đã hạ cánh từ một tiếng trước rồi."
+      }
+    ]
+  },
+  "en_b1_31": {
+    "title": "Be allowed to + Động từ (Được phép làm gì)",
+    "shortExplanation": "Diễn tả sự cho phép hoặc quy định ở mọi thì (quá khứ, hiện tại, tương lai).",
+    "longExplanation": "Giống như \"be able to\" bổ khuyết các thì cho \"can\", cấu trúc \"be allowed to\" diễn đạt sự cho phép ở mọi thì. Dạng phủ định \"aren't allowed to\" rất phổ biến để nêu nội quy.",
+    "formation": "Chủ ngữ + be (+ not) + allowed to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Khách tham quan không được phép bật đèn flash khi chụp ảnh trong phòng trưng bày."
+      },
+      {
+        "translation": "Sinh viên có được phép mang từ điển vào phòng thi không?"
+      }
+    ]
+  },
+  "en_b1_32": {
+    "title": "Be / Get used to + Danh từ / V-ing (Đã quen với / Đang quen dần với)",
+    "shortExplanation": "\"Be used to\" nghĩa là đã thấy quen thuộc bình thường; \"get used to\" diễn tả quá trình tập làm quen.",
+    "longExplanation": "LƯU Ý QUAN TRỌNG: Chữ \"to\" ở đây là giới từ nên phía sau PHẢI là danh từ hoặc V-ing (\"used to waking up\"), tuyệt đối KHÔNG dùng với động từ nguyên mẫu (khác với \"used to + V\" chỉ thói quen quá khứ).",
+    "formation": "Chủ ngữ + be / get + used to + Danh từ / V-ing",
+    "examples": [
+      {
+        "translation": "Mất cả tháng trời nhưng cuối cùng tôi cũng quen dần với việc nghe tốc độ nói nhanh."
+      },
+      {
+        "translation": "Cô ấy đã quen với việc làm việc dưới áp lực thời hạn gấp rút."
+      }
+    ]
+  },
+  "en_b1_33": {
+    "title": "By the time + Mệnh đề (Tính đến lúc... thì đã...)",
+    "shortExplanation": "Nhấn mạnh một hành động đã hoàn tất trước khi một mốc thời gian khác xảy ra ở quá khứ hoặc tương lai.",
+    "longExplanation": "Khi kể quá khứ, \"by the time + Quá khứ đơn\" đi với Quá khứ hoàn thành (had + V3). Khi nói tương lai, \"by the time + Hiện tại đơn\" đi với Tương lai hoàn thành (will have + V3).",
+    "formation": "By the time + Mệnh đề (hiện tại/quá khứ), Mệnh đề chính (will have V3 / had V3)",
+    "examples": [
+      {
+        "translation": "Lúc chúng tôi đến rạp thì cảnh mở đầu đã chiếu mất rồi."
+      },
+      {
+        "translation": "Đến lúc bữa tối dọn ra thì tôi sẽ ôn xong toàn bộ thẻ từ vựng."
+      }
+    ]
+  },
+  "en_b1_34": {
+    "title": "Prefer A to B / Prefer to V rather than V (Thích gì hơn gì)",
+    "shortExplanation": "Diễn tả sở thích lâu dài hoặc thói quen ưu tiên cái này hơn cái kia.",
+    "longExplanation": "Khi so sánh hai danh từ hoặc hai V-ing, dùng giới từ \"to\" chứ không dùng \"than\" (\"prefer tea to coffee\"). Khi so sánh hai động từ nguyên mẫu có \"to\", dùng \"rather than\" ở giữa.",
+    "formation": "prefer + Danh từ/V-ing + to + Danh từ/V-ing  |  prefer to V + rather than + V",
+    "examples": [
+      {
+        "translation": "Tôi thích nghe podcast thực tế hơn là học vẹt danh sách từ rời rạc."
+      },
+      {
+        "translation": "Cô ấy thích làm việc tại nhà hơn là đi lại hai tiếng mỗi ngày."
+      }
+    ]
+  },
+  "en_b1_35": {
+    "title": "Get + Tân ngữ + to V (Thuyết phục, nhờ ai đó làm gì)",
+    "shortExplanation": "Diễn tả việc thuyết phục, nhờ vả hoặc xoay xở khiến ai đó làm một việc gì.",
+    "longExplanation": "Phân biệt ba dạng sai khiến chủ động: \"make/have + người + V (không to)\" nhưng với \"get + người + to V\" thì BẮT BUỘC phải có \"to\".",
+    "formation": "Chủ ngữ + get + Người + to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Làm sao bạn thuyết phục được anh trai phụ giúp chỉnh sửa video thế?"
+      },
+      {
+        "translation": "Cuối cùng tôi cũng nhờ được huấn luyện viên phát âm cho phát chậm lại."
+      }
+    ]
+  },
+  "en_b2_30": {
+    "title": "Can't help + V-ing (Không thể nhịn / Không khỏi...)",
+    "shortExplanation": "Diễn tả cảm giác hoặc phản ứng tự nhiên đến mức không thể kìm nén được.",
+    "longExplanation": "Sau \"can't help\" (hoặc quá khứ \"couldn't help\") luôn là động từ thêm đuôi -ing (V-ing), không dùng \"to V\". Trong văn nói hoặc viết trang trọng hơn cũng có biến thể \"can't help but + V nguyên mẫu\".",
+    "formation": "Chủ ngữ + can't / couldn't help + V-ing",
+    "examples": [
+      {
+        "translation": "Tôi không nhịn được cười khi con mèo nhảy phóc lên bàn phím của anh ấy."
+      },
+      {
+        "translation": "Cô ấy không thể không để ý tới những lỗi ngữ pháp nhỏ trong phụ đề phim."
+      }
+    ]
+  },
+  "en_b2_31": {
+    "title": "It's no use / There's no point (in) + V-ing (Vô ích khi làm gì)",
+    "shortExplanation": "Nhận định rằng việc gì đó không đem lại kết quả và chỉ lãng phí công sức.",
+    "longExplanation": "Cả hai cấu trúc đều đi với danh động từ V-ing (không dùng to V). Ở cụm \"There's no point (in) + V-ing\", giới từ \"in\" có thể giữ hoặc lược bỏ đều tự nhiên.",
+    "formation": "It's no use + V-ing  |  There's no point (in) + V-ing",
+    "examples": [
+      {
+        "translation": "Lo lắng mãi về những lỗi mình đã sửa xong rồi cũng chẳng ích gì."
+      },
+      {
+        "translation": "Đợi thêm nữa cũng vô ích thôi — chuyến xe buýt cuối cùng vừa chạy mất rồi."
+      }
+    ]
+  },
+  "en_b2_32": {
+    "title": "Be bound to + Động từ (Chắc chắn sẽ / Tất yếu xảy ra)",
+    "shortExplanation": "Diễn tả điều gì đó gần như chắc chắn hoặc không thể tránh khỏi theo quy luật tự nhiên.",
+    "longExplanation": "Người bản xứ dùng \"be bound to\" để khích lệ ai đó đầy tự tin (\"you're bound to pass\") hoặc nhận định thực tế về điều tất yếu sẽ xảy ra.",
+    "formation": "Chủ ngữ + be + bound to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Nếu bạn nghe đều đặn mỗi ngày, chắc chắn trình độ của bạn sẽ tiến bộ."
+      },
+      {
+        "translation": "Những hiểu lầm nhỏ chắc chắn sẽ xảy ra khi mới tập nói một ngôn ngữ mới."
+      }
+    ]
+  },
+  "en_b2_33": {
+    "title": "Be about to + Động từ (Sắp sửa / Ngay trước lúc xảy ra)",
+    "shortExplanation": "Báo hiệu một việc chuẩn bị diễn ra ngay trong tích tắc hoặc vài giây tới.",
+    "longExplanation": "Không đi kèm mốc thời gian xa như \"next week\" vì cụm này chỉ dùng cho khoảnh khắc cận kề (hay thêm \"just\"). Lưu ý thành ngữ phủ định \"I'm not about to...\" còn mang nghĩa kiên quyết từ chối làm gì.",
+    "formation": "Chủ ngữ + be (+ just) + about to + Động từ nguyên mẫu",
+    "examples": [
+      {
+        "translation": "Chờ chút — buổi phát trực tiếp sắp bắt đầu ngay bây giờ rồi!"
+      },
+      {
+        "translation": "Mình vừa mới định nhắn tin cho bạn thì bạn gọi tới."
+      }
+    ]
+  },
+  "en_b2_34": {
+    "title": "The + So sánh hơn, the + So sánh hơn (Càng... càng...)",
+    "shortExplanation": "Diễn tả sự biến đổi tỷ lệ thuận giữa hai vế: một bên tăng giảm kéo theo bên kia.",
+    "longExplanation": "Đặt từ so sánh hơn (\"more\", \"sooner\", \"harder\", \"less\"...) ngay sau \"The\" ở cả hai vế. Rất hay dùng gọn trong câu nói quen thuộc như \"The sooner, the better\".",
+    "formation": "The + So sánh hơn (+ S + V), the + So sánh hơn (+ S + V)",
+    "examples": [
+      {
+        "translation": "Bạn đọc to thành tiếng càng nhiều thì nhịp điệu nói của bạn càng tự nhiên."
+      },
+      {
+        "translation": "Chúng ta bắt đầu chuẩn bị càng sớm thì hạn chót sẽ càng đỡ áp lực."
+      }
+    ]
+  },
+  "en_b2_35": {
+    "title": "No matter + Từ để hỏi (Dù thế nào đi nữa)",
+    "shortExplanation": "Nhấn mạnh kết quả ở mệnh đề chính không thay đổi bất kể hoàn cảnh hay mức độ ra sao.",
+    "longExplanation": "Kết hợp \"no matter\" với \"how, what, who, where, when\". Có nghĩa tương đương \"however / whatever / whoever\" ở đầu mệnh đề nhượng bộ. Dùng hiện tại đơn thay cho \"will\" bên trong cụm.",
+    "formation": "No matter + how / what / who / where / when + Mệnh đề",
+    "examples": [
+      {
+        "translation": "Dù tuần đó có bận rộn đến đâu, hãy cố gắng ôn mười thẻ từ vựng nhé."
+      },
+      {
+        "translation": "Cứ gọi ngay cho mình bất kể lúc đó là mấy giờ."
+      }
+    ]
+  },
+  "en_b2_36": {
+    "title": "Have / Get + Vật + V3/ed (Nhờ làm dịch vụ hoặc Bị sự cố)",
+    "shortExplanation": "Diễn tả việc thuê/nhờ người khác làm dịch vụ cho mình, hoặc gặp một sự cố ngoài ý muốn.",
+    "longExplanation": "Chú ý động từ đứng cuối luôn ở dạng quá khứ phân từ (V3/ed) vì vật là đối tượng chịu tác động (\"get my car repaired\" = mang xe đi sửa). \"Get\" thân mật hơn \"have\" một chút.",
+    "formation": "Chủ ngữ + have / get + Tân ngữ (vật) + Quá khứ phân từ (V3/ed)",
+    "examples": [
+      {
+        "translation": "Tôi cần mang xe đi sửa trước chuyến đi chơi xa của chúng ta."
+      },
+      {
+        "translation": "Cô ấy bị kẻ gian lấy mất hộ chiếu tại nhà ga đông đúc."
+      }
+    ]
+  },
+  "en_c1_18": {
+    "title": "Not until ... + Đảo ngữ (Mãi cho đến khi... thì mới...)",
+    "shortExplanation": "Nhấn mạnh kịch tính khoảnh khắc mà một sự việc cuối cùng mới xảy ra hoặc được nhận ra.",
+    "longExplanation": "Quy tắc vàng: KHÔNG đảo ngữ ở vế ngay sau \"Not until\", mà chỉ đảo trợ động từ (\"did/had/could...\") lên trước chủ ngữ ở MỆNH ĐỀ CHÍNH phía sau.",
+    "formation": "Not until + Mốc thời gian / Mệnh đề + Trợ động từ + Chủ ngữ + Động từ",
+    "examples": [
+      {
+        "translation": "Mãi đến khi phát lại đoạn video cô ấy mới nhận ra lối chơi chữ tinh tế đó."
+      },
+      {
+        "translation": "Phải đến nửa đêm tiếng ồn ngoài phố mới chịu lắng xuống."
+      }
+    ]
+  },
+  "en_c1_19": {
+    "title": "Little did + S + know / realize (Nào ngờ rằng...)",
+    "shortExplanation": "Lối kể chuyện nhấn mạnh nhân vật hoàn toàn không hay biết về bước ngoặt sắp xảy ra.",
+    "longExplanation": "Đưa phó từ phủ định \"Little\" lên đầu câu kéo theo đảo ngữ trợ động từ (\"did + S + V nguyên mẫu\"). Rất phổ biến trong kể chuyện, phim tài liệu và bình luận YouTube.",
+    "formation": "Little + did/does + Chủ ngữ + know / realize (+ that + Mệnh đề)",
+    "examples": [
+      {
+        "translation": "Anh ấy đâu ngờ rằng chỉ một video dài mười phút lại mở ra cả sự nghiệp của mình."
+      },
+      {
+        "translation": "Họ hoàn toàn không nhận ra hạn chót đang đến gần nhanh đến mức nào."
+      }
+    ]
+  },
+  "en_c1_20": {
+    "title": "No sooner ... than / Hardly ... when (Vừa mới... thì đã...)",
+    "shortExplanation": "Nhấn mạnh hai sự việc nối tiếp nhau sát sao gần như cùng một khoảnh khắc.",
+    "longExplanation": "Cần ghép đúng cặp cố định: \"No sooner\" luôn đi với \"than\", còn \"Hardly / Scarcely\" luôn đi với \"when\". Sau từ mở đầu là cấu trúc đảo ngữ \"had + S + V3\".",
+    "formation": "No sooner had S V3 than S V2  |  Hardly had S V3 when S V2",
+    "examples": [
+      {
+        "translation": "Chúng tôi vừa mới ngồi vào bàn ăn thì điện thoại đã reo."
+      },
+      {
+        "translation": "Diễn giả vừa dứt lời giới thiệu chủ đề thì hàng loạt cánh tay đã giơ lên."
+      }
+    ]
+  },
+  "en_c1_21": {
+    "title": "Were + Chủ ngữ + to V (Đảo ngữ điều kiện loại 2 trang trọng)",
+    "shortExplanation": "Cách diễn đạt trang trọng thay cho \"If + S + were to + V\" khi bàn về kịch bản giả định.",
+    "longExplanation": "Lược bỏ \"if\" và đảo \"Were\" lên đầu câu trước chủ ngữ — rất hay gặp trong báo cáo chiến lược, bài luận học thuật và thảo luận chuyên môn.",
+    "formation": "Were + Chủ ngữ + to + Động từ nguyên mẫu, Chủ ngữ + would/could + V",
+    "examples": [
+      {
+        "translation": "Nếu giả sử chúng ta chấp nhận lời đề nghị đó, ta sẽ cần mở rộng đội ngũ."
+      },
+      {
+        "translation": "Nếu nền tảng mất đi tính năng lưu đệm ngoại tuyến, người đi làm sẽ gặp khó khăn."
+      }
+    ]
+  },
+  "en_c1_22": {
+    "title": "But for + Cụm danh từ (Nếu không có / Nếu không nhờ...)",
+    "shortExplanation": "Cách nói cô đọng và trang trọng thay cho \"If it hadn't been for...\" hay \"Without...\".",
+    "longExplanation": "Theo sau \"But for\" luôn là một cụm danh từ, còn mệnh đề chính dùng điều kiện giả định \"would / would have + V3\". Thường dùng để bày tỏ lòng biết ơn hoặc chỉ ra yếu tố quyết định.",
+    "formation": "But for + Cụm danh từ, Chủ ngữ + would (have) + V/V3",
+    "examples": [
+      {
+        "translation": "Nếu không nhờ tin nhắn kịp thời của bạn thì tôi đã bước nhầm phòng rồi."
+      },
+      {
+        "translation": "Nếu không có phản hồi đều đặn từ cộng đồng, dự án có lẽ đã chững lại."
+      }
+    ]
+  },
+  "en_c2_21": {
+    "title": "Nhượng bộ & Tóm lược tu từ (Be that as it may / Suffice it to say)",
+    "shortExplanation": "Cụm liên kết văn phong cao cấp giúp xoay trục lập luận khéo léo hoặc chốt gọn ý chính.",
+    "longExplanation": "\"Be that as it may\" (dẫu vậy đi nữa) thừa nhận ý trước nhưng kéo trọng tâm về luận điểm chính của mình. \"Suffice it to say\" (chỉ cần nói ngắn gọn rằng) giúp bỏ qua chi tiết rườm rà để đi thẳng vào kết luận ấn tượng.",
+    "formation": "Be that as it may, + Mệnh đề chính  |  Suffice it to say, + Mệnh đề đúc kết",
+    "examples": [
+      {
+        "translation": "Tiến độ có vẻ khá gấp rút; dẫu vậy, toàn bộ đội ngũ của chúng ta đã sẵn sàng."
+      },
+      {
+        "translation": "Nói ngắn gọn là không một ai bước ra khỏi buổi diễn thuyết mà thiếu cảm hứng cả."
+      }
+    ]
+  },
+  "en_a2_36": {
+    "title": "wake up (thức dậy / đánh thức)",
+    "shortExplanation": "Ngừng ngủ, tỉnh giấc hoặc đánh thức ai đó dậy.",
+    "longExplanation": "Tách được tân ngữ khi đánh thức người khác (\"wake me up\"). Cũng dùng theo nghĩa bóng là bừng tỉnh.",
+    "formation": "Subject + wake (sb) up",
+    "examples": [
+      {
+        "translation": "Tôi thường thức dậy lúc bảy giờ trước khi pha cà phê."
+      },
+      {
+        "translation": "Nếu tôi ngủ quên trên tàu thì đánh thức tôi dậy nhé?"
+      }
+    ]
+  },
+  "en_a2_37": {
+    "title": "go back (quay lại / trở về)",
+    "shortExplanation": "Quay trở về một địa điểm, thời điểm hoặc ý trước đó trong cuộc nói chuyện.",
+    "longExplanation": "Thường đi với \"to + nơi chốn / chủ đề\". Ngoài ra \"go back years\" nghĩa là quen biết nhau nhiều năm rồi.",
+    "formation": "Subject + go back (+ to + Place/Topic)",
+    "examples": [
+      {
+        "translation": "Chúng ta quay lại trang chiếu trước một lát nhé."
+      },
+      {
+        "translation": "Tháng sau cô ấy dự định về quê."
+      }
+    ]
+  },
+  "en_a2_38": {
+    "title": "go out (ra ngoài chơi / tắt đèn / hẹn hò)",
+    "shortExplanation": "Ra ngoài gặp gỡ ăn uống, đèn/lửa vụt tắt, hoặc hẹn hò với ai đó.",
+    "longExplanation": "Động từ đa nghĩa quen thuộc: \"go out for dinner\" (ra ngoài ăn tối), \"lights went out\" (đèn tắt), \"go out with sb\" (hẹn hò).",
+    "formation": "Subject + go out (+ with + Person)",
+    "examples": [
+      {
+        "translation": "Tan học bạn có muốn ra ngoài ăn phở cùng mình không?"
+      },
+      {
+        "translation": "Toàn bộ đèn đường bỗng dưng tắt phụt giữa cơn bão."
+      }
+    ]
+  },
+  "en_a2_39": {
+    "title": "come on (nhanh lên / thôi nào / bật sáng)",
+    "shortExplanation": "Khích lệ ai đó (Nào, nhanh lên!), tỏ ý ngờ vực (Thôi đi!) hoặc đèn/máy bắt đầu chạy.",
+    "longExplanation": "Cụm cảm thán xuất hiện dày đặc trong phim và vlog; hãy dựa vào ngữ điệu để phân biệt cổ vũ hay phản đối đùa.",
+    "formation": "Come on! / Subject + come on",
+    "examples": [
+      {
+        "translation": "Nhanh lên nào, chúng ta sắp lỡ mất đoạn giới thiệu mở đầu rồi!"
+      },
+      {
+        "translation": "Ôi thôi nào, bạn không thật sự tin tin đồn đó đấy chứ?"
+      }
+    ]
+  },
+  "en_a2_40": {
+    "title": "look after (chăm sóc / trông nom)",
+    "shortExplanation": "Trông nom, chăm sóc người, thú cưng, cây cối hoặc giữ gìn đồ vật cẩn thận.",
+    "longExplanation": "Không tách tân ngữ: tân ngữ luôn đứng sau \"after\" (\"look after it\"). Nghĩa tương đương \"take care of\".",
+    "formation": "Subject + look after + Noun/Person",
+    "examples": [
+      {
+        "translation": "Tuần này mình đi xa, bạn trông giúp mấy chậu cây nhé?"
+      },
+      {
+        "translation": "Nhớ chăm sóc đôi mắt khi học khuya đấy."
+      }
+    ]
+  },
+  "en_a2_41": {
+    "title": "look up (tra cứu / khởi sắc)",
+    "shortExplanation": "Tra từ điển hoặc tìm kiếm thông tin; khi không có tân ngữ còn nghĩa là tình hình khá lên.",
+    "longExplanation": "Tách được khi tra cứu (\"look it up\"). Dùng rất phổ biến khi nói tra từ mới.",
+    "formation": "Subject + look up + Info  |  look + Info + up",
+    "examples": [
+      {
+        "translation": "Chỉ cần chạm vào bất kỳ từ nào trên phụ đề để tra nghĩa ngay lập tức."
+      },
+      {
+        "translation": "Sau một mùa đông ảm đạm, doanh số cuối cùng cũng đang khởi sắc trở lại."
+      }
+    ]
+  },
+  "en_a2_42": {
+    "title": "put on (mặc vào, đeo vào / tăng cân)",
+    "shortExplanation": "Mặc quần áo, đeo phụ kiện (tai nghe, kính), bật thiết bị hoặc tăng cân.",
+    "longExplanation": "Trái nghĩa với \"take off\". Tách được khi dùng đại từ ở giữa (\"put it on\").",
+    "formation": "Subject + put on + Noun / Weight / Show",
+    "examples": [
+      {
+        "translation": "Đeo tai nghe vào để bạn nghe rõ từng phụ âm nhé."
+      },
+      {
+        "translation": "Đừng lo lắng chuyện tăng một chút cân trong dịp nghỉ lễ."
+      }
+    ]
+  },
+  "en_a2_43": {
+    "title": "take off (cởi ra / cất cánh / phất lên)",
+    "shortExplanation": "Cởi đồ, máy bay cất cánh, nghỉ phép, hoặc sự nghiệp/kênh bỗng nổi tiếng nhanh chóng.",
+    "longExplanation": "Vừa tách được khi có tân ngữ (cởi đồ), vừa dùng như nội động từ (máy bay cất cánh, kênh bùng nổ).",
+    "formation": "Subject + take off (+ Noun)",
+    "examples": [
+      {
+        "translation": "Vui lòng cởi giày ướt ở gần cửa ra vào nhé."
+      },
+      {
+        "translation": "Kênh nấu ăn của cô ấy thực sự bùng nổ sau khi đoạn clip ngắn đó lan truyền."
+      }
+    ]
+  },
+  "en_a2_44": {
+    "title": "turn on (bật lên / mở thiết bị, tính năng)",
+    "shortExplanation": "Bật công tắc đèn, máy móc hoặc tính năng phần mềm lên.",
+    "longExplanation": "Trái nghĩa với \"turn off\". Với đại từ phải đặt ở giữa: \"turn it on\".",
+    "formation": "Subject + turn on + Device / turn + Device + on",
+    "examples": [
+      {
+        "translation": "Hãy bật phụ đề song ngữ nếu đoạn hội thoại nói quá nhanh."
+      },
+      {
+        "translation": "Bạn bật giúp mình đèn bàn được không? Trời đang tối dần rồi."
+      }
+    ]
+  },
+  "en_a2_45": {
+    "title": "write down (ghi chép lại / viết xuống)",
+    "shortExplanation": "Viết chữ, số hoặc ý tưởng ra giấy/sổ để nhớ không bị quên.",
+    "longExplanation": "Có thể chèn tân ngữ vào giữa (\"write them down\").",
+    "formation": "Subject + write down + Noun / write + Noun + down",
+    "examples": [
+      {
+        "translation": "Hãy ghi lại hai cụm từ mới bạn nghe được trong mỗi video."
+      },
+      {
+        "translation": "Chờ chút, để mình lấy bút viết địa chỉ của bạn xuống."
+      }
+    ]
+  },
+  "en_a2_46": {
+    "title": "pick up (nhặt lên / đón ai / học lỏm tự nhiên / tăng tốc)",
+    "shortExplanation": "Cầm nhặt lên, đón ai bằng xe, tiếp thu tự nhiên qua tiếp xúc, hoặc tăng tốc.",
+    "longExplanation": "Cụm cực kỳ đa năng: người học ngoại ngữ rất hay dùng \"pick up phrases naturally\" (học lỏm cụm từ một cách tự nhiên).",
+    "formation": "Subject + pick up + Noun / Speed / Skill",
+    "examples": [
+      {
+        "translation": "Bạn có thể tiếp thu nhịp điệu nói tự nhiên chỉ bằng việc nghe hội thoại thật."
+      },
+      {
+        "translation": "Bảy giờ mình sẽ lái xe qua đón bạn ở ngoài nhà ga."
+      }
+    ]
+  },
+  "en_a2_47": {
+    "title": "grow up (lớn lên / trưởng thành)",
+    "shortExplanation": "Phát triển từ trẻ em thành người lớn, hoặc trưởng thành chín chắn hơn trong suy nghĩ.",
+    "longExplanation": "Nội động từ (không có tân ngữ đứng sau). Phân biệt với \"bring up + người\" (nuôi dạy ai khôn lớn).",
+    "formation": "Subject + grow up",
+    "examples": [
+      {
+        "translation": "Cô ấy lớn lên trong gia đình nói cả tiếng Việt lẫn tiếng Anh."
+      },
+      {
+        "translation": "Đã đến lúc trưởng thành và chịu trách nhiệm cho lựa chọn của mình rồi."
+      }
+    ]
+  },
+  "en_b1_36": {
+    "title": "find out (tìm ra sự thật / phát hiện ra)",
+    "shortExplanation": "Khám phá, tra hỏi hoặc biết được một thông tin/sự thật mà trước đó chưa rõ.",
+    "longExplanation": "Khác với \"find\" (tìm thấy đồ thất lạc), \"find out\" nhấn mạnh biết được thông tin bí mật hay sự thật.",
+    "formation": "Subject + find out (+ about + Noun / Clause)",
+    "examples": [
+      {
+        "translation": "Hãy xem đến cuối để biết điều gì đã gây ra trục trặc nhé."
+      },
+      {
+        "translation": "Bạn đã tìm ra ai để lại bình luận ẩn danh đó chưa?"
+      }
+    ]
+  },
+  "en_b1_37": {
+    "title": "give up (từ bỏ / bỏ thói quen)",
+    "shortExplanation": "Ngừng cố gắng khi thấy khó, hoặc bỏ hẳn một thói quen (hút thuốc, đồ ngọt).",
+    "longExplanation": "LƯU Ý NGỮ PHÁP: Sau \"give up\" dùng Danh từ hoặc V-ing (\"give up trying\"), KHÔNG dùng to V.",
+    "formation": "Subject + give up (+ Noun / V-ing)",
+    "examples": [
+      {
+        "translation": "Đừng bỏ cuộc chỉ vì vài cảnh đầu nói hơi nhanh nhé."
+      },
+      {
+        "translation": "Anh ấy đã bỏ hẳn đồ uống có đường cách đây ba tháng."
+      }
+    ]
+  },
+  "en_b1_38": {
+    "title": "go on (tiếp tục / diễn ra chuyện gì)",
+    "shortExplanation": "Tiếp tục làm việc đang làm, diễn ra (What's going on?), hoặc chuyển sang bước tiếp theo.",
+    "longExplanation": "Phân biệt: \"go on V-ing\" (làm tiếp việc hiện tại) khác với \"go on to V\" (chuyển sang việc kế tiếp).",
+    "formation": "Subject + go on (+ V-ing / to + Verb)",
+    "examples": [
+      {
+        "translation": "Ngoài sân hiện giờ đang có chuyện gì diễn ra thế?"
+      },
+      {
+        "translation": "Khoan — đừng dừng lại, hãy nói tiếp ý chính của bạn đi!"
+      }
+    ]
+  },
+  "en_b1_39": {
+    "title": "hold on (chờ chút / bám chặt lấy)",
+    "shortExplanation": "Đợi một lát (rất hay dùng khi gọi điện hoặc ngắt lời nhẹ nhàng), hoặc nắm chặt thứ gì.",
+    "longExplanation": "Khi giữ lấy vật gì đó cụ thể, ghép thêm \"to\": \"hold on to + danh từ\".",
+    "formation": "Hold on (+ a second) / Subject + hold on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "Chờ một giây nhé — để mình bật lại phụ đề đã."
+      },
+      {
+        "translation": "Hãy giữ chặt vé cho đến khi bạn ra khỏi nhà ga."
+      }
+    ]
+  },
+  "en_b1_40": {
+    "title": "keep on (cứ tiếp tục mãi / kiên trì làm)",
+    "shortExplanation": "Làm liên tục không ngừng dù có trở ngại, hoặc cứ lặp đi lặp lại hoài.",
+    "longExplanation": "Phía sau luôn đi với V-ing. Nhấn mạnh tính kiên trì hoặc sự lặp lại gây chú ý hơn \"keep\".",
+    "formation": "Subject + keep on + V-ing",
+    "examples": [
+      {
+        "translation": "Cứ kiên trì luyện nói đuổi theo từng đoạn ngắn rồi giọng bạn sẽ tự nhiên hẳn ra."
+      },
+      {
+        "translation": "Sao điện thoại mình cứ mất kết nối Bluetooth hoài vậy nhỉ?"
+      }
+    ]
+  },
+  "en_b1_41": {
+    "title": "keep up (theo kịp / duy trì phong độ)",
+    "shortExplanation": "Theo kịp tốc độ, xu hướng (keep up with) hoặc giữ vững thành quả tốt (Keep it up!).",
+    "longExplanation": "Cụm \"Keep it up!\" là câu khen ngợi động viên cực phổ biến khi ai đó đang làm tốt.",
+    "formation": "Subject + keep up (+ with + Noun/Person)",
+    "examples": [
+      {
+        "translation": "Ngay cả người bản xứ đôi khi cũng phải tạm dừng để bắt kịp những câu đùa nói nhanh."
+      },
+      {
+        "translation": "Ngày mai chuỗi học của bạn chạm mốc ba mươi ngày rồi — tiếp tục phát huy nhé!"
+      }
+    ]
+  },
+  "en_b1_42": {
+    "title": "break down (hỏng hóc / suy sụp / chia nhỏ phân tích)",
+    "shortExplanation": "Xe cộ/máy móc bị hỏng, bật khóc suy sụp cảm xúc, hoặc chia nhỏ thông tin phức tạp để dễ hiểu.",
+    "longExplanation": "Trong học tập và thuyết trình, \"break down + nội dung\" nghĩa là bóc tách thành từng phần nhỏ.",
+    "formation": "Subject + break down (+ Noun)",
+    "examples": [
+      {
+        "translation": "Xe buýt của chúng tôi bị hỏng giữa lưng chừng đèo."
+      },
+      {
+        "translation": "Hãy chia nhỏ câu dài này thành ba cụm dễ nắm bắt hơn nhé."
+      }
+    ]
+  },
+  "en_b1_43": {
+    "title": "bring up (nhắc tới chủ đề / nuôi dưỡng)",
+    "shortExplanation": "Khơi ra một vấn đề để nói trong cuộc trò chuyện, hoặc nuôi nấng trẻ nhỏ khôn lớn.",
+    "longExplanation": "Tách được tân ngữ (\"bring it up\"). Phân biệt với \"grow up\" (tự lớn lên, không dùng tân ngữ).",
+    "formation": "Subject + bring up + Topic/Child",
+    "examples": [
+      {
+        "translation": "Sao cô ấy lại nhắc lại chuyện cãi vã cũ đó ngay trong bữa trưa vậy?"
+      },
+      {
+        "translation": "Ông bà đã nuôi nấng tôi lớn lên ở một thị trấn nhỏ ven biển."
+      }
+    ]
+  },
+  "en_b1_44": {
+    "title": "carry on (tiếp tục sau gián đoạn)",
+    "shortExplanation": "Làm tiếp một việc đang dang dở sau khi bị ngắt quãng hoặc gặp trở ngại.",
+    "longExplanation": "Thường dùng với V-ing (\"carry on working\") hoặc \"with + danh từ\".",
+    "formation": "Subject + carry on (+ V-ing / with + Noun)",
+    "examples": [
+      {
+        "translation": "Xin lỗi vì đã cắt ngang — bạn cứ kể tiếp câu chuyện của mình đi nhé."
+      },
+      {
+        "translation": "Sau khi nhấp ngụm nước, người dẫn chương trình tiếp tục trả lời câu hỏi."
+      }
+    ]
+  },
+  "en_b1_45": {
+    "title": "carry out (tiến hành / thực hiện kế hoạch, nghiên cứu)",
+    "shortExplanation": "Thực thi, tiến hành một kế hoạch, nghiên cứu, thí nghiệm, khảo sát hoặc mệnh lệnh.",
+    "longExplanation": "Rất tự nhiên với danh từ công việc/học thuật (carry out a study, survey, plan) thay vì nói \"do a research\".",
+    "formation": "Subject + carry out + Plan/Task/Study",
+    "examples": [
+      {
+        "translation": "Các nhà nghiên cứu đã tiến hành một khảo sát lớn về thói quen đọc phụ đề."
+      },
+      {
+        "translation": "Cả nhóm đã cẩn thận thực hiện từng bước trong danh sách kiểm tra."
+      }
+    ]
+  },
+  "en_b1_46": {
+    "title": "catch up (bắt kịp / hàn huyên cập nhật tin tức)",
+    "shortExplanation": "Đuổi kịp tiến độ sau khi bị tụt lại, hoặc gặp bạn bè trò chuyện hỏi thăm dạo này thế nào.",
+    "longExplanation": "Dùng \"catch up with + người\" (bắt kịp/hàn huyên) và \"catch up on + việc bỏ lỡ\" (ngủ bù, xem bù tập phim).",
+    "formation": "Subject + catch up (+ with + Person/Work)",
+    "examples": [
+      {
+        "translation": "Hôm nào đi cà phê hàn huyên với nhau một bữa ra trò nhé!"
+      },
+      {
+        "translation": "Mình dành cả chiều Chủ nhật để xử lý bù đống email chưa đọc."
+      }
+    ]
+  },
+  "en_b1_47": {
+    "title": "come across (tình cờ bắt gặp / tạo ấn tượng là...)",
+    "shortExplanation": "Tình cờ tìm thấy điều gì đó mà không chủ định trước; hoặc tạo cảm giác như thế nào trong mắt người khác.",
+    "longExplanation": "Không tách tân ngữ. Khi tả ấn tượng, hay dùng \"come across as + tính từ / danh từ\".",
+    "formation": "Subject + come across + Noun / Adjective",
+    "examples": [
+      {
+        "translation": "Mình tình cờ bắt gặp một thành ngữ cực hay khi đang xem vlog du lịch."
+      },
+      {
+        "translation": "Cô ấy tạo cảm giác rất điềm tĩnh ngay cả dưới áp lực phát trực tiếp."
+      }
+    ]
+  },
+  "en_b1_48": {
+    "title": "come up (nảy sinh bất ngờ / sắp tới / nghĩ ra với 'with')",
+    "shortExplanation": "Vấn đề/cơ hội bất chợt nảy sinh, được nhắc tới, hoặc sắp xuất hiện; ghép \"come up with\" là nghĩ ra ý tưởng.",
+    "longExplanation": "Phân biệt rõ: \"something came up\" (có việc đột xuất) khác \"come up with an idea\" (nghĩ ra ý tưởng).",
+    "formation": "Subject + come up (+ with + Idea)",
+    "examples": [
+      {
+        "translation": "Có việc khẩn vừa phát sinh ở công ty nên mình phải về sớm."
+      },
+      {
+        "translation": "Bạn có thể nghĩ ra hai câu ví dụ dùng cụm này không?"
+      }
+    ]
+  },
+  "en_b1_49": {
+    "title": "count on (trông cậy vào / tin tưởng vào)",
+    "shortExplanation": "Đặt niềm tin và dựa vào ai đó hoặc điều gì đó sẽ giúp đỡ hay xảy ra đúng như kỳ vọng.",
+    "longExplanation": "Không tách tân ngữ. Nghĩa tương đương \"rely on\" hoặc \"depend on\" nhưng tự nhiên hơn trong văn nói.",
+    "formation": "Subject + count on + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "Bạn luôn có thể tin tưởng nhờ mình bất cứ khi nào kẹt ở câu khó."
+      },
+      {
+        "translation": "Đừng quá trông mong thời tiết hoàn hảo cho buổi dã ngoại tháng Tư nhé."
+      }
+    ]
+  },
+  "en_b1_50": {
+    "title": "cut down (cắt giảm / hạn chế bớt)",
+    "shortExplanation": "Giảm bớt số lượng, tần suất hoặc chi phí của thứ gì (cà phê, đường, thời gian lướt màn hình).",
+    "longExplanation": "Khi chỉ thứ muốn giảm bớt thói quen, hay dùng cả cụm \"cut down on + danh từ\".",
+    "formation": "Subject + cut down (+ on + Noun)",
+    "examples": [
+      {
+        "translation": "Mình đang cố gắng bớt lướt điện thoại khuya trước khi đi ngủ."
+      },
+      {
+        "translation": "Tắt tự động phát giúp cắt giảm đáng kể thời gian xem vô ích."
+      }
+    ]
+  },
+  "en_b1_51": {
+    "title": "cut off (ngắt lời / cắt đứt điện, mạng / cô lập)",
+    "shortExplanation": "Cắt ngang lời ai đó, ngắt điện/nước/kết nối, hoặc làm cô lập một khu vực.",
+    "longExplanation": "Tách được tân ngữ (\"cut me off\"). Dùng nhiều cả ở bị động khi đường xá bị chia cắt.",
+    "formation": "Subject + cut off + Noun / cut + Noun + off",
+    "examples": [
+      {
+        "translation": "Xin lỗi, mic của mình bị ngắt mất năm giây — bạn có nghe thấy đoạn vừa rồi không?"
+      },
+      {
+        "translation": "Làm ơn đừng ngắt lời khi cô ấy chưa nói hết ý."
+      }
+    ]
+  },
+  "en_b1_52": {
+    "title": "deal with (xử lý, đối phó / đề cập đến chủ đề)",
+    "shortExplanation": "Giải quyết vấn đề khó khăn, làm việc với khách hàng, hoặc nói về một chủ đề (bài viết/video).",
+    "longExplanation": "Không tách tân ngữ. Rất thông dụng cho cả xử lý tình huống lẫn giới thiệu nội dung.",
+    "formation": "Subject + deal with + Noun",
+    "examples": [
+      {
+        "translation": "Bạn đối phó với cảm giác kiệt sức thế nào khi ngày nào cũng học?"
+      },
+      {
+        "translation": "Nửa sau của tập phim đề cập đến cách xin lỗi lịch sự."
+      }
+    ]
+  },
+  "en_b1_53": {
+    "title": "end up (rốt cuộc lại / cuối cùng thành ra)",
+    "shortExplanation": "Cuối cùng rơi vào một kết cục, tình huống hoặc nơi chốn ngoài dự tính ban đầu.",
+    "longExplanation": "Sau \"end up\" dùng V-ing, tính từ hoặc cụm chỉ nơi chốn (tuyệt đối không dùng to V).",
+    "formation": "Subject + end up + V-ing / Place / Adjective",
+    "examples": [
+      {
+        "translation": "Chúng tôi lỡ trạm và rốt cuộc phải đi bộ hai mươi phút về nhà."
+      },
+      {
+        "translation": "Anh ấy chỉ định xem một đoạn ngắn thôi, vậy mà cuối cùng ngồi học hẳn một tiếng."
+      }
+    ]
+  },
+  "en_b1_54": {
+    "title": "figure out (tìm ra cách / hiểu ra)",
+    "shortExplanation": "Suy nghĩ, mày mò rồi hiểu ra bản chất hoặc tìm ra lời giải cho một vấn đề hóc búa.",
+    "longExplanation": "Tách được tân ngữ (\"figure it out\"). Cực kỳ phổ biến trong văn nói tự nhiên.",
+    "formation": "Subject + figure out + Noun/Clause / figure + Noun + out",
+    "examples": [
+      {
+        "translation": "Cho mình năm phút — mình sẽ tìm ra lý do âm thanh bị lệch."
+      },
+      {
+        "translation": "Cuối cùng bạn đã hiểu ra nghĩa của thành ngữ đó trong ngữ cảnh chưa?"
+      }
+    ]
+  },
+  "en_b1_55": {
+    "title": "fit in (hòa nhập / thu xếp thời gian, chỗ trống)",
+    "shortExplanation": "Hòa hợp với tập thể mới, hoặc chèn/thu xếp thêm việc gì vào lịch trình bận rộn.",
+    "longExplanation": "Khi nói hòa nhập với nhóm người, ghép thêm \"with\": \"fit in with the team\".",
+    "formation": "Subject + fit in (+ with + Group/Schedule)",
+    "examples": [
+      {
+        "translation": "Chỉ cần mười phút tập trung cũng dễ dàng thu xếp được trong giờ nghỉ trưa."
+      },
+      {
+        "translation": "Cô ấy nhanh chóng hòa nhập với các đồng nghiệp mới ở chỗ làm."
+      }
+    ]
+  },
+  "en_b1_56": {
+    "title": "follow up (theo sát / hỏi thăm phản hồi tiếp)",
+    "shortExplanation": "Liên hệ hoặc hành động tiếp nối sau đó để kiểm tra tiến độ, nhắc việc hoặc đào sâu thêm.",
+    "longExplanation": "Phân biệt động từ tách rời \"follow up\" và danh từ có gạch nối \"a follow-up message\".",
+    "formation": "Subject + follow up (+ on + Noun / with + Person)",
+    "examples": [
+      {
+        "translation": "Ngày mai mình sẽ nhắn hỏi lại nếu nhóm chưa phản hồi."
+      },
+      {
+        "translation": "Cô ấy nối tiếp bài giảng bằng năm bài luyện tập thực tế."
+      }
+    ]
+  },
+  "en_b1_57": {
+    "title": "get away (trốn thoát / đi nghỉ xả hơi / thoát tội với 'with')",
+    "shortExplanation": "Thoát khỏi nơi nào, đi du lịch ngắn ngày thư giãn, hoặc thoát phạt khi làm sai (get away with).",
+    "longExplanation": "Cụm ba từ \"get away with\" rất phổ biến trong phim ảnh khi nhân vật làm sai mà không bị phát hiện.",
+    "formation": "Subject + get away (+ from + Place / with + Noun)",
+    "examples": [
+      {
+        "translation": "Chúng mình đang mong cuối tuần được trốn ra biển nghỉ ngơi yên tĩnh."
+      },
+      {
+        "translation": "Bạn không thể trốn ôn bài mãi mà không bị quên đâu!"
+      }
+    ]
+  },
+  "en_b1_58": {
+    "title": "get back (quay về / trả lời lại sau / lấy lại)",
+    "shortExplanation": "Trở về nhà hoặc chỗ cũ, kiểm tra rồi phản hồi lại cho ai (get back to sb), hoặc lấy lại món đồ.",
+    "longExplanation": "\"I'll get back to you\" là câu cực tự nhiên khi hẹn trả lời sau.",
+    "formation": "Subject + get back (+ to + Place/Person)",
+    "examples": [
+      {
+        "translation": "Để mình kiểm tra lại lịch rồi phản hồi cho bạn tối nay nhé."
+      },
+      {
+        "translation": "Tối qua mấy giờ bạn mới về đến nhà vậy?"
+      }
+    ]
+  },
+  "en_b1_59": {
+    "title": "get over (vượt qua / bình phục khỏi)",
+    "shortExplanation": "Hồi phục sau cơn ốm hoặc vượt qua cú sốc, nỗi buồn, thất vọng; đôi khi mang nghĩa bất ngờ khâm phục.",
+    "longExplanation": "Không tách tân ngữ. Câu khen \"I can't get over how...!\" diễn tả sự ngạc nhiên đầy thích thú.",
+    "formation": "Subject + get over + Illness/Setback/Surprise",
+    "examples": [
+      {
+        "translation": "Anh ấy mất hai tuần mới khỏi hẳn trận cảm cúm mùa hè dai dẳng."
+      },
+      {
+        "translation": "Mình vẫn không hết bất ngờ vì phát âm của bạn tiến bộ nhanh thế!"
+      }
+    ]
+  },
+  "en_b1_60": {
+    "title": "get through (vượt qua giai đoạn / kết nối điện thoại / làm ai hiểu ra)",
+    "shortExplanation": "Hoàn thành phần việc/giai đoạn vất vả, liên lạc điện thoại thành công, hoặc truyền đạt thông điệp đến ai (get through to).",
+    "longExplanation": "Rất linh hoạt từ xử lý công việc đến kết nối cuộc gọi.",
+    "formation": "Subject + get through (+ to + Person / Exam/Task)",
+    "examples": [
+      {
+        "translation": "Nghe podcast ngắn giúp mình vượt qua những chuyến đi làm đường dài dễ chịu hơn."
+      },
+      {
+        "translation": "Mình gọi thử hai lần rồi nhưng vẫn không nối máy được tới quầy lễ tân."
+      }
+    ]
+  },
+  "en_b1_61": {
+    "title": "hand in (nộp bài / nộp đơn)",
+    "shortExplanation": "Nộp bài tập, báo cáo, hồ sơ hoặc đơn xin nghỉ việc cho thầy cô hay cấp trên.",
+    "longExplanation": "Tách được tân ngữ (\"hand it in\"). Nghĩa tương đương \"turn in\" hoặc trang trọng hơn là \"submit\".",
+    "formation": "Subject + hand in + Homework/Report/Resignation",
+    "examples": [
+      {
+        "translation": "Hãy nhớ nộp bài tập trước nửa đêm thứ Sáu nhé."
+      },
+      {
+        "translation": "Anh ấy quyết định nộp đơn xin nghỉ việc sau khi tìm được công việc làm từ xa."
+      }
+    ]
+  },
+  "en_b1_62": {
+    "title": "hang on (khoan đã / giữ chặt)",
+    "shortExplanation": "Khoan chờ một chút (rất thân mật trong hội thoại), hoặc bám chắc vào thứ gì.",
+    "longExplanation": "Tương tự \"hold on\" nhưng mang sắc thái đời thường, tự nhiên hơn.",
+    "formation": "Hang on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "Khoan đã, để mình phát lại câu đó ở tốc độ chậm hơn xem sao!"
+      },
+      {
+        "translation": "Bám thật chặt vào nhé khi thuyền vượt qua mấy con sóng lớn kia."
+      }
+    ]
+  },
+  "en_b1_63": {
+    "title": "look back (nhìn lại quá khứ / hồi tưởng)",
+    "shortExplanation": "Nhớ lại, suy ngẫm về những kỷ niệm, chặng đường hay bài học trong quá khứ.",
+    "longExplanation": "Khi nêu rõ sự kiện được hồi tưởng, thường dùng \"look back on + kỷ niệm / giai đoạn\".",
+    "formation": "Subject + look back (+ on + Past Event)",
+    "examples": [
+      {
+        "translation": "Sau này nhìn lại những buổi đầu tự học này, bạn sẽ mỉm cười cho xem."
+      },
+      {
+        "translation": "Nghĩ lại thì hồi đó bỏ qua giờ nghỉ giải lao thực ra lại làm mình tiến bộ chậm đi."
+      }
+    ]
+  },
+  "en_b1_64": {
+    "title": "make up (bịa chuyện / làm lành / chiếm tỷ lệ / bù đắp)",
+    "shortExplanation": "Bịa ra cớ/câu chuyện, làm hòa sau cãi vã, cấu thành tỷ lệ phần trăm, hoặc bù lại (make up for).",
+    "longExplanation": "Bốn nghĩa cực kỳ hay gặp: \"bịa ra\", \"làm hòa (with)\", \"chiếm phần (%) \", và \"bù đắp (for)\".",
+    "formation": "Subject + make up (+ Story/Mind/Group)  |  make up with",
+    "examples": [
+      {
+        "translation": "Làm ơn đừng bịa lý do nữa — cứ kể thật chuyện gì đã xảy ra đi."
+      },
+      {
+        "translation": "Luyện nghe chiếm gần một nửa thời khóa biểu học hằng ngày của mình."
+      }
+    ]
+  },
+  "en_b1_65": {
+    "title": "move on (chuyển sang phần tiếp / bước tiếp về tinh thần)",
+    "shortExplanation": "Khép lại chủ đề hoặc giai đoạn cũ để chuyển sang phần tiếp theo, hoặc bước tiếp sau nỗi buồn.",
+    "longExplanation": "Cụm chuyển ý quen thuộc của giảng viên và YouTuber: \"Let's move on to...\" (Ta chuyển sang...).",
+    "formation": "Subject + move on (+ to + Next Topic)",
+    "examples": [
+      {
+        "translation": "Khi bạn nắm vững các nguyên âm này rồi, ta sẽ chuyển sang phần nhịp điệu tự nhiên."
+      },
+      {
+        "translation": "Ban đầu cũng buồn đấy, nhưng rồi ai cũng phải bước tiếp thôi."
+      }
+    ]
+  },
+  "en_b1_66": {
+    "title": "open up (cởi mở tâm sự / mở ra cơ hội mới)",
+    "shortExplanation": "Chia sẻ cởi mở cảm xúc thật của bản thân, mở cửa hàng, hoặc mở ra chân trời/cơ hội mới.",
+    "longExplanation": "Dùng tự nhiên cả cho cảm xúc con người lẫn cơ hội nghề nghiệp, tri thức.",
+    "formation": "Subject + open up (+ about + Topic)",
+    "examples": [
+      {
+        "translation": "Học thêm một ngôn ngữ khác giúp mở ra những tình bạn mà bạn chưa từng ngờ tới."
+      },
+      {
+        "translation": "Anh ấy hiếm khi mở lòng kể về tuổi thơ của mình ngay cả với bạn thân."
+      }
+    ]
+  },
+  "en_b1_67": {
+    "title": "point out (chỉ ra / lưu ý điều quan trọng)",
+    "shortExplanation": "Lưu ý hoặc chỉ ra một chi tiết, sự thật hay lỗi sai mà người nghe có thể bỏ sót.",
+    "longExplanation": "Tách được với danh từ ngắn (\"point that out\"), giữ liền \"point out + that...\" khi theo sau là mệnh đề.",
+    "formation": "Subject + point out + Noun / that-Clause",
+    "examples": [
+      {
+        "translation": "Cảm ơn vì đã chỉ ra lỗi đánh máy nhỏ xíu trong phần phụ đề nhé."
+      },
+      {
+        "translation": "Các chuyên gia chỉ ra rằng ôn tập ngắn mỗi ngày hiệu quả hơn học nhồi cuối tuần."
+      }
+    ]
+  },
+  "en_b1_68": {
+    "title": "put off (trì hoãn / làm nản lòng, mất hứng)",
+    "shortExplanation": "Hoãn việc gì sang lúc khác, hoặc khiến ai đó thấy ngại, mất hứng không muốn làm.",
+    "longExplanation": "LƯU Ý NGỮ PHÁP: Sau \"put off\" luôn dùng Danh từ hoặc V-ing (\"put off starting\"), không dùng to V.",
+    "formation": "Subject + put off + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "Đừng trì hoãn bài ngữ pháp hóc búa đó nữa — hãy bắt đầu chỉ năm phút thôi."
+      },
+      {
+        "translation": "Đừng để vài từ dài làm bạn nản lòng chuyện xem phim tài liệu bản xứ."
+      }
+    ]
+  },
+  "en_b1_69": {
+    "title": "run into (tình cờ gặp / vướng phải rắc rối)",
+    "shortExplanation": "Bất ngờ chạm mặt người quen giữa đường, hoặc bất chợt gặp phải rắc rối, sự cố.",
+    "longExplanation": "Không tách tân ngữ. Dùng rất tự nhiên cho cả tình huống vui (gặp bạn cũ) lẫn khó khăn (gặp lỗi).",
+    "formation": "Subject + run into + Person/Problem",
+    "examples": [
+      {
+        "translation": "Mình tình cờ gặp lại thầy giáo cũ ở hiệu sách gần nhà."
+      },
+      {
+        "translation": "Nhắn mình nếu bạn gặp bất kỳ trục trặc nào khi tải gói ngoại tuyến nhé."
+      }
+    ]
+  },
+  "en_b1_70": {
+    "title": "run out (cạn kiệt / hết sạch / hết hạn)",
+    "shortExplanation": "Dùng cạn sạch thứ gì không còn nữa, hoặc thời gian/kiên nhẫn sắp hết.",
+    "longExplanation": "Chú ý: \"người + run out of + vật\" (tôi hết trà) khác với \"vật + run out\" (thời gian hết rồi).",
+    "formation": "Subject + run out (+ of + Resource)",
+    "examples": [
+      {
+        "translation": "Chúng ta sắp hết giờ rồi — hãy tóm tắt quy tắc cuối cùng thôi."
+      },
+      {
+        "translation": "Cuốn sổ của mình hết sạch trang trắng ngay giữa mùa phim rồi."
+      }
+    ]
+  },
+  "en_b1_71": {
+    "title": "work out (tập thể dục / tính ra, tìm ra giải pháp / suôn sẻ)",
+    "shortExplanation": "Tập luyện thể thao, tính toán/tìm ra phương án, hoặc mọi chuyện diễn ra ổn thỏa.",
+    "longExplanation": "Đa nghĩa cực hữu ích: khi nói mọi việc tốt đẹp tự nhiên không cần tân ngữ (\"It'll work out!\").",
+    "formation": "Subject + work out (+ Noun)",
+    "examples": [
+      {
+        "translation": "Chỉ đi bộ hai mươi phút sau giờ làm cũng tính là rèn luyện sức khỏe rồi."
+      },
+      {
+        "translation": "Ban đầu tưởng căng thẳng lắm, thế mà mọi thứ rốt cuộc lại ổn thỏa cả."
+      }
+    ]
+  },
+  "en_b1_72": {
+    "title": "sort out (sắp xếp gọn / giải quyết ổn thỏa)",
+    "shortExplanation": "Phân loại sắp xếp đồ đạc/tệp cho ngăn nắp, hoặc thu xếp giải quyết dứt điểm một trục trặc.",
+    "longExplanation": "Tách được tân ngữ (\"sort this out\").",
+    "formation": "Subject + sort out + Mess/Problem",
+    "examples": [
+      {
+        "translation": "Hãy xử lý ổn thỏa sự cố Wi-Fi trước khi cuộc gọi bắt đầu nhé."
+      },
+      {
+        "translation": "Cô ấy đã phân loại lại các thẻ từ vựng của mình theo cấp độ khó."
+      }
+    ]
+  },
+  "en_b2_37": {
+    "title": "account for (giải thích nguyên nhân / chiếm tỷ lệ)",
+    "shortExplanation": "Giải thích lý do của một hiện tượng, hoặc chiếm một tỷ trọng phần trăm trong tổng thể.",
+    "longExplanation": "Không tách tân ngữ. Rất hay xuất hiện trong báo chí, số liệu và phim tài liệu.",
+    "formation": "Subject + account for + Noun",
+    "examples": [
+      {
+        "translation": "Các đoạn video chiếm hơn bảy mươi phần trăm lưu lượng di động."
+      },
+      {
+        "translation": "Bạn giải thích thế nào về bước nhảy vọt đột ngột trong điểm kiểm tra này?"
+      }
+    ]
+  },
+  "en_b2_38": {
+    "title": "add up (tích tiểu thành đại / có logic hợp lý)",
+    "shortExplanation": "Cộng dồn thành con số lớn, hoặc các chi tiết khớp logic với nhau (thường dùng phủ định: doesn't add up = có gì đó sai sai).",
+    "longExplanation": "Rất tự nhiên khi động viên thói quen nhỏ hằng ngày hoặc nghi ngờ chi tiết bất nhất.",
+    "formation": "Subject + add up (+ Noun)",
+    "examples": [
+      {
+        "translation": "Mỗi ngày mười phút nghe không nhiều, nhưng tích lại theo thời gian sẽ rất đáng kể."
+      },
+      {
+        "translation": "Kiểm tra lại mốc thời gian đi — lời khai của anh ta có gì đó không khớp."
+      }
+    ]
+  },
+  "en_b2_39": {
+    "title": "ask out (mời đi hẹn hò)",
+    "shortExplanation": "Rủ hoặc mời ai đó đi uống nước, ăn tối với ý định hẹn hò.",
+    "longExplanation": "Tân ngữ chỉ người hầu như luôn đặt ở giữa: \"ask her out\".",
+    "formation": "Subject + ask + Person + out",
+    "examples": [
+      {
+        "translation": "Anh ấy hồi hộp suốt mấy tuần rồi mới dám rủ cô ấy đi uống cà phê hẹn hò."
+      },
+      {
+        "translation": "Đã có ai mời bạn đi hẹn hò ngay sau buổi giao lưu ngôn ngữ chưa?"
+      }
+    ]
+  },
+  "en_b2_40": {
+    "title": "back up (sao lưu dữ liệu / chứng minh ủng hộ / lùi xe)",
+    "shortExplanation": "Tạo bản sao lưu tệp an toàn, đưa dẫn chứng bảo vệ lập luận, hoặc lùi xe.",
+    "longExplanation": "Danh từ ghép liền \"a backup\", còn động từ tách rời \"back up\". Tách được tân ngữ (\"back it up\").",
+    "formation": "Subject + back up (+ Data/Claim/Car)",
+    "examples": [
+      {
+        "translation": "Luôn sao lưu bộ thẻ học của bạn trước khi đổi thiết bị nhé."
+      },
+      {
+        "translation": "Cô ấy củng cố lập luận của mình bằng ba ví dụ rõ ràng lấy từ bài đọc."
+      }
+    ]
+  },
+  "en_b2_41": {
+    "title": "back down (nhượng bộ / rút lui khỏi lập trường)",
+    "shortExplanation": "Chịu lùi bước hoặc rút lại đòi hỏi khi gặp sức ép hay phản đối mạnh mẽ.",
+    "longExplanation": "Là nội động từ, không nhận tân ngữ trực tiếp phía sau.",
+    "formation": "Subject + back down (+ from + Stand)",
+    "examples": [
+      {
+        "translation": "Ngay cả khi bị chỉ trích gay gắt, vị đạo diễn vẫn không chịu nhượng bộ."
+      },
+      {
+        "translation": "Không bên nào tỏ ra muốn xuống nước trong suốt cuộc tranh luận kéo dài."
+      }
+    ]
+  },
+  "en_b2_42": {
+    "title": "break through (đột phá / vượt qua rào cản)",
+    "shortExplanation": "Vượt qua bức tường chắn vật lý, hoặc bứt phá qua giai đoạn chững lại trong kỹ năng.",
+    "longExplanation": "Danh từ ghép là \"breakthrough\" (bước đột phá).",
+    "formation": "Subject + break through (+ Barrier)",
+    "examples": [
+      {
+        "translation": "Nghe đều đặn mỗi ngày giúp bạn bứt phá khỏi ngưỡng chững trình độ trung cấp."
+      },
+      {
+        "translation": "Ánh nắng cuối cùng cũng xuyên qua lớp sương mù dày đặc buổi sáng."
+      }
+    ]
+  },
+  "en_b2_43": {
+    "title": "bring about (mang lại sự thay đổi / gây ra kết quả)",
+    "shortExplanation": "Tạo nên hoặc dẫn đến một biến chuyển, cải cách hay kết quả rõ rệt.",
+    "longExplanation": "Thường kết hợp với danh từ trừu tượng như \"change, shift, reform, improvement\".",
+    "formation": "Subject + bring about + Change/Result",
+    "examples": [
+      {
+        "translation": "Video có phụ đề đã tạo nên một sự chuyển biến lớn trong thói quen tự học."
+      },
+      {
+        "translation": "Điều gì đã mang lại bước xoay chuyển ấn tượng như vậy cho tinh thần cả đội?"
+      }
+    ]
+  },
+  "en_b2_44": {
+    "title": "come about (xảy ra / nảy sinh như thế nào)",
+    "shortExplanation": "Diễn ra hoặc hình thành (hay dùng khi hỏi sự việc bắt nguồn thế nào).",
+    "longExplanation": "Tuyệt đối không chia bị động (không nói \"was come about\"). Rất hay gặp câu \"How did that come about?\"",
+    "formation": "Subject + come about",
+    "examples": [
+      {
+        "translation": "Ý tưởng về phụ đề song ngữ ban đầu hình thành như thế nào vậy?"
+      },
+      {
+        "translation": "Nhiều cải tiến đáng giá đã ra đời sau những góp ý từ người nghe."
+      }
+    ]
+  },
+  "en_b2_45": {
+    "title": "do without (xoay xở không cần tới / chẳng cần đến)",
+    "shortExplanation": "Vẫn sống/làm việc ổn dù thiếu thứ quen thuộc, hoặc nói mỉa \"chẳng ham\" (I could do without...).",
+    "longExplanation": "Không tách tân ngữ. Cụm \"I can't do without...\" nghĩa là không thể thiếu thứ đó.",
+    "formation": "Subject + do without + Noun",
+    "examples": [
+      {
+        "translation": "Người học ngoại tuyến vẫn ôn tập mượt mà — không có Wi-Fi cũng chẳng sao."
+      },
+      {
+        "translation": "Góp ý chân thành thì quý, nhưng mấy bình luận thô lỗ thì tôi xin kiếu."
+      }
+    ]
+  },
+  "en_b2_46": {
+    "title": "draw on (vận dụng / khai thác nguồn lực, kinh nghiệm)",
+    "shortExplanation": "Dựa vào hoặc lấy từ kho kinh nghiệm, kiến thức, dữ liệu hay tiền tiết kiệm sẵn có để dùng.",
+    "longExplanation": "Không tách tân ngữ. Văn phong rất hay dùng trong phỏng vấn và bài luận.",
+    "formation": "Subject + draw on + Experience/Data/Savings",
+    "examples": [
+      {
+        "translation": "Biên dịch viên giỏi vận dụng cả trực giác văn hóa sâu sắc lẫn ngữ pháp."
+      },
+      {
+        "translation": "Loạt bài khai thác các cuộc phỏng vấn đường phố chân thực tại năm thành phố."
+      }
+    ]
+  },
+  "en_b2_47": {
+    "title": "draw up (soạn thảo kế hoạch, danh sách, hợp đồng)",
+    "shortExplanation": "Lập và viết chi tiết một bản kế hoạch, danh sách, lịch trình hoặc văn bản hợp đồng.",
+    "longExplanation": "Tách được tân ngữ; hàm ý chuẩn bị bài bản chứ không phải ghi vội.",
+    "formation": "Subject + draw up + Contract/List/Plan",
+    "examples": [
+      {
+        "translation": "Chúng ta hãy cùng soạn một lộ trình luyện nghe bốn tuần thực tế nhé."
+      },
+      {
+        "translation": "Đội ngũ pháp chế của họ đã soạn thảo một thỏa thuận giấy phép mã nguồn mở rõ ràng."
+      }
+    ]
+  },
+  "en_b2_48": {
+    "title": "enter into (ký kết / bắt đầu thảo luận / tham gia yếu tố)",
+    "shortExplanation": "Chính thức tham gia vào thỏa thuận/cuộc đàm phán, đi sâu chi tiết, hoặc góp phần vào quyết định.",
+    "longExplanation": "Rất hay dùng trong tin kinh tế và câu kiểu \"enter into details\" (đi vào chi tiết).",
+    "formation": "Subject + enter into + Agreement/Discussion/Detail",
+    "examples": [
+      {
+        "translation": "Hai hãng phim đã ký kết hợp tác đồng sản xuất vào mùa xuân năm ngoái."
+      },
+      {
+        "translation": "Tiền bạc thậm chí không hề là yếu tố trong quyết định đi tình nguyện ở nước ngoài của cô ấy."
+      }
+    ]
+  },
+  "en_b2_49": {
+    "title": "factor in (tính cả yếu tố... vào)",
+    "shortExplanation": "Đưa thêm một biến số, chi phí hay thời gian dự phòng vào phép tính hoặc kế hoạch.",
+    "longExplanation": "Tách được tân ngữ (\"factor that in\"). Từ vựng thực tế rất đắt giá trong công việc.",
+    "formation": "Subject + factor in + Variable / factor + Noun + in",
+    "examples": [
+      {
+        "translation": "Bạn đã tính thêm thời gian di chuyển khi chọn chuyến tàu sáng chưa?"
+      },
+      {
+        "translation": "Hãy luôn tính cả những xao nhãng nhỏ hằng ngày để mục tiêu luôn khả thi."
+      }
+    ]
+  },
+  "en_b2_50": {
+    "title": "give in (nhượng bộ / đầu hàng cám dỗ)",
+    "shortExplanation": "Ngừng kháng cự và chịu thua trước áp lực, sự nài nỉ hoặc cám dỗ.",
+    "longExplanation": "Phân biệt rõ: \"give UP\" = bỏ cuộc một mục tiêu/thói quen; \"give IN\" = nhượng bộ ai/cám dỗ (thường đi với \"to\").",
+    "formation": "Subject + give in (+ to + Pressure/Temptation)",
+    "examples": [
+      {
+        "translation": "Sau mười phút nài nỉ, mình đành nhượng bộ chia cho nó nửa phần khoai tây chiên."
+      },
+      {
+        "translation": "Đừng đầu hàng sự nóng vội — sự trôi chảy tự nhiên cần nguồn nghe đều đặn."
+      }
+    ]
+  },
+  "en_b2_51": {
+    "title": "go through (trải qua giai đoạn / rà soát kỹ từng phần)",
+    "shortExplanation": "Trải nghiệm thời kỳ khó khăn, xem xét rà soát từng dòng, hoặc hoàn tất quy trình thủ tục.",
+    "longExplanation": "Không tách tân ngữ. Rất phổ biến khi học nhóm hoặc rà bài: \"go through the list\".",
+    "formation": "Subject + go through + Hardship/Process/Notes",
+    "examples": [
+      {
+        "translation": "Hãy cùng nhau xem kỹ từng dòng những thành ngữ hóc búa này nhé."
+      },
+      {
+        "translation": "Ai cũng trải qua giai đoạn im lặng tích lũy trước khi nói trôi chảy tự nhiên."
+      }
+    ]
+  },
+  "en_b2_52": {
+    "title": "hand over (bàn giao / trao tận tay)",
+    "shortExplanation": "Trao vật gì hoặc chuyển giao quyền hạn, vai trò sang cho người khác đảm nhận.",
+    "longExplanation": "Tách được tân ngữ (\"hand it over\"). Dùng cho cả đồ vật lẫn bàn giao công việc.",
+    "formation": "Subject + hand over + Item/Control (+ to + Person)",
+    "examples": [
+      {
+        "translation": "Sau khi hướng dẫn người dẫn mới, cô ấy vui vẻ trao lại chiếc micro."
+      },
+      {
+        "translation": "Vui lòng đưa thẻ lên máy bay cho nhân viên tại cửa khởi hành."
+      }
+    ]
+  },
+  "en_b2_53": {
+    "title": "lay down (đề ra quy tắc nghiêm / đặt xuống)",
+    "shortExplanation": "Thiết lập nguyên tắc, luật lệ rõ ràng; hoặc đặt đồ vật/vũ khí xuống đất.",
+    "longExplanation": "Tránh nhầm với \"lie down\" (nằm nghỉ ngơi). \"Lay\" luôn gắn với việc đặt/đề ra điều gì đó.",
+    "formation": "Subject + lay down + Rules/Principles/Tool",
+    "examples": [
+      {
+        "translation": "Câu lạc bộ đề ra vài quy tắc đơn giản để người mới dám mạnh dạn nói."
+      },
+      {
+        "translation": "Đừng nhầm \"lie down\" (nằm nghỉ) với \"lay down\" (đặt xuống hoặc đề ra quy định)."
+      }
+    ]
+  },
+  "en_b2_54": {
+    "title": "phase in (áp dụng dần theo từng giai đoạn)",
+    "shortExplanation": "Triển khai dần một hệ thống, chính sách hay thay đổi theo lộ trình từng bước.",
+    "longExplanation": "Trái nghĩa với \"phase out\" (loại bỏ dần). Rất hay gặp trong tin công nghệ và chính sách.",
+    "formation": "Subject + phase in + Policy/System",
+    "examples": [
+      {
+        "translation": "Nhà trường sẽ áp dụng dần bài thi vấn đáp qua ba học kỳ."
+      },
+      {
+        "translation": "Xe buýt điện đang được đưa vào vận hành từng bước trên mọi tuyến trung tâm."
+      }
+    ]
+  },
+  "en_b2_55": {
+    "title": "put up (cho ở nhờ / treo dán lên / chịu đựng với 'with')",
+    "shortExplanation": "Cho ai ngủ nhờ qua đêm, dán/treo bảng, tăng giá; đặc biệt \"put up with\" nghĩa là chịu đựng.",
+    "longExplanation": "Cụm ba từ \"put up with + điều khó chịu\" cực kỳ thông dụng trong đời sống.",
+    "formation": "Subject + put up (+ with + Annoyance / Friend / Sign)",
+    "examples": [
+      {
+        "translation": "Cuối tuần này bạn có cho em họ ngủ nhờ hai đêm được không?"
+      },
+      {
+        "translation": "Tôi nhất quyết không chịu đựng cảnh quảng cáo bật lên ngắt quãng từng câu đâu."
+      }
+    ]
+  },
+  "en_b2_56": {
+    "title": "rule out (loại trừ khả năng / bác bỏ phương án)",
+    "shortExplanation": "Xác định rằng một nguyên nhân, giả thuyết hay lựa chọn không thể xảy ra hoặc bị loại bỏ.",
+    "longExplanation": "Tách được tân ngữ (\"Don't rule it out\").",
+    "formation": "Subject + rule out + Possibility/Option",
+    "examples": [
+      {
+        "translation": "Bác sĩ làm hai xét nghiệm để loại trừ khả năng dị ứng theo mùa."
+      },
+      {
+        "translation": "Đừng vội loại bỏ video bản xứ chỉ vì người nói nói với tốc độ tự nhiên."
+      }
+    ]
+  },
+  "en_b2_57": {
+    "title": "set out (lên đường / đặt mục tiêu bắt tay làm / trình bày rõ)",
+    "shortExplanation": "Khởi hành chuyến đi, bắt đầu với mục tiêu rõ (set out to V), hoặc trình bày sắp xếp mạch lạc.",
+    "longExplanation": "Rất hay dùng \"set out to + V\" để kể mục tiêu ban đầu của một dự án hoặc câu chuyện.",
+    "formation": "Subject + set out (+ to + Verb / on + Journey)",
+    "examples": [
+      {
+        "translation": "Họ khởi hành từ tinh mơ để tránh kẹt xe cao tốc ngày lễ."
+      },
+      {
+        "translation": "Cẩm nang trình bày rõ ba thói quen hằng ngày giúp rèn sức bền nghe hiểu."
+      }
+    ]
+  },
+  "en_b2_58": {
+    "title": "settle down (ổn định cuộc sống / lắng xuống trật tự / ngồi yên tập trung)",
+    "shortExplanation": "Trở nên yên tĩnh trật tự, ngồi ngay ngắn bắt đầu làm việc, hoặc an cư lập nghiệp lâu dài.",
+    "longExplanation": "Nội động từ rất tự nhiên cả trong lớp học lẫn chuyện chuyển chỗ ở, lập gia đình.",
+    "formation": "Subject + settle down",
+    "examples": [
+      {
+        "translation": "Khi nhạc quán cà phê dịu xuống, mọi người ổn định chỗ ngồi bắt đầu học."
+      },
+      {
+        "translation": "Sau khi làm việc ở bốn quốc gia, anh ấy quyết định định cư lâu dài ở Osaka."
+      }
+    ]
+  },
+  "en_b2_59": {
+    "title": "show up (xuất hiện / có mặt / lộ rõ)",
+    "shortExplanation": "Đến nơi hẹn (nhất là đến muộn hoặc bất ngờ xuất hiện), hoặc làm lộ rõ khuyết điểm.",
+    "longExplanation": "Tương đương \"arrive / turn up\" nhưng rất tự nhiên trong hội thoại.",
+    "formation": "Subject + show up (+ late/early)",
+    "examples": [
+      {
+        "translation": "Chỉ một nửa nhóm học đến có mặt vì trời mưa nặng hạt."
+      },
+      {
+        "translation": "Anh ấy xin lỗi sau khi xuất hiện trễ hai mươi phút cho buổi tổng duyệt."
+      }
+    ]
+  },
+  "en_b2_60": {
+    "title": "stand for (viết tắt cho / đại diện cho giá trị / dung thứ)",
+    "shortExplanation": "Là chữ viết tắt của cụm từ nào, đại diện cho lý tưởng/giá trị, hoặc chịu đựng (trong câu phủ định).",
+    "longExplanation": "Không tách tân ngữ. Câu hỏi mẫu rất hay dùng: \"What does X stand for?\"",
+    "formation": "Subject + stand for + Meaning/Values",
+    "examples": [
+      {
+        "translation": "Chữ SRS là viết tắt của cụm từ gì trong các ứng dụng ôn tập trí nhớ vậy?"
+      },
+      {
+        "translation": "Những người hướng dẫn giỏi đại diện cho sự kiên nhẫn chứ không ép hoàn hảo tức thì."
+      }
+    ]
+  },
+  "en_b2_61": {
+    "title": "take on (đảm nhận thêm việc / tuyển thêm / mang sắc thái mới)",
+    "shortExplanation": "Nhận thêm trách nhiệm hay dự án, tuyển dụng nhân sự, hoặc khoác lên ý nghĩa/dáng vẻ mới.",
+    "longExplanation": "Tách được tân ngữ (\"take too much on\"). Cực kỳ hay dùng khi nói nhận quá nhiều việc.",
+    "formation": "Subject + take on + Work/Role/Challenger",
+    "examples": [
+      {
+        "translation": "Đừng ôm đồm năm khóa học nặng trong cùng một tháng nhé."
+      },
+      {
+        "translation": "Ngay cả đoạn clip bình thường cũng mang sắc thái mới mẻ khi bạn nghe ra giọng điệu."
+      }
+    ]
+  },
+  "en_b2_62": {
+    "title": "take over (tiếp quản / thay thế nắm quyền)",
+    "shortExplanation": "Đảm nhận tiếp phần việc, vị trí lãnh đạo hoặc quyền kiểm soát từ tay người khác.",
+    "longExplanation": "Vừa dùng trực tiếp có tân ngữ, vừa dùng nội động từ hoặc kèm \"from\" (tiếp quản từ ai).",
+    "formation": "Subject + take over (+ from + Person / Company/Role)",
+    "examples": [
+      {
+        "translation": "Em gái tôi đã đổi lái thay tôi trong hai tiếng cuối cùng của chuyến đi."
+      },
+      {
+        "translation": "Bạn cứ ra ngoài giải lao đi — tôi sẽ tiếp quản việc điều phối khung chat."
+      }
+    ]
   }
 };

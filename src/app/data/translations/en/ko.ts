@@ -2113,5 +2113,1545 @@ export const GRAMMAR_EN_KO: Record<string, GrammarTranslation> = {
         "translation": "이 연구는 소셜 미디어가 행동에 어떠한 영향을 미치는지 살펴봅니다."
       }
     ]
+  },
+  "en_a1_25": {
+    "title": "Let's + 동사원형 (함께 하자고 제안하기)",
+    "shortExplanation": "상대방에게 함께 무언가를 하자고 가볍게 제안할 때 씁니다.",
+    "longExplanation": "'Let's'는 'Let us'의 줄임말로, 뒤에는 항상 동사원형이 옵니다. '~하지 말자'라고 부정 제안을 할 때는 'Let's not + 동사원형'을 사용합니다.",
+    "formation": "Let's (+ not) + 동사원형",
+    "examples": [
+      {
+        "translation": "다음 수업 전에 잠깐 쉬자."
+      },
+      {
+        "translation": "더 이상 기다리지 말자; 기차가 5분 뒤에 출발해."
+      }
+    ]
+  },
+  "en_a1_26": {
+    "title": "How about / What about + 명사 / V-ing? (제안·의견 묻기)",
+    "shortExplanation": "친근하게 아이디어나 대안을 제안하거나 상대의 의견을 물을 때 사용합니다.",
+    "longExplanation": "'How about'과 'What about' 뒤에는 명사, 대명사, 또는 동명사(V-ing)가 옵니다. 'What about you?'처럼 상대에게 질문을 되돌릴 때도 자주 씁니다.",
+    "formation": "How about / What about + 명사 / V-ing?",
+    "examples": [
+      {
+        "translation": "오늘 저녁으로 피자 시켜 먹는 거 어때?"
+      },
+      {
+        "translation": "세 시쯤 카페에서 만나는 건 어때요?"
+      }
+    ]
+  },
+  "en_a1_27": {
+    "title": "Would like (+ to V) (정중한 희망·권유)",
+    "shortExplanation": "want 대신 정중하게 원하는 것을 말하거나 상대에게 권할 때 씁니다.",
+    "longExplanation": "식당이나 가게에서 주문할 때 'I want'보다 훨씬 공손하게 들리며 회화에서는 줄여 'I'd like'로 자주 말합니다. 동사가 올 때는 반드시 'to + 동사원형' 형태를 씁니다.",
+    "formation": "주어 + would like + 명사 / to + 동사원형",
+    "examples": [
+      {
+        "translation": "설탕 없는 녹차 한 잔 부탁드립니다."
+      },
+      {
+        "translation": "창가 쪽에 앉으시겠어요?"
+      }
+    ]
+  },
+  "en_a1_28": {
+    "title": "Be going to + 동사원형 (계획된 미래·근거 있는 예측)",
+    "shortExplanation": "이미 세워 둔 계획이나 눈앞의 단서를 보고 예측하는 미래를 말할 때 씁니다.",
+    "longExplanation": "주어에 맞게 be동사(am/is/are)를 바꾸고 'going to + 동사원형'을 연결합니다. 빠른 구어체에서는 'going to'를 흔히 'gonna'로 발음합니다.",
+    "formation": "주어 + am/is/are + going to + 동사원형",
+    "examples": [
+      {
+        "translation": "내일부터 단어 정리용 새 노트를 시작할 거예요."
+      },
+      {
+        "translation": "저 먹구름 좀 봐—곧 비가 올 것 같아."
+      }
+    ]
+  },
+  "en_a1_29": {
+    "title": "Want to / Need to + 동사원형 (희망과 필요)",
+    "shortExplanation": "무언가를 하고 싶거나(want to) 할 필요가 있음(need to)을 나타냅니다.",
+    "longExplanation": "두 동사 뒤에 또 다른 동작이 올 때는 반드시 'to + 동사원형'으로 연결하며, 부정문에는 don't / doesn't를 씁니다. 일상 회화에서는 'want to'가 흔히 'wanna'로 축약됩니다.",
+    "formation": "주어 + want(s) / need(s) + to + 동사원형",
+    "examples": [
+      {
+        "translation": "언어를 바꾼 뒤에는 앱을 다시 시작해야 합니다."
+      },
+      {
+        "translation": "올해는 듣기 속도를 높이고 싶어요."
+      }
+    ]
+  },
+  "en_a2_27": {
+    "title": "Be able to + 동사원형 (모든 시제의 가능 표현)",
+    "shortExplanation": "미래나 완료 시제처럼 'can'을 직접 쓸 수 없는 자리에 '~할 수 있다'를 표현합니다.",
+    "longExplanation": "조동사 can은 will이나 might 뒤, 혹은 완료형에 올 수 없으므로 이때 'be able to'를 사용합니다. 과거의 특정 상황에서 어렵게 해냈다는 뜻을 강조할 때도 'was/were able to'가 자연스럽습니다.",
+    "formation": "주어 + be동사(시제 변화) + able to + 동사원형",
+    "examples": [
+      {
+        "translation": "매일 연습하면 원어민 팟캐스트도 따라 들을 수 있을 거예요."
+      },
+      {
+        "translation": "다행히 시연 전에 버그를 고칠 수 있었어요."
+      }
+    ]
+  },
+  "en_a2_28": {
+    "title": "Have to / Don't have to (의무 vs 불필요)",
+    "shortExplanation": "'have to'는 규칙이나 상황상 해야 함을, 'don't have to'는 '~할 필요가 없음(선택)'을 뜻합니다.",
+    "longExplanation": "부정형의 의미 차이에 주의하세요. 'mustn't'는 금지(~하면 안 된다)이지만, 'don't have to'는 의무가 아님(~할 필요가 없다)을 의미합니다.",
+    "formation": "주어 + (don't / doesn't / didn't) have to + 동사원형",
+    "examples": [
+      {
+        "translation": "이 목록에 있는 단어를 하나하나 다 외워야 하나요?"
+      },
+      {
+        "translation": "지금 당장 결제하실 필요는 없어요; 첫 주는 무료입니다."
+      }
+    ]
+  },
+  "en_a2_29": {
+    "title": "Too + 형용사/부사 + to V (너무 ~해서 …할 수 없다)",
+    "shortExplanation": "정도가 지나쳐서 뒤의 동작을 할 수 없음을 나타내는 구문입니다.",
+    "longExplanation": "문장에 not이 없어도 부정의 결과를 뜻합니다. 동작의 주체를 밝히고 싶으면 'to + 동사원형' 앞에 'for + 목적격'을 넣습니다.",
+    "formation": "too + 형용사/부사 + (for + 목적격) + to + 동사원형",
+    "examples": [
+      {
+        "translation": "그 상자는 너무 무거워서 혼자 위층으로 옮길 수 없었어요."
+      },
+      {
+        "translation": "그는 말이 너무 빨라서 초보자가 모든 표현을 알아듣기 어려웠습니다."
+      }
+    ]
+  },
+  "en_a2_30": {
+    "title": "형용사/부사 + enough + to V (~할 만큼 충분히 …한)",
+    "shortExplanation": "어떤 일을 하기에 필요한 수준이나 조건이 충분함을 나타냅니다.",
+    "longExplanation": "어순에 주의하세요. 형용사나 부사 뒤에는 'enough'가 오고(warm enough), 명사 앞에는 'enough'가 옵니다(enough time).",
+    "formation": "형용사/부사 + enough + (for + 목적격) + to + 동사원형",
+    "examples": [
+      {
+        "translation": "성조를 들을 수 있을 만큼 오디오가 충분히 선명한가요?"
+      },
+      {
+        "translation": "그녀는 아직 혼자 운전할 만큼 나이가 되지 않았어요."
+      }
+    ]
+  },
+  "en_a2_31": {
+    "title": "상관접속사 (Both...and / Either...or / Neither...nor)",
+    "shortExplanation": "두 요소를 짝지어 '둘 다', '둘 중 하나', '둘 다 아님'을 나타냅니다.",
+    "longExplanation": "'Both A and B'는 항상 복수 동사를 받지만, 'Either A or B'와 'Neither A nor B'는 동사에 가까운 B에 수를 일치시킵니다. 'neither' 자체가 부정이므로 not을 중복해 쓰지 않습니다.",
+    "formation": "Both A and B / Either A or B / Neither A nor B",
+    "examples": [
+      {
+        "translation": "오늘 초안을 제출하거나 아니면 출시를 미뤄야 해요."
+      },
+      {
+        "translation": "톰도 사라 도 회의가 온라인으로 바뀐 줄 몰랐어요."
+      }
+    ]
+  },
+  "en_a2_32": {
+    "title": "Make / Let + 목적어 + 동사원형 (사역동사: 시키다·허락하다)",
+    "shortExplanation": "'make'는 '~하게 만들다(강제·유발)', 'let'은 '~하게 두다(허락)'의 뜻을 갖습니다.",
+    "longExplanation": "능동문에서는 목적어 뒤 동사에 'to'를 붙이지 않고 반드시 원형을 씁니다('let me explain' O, 'let me to explain' X). 'allow + 목적어 + to V'와 구분하세요.",
+    "formation": "주어 + make / let + 목적어 + 동사원형",
+    "examples": [
+      {
+        "translation": "결정하시기 전에 무슨 일이 있었는지 설명할 수 있게 해 주세요."
+      },
+      {
+        "translation": "그 갑작스러운 반전 때문에 관객 모두가 숨을 들이켰다."
+      }
+    ]
+  },
+  "en_a2_33": {
+    "title": "Each other / One another (상호대명사: 서로)",
+    "shortExplanation": "둘 이상의 사람이 서로에게 주고받는 동작을 나타냅니다.",
+    "longExplanation": "자기 자신에게 행하는 재귀대명사 'themselves'와 혼동하지 마세요. 전통적으로는 둘 사이에 'each other', 셋 이상에 'one another'를 쓰지만 현대 영어에서는 종종 섞어 씁니다.",
+    "formation": "복수 주어 + 동사 (+ 전치사) + each other / one another",
+    "examples": [
+      {
+        "translation": "좋은 언어 학습 파트너들은 늘 서로의 실수를 다정하게 고쳐 줍니다."
+      },
+      {
+        "translation": "그들은 대학 졸업 이후 서로 본 적이 없었습니다."
+      }
+    ]
+  },
+  "en_a2_34": {
+    "title": "As soon as + 절 (~하자마자)",
+    "shortExplanation": "앞의 일이 끝나자마자 지체 없이 다음 일이 이어짐을 나타냅니다.",
+    "longExplanation": "미래의 일이라도 'as soon as'가 이끄는 시간 부사절에서는 'will'을 쓰지 않고 현재시제를 씁니다('as soon as I land' O, 'as soon as I will land' X).",
+    "formation": "주절 + as soon as + 주어 + 동사(현재/과거)",
+    "examples": [
+      {
+        "translation": "집에 안전하게 도착하자마자 문자 보내 줘."
+      },
+      {
+        "translation": "자막이 뜨자마자 그녀는 쉐도잉을 시작했어요."
+      }
+    ]
+  },
+  "en_a2_35": {
+    "title": "So + 형용사/부사 + that + 절 (너무 ~해서 …하다)",
+    "shortExplanation": "어떤 성질이나 상태의 정도가 강해서 뒤따르는 결과가 생김을 강조합니다.",
+    "longExplanation": "명사구가 올 때 쓰는 'such + (a/an) + 명사 + that'과 구별하세요. 일상 회화에서는 'that'을 자주 생략합니다.",
+    "formation": "so + 형용사/부사 + (that) + 결과절",
+    "examples": [
+      {
+        "translation": "너무 피곤해서 인트로가 끝나기도 전에 잠들어 버렸어요."
+      },
+      {
+        "translation": "그가 그 관용구를 너무 명쾌하게 설명해서 모두가 미소 지었어요."
+      }
+    ]
+  },
+  "en_b1_28": {
+    "title": "Had better + 동사원형 (~하는 편이 낫다 · 강한 조언)",
+    "shortExplanation": "안 그러면 곤란한 일이 생길 수 있다는 뉘앙스로 지금 해야 할 일을 강하게 권할 때 씁니다.",
+    "longExplanation": "'had'가 들어가도 과거가 아니라 현재나 가까운 미래를 가리킵니다. 주로 ''d better'로 줄여 쓰며, 부정은 'had better not + 동사원형'입니다.",
+    "formation": "주어 + had better ('d better) (+ not) + 동사원형",
+    "examples": [
+      {
+        "translation": "설정을 바꾸기 전에 백업 본을 저장해 두는 게 좋겠어요."
+      },
+      {
+        "translation": "내일 시험을 앞두고 너무 늦게까지 밖에 있지 않는 편이 낫겠다."
+      }
+    ]
+  },
+  "en_b1_29": {
+    "title": "Would rather + 동사원형 (+ than) (차라리 ~하겠다 · 선호)",
+    "shortExplanation": "구체적인 상황에서 다른 대안보다 특정 행동을 더 선호함을 표현합니다.",
+    "longExplanation": "'would rather('d rather)' 뒤에는 to 없이 동사원형이 바로 옵니다. 비교 대상을 밝힐 때는 'than + 동사원형', 정중히 거절할 때는 'would rather not + 동사원형'을 씁니다.",
+    "formation": "주어 + would rather ('d rather) (+ not) + 동사원형 (+ than + 동사원형)",
+    "examples": [
+      {
+        "translation": "요약본을 읽느니 목표 언어 자막을 켜고 영상을 보는 편이 낫겠어요."
+      },
+      {
+        "translation": "초대해 줘서 고맙지만, 오늘 밤엔 그냥 집에 있고 싶어요."
+      }
+    ]
+  },
+  "en_b1_30": {
+    "title": "Be supposed to + 동사원형 (~하기로 되어 있다 · 기대/규정)",
+    "shortExplanation": "규칙·일정·기대되는 바를 말하며, 현실이 기대와 다를 때도 자주 씁니다.",
+    "longExplanation": "현재시제는 의무나 세간의 평판을 나타내고, 과거시제('was/were supposed to')는 '원래 ~하기로 되어 있었는데 실제로는 그러지 못했다'는 뉘앙스를 전합니다.",
+    "formation": "주어 + be동사 + supposed to + 동사원형",
+    "examples": [
+      {
+        "translation": "금요일 정오까지 요약문을 제출하게 되어 있어요."
+      },
+      {
+        "translation": "우리 비행기는 한 시간 전에 도착했어야 했어요."
+      }
+    ]
+  },
+  "en_b1_31": {
+    "title": "Be allowed to + 동사원형 (~하는 것이 허용되다)",
+    "shortExplanation": "미래나 과거를 포함한 모든 시제에서 공식적·사회적 허가를 표현합니다.",
+    "longExplanation": "'can/may'와 달리 미래형이나 완료형으로도 자유롭게 쓸 수 있습니다. 부정형('aren't allowed to')은 금지 규정을 분명하게 안내할 때 자주 씁니다.",
+    "formation": "주어 + be동사 (+ not) + allowed to + 동사원형",
+    "examples": [
+      {
+        "translation": "방문객은 전시실 안에서 플래시 촬영을 하실 수 없습니다."
+      },
+      {
+        "translation": "학생들이 시험장에 사전을 가져가는 것이 허용될까요?"
+      }
+    ]
+  },
+  "en_b1_32": {
+    "title": "Be / Get used to + 명사 / V-ing (~에 익숙하다 · 익숙해지다)",
+    "shortExplanation": "'be used to'는 이미 익숙한 상태를, 'get used to'는 서서히 적응해 가는 과정을 뜻합니다.",
+    "longExplanation": "주의할 점: 여기서 'to'는 전치사이므로 뒤에 반드시 명사나 동명사(V-ing)가 와야 하며 동사원형은 올 수 없습니다. 과거 습관을 뜻하는 'used to + 동사원형'과 구별하세요.",
+    "formation": "주어 + be / get + used to + 명사 / V-ing",
+    "examples": [
+      {
+        "translation": "한 달이나 걸렸지만 마침내 빠른 말투를 듣는 데 익숙해졌어요."
+      },
+      {
+        "translation": "그녀는 촉박한 마감 기한에 맞춰 일하는 데 익숙합니다."
+      }
+    ]
+  },
+  "en_b1_33": {
+    "title": "By the time + 절 (~할 때쯤에는 이미)",
+    "shortExplanation": "과거나 미래의 어느 시점 이전에 다른 일이 이미 완료되어 있음을 나타냅니다.",
+    "longExplanation": "과거 기준일 때는 'by the time + 과거시제'와 과거완료('had + p.p.')를, 미래 기준일 때는 'by the time + 현재시제'와 미래완료('will have + p.p.')를 짝지어 씁니다.",
+    "formation": "By the time + 절(현재/과거), 주절(will have / had + p.p.)",
+    "examples": [
+      {
+        "translation": "우리가 극장에 도착했을 때쯤에는 오프닝 장면이 이미 시작된 뒤였어요."
+      },
+      {
+        "translation": "저녁 식사가 준비될 때쯤이면 단어 카드를 다 복습했을 거예요."
+      }
+    ]
+  },
+  "en_b1_34": {
+    "title": "Prefer A to B / Prefer to V rather than V (B보다 A를 선호하다)",
+    "shortExplanation": "평소 취향이나 습관으로 한쪽을 다른 쪽보다 더 좋아함을 나타냅니다.",
+    "longExplanation": "명사나 동명사(V-ing)를 비교할 때는 'than'이 아니라 전치사 'to'를 씁니다(prefer A to B). to부정사 동작을 비교할 때는 'prefer to V rather than V' 형태를 씁니다.",
+    "formation": "prefer + 명사/V-ing + to + 명사/V-ing  |  prefer to V + rather than + V",
+    "examples": [
+      {
+        "translation": "저는 낱말 목록을 무작정 외우는 것보다 실제 팟캐스트를 듣는 걸 더 선호해요."
+      },
+      {
+        "translation": "그녀는 하루 두 시간씩 출퇴근하느니 재택근무하는 편을 좋아합니다."
+      }
+    ]
+  },
+  "en_b1_35": {
+    "title": "Get + 사람 + to + 동사원형 (설득·부탁해서 ~하게 하다)",
+    "shortExplanation": "상대를 설득하거나 부탁하여 어떤 행동을 하게 만들 때 씁니다.",
+    "longExplanation": "'make/have + 사람 + 동사원형'과 달리 'get'이 능동 사역으로 쓰일 때는 반드시 뒤에 'to + 동사원형'이 따라옵니다.",
+    "formation": "주어 + get + 사람 + to + 동사원형",
+    "examples": [
+      {
+        "translation": "오빠가 영상 편집을 도와주도록 어떻게 설득했어?"
+      },
+      {
+        "translation": "드디어 발음 코치에게 재생 속도를 좀 늦춰 달라고 부탁하는 데 성공했어요."
+      }
+    ]
+  },
+  "en_b2_30": {
+    "title": "Can't help + V-ing (~하지 않을 수 없다 · 참을 수 없다)",
+    "shortExplanation": "억제하려고 해도 저절로 ~하게 되거나 참을 수 없는 충동을 나타냅니다.",
+    "longExplanation": "'can't help(과거 couldn't help)' 뒤에는 항상 동명사(V-ing)가 와야 합니다. 같은 뜻의 다른 표현으로 'can't help but + 동사원형'도 자주 쓰입니다.",
+    "formation": "주어 + can't / couldn't help + V-ing",
+    "examples": [
+      {
+        "translation": "고양이가 그의 키보드 위로 뛰어올랐을 때 웃음을 참을 수 없었어요."
+      },
+      {
+        "translation": "그녀는 영화 자막의 사소한 문법 실수가 자꾸 눈에 띄는 걸 어쩔 수 없어요."
+      }
+    ]
+  },
+  "en_b2_31": {
+    "title": "It's no use / There's no point (in) + V-ing (~해 봐야 소용없다)",
+    "shortExplanation": "어떤 행동을 해 보았자 이익이나 결과가 없어 시간 낭비임을 말할 때 씁니다.",
+    "longExplanation": "두 구문 모두 to부정사 대신 동명사(V-ing)가 이어집니다. 'There's no point' 뒤의 전치사 'in'은 생략할 수 있습니다.",
+    "formation": "It's no use + V-ing  |  There's no point (in) + V-ing",
+    "examples": [
+      {
+        "translation": "이미 고친 실수를 두고 계속 걱정해 봐야 소용없어요."
+      },
+      {
+        "translation": "더 기다려 봤자 의미가 없어요—막차가 방금 떠났거든요."
+      }
+    ]
+  },
+  "en_b2_32": {
+    "title": "Be bound to + 동사원형 (반드시 ~하게 되어 있다)",
+    "shortExplanation": "상황의 흐름상 거의 확실하거나 필연적으로 일어날 일임을 나타냅니다.",
+    "longExplanation": "'분명 늘 거야'처럼 상대를 격려할 때도 쓰고, '실수는 생기게 마련이다'처럼 자연스러운 귀결을 말할 때도 자주 씁니다.",
+    "formation": "주어 + be동사 + bound to + 동사원형",
+    "examples": [
+      {
+        "translation": "매일 꾸준히 듣는다면 실력이 반드시 늘게 되어 있어요."
+      },
+      {
+        "translation": "새 언어를 말하다 보면 작은 오해는 생기기 마련입니다."
+      }
+    ]
+  },
+  "en_b2_33": {
+    "title": "Be about to + 동사원형 (막 ~하려는 참이다)",
+    "shortExplanation": "어떤 일이 불과 몇 초 뒤, 눈앞에 임박했음을 알립니다.",
+    "longExplanation": "'내년' 같은 먼 시간 부사와는 쓰지 않고 바로 직전의 순간에만 씁니다('just'와 자주 어울림). 부정형 'not about to'는 '절대 ~할 생각이 없다'는 관용적 거절 뜻도 됩니다.",
+    "formation": "주어 + be동사 (+ just) + about to + 동사원형",
+    "examples": [
+      {
+        "translation": "잠깐만요—라이브 방송이 곧 시작되려고 해요!"
+      },
+      {
+        "translation": "네가 전화했을 때 막 너한테 문자 보내려던 참이었어."
+      }
+    ]
+  },
+  "en_b2_34": {
+    "title": "The + 비교급, the + 비교급 (~하면 할수록 더욱 …하다)",
+    "shortExplanation": "두 가지 변화가 서로 비례해 함께 증가하거나 감소함을 나타냅니다.",
+    "longExplanation": "두 절 모두 'The + 비교급'으로 시작하는 대칭 구조입니다. 'The sooner, the better(빠를수록 좋다)'처럼 짧은 관용 표현으로도 자주 쓰입니다.",
+    "formation": "The + 비교급 (+ 주어 + 동사), the + 비교급 (+ 주어 + 동사)",
+    "examples": [
+      {
+        "translation": "소리 내어 많이 읽을수록 말의 리듬이 더욱 자연스러워집니다."
+      },
+      {
+        "translation": "우리가 일찍 준비를 시작할수록 마감 기한 스트레스가 덜할 거예요."
+      }
+    ]
+  },
+  "en_b2_35": {
+    "title": "No matter + 의문사 (아무리 ~하더라도 · 무슨 일이 있어도)",
+    "shortExplanation": "상황·정도·시간·사람과 상관없이 주절의 사실이 변하지 않음을 강조합니다.",
+    "longExplanation": "'no matter' 뒤에 how, what, who, where, when 등을 붙이며 'however / whatever' 등과 뜻이 같습니다. 절 안에서는 미래 일이라도 현재시제를 씁니다.",
+    "formation": "No matter + 의문사 (+ 형용사/부사) + 주어 + 동사",
+    "examples": [
+      {
+        "translation": "이번 주가 아무리 바쁘더라도 단어 카드 열 장은 복습해 보세요."
+      },
+      {
+        "translation": "몇 시든 상관없으니 바로 전화해 줘."
+      }
+    ]
+  },
+  "en_b2_36": {
+    "title": "Have / Get + 목적어 + 과거분사 (서비스 의뢰 · 피해 경험)",
+    "shortExplanation": "남에게 수리 등을 맡겨 처리하게 하거나, 원치 않는 일을 당했음을 나타냅니다.",
+    "longExplanation": "목적어가 동작을 '받는' 대상이므로 뒤에는 항상 과거분사(V3)가 옵니다. 회화에서는 'have'보다 'get'이 조금 더 구어적인 느낌을 줍니다.",
+    "formation": "주어 + have / get + 목적어 + 과거분사(p.p.)",
+    "examples": [
+      {
+        "translation": "자동차 여행 전에 차를 수리 맡겨야 해요."
+      },
+      {
+        "translation": "그녀는 붐비는 역에서 여권을 도난당했습니다."
+      }
+    ]
+  },
+  "en_c1_18": {
+    "title": "Not until ... + 도치 (~하고 나서야 비로소 …하다)",
+    "shortExplanation": "어떤 시점이나 계기가 지난 뒤에야 일어난 일이나 깨달음을 극적으로 강조합니다.",
+    "longExplanation": "도치가 일어나는 위치에 주의하세요. 'until' 바로 뒤가 아니라 뒤따라오는 '주절'에서만 조동사(did/had/was)가 주어 앞으로 도치됩니다.",
+    "formation": "Not until + 시간/절 + 조동사 + 주어 + 동사",
+    "examples": [
+      {
+        "translation": "그 영상을 다시 틀어 보고 나서야 그녀는 미묘한 말장난을 알아차렸습니다."
+      },
+      {
+        "translation": "자정이 되어서야 거리의 소음이 비로소 잦아들었습니다."
+      }
+    ]
+  },
+  "en_c1_19": {
+    "title": "Little did + 주어 + know / realize (~인 줄은 꿈에도 몰랐다)",
+    "shortExplanation": "당시에는 앞날에 닥칠 큰 변화나 반전을 전혀 눈치채지 못했음을 극적으로 서술합니다.",
+    "longExplanation": "부정 부사 'Little'이 문장 맨 앞에 오면서 'did + 주어 + 동사원형' 어순으로 도치됩니다. 다큐멘터리나 스토리텔링 영상에서 자주 들립니다.",
+    "formation": "Little + did/does + 주어 + know / realize (+ that + 절)",
+    "examples": [
+      {
+        "translation": "그는 10분짜리 영상 하나가 자신의 커리어를 열게 될 줄은 꿈에도 몰랐습니다."
+      },
+      {
+        "translation": "그들은 마감 기한이 얼마나 빠르게 다가오고 있는지 전혀 깨닫지 못했어요."
+      }
+    ]
+  },
+  "en_c1_20": {
+    "title": "No sooner ... than / Hardly ... when (~하자마자 곧바로)",
+    "shortExplanation": "첫 번째 일이 끝나자마자 눈 깜짝할 사이에 다음 일이 벌어졌음을 강조합니다.",
+    "longExplanation": "짝을 정확히 맞추어야 합니다. 'No sooner'는 항상 'than'과, 'Hardly / Scarcely'는 항상 'when'과 짝을 이루며, 뒤에는 'had + 주어 + p.p.' 도치가 옵니다.",
+    "formation": "No sooner had S V3 than S V2  |  Hardly had S V3 when S V2",
+    "examples": [
+      {
+        "translation": "우리가 밥을 먹으려고 자리에 앉자마자 전화가 울렸습니다."
+      },
+      {
+        "translation": "연사가 주제를 소개하자마자 질문하려는 손들이 올라왔습니다."
+      }
+    ]
+  },
+  "en_c1_21": {
+    "title": "Were + 주어 + to + 동사원형 (가정법 도치 구문)",
+    "shortExplanation": "'If + 주어 + were to' 대신 격식 있게 가상의 시나리오나 전략을 가정할 때 씁니다.",
+    "longExplanation": "접속사 'if'를 생략하고 'Were'를 주어 앞으로 도치한 고급 구문으로, 비즈니스 제안서나 에세이·토론에서 자주 쓰입니다.",
+    "formation": "Were + 주어 + to + 동사원형, 주어 + would/could/might + 동사원형",
+    "examples": [
+      {
+        "translation": "만약 우리가 그 제안을 받아들인다면 팀을 확장해야 할 것입니다."
+      },
+      {
+        "translation": "그 플랫폼이 오프라인 캐싱을 없앤다면 통근자들이 불편을 겪을 겁니다."
+      }
+    ]
+  },
+  "en_c1_22": {
+    "title": "But for + 명사구 (만약 ~이 없다면 · 없었다면)",
+    "shortExplanation": "'If it hadn't been for ~' 또는 'Without ~'를 간결하고 격식 있게 줄여 쓰는 표현입니다.",
+    "longExplanation": "'But for' 뒤에 명사구를 두고, 주절에는 가정법('would / would have p.p.')을 이어 감사나 결정적 요인을 부각합니다.",
+    "formation": "But for + 명사구, 주어 + would (have) + 동사/p.p.",
+    "examples": [
+      {
+        "translation": "네가 재빨리 쪽지를 보내 주지 않았더라면 엉뚱한 방으로 들어갈 뻔했어."
+      },
+      {
+        "translation": "커뮤니티의 꾸준한 피드백이 없었다면 프로젝트가 멈춰 섰을지도 몰라요."
+      }
+    ]
+  },
+  "en_c2_21": {
+    "title": "수사적 양보와 요약 (Be that as it may / Suffice it to say)",
+    "shortExplanation": "앞선 논점을 인정하면서 자연스럽게 본론을 잇거나, 긴 이야기를 핵심 한 줄로 압축하는 고급 표현입니다.",
+    "longExplanation": "'Be that as it may(그렇기는 하지만)'는 양보 뒤 논지 전환에, 'Suffice it to say(한마디로 ~라고만 해 두자)'는 구구절절한 설명 대신 결론을 전할 때 씁니다.",
+    "formation": "Be that as it may, + 주절  |  Suffice it to say, + 요약절",
+    "examples": [
+      {
+        "translation": "일정이 빠듯해 보이긴 하지만, 그럼에도 우리 팀 전원은 준비를 마쳤습니다."
+      },
+      {
+        "translation": "한마디로, 그 기조연설을 듣고 영감을 받지 않은 사람은 단 한 명도 없었어요."
+      }
+    ]
+  },
+  "en_a2_36": {
+    "title": "wake up (잠에서 깨다 · 깨우다)",
+    "shortExplanation": "잠에서 깨거나 다른 사람을 깨울 때 쓰는 필수 구동사입니다.",
+    "longExplanation": "사람을 깨울 때는 'wake 사람 up'처럼 목적어를 사이에 둘 수 있습니다.",
+    "formation": "Subject + wake (sb) up",
+    "examples": [
+      {
+        "translation": "보통 일곱 시쯤 일어나서 커피를 내립니다."
+      },
+      {
+        "translation": "기차에서 잠들면 저 좀 깨워 주시겠어요?"
+      }
+    ]
+  },
+  "en_a2_37": {
+    "title": "go back (돌아가다 · 되돌아가다)",
+    "shortExplanation": "이전 장소나 시간, 앞서 나누던 주제로 다시 돌아갈 때 씁니다.",
+    "longExplanation": "대상이 뒤따를 때는 주로 'to'와 함께 씁니다. 'go back years'는 오래 알고 지낸 사이라는 뜻입니다.",
+    "formation": "Subject + go back (+ to + Place/Topic)",
+    "examples": [
+      {
+        "translation": "잠깐 이전 슬라이드로 돌아가 봅시다."
+      },
+      {
+        "translation": "그녀는 다음 달에 고향으로 돌아갈 계획입니다."
+      }
+    ]
+  },
+  "en_a2_38": {
+    "title": "go out (외출하다 · 불이 꺼지다 · 사귀다)",
+    "shortExplanation": "밖으로 놀러 나가거나, 불빛이 꺼지거나, 누군가와 연애할 때 씁니다.",
+    "longExplanation": "문맥에 따라 외출, 소등, 교제 등 다양하게 쓰이는 기초 구동사입니다.",
+    "formation": "Subject + go out (+ with + Person)",
+    "examples": [
+      {
+        "translation": "수업 끝나고 밖에 나가서 국수 먹을래요?"
+      },
+      {
+        "translation": "폭풍우가 치는 동안 가로등이 갑자기 다 꺼져 버렸어요."
+      }
+    ]
+  },
+  "en_a2_39": {
+    "title": "come on (어서 · 에이 설마 · 켜지다)",
+    "shortExplanation": "재촉하거나 응원할 때, '설마 진짜야?' 하고 반문할 때, 불이나 방송이 시작될 때 씁니다.",
+    "longExplanation": "영화와 브이로그에서 가장 흔히 들리는 말로, 억양에 따라 격려인지 불신인지 갈립니다.",
+    "formation": "Come on! / Subject + come on",
+    "examples": [
+      {
+        "translation": "어서 가자, 오프닝 예고편 놓치겠다!"
+      },
+      {
+        "translation": "에이 설마, 그 소문을 진짜로 믿는 건 아니지?"
+      }
+    ]
+  },
+  "en_a2_40": {
+    "title": "look after (돌보다 · 보살피다)",
+    "shortExplanation": "사람, 반려동물, 식물이나 건강·물건을 잘 보살피고 관리할 때 씁니다.",
+    "longExplanation": "목적어가 절대 사이에 들어갈 수 없어 항상 'look after + 목적어' 순서로 씁니다.",
+    "formation": "Subject + look after + Noun/Person",
+    "examples": [
+      {
+        "translation": "이번 주 여행 가는 동안 내 화분들 좀 돌봐 줄 수 있어?"
+      },
+      {
+        "translation": "밤늦게 공부할 때는 눈 건강도 꼭 챙기세요."
+      }
+    ]
+  },
+  "en_a2_41": {
+    "title": "look up (찾아보다 · 나아지다)",
+    "shortExplanation": "사전이나 인터넷에서 단어·정보를 검색하거나, 상황이 점차 호전될 때 씁니다.",
+    "longExplanation": "정보를 찾을 때는 'look it up'처럼 분리 가능하며, 목적어 없이 쓰이면 상황이 좋아진다는 뜻입니다.",
+    "formation": "Subject + look up + Info  |  look + Info + up",
+    "examples": [
+      {
+        "translation": "자막의 아무 단어나 누르면 바로 뜻을 찾아볼 수 있어요."
+      },
+      {
+        "translation": "힘든 겨울을 지나고 매출이 드디어 나아지고 있습니다."
+      }
+    ]
+  },
+  "en_a2_42": {
+    "title": "put on (입다·쓰다·끼다 / 살이 찌다)",
+    "shortExplanation": "옷·안경·이어폰 등을 착용하거나, 음악·장비를 켜거나, 체중이 늘 때 씁니다.",
+    "longExplanation": "'take off(벗다)'의 반대말이며, 대명사는 반드시 'put it on'처럼 사이에 둡니다.",
+    "formation": "Subject + put on + Noun / Weight / Show",
+    "examples": [
+      {
+        "translation": "자음 하나하나 다 들리도록 헤드폰을 쓰세요."
+      },
+      {
+        "translation": "연휴 동안 살이 조금 쪘다고 걱정하지 마세요."
+      }
+    ]
+  },
+  "en_a2_43": {
+    "title": "take off (벗다 · 이륙하다 · 급성장하다)",
+    "shortExplanation": "옷이나 신발을 벗거나, 비행기가 이륙하거나, 사업·채널이 갑자기 크게 성공할 때 씁니다.",
+    "longExplanation": "물건을 벗을 때는 'take it off'로 분리되고, 목적어 없이 쓰이면 이륙 또는 도약을 뜻합니다.",
+    "formation": "Subject + take off (+ Noun)",
+    "examples": [
+      {
+        "translation": "젖은 신발은 현관 근처에서 벗어 주세요."
+      },
+      {
+        "translation": "그 짧은 영상이 입소문을 탄 뒤 그녀의 요리 채널이 정말 크게 떴어요."
+      }
+    ]
+  },
+  "en_a2_44": {
+    "title": "turn on (켜다 · 작동시키다)",
+    "shortExplanation": "전등, 기기 또는 자막 같은 기능을 켤 때 씁니다.",
+    "longExplanation": "'turn off'의 반대말입니다. 대명사 'it'은 반드시 가운데에 넣어 'turn it on'이라고 말하세요.",
+    "formation": "Subject + turn on + Device / turn + Device + on",
+    "examples": [
+      {
+        "translation": "대화가 너무 빠르면 이중 자막 기능을 켜 보세요."
+      },
+      {
+        "translation": "어두워지고 있는데 책상 스탠드 좀 켜 주실래요?"
+      }
+    ]
+  },
+  "en_a2_45": {
+    "title": "write down (적어 두다 · 받아 적다)",
+    "shortExplanation": "잊지 않도록 단어나 숫자, 아이디어를 종이나 노트에 기록하는 것입니다.",
+    "longExplanation": "목적어를 사이에 둘 수 있어 'write them down' 형태가 아주 자연스럽습니다.",
+    "formation": "Subject + write down + Noun / write + Noun + down",
+    "examples": [
+      {
+        "translation": "영상마다 새로 들은 표현 두 개씩을 적어 두세요."
+      },
+      {
+        "translation": "잠깐만, 펜 챙겨서 네 주소 좀 적어 둘게."
+      }
+    ]
+  },
+  "en_a2_46": {
+    "title": "pick up (줍다 · 데리러 가다 · 자연스럽게 익히다)",
+    "shortExplanation": "물건을 집거나, 차로 마중 나가거나, 따로 외우지 않고 자연스럽게 말과 감각을 습득할 때 씁니다.",
+    "longExplanation": "회화에서는 '동네/영상에서 표현을 자연스레 익히다(pick up)'라는 뜻으로 정말 많이 쓰입니다.",
+    "formation": "Subject + pick up + Noun / Speed / Skill",
+    "examples": [
+      {
+        "translation": "실제 대화를 듣는 것만으로도 자연스러운 억양 리듬을 익힐 수 있어요."
+      },
+      {
+        "translation": "7시에 역 밖으로 데리러 갈게요."
+      }
+    ]
+  },
+  "en_a2_47": {
+    "title": "grow up (자라다 · 어른이 되다 · 철이 들다)",
+    "shortExplanation": "아이에서 어른으로 성장하거나 생각이 성숙해질 때 씁니다.",
+    "longExplanation": "목적어를 받지 않는 자동사입니다. 부모가 아이를 '키우다'라고 할 때는 'bring up'을 씁니다.",
+    "formation": "Subject + grow up",
+    "examples": [
+      {
+        "translation": "그녀는 집에서 베트남어와 영어를 함께 쓰며 자랐어요."
+      },
+      {
+        "translation": "이제 철이 들어서 네 선택에 책임을 질 때야."
+      }
+    ]
+  },
+  "en_b1_36": {
+    "title": "find out (알아내다 · 발견하다)",
+    "shortExplanation": "확인하거나 물어봐서 몰랐던 사실·정보를 밝혀낼 때 씁니다.",
+    "longExplanation": "물건을 찾는 'find'와 달리 'find out'은 정보나 진실을 알아낼 때 씁니다.",
+    "formation": "Subject + find out (+ about + Noun / Clause)",
+    "examples": [
+      {
+        "translation": "무엇이 오류를 일으켰는지 끝까지 보고 확인해 보세요."
+      },
+      {
+        "translation": "그 익명 댓글을 누가 달았는지 결국 알아내셨나요?"
+      }
+    ]
+  },
+  "en_b1_37": {
+    "title": "give up (포기하다 · 끊다)",
+    "shortExplanation": "어려워서 도전을 그만두거나 평소 습관을 끊을 때 씁니다.",
+    "longExplanation": "중요 문법: 뒤에 동사가 오면 반드시 동명사(V-ing)를 씁니다('give up trying').",
+    "formation": "Subject + give up (+ Noun / V-ing)",
+    "examples": [
+      {
+        "translation": "처음 몇 장면이 빠르게 느껴진다고 해서 포기하지 마세요."
+      },
+      {
+        "translation": "그는 석 달 전에 단 음료를 완전히 끊었어요."
+      }
+    ]
+  },
+  "en_b1_38": {
+    "title": "go on (계속하다 · 일이 벌어지다)",
+    "shortExplanation": "하던 일을 이어 가거나, 무슨 일이 진행 중이거나(What's going on?), 다음 단계로 넘어갈 때 씁니다.",
+    "longExplanation": "'go on V-ing'는 같은 일의 지속, 'go on to V'는 다음 행동으로의 전환을 뜻합니다.",
+    "formation": "Subject + go on (+ V-ing / to + Verb)",
+    "examples": [
+      {
+        "translation": "지금 안뜰에서 무슨 일이 벌어지고 있는 거예요?"
+      },
+      {
+        "translation": "잠깐, 멈추지 말고 핵심 아이디어 설명을 계속해 봐!"
+      }
+    ]
+  },
+  "en_b1_39": {
+    "title": "hold on (잠시 기다리다 · 꽉 잡다)",
+    "shortExplanation": "통화나 대화 중 잠깐 기다려 달라고 하거나, 손잡이·물건을 놓치지 않게 꽉 쥘 때 씁니다.",
+    "longExplanation": "대상을 붙잡을 때는 'hold on to + 명사' 형태로 'to'를 붙입니다.",
+    "formation": "Hold on (+ a second) / Subject + hold on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "잠깐만요—자막 다시 켤게요."
+      },
+      {
+        "translation": "역을 나갈 때까지 표를 꼭 쥐고 계세요."
+      }
+    ]
+  },
+  "en_b1_40": {
+    "title": "keep on (계속해서 ~하다)",
+    "shortExplanation": "어려움이 있어도 끈기 있게 이어 가거나 어떤 일이 자꾸 반복될 때 강조해 씁니다.",
+    "longExplanation": "뒤에 반드시 동명사(V-ing)가 오며, 단순한 keep보다 지속·반복 뉘앙스가 강합니다.",
+    "formation": "Subject + keep on + V-ing",
+    "examples": [
+      {
+        "translation": "짧은 영상을 계속 쉐도잉하다 보면 발음이 한결 부드러워질 거예요."
+      },
+      {
+        "translation": "왜 내 휴대폰은 자꾸 블루투스 연결이 끊길까요?"
+      }
+    ]
+  },
+  "en_b1_41": {
+    "title": "keep up (따라가다 · 꾸준히 유지하다)",
+    "shortExplanation": "속도나 흐름에 뒤처지지 않거나(keep up with), 좋은 페이스나 습관을 이어 갈 때 씁니다.",
+    "longExplanation": "응원할 때 쓰는 'Keep it up!(계속 그 기세로 해 봐!)'이 매우 유명합니다.",
+    "formation": "Subject + keep up (+ with + Noun/Person)",
+    "examples": [
+      {
+        "translation": "원어민조차 빠른 농담을 따라가려면 가끔 일시 정지를 눌러야 할 때가 있어요."
+      },
+      {
+        "translation": "내일이면 연속 학습 30일째네요—계속 화이팅하세요!"
+      }
+    ]
+  },
+  "en_b1_42": {
+    "title": "break down (고장 나다 · 무너지다 · 잘게 나누다)",
+    "shortExplanation": "차나 기계가 고장 나거나, 감정을 주체 못 하고 무너지거나, 복잡한 내용을 잘게 쪼개 설명할 때 씁니다.",
+    "longExplanation": "강의나 튜토리얼에서는 어려운 내용을 단계별로 풀어 준다는 뜻으로 자주 씁니다.",
+    "formation": "Subject + break down (+ Noun)",
+    "examples": [
+      {
+        "translation": "우리 버스가 고갯길 중턱에서 고장 나 버렸어요."
+      },
+      {
+        "translation": "이 긴 문장을 다루기 쉬운 세 덩어리로 나누어 봅시다."
+      }
+    ]
+  },
+  "en_b1_43": {
+    "title": "bring up (화제를 꺼내다 · 양육하다)",
+    "shortExplanation": "대화 중에 어떤 주제를 언급하거나, 부모·보호자가 아이를 키워 낼 때 씁니다.",
+    "longExplanation": "'bring it up'처럼 분리 가능하며, 아이가 스스로 크는 'grow up'과 구별해 씁니다.",
+    "formation": "Subject + bring up + Topic/Child",
+    "examples": [
+      {
+        "translation": "그녀가 왜 점심 식사 자리에서 그 옛날 다툼 이야기를 꺼냈을까요?"
+      },
+      {
+        "translation": "조부모님께서 작은 바닷가 마을에서 저를 키워 주셨어요."
+      }
+    ]
+  },
+  "en_b1_44": {
+    "title": "carry on (계속 진행하다 · 이어 가다)",
+    "shortExplanation": "중간에 끊기거나 방해가 있어도 하던 일이나 이야기를 마저 이어 갈 때 씁니다.",
+    "longExplanation": "뒤에는 'V-ing'나 'with + 명사'를 주로 씁니다.",
+    "formation": "Subject + carry on (+ V-ing / with + Noun)",
+    "examples": [
+      {
+        "translation": "말 끊어서 미안해요—계속 이야기 들려주세요."
+      },
+      {
+        "translation": "물을 한 모금 마신 뒤 진행자는 질의응답을 이어 갔습니다."
+      }
+    ]
+  },
+  "en_b1_45": {
+    "title": "carry out (실행하다 · 수행하다)",
+    "shortExplanation": "계획, 연구, 설문조사, 실험, 약속 등을 실제로 이행하고 완수할 때 씁니다.",
+    "longExplanation": "'do a research' 대신 'carry out a study / survey / plan'처럼 쓰면 훨씬 자연스럽습니다.",
+    "formation": "Subject + carry out + Plan/Task/Study",
+    "examples": [
+      {
+        "translation": "연구진은 자막 읽기 습관에 관한 대규모 연구를 수행했습니다."
+      },
+      {
+        "translation": "팀은 체크리스트의 모든 단계를 꼼꼼히 실행했습니다."
+      }
+    ]
+  },
+  "en_b1_46": {
+    "title": "catch up (따라잡다 · 밀린 일을 처리하다 · 회포를 풀다)",
+    "shortExplanation": "뒤처진 진도를 따라잡거나, 오랜만에 친구를 만나 근황을 나눌 때 씁니다.",
+    "longExplanation": "사람·수준에는 'with', 밀린 잠이나 일에는 'on'을 붙여 씁니다.",
+    "formation": "Subject + catch up (+ with + Person/Work)",
+    "examples": [
+      {
+        "translation": "조만간 커피 한잔하면서 밀린 이야기나 실컷 나누자!"
+      },
+      {
+        "translation": "일요일 오후는 밀린 안 읽은 이메일을 처리하며 보냈어요."
+      }
+    ]
+  },
+  "en_b1_47": {
+    "title": "come across (우연히 마주치다 · ~한 인상을 주다)",
+    "shortExplanation": "찾으려 한 게 아닌데 우연히 발견하거나, 남에게 특정한 인상을 풍길 때 씁니다.",
+    "longExplanation": "항상 'come across + 대상' 순서를 유지합니다. 인상 뜻일 때는 'come across as ~'로 자주 씁니다.",
+    "formation": "Subject + come across + Noun / Adjective",
+    "examples": [
+      {
+        "translation": "여행 브이로그를 보다가 아주 멋진 관용 표현을 우연히 발견했어요."
+      },
+      {
+        "translation": "그녀는 생방송 압박 속에서도 매우 차분한 사람처럼 보입니다."
+      }
+    ]
+  },
+  "en_b1_48": {
+    "title": "come up (갑자기 생기다 · 언급되다 / with: 생각해 내다)",
+    "shortExplanation": "예상치 못한 일이나 문제가 불쑥 생기거나 화제에 오를 때 씁니다. 'come up with'는 아이디어를 떠올린다는 뜻입니다.",
+    "longExplanation": "방송 예고의 'Coming up next(잠시 후 이어집니다)'도 대표 표현입니다.",
+    "formation": "Subject + come up (+ with + Idea)",
+    "examples": [
+      {
+        "translation": "회사에 급한 일이 생겨서 일찍 가봐야 해요."
+      },
+      {
+        "translation": "이 표현을 넣은 예문을 두 개 만들어 낼 수 있나요?"
+      }
+    ]
+  },
+  "en_b1_49": {
+    "title": "count on (믿고 의지하다 · 기대하다)",
+    "shortExplanation": "누군가나 어떤 상황이 틀림없이 도움이 되리라 믿고 기댈 때 씁니다.",
+    "longExplanation": "'rely on'과 비슷하지만 일상 대화에서 훨씬 친근하고 구어적입니다.",
+    "formation": "Subject + count on + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "까다로운 문장에서 막히면 언제든 날 믿고 물어봐."
+      },
+      {
+        "translation": "4월 야외 소풍에 완벽한 날씨를 기대하지는 마세요."
+      }
+    ]
+  },
+  "en_b1_50": {
+    "title": "cut down (줄이다 · 삭감하다)",
+    "shortExplanation": "설탕, 카페인, 스크린 타임, 지출 등의 양이나 빈도를 줄일 때 씁니다.",
+    "longExplanation": "특정 섭취·습관을 줄일 때는 'cut down on + 명사' 형태로 자주 씁니다.",
+    "formation": "Subject + cut down (+ on + Noun)",
+    "examples": [
+      {
+        "translation": "잠들기 전 밤늦게 휴대폰 보는 시간을 줄이려고 노력 중이에요."
+      },
+      {
+        "translation": "자동 재생을 끄면 불필요한 화면 시청 시간을 줄일 수 있어요."
+      }
+    ]
+  },
+  "en_b1_51": {
+    "title": "cut off (말을 자르다 · 차단하다 · 끊기다)",
+    "shortExplanation": "말하는 도중 말을 끊거나, 전기·통신·지원을 끊거나, 지역을 고립시킬 때 씁니다.",
+    "longExplanation": "'cut me off'처럼 분리할 수 있으며, 수동태('be cut off')도 아주 흔합니다.",
+    "formation": "Subject + cut off + Noun / cut + Noun + off",
+    "examples": [
+      {
+        "translation": "죄송해요, 제 마이크가 5초 정도 끊겼네요—방금 들리셨나요?"
+      },
+      {
+        "translation": "그녀가 생각을 다 말하기 전에 말을 자르지 마세요."
+      }
+    ]
+  },
+  "en_b1_52": {
+    "title": "deal with (다루다 · 처리하다 · 대처하다)",
+    "shortExplanation": "문제나 스트레스를 처리하거나, 고객을 응대하거나, 글·영상이 특정 주제를 다룰 때 씁니다.",
+    "longExplanation": "분리되지 않는 구동사이며 문제 해결과 주제 소개 양쪽에서 폭넓게 쓰입니다.",
+    "formation": "Subject + deal with + Noun",
+    "examples": [
+      {
+        "translation": "매일 공부하다가 번아웃이 올 때는 어떻게 대처하시나요?"
+      },
+      {
+        "translation": "이번 에피소드 후반부에서는 정중한 사과 표현을 다룹니다."
+      }
+    ]
+  },
+  "en_b1_53": {
+    "title": "end up (결국 ~하게 되다 · ~로 끝나다)",
+    "shortExplanation": "여러 우여곡절 끝에 애초 의도와 다른 결과나 장소·상황에 이르게 됨을 나타냅니다.",
+    "longExplanation": "뒤에 동작이 올 때는 to부정사가 아니라 반드시 동명사(V-ing)를 씁니다.",
+    "formation": "Subject + end up + V-ing / Place / Adjective",
+    "examples": [
+      {
+        "translation": "정류장을 지나쳐서 결국 집까지 20분을 걸어가게 됐어요."
+      },
+      {
+        "translation": "짧은 영상 하나만 보려다가 결국 한 시간 동안 공부하게 되었네요."
+      }
+    ]
+  },
+  "en_b1_54": {
+    "title": "figure out (이해해 내다 · 해결책을 찾아내다)",
+    "shortExplanation": "고민하고 살펴본 끝에 복잡한 원리나 문제의 해답을 알아낼 때 씁니다.",
+    "longExplanation": "'figure it out'처럼 분리 가능하며 원어민 회화에서 아주 자주 쓰입니다.",
+    "formation": "Subject + figure out + Noun/Clause / figure + Noun + out",
+    "examples": [
+      {
+        "translation": "5분만 줘 봐—왜 오디오 싱크가 안 맞는지 알아낼게."
+      },
+      {
+        "translation": "문맥 속에서 그 관용구가 무슨 뜻이었는지 드디어 파악했나요?"
+      }
+    ]
+  },
+  "en_b1_55": {
+    "title": "fit in (어울리다·녹아들다 / 시간·공간을 맞추다)",
+    "shortExplanation": "새로운 무리에 자연스럽게 녹아들거나 바쁜 일정 사이에 시간을 끼워 넣을 때 씁니다.",
+    "longExplanation": "집단에 적응할 때는 주로 'fit in with + 집단' 형태로 씁니다.",
+    "formation": "Subject + fit in (+ with + Group/Schedule)",
+    "examples": [
+      {
+        "translation": "집중하는 단 10분이라도 점심시간에 충분히 끼워 넣을 수 있어요."
+      },
+      {
+        "translation": "그녀는 직장의 새 팀원들과 금세 잘 어울렸습니다."
+      }
+    ]
+  },
+  "en_b1_56": {
+    "title": "follow up (후속 조치를 하다 · 다시 확인하다)",
+    "shortExplanation": "진행 상황을 확인하거나 빠진 내용을 보완하기 위해 후속 연락·조치를 취하는 것입니다.",
+    "longExplanation": "동사 'follow up'과 달리 명사·형용사 'follow-up'은 하이픈을 붙입니다.",
+    "formation": "Subject + follow up (+ on + Noun / with + Person)",
+    "examples": [
+      {
+        "translation": "팀에서 답장이 없으면 내일 오전에 다시 확인 연락을 넣을게요."
+      },
+      {
+        "translation": "그녀는 강의에 이어 다섯 가지 실전 연습으로 내용을 다져 주었습니다."
+      }
+    ]
+  },
+  "en_b1_57": {
+    "title": "get away (벗어나다 · 휴가를 떠나다 / with: 벌을 면하다)",
+    "shortExplanation": "어떤 장소에서 빠져나오거나 짧은 여행을 떠나고, 'get away with'로는 잘못을 저지르고도 무사히 넘어가다는 뜻이 됩니다.",
+    "longExplanation": "대화에서는 일상을 벗어나 바람 쐬러 간다는 뜻으로 자주 씁니다.",
+    "formation": "Subject + get away (+ from + Place / with + Noun)",
+    "examples": [
+      {
+        "translation": "이번 주말엔 조용한 바닷가로 바람 쐬러 다녀오고 싶어요."
+      },
+      {
+        "translation": "복습을 계속 빼먹고도 그냥 넘어갈 수는 없을 거예요!"
+      }
+    ]
+  },
+  "en_b1_58": {
+    "title": "get back (돌아오다 · 나중에 회신하다 · 되찾다)",
+    "shortExplanation": "집이나 원래 자리로 돌아오거나, 확인 후 다시 연락하거나(get back to), 잃어버린 것을 되찾을 때 씁니다.",
+    "longExplanation": "'I'll get back to you(확인하고 다시 연락드릴게요)'는 이메일·대화 필수 표현입니다.",
+    "formation": "Subject + get back (+ to + Place/Person)",
+    "examples": [
+      {
+        "translation": "일정을 다시 확인해 보고 오늘 밤에 연락드릴게요."
+      },
+      {
+        "translation": "어젯밤에 도대체 몇 시에 집에 돌아왔어요?"
+      }
+    ]
+  },
+  "en_b1_59": {
+    "title": "get over (극복하다 · 낫다 · 놀라움이 가시지 않다)",
+    "shortExplanation": "병이나 실망·충격·이별을 딛고 회복하거나 털어낼 때 씁니다.",
+    "longExplanation": "'I can't get over how ~'라고 하면 믿기지 않을 만큼 감탄스럽다는 뜻이 됩니다.",
+    "formation": "Subject + get over + Illness/Setback/Surprise",
+    "examples": [
+      {
+        "translation": "독한 여름 감기를 털어내는 데 이주나 걸렸어요."
+      },
+      {
+        "translation": "네 발음이 얼마나 좋아졌는지 아직도 믿기지가 않아!"
+      }
+    ]
+  },
+  "en_b1_60": {
+    "title": "get through (끝마치다 · 버텨 내다 · 전화가 연결되다)",
+    "shortExplanation": "힘든 일이나 시기를 통과하거나, 전화 연결에 성공하거나, 상대에게 진심이 통할 때(get through to) 씁니다.",
+    "longExplanation": "과제 완수, 통화 연결, 소통 세 가지 뜻 모두 실생활에서 자주 나옵니다.",
+    "formation": "Subject + get through (+ to + Person / Exam/Task)",
+    "examples": [
+      {
+        "translation": "짧은 팟캐스트 덕분에 긴 출퇴근 시간을 잘 버텨 냈어요."
+      },
+      {
+        "translation": "두 번이나 전화했는데 안내 데스크와 연결이 안 됐어요."
+      }
+    ]
+  },
+  "en_b1_61": {
+    "title": "hand in (제출하다)",
+    "shortExplanation": "숙제, 보고서, 신청서, 사직서 등을 담당자나 상사에게 낼 때 씁니다.",
+    "longExplanation": "'hand it in'처럼 분리 가능하며 'turn in'이나 'submit'과 같은 뜻입니다.",
+    "formation": "Subject + hand in + Homework/Report/Resignation",
+    "examples": [
+      {
+        "translation": "금요일 자정 전까지 과제를 꼭 제출하세요."
+      },
+      {
+        "translation": "원격 근무 일자리를 찾은 뒤 그는 사직서를 내기로 결정했습니다."
+      }
+    ]
+  },
+  "en_b1_62": {
+    "title": "hang on (잠깐만 · 꽉 붙잡다)",
+    "shortExplanation": "'hold on'보다 한층 친근한 말투로 대화 중 상대를 잠시 멈추거나 손잡이 등을 꽉 잡을 때 씁니다.",
+    "longExplanation": "놀라서 되물을 때 'Hang on, what did she say?'처럼 아주 자주 씁니다.",
+    "formation": "Hang on (+ to + Noun)",
+    "examples": [
+      {
+        "translation": "잠깐만, 방금 그 대사 좀 느린 속도로 다시 틀어 볼게!"
+      },
+      {
+        "translation": "배가 큰 파도를 넘는 동안 꽉 잡으세요."
+      }
+    ]
+  },
+  "en_b1_63": {
+    "title": "look back (뒤돌아보다 · 회상하다)",
+    "shortExplanation": "지나간 추억이나 경험, 예전의 결정을 되돌아보며 곱씹을 때 씁니다.",
+    "longExplanation": "특정 기억을 가리킬 때는 주로 'look back on + 과거' 형태로 씁니다.",
+    "formation": "Subject + look back (+ on + Past Event)",
+    "examples": [
+      {
+        "translation": "언젠가 이 초창기 공부 시간을 뒤돌아보며 미소 짓게 될 거예요."
+      },
+      {
+        "translation": "돌이켜 보니 휴식을 건너뛴 게 오히려 실력 향상을 늦췄더군요."
+      }
+    ]
+  },
+  "en_b1_64": {
+    "title": "make up (지어내다 · 화해하다 · 구성하다 · 보충하다)",
+    "shortExplanation": "핑계나 이야기를 지어내거나, 다툰 뒤 화해하거나(with), 전체 비율을 차지하거나, 부족함을 메울 때(for) 씁니다.",
+    "longExplanation": "뒤에 'with'가 오면 화해, 'for'가 오면 보상·만회로 뜻이 명확히 갈립니다.",
+    "formation": "Subject + make up (+ Story/Mind/Group)  |  make up with",
+    "examples": [
+      {
+        "translation": "변명 지어내지 말고 무슨 일이 있었는지 그냥 솔직하게 말해 줘."
+      },
+      {
+        "translation": "듣기 연습은 내 하루 공부 루틴의 거의 절반을 차지해요."
+      }
+    ]
+  },
+  "en_b1_65": {
+    "title": "move on (다음으로 넘어가다 · 털고 앞으로 나아가다)",
+    "shortExplanation": "지금 주제나 단계를 마치고 다음 순서로 옮겨 가거나, 아픈 기억을 털고 새출발할 때 씁니다.",
+    "longExplanation": "강의·영상 진행자가 화제를 전환할 때 'Let's move on to ~'라고 자주 말합니다.",
+    "formation": "Subject + move on (+ to + Next Topic)",
+    "examples": [
+      {
+        "translation": "이 모음들을 익히고 나면 자연스러운 리듬 연습으로 넘어가겠습니다."
+      },
+      {
+        "translation": "처음엔 힘들지만 결국에는 다들 마음을 추스르고 앞으로 나아가야 해요."
+      }
+    ]
+  },
+  "en_b1_66": {
+    "title": "open up (마음을 열다·속마음을 털어놓다 / 새로운 길을 열다)",
+    "shortExplanation": "솔직한 심정을 털어놓거나, 가게 문을 열거나, 새로운 기회와 세계를 열어 줄 때 씁니다.",
+    "longExplanation": "인간관계의 속내 표현부터 기회 확장까지 두루 잘 어울리는 말입니다.",
+    "formation": "Subject + open up (+ about + Topic)",
+    "examples": [
+      {
+        "translation": "다른 언어를 배우면 상상도 못 했던 우정의 문이 열립니다."
+      },
+      {
+        "translation": "그는 가까운 친구들에게도 어린 시절 이야기를 좀처럼 털어놓지 않아요."
+      }
+    ]
+  },
+  "en_b1_67": {
+    "title": "point out (지적하다 · 짚어 주다)",
+    "shortExplanation": "상대가 놓치기 쉬운 중요한 사실, 세부 사항, 실수 등을 콕 집어 일깨워 줄 때 씁니다.",
+    "longExplanation": "짧은 명사는 'point it out'처럼 사이에 두고, 긴 문장은 'point out that ~'로 잇습니다.",
+    "formation": "Subject + point out + Noun / that-Clause",
+    "examples": [
+      {
+        "translation": "자막의 미묘한 오타를 짚어 주셔서 감사합니다."
+      },
+      {
+        "translation": "전문가들은 매일 짧게 복습하는 것이 주말 벼락치기보다 낫다고 지적합니다."
+      }
+    ]
+  },
+  "en_b1_68": {
+    "title": "put off (미루다·연기하다 / 정 떨어지게 하다·단념시키다)",
+    "shortExplanation": "할 일이나 일정을 나중으로 미루거나, 의욕과 흥미를 잃게 만들 때 씁니다.",
+    "longExplanation": "뒤에 동작이 올 때는 반드시 동명사(V-ing)를 씁니다('put off doing').",
+    "formation": "Subject + put off + Noun / V-ing",
+    "examples": [
+      {
+        "translation": "까다로운 문법 공부를 미루지 말고 딱 5분부터 시작해 보세요."
+      },
+      {
+        "translation": "긴 단어들 때문에 원어민 다큐멘터리 보기를 겁내지 마세요."
+      }
+    ]
+  },
+  "en_b1_69": {
+    "title": "run into (우연히 마주치다 · 문제에 부딪히다)",
+    "shortExplanation": "길에서 아는 사람을 뜻밖에 만나거나, 예기치 못한 곤란·오류에 부딪힐 때 씁니다.",
+    "longExplanation": "목적어를 사이에 넣지 않고 항상 'run into + 대상' 순으로 씁니다.",
+    "formation": "Subject + run into + Person/Problem",
+    "examples": [
+      {
+        "translation": "동네 서점에서 옛날 선생님을 우연히 마주쳤어요."
+      },
+      {
+        "translation": "오프라인 팩을 내려받다가 문제가 생기면 바로 알려 주세요."
+      }
+    ]
+  },
+  "en_b1_70": {
+    "title": "run out (다 떨어지다 · 바닥나다 · 만료되다)",
+    "shortExplanation": "시간, 커피, 배터리, 인내심 등이 모두 소진되어 남지 않았을 때 씁니다.",
+    "longExplanation": "'사람 + run out of + 자원'과 '자원(주어) + run out' 두 가지 구조를 구별하세요.",
+    "formation": "Subject + run out (+ of + Resource)",
+    "examples": [
+      {
+        "translation": "시간이 다 되어 가니 마지막 규칙을 요약합시다."
+      },
+      {
+        "translation": "시즌 중간쯤에 노트의 빈 페이지가 다 떨어져 버렸어요."
+      }
+    ]
+  },
+  "en_b1_71": {
+    "title": "work out (운동하다 · 해결책을 찾아내다 · 잘 풀리다)",
+    "shortExplanation": "체력 운동을 하거나, 문제·계산의 답을 끌어내거나, 일이 결국 순조롭게 풀릴 때 씁니다.",
+    "longExplanation": "상대를 안심시킬 때 'Everything will work out(다 잘 풀릴 거야)'처럼 자주 말합니다.",
+    "formation": "Subject + work out (+ Noun)",
+    "examples": [
+      {
+        "translation": "퇴근 후 20분 걷기만 해도 훌륭한 운동이 됩니다."
+      },
+      {
+        "translation": "처음엔 버거워 보였지만 결국 모든 일이 순조롭게 잘 풀렸어요."
+      }
+    ]
+  },
+  "en_b1_72": {
+    "title": "sort out (정리·분류하다 / 문제를 해결하다)",
+    "shortExplanation": "뒤섞인 물건이나 자료를 분류해 정돈하거나, 오해·실무 문제를 말끔히 수습할 때 씁니다.",
+    "longExplanation": "'sort it out'처럼 분리 가능하며 일상과 업무에서 모두 자주 쓰입니다.",
+    "formation": "Subject + sort out + Mess/Problem",
+    "examples": [
+      {
+        "translation": "통화가 시작되기 전에 와이파이 문제부터 해결합시다."
+      },
+      {
+        "translation": "그녀는 단어 태그를 난이도별로 깔끔하게 분류해 두었어요."
+      }
+    ]
+  },
+  "en_b2_37": {
+    "title": "account for (원인을 설명하다 · 비중을 차지하다)",
+    "shortExplanation": "현상의 이유를 해명하거나 전체에서 일정 비율을 차지할 때 씁니다.",
+    "longExplanation": "뉴스, 데이터 분석, 다큐멘터리 해설에서 아주 자주 쓰이는 표현입니다.",
+    "formation": "Subject + account for + Noun",
+    "examples": [
+      {
+        "translation": "영상 클립이 모바일 트래픽의 70퍼센트 이상을 차지합니다."
+      },
+      {
+        "translation": "시험 점수가 갑자기 껑충 뛴 이유를 어떻게 설명하시겠어요?"
+      }
+    ]
+  },
+  "en_b2_38": {
+    "title": "add up (차곡차곡 쌓이다 · 합산하다 · 앞뒤가 맞다)",
+    "shortExplanation": "조금씩 모여 큰 합계가 되거나, 주로 부정형으로 '이야기 앞뒤가 안 맞다'를 뜻합니다.",
+    "longExplanation": "작은 공부 습관의 누적이나 의심스러운 모순을 말할 때 자주 씁니다.",
+    "formation": "Subject + add up (+ Noun)",
+    "examples": [
+      {
+        "translation": "하루 10분은 적어 보이지만 시간이 지나면 금방 큰 시간으로 쌓여요."
+      },
+      {
+        "translation": "시간대를 다시 확인해 보세요—그의 알리바이 어딘가 앞뒤가 안 맞아요."
+      }
+    ]
+  },
+  "en_b2_39": {
+    "title": "ask out (데이트 신청하다)",
+    "shortExplanation": "호감을 갖고 식사나 커피·영화 등을 함께하자고 데이트를 청할 때 씁니다.",
+    "longExplanation": "목적어는 거의 항상 가운데에 넣습니다('asked her out').",
+    "formation": "Subject + ask + Person + out",
+    "examples": [
+      {
+        "translation": "그는 몇 주 동안 망설이다가 마침내 그녀에게 커피 마시자고 데이트 신청을 했어요."
+      },
+      {
+        "translation": "언어 교환 모임 직후에 누군가에게 데이트 신청을 받아 본 적이 있나요?"
+      }
+    ]
+  },
+  "en_b2_40": {
+    "title": "back up (백업하다 · 뒷받침하다 · 후진하다)",
+    "shortExplanation": "자료 복사본을 따로 저장하거나, 근거를 들어 주장을 지지하거나, 차를 후진할 때 씁니다.",
+    "longExplanation": "명사는 한 단어 'backup', 동사는 두 단어 'back up'으로 띄어 씁니다.",
+    "formation": "Subject + back up (+ Data/Claim/Car)",
+    "examples": [
+      {
+        "translation": "기기를 바꾸기 전에 반드시 학습 덱을 백업해 두세요."
+      },
+      {
+        "translation": "그녀는 본문의 세 가지 뚜렷한 예시로 자신의 주장을 뒷받침했습니다."
+      }
+    ]
+  },
+  "en_b2_41": {
+    "title": "back down (물러나다 · 한발 빼다 · 굽히다)",
+    "shortExplanation": "강한 반발이나 압박 앞에서 기존 주장이나 요구를 접고 물러설 때 씁니다.",
+    "longExplanation": "목적어를 바로 받지 않는 자동사로 쓰입니다.",
+    "formation": "Subject + back down (+ from + Stand)",
+    "examples": [
+      {
+        "translation": "비판이 거셌지만 감독은 끝내 물러서지 않았습니다."
+      },
+      {
+        "translation": "긴 논쟁 동안 어느 쪽도 먼저 굽히려 들지 않았습니다."
+      }
+    ]
+  },
+  "en_b2_42": {
+    "title": "break through (돌파하다 · 한계를 깨다)",
+    "shortExplanation": "장벽을 뚫고 나가거나 정체기·한계를 극복해 한 단계 올라설 때 씁니다.",
+    "longExplanation": "명사형 'breakthrough(돌파구)'와 함께 알아두면 좋습니다.",
+    "formation": "Subject + break through (+ Barrier)",
+    "examples": [
+      {
+        "translation": "매일 꾸준한 듣기가 중급 정체기를 돌파하는 데 큰 도움이 됩니다."
+      },
+      {
+        "translation": "마침내 짙은 아침 안개를 뚫고 햇살이 비쳤어요."
+      }
+    ]
+  },
+  "en_b2_43": {
+    "title": "bring about (변화·결과를 가져오다 · 초래하다)",
+    "shortExplanation": "중대한 변화나 개혁, 결과를 일으켜 성사시킬 때 쓰는 격식 있는 표현입니다.",
+    "longExplanation": "'change, shift, reform' 같은 추상 명사와 특히 잘 어울립니다.",
+    "formation": "Subject + bring about + Change/Result",
+    "examples": [
+      {
+        "translation": "자막이 있는 미디어는 독학 습관에 커다란 변화를 가져왔습니다."
+      },
+      {
+        "translation": "팀 사기가 이토록 극적으로 반등하게 된 계기가 무엇인가요?"
+      }
+    ]
+  },
+  "en_b2_44": {
+    "title": "come about (발생하다 · 생겨나다)",
+    "shortExplanation": "어떤 일이나 상황이 어떻게 시작되고 이루어졌는지 말할 때 씁니다.",
+    "longExplanation": "자동사이므로 수동태('was come about')로 쓰지 않는 점에 유의하세요.",
+    "formation": "Subject + come about",
+    "examples": [
+      {
+        "translation": "이중 자막 아이디어는 처음에 어떻게 나오게 되었나요?"
+      },
+      {
+        "translation": "청취자들의 피드백 이후 반가운 개선들이 여러 개 이루어졌습니다."
+      }
+    ]
+  },
+  "en_b2_45": {
+    "title": "do without (~없이 지내다 · 버티다)",
+    "shortExplanation": "늘 쓰던 것이 없어도 그럭저럭 해내거나, 'I could do without ~'로 '그건 사양하고 싶다'고 비꼬아 말할 때 씁니다.",
+    "longExplanation": "반대로 'can't do without ~'는 '없어선 안 된다'라는 필수 뜻이 됩니다.",
+    "formation": "Subject + do without + Noun",
+    "examples": [
+      {
+        "translation": "오프라인 학습자는 와이파이 없이도 문제없이 복습할 수 있어요."
+      },
+      {
+        "translation": "솔직한 피드백은 좋지만 무례한 댓글만큼은 사양하고 싶네요."
+      }
+    ]
+  },
+  "en_b2_46": {
+    "title": "draw on (경험·지식·재원을 끌어다 쓰다 · 활용하다)",
+    "shortExplanation": "쌓아 둔 경험, 자료, 전문성, 저축 등을 꺼내어 일에 활용할 때 씁니다.",
+    "longExplanation": "인터뷰나 칼럼에서 세련되게 자주 쓰이는 표현입니다.",
+    "formation": "Subject + draw on + Experience/Data/Savings",
+    "examples": [
+      {
+        "translation": "훌륭한 번역가는 문법 지식뿐만 아니라 깊은 문화적 직관도 활용합니다."
+      },
+      {
+        "translation": "이 시리즈는 다섯 개 도시의 실제 거리 인터뷰를 바탕으로 합니다."
+      }
+    ]
+  },
+  "en_b2_47": {
+    "title": "draw up (계획·목록·계약서를 작성하다)",
+    "shortExplanation": "공식적인 계획표, 목록, 일정, 계약서 등을 꼼꼼히 문서로 만들 때 씁니다.",
+    "longExplanation": "대충 적기보다 체계적으로 초안을 잡는다는 뜻이 담겨 있습니다.",
+    "formation": "Subject + draw up + Contract/List/Plan",
+    "examples": [
+      {
+        "translation": "현실적인 4주 듣기 학습 계획을 함께 짜 봅시다."
+      },
+      {
+        "translation": "그들의 법무팀이 명확한 오픈소스 라이선스 계약서를 작성했습니다."
+      }
+    ]
+  },
+  "en_b2_48": {
+    "title": "enter into (계약·논의에 들어가다 · 고려 요소가 되다)",
+    "shortExplanation": "공식 협정을 맺거나 진지한 논의를 시작할 때, 혹은 어떤 사안이 결정의 요소가 될 때 씁니다.",
+    "longExplanation": "'enter into details(세부 사항에 들어가다)' 같은 표현으로도 자주 보입니다.",
+    "formation": "Subject + enter into + Agreement/Discussion/Detail",
+    "examples": [
+      {
+        "translation": "두 스튜디오는 지난봄 공동 제작 파트너십을 체결했습니다."
+      },
+      {
+        "translation": "그녀가 해외 봉사를 결심하는 데 돈 문제는 아예 고려조차 되지 않았어요."
+      }
+    ]
+  },
+  "en_b2_49": {
+    "title": "factor in (요인을 계산·계획에 반영하다)",
+    "shortExplanation": "예상치 못한 비용, 이동 시간, 변수 등을 미리 계산이나 일정에 포함할 때 씁니다.",
+    "longExplanation": "'factor that in'처럼 분리할 수 있으며 실무 회의에서 자주 쓰입니다.",
+    "formation": "Subject + factor in + Variable / factor + Noun + in",
+    "examples": [
+      {
+        "translation": "오전 기차를 고를 때 역까지 이동 시간도 계산에 넣었나요?"
+      },
+      {
+        "translation": "목표를 현실적으로 유지하려면 일상의 자잘한 방해 요소도 늘 감안해야 합니다."
+      }
+    ]
+  },
+  "en_b2_50": {
+    "title": "give in (굴복하다 · 마지못해 수긍하다 · 유혹에 넘어가다)",
+    "shortExplanation": "계속된 조름이나 압력, 유혹을 견디지 못하고 결국 꺾일 때 씁니다.",
+    "longExplanation": "'give up(목표를 포기하다)'과 달리 'give in (to ~)'은 압박이나 유혹에 굽힌다는 뜻입니다.",
+    "formation": "Subject + give in (+ to + Pressure/Temptation)",
+    "examples": [
+      {
+        "translation": "10분 동안 졸라 대는 통에 결국 못 이겨 감자튀김을 나눠 줬어요."
+      },
+      {
+        "translation": "조급함에 굴복하지 마세요—자연스러운 유창함은 꾸준한 입력에서 나옵니다."
+      }
+    ]
+  },
+  "en_b2_51": {
+    "title": "go through (겪다 · 꼼꼼히 훑어보다 · 절차를 거치다)",
+    "shortExplanation": "힘든 시기를 경험하거나, 문장·목록을 처음부터 끝까지 살펴보거나, 승인 절차를 밟을 때 씁니다.",
+    "longExplanation": "선생님이나 발표자가 자료를 함께 검토할 때 'Let's go through ~'라고 자주 씁니다.",
+    "formation": "Subject + go through + Hardship/Process/Notes",
+    "examples": [
+      {
+        "translation": "까다로운 관용구들을 한 줄씩 같이 살펴봅시다."
+      },
+      {
+        "translation": "말문이 트이기 전에는 누구나 조용히 내실을 다지는 침묵기를 겪습니다."
+      }
+    ]
+  },
+  "en_b2_52": {
+    "title": "hand over (건네주다 · 넘겨주다 · 인계하다)",
+    "shortExplanation": "물건이나 열쇠를 직접 건네거나 역할·책임·권한을 다른 사람에게 넘길 때 씁니다.",
+    "longExplanation": "'hand it over'처럼 분리할 수 있으며 실물 전달과 업무 인수인계 모두에 씁니다.",
+    "formation": "Subject + hand over + Item/Control (+ to + Person)",
+    "examples": [
+      {
+        "translation": "새 진행자를 교육한 뒤 그녀는 기쁘게 마이크를 넘겨주었습니다."
+      },
+      {
+        "translation": "탑승권을 게이트 직원에게 건네주세요."
+      }
+    ]
+  },
+  "en_b2_53": {
+    "title": "lay down (원칙·규정을 세우다 / 내려놓다)",
+    "shortExplanation": "분명한 규칙이나 지침을 제정하거나 손에 든 물건·무기를 내려놓을 때 씁니다.",
+    "longExplanation": "스스로 눕는 자동사 'lie down'과 혼동하지 않도록 주의하세요.",
+    "formation": "Subject + lay down + Rules/Principles/Tool",
+    "examples": [
+      {
+        "translation": "초보자도 편하게 말할 수 있도록 동아리에서 간단한 규칙을 정했습니다."
+      },
+      {
+        "translation": "'lie down(눕다)'과 'lay down(내려놓다·규정을 정하다)'을 헷갈리지 마세요."
+      }
+    ]
+  },
+  "en_b2_54": {
+    "title": "phase in (단계적으로 도입하다)",
+    "shortExplanation": "새 정책, 시스템, 제도를 한꺼번에 바꾸지 않고 여러 단계에 걸쳐 서서히 적용할 때 씁니다.",
+    "longExplanation": "반대말은 서서히 없애는 'phase out'입니다.",
+    "formation": "Subject + phase in + Policy/System",
+    "examples": [
+      {
+        "translation": "학교는 세 학기에 걸쳐 말하기 시험을 단계적으로 도입할 예정입니다."
+      },
+      {
+        "translation": "도심의 모든 노선에 전기 버스가 순차적으로 도입되고 있습니다."
+      }
+    ]
+  },
+  "en_b2_55": {
+    "title": "put up (재워 주다 · 붙이다 / put up with: 참다)",
+    "shortExplanation": "손님을 재워 주거나 게시물을 붙이고, 'put up with' 형태로는 성가신 일을 참아 낸다는 뜻이 됩니다.",
+    "longExplanation": "세 단어 구동사 'put up with(~을 견디다)'를 꼭 함께 익히세요.",
+    "formation": "Subject + put up (+ with + Annoyance / Friend / Sign)",
+    "examples": [
+      {
+        "translation": "이번 주말에 사촌을 이틀 밤 재워 줄 수 있니?"
+      },
+      {
+        "translation": "문장마다 끼어드는 팝업 광고는 더 이상 못 참겠어요."
+      }
+    ]
+  },
+  "en_b2_56": {
+    "title": "rule out (가능성을 배제하다 · 제외하다)",
+    "shortExplanation": "어떤 원인, 선택지, 가설이 불가능하거나 해당되지 않는다고 판단해 지워 버릴 때 씁니다.",
+    "longExplanation": "'Don't rule it out(아직 배제하진 마세요)'처럼 분리할 수 있습니다.",
+    "formation": "Subject + rule out + Possibility/Option",
+    "examples": [
+      {
+        "translation": "의사들은 계절성 알레르기 가능성을 배제하기 위해 두 가지 검사를 진행했습니다."
+      },
+      {
+        "translation": "원어민이 자연스러운 속도로 말한다고 해서 실전 영상을 지레 제외하지 마세요."
+      }
+    ]
+  },
+  "en_b2_57": {
+    "title": "set out (출발하다 · ~하려고 착수하다 · 명확히 제시하다)",
+    "shortExplanation": "여행을 떠나거나, 분명한 목표를 갖고 시작하거나(set out to V), 내용을 조리 있게 펼쳐 보일 때 씁니다.",
+    "longExplanation": "'set out to + 동사원형'은 애초의 목표를 밝히는 데 아주 자주 쓰입니다.",
+    "formation": "Subject + set out (+ to + Verb / on + Journey)",
+    "examples": [
+      {
+        "translation": "연휴 고속도로 정체를 피하려고 그들은 동이 트자마자 출발했습니다."
+      },
+      {
+        "translation": "그 가이드는 듣기 지구력을 기르는 세 가지 일일 습관을 조목조목 제시합니다."
+      }
+    ]
+  },
+  "en_b2_58": {
+    "title": "settle down (진정되다 · 자리 잡고 집중하다 · 정착하다)",
+    "shortExplanation": "소란이 가라앉거나, 편히 자리를 잡고 일에 집중하거나, 한곳에 삶의 터전을 잡을 때 씁니다.",
+    "longExplanation": "교실에서 조용히 하라고 할 때부터 정착·결혼 이야기까지 폭넓게 씁니다.",
+    "formation": "Subject + settle down",
+    "examples": [
+      {
+        "translation": "카페 음악 소리가 잦아들자 모두 차분히 자리를 잡고 공부를 시작했어요."
+      },
+      {
+        "translation": "네 나라에서 일한 뒤 그는 오사카에 정착하기로 결심했습니다."
+      }
+    ]
+  },
+  "en_b2_59": {
+    "title": "show up (나타나다 · 모습을 드러내다 · 두드러지다)",
+    "shortExplanation": "약속 장소에 도착하거나(특히 늦거나 뜻밖에 등장), 숨겨진 결함이 뚜렷이 드러날 때 씁니다.",
+    "longExplanation": "회화에서는 'arrive'보다 'show up'이나 'turn up'을 훨씬 자주 씁니다.",
+    "formation": "Subject + show up (+ late/early)",
+    "examples": [
+      {
+        "translation": "폭우 때문에 스터디 모임에 절반밖에 나오지 않았어요."
+      },
+      {
+        "translation": "그는 리허설에 20분 늦게 나타난 것에 대해 사과했습니다."
+      }
+    ]
+  },
+  "en_b2_60": {
+    "title": "stand for (~의 약자이다 · 상징하다 · 용납하다)",
+    "shortExplanation": "약어가 무엇을 뜻하는지 말하거나, 신념·가치를 대표하거나, 부정문에서 '용납하다'라는 뜻이 됩니다.",
+    "longExplanation": "'What does X stand for?(X는 무엇의 약자예요?)'는 필수 질문 패턴입니다.",
+    "formation": "Subject + stand for + Meaning/Values",
+    "examples": [
+      {
+        "translation": "암기 복습 앱에서 SRS는 무엇의 약자인가요?"
+      },
+      {
+        "translation": "좋은 멘토는 당장의 완벽함을 다그치기보다 인내의 가치를 대변합니다."
+      }
+    ]
+  },
+  "en_b2_61": {
+    "title": "take on (맡다·떠안다 / 고용하다 / 새로운 뉘앙스를 띠다)",
+    "shortExplanation": "일이나 책임을 맡거나, 직원을 뽑거나, 말·상황이 새로운 빛깔을 띠게 될 때 씁니다.",
+    "longExplanation": "'Don't take on too much(너무 많이 떠안지 마)'라는 조언으로 자주 쓰입니다.",
+    "formation": "Subject + take on + Work/Role/Challenger",
+    "examples": [
+      {
+        "translation": "같은 달에 어려운 강좌를 다섯 개나 한꺼번에 맡지는 마세요."
+      },
+      {
+        "translation": "평범한 영상도 말투를 잡아내면 전혀 새로운 뉘앙스를 띠게 됩니다."
+      }
+    ]
+  },
+  "en_b2_62": {
+    "title": "take over (인계받다 · 장악하다 · 대신 맡다)",
+    "shortExplanation": "다른 사람에게서 운전대, 직책, 운영권, 주도권 등을 넘겨받아 맡을 때 씁니다.",
+    "longExplanation": "목적어 없이 혼자 쓰거나 'from + 사람'과 함께 쓸 수 있습니다.",
+    "formation": "Subject + take over (+ from + Person / Company/Role)",
+    "examples": [
+      {
+        "translation": "여행 마지막 두 시간은 여동생이 운전을 넘겨받아 해 주었어요."
+      },
+      {
+        "translation": "잠깐 자리 비우셔도 돼요—채팅방 관리는 제가 이어서 맡을게요."
+      }
+    ]
   }
 };
