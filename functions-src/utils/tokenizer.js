@@ -91,9 +91,25 @@ export function isTokenizerReady(lang) {
 
 const cdnLoader = {
     async loadArrayBuffer(url) {
+        if (typeof globalThis !== 'undefined' && globalThis.process?.versions?.node) {
+            try {
+                const fs = await import('fs');
+                const path = await import('path');
+                const zlib = await import('zlib');
+                const gzName = url.endsWith('.gz') ? url : url + '.gz';
+                const localGz = path.resolve('node_modules/@patdx/kuromoji/dict', gzName);
+                if (fs.existsSync(localGz)) {
+                    const buf = fs.readFileSync(localGz);
+                    const decompressed = zlib.gunzipSync(buf);
+                    return decompressed.buffer.slice(decompressed.byteOffset, decompressed.byteOffset + decompressed.byteLength);
+                }
+            } catch {
+                // Fallback to CDN fetch
+            }
+        }
         url = url.replace('.gz', '');
         const cdnUrl = 'https://cdn.jsdelivr.net/npm/@aiktb/kuromoji@1.0.2/dict/' + url;
-        const res = await fetch(cdnUrl, { signal: AbortSignal.timeout(15000) });
+        const res = await fetch(cdnUrl, { signal: AbortSignal.timeout(60000) });
         if (!res.ok) {
             throw new Error(`Failed to fetch dictionary: ${cdnUrl}, status: ${res.status}`);
         }

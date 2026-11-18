@@ -88,13 +88,15 @@ async function translateBatchWithGtx(texts, source, target) {
 
         try {
             const translated = await translateWithGtx(taggedText, source || 'auto', target || 'en');
-            const tagRegex = /<[\s]*t[\s]+id[\s]*=[\s]*["']?(\d+)["']?[\s]*>([\s\S]*?)<\/[\s]*t[\s]*>/gi;
+            const tagRegex = /<[\s]*t[\s]+id[\s]*=[\s]*["'“”‘’«»]?(\d+)["'“”‘’«»]?[\s]*>((?:(?!(?:<|&lt;)[\s]*t[\s]+id)[\s\S])*?)<\/[\s]*t[\s]*>/gi;
             let match;
             const tagMap = new Map();
             while ((match = tagRegex.exec(translated)) !== null) {
                 const id = parseInt(match[1], 10);
                 if (!isNaN(id) && id >= 0 && id < chunk.length) {
-                    let content = match[2].trim()
+                    let content = match[2].trim();
+                    if (/<[\s]*t[\s]+id/i.test(content) || /&lt;[\s]*t[\s]+id/i.test(content) || /<\/[\s]*t[\s]*>/i.test(content)) continue;
+                    content = content
                         .replace(/&lt;/g, '<')
                         .replace(/&gt;/g, '>')
                         .replace(/&quot;/g, '"')
@@ -2907,6 +2909,12 @@ app.get('/api/dual-subtitles', async (req, res) => {
 
         if (fs.existsSync(resolvedCache)) {
             const data = JSON.parse(await fs.promises.readFile(resolvedCache, 'utf8'));
+            const segs = Array.isArray(data.segments) ? data.segments : (Array.isArray(data) ? data : []);
+            segs.forEach(s => {
+                if (s && typeof s.translation === 'string' && /<[\s]*\/?t\b/i.test(s.translation)) {
+                    s.translation = null;
+                }
+            });
             return res.json(data);
         }
         return res.status(404).json({ error: 'Dual subtitles not found in cache' });
@@ -2945,11 +2953,19 @@ app.post('/api/dual-subtitles', async (req, res) => {
     if (fs.existsSync(cacheFile)) {
         try {
             const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
+            const segs = cached.segments || cached;
+            if (Array.isArray(segs)) {
+                segs.forEach(s => {
+                    if (s && typeof s.translation === 'string' && /<[\s]*\/?t\b/i.test(s.translation)) {
+                        s.translation = null;
+                    }
+                });
+            }
             return res.json({
                 videoId,
                 sourceLang,
                 targetLang,
-                segments: cached.segments || cached,
+                segments: segs,
                 cached: true,
                 quality: 100
             });

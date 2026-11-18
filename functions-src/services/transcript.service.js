@@ -400,8 +400,7 @@ export class TranscriptService {
                             source: 'ai',
                             sourceDetail: r2Transcript.source || 'gladia',
                             availableLanguages: adjustAvailableLanguages(availableLanguages, resolvedLang, 'ai'),
-                            subLanguages: [resolvedLang],
-                            whisperAvailable: Boolean(diamondInfo?.diamonds > 0)
+                            subLanguages: [resolvedLang]
                         }
                     };
                 }

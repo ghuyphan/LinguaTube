@@ -4,7 +4,7 @@
  * Route: POST /api/dual-subtitles
  */
 
-import { jsonResponse, handleOptions, errorResponse, validateBody, logError, sanitizeVideoId, sanitizeLanguage, sha256, getRequestJson } from '../utils/utils.js';
+import { jsonResponse, errorResponse, validateBody, logError, sanitizeVideoId, sanitizeLanguage, sha256, getRequestJson } from '../utils/utils.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -14,7 +14,7 @@ import {
 } from '../middlewares/rate-limiter.js';
 import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
 import { translateBatch } from '../providers/lingva.js';
-import { getTranslation, saveTranslation, recordTranslation } from '../utils/translation-cache.js';
+import { getTranslation, saveTranslation, recordTranslation, translationsMatchLanguage } from '../utils/translation-cache.js';
 
 // Tiered rate limiting - anonymous: 5/hr, free: 15/hr, pro: 60/hr, premium: 120/hr
 const RATE_LIMIT_CONFIG = {
@@ -186,6 +186,9 @@ async function handlePost(context, body) {
         if (saveOnly || onlySave) {
             if (!authResult.valid) {
                 return jsonResponse({ error: 'Authentication required to save subtitles' }, 401);
+            }
+            if (!translationsMatchLanguage(segments, targetLang)) {
+                return jsonResponse({ error: 'Translations do not match target language' }, 400);
             }
             const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (sourceLang === targetLang || s.translation.trim() !== (s.text || '').trim())).length;
             const successRate = segments.length > 0 ? successCount / segments.length : 0;

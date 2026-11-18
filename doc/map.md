@@ -520,6 +520,12 @@ sequenceDiagram
 | `scripts/build-functions.js` | Build Pipeline | Bundles `functions-src/` into Cloudflare Pages `functions/` via parallelized esbuild |
 | `scripts/release.js` | Release Pipeline | Controlled semver version bumper and metadata synchronizer |
 | `scripts/merge-translations.js` | Data Pipeline | Merges translated grammar chunks into TypeScript data files |
+| `scripts/sync_song.js` | Audio Pipeline | Full acoustic alignment, tokenization, translation, R2 upload & D1 grading runner |
+| `scripts/align_audio.py` | Audio Alignment | `faster-whisper` word-level acoustic forced alignment with monotonic DP character matcher |
+| `scripts/qwen_process_video.py` | Speech Recognition | `Qwen/Qwen3-ASR-0.6B` Metal GPU transcription and monotonic clause chunking pipeline |
+| `scripts/batch_update_jp_videos.mjs` | Batch Pipeline | Automated runner for catalog-wide speech recognition, alignment, enrichment & R2/D1 sync |
+| `scripts/fix_cooked_songs.js` | Precision Ingestion | Synchronized LRC alignment pipeline with histogram peak offset detection and monotonicity enforcement |
+| `scripts/enrich_and_upload.js` | NLP & Storage | Multi-language morphological tokenization, dual translation, R2 commit & D1 `server_linguistics` grader |
 | `doc/mobile-api-integration.md` | Mobile Specs | Complete REST API endpoint reference, Supabase sync, Tokens, Dict, Grammar Engine, and Flutter/Cursor playbooks |
 
 ## Backend audit additions (2026-10-23)

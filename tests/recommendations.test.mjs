@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { performance } from 'node:perf_hooks';
-import { getRecommendedVideosFromCloudflare } from '../functions-src/data/video-info-db.js';
+import { getRecommendedVideosFromCloudflare, saveVideoCategory, detectLevelFromMetadata } from '../functions-src/data/video-info-db.js';
 import { rankVideos, declusterChannels, normalizeRecommendationContext, getDeterministicJitter } from '../functions-src/services/recommendation.service.js';
 import { detectVideoCategory } from '../functions-src/services/category.service.js';
 import { inferSpokenLanguage } from '../functions-src/services/video-language.service.js';
@@ -21,15 +21,18 @@ function database(t, rows) {
     t.after(() => sqlite.close());
     sqlite.exec(`CREATE TABLE video_languages (video_id TEXT PRIMARY KEY, title TEXT, channel TEXT,
         channel_avatar TEXT, duration_seconds INTEGER, levels TEXT, available_languages TEXT,
-        sub_languages TEXT, category TEXT, updated_at INTEGER)`);
-    const insert = sqlite.prepare('INSERT INTO video_languages VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        sub_languages TEXT, category TEXT, updated_at INTEGER, tags TEXT DEFAULT '[]', category_source TEXT)`);
+    const insert = sqlite.prepare(`INSERT INTO video_languages
+        (video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, category, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
     for (const row of rows) insert.run(...Object.values(row));
     let calls = 0;
     return { get calls() { return calls; }, prepare(sql) { return { bind(...args) { return {
         async all() {
             if (!sql.includes('SELECT video_id, levels')) calls++;
             return { results: sqlite.prepare(sql).all(...args), success: true };
-        }
+        },
+        async run() { sqlite.prepare(sql).run(...args); return { success: true }; }
     }; } }; } };
 }
 const options = { skip: !DatabaseSync };
@@ -437,8 +440,10 @@ test('small numeric seeds and distinct string seeds disperse rankings instead of
     const sqlite = new DatabaseSync(':memory:');
     sqlite.exec(`CREATE TABLE video_languages (video_id TEXT PRIMARY KEY, title TEXT, channel TEXT,
         channel_avatar TEXT, duration_seconds INTEGER, levels TEXT, available_languages TEXT,
-        sub_languages TEXT, category TEXT, updated_at INTEGER)`);
-    const insert = sqlite.prepare('INSERT INTO video_languages VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        sub_languages TEXT, category TEXT, updated_at INTEGER, tags TEXT DEFAULT '[]')`);
+    const insert = sqlite.prepare(`INSERT INTO video_languages
+        (video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, category, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
     for (const c of candidates) {
         insert.run(c.videoId, `Japanese ${c.title}`, c.channel, null, 300, '{"ja":"N4"}', '["ja"]', '["ja"]', c.category, c.updatedAt);
     }
@@ -502,4 +507,124 @@ test('detectVideoCategory classifies music, anime_drama, conversation, and educa
     assert.equal(detectVideoCategory({ title: '【Ref:rain】色づく世界の明日から【AMV/MAD】', channel: 'MARCO' }), 'anime_drama');
     assert.equal(detectVideoCategory({ title: 'Japanese Listening Practice #12', channel: 'Yuyu Podcast' }), 'conversation');
     assert.equal(detectVideoCategory({ title: 'JLPT N3 Complete Grammar Course', channel: 'Nihongo' }), 'education');
+    assert.equal(detectVideoCategory({ title: 'Learn Japanese with a song & daily news', channel: 'Teacher', youtubeCategoryId: '27' }), 'education');
+});
+
+test('candidate discovery lazily classifies general rows, searches tags cleanly, caches targetTier, and recovers without throwing on partial scans', options, async t => {
+    const rows = [
+        ...catalog(3999).map(row => ({ ...row, levels: '{"ja":"N1"}', category: 'education' })),
+        {
+            video_id: 'lazy_music_01',
+            title: 'YOASOBI / THE FIRST TAKE',
+            channel: 'THE FIRST TAKE',
+            channel_avatar: 'av',
+            duration_seconds: 240,
+            levels: '{"overall":"N4"}',
+            available_languages: '["ja"]',
+            sub_languages: '["ja"]',
+            category: 'general',
+            updated_at: 20000
+        }
+    ];
+    const db = database(t, rows);
+    const music = await getRecommendedVideosFromCloudflare(db, null, 'ja', 12, 'elementary', false, 0, null, { category: 'music' });
+    assert.deepEqual(music.map(v => v.videoId), ['lazy_music_01']);
+
+    // Subsequent targetTier browse hits candidate cache with zero extra SQL queries.
+    const callsAfterFirst = db.calls;
+    await getRecommendedVideosFromCloudflare(db, null, 'ja', 12, 'elementary', false, 0, null, { category: 'music' });
+    assert.equal(db.calls, callsAfterFirst);
+
+    // Partial results found before exhausting maxScans return instead of failing with scan budget exceeded.
+    const partial = await getRecommendedVideosFromCloudflare(db, null, 'ja', 12, 'elementary', false, 0, null);
+    assert.deepEqual(partial.map(v => v.videoId), ['lazy_music_01']);
+
+    // saveVideoCategory clears stale candidate cache on the same db handle.
+    await saveVideoCategory(db, 'lazy_music_01', 'vlog');
+    const refreshedMusic = await getRecommendedVideosFromCloudflare(db, null, 'ja', 12, 'elementary', false, 0, null, { category: 'music' });
+    assert.deepEqual(refreshedMusic, []);
+
+    // Search honors creator tags on D1 rows and still degrades cleanly if tags column is absent.
+    const dbWithTaggedSql = database(t, [{
+        video_id: 'tagged_01', title: 'Morning Routine', channel: 'Ch1', channel_avatar: 'av',
+        duration_seconds: 300, levels: '{"ja":"N5"}', available_languages: '["ja"]', sub_languages: '["ja"]',
+        category: 'vlog', updated_at: 100
+    }]);
+    const sqliteRaw = new DatabaseSync(':memory:');
+    t.after(() => sqliteRaw.close());
+    sqliteRaw.exec(`CREATE TABLE video_languages (video_id TEXT PRIMARY KEY, title TEXT, channel TEXT,
+        channel_avatar TEXT, duration_seconds INTEGER, levels TEXT, available_languages TEXT,
+        sub_languages TEXT, category TEXT, updated_at INTEGER, tags TEXT DEFAULT '[]')`);
+    sqliteRaw.prepare(`INSERT INTO video_languages VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`).run(
+        'tagged_01', 'Morning Routine', 'Ch1', 'av', 300, '{"ja":"N5"}', '["ja"]', '["ja"]', 'vlog', 100, '["cooking","ramen"]'
+    );
+    const taggedDb = {
+        prepare(sql) { return { bind(...args) { return { async all() { return { results: sqliteRaw.prepare(sql).all(...args), success: true }; } }; } }; }
+    };
+    const byTag = await getRecommendedVideosFromCloudflare(taggedDb, null, 'ja', 12, null, false, 0, 'ramen');
+    assert.deepEqual(byTag.map(v => v.videoId), ['tagged_01']);
+
+    // Minimal schema without a tags column still succeeds via fallback.
+    const legacySqlite = new DatabaseSync(':memory:');
+    t.after(() => legacySqlite.close());
+    legacySqlite.exec(`CREATE TABLE video_languages (video_id TEXT PRIMARY KEY, title TEXT, channel TEXT,
+        channel_avatar TEXT, duration_seconds INTEGER, levels TEXT, available_languages TEXT,
+        sub_languages TEXT, category TEXT, updated_at INTEGER)`);
+    legacySqlite.prepare('INSERT INTO video_languages VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)').run(
+        'legacy_01', 'Ramen Guide', 'Ch1', 'av', 300, '{"ja":"N5"}', '["ja"]', '["ja"]', 'vlog', 100
+    );
+    const legacyDb = {
+        prepare(sql) { return { bind(...args) { return { async all() { return { results: legacySqlite.prepare(sql).all(...args), success: true }; } }; } }; }
+    };
+    const legacySearch = await getRecommendedVideosFromCloudflare(legacyDb, null, 'ja', 12, null, false, 0, 'Ramen');
+    assert.deepEqual(legacySearch.map(v => v.videoId), ['legacy_01']);
+    void dbWithTaggedSql;
+});
+
+test('language normalization, metadata level alignment, ranking guards, and POST param fallbacks hold', options, async t => {
+    assert.deepEqual(detectLevelFromMetadata('Intermediate Story', 'Teacher', 'zh'), { lang: 'zh', level: 'HSK 3' });
+    assert.deepEqual(detectLevelFromMetadata('Intermediate Story', 'KBS', 'ko'), { lang: 'ko', level: 'TOPIK 3' });
+    assert.equal(normalizeRecommendationContext({ dominantTier: 'upper-intermediate' }).dominantTier, 'upper_intermediate');
+    assert.equal(normalizeRecommendationContext({ dominantTier: 'TOPIK II' }).dominantTier, 'advanced');
+
+    // Completed video never gets resume (+10) bonus, NFKC channel matches, and ungraded loses to verified intermediate.
+    const ranked = rankVideos([
+        { videoId: 'done_partial', channel: 'Other', title: 'News 1', tier: 'intermediate', duration: 300 },
+        { videoId: 'verified_fit', channel: 'Other', title: 'Lesson 2', tier: 'intermediate', duration: 300 },
+        { videoId: 'ungraded_item', channel: 'Other', title: 'Misc 3', duration: 300 },
+        { videoId: 'nfkc_channel', channel: 'ＮＨＫ', title: 'News 4', tier: 'intermediate', duration: 300 }
+    ], {
+        context: {
+            watched: ['done_partial'],
+            inProgress: { done_partial: 40 },
+            topChannels: ['nhk'],
+            dominantTier: 'intermediate'
+        }
+    });
+    assert.deepEqual(ranked.map(v => v.videoId), ['nfkc_channel', 'verified_fit', 'ungraded_item', 'done_partial']);
+    const doneEntry = ranked.find(v => v.videoId === 'done_partial');
+    assert.equal(doneEntry.isCompleted, true);
+    assert.equal(doneEntry.resumeProgress, undefined);
+
+    // POST accepts body.force, body.seed, en-US normalization, and falls back past whitespace body.q to URL ?query=.
+    const db = database(t, [{
+        video_id: 'en_01', title: 'English Documentary', channel: 'BBC', channel_avatar: 'av',
+        duration_seconds: 300, levels: '{"en":"B2"}', available_languages: '["en-US"]', sub_languages: '["en-US"]',
+        category: 'education', updated_at: 500
+    }]);
+    const res = await onRequestPost({
+        request: new Request('https://example.test/api/recommended-videos?query=Documentary', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ lang: 'en-US', tier: 'upper-intermediate', q: '   ', force: true, seed: 'custom-seed' })
+        }),
+        env: { VOCAB_DB: db }
+    });
+    assert.equal(res.status, 200);
+    const json = await res.json();
+    assert.equal(json.language, 'en');
+    assert.equal(json.tier, 'upper_intermediate');
+    assert.equal(json.query, 'Documentary');
+    assert.equal(json.source, 'cloudflare:refresh');
+    assert.deepEqual(json.videos.map(v => v.videoId), ['en_01']);
 });

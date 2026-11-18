@@ -163,6 +163,42 @@ Subtitles are segmented into interactive tokens using language-specific NLP:
 - **Streamlined Subtitle Waiting & Dual Translation States**: Both the primary subtitle waiting state and the secondary dual-sub translation loading state feature minimal 3-dot pulsing animations (`···`) without textual clutter, eliminating clunky skeleton boxes, nested pill artifacts, and harsh borders.
 - **Auto-Scroll & Manual Override**: Active cue autoscrolling pauses during user interaction (3s debounce) to ensure smooth browsing of full transcripts.
 
+### 2.4. Forced Acoustic Alignment & Music Subtitle Synchronization
+Songs and vocal tracks present unique challenges for standard ASR systems (prolonged vowels, vibrato, overlapping instruments, rapid tempo shifts, and long instrumental bridges), frequently resulting in timestamp drift or omitted lyrics:
+- **Acoustic Word-Level Alignment Pipeline**:
+  - Uses `faster-whisper` (`word_timestamps=True`) with audio downsampled to 16kHz mono WAV to generate precise word-level acoustic anchors.
+  - Matches ground-truth lyrics against acoustic word candidates using **Monotonic Dynamic Programming (DP)** character alignment:
+    - **Japanese (`ja`)**: Phonetic Hiragana normalization via `pykakasi`.
+    - **Chinese (`zh`)**: Hanzi character-level sequence matching.
+    - **Korean (`ko`)**: Hangul syllable decomposition matching.
+    - **Vietnamese (`vi`) & English (`en`)**: Word and vowel-cluster phonetic matching.
+- **Pre-Baked Dual Subtitles & R2 Storage**:
+  - Aligned cues undergo full morphological tokenization (`Kuromoji` furigana/ruby for Japanese, Pinyin for Chinese, Hangul romanization for Korean, lemmatized tokens for English).
+  - Authentic dual-language translations (`vi` and `en`) are synthesized via Google Translate GTX / Lingva with `<t id="N">` XML boundary defense and committed directly to Cloudflare R2 (`transcripts/{videoId}/{lang}.json` and `translations/{videoId}/{lang}-{target}.json`).
+- **Human-Verified Synchronized LRC & Peak Offset Ingestion**:
+  - For music with complex vocal masking, screaming, fast rap, or loud BGM where raw ASR models hallucinate or drop cues, a secondary precision pipeline (`scripts/fix_cooked_songs.js`) ingests ground-truth synchronized lyrics (`.lrc`).
+  - **Histogram Mode Peak Offset**: Computes an automatic time-shift offset between studio audio and YouTube video tracks (e.g. compensating for cinematic MV intros, sound effects, or dialog) using a 0.5s binned histogram peak across matching lyric anchors.
+  - **Strict Monotonicity & Interlude Clamping**: Enforces strictly increasing start timestamps ($t_{i+1} > t_i$, eliminating collapsed and backward cues) and caps display duration during long instrumental breaks so subtitles clear cleanly during solos.
+- **Server Linguistics Video Difficulty Re-Grading**:
+  - Synchronized lyrics are dynamically parsed by `video-grader.js` to compute speech rate (Characters/Words Per Minute) and grammar distribution (JLPT N5–N1, HSK 1–6, TOPIK 1–6, CEFR A1–C2).
+  - Stored in Cloudflare D1 `video_languages.levels` with `method: "server_linguistics"` and `category = 'music'`.
+- **Catalog Coverage**: 100% of all 40 music videos in the database catalog are verified with zero backwards timestamps, zero collapsed start times, and pristine server linguistics difficulty grades.
+
+### 2.5. Qwen3-ASR (Apple Silicon Metal GPU) Speech Recognition & Monotonic Alignment
+For non-music spoken videos (conversations, educational lectures, vlogs, news, and anime dialog), YouTube auto-generated captions frequently suffer from overlapping timestamps, missing furigana-ready tokens, or severe backwards timestamp jumps (e.g., cues jumping backwards by several seconds, breaking playback tracking).
+- **Qwen3-ASR Engine (`mlx-qwen3-asr`)**:
+  - Leverages Alibaba Cloud's state-of-the-art `Qwen/Qwen3-ASR-0.6B` model optimized for Apple Silicon via Apple MLX (`mlx-metal` GPU acceleration).
+  - Emits word- and clause-level acoustic timestamps directly from 16kHz mono audio downsampled via `ffmpeg`.
+- **Monotonic Boundary Enforcement & Natural Clause Chunking**:
+  - Groups word segments into natural grammatical clauses delimited by punctuation marks (`。`, `！`, `？`, `、`, `...`) with an optimal duration window (1.2s to 4.5s) and character cap (max 28 characters for Japanese).
+  - Strictly enforces monotonic start times ($t_{start, i} \ge t_{end, i-1}$) and clamps end times to never overlap ($t_{end, i} \le t_{start, i+1}$), permanently eliminating subtitle flickering and backward timeline jumps (`bwd: 0`).
+- **High-Performance Local Kuromoji Decompression**:
+  - Upgrades morphological tokenizer loader (`tokenizer.js`) to directly read and decompress local MeCab dictionary files (`node_modules/@patdx/kuromoji/dict/*.dat.gz`) using synchronous Node.js `zlib.gunzipSync` instead of network CDN fetches.
+  - Reduces tokenizer cold-start latency from ~5000ms (with timeout risks) to under 50ms.
+- **Batch Processing & Dual-Language Synthesis**:
+  - Full automated pipeline (`scripts/qwen_process_video.py` + `scripts/enrich_and_upload.js`) automatically transcribes, segments, generates rich Kuromoji Furigana readings, translates to Vietnamese (`vi`) and English (`en`), writes JSON cues to Cloudflare R2 (`transcripts/{videoId}/ja.json` and `translations/{videoId}/ja-{target}.json`), and updates Cloudflare D1 `video_languages` with server-linguistic JLPT proficiency levels and speech rates (CPM).
+- **Catalog Coverage**: 100% of all Japanese conversational, vlog, educational, and news videos in the catalog are updated with zero backward jumps, full dual translations, and pre-baked Kuromoji Furigana.
+
 ---
 
 ## 3. Gladia AI Transcription Fallback

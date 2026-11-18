@@ -19,6 +19,7 @@ const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
 // Only public, verified catalog metadata is shared. Learner context and ranked
 // responses are never retained here. Weak binding ownership isolates environments.
 const recommendationCandidates = new WeakMap();
+const dbsWithoutTagsColumn = new WeakSet();
 const RECOMMENDATION_CANDIDATE_TTL_MS = 15_000;
 const MAX_RECOMMENDATION_CANDIDATE_KEYS = 20;
 
@@ -246,6 +247,7 @@ export async function saveVideoCategory(db, videoId, category) {
             SET category = ?, category_source='manual', updated_at = strftime('%s', 'now')
             WHERE video_id = ?
         `).bind(category, videoId).run();
+        recommendationCandidates.delete(db);
         return true;
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoCategory error:', err.message);
@@ -923,7 +925,8 @@ export async function cleanupOldNoTranscriptEntries(db) {
  * Collect a fixed discovery window before ranking. Offset, page size and seed
  * never change candidate membership. Metadata scans and R2 probes are bounded.
  */
-export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 12, tier = null, _shuffle = false, offset = 0, query = null, options = {}) {
+export async function getRecommendedVideosFromCloudflare(db, r2, rawLang, limit = 12, tier = null, _shuffle = false, offset = 0, query = null, options = {}) {
+    const lang = normalizeLanguageCode(rawLang);
     const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
     const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
     const targetTier = tier ? labelToTier(tier) : null;
@@ -941,7 +944,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
     const refresh = options?.isRefresh === true;
     let candidates;
     // Searches bypass this cache: query text can originate from private vocabulary.
-    if (!targetTier && !cleanQuery && !refresh && cached && cached.r2 === r2 && cached.expiresAt > Date.now()
+    if (!cleanQuery && !refresh && cached && cached.r2 === r2 && cached.expiresAt > Date.now()
         && await catalogLevelsMatch(db, lang, cached)) {
         candidates = cached.videos;
         if (options?.metrics) options.metrics.candidateCache = 'HIT';
@@ -951,7 +954,7 @@ export async function getRecommendedVideosFromCloudflare(db, r2, lang, limit = 1
         const subLanguages = new Map();
         candidates = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, subLanguages);
         // Publish only completed successful discovery. No shared in-flight I/O.
-        if (!targetTier && !cleanQuery) {
+        if (!cleanQuery) {
             for (const [key, entry] of cache) {
                 if (entry.expiresAt <= Date.now()) cache.delete(key);
             }
@@ -976,15 +979,19 @@ async function catalogLevelsMatch(db, lang, cached) {
     if (!videos.length) return true;
     const subLanguages = cached?.subLanguages;
     const { results } = await db.prepare(`
-        SELECT video_id, levels, sub_languages FROM video_languages
+        SELECT video_id, levels, sub_languages, category FROM video_languages
         WHERE video_id IN (SELECT value FROM json_each(?))
     `).bind(JSON.stringify(videos.map(video => video.videoId))).all();
     const current = new Map(results.map(row => [row.video_id, row]));
     return videos.every(video => {
         const row = current.get(video.videoId);
-        return row
-            && (!subLanguages || (row.sub_languages ?? null) === subLanguages.get(video.videoId))
-            && JSON.stringify(readCatalogLevels(row.levels)[lang]) === JSON.stringify(video.levels?.[lang]);
+        if (!row) return false;
+        const parsedLevels = readCatalogLevels(row.levels);
+        const currentLevel = parsedLevels[lang] || parsedLevels.overall;
+        const storedCategory = row.category && row.category !== 'general' ? row.category : video.category;
+        return (!subLanguages || (row.sub_languages ?? null) === subLanguages.get(video.videoId))
+            && (video.category === undefined || storedCategory === video.category)
+            && JSON.stringify(currentLevel) === JSON.stringify(video.levels?.[lang]);
     });
 }
 
@@ -1000,8 +1007,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
         try { const parsed = JSON.parse(value || '[]'); return Array.isArray(parsed) ? parsed : []; }
         catch { return []; }
     };
-
-    for (let scan = 0; scan < maxScans && candidates.size < 200; scan++) {
+    const queryBatch = async withTags => {
         // LIKE is only a coarse index filter; exact language membership is checked below.
         let sql = `SELECT *
             FROM video_languages
@@ -1010,22 +1016,24 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
             AND title IS NOT NULL AND TRIM(title) != ''
             AND channel IS NOT NULL AND TRIM(channel) != ''`;
         const bindings = [`%${lang}%`, `%${lang}%`];
-        if (category && category !== 'all') { sql += ' AND category = ?'; bindings.push(category); }
+        if (category && category !== 'all') {
+            sql += " AND (category = ? OR category IS NULL OR category = 'general')";
+            bindings.push(category);
+        }
         if (cleanQuery) {
+            const fieldSql = withTags
+                ? "(title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\' OR tags LIKE ? ESCAPE '\\')"
+                : "(title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')";
             const tokens = cleanQuery.split(/[\s\u3000]+/).filter(t => t.length > 0).slice(0, 3);
-            if (tokens.length > 1) {
-                const tokenClauses = [];
-                for (const token of tokens) {
-                    tokenClauses.push("(title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')");
-                    const pattern = `%${token.replace(/[\\%_]/g, '\\$&')}%`;
-                    bindings.push(pattern, pattern);
-                }
-                sql += ` AND (${tokenClauses.join(' AND ')})`;
-            } else {
-                sql += " AND (title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')";
-                const pattern = `%${cleanQuery.replace(/[\\%_]/g, '\\$&')}%`;
+            const terms = tokens.length > 1 ? tokens : [cleanQuery];
+            const tokenClauses = [];
+            for (const term of terms) {
+                tokenClauses.push(fieldSql);
+                const pattern = `%${term.replace(/[\\%_]/g, '\\$&')}%`;
                 bindings.push(pattern, pattern);
+                if (withTags) bindings.push(pattern);
             }
+            sql += ` AND (${tokenClauses.join(' AND ')})`;
         }
         if (cursor) {
             sql += ' AND (COALESCE(updated_at, 0) < ? OR (COALESCE(updated_at, 0) = ? AND video_id > ?))';
@@ -1033,7 +1041,22 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
         }
         sql += ' ORDER BY COALESCE(updated_at, 0) DESC, video_id ASC LIMIT ?';
         bindings.push(batchSize);
-        const result = await db.prepare(sql).bind(...bindings).all();
+        return db.prepare(sql).bind(...bindings).all();
+    };
+
+    for (let scan = 0; scan < maxScans && candidates.size < 200; scan++) {
+        let result;
+        const tryTags = Boolean(cleanQuery) && !dbsWithoutTagsColumn.has(db);
+        try {
+            result = await queryBatch(tryTags);
+        } catch (err) {
+            if (tryTags && /no such column/i.test(err?.message || '')) {
+                dbsWithoutTagsColumn.add(db);
+                result = await queryBatch(false);
+            } else {
+                throw err;
+            }
+        }
         if (result.success === false || !Array.isArray(result.results)) throw new Error('Recommendation query failed');
         const rows = result.results;
         exhausted = rows.length < batchSize;
@@ -1044,18 +1067,24 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
         const eligible = [];
         for (const row of rows) {
             if (candidates.has(row.video_id)) continue;
-            const catalogLevel = readCatalogLevels(row.levels)[lang];
+            const parsedCatalogLevels = readCatalogLevels(row.levels);
+            const catalogLevel = parsedCatalogLevels[lang] || parsedCatalogLevels.overall;
             let level = catalogLevel || null;
             if (!level) {
-                const detected = detectLevelFromMetadata(row.title, row.channel);
+                const detected = detectLevelFromMetadata(row.title, row.channel, lang);
                 if (detected?.lang === lang) level = detected.level;
             }
             const videoTier = level ? labelToTier(level) : null;
             if (targetTier && videoTier !== targetTier) continue;
             const tags = parseArray(row.tags).filter(t => typeof t === 'string' && t.trim());
+            const resolvedCategory = row.category && row.category !== 'general'
+                ? row.category
+                : detectVideoCategory({ title: row.title, channel: row.channel, tags });
+            if (category && category !== 'all' && resolvedCategory !== category) continue;
             const aiLanguages = parseArray(row.ai_languages);
             const availableLanguages = parseArray(row.available_languages);
-            const languages = parseArray(row.sub_languages);
+            const rawSubLanguages = parseArray(row.sub_languages);
+            const languages = [...new Set(rawSubLanguages.map(normalizeLanguageCode).filter(Boolean))];
             const inferredLang = inferSpokenLanguage({
                 primaryLanguage: row.primary_language,
                 title: row.title,
@@ -1066,7 +1095,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
                 subLanguages: languages
             });
             if (inferredLang && inferredLang !== lang) continue;
-            eligible.push({ row, level, catalogLevel, videoTier, languages, tags, inferredLang });
+            eligible.push({ row, level, catalogLevel, videoTier, languages, tags, inferredLang, resolvedCategory });
         }
 
         // Preserve metadata order after concurrent probes, independent of I/O completion order.
@@ -1085,11 +1114,8 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
             }));
             for (const item of verified) {
                 if (!item || candidates.size >= 200) continue;
-                const { row, level, catalogLevel, videoTier, languages, tags, inferredLang } = item;
+                const { row, level, catalogLevel, videoTier, languages, tags, inferredLang, resolvedCategory } = item;
                 subLanguages?.set(row.video_id, row.sub_languages ?? null);
-                const resolvedCategory = row.category && row.category !== 'general'
-                    ? row.category
-                    : detectVideoCategory({ title: row.title, channel: row.channel, tags });
                 candidates.set(row.video_id, {
                     videoId: row.video_id, title: row.title, channel: row.channel,
                     channelAvatar: row.channel_avatar || null,
@@ -1109,11 +1135,8 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
         if (exhausted) break;
     }
     if (verificationIncomplete) throw new Error('Recommendation transcript verification budget exceeded');
-    if (!exhausted && candidates.size < 200) {
-        if (!cleanQuery) {
-            throw new Error('Recommendation scan budget exceeded');
-        }
-        // In search mode, do not fail on sparse candidate sets; proceed with matches found
+    if (!exhausted && candidates.size === 0 && !cleanQuery) {
+        throw new Error('Recommendation scan budget exceeded');
     }
     return [...candidates.values()];
 }

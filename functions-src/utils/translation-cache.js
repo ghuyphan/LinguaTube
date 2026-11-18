@@ -23,6 +23,32 @@ const log = (...args) => DEBUG && console.log('[R2 Translations]', ...args);
 const CACHE_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000; // 90 days
 const CACHE_VERSION = '2';
 
+// Script checks only: enough to reject a cache written in another target language.
+const VIETNAMESE_ANY = /[àáèéìíòóùúýăằắẳẵặâầấẩẫậêềếểễệôồốổỗộơờớởỡợưừứửữựđảãạẻẽẹỉĩịỏõọủũụỷỹỵ]/iu;
+const NON_LATIN = /[\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/u;
+const TARGET_SCRIPT = {
+    ja: text => /[\u3040-\u30FF\u4E00-\u9FFF]/u.test(text),
+    zh: text => /[\u4E00-\u9FFF]/u.test(text) && !/[\u3040-\u30FF]/u.test(text),
+    ko: text => /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/u.test(text),
+    ru: text => /[\u0400-\u04FF]/u.test(text),
+    en: text => /[a-z]/i.test(text) && !VIETNAMESE_ANY.test(text) && !NON_LATIN.test(text)
+};
+
+/** True unless most translated segments are written in a script other than tgtLang's. */
+export function translationsMatchLanguage(segments, tgtLang) {
+    const texts = segments
+        .map(seg => seg?.translation)
+        .filter(text => typeof text === 'string' && /\p{L}/u.test(text));
+    if (!texts.length) return true;
+    if (tgtLang === 'vi') {
+        const isPureLatin = text => /[a-z]/i.test(text) && !NON_LATIN.test(text);
+        return texts.filter(isPureLatin).length >= texts.length * 0.7 &&
+            texts.filter(text => VIETNAMESE_ANY.test(text)).length >= texts.length * 0.2;
+    }
+    const matches = TARGET_SCRIPT[tgtLang];
+    return !matches || texts.filter(matches).length >= texts.length * 0.7;
+}
+
 // ============================================================================
 // D1 Metadata Functions
 // ============================================================================
@@ -104,11 +130,23 @@ export async function getTranslation(bucket, videoId, srcLang, tgtLang) {
             return null;
         }
 
-        // Invalidate poisoned caches where translations mirror source text
+        // Invalidate poisoned caches where translations mirror source text or leak internal protocol tags
+        if (Array.isArray(data.segments)) {
+            data.segments.forEach(s => {
+                if (s && typeof s.translation === 'string' && /<[\s]*\/?t\b/i.test(s.translation)) {
+                    s.translation = null;
+                }
+            });
+        }
+
         if (srcLang !== tgtLang) {
             const identicalCount = data.segments.filter(s => s && s.translation && s.text && s.translation.trim() === s.text.trim()).length;
             if (identicalCount > data.segments.length * 0.3) {
                 log('Cache poisoned with untranslated text:', key);
+                return null;
+            }
+            if (!translationsMatchLanguage(data.segments, tgtLang)) {
+                log('Cache poisoned with another target language:', key);
                 return null;
             }
             data.segments.forEach(s => {
@@ -147,6 +185,7 @@ const inFlightSaves = new Map();
 
 export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segments, quality = 100, source = 'lingva', { requireCanonical = false } = {}) {
     if (!bucket || !videoId || !segments?.length) return null;
+    if (!translationsMatchLanguage(segments, tgtLang)) return null;
 
     const lockKey = `${videoId}:${srcLang}:${tgtLang}`;
     const prevLock = inFlightSaves.get(lockKey) || Promise.resolve();
@@ -184,16 +223,22 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
                 const known = canon?.known || new Set(base.map(cueKey));
                 if ((canonical || existingData?.segments?.length) && !matches(known)) return null;
                 const existingByCue = new Map();
-                for (const [idx, seg] of (existingData?.segments || []).entries()) {
+                // Never merge into translations written for a different target language.
+                const reusable = existingData?.segments?.length && translationsMatchLanguage(existingData.segments, tgtLang)
+                    ? existingData.segments : [];
+                for (const [idx, seg] of reusable.entries()) {
                     if (typeof seg?.translation === 'string' && seg.translation.trim()) {
                         existingByCue.set(cueKey(seg, idx), seg.translation.trim());
                     }
                 }
                 const finalSegments = base.map((seg, idx) => {
                     const next = incoming.get(cueKey(seg, idx));
-                    const value = typeof next?.translation === 'string' ? next.translation.trim() : '';
+                    let value = typeof next?.translation === 'string' ? next.translation.trim() : '';
+                    if (/<[\s]*\/?t\b/i.test(value)) value = '';
                     const valid = value && (srcLang === tgtLang || value !== (seg.text || '').trim());
-                    return { ...seg, translation: (valid ? value : '') || existingByCue.get(cueKey(seg, idx)) || null };
+                    const existing = existingByCue.get(cueKey(seg, idx));
+                    const cleanExisting = (existing && !/<[\s]*\/?t\b/i.test(existing)) ? existing : null;
+                    return { ...seg, translation: (valid ? value : '') || cleanExisting || null };
                 });
                 const validCount = finalSegments.filter(s => typeof s.translation === 'string' && s.translation.trim() &&
                     (srcLang === tgtLang || s.translation.trim() !== (s.text || '').trim())).length;

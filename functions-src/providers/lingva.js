@@ -65,12 +65,13 @@ export function decodeTaggedTranslations(translatedText, expectedCount) {
     const map = new Map();
     if (!translatedText) return map;
 
-    const regex = /<[\s]*t[\s]+id[\s]*=[\s]*["'“”‘’«»]?(\d+)["'“”‘’«»]?[\s]*>([\s\S]*?)<\/[\s]*t[\s]*>/gi;
+    const regex = /<[\s]*t[\s]+id[\s]*=[\s]*["'“”‘’«»]?(\d+)["'“”‘’«»]?[\s]*>((?:(?!(?:<|&lt;)[\s]*t[\s]+id)[\s\S])*?)<\/[\s]*t[\s]*>/gi;
     let match;
     while ((match = regex.exec(translatedText)) !== null) {
         const id = parseInt(match[1], 10);
         if (!isNaN(id) && id >= 0 && id < expectedCount) {
             let content = match[2].trim();
+            if (/<[\s]*t[\s]+id/i.test(content) || /&lt;[\s]*t[\s]+id/i.test(content) || /<\/[\s]*t[\s]*>/i.test(content)) continue;
             content = content
                 .replace(/&lt;/g, '<')
                 .replace(/&gt;/g, '>')
@@ -119,7 +120,9 @@ export async function translateBatch(texts, source, target, { deadline = Date.no
             const decoded = decodeTaggedTranslations(translated, items.length);
             const lines = translated?.split(/\n+/).map(line => line.trim()).filter(Boolean) || [];
             items.forEach((item, index) => {
-                results[item.index] = decoded.get(index) || (decoded.size === 0 && lines.length === items.length ? lines[index] : null);
+                const cleanLine = lines[index];
+                const fallback = (decoded.size === 0 && lines.length === items.length && cleanLine && !/<[\s]*\/?t\b/i.test(cleanLine)) ? cleanLine : null;
+                results[item.index] = decoded.get(index) || fallback;
             });
             await recover(items.filter(item => !results[item.index]));
         }

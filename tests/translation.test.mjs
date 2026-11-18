@@ -61,6 +61,16 @@ test('decodeTaggedTranslations: handles curly and unicode quotes in tags', () =>
     assert.equal(map.get(2), 'Third line');
 });
 
+test('decodeTaggedTranslations: unclosed tag does not swallow subsequent tags or leak XML', () => {
+    // Simulates MT dropping </t> on a scream cue (e.g. tag 17) followed by tag 18
+    const mockTranslated = '<t id="17">Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa <t id="18">Tôi ghi công cho bạn có được không? Tôi xin lỗi</t>';
+    const map = decodeTaggedTranslations(mockTranslated, 25);
+
+    assert.equal(map.has(17), false, 'Malformed/unclosed tag 17 must be omitted so recover() translates it individually');
+    assert.equal(map.get(18), 'Tôi ghi công cho bạn có được không? Tôi xin lỗi');
+    assert.equal(map.get(18).includes('<t id='), false);
+});
+
 test('dual subtitle quality threshold: calculates coverage accurately', () => {
     const segments = [
         { text: 'A', translation: 'Trans A' },
@@ -290,3 +300,38 @@ test('Russian (ru) is accepted as dual-subtitle and translation target language'
 });
 
 
+
+test('dual subtitle cache rejects translations written for another target language', async () => {
+    const { translationsMatchLanguage, getTranslation, saveTranslation } = await import('../functions-src/utils/translation-cache.js');
+    const vietnamese = [{ start: 0, text: 'こんにちは', translation: 'Xin chào' }, { start: 1, text: 'ありがとう', translation: 'Cảm ơn bạn' }];
+    const english = [{ start: 0, text: 'こんにちは', translation: 'Hello' }, { start: 1, text: 'ありがとう', translation: 'Thank you' }];
+    assert.equal(translationsMatchLanguage(vietnamese, 'en'), false);
+    assert.equal(translationsMatchLanguage(english, 'en'), true);
+    assert.equal(translationsMatchLanguage(vietnamese, 'vi'), true);
+    assert.equal(translationsMatchLanguage([
+        { translation: 'Anh' }, { translation: 'Em' }, { translation: 'OK' },
+        { translation: 'Haha' }, { translation: 'Xin chào' }, { translation: 'Cảm ơn' }
+    ], 'vi'), true);
+    assert.equal(translationsMatchLanguage(english, 'vi'), false);
+    assert.equal(translationsMatchLanguage([{ translation: 'ありがとう' }], 'zh'), false);
+    assert.equal(translationsMatchLanguage([{ translation: '♪' }], 'en'), true);
+
+    const stored = { segments: vietnamese, timestamp: Date.now() };
+    const readBucket = { get: async () => ({ json: async () => stored }) };
+    assert.equal(await getTranslation(readBucket, 'abcdefghijk', 'ja', 'en'), null);
+    assert.equal((await getTranslation(readBucket, 'abcdefghijk', 'ja', 'vi')).segments.length, 2);
+
+    let written;
+    const writeBucket = {
+        async get(key) {
+            const segments = key.startsWith('transcripts/') ? english.map(({ start, text }) => ({ start, text })) : vietnamese;
+            return { etag: 'old', json: async () => ({ segments }) };
+        },
+        async put(_key, body) { written = JSON.parse(body); return { etag: 'new' }; }
+    };
+    assert.equal(await saveTranslation(writeBucket, 'abcdefghijk', 'ja', 'en', vietnamese, 100, 'lingva', { requireCanonical: true }), null);
+    assert.equal(written, undefined);
+    const saved = await saveTranslation(writeBucket, 'abcdefghijk', 'ja', 'en', [english[0]], 100, 'lingva', { requireCanonical: true });
+    assert.deepEqual(written.segments.map(s => s.translation), ['Hello', null]);
+    assert.equal(saved.validCount, 1);
+});

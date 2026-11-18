@@ -187,6 +187,7 @@ export async function onRequestPost(context) {
         const aiLanguages = knownInfo?.aiLanguages || [];
         const availableLanguages = { native: nativeLanguages, ai: aiLanguages };
 
+        const whisperAvailable = Boolean(env.GLADIA_API_KEY);
         const diamondInfo = {
             diamonds: diamondStatus.diamonds,
             maxDiamonds: diamondStatus.maxDiamonds,
@@ -237,7 +238,7 @@ export async function onRequestPost(context) {
                 language, videoInfo.segments, info);
             const responseAvailableLanguages = adjustAvailableLanguages(videoInfo.availableLanguages || availableLanguages, language, 'ai');
             return jsonResponse({ success: true, ...videoInfo, availableLanguages: responseAvailableLanguages, levels,
-                ...grading(levels, language, !videoInfo.languageMismatch), ...diamondInfo, timing: elapsed() },
+                whisperAvailable, ...grading(levels, language, !videoInfo.languageMismatch), ...diamondInfo, timing: elapsed() },
                 200, { 'Cache-Control': CACHE_CONTROL.NO_CACHE });
         };
 
@@ -249,8 +250,8 @@ export async function onRequestPost(context) {
                 ? await transcriptService.pollAiJobStatus(serviceContext, orchestratorParams)
                 : await transcriptService.pollAIJob(serviceContext, orchestratorParams);
 
-            if (aiRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiRes }, 202);
-            if (aiRes.status === 'error') return jsonResponse({ success: false, errorCode: aiRes.errorCode || 'AI_JOB_FAILED', error: aiRes.error || 'AI transcription failed', ...diamondInfo, timing: elapsed() }, 400);
+            if (aiRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable, ...diamondInfo, ...aiRes }, 202);
+            if (aiRes.status === 'error') return jsonResponse({ success: false, errorCode: aiRes.errorCode || 'AI_JOB_FAILED', error: aiRes.error || 'AI transcription failed', whisperAvailable, ...diamondInfo, timing: elapsed() }, 400);
             return await aiResponse(aiRes.videoInfo);
         }
 
@@ -291,7 +292,7 @@ export async function onRequestPost(context) {
                 success: true, videoId: cleanVideoId, language, requestedLanguage: lang, segments: saved.segments,
                 source: preferAI ? 'ai' : 'cache', sourceDetail: saved.source, trackLanguage: saved.trackLanguage,
                 availableLanguages: responseAvailableLanguages, subLanguages: knownInfo?.subLanguages || [language],
-                whisperAvailable: diamondInfo.diamonds > 0, languageMismatch, levels,
+                whisperAvailable, languageMismatch, levels,
                 ...grading(levels, language, !languageMismatch),
                 ...(refreshDeferred ? { refreshDeferred } : {}),
                 ...diamondInfo, timing: elapsed()
@@ -326,7 +327,7 @@ export async function onRequestPost(context) {
                     jobId: activeJob.id,
                     videoId: cleanVideoId,
                     availableLanguages,
-                    whisperAvailable: true,
+                    whisperAvailable,
                     ...diamondInfo,
                     timing: elapsed()
                 }, 202);
@@ -364,7 +365,7 @@ export async function onRequestPost(context) {
                     success: true, videoId: cleanVideoId, language: actualLang, requestedLanguage: lang, segments: nativeResult.segments,
                     source: 'native', sourceDetail: nativeResult.source, trackLanguage: nativeResult.trackLanguage,
                     availableLanguages: adjustAvailableLanguages(availableLanguages, actualLang, nativeResult.source || 'supadata'),
-                    subLanguages: knownInfo?.subLanguages || [actualLang], whisperAvailable: diamondInfo.diamonds > 0,
+                    subLanguages: knownInfo?.subLanguages || [actualLang], whisperAvailable,
                     languageMismatch: nativeResult.languageMismatch || false,
                     levels,
                     ...grading(levels, actualLang, !nativeResult.languageMismatch),
@@ -402,42 +403,39 @@ export async function onRequestPost(context) {
                 }
             }
 
-            if (nativeSkipReason || nativeResult?.languageMismatch) {
-                const isLanguageMismatch = nativeSkipReason === 'language' || nativeResult?.languageMismatch === true;
+            if (!nativeSkipReason && !nativeResult?.languageMismatch && (!nativeResult || nativeResult.unavailable)) {
                 return jsonResponse({
                     success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                    ...(isLanguageMismatch ? { languageMismatch: true, subLanguages } : {}),
-                    availableLanguages, whisperAvailable: diamondStatus.diamonds > 0, ...diamondInfo,
-                    errorCode: 'NO_NATIVE',
-                    error: isLanguageMismatch ? 'No native captions in requested language.' : 'No native captions.',
-                    timing: elapsed()
-                }, 200, { 'X-Cache': isLanguageMismatch ? 'LANG_MISMATCH' : 'NEG', 'Cache-Control': CACHE_CONTROL.NO_CACHE });
-            }
-
-            if (!nativeResult || nativeResult.unavailable) {
-                return jsonResponse({
-                    success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                    availableLanguages, ...diamondInfo, errorCode: 'NATIVE_PROVIDER_UNAVAILABLE',
+                    availableLanguages, whisperAvailable, ...diamondInfo, errorCode: 'NATIVE_PROVIDER_UNAVAILABLE',
                     error: 'Native captions could not be verified. Please retry.',
                     timing: elapsed()
                 }, 503, { 'Cache-Control': CACHE_CONTROL.NO_CACHE, 'Retry-After': '10' });
             }
 
+            const isLanguageMismatch = nativeSkipReason === 'language' || nativeResult?.languageMismatch === true;
             return jsonResponse({
                 success: false, videoId: cleanVideoId, requestedLanguage: lang, segments: [], source: 'none',
-                availableLanguages, whisperAvailable: diamondStatus.diamonds > 0, ...diamondInfo,
-                errorCode: 'NO_NATIVE', error: 'No native captions found. AI available.', timing: elapsed()
-            }, 200, { 'Cache-Control': CACHE_CONTROL.NO_CACHE });
+                ...(isLanguageMismatch ? { languageMismatch: true, subLanguages } : {}),
+                availableLanguages, whisperAvailable, ...diamondInfo,
+                errorCode: 'NO_NATIVE',
+                error: isLanguageMismatch ? 'No native captions in requested language.' : 'No native captions found. AI available.',
+                timing: elapsed()
+            }, 200, {
+                ...(nativeSkipReason || nativeResult?.languageMismatch
+                    ? { 'X-Cache': isLanguageMismatch ? 'LANG_MISMATCH' : 'NEG' }
+                    : {}),
+                'Cache-Control': CACHE_CONTROL.NO_CACHE
+            });
         }
 
         // -------------------------------------------------------------
         // Step 3: AI
         // -------------------------------------------------------------
         const sharedJob = await getActiveAiJob(db, cleanVideoId, lang);
-        if (sharedJob) return jsonResponse({ success: false, status: 'processing', jobId: sharedJob.id, videoId: cleanVideoId, availableLanguages, whisperAvailable: true, ...diamondInfo, timing: elapsed() }, 202);
+        if (sharedJob) return jsonResponse({ success: false, status: 'processing', jobId: sharedJob.id, videoId: cleanVideoId, availableLanguages, whisperAvailable, ...diamondInfo, timing: elapsed() }, 202);
 
         if (diamondStatus.diamonds <= 0) {
-            return jsonResponse({ success: false, videoId: cleanVideoId, errorCode: 'NO_DIAMONDS', error: 'No diamonds left.', ...diamondInfo, timing: elapsed() }, 429);
+            return jsonResponse({ success: false, videoId: cleanVideoId, errorCode: 'NO_DIAMONDS', error: 'No diamonds left.', whisperAvailable, ...diamondInfo, timing: elapsed() }, 429);
         }
 
         // Verify Turnstile CAPTCHA for new AI generation jobs (prevent bot abuse of Gladia credits)
@@ -451,6 +449,7 @@ export async function onRequestPost(context) {
                     errorCode: 'CAPTCHA_FAILED',
                     error: 'Human verification required to generate AI subtitles. Please try again.',
                     availableLanguages,
+                    whisperAvailable,
                     ...diamondInfo,
                     timing: elapsed()
                 }, 403);
@@ -460,7 +459,7 @@ export async function onRequestPost(context) {
         try {
             const aiJobRes = await transcriptService.startAIJob(serviceContext, orchestratorParams);
 
-            if (aiJobRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable: true, ...diamondInfo, ...aiJobRes, ...(aiJobRes.diamondInfo || {}) }, 202);
+            if (aiJobRes.status === 'processing') return jsonResponse({ success: false, status: 'processing', whisperAvailable, ...diamondInfo, ...aiJobRes, ...(aiJobRes.diamondInfo || {}) }, 202);
             return await aiResponse(aiJobRes.videoInfo);
 
         } catch (aiErr) {

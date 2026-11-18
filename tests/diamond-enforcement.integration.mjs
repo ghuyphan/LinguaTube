@@ -405,6 +405,7 @@ for (const [label, status] of [['documented empty response', 206], ['explicit ab
         const response = await f.invoke({ preferAI: false, lang: 'ko' });
         assert.equal(response.status, 200);
         assert.equal(response.body.errorCode, 'NO_NATIVE');
+        assert.equal(response.body.whisperAvailable, true);
         assert.equal(f.sqlite.prepare('SELECT count(*) AS n FROM no_transcript_cache').get().n, 1);
         assert.equal(f.providerPosts(), 0);
     });
@@ -428,11 +429,25 @@ for (const [label, supadata] of [
         const response = await f.invoke({ preferAI: false, lang: 'ko', forceRefresh: true });
         assert.equal(response.status, 503);
         assert.equal(response.body.errorCode, 'NATIVE_PROVIDER_UNAVAILABLE');
+        assert.equal(response.body.whisperAvailable, true);
         assert.equal(response.headers.get('Retry-After'), '10');
         assert.equal(f.sqlite.prepare('SELECT count(*) AS n FROM no_transcript_cache').get().n, 0);
         assert.equal(f.providerPosts(), 0);
     });
 }
+
+test('NO_NATIVE still reports whisperAvailable when user has zero diamonds', async t => {
+    const f = await endpoint(t, {
+        tier: 'pro',
+        balance: 0,
+        supadata: () => new Response(null, { status: 206 })
+    });
+    const response = await f.invoke({ preferAI: false, lang: 'ko' });
+    assert.equal(response.status, 200);
+    assert.equal(response.body.errorCode, 'NO_NATIVE');
+    assert.equal(response.body.diamonds, 0);
+    assert.equal(response.body.whisperAvailable, true);
+});
 
 test('provider track variant survives refresh and cache with a mixed-language intro', async t => {
     const content = [

@@ -4,13 +4,30 @@
  * active vocabulary notebook overlap, creator affinity, and YouTube-style channel de-clustering.
  */
 
-const WEIGHTS = { completed: -70, resume: 10, started: 5, unseen: 40, favorite: 20,
+const WEIGHTS = { completed: -70, searchCompleted: -30, resume: 10, started: 5, unseen: 40, favorite: 20,
     channel: 30, vocabulary: 25, vocabularyWord: 5, vocabularyCap: 20,
     shortLesson: 20, longLesson: 10, extremeDuration: -10,
     currentTier: 20, nextTier: 12, prevTier: 6, tooEasy: -10, tooHard: -20,
-    ungradedBeginner: -5, jitter: 12 };
+    ungraded: -8, jitter: 12 };
 
 const TIERS_ORDER = ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'];
+
+function normalizeMatchKey(value) {
+    return typeof value === 'string' ? value.normalize('NFKC').trim().toLowerCase() : '';
+}
+
+function normalizeTierValue(value) {
+    const clean = normalizeMatchKey(value);
+    if (!clean) return null;
+    const slug = clean.replace(/[\s-]+/g, '_');
+    if (TIERS_ORDER.includes(slug)) return slug;
+    if (/\b(?:jlpt\s*)?n5\b|\bhsk\s*1\b|\btopik\s*(?:1|i)\b|\b(?:cefr\s*)?a1\b/.test(clean)) return 'beginner';
+    if (/\b(?:jlpt\s*)?n4\b|\bhsk\s*2\b|\btopik\s*2\b|\b(?:cefr\s*)?a2\b/.test(clean)) return 'elementary';
+    if (/\b(?:jlpt\s*)?n3\b|\bhsk\s*[34]\b|\btopik\s*[34]\b|\b(?:cefr\s*)?b1\b/.test(clean)) return 'intermediate';
+    if (/\b(?:jlpt\s*)?n2\b|\bhsk\s*5\b|\btopik\s*5\b|\b(?:cefr\s*)?b2\b/.test(clean)) return 'upper_intermediate';
+    if (/\b(?:jlpt\s*)?n1\b|\bhsk\s*6\b|\btopik\s*(?:6|ii)\b|\b(?:cefr\s*)?c[12]\b/.test(clean)) return 'advanced';
+    return null;
+}
 
 /**
  * 32-bit integer string hash
@@ -69,12 +86,12 @@ export function declusterChannels(videos, options = {}) {
     const pool = [...videos];
     const channelCounts = new Map();
     for (const v of pool) {
-        const ch = v.channel?.trim().toLowerCase();
+        const ch = normalizeMatchKey(v.channel);
         if (ch) channelCounts.set(ch, (channelCounts.get(ch) || 0) + 1);
     }
     while (pool.length) {
-        const prev1 = result.at(-1)?.channel?.trim().toLowerCase();
-        const prev2 = result.at(-2)?.channel?.trim().toLowerCase();
+        const prev1 = normalizeMatchKey(result.at(-1)?.channel);
+        const prev2 = normalizeMatchKey(result.at(-2)?.channel);
         const prev1Cat = declusterCategory ? (result.at(-1)?.category || null) : null;
         const prev2Cat = declusterCategory ? (result.at(-2)?.category || null) : null;
         const first = pool[0];
@@ -93,26 +110,26 @@ export function declusterChannels(videos, options = {}) {
             if (declusterCategory && prev1Cat) {
                 if (prev1 && checkPrev2) {
                     predicates.push(v => {
-                        const ch = v.channel?.trim().toLowerCase();
+                        const ch = normalizeMatchKey(v.channel);
                         return ch !== prev1 && ch !== prev2 && allowsCategory(v) && isComparable(first, v);
                     });
                 }
                 if (prev1) {
                     predicates.push(v =>
-                        v.channel?.trim().toLowerCase() !== prev1 && allowsCategory(v) && isComparable(first, v));
+                        normalizeMatchKey(v.channel) !== prev1 && allowsCategory(v) && isComparable(first, v));
                 } else {
                     predicates.push(v => allowsCategory(v) && isComparable(first, v));
                 }
             }
             if (prev1 && checkPrev2) {
                 predicates.push(v => {
-                    const ch = v.channel?.trim().toLowerCase();
+                    const ch = normalizeMatchKey(v.channel);
                     return ch !== prev1 && ch !== prev2 && isComparable(first, v);
                 });
             }
             if (prev1) {
                 predicates.push(v =>
-                    v.channel?.trim().toLowerCase() !== prev1 && isComparable(first, v));
+                    normalizeMatchKey(v.channel) !== prev1 && isComparable(first, v));
             }
             for (const predicate of predicates) {
                 pick = pool.findIndex(predicate);
@@ -120,7 +137,7 @@ export function declusterChannels(videos, options = {}) {
             }
         }
         const picked = pool.splice(pick < 0 ? 0 : pick, 1)[0];
-        const pickedCh = picked.channel?.trim().toLowerCase();
+        const pickedCh = normalizeMatchKey(picked.channel);
         if (pickedCh) channelCounts.set(pickedCh, (channelCounts.get(pickedCh) || 1) - 1);
         result.push(picked);
     }
@@ -142,8 +159,7 @@ export function normalizeRecommendationContext(value) {
             }
         }
     }
-    const dominantTier = typeof input.dominantTier === 'string' && TIERS_ORDER.includes(input.dominantTier.trim().toLowerCase())
-        ? input.dominantTier.trim().toLowerCase() : null;
+    const dominantTier = normalizeTierValue(input.dominantTier);
     return { watched: strings(input.watched, 200, 100), inProgress,
         favorites: strings(input.favorites, 200, 100), topChannels: strings(input.topChannels, 10, 200),
         vocabWords: [...new Set(strings(input.vocabWords, 50, 100).map(w => w.toLowerCase()))], dominantTier };
@@ -205,24 +221,23 @@ export function rankVideos(videos, options = {}) {
     const channelAffinityMap = new Map();
     if (Array.isArray(safeContext.topChannels)) {
         safeContext.topChannels.forEach((ch, idx) => {
-            if (typeof ch === 'string' && ch.trim()) {
+            const normCh = normalizeMatchKey(ch);
+            if (normCh) {
                 const weight = Math.max(WEIGHTS.channel - idx * 5, 10);
-                channelAffinityMap.set(ch.trim().toLowerCase(), weight);
+                channelAffinityMap.set(normCh, weight);
             }
         });
     }
 
     // Active SRS Flashcard Vocabulary Words
     const vocabWords = (Array.isArray(safeContext.vocabWords) ? safeContext.vocabWords : [])
-        .map(w => (typeof w === 'string' ? w.trim().toLowerCase() : ''))
+        .map(w => normalizeMatchKey(w))
         .filter(w => w.length > 0)
         .slice(0, 50);
 
     const vocabulary = new Map(vocabWords.map(word => [word, vocabularyPattern(word)]));
 
-    const dominantTier = (safeContext.dominantTier && typeof safeContext.dominantTier === 'string')
-        ? safeContext.dominantTier.toLowerCase().trim()
-        : null;
+    const dominantTier = normalizeTierValue(safeContext.dominantTier);
 
     // 2. Multi-factor scoring pass
     const scored = videos.map(video => {
@@ -231,18 +246,17 @@ export function rankVideos(videos, options = {}) {
         const vid = v.videoId;
 
         // Factor A: History & Completion State
-        if (inProgressMap.has(vid)) {
-            const prog = inProgressMap.get(vid);
-            if (prog >= 85) {
-                score += WEIGHTS.completed; // Completed -> heavily demote
-            } else if (prog >= 10) {
+        const progress = inProgressMap.get(vid);
+        const isCompleted = watchedSet.has(vid) || (progress || 0) >= 85;
+        if (isCompleted) {
+            score += isSearchMode ? WEIGHTS.searchCompleted : WEIGHTS.completed; // Demote completed (less harshly in explicit search)
+        } else if (progress !== undefined) {
+            if (progress >= 10) {
                 score += WEIGHTS.resume; // Resume learning boost
-                v.resumeProgress = Math.round(prog);
+                v.resumeProgress = Math.round(progress);
             } else {
                 score += WEIGHTS.started;
             }
-        } else if (watchedSet.has(vid)) {
-            score += WEIGHTS.completed; // Watched to completion -> demote
         } else {
             score += WEIGHTS.unseen; // Completely new / unwatched exploration bonus
         }
@@ -252,20 +266,18 @@ export function rankVideos(videos, options = {}) {
         }
 
         // Factor B: Creator / Channel Affinity
-        if (v.channel) {
-            const normChan = v.channel.trim().toLowerCase();
-            if (channelAffinityMap.has(normChan)) {
-                score += channelAffinityMap.get(normChan);
-            }
+        const normChan = normalizeMatchKey(v.channel);
+        if (normChan && channelAffinityMap.has(normChan)) {
+            score += channelAffinityMap.get(normChan);
         }
 
         const tagsLower = Array.isArray(v.tags)
-            ? v.tags.filter(t => typeof t === 'string').map(t => t.normalize('NFKC').toLowerCase()).join(' ')
+            ? v.tags.filter(t => typeof t === 'string').map(t => normalizeMatchKey(t)).filter(Boolean).join(' ')
             : '';
 
         // Factor C: Active Vocabulary Overlap (across title + creator tags)
         if (vocabWords.length > 0 && (v.title || tagsLower)) {
-            const titleLower = v.title ? v.title.normalize('NFKC').toLowerCase() : '';
+            const titleLower = normalizeMatchKey(v.title);
             const matched = [];
             for (const [word, pattern] of vocabulary) {
                 const hit = pattern
@@ -308,47 +320,41 @@ export function rankVideos(videos, options = {}) {
                 } else if (domIdx !== -1 && vidIdx >= domIdx + 2) {
                     score += WEIGHTS.tooHard; // >= i+2 too hard
                 }
-            } else if (dominantTier === 'beginner' && !v.tier) {
-                score += WEIGHTS.ungradedBeginner;
+            } else if (dominantTier && !v.tier && !isSearchMode) {
+                score += WEIGHTS.ungraded;
             }
         }
 
         // Factor S: Text Search Relevance Scoring
         if (isSearchMode) {
-            const titleNorm = (v.title || '').normalize('NFKC').toLowerCase();
-            const channelNorm = (v.channel || '').normalize('NFKC').toLowerCase();
+            const titleNorm = normalizeMatchKey(v.title);
 
-            // Exact title match or title starts with query
+            // Exact title match, prefix, or full substring phrase match
             if (titleNorm === cleanSearchQuery) {
-                score += 150;
+                score += 180;
             } else if (titleNorm.startsWith(cleanSearchQuery)) {
-                score += 90;
+                score += 120;
             } else if (titleNorm.includes(cleanSearchQuery)) {
-                score += 60;
+                score += 80;
             }
 
-            // Token matches across title + creator tags
+            // Token matches across title, creator tags, and channel
             let tokenHits = 0;
             let tagHits = 0;
+            let channelTokenHits = 0;
             for (const token of searchTokens) {
-                if (titleNorm.includes(token)) {
-                    tokenHits++;
-                }
-                if (tagsLower && tagsLower.includes(token)) {
-                    tagHits++;
-                }
+                if (titleNorm.includes(token)) tokenHits++;
+                if (tagsLower && tagsLower.includes(token)) tagHits++;
+                if (normChan && normChan.includes(token)) channelTokenHits++;
             }
-            if (tokenHits > 0) {
-                score += tokenHits * 25;
-            }
-            if (tagHits > 0) {
-                score += tagHits * 20;
-            }
+            if (tokenHits > 0) score += tokenHits * 25;
+            if (tagHits > 0) score += tagHits * 20;
+            if (channelTokenHits > 0) score += Math.min(channelTokenHits * 8, 24);
 
-            // Channel name match
-            if (channelNorm === cleanSearchQuery) {
+            // Channel name phrase match
+            if (normChan === cleanSearchQuery) {
                 score += 50;
-            } else if (channelNorm.includes(cleanSearchQuery)) {
+            } else if (normChan && normChan.includes(cleanSearchQuery)) {
                 score += 30;
             }
         }
@@ -362,7 +368,7 @@ export function rankVideos(videos, options = {}) {
         }
 
         v.recommendationScore = score;
-        v.isCompleted = watchedSet.has(vid) || (inProgressMap.get(vid) || 0) >= 85;
+        v.isCompleted = isCompleted;
         const learnerIndex = TIERS_ORDER.indexOf(dominantTier);
         const videoIndex = TIERS_ORDER.indexOf(v.tier);
         v.difficultyGap = learnerIndex >= 0 && videoIndex >= 0 ? videoIndex - learnerIndex : 0;

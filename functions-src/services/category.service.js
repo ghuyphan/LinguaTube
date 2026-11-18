@@ -36,13 +36,24 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
     const rawChannel = channel || '';
     // Only map stable YouTube categories with a direct Voca equivalent.
     const officialGenres = { '1': 'Film & Animation', '10': 'Music', '19': 'Travel & Events', '22': 'People & Blogs', '25': 'News & Politics', '27': 'Education' };
-    const rawGenre = (officialGenres[youtubeCategoryId] || genre || '').trim();
+    const rawGenre = (officialGenres[youtubeCategoryId] || genre || '').trim().toLowerCase();
     const tagList = Array.isArray(tags) ? tags : [];
     const allText = `${rawTitle} ${rawChannel} ${tagList.join(' ')}`.toLowerCase();
 
-    // 1. Music (Genre "Music" is almost 100% authoritative on YouTube)
+    // 0. Trust authoritative YouTube categories before generic title keyword heuristics
+    const officialCategoryMap = {
+        'music': 'music',
+        'film & animation': 'anime_drama',
+        'news & politics': 'news',
+        'education': 'education',
+        'travel & events': 'vlog'
+    };
+    if (officialCategoryMap[rawGenre]) {
+        return officialCategoryMap[rawGenre];
+    }
+
+    // 1. Music
     if (
-        rawGenre.toLowerCase() === 'music' ||
         /\b(?:mv|m\/v|music\s*video|official\s*(?:video|audio|mv|music)|ost|bgm|cover)\b|the\s*first\s*take/i.test(allText) ||
         /歌ってみた|歌回|弾き語り|主題歌|作詞|作曲|音楽|歌词|노래|음악|\bsing(?:ing)?\b/i.test(allText)
     ) {
@@ -51,7 +62,6 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
 
     // 2. Anime & Drama
     if (
-        rawGenre.toLowerCase() === 'film & animation' ||
         /\b(?:amv|mad)\b|アニメ|\banime\b|漫画|manga|進撃の巨人|呪術廻戦|鬼滅の刃|チェンソーマン|動漫|애니|drama|ドラマ|kdrama|cdrama|jdrama|opening\s*(?:theme|full)/i.test(allText) ||
         /animation|anime|toho|toei|kadokawa/i.test(rawChannel.toLowerCase())
     ) {
@@ -60,7 +70,6 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
 
     // 3. News & Politics
     if (
-        rawGenre.toLowerCase() === 'news & politics' ||
         /ニュース|\bnews\b|報道|新聞|ニュース7|뉴스/i.test(allText) ||
         /nhk|annnews|fnn|tbs\s*news|日テレ|cctv|\bbbc\s*news\b|cnn|ytvnews/i.test(rawChannel.toLowerCase())
     ) {
@@ -74,21 +83,19 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
         return 'conversation';
     }
 
-    // 5. Vlog & Daily Life
+    // 5. Education / Lessons (check before People & Blogs fallback so tutorials aren't demoted to vlog)
     if (
-        /\bvlog\b|日常|ルームツアー|ルーティン|一人暮らし|旅|브이로그/i.test(allText) ||
-        rawGenre.toLowerCase() === 'travel & events' ||
-        (rawGenre.toLowerCase() === 'people & blogs' && !/conversation|talk|podcast/i.test(allText))
-    ) {
-        return 'vlog';
-    }
-
-    // 6. Education / Lessons
-    if (
-        rawGenre.toLowerCase() === 'education' ||
         /文法|単語|解説|レッスン|lesson|grammar|jlpt|hsk|tocfl|topik|tutorial|learn\s+(?:japanese|english|korean|chinese)|bbc\s+learning/i.test(allText)
     ) {
         return 'education';
+    }
+
+    // 6. Vlog & Daily Life
+    if (
+        /\bvlog\b|日常|ルームツアー|ルーティン|一人暮らし|旅|브이로그/i.test(allText) ||
+        rawGenre === 'people & blogs'
+    ) {
+        return 'vlog';
     }
 
     return 'general';

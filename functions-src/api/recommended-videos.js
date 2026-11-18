@@ -13,6 +13,7 @@ import { isLanguageSupported, resolveVideoChannelAvatar, getVideoMetadata } from
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 import { normalizeRecommendationContext } from '../services/recommendation.service.js';
 import { VALID_CATEGORIES } from '../services/category.service.js';
+import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 
 const VALID_TIERS = new Set(['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced']);
 
@@ -56,10 +57,10 @@ async function handleRecommendedVideos(context, method) {
         }
     }
 
-    const rawLang = (body.lang || url.searchParams.get('lang') || 'ja').toLowerCase().trim();
+    const rawLang = normalizeLanguageCode(body.lang || url.searchParams.get('lang') || 'ja');
     const lang = isLanguageSupported(rawLang) ? rawLang : 'ja';
 
-    const rawTier = (body.tier || url.searchParams.get('tier') || '').toLowerCase().trim();
+    const rawTier = (body.tier || url.searchParams.get('tier') || '').toLowerCase().trim().replace(/[\s-]+/g, '_');
     const tier = VALID_TIERS.has(rawTier) ? rawTier : null;
 
     const rawCategory = (body.category || url.searchParams.get('category') || '').toLowerCase().trim();
@@ -71,14 +72,20 @@ async function handleRecommendedVideos(context, method) {
     const offsetParam = parseInt(body.offset ?? url.searchParams.get('offset'), 10);
     const offset = Math.max(isNaN(offsetParam) ? 0 : offsetParam, 0);
 
-    const rawQuery = (body.q || body.query || url.searchParams.get('q') || url.searchParams.get('query') || '')
-        .trim()
+    const firstNonEmpty = (...values) => {
+        for (const value of values) {
+            if (typeof value === 'string' && value.trim().length > 0) return value.trim();
+        }
+        return '';
+    };
+    const rawQuery = firstNonEmpty(body.q, body.query, url.searchParams.get('q'), url.searchParams.get('query'))
         .replace(/[\x00-\x1F\x7F]/g, '');
     const query = rawQuery.length > 0 ? rawQuery.slice(0, 100) : null;
 
-    const isRefresh = body.refresh === true || url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
+    const isRefresh = body.refresh === true || body.force === true
+        || url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
 
-    const rawSeed = body.sessionSeed ?? url.searchParams.get('seed');
+    const rawSeed = body.sessionSeed ?? body.seed ?? url.searchParams.get('seed');
     let sessionSeed;
     if (typeof rawSeed === 'number' && Number.isFinite(rawSeed)) {
         sessionSeed = Math.trunc(rawSeed);
