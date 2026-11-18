@@ -4,14 +4,15 @@
  */
 
 import { SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
+import { SCRIPT_REGEX } from '../utils/transcript-utils.js';
 
 const LANG_ALIASES = { jp: 'ja', jpn: 'ja', cn: 'zh', cmn: 'zh', zho: 'zh', kr: 'ko', kor: 'ko', eng: 'en', vie: 'vi', vn: 'vi' };
 
-const KANA_REGEX = /[\u3040-\u309F\u30A0-\u30FF]/g;
-const HANGUL_REGEX = /[\uAC00-\uD7AF\u1100-\u11FF]/g;
-const HANZI_REGEX = /[\u4E00-\u9FFF]/g;
-const VIETNAMESE_SPECIFIC_REGEX = /[ăđơưĂĐƠƯảãạằắẳẵặầấẩẫậẻẽẹềếểễệỉĩịỏọồốổỗộờớởỡợủũụừứửữựỷỹỵ]/i;
-const OTHER_NON_TARGET_SCRIPT_REGEX = /[\u0400-\u04FF\u0600-\u06FF\u0E00-\u0E7F\u0900-\u097F]/;
+const KANA_REGEX = new RegExp(SCRIPT_REGEX.kana.source, 'g');
+const HANGUL_REGEX = new RegExp(SCRIPT_REGEX.hangul.source, 'g');
+const HANZI_REGEX = new RegExp(SCRIPT_REGEX.han.source, 'g');
+const VIETNAMESE_SPECIFIC_REGEX = SCRIPT_REGEX.vietnameseSpecific;
+const OTHER_NON_TARGET_SCRIPT_REGEX = SCRIPT_REGEX.otherNonTarget;
 
 /**
  * Normalize a BCP-47 or shorthand language code into 'ja' | 'zh' | 'ko' | 'en' | 'other' | null.
@@ -34,7 +35,8 @@ export function normalizePrimaryLanguage(raw) {
  * Checked before script counting so bilingual titles like "Love Trial (English Cover) 恋愛裁判"
  * or "Cover Tiếng Nhật" map to their true sung/spoken audio language.
  */
-const CHINESE_MARKER_REGEX = /[这们说么为实欢听书的了吗呢吧啊哦呀哪誰谁怎沒没還还個个這們說]/;
+// Excludes '的' which also appears in Japanese Kanji compounds (e.g. 圧倒的, 目的).
+const CHINESE_MARKER_REGEX = /[这们说么为实欢听书了吗呢吧啊哦呀哪誰谁怎沒没還还個个這們說]/;
 
 function detectExplicitSpokenCue(text) {
     if (/(?<![a-z])(?:english|eng)\s*(?:ver(?:sion)?|cover|dub|podcast|listening)(?![a-z])|\(\s*english\s*\)|【\s*english\s*】|ti[eế]ng\s*anh/i.test(text)) {
@@ -85,19 +87,6 @@ export function inferSpokenLanguage(meta = {}) {
     const tags = Array.isArray(meta.tags) ? meta.tags.filter(t => typeof t === 'string').join(' ') : '';
     const combined = `${title} ${channel} ${tags}`.trim();
 
-    const audioLang = normalizePrimaryLanguage(meta.defaultAudioLanguage);
-    if (audioLang) {
-        const defaultDocLang = normalizePrimaryLanguage(meta.defaultLanguage);
-        // YouTube creators frequently leave defaultAudioLanguage at the Studio 'en' default
-        // even when defaultLanguage and title/channel script clearly match a non-English language.
-        if (audioLang === 'en' && defaultDocLang && defaultDocLang !== 'en' && defaultDocLang !== 'other'
-            && !detectExplicitSpokenCue(combined)
-            && hasStrongScriptCue(`${title} ${channel}`, defaultDocLang)) {
-            return defaultDocLang;
-        }
-        return audioLang;
-    }
-
     const aiLanguages = Array.isArray(meta.aiLanguages) ? meta.aiLanguages : [];
     const availableLanguages = Array.isArray(meta.availableLanguages) ? meta.availableLanguages : [];
     const subLanguages = Array.isArray(meta.subLanguages) ? meta.subLanguages : [];
@@ -106,6 +95,29 @@ export function inferSpokenLanguage(meta = {}) {
         ? [...aiLanguages, ...subLanguages]
         : availableLanguages;
     const knownLangs = new Set(primaryTrackSource.map(normalizePrimaryLanguage).filter(Boolean));
+
+    const audioLang = normalizePrimaryLanguage(meta.defaultAudioLanguage);
+    if (audioLang) {
+        const defaultDocLang = normalizePrimaryLanguage(meta.defaultLanguage);
+        const explicitCue = detectExplicitSpokenCue(combined);
+        // YouTube creators frequently leave defaultAudioLanguage at the Studio 'en' default
+        // even when defaultLanguage, verified tracks, or title/channel indicate another language.
+        if (audioLang === 'en' && explicitCue !== 'en') {
+            if (defaultDocLang && defaultDocLang !== 'en' && defaultDocLang !== 'other'
+                && hasStrongScriptCue(`${title} ${channel}`, defaultDocLang)) {
+                return defaultDocLang;
+            }
+            const verifiedTrackLangs = new Set([...aiLanguages, ...subLanguages].map(normalizePrimaryLanguage).filter(Boolean));
+            const nonEnTracks = [...verifiedTrackLangs].filter(l => l !== 'en' && l !== 'other');
+            if (!verifiedTrackLangs.has('en') && nonEnTracks.length === 1) {
+                const trackLang = nonEnTracks[0];
+                if (hasStrongScriptCue(`${title} ${channel}`, trackLang) || detectTopicLanguageCue(combined) === trackLang) {
+                    return trackLang;
+                }
+            }
+        }
+        return audioLang;
+    }
 
     if (!combined) {
         if (aiLanguages.length === 1) return normalizePrimaryLanguage(aiLanguages[0]);
@@ -117,13 +129,16 @@ export function inferSpokenLanguage(meta = {}) {
 
     const titleHangul = (title.match(HANGUL_REGEX) || []).length;
     const titleKana = (title.match(KANA_REGEX) || []).length;
+    const titleHanzi = (title.match(HANZI_REGEX) || []).length;
     const allHangul = (combined.match(HANGUL_REGEX) || []).length;
     const allKana = (combined.match(KANA_REGEX) || []).length;
 
-    if (titleHangul > 0 || (allHangul > 0 && allKana === 0)) return 'ko';
-    if (titleKana > 0 || (allKana > 0 && titleHangul === 0)) return 'ja';
-
-    const titleHanzi = (title.match(HANZI_REGEX) || []).length;
+    if (titleHangul > 0) return 'ko';
+    if (titleKana > 0 && !(titleHanzi >= titleKana * 4 && CHINESE_MARKER_REGEX.test(title))) return 'ja';
+    if (titleHanzi < 4) {
+        if (allHangul > 0 && allKana === 0) return 'ko';
+        if (allKana > 0 && allHangul === 0) return 'ja';
+    }
     const titleLatin = (title.replace(/[\s\d\p{P}\p{S}]/gu, '').match(/[a-zA-Z]/g) || []).length;
 
     // English song/clip titles re-uploaded with brief Chinese bracket notes (e.g. 【...唱歌】Artist - Song)

@@ -357,32 +357,144 @@ export function normalizeLanguageCode(lang) {
     return LANGUAGE_ALIASES[clean] || clean;
 }
 
+export const SCRIPT_REGEX = Object.freeze({
+    kana: /[\u3040-\u309F\u30A0-\u30FF]/u,
+    hangul: /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/u,
+    han: /[\u4E00-\u9FFF]/u,
+    bopomofo: /[\u3100-\u312F]/u,
+    cyrillic: /[\u0400-\u04FF]/u,
+    latin: /[a-zA-Z]/,
+    vietnameseSpecific: /[ăđơưĂĐƠƯảãạằắẳẵặầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộờớởỡợùúủũụừứửữựỷỹỵ]/i,
+    vietnameseAny: /[àáèéìíòóùúýăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵđảãạ]/iu,
+    nonLatin: /[\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/u,
+    otherNonTarget: /[\u0400-\u04FF\u0600-\u06FF\u0E00-\u0E7F\u0900-\u097F]/u,
+});
+
 const NATIVE_SCRIPTS = {
-    ja: /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u,
-    zh: /[\p{Script=Han}\p{Script=Bopomofo}]/u,
-    ko: /[\p{Script=Hangul}\p{Script=Han}]/u,
-    vi: /[ăđơưĂĐƠƯàáảãạằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]/i
+    ja: /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/u,
+    zh: /[\u4E00-\u9FFF\u3100-\u312F]/u,
+    ko: /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F\u4E00-\u9FFF]/u,
+    vi: SCRIPT_REGEX.vietnameseAny,
+    ru: SCRIPT_REGEX.cyrillic,
 };
 
-// Reject clear English-only contradictions. Short, romanized and mixed tracks
-// are inconclusive, so this check never assigns a new language to their cues.
-export function contradictsNativeLanguage(segments, language) {
-    if (!Object.hasOwn(NATIVE_SCRIPTS, language) || !Array.isArray(segments)) return false;
-    const expectedScript = NATIVE_SCRIPTS[language];
-    const count = Math.min(segments.length, 32);
-    const englishWords = new Set();
-    let englishCues = 0;
+const ENGLISH_FUNCTION_WORDS_REGEX = /\b(?:the|you|your|and|with|this|that|were|have|never|know|what|when|want|will|are|don't|we're|gonna)\b/g;
+
+function sampleCueTexts(segments, maxSamples = 32) {
+    if (!Array.isArray(segments) || !segments.length) return [];
+    const count = Math.min(segments.length, maxSamples);
+    const texts = [];
     for (let i = 0; i < count; i++) {
         const index = Math.floor(i * (segments.length - 1) / Math.max(count - 1, 1));
         const cue = cleanCueText(segments[index]?.text?.slice?.(0, 512));
-        if (expectedScript.test(cue)) return false;
-        const words = cue.toLowerCase().match(/\b(?:the|you|your|and|with|this|that|were|have|never|know|what|when|want|will|are|don't|we're|gonna)\b/g);
+        if (cue) texts.push(cue);
+    }
+    return texts;
+}
+
+// Reject clear script/language contradictions (including non-Latin or Vietnamese saved under 'en').
+// Short, romanized, and mixed tracks without strong contradiction stay inconclusive.
+export function contradictsNativeLanguage(segments, language) {
+    const normLang = normalizeLanguageCode(language);
+    if (!Array.isArray(segments) || !segments.length) return false;
+    const cues = sampleCueTexts(segments);
+    if (!cues.length) return false;
+
+    if (normLang === 'en') {
+        let alphabeticCues = 0;
+        let englishWordCues = 0;
+        let foreignScriptCues = 0;
+        let foreignChars = 0;
+        let latinChars = 0;
+        for (const cue of cues) {
+            if (!/\p{L}/u.test(cue)) continue;
+            alphabeticCues++;
+            if (ENGLISH_FUNCTION_WORDS_REGEX.test(cue.toLowerCase())) englishWordCues++;
+            ENGLISH_FUNCTION_WORDS_REGEX.lastIndex = 0;
+            const cueForeign = cue.match(new RegExp(`${SCRIPT_REGEX.nonLatin.source}|${SCRIPT_REGEX.vietnameseSpecific.source}`, 'gu'));
+            const cueLatin = cue.match(/[a-zA-Z]/g);
+            if (cueForeign?.length) {
+                foreignScriptCues++;
+                foreignChars += cueForeign.length;
+            }
+            if (cueLatin?.length) latinChars += cueLatin.length;
+        }
+        return alphabeticCues > 0 &&
+            foreignScriptCues >= Math.max(1, Math.ceil(alphabeticCues * 0.4)) &&
+            (foreignScriptCues > englishWordCues || foreignChars * 2 >= Math.max(latinChars, 40));
+    }
+
+    if (!Object.hasOwn(NATIVE_SCRIPTS, normLang)) return false;
+    const expectedScript = NATIVE_SCRIPTS[normLang];
+    const englishWords = new Set();
+    let englishCues = 0;
+    let alphabeticCues = 0;
+    let conflictingCues = 0;
+
+    for (const cue of cues) {
+        if (!/\p{L}/u.test(cue)) continue;
+        alphabeticCues++;
+        const matchesExpected = normLang === 'zh'
+            ? expectedScript.test(cue) && !SCRIPT_REGEX.kana.test(cue) && !SCRIPT_REGEX.hangul.test(cue)
+            : expectedScript.test(cue);
+        if (matchesExpected) return false;
+
+        if (SCRIPT_REGEX.nonLatin.test(cue)) conflictingCues++;
+        const words = cue.toLowerCase().match(ENGLISH_FUNCTION_WORDS_REGEX);
         if (words) {
             englishCues++;
             for (const word of words) englishWords.add(word);
         }
     }
-    return englishCues >= 3 && englishWords.size >= 5;
+    if (englishCues >= 3 && englishWords.size >= 5) return true;
+    return alphabeticCues >= 2 && conflictingCues >= Math.ceil(alphabeticCues * 0.6);
+}
+
+/** Infer dominant transcript language directly from segment character scripts. */
+export function inferTranscriptScriptLanguage(segments) {
+    const cues = sampleCueTexts(segments);
+    let alphabetic = 0, hangul = 0, kana = 0, han = 0, vi = 0, cyrillic = 0, latin = 0;
+    let hanChars = 0, latinChars = 0;
+    for (const cue of cues) {
+        if (!/\p{L}/u.test(cue)) continue;
+        alphabetic++;
+        if (SCRIPT_REGEX.hangul.test(cue)) hangul++;
+        if (SCRIPT_REGEX.kana.test(cue)) kana++;
+        if (SCRIPT_REGEX.han.test(cue) && !SCRIPT_REGEX.kana.test(cue) && !SCRIPT_REGEX.hangul.test(cue)) {
+            han++;
+            hanChars += (cue.match(/[\u4E00-\u9FFF]/gu) || []).length;
+        }
+        if (SCRIPT_REGEX.vietnameseSpecific.test(cue)) vi++;
+        if (SCRIPT_REGEX.cyrillic.test(cue)) cyrillic++;
+        if (SCRIPT_REGEX.latin.test(cue) && !SCRIPT_REGEX.nonLatin.test(cue) && !SCRIPT_REGEX.vietnameseSpecific.test(cue)) {
+            latin++;
+            latinChars += (cue.match(/[a-zA-Z]/g) || []).length;
+        }
+    }
+    if (!alphabetic) return null;
+    if (hangul > 0 && hangul >= kana) return 'ko';
+    if (kana > 0) return 'ja';
+    if (han > 0 && (han >= latin || hanChars * 2 >= latinChars)) return 'zh';
+    if (vi > 0 && vi * 3 >= alphabetic) return 'vi';
+    if (cyrillic > 0 && cyrillic >= latin) return 'ru';
+    if (latin > 0) return 'en';
+    return null;
+}
+
+/**
+ * Resolve final AI transcript language: trust provider detection unless the transcribed
+ * segment script contradicts it (e.g. Gladia labeling Chinese lyrics as 'en').
+ */
+export function resolveIngestedLanguage(segments, detectedLang, requestedLang) {
+    const normDetected = normalizeLanguageCode(detectedLang);
+    const normRequested = normalizeLanguageCode(requestedLang);
+    if (normDetected && !contradictsNativeLanguage(segments, normDetected)) {
+        return normDetected;
+    }
+    if (normRequested && !contradictsNativeLanguage(segments, normRequested)) {
+        return normRequested;
+    }
+    return inferTranscriptScriptLanguage(segments) || normRequested || normDetected;
 }
 
 /**

@@ -4,6 +4,10 @@
  * active vocabulary notebook overlap, creator affinity, and YouTube-style channel de-clustering.
  */
 
+import { detectVideoCategory, VALID_CATEGORIES } from './category.service.js';
+import { normalizeLanguageCode } from '../utils/transcript-utils.js';
+import { jsonResponse, SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
+
 const WEIGHTS = { completed: -70, searchCompleted: -30, resume: 10, started: 5, unseen: 40, favorite: 20,
     channel: 30, vocabulary: 25, vocabularyWord: 5, vocabularyCap: 20,
     shortLesson: 20, longLesson: 10, extremeDuration: -10,
@@ -11,6 +15,13 @@ const WEIGHTS = { completed: -70, searchCompleted: -30, resume: 10, started: 5, 
     ungraded: -8, jitter: 12 };
 
 const TIERS_ORDER = ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'];
+const VALID_TIERS = new Set(TIERS_ORDER);
+const SPOKEN_CATEGORIES = new Set(['conversation', 'vlog', 'education']);
+const NOISE_BRACKET_RE = /[[(（【][^\])）】]*?(?:official|music|video|mv|hd|4k|1080p|audio|lyrics|vietsub|engsub|sub|español|live|ver|version|full|album|remix|the first take|tft|ft|feat)[^\])）】]*?[\])）】]/gi;
+const ALL_BRACKET_RE = /\[.*?\]|\(.*?\)|【.*?】|（.*?）/g;
+const QUOTE_TITLE_RE = /[《「『"“](.*?)[》」』"”]/;
+const BUZZWORDS_RE = /\b(?:official|music|video|mv|hd|4k|1080p|audio|lyrics|vietsub|engsub|sub|español|live|ver|version|full|album|cover|remix|feat|ft|prod|ep)\b/gi;
+const PUNCT_SPLIT_RE = /[\s\u3000/\\|#_~*•–—\-!！?？、。・～~:：;；,，.]+/;
 
 function normalizeMatchKey(value) {
     return typeof value === 'string' ? value.normalize('NFKC').trim().toLowerCase() : '';
@@ -161,8 +172,117 @@ export function normalizeRecommendationContext(value) {
     }
     const dominantTier = normalizeTierValue(input.dominantTier);
     return { watched: strings(input.watched, 200, 100), inProgress,
+        excludeIds: strings(input.excludeIds, 200, 100),
         favorites: strings(input.favorites, 200, 100), topChannels: strings(input.topChannels, 10, 200),
         vocabWords: [...new Set(strings(input.vocabWords, 50, 100).map(w => w.toLowerCase()))], dominantTier };
+}
+
+/**
+ * Parse and validate shared GET/POST recommendation request parameters.
+ * Returns either `{ params }` or `{ errorResponse }`.
+ */
+export async function parseRecommendationRequest(context, method, { defaultLimit = 12 } = {}) {
+    const { request } = context;
+    const url = new URL(request.url);
+
+    let body = {};
+    if (method === 'POST') {
+        try {
+            if (context?.data?.parsedBody !== undefined) {
+                body = context.data.parsedBody;
+                if (JSON.stringify(body).length > 65536) {
+                    return { errorResponse: jsonResponse({ success: false, error: 'Recommendation context too large' }, 413) };
+                }
+            } else {
+                const text = await request.text();
+                if (text.length > 65536) {
+                    return { errorResponse: jsonResponse({ success: false, error: 'Recommendation context too large' }, 413) };
+                }
+                body = JSON.parse(text);
+            }
+            if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('Invalid body');
+        } catch {
+            return { errorResponse: jsonResponse({ success: false, error: 'Invalid JSON object' }, 400) };
+        }
+    }
+    for (const key of ['lang', 'tier', 'category', 'q', 'query']) {
+        if (body[key] != null && typeof body[key] !== 'string') {
+            return { errorResponse: jsonResponse({ success: false, error: `Invalid ${key}` }, 400) };
+        }
+    }
+
+    const rawLang = normalizeLanguageCode(body.lang || url.searchParams.get('lang') || 'ja');
+    const lang = SUPPORTED_LEARNING_LANGUAGE_SET.has(rawLang) ? rawLang : 'ja';
+
+    const rawTier = (body.tier || url.searchParams.get('tier') || '').toLowerCase().trim().replace(/[\s-]+/g, '_');
+    const tier = VALID_TIERS.has(rawTier) ? rawTier : null;
+
+    const rawCategory = (body.category || url.searchParams.get('category') || '').toLowerCase().trim();
+    const category = VALID_CATEGORIES.has(rawCategory) ? rawCategory : null;
+
+    const limitParam = parseInt(body.limit ?? url.searchParams.get('limit'), 10);
+    const limit = Math.min(Math.max(isNaN(limitParam) ? defaultLimit : limitParam, 1), 50);
+
+    const offsetParam = parseInt(body.offset ?? url.searchParams.get('offset'), 10);
+    const offset = Math.max(isNaN(offsetParam) ? 0 : offsetParam, 0);
+
+    const firstNonEmpty = (...values) => {
+        for (const value of values) {
+            if (typeof value === 'string' && value.trim().length > 0) return value.trim();
+        }
+        return '';
+    };
+    const rawQuery = firstNonEmpty(body.q, body.query, url.searchParams.get('q'), url.searchParams.get('query'))
+        .replace(/[\x00-\x1F\x7F]/g, '');
+    const query = rawQuery.length > 0 ? rawQuery.slice(0, 100) : null;
+
+    const isRefresh = body.refresh === true || body.force === true
+        || url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
+
+    const rawSeed = body.sessionSeed ?? body.seed ?? url.searchParams.get('seed');
+    let sessionSeed;
+    if (typeof rawSeed === 'number' && Number.isFinite(rawSeed)) {
+        sessionSeed = Math.trunc(rawSeed);
+    } else if (typeof rawSeed === 'string' && rawSeed.trim().length > 0) {
+        const trimmedSeed = rawSeed.trim();
+        if (/^-?\d+$/.test(trimmedSeed)) {
+            sessionSeed = parseInt(trimmedSeed, 10);
+        } else {
+            sessionSeed = hashString(trimmedSeed) >>> 0;
+        }
+    } else {
+        sessionSeed = isRefresh ? Math.floor(Math.random() * 1000000) : 12345;
+    }
+
+    const userContext = normalizeRecommendationContext(body.context);
+    const excludeIds = [...new Set([
+        ...userContext.excludeIds,
+        ...(Array.isArray(body.excludeIds) ? body.excludeIds : [])
+            .filter(v => typeof v === 'string')
+            .map(v => v.normalize('NFKC').trim().slice(0, 100))
+            .filter(Boolean)
+    ])].slice(0, 200);
+
+    const isPersonalized = Boolean(userContext.watched.length || Object.keys(userContext.inProgress).length
+        || userContext.vocabWords.length || userContext.topChannels.length
+        || userContext.favorites.length || userContext.dominantTier || excludeIds.length);
+
+    return {
+        params: {
+            body, url, lang, tier, category, limit, offset, query,
+            isRefresh, sessionSeed, userContext, excludeIds, isPersonalized
+        }
+    };
+}
+
+export function recommendationResponseHeaders(metrics, { isPersonalized = false, isRefresh = false } = {}) {
+    return {
+        'X-Cache': isPersonalized
+            ? 'BYPASS-PERSONALIZED'
+            : (isRefresh ? 'BYPASS' : (metrics?.candidateCache === 'HIT' ? 'HIT-CANDIDATES' : 'MISS')),
+        'X-Candidate-Cache': metrics?.candidateCache || 'NOT-QUERIED',
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
+    };
 }
 
 function vocabularyPattern(word) {
@@ -171,9 +291,146 @@ function vocabularyPattern(word) {
     return new RegExp(`(?:^|[^\\p{L}\\p{N}])${escaped}(?=$|[^\\p{L}\\p{N}])`, 'u');
 }
 
+function unpackLearnerContext(context, extraExcludeIds = []) {
+    const safeContext = normalizeRecommendationContext(context);
+    const watchedSet = new Set(safeContext.watched);
+    const excludeSet = new Set([...safeContext.excludeIds, ...extraExcludeIds].filter(Boolean));
+    const inProgressMap = new Map();
+    for (const [id, prog] of Object.entries(safeContext.inProgress)) {
+        const num = Number(prog);
+        if (!isNaN(num) && num > 0) inProgressMap.set(id, num);
+    }
+    const favoritesSet = new Set(safeContext.favorites);
+    const channelAffinityMap = new Map();
+    safeContext.topChannels.forEach((ch, idx) => {
+        const normCh = normalizeMatchKey(ch);
+        if (normCh) channelAffinityMap.set(normCh, Math.max(WEIGHTS.channel - idx * 5, 10));
+    });
+    const vocabWords = safeContext.vocabWords.map(w => normalizeMatchKey(w)).filter(Boolean).slice(0, 50);
+    const vocabulary = new Map(vocabWords.map(word => [word, vocabularyPattern(word)]));
+    return {
+        watchedSet,
+        excludeSet,
+        inProgressMap,
+        favoritesSet,
+        channelAffinityMap,
+        vocabWords,
+        vocabulary,
+        dominantTier: normalizeTierValue(safeContext.dominantTier)
+    };
+}
+
+function scoreLearnerCommon(v, unpacked, { includeTier = true, isSearchMode = false } = {}) {
+    let score = 0;
+    const vid = v.videoId;
+    if (unpacked.favoritesSet.has(vid)) score += WEIGHTS.favorite;
+
+    const normChan = normalizeMatchKey(v.channel);
+    if (normChan && unpacked.channelAffinityMap.has(normChan)) {
+        score += unpacked.channelAffinityMap.get(normChan);
+    }
+
+    const tagsLower = Array.isArray(v.tags)
+        ? v.tags.filter(t => typeof t === 'string').map(t => normalizeMatchKey(t)).filter(Boolean).join(' ')
+        : '';
+
+    if (unpacked.vocabWords.length > 0 && (v.title || tagsLower)) {
+        const titleLower = normalizeMatchKey(v.title);
+        const matched = [];
+        for (const [word, pattern] of unpacked.vocabulary) {
+            const hit = pattern
+                ? ((titleLower && pattern.test(titleLower)) || (tagsLower && pattern.test(tagsLower)))
+                : ((titleLower && titleLower.includes(word)) || (tagsLower && tagsLower.includes(word)));
+            if (hit) {
+                matched.push(word);
+                if (matched.length >= 5) break;
+            }
+        }
+        if (matched.length > 0) {
+            v.matchedWords = matched;
+            score += WEIGHTS.vocabulary + Math.min(matched.length * WEIGHTS.vocabularyWord, WEIGHTS.vocabularyCap);
+        }
+    }
+
+    const d = v.duration || 0;
+    if (d >= 180 && d <= 720) score += WEIGHTS.shortLesson;
+    else if (d > 720 && d <= 1200) score += WEIGHTS.longLesson;
+    else if (d > 0 && (d < 90 || d > 2400)) score += WEIGHTS.extremeDuration;
+
+    const { dominantTier } = unpacked;
+    const learnerIndex = TIERS_ORDER.indexOf(dominantTier);
+    const videoIndex = TIERS_ORDER.indexOf(v.tier);
+    v.difficultyGap = learnerIndex >= 0 && videoIndex >= 0 ? videoIndex - learnerIndex : 0;
+
+    if (includeTier) {
+        if (dominantTier && v.tier) {
+            if (v.tier === dominantTier) score += WEIGHTS.currentTier;
+            else if (learnerIndex !== -1 && videoIndex === learnerIndex + 1) score += WEIGHTS.nextTier;
+            else if (learnerIndex !== -1 && videoIndex === learnerIndex - 1) score += WEIGHTS.prevTier;
+            else if (learnerIndex !== -1 && videoIndex <= learnerIndex - 2) score += WEIGHTS.tooEasy;
+            else if (learnerIndex !== -1 && videoIndex >= learnerIndex + 2) score += WEIGHTS.tooHard;
+        } else if (dominantTier && !v.tier && !isSearchMode) {
+            score += WEIGHTS.ungraded;
+        }
+    }
+
+    return { score, normChan, tagsLower };
+}
+
+function cleanChannelName(channel) {
+    if (typeof channel !== 'string') return '';
+    const trimmed = channel.trim();
+    const lower = trimmed.toLowerCase();
+    if (!trimmed || lower === 'youtube' || lower === 'youtube creator' || lower === 'vevo') return '';
+    return trimmed.replace(/\s*-\s*Topic$/i, '').replace(/\s+Official$/i, '').replace(/\s+VEVO$/i, '').trim();
+}
+
+function extractRelatedSignals(currentVideo) {
+    const title = typeof currentVideo?.title === 'string' ? currentVideo.title.trim() : '';
+    const channel = typeof currentVideo?.channel === 'string' ? currentVideo.channel.trim() : '';
+    const cleanChan = cleanChannelName(channel);
+    const quoteMatch = title ? QUOTE_TITLE_RE.exec(title) : null;
+    const stripped = title.replace(NOISE_BRACKET_RE, ' ').replace(ALL_BRACKET_RE, ' ').replace(BUZZWORDS_RE, ' ');
+    const rawKeywords = quoteMatch?.[1]
+        ? [quoteMatch[1], ...stripped.split(PUNCT_SPLIT_RE)]
+        : stripped.split(PUNCT_SPLIT_RE);
+    const keywordTokens = [...new Set(
+        rawKeywords
+            .map(t => normalizeMatchKey(t))
+            .filter(t => t.length >= 2 && t !== normalizeMatchKey(cleanChan))
+    )].slice(0, 6);
+    const keywordMatchers = keywordTokens.map(token => [token, vocabularyPattern(token)]);
+    const category = currentVideo?.category && currentVideo.category !== 'general'
+        ? String(currentVideo.category).trim().toLowerCase()
+        : detectVideoCategory({ title, channel, tags: currentVideo?.tags });
+    const tags = new Set(
+        (Array.isArray(currentVideo?.tags) ? currentVideo.tags : [])
+            .filter(t => typeof t === 'string')
+            .map(t => normalizeMatchKey(t))
+            .filter(Boolean)
+    );
+    const refTier = normalizeTierValue(currentVideo?.tier);
+    return {
+        cleanChanLower: normalizeMatchKey(cleanChan),
+        keywordMatchers,
+        category,
+        tags,
+        refTier
+    };
+}
+
+function categoryMatchScore(curCat, candCat) {
+    const a = curCat && curCat !== 'general' ? curCat : null;
+    const b = candCat && candCat !== 'general' ? candCat : null;
+    if (!a || !b) return 0;
+    if (a === b) return 45;
+    if (SPOKEN_CATEGORIES.has(a) && SPOKEN_CATEGORIES.has(b)) return 15;
+    return (a === 'music' || b === 'music') ? -25 : 0;
+}
+
 /**
- * Score and rank candidate videos using learner signals
- * 
+ * Score and rank candidate videos using learner signals (Home / Explore).
+ *
  * @param {Array<Object>} videos Candidate video objects
  * @param {Object} options Ranking configuration
  * @param {string} [options.language] Active learning language ('ja', 'ko', 'zh', 'en')
@@ -193,7 +450,8 @@ export function rankVideos(videos, options = {}) {
         context = {},
         sessionSeed = null,
         query = null,
-        category = null
+        category = null,
+        excludeIds = []
     } = options;
 
     const cleanSearchQuery = (typeof query === 'string' && query.trim())
@@ -204,141 +462,43 @@ export function rankVideos(videos, options = {}) {
         ? cleanSearchQuery.split(/[\s\u3000]+/).filter(t => t.length > 0)
         : [];
 
-    const safeContext = normalizeRecommendationContext(context);
+    const unpacked = unpackLearnerContext(context, Array.isArray(excludeIds) ? excludeIds : []);
+    const filtered = unpacked.excludeSet.size > 0
+        ? videos.filter(v => v?.videoId && !unpacked.excludeSet.has(v.videoId))
+        : videos;
 
-    // 1. Unpack learner state
-    const watchedSet = new Set(Array.isArray(safeContext.watched) ? safeContext.watched : []);
-    const inProgressMap = new Map();
-    if (safeContext.inProgress && typeof safeContext.inProgress === 'object') {
-        for (const [id, prog] of Object.entries(safeContext.inProgress)) {
-            const num = Number(prog);
-            if (!isNaN(num) && num > 0) inProgressMap.set(id, num);
-        }
-    }
-    const favoritesSet = new Set(Array.isArray(safeContext.favorites) ? safeContext.favorites : []);
-
-    // Creator / Channel Affinity weights
-    const channelAffinityMap = new Map();
-    if (Array.isArray(safeContext.topChannels)) {
-        safeContext.topChannels.forEach((ch, idx) => {
-            const normCh = normalizeMatchKey(ch);
-            if (normCh) {
-                const weight = Math.max(WEIGHTS.channel - idx * 5, 10);
-                channelAffinityMap.set(normCh, weight);
-            }
-        });
-    }
-
-    // Active SRS Flashcard Vocabulary Words
-    const vocabWords = (Array.isArray(safeContext.vocabWords) ? safeContext.vocabWords : [])
-        .map(w => normalizeMatchKey(w))
-        .filter(w => w.length > 0)
-        .slice(0, 50);
-
-    const vocabulary = new Map(vocabWords.map(word => [word, vocabularyPattern(word)]));
-
-    const dominantTier = normalizeTierValue(safeContext.dominantTier);
-
-    // 2. Multi-factor scoring pass
-    const scored = videos.map(video => {
-        let score = 0;
+    const scored = filtered.map(video => {
         const v = { ...video };
         const vid = v.videoId;
+        const { score: baseScore, normChan, tagsLower } = scoreLearnerCommon(v, unpacked, {
+            includeTier: !requestedTier || requestedTier === 'all',
+            isSearchMode
+        });
+        let score = baseScore;
 
-        // Factor A: History & Completion State
-        const progress = inProgressMap.get(vid);
-        const isCompleted = watchedSet.has(vid) || (progress || 0) >= 85;
+        // Factor A: History & Completion State (Home keeps inProgress resumable, demotes >=85%)
+        const progress = unpacked.inProgressMap.get(vid);
+        const isCompleted = unpacked.watchedSet.has(vid) || (progress || 0) >= 85;
         if (isCompleted) {
-            score += isSearchMode ? WEIGHTS.searchCompleted : WEIGHTS.completed; // Demote completed (less harshly in explicit search)
+            score += isSearchMode ? WEIGHTS.searchCompleted : WEIGHTS.completed;
         } else if (progress !== undefined) {
             if (progress >= 10) {
-                score += WEIGHTS.resume; // Resume learning boost
+                score += WEIGHTS.resume;
                 v.resumeProgress = Math.round(progress);
             } else {
                 score += WEIGHTS.started;
             }
         } else {
-            score += WEIGHTS.unseen; // Completely new / unwatched exploration bonus
-        }
-
-        if (favoritesSet.has(vid)) {
-            score += WEIGHTS.favorite;
-        }
-
-        // Factor B: Creator / Channel Affinity
-        const normChan = normalizeMatchKey(v.channel);
-        if (normChan && channelAffinityMap.has(normChan)) {
-            score += channelAffinityMap.get(normChan);
-        }
-
-        const tagsLower = Array.isArray(v.tags)
-            ? v.tags.filter(t => typeof t === 'string').map(t => normalizeMatchKey(t)).filter(Boolean).join(' ')
-            : '';
-
-        // Factor C: Active Vocabulary Overlap (across title + creator tags)
-        if (vocabWords.length > 0 && (v.title || tagsLower)) {
-            const titleLower = normalizeMatchKey(v.title);
-            const matched = [];
-            for (const [word, pattern] of vocabulary) {
-                const hit = pattern
-                    ? ((titleLower && pattern.test(titleLower)) || (tagsLower && pattern.test(tagsLower)))
-                    : ((titleLower && titleLower.includes(word)) || (tagsLower && tagsLower.includes(word)));
-                if (hit) {
-                    matched.push(word);
-                    if (matched.length >= 5) break;
-                }
-            }
-            if (matched.length > 0) {
-                v.matchedWords = matched;
-                score += WEIGHTS.vocabulary + Math.min(matched.length * WEIGHTS.vocabularyWord, WEIGHTS.vocabularyCap); // up to +45 pts
-            }
-        }
-
-        // Factor D: Pedagogical Duration Sweet Spot (3 to 12 minutes favored)
-        const d = v.duration || 0;
-        if (d >= 180 && d <= 720) {
-            score += WEIGHTS.shortLesson; // 3 to 12 mins (optimal micro-learning retention)
-        } else if (d > 720 && d <= 1200) {
-            score += WEIGHTS.longLesson; // 12 to 20 mins
-        } else if (d > 0 && (d < 90 || d > 2400)) {
-            score += WEIGHTS.extremeDuration; // <1.5 min or >40 min
-        }
-
-        // Factor E: Full 5-Tier Krashen Level Balancing (i-2 .. i+2)
-        if (!requestedTier || requestedTier === 'all') {
-            if (dominantTier && v.tier) {
-                const domIdx = TIERS_ORDER.indexOf(dominantTier);
-                const vidIdx = TIERS_ORDER.indexOf(v.tier);
-                if (v.tier === dominantTier) {
-                    score += WEIGHTS.currentTier; // comfort zone
-                } else if (domIdx !== -1 && vidIdx === domIdx + 1) {
-                    score += WEIGHTS.nextTier; // stretch Krashen i+1 goal
-                } else if (domIdx !== -1 && vidIdx === domIdx - 1) {
-                    score += WEIGHTS.prevTier; // i-1 review consolidation
-                } else if (domIdx !== -1 && vidIdx <= domIdx - 2) {
-                    score += WEIGHTS.tooEasy; // <= i-2 too basic
-                } else if (domIdx !== -1 && vidIdx >= domIdx + 2) {
-                    score += WEIGHTS.tooHard; // >= i+2 too hard
-                }
-            } else if (dominantTier && !v.tier && !isSearchMode) {
-                score += WEIGHTS.ungraded;
-            }
+            score += WEIGHTS.unseen;
         }
 
         // Factor S: Text Search Relevance Scoring
         if (isSearchMode) {
             const titleNorm = normalizeMatchKey(v.title);
+            if (titleNorm === cleanSearchQuery) score += 180;
+            else if (titleNorm.startsWith(cleanSearchQuery)) score += 120;
+            else if (titleNorm.includes(cleanSearchQuery)) score += 80;
 
-            // Exact title match, prefix, or full substring phrase match
-            if (titleNorm === cleanSearchQuery) {
-                score += 180;
-            } else if (titleNorm.startsWith(cleanSearchQuery)) {
-                score += 120;
-            } else if (titleNorm.includes(cleanSearchQuery)) {
-                score += 80;
-            }
-
-            // Token matches across title, creator tags, and channel
             let tokenHits = 0;
             let tagHits = 0;
             let channelTokenHits = 0;
@@ -351,31 +511,20 @@ export function rankVideos(videos, options = {}) {
             if (tagHits > 0) score += tagHits * 20;
             if (channelTokenHits > 0) score += Math.min(channelTokenHits * 8, 24);
 
-            // Channel name phrase match
-            if (normChan === cleanSearchQuery) {
-                score += 50;
-            } else if (normChan && normChan.includes(cleanSearchQuery)) {
-                score += 30;
-            }
+            if (normChan === cleanSearchQuery) score += 50;
+            else if (normChan && normChan.includes(cleanSearchQuery)) score += 30;
         }
 
-        // Factor F: Deterministic Serendipity Jitter when sessionSeed is provided
-        // Calibrated to +/- 12 pts so refresh seed rotations naturally swap video order across duration tiers
-        // while strictly preserving learner completion demotion (-70 pts) and vocab notebook boosts (+25-45 pts).
-        // Jitter is disabled in search mode so relevance takes absolute priority.
+        // Factor F: Deterministic Serendipity Jitter (disabled in search mode)
         if (!isSearchMode && sessionSeed !== null && sessionSeed !== undefined) {
             score += getDeterministicJitter(vid || '', sessionSeed, WEIGHTS.jitter);
         }
 
         v.recommendationScore = score;
         v.isCompleted = isCompleted;
-        const learnerIndex = TIERS_ORDER.indexOf(dominantTier);
-        const videoIndex = TIERS_ORDER.indexOf(v.tier);
-        v.difficultyGap = learnerIndex >= 0 && videoIndex >= 0 ? videoIndex - learnerIndex : 0;
         return { video: v, score };
     });
 
-    // 3. Browse learner priority, then weighted relevance and deterministic ties.
     scored.sort((a, b) => {
         if (!isSearchMode) {
             const completed = Number(a.video.isCompleted) - Number(b.video.isCompleted);
@@ -385,16 +534,122 @@ export function rankVideos(videos, options = {}) {
                 if (tooHard) return tooHard;
             }
         }
-        if (b.score !== a.score) {
-            return b.score - a.score;
-        }
+        if (b.score !== a.score) return b.score - a.score;
         return (b.video.updatedAt || 0) - (a.video.updatedAt || 0)
             || String(a.video.videoId).localeCompare(String(b.video.videoId));
     });
     const sortedVideos = scored.map(s => s.video);
 
-    // 4. Channel & Category Anti-Clustering Pass (bypassed in search mode to preserve relevance ordering)
     return isSearchMode
         ? sortedVideos
         : declusterChannels(sortedVideos, { declusterCategory: !category || category === 'all' });
+}
+
+/**
+ * Score and rank candidate videos for the player's "More Videos" feed.
+ * Strictly excludes current, session-excluded, and >=85% watched videos,
+ * demotes older in-progress items behind fresh unseen videos, and scores content similarity.
+ */
+export function rankRelatedVideos(videos, options = {}) {
+    if (!Array.isArray(videos) || videos.length === 0) return [];
+
+    const {
+        currentVideo = {},
+        excludeIds = [],
+        context = {},
+        sessionSeed = null
+    } = options;
+
+    const currentVideoId = typeof currentVideo?.videoId === 'string' ? currentVideo.videoId.trim() : '';
+    const unpacked = unpackLearnerContext(context, [currentVideoId, ...(Array.isArray(excludeIds) ? excludeIds : [])]);
+    const signals = extractRelatedSignals(currentVideo);
+    const effectiveRefTier = signals.refTier || unpacked.dominantTier;
+    const refTierIdx = TIERS_ORDER.indexOf(effectiveRefTier);
+
+    const eligible = videos.filter(v => {
+        const vid = v?.videoId;
+        if (!vid || unpacked.excludeSet.has(vid) || unpacked.watchedSet.has(vid)) return false;
+        const progress = unpacked.inProgressMap.get(vid);
+        return progress === undefined || progress < 85;
+    });
+
+    const scored = eligible.map(video => {
+        const v = { ...video };
+        const vid = v.videoId;
+        const { score: baseScore } = scoreLearnerCommon(v, unpacked, { includeTier: false });
+        let score = baseScore;
+
+        // Older in-progress videos are demoted behind fresh unseen recommendations.
+        const progress = unpacked.inProgressMap.get(vid);
+        const isStarted = progress !== undefined;
+        if (isStarted) {
+            score -= 25;
+            if (progress >= 10) v.resumeProgress = Math.round(progress);
+        } else {
+            score += 10;
+        }
+
+        // Content similarity: channel/artist, category, tags, title keywords, soft tier proximity.
+        const candChan = normalizeMatchKey(cleanChannelName(v.channel));
+        if (signals.cleanChanLower && candChan &&
+            (candChan.includes(signals.cleanChanLower) || signals.cleanChanLower.includes(candChan))) {
+            score += 65;
+        }
+
+        const candCat = v.category && v.category !== 'general'
+            ? String(v.category).trim().toLowerCase()
+            : detectVideoCategory({ title: v.title, channel: v.channel, tags: v.tags });
+        score += categoryMatchScore(signals.category, candCat);
+
+        if (signals.tags.size > 0 && Array.isArray(v.tags)) {
+            let shared = 0;
+            for (const tag of v.tags) {
+                if (typeof tag === 'string' && signals.tags.has(normalizeMatchKey(tag))) {
+                    shared++;
+                    if (shared >= 2) break;
+                }
+            }
+            score += shared * 10;
+        }
+
+        if (signals.keywordMatchers.length > 0 && v.title) {
+            const titleLower = normalizeMatchKey(v.title);
+            let hits = 0;
+            for (const [token, pattern] of signals.keywordMatchers) {
+                const matched = pattern ? pattern.test(titleLower) : titleLower.includes(token);
+                if (matched) {
+                    hits++;
+                    if (hits >= 2) break;
+                }
+            }
+            score += hits * 20;
+        }
+
+        const candTierIdx = TIERS_ORDER.indexOf(normalizeTierValue(v.tier));
+        if (refTierIdx >= 0 && candTierIdx >= 0) {
+            const diff = Math.abs(candTierIdx - refTierIdx);
+            if (diff === 0) score += 15;
+            else if (diff === 1) score += 8;
+        }
+
+        if (sessionSeed !== null && sessionSeed !== undefined) {
+            score += getDeterministicJitter(vid, sessionSeed, 4);
+        }
+
+        v.recommendationScore = score;
+        v.isCompleted = false;
+        return { video: v, score, isStarted };
+    });
+
+    scored.sort((a, b) => {
+        const tooHard = Number(a.video.difficultyGap >= 2) - Number(b.video.difficultyGap >= 2);
+        if (tooHard) return tooHard;
+        const started = Number(a.isStarted) - Number(b.isStarted);
+        if (started) return started;
+        if (b.score !== a.score) return b.score - a.score;
+        return (b.video.updatedAt || 0) - (a.video.updatedAt || 0)
+            || String(a.video.videoId).localeCompare(String(b.video.videoId));
+    });
+
+    return declusterChannels(scored.map(s => s.video), { declusterCategory: false });
 }

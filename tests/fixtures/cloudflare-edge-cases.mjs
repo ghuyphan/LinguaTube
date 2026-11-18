@@ -4,7 +4,7 @@ export const routes = [
  ['gladia-webhook','POST'], ['grammar','GET'], ['grammar-detect','POST'], ['heal-levels','POST'], ['internal/reconcile','POST'],
  ['kanji','GET'], ['leaderboard','GET'], ['payment/check-status','GET'],
  ['payment/create-order','POST'], ['payment/revenuecat-webhook','POST'], ['payment/webhook','POST'],
- ['recommended-videos','POST'], ['tokenize/[lang]','POST'], ['tokenize-batch/[lang]','POST'],
+ ['recommended-videos','POST'], ['related-videos','POST'], ['tokenize/[lang]','POST'], ['tokenize-batch/[lang]','POST'],
  ['transcript','POST'], ['translate/[[path]]','GET'], ['translate/batch','POST'],
  ['tts','GET'], ['version','GET'], ['video-category','GET'], ['video-info','GET'], ['video-level','POST']
 ];
@@ -65,6 +65,7 @@ add('payment status filters authenticated owner','payment/check-status',{query:{
 add('maintenance D1 unavailable','internal/reconcile',{body:{},headers:{Authorization:'Bearer fixture-maintenance'},drop:'VOCAB_DB',status:503,noUpstream:true});
 add('admin D1 unavailable','heal-levels',{body:{},headers:{'x-admin-secret':'fixture-admin'},drop:'VOCAB_DB',status:500,noUpstream:true});
 add('recommendation database missing','recommended-videos',{body:{lang:'en'},drop:'VOCAB_DB',status:503,noUpstream:true});
+add('related database missing','related-videos',{body:{lang:'en',currentVideo:{videoId:'abcdefghijk'}},drop:'VOCAB_DB',status:503,noUpstream:true});
 add('kanji provider unavailable','kanji',{query:{query:'水'},status:502,providerOnly:true});
 add('dictionary providers unavailable','dict',{query:{word:'edgecasefixtureword',from:'en',to:'vi'},status:503,providerOnly:true});
 add('video metadata upstream outage','video-info',{query:{videoId:'outageabcde'},status:503,providerOnly:true});

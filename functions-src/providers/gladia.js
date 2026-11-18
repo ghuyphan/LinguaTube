@@ -22,9 +22,10 @@ export class GladiaProvider {
      * @param {{jobId?: string}} options Durable correlation metadata
      * @returns {Promise<{id: string, resultUrl: string}>} The job ID and result URL
      */
-    async submitTranscriptionJob(youtubeUrl, callbackUrl = null, { jobId } = {}) {
+    async submitTranscriptionJob(youtubeUrl, callbackUrl = null, { jobId, language } = {}) {
         if (!this.apiKey) throw new Error('Gladia API key not configured');
         const payload = { audio_url: youtubeUrl, sentences: true, subtitles: false,
+            ...(language ? { language_config: { languages: [language], code_switching: false } } : {}),
             ...(jobId ? { custom_metadata: { voca_job_id: jobId } } : {}),
             ...(callbackUrl ? { callback: true, callback_config: { url: callbackUrl, method: 'POST' } } : {}) };
         const signal = AbortSignal.timeout(24000);

@@ -2,7 +2,7 @@ import { enqueueVideoGrade, serverGradingEnabled } from './video-grading-jobs.js
 import { GladiaProvider } from '../providers/gladia.js';
 import { atomicFailAndRefundAiJob, completeAiJob, activateAiJob } from '../data/transcript-db.js';
 import { saveTranscriptToR2 } from '../data/transcript-r2.js';
-import { cleanTranscriptSegments, extractGladiaSegments, extractGladiaDetectedLanguage } from '../utils/transcript-utils.js';
+import { cleanTranscriptSegments, extractGladiaSegments, extractGladiaDetectedLanguage, resolveIngestedLanguage } from '../utils/transcript-utils.js';
 import { addAiLanguage, saveVideoLanguages } from '../data/video-info-db.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { recoverJobRefund } from './refund-recovery.js';
@@ -44,7 +44,11 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
             if (Date.now() < deadline) await recoverJobRefund(env, job.id, deadline);
             return { status: 'error', errorCode: result.status === 'error' ? 'GLADIA_ERROR' : 'NO_SPEECH_DETECTED', error: 'No transcription available' };
         }
-        const language = extractGladiaDetectedLanguage(result, job.language);
+        const language = resolveIngestedLanguage(
+            segments,
+            extractGladiaDetectedLanguage(result, job.language),
+            job.language,
+        );
         const enriched = segments;
         if (Date.now() >= deadline) throw new Error('Ingestion budget exhausted');
         // Expiration/refund paths respect this lease. Recheck before publishing.
@@ -56,11 +60,11 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
         const last = enriched[enriched.length - 1];
         const gradingEnabled = serverGradingEnabled(env);
         const level = gradingEnabled ? null : estimateTranscriptLevel(enriched, language);
-        await Promise.allSettled([
-            addAiLanguage(db, job.video_id, language),
-            saveVideoLanguages(db, job.video_id, [], Math.round((last.start || 0) + (last.duration || 0)), null, null, false,
-                level ? { [language]: level } : null, null, [language])
-        ]);
+        await saveVideoLanguages(
+            db, job.video_id, [], Math.round((last.start || 0) + (last.duration || 0)),
+            null, null, false, level ? { [language]: level } : null, null, [language],
+        );
+        await addAiLanguage(db, job.video_id, language);
         if (gradingEnabled) {
             await enqueueVideoGrade(env, job.video_id, language, { regrade: true }).catch(error => {
                 console.warn(JSON.stringify({ event: 'video_grade_deferred', videoId: job.video_id, language, error: error.name }));

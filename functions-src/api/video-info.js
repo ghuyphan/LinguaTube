@@ -19,12 +19,18 @@ export async function onRequestGet(context) {
         const official = await resolveVerifiedVideoMetadata(context, videoId, { includeDisplay: true });
         const metadata = official.snippet;
         const inferredCategory = detectVideoCategory(metadata);
+        const existingRow = await db.prepare(
+            'SELECT primary_language, sub_languages, ai_languages FROM video_languages WHERE video_id = ?'
+        ).bind(videoId).first().catch(() => null);
+        const parseJsonArray = raw => { try { const v = JSON.parse(raw || '[]'); return Array.isArray(v) ? v : []; } catch { return []; } };
         const inferredPrimaryLanguage = inferSpokenLanguage({
             defaultAudioLanguage: metadata.defaultAudioLanguage,
             defaultLanguage: metadata.defaultLanguage,
             title: metadata.title,
             channel: metadata.channel,
-            tags: metadata.tags
+            tags: metadata.tags,
+            subLanguages: parseJsonArray(existingRow?.sub_languages),
+            aiLanguages: parseJsonArray(existingRow?.ai_languages),
         });
         // Preserve verified caption discovery and explicit/legacy category edits.
         // Refreshing public details must not alter recommendation discovery timestamps.

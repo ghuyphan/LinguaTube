@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { performance } from 'node:perf_hooks';
-import { getRecommendedVideosFromCloudflare, saveVideoCategory, detectLevelFromMetadata } from '../functions-src/data/video-info-db.js';
-import { rankVideos, declusterChannels, normalizeRecommendationContext, getDeterministicJitter } from '../functions-src/services/recommendation.service.js';
+import { getRecommendedVideosFromCloudflare, getRelatedVideosFromCloudflare, saveVideoCategory, detectLevelFromMetadata } from '../functions-src/data/video-info-db.js';
+import { rankVideos, rankRelatedVideos, declusterChannels, normalizeRecommendationContext, getDeterministicJitter } from '../functions-src/services/recommendation.service.js';
 import { detectVideoCategory } from '../functions-src/services/category.service.js';
 import { inferSpokenLanguage } from '../functions-src/services/video-language.service.js';
 import { onRequestGet, onRequestPost } from '../functions-src/api/recommended-videos.js';
+import { onRequestPost as onRelatedPost } from '../functions-src/api/related-videos.js';
 
 // Exercise real SQLite SQL when available; no new package or runtime dependency.
 let DatabaseSync;
@@ -627,4 +628,109 @@ test('language normalization, metadata level alignment, ranking guards, and POST
     assert.equal(json.query, 'Documentary');
     assert.equal(json.source, 'cloudflare:refresh');
     assert.deepEqual(json.videos.map(v => v.videoId), ['en_01']);
+});
+
+test('related-videos strictly excludes current, excludeIds, and >=85% watched while demoting older inProgress', options, async t => {
+    const rows = [
+        { video_id: 'vid_cur', title: 'YOASOBI - 夜に駆ける', channel: 'YOASOBI', channel_avatar: 'av', duration_seconds: 250, levels: '{"ja":"N3"}', available_languages: '["ja"]', sub_languages: '["ja"]', category: 'music', updated_at: 9000 },
+        { video_id: 'vid_prev_session', title: 'YOASOBI - アイドル', channel: 'YOASOBI', channel_avatar: 'av', duration_seconds: 240, levels: '{"ja":"N3"}', available_languages: '["ja"]', sub_languages: '["ja"]', category: 'music', updated_at: 8900 },
+        { video_id: 'vid_completed', title: 'YOASOBI - 群青', channel: 'YOASOBI', channel_avatar: 'av', duration_seconds: 240, levels: '{"ja":"N3"}', available_languages: '["ja"]', sub_languages: '["ja"]', category: 'music', updated_at: 8800 },
+        { video_id: 'vid_started_same', title: 'YOASOBI - 怪物', channel: 'YOASOBI', channel_avatar: 'av', duration_seconds: 240, levels: '{"ja":"N3"}', available_languages: '["ja"]', sub_languages: '["ja"]', category: 'music', updated_at: 8700 },
+        { video_id: 'vid_fresh_same', title: 'YOASOBI - 祝福', channel: 'YOASOBI Official', channel_avatar: 'av', duration_seconds: 240, levels: '{"ja":"N3"}', available_languages: '["ja"]', sub_languages: '["ja"]', category: 'music', updated_at: 8600 },
+        { video_id: 'vid_fresh_other', title: 'Japanese Podcast Ep 1', channel: 'Podcast Ch', channel_avatar: 'av', duration_seconds: 400, levels: '{"ja":"N3"}', available_languages: '["ja"]', sub_languages: '["ja"]', category: 'conversation', updated_at: 8500 }
+    ];
+    const db = database(t, rows);
+    const req = (body) => onRelatedPost({
+        request: new Request('https://example.test/api/related-videos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        }),
+        env: { VOCAB_DB: db }
+    });
+
+    const res1 = await req({
+        lang: 'ja',
+        limit: 16,
+        offset: 0,
+        sessionSeed: 42,
+        currentVideo: { videoId: 'vid_cur', title: 'YOASOBI - 夜に駆ける', channel: 'YOASOBI', category: 'music', tier: 'N3' },
+        excludeIds: ['vid_prev_session'],
+        context: {
+            watched: ['vid_completed'],
+            inProgress: { vid_started_same: 35 }
+        }
+    });
+    assert.equal(res1.status, 200);
+    const json1 = await res1.json();
+    assert.equal(json1.source, 'cloudflare:related');
+    // Current, session-excluded, and >=85% completed videos never appear; unseen same-artist ranks before started.
+    assert.deepEqual(json1.videos.map(v => v.videoId), ['vid_fresh_same', 'vid_fresh_other', 'vid_started_same']);
+    assert.equal(json1.videos.at(-1).resumeProgress, 35);
+
+    // Warm candidate cache hit incurs zero extra D1 discovery calls.
+    const callsAfterFirst = db.calls;
+    const res2 = await req({
+        lang: 'ja',
+        currentVideo: { videoId: 'vid_cur', title: 'YOASOBI - 夜に駆ける', channel: 'YOASOBI', category: 'music', tier: 'N3' }
+    });
+    assert.equal(res2.status, 200);
+    assert.equal(res2.headers.get('X-Candidate-Cache'), 'HIT');
+    assert.equal(db.calls, callsAfterFirst);
+
+    // Invalid currentVideo fails with 400 and missing DB fails with 503.
+    const bad = await req({ currentVideo: 'bad' });
+    assert.equal(bad.status, 400);
+    const offline = await onRelatedPost({
+        request: new Request('https://example.test/api/related-videos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ lang: 'ja', currentVideo: { videoId: 'vid_cur' } })
+        }),
+        env: {}
+    });
+    assert.equal(offline.status, 503);
+
+    // rankRelatedVideos preserves difficultyGap >= 2 safety and CJK/tag/category similarity.
+    const similarity = rankRelatedVideos([
+        { videoId: 'hard_same', title: '日本語ポッドキャスト', channel: 'Suzuka', category: 'conversation', tier: 'advanced', duration: 300 },
+        { videoId: 'fit_music', title: 'Hit Song MV', channel: 'Other', category: 'music', tier: 'elementary', duration: 300 },
+        { videoId: 'fit_conv', title: '日本語リスニング', channel: 'Bite Size', category: 'conversation', tier: 'intermediate', tags: ['daily'], duration: 300 }
+    ], {
+        currentVideo: { videoId: 'seed', title: '日本語ポッドキャスト #1', channel: 'Suzuka', category: 'conversation', tier: 'N4', tags: ['daily'] },
+        context: { dominantTier: 'elementary' }
+    });
+    assert.deepEqual(similarity.map(v => v.videoId), ['fit_conv', 'fit_music', 'hard_same']);
+    void getRelatedVideosFromCloudflare;
+});
+
+test('inferSpokenLanguage recovers non-English lessons from YouTube Studio en default and balances CJK script checks', () => {
+    // V6SrjHDisDs regression: defaultAudioLanguage='en' + verified zh track + HSK/Chinese cue -> zh
+    assert.equal(inferSpokenLanguage({
+        defaultAudioLanguage: 'en',
+        defaultLanguage: 'en',
+        title: 'Slow Chinese Listening Practice for Beginners (HSK1-3)',
+        channel: 'ShuoshuoChinese说说中文',
+        subLanguages: ['zh'],
+        aiLanguages: ['zh']
+    }), 'zh');
+
+    // jP0D3gcqe5Q regression: English walkthrough with 'Chinese' in title and translated ja sub -> still en
+    assert.equal(inferSpokenLanguage({
+        defaultAudioLanguage: 'en',
+        defaultLanguage: 'en',
+        title: 'The ENTIRE Chinese Hell Walkthrough in 10 Minutes',
+        channel: 'Jade Rabbit Hole',
+        subLanguages: ['ja']
+    }), 'en');
+
+    // Heavy Hanzi Chinese title with stray Japanese tag or decorative の stays zh; Kanji+的 Japanese stays ja
+    assert.equal(inferSpokenLanguage({
+        title: '我們一起去吃飯吧！超好吃的夜市美食推薦',
+        tags: ['の']
+    }), 'zh');
+    assert.equal(inferSpokenLanguage({
+        title: '圧倒的感謝',
+        subLanguages: ['ja']
+    }), 'ja');
 });

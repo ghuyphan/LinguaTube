@@ -16,6 +16,7 @@ import {
 } from '../../middlewares/rate-limiter.js';
 import { translateBatch } from '../../providers/lingva.js';
 import { validateAuthToken, getUserTier } from '../../middlewares/auth.js';
+import { translationsMatchLanguage } from '../../utils/translation-cache.js';
 
 const MAX_BATCH_SIZE = 80;
 
@@ -151,11 +152,10 @@ export async function onRequestPost(context) {
                 const batchResults = await translateBatch(uncachedTexts, source, target, { deadline });
 
                 uncachedTexts.forEach((text, i) => {
-                    const result = batchResults[i];
-                    if (result) {
-                        translationMap.set(text, result);
-                        setInMemCache(source, target, text, result);
-                    }
+                    const result = typeof batchResults[i] === 'string' ? batchResults[i].trim() : '';
+                    if (!result || /<[\s]*\/?t\b/i.test(result)) return;
+                    if (source !== target && result === text.trim()) return;
+                    translationMap.set(text, result);
                 });
             }
 
@@ -165,9 +165,21 @@ export async function onRequestPost(context) {
                 return translationMap.get(text.trim()) || (source === target ? text : null);
             });
 
+            // Reject poisoned batches (e.g. provider returned wrong script) before caching
+            const translatable = translations.filter(t => typeof t === 'string' && /\p{L}/u.test(t));
+            const matchesTarget = translatable.length < 3 ||
+                translationsMatchLanguage(translatable.map(translation => ({ translation })), target);
+            if (matchesTarget) {
+                for (const [text, result] of translationMap.entries()) {
+                    setInMemCache(source, target, text, result);
+                }
+            } else {
+                translations = texts.map(text => (!text || !text.trim()) ? text : null);
+            }
+
             // 4. Save batch to in-memory cache (Rule 2: Preserves 1,000 writes/day KV quota)
             // Note: Permanent full-transcript caching is handled by Cloudflare R2 via SubtitleService / dual-subtitles.js
-            const allSucceeded = translations.every(t => typeof t === 'string' && t.length > 0);
+            const allSucceeded = matchesTarget && translations.every(t => typeof t === 'string' && t.length > 0);
             if (batchKey && allSucceeded) {
                 memBatchCache.set(batchKey, translations);
             }

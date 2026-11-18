@@ -16,6 +16,8 @@
  * );
  */
 
+import { SCRIPT_REGEX } from './transcript-utils.js';
+
 const DEBUG = false;
 const log = (...args) => DEBUG && console.log('[R2 Translations]', ...args);
 
@@ -24,26 +26,24 @@ const CACHE_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000; // 90 days
 const CACHE_VERSION = '2';
 
 // Script checks only: enough to reject a cache written in another target language.
-const VIETNAMESE_ANY = /[àáèéìíòóùúýăằắẳẵặâầấẩẫậêềếểễệôồốổỗộơờớởỡợưừứửữựđảãạẻẽẹỉĩịỏõọủũụỷỹỵ]/iu;
-const NON_LATIN = /[\u0400-\u04FF\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/u;
 const TARGET_SCRIPT = {
-    ja: text => /[\u3040-\u30FF\u4E00-\u9FFF]/u.test(text),
-    zh: text => /[\u4E00-\u9FFF]/u.test(text) && !/[\u3040-\u30FF]/u.test(text),
-    ko: text => /[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/u.test(text),
-    ru: text => /[\u0400-\u04FF]/u.test(text),
-    en: text => /[a-z]/i.test(text) && !VIETNAMESE_ANY.test(text) && !NON_LATIN.test(text)
+    ja: text => SCRIPT_REGEX.kana.test(text) || SCRIPT_REGEX.han.test(text),
+    zh: text => SCRIPT_REGEX.han.test(text) && !SCRIPT_REGEX.kana.test(text),
+    ko: text => SCRIPT_REGEX.hangul.test(text),
+    ru: text => SCRIPT_REGEX.cyrillic.test(text),
+    en: text => SCRIPT_REGEX.latin.test(text) && !SCRIPT_REGEX.vietnameseAny.test(text) && !SCRIPT_REGEX.nonLatin.test(text)
 };
 
 /** True unless most translated segments are written in a script other than tgtLang's. */
 export function translationsMatchLanguage(segments, tgtLang) {
     const texts = segments
-        .map(seg => seg?.translation)
+        .map(seg => typeof seg === 'string' ? seg : seg?.translation)
         .filter(text => typeof text === 'string' && /\p{L}/u.test(text));
     if (!texts.length) return true;
     if (tgtLang === 'vi') {
-        const isPureLatin = text => /[a-z]/i.test(text) && !NON_LATIN.test(text);
+        const isPureLatin = text => SCRIPT_REGEX.latin.test(text) && !SCRIPT_REGEX.nonLatin.test(text);
         return texts.filter(isPureLatin).length >= texts.length * 0.7 &&
-            texts.filter(text => VIETNAMESE_ANY.test(text)).length >= texts.length * 0.2;
+            texts.filter(text => SCRIPT_REGEX.vietnameseAny.test(text)).length >= texts.length * 0.2;
     }
     const matches = TARGET_SCRIPT[tgtLang];
     return !matches || texts.filter(matches).length >= texts.length * 0.7;

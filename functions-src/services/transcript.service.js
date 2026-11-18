@@ -28,7 +28,7 @@ import {
     saveTranscriptToR2
 } from '../data/transcript-r2.js';
 
-import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage, adjustAvailableLanguages } from '../utils/transcript-utils.js';
+import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage, resolveIngestedLanguage, adjustAvailableLanguages } from '../utils/transcript-utils.js';
 import { resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig, transcriptionDiamondCost } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
@@ -337,7 +337,7 @@ export class TranscriptService {
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
         let gladiaResponse;
         try {
-            gladiaResponse = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl, { jobId });
+            gladiaResponse = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl, { jobId, language: normalizedLang });
         } catch (gladiaError) {
             if (gladiaError.ambiguous) {
                 await db.prepare("UPDATE ai_transcription_jobs SET submission_state='uncertain' WHERE id=? AND submission_state='submitting'").bind(jobId).run();
@@ -505,7 +505,11 @@ export class TranscriptService {
             if (resultData.status === 'done') {
                 const rawSegments = extractGladiaSegments(resultData);
                 const cleanedSegments = cleanTranscriptSegments(rawSegments);
-                const detectedLang = extractGladiaDetectedLanguage(resultData, lang);
+                const detectedLang = resolveIngestedLanguage(
+                    cleanedSegments,
+                    extractGladiaDetectedLanguage(resultData, lang),
+                    lang,
+                );
 
                 if (videoId && cleanedSegments.length > 0) {
                     const enrichedSegments = cleanedSegments;

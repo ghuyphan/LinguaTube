@@ -7,7 +7,7 @@
  * - D1: Persistent storage (video_languages, no_transcript_cache)
  */
 
-import { rankVideos } from '../services/recommendation.service.js';
+import { rankVideos, rankRelatedVideos } from '../services/recommendation.service.js';
 import { detectVideoCategory } from '../services/category.service.js';
 import { inferSpokenLanguage, normalizePrimaryLanguage } from '../services/video-language.service.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
@@ -925,15 +925,8 @@ export async function cleanupOldNoTranscriptEntries(db) {
  * Collect a fixed discovery window before ranking. Offset, page size and seed
  * never change candidate membership. Metadata scans and R2 probes are bounded.
  */
-export async function getRecommendedVideosFromCloudflare(db, r2, rawLang, limit = 12, tier = null, _shuffle = false, offset = 0, query = null, options = {}) {
-    const lang = normalizeLanguageCode(rawLang);
-    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
-    const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
-    const targetTier = tier ? labelToTier(tier) : null;
-    const cleanQuery = typeof query === 'string' ? query.trim().slice(0, 100) : '';
-    const { context = null, sessionSeed = null, category = null, includePage = false } = options || {};
+async function loadRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options = {}) {
     if (!db || !lang) throw new Error('Recommendation database unavailable');
-
     const cacheKey = JSON.stringify([lang, targetTier, category || null]);
     let cache = recommendationCandidates.get(db);
     if (!cache) {
@@ -942,36 +935,66 @@ export async function getRecommendedVideosFromCloudflare(db, r2, rawLang, limit 
     }
     const cached = cache.get(cacheKey);
     const refresh = options?.isRefresh === true;
-    let candidates;
-    // Searches bypass this cache: query text can originate from private vocabulary.
     if (!cleanQuery && !refresh && cached && cached.r2 === r2 && cached.expiresAt > Date.now()
         && await catalogLevelsMatch(db, lang, cached)) {
-        candidates = cached.videos;
         if (options?.metrics) options.metrics.candidateCache = 'HIT';
-    } else {
-        if (options?.metrics) options.metrics.candidateCache = cleanQuery ? 'BYPASS-SEARCH' : 'MISS';
-        if (!cleanQuery) cache.delete(cacheKey);
-        const subLanguages = new Map();
-        candidates = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, subLanguages);
-        // Publish only completed successful discovery. No shared in-flight I/O.
-        if (!cleanQuery) {
-            for (const [key, entry] of cache) {
-                if (entry.expiresAt <= Date.now()) cache.delete(key);
-            }
-            if (cache.size >= MAX_RECOMMENDATION_CANDIDATE_KEYS) cache.delete(cache.keys().next().value);
-            cache.set(cacheKey, { r2, videos: candidates, subLanguages, expiresAt: Date.now() + RECOMMENDATION_CANDIDATE_TTL_MS });
-        }
+        return cached.videos;
     }
+    if (options?.metrics) options.metrics.candidateCache = cleanQuery ? 'BYPASS-SEARCH' : 'MISS';
+    if (!cleanQuery) cache.delete(cacheKey);
+    const subLanguages = new Map();
+    const candidates = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, subLanguages);
+    // Publish only completed successful discovery. No shared in-flight I/O.
+    if (!cleanQuery) {
+        for (const [key, entry] of cache) {
+            if (entry.expiresAt <= Date.now()) cache.delete(key);
+        }
+        if (cache.size >= MAX_RECOMMENDATION_CANDIDATE_KEYS) cache.delete(cache.keys().next().value);
+        cache.set(cacheKey, { r2, videos: candidates, subLanguages, expiresAt: Date.now() + RECOMMENDATION_CANDIDATE_TTL_MS });
+    }
+    return candidates;
+}
+
+export async function getRecommendedVideosFromCloudflare(db, r2, rawLang, limit = 12, tier = null, _shuffle = false, offset = 0, query = null, options = {}) {
+    const lang = normalizeLanguageCode(rawLang);
+    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
+    const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
+    const targetTier = tier ? labelToTier(tier) : null;
+    const cleanQuery = typeof query === 'string' ? query.trim().slice(0, 100) : '';
+    const { context = null, sessionSeed = null, category = null, includePage = false, excludeIds = [] } = options || {};
+    const candidates = await loadRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options);
     const ranked = rankVideos(globalThis.structuredClone(candidates), {
         language: lang,
         tier: targetTier,
         context,
         sessionSeed,
         query: cleanQuery,
-        category
+        category,
+        excludeIds
     });
     const videos = ranked.slice(safeOffset, safeOffset + safeLimit);
     return includePage ? { videos, hasMore: safeOffset + videos.length < ranked.length } : videos;
+}
+
+/**
+ * Retrieve and rank "More Videos" related to the currently playing video,
+ * reusing the 15s public language candidate pool with zero extra D1 scans on cache hits.
+ */
+export async function getRelatedVideosFromCloudflare(db, r2, rawLang, limit = 16, offset = 0, options = {}) {
+    const lang = normalizeLanguageCode(rawLang);
+    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 16, 1), 50);
+    const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
+    const { currentVideo = {}, excludeIds = [], context = null, sessionSeed = null } = options || {};
+    const candidates = await loadRecommendationCandidates(db, r2, lang, null, null, '', options);
+    const ranked = rankRelatedVideos(globalThis.structuredClone(candidates), {
+        language: lang,
+        currentVideo,
+        excludeIds,
+        context,
+        sessionSeed
+    });
+    const videos = ranked.slice(safeOffset, safeOffset + safeLimit);
+    return { videos, hasMore: safeOffset + videos.length < ranked.length };
 }
 
 async function catalogLevelsMatch(db, lang, cached) {

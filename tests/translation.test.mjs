@@ -335,3 +335,25 @@ test('dual subtitle cache rejects translations written for another target langua
     assert.deepEqual(written.segments.map(s => s.translation), ['Hello', null]);
     assert.equal(saved.validCount, 1);
 });
+
+test('/api/translate/batch does not cache responses that fail target script validation', async t => {
+    const { onRequestPost } = await import('../functions-src/api/translate/batch.js');
+    t.mock.method(globalThis, 'fetch', async () => Response.json([
+        [['爱情已落成遗迹', '爱情已落成遗迹'], ['能不能再相遇', '能不能再相遇'], ['只是太爱你', '只是太爱你']]
+    ]));
+    const res = await onRequestPost({
+        request: new Request('https://voca.study/api/translate/batch', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'CF-Connecting-IP': '198.51.100.77' },
+            body: JSON.stringify({
+                texts: ['爱情已落成遗迹', '能不能再相遇', '只是太爱你'],
+                source: 'zh',
+                target: 'en'
+            })
+        }),
+        env: {}
+    });
+    assert.equal(res.status, 200);
+    const body = await res.json();
+    assert.deepEqual(body.translations, [null, null, null]);
+});

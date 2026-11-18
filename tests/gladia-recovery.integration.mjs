@@ -153,3 +153,59 @@ test('conditional R2 publication cannot overwrite a newer transcript during an i
     await assert.rejects(ingestGladiaJob(env, job.id, provider, Date.now()+20000, {force:true}), /persistence unavailable/);
     assert.equal(storage.stored.data.segments[0].text, 'newer transcript');
 });
+
+test('Gladia reporting en for Chinese segments resolves to job language zh and rejects poisoned en AI R2 reads', async t => {
+    const f = await fixture(t);
+    const { reserveAiJob } = await import('../functions-src/data/transcript-db.js');
+    const { job } = await reserveAiJob(f.db, { videoId: 'WjhU0mBaol0', language: 'zh', clientId: 'client-a', diamondsCharged: 1 });
+    await activateAiJob(f.db, job.id, 'provider-zh');
+    f.sqlite.exec("UPDATE ai_transcription_jobs SET charge_status='confirmed'");
+    const objects = new Map();
+    const storage = {
+        async head(key) { return objects.has(key) ? { etag: '1', customMetadata: objects.get(key).meta } : null; },
+        async get(key) {
+            const entry = objects.get(key);
+            return entry ? { customMetadata: entry.meta, json: async () => entry.data } : null;
+        },
+        async put(key, body, options) {
+            objects.set(key, { data: JSON.parse(body), meta: options.customMetadata });
+            return { etag: '2' };
+        }
+    };
+    const env = { VOCAB_DB: f.db, TRANSCRIPT_STORAGE: storage, GLADIA_API_KEY: 'fixture-key' };
+    const mislabeled = {
+        status: 'done',
+        result: {
+            transcription: {
+                languages: ['en'],
+                sentences: [
+                    { sentence: '爱情已落成遗迹又像新课化成回忆想念几个世纪才', start: 1, end: 4 },
+                    { sentence: '是刻骨铭心', start: 4, end: 5 },
+                    { sentence: '多想把你抱进处理你的笑多疗愈', start: 5, end: 8 },
+                    { sentence: '的风景像座废墟像失落文明', start: 8, end: 11 },
+                    { sentence: '能不能又再一次相遇', start: 11, end: 13 },
+                    { sentence: 'I just want to see', start: 13, end: 14 },
+                    { sentence: 'you,', start: 14, end: 15 },
+                    { sentence: 'I just want to see', start: 15, end: 16 },
+                    { sentence: 'the future,', start: 16, end: 17 },
+                    { sentence: 'the past,', start: 17, end: 18 },
+                    { sentence: "We've traveled the time", start: 18, end: 20 },
+                    { sentence: 'Youll be back someday 想见你只想见你未来过去我只想', start: 20, end: 23 }
+                ]
+            }
+        }
+    };
+    const outcome = await ingestGladiaJob(env, job.id, { async checkJobStatusById() { return mislabeled; } });
+    assert.equal(outcome.status, 'done');
+    assert.equal(outcome.language, 'zh');
+    assert.ok(objects.has('transcripts/WjhU0mBaol0/zh.ai.json'));
+    assert.equal(objects.has('transcripts/WjhU0mBaol0/en.ai.json'), false);
+
+    // Poisoned AI R2 object stored under en.ai.json with Chinese text is rejected on read.
+    const { getTranscriptFromR2 } = await import('../functions-src/data/transcript-r2.js');
+    objects.set('transcripts/WjhU0mBaol0/en.ai.json', {
+        meta: { source: 'ai' },
+        data: { videoId: 'WjhU0mBaol0', language: 'en', source: 'ai', segments: mislabeled.result.transcription.sentences.map(s => ({ text: s.sentence, start: s.start, duration: s.end - s.start })) }
+    });
+    assert.equal(await getTranscriptFromR2(storage, 'WjhU0mBaol0', 'en', { preferAI: true }), null);
+});

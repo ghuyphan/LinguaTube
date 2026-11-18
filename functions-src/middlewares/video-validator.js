@@ -322,3 +322,36 @@ export async function validateVideoRequest(videoId, requestedLang, duration, end
 
     return null; // Valid
 }
+
+/**
+ * Best-effort post-response healing for returned recommendation videos missing
+ * avatar, title, or channel metadata in D1.
+ */
+export function scheduleMetadataHealing(db, context, videos) {
+    if (!db || typeof context?.waitUntil !== 'function' || !Array.isArray(videos)) return;
+    const needsHealing = videos.filter(v => v?.videoId && (!v.channelAvatar || !v.title || !v.channel));
+    if (needsHealing.length === 0) return;
+    context.waitUntil((async () => {
+        const pending = needsHealing.slice(0, 5);
+        const deadline = Date.now() + 15_000;
+        for (let i = 0; i < pending.length; i += 2) {
+            if (Date.now() >= deadline) break;
+            await Promise.allSettled(pending.slice(i, i + 2).map(async v => {
+                const [avatar, meta] = await Promise.all([
+                    !v.channelAvatar ? resolveVideoChannelAvatar(v.videoId) : null,
+                    !v.title || !v.channel ? getVideoMetadata(v.videoId, context) : null
+                ]);
+                const title = !v.title ? meta?.title || null : null;
+                const channel = !v.channel ? meta?.author_name || null : null;
+                if (!avatar && !title && !channel) return;
+                await db.prepare(`
+                    UPDATE video_languages
+                    SET channel_avatar = COALESCE(NULLIF(channel_avatar, ''), ?),
+                        title = CASE WHEN title IS NULL OR TRIM(title) = '' THEN COALESCE(?, title) ELSE title END,
+                        channel = CASE WHEN channel IS NULL OR TRIM(channel) = '' THEN COALESCE(?, channel) ELSE channel END
+                    WHERE video_id = ?
+                `).bind(avatar, title, channel, v.videoId).run();
+            }));
+        }
+    })());
+}

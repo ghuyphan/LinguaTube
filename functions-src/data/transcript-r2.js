@@ -15,9 +15,10 @@ const DEBUG = false;
 const log = (...args) => DEBUG && console.log('[R2 Transcripts]', ...args);
 
 export function getTranscriptKey(videoId, lang, isAI = false) {
+    const cleanLang = normalizeLanguageCode(lang) || lang;
     return isAI
-        ? `transcripts/${videoId}/${lang}.ai.json`
-        : `transcripts/${videoId}/${lang}.json`;
+        ? `transcripts/${videoId}/${cleanLang}.ai.json`
+        : `transcripts/${videoId}/${cleanLang}.json`;
 }
 
 /**
@@ -31,11 +32,12 @@ export function getTranscriptKey(videoId, lang, isAI = false) {
 export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
     if (!bucket) return null;
 
+    const cleanLang = normalizeLanguageCode(lang) || lang;
     const isAI = typeof options === 'boolean'
         ? options
         : Boolean(options?.preferAI || options?.isAI);
 
-    const primaryKey = getTranscriptKey(videoId, lang, isAI);
+    const primaryKey = getTranscriptKey(videoId, cleanLang, isAI);
 
     const fetchObject = async (key) => {
         try {
@@ -55,10 +57,9 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
             }
 
             const source = object.customMetadata?.source || data.source || 'r2';
-            const language = normalizeLanguageCode(data.language || lang);
-            if (language !== normalizeLanguageCode(lang) ||
-                (source !== 'ai' && contradictsNativeLanguage(data.segments, language))) {
-                console.warn(JSON.stringify({ event: 'transcript_cache_language_rejected', videoId, language }));
+            const language = normalizeLanguageCode(data.language || cleanLang);
+            if (language !== cleanLang || contradictsNativeLanguage(data.segments, language)) {
+                console.warn(JSON.stringify({ event: 'transcript_cache_language_rejected', videoId, language, source }));
                 return null;
             }
 
@@ -84,7 +85,7 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
     // 2. Fallback handling for backward compatibility with existing R2 objects:
     // If AI was requested, check if legacy .json holds a transcript with source === 'ai'
     if (isAI) {
-        const legacyKey = getTranscriptKey(videoId, lang, false);
+        const legacyKey = getTranscriptKey(videoId, cleanLang, false);
         const legacy = await fetchObject(legacyKey);
         if (legacy && legacy.source === 'ai') {
             return legacy;
@@ -92,7 +93,7 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
     } else {
         // If native was requested, but no native track exists in R2,
         // check if an AI track is available as fallback
-        const aiKey = getTranscriptKey(videoId, lang, true);
+        const aiKey = getTranscriptKey(videoId, cleanLang, true);
         const aiFallback = await fetchObject(aiKey);
         if (aiFallback) {
             return aiFallback;
@@ -115,8 +116,9 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
 export async function saveTranscriptToR2(bucket, videoId, lang, segments, source, guard = null, trackLanguage = null) {
     if (!bucket || !videoId || !segments?.length) return false;
 
+    const cleanLang = normalizeLanguageCode(lang) || lang;
     const isAI = source === 'ai';
-    const key = getTranscriptKey(videoId, lang, isAI);
+    const key = getTranscriptKey(videoId, cleanLang, isAI);
 
     try {
         const conditional = guard || trackLanguage;
@@ -128,7 +130,7 @@ export async function saveTranscriptToR2(bucket, videoId, lang, segments, source
 
         const data = {
             videoId,
-            language: lang,
+            language: cleanLang,
             ...(trackLanguage ? { trackLanguage } : {}),
             segments,
             source,

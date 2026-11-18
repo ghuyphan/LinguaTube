@@ -301,7 +301,7 @@ export async function onRequestPost(context) {
 
         let fallbackCachedAi = null;
         if (!forceRefresh) {
-            const cached = await getTranscriptFromR2(r2, cleanVideoId, lang, { preferAI });
+            const cached = await getTranscriptFromR2(r2, cleanVideoId, requestedLanguage, { preferAI });
             if (cached && (!preferAI || cached.source === 'ai')) {
                 const hasNativeOnYouTube = nativeLanguages.some(
                     l => normalizeLanguageCode(l) === requestedLanguage
@@ -309,7 +309,7 @@ export async function onRequestPost(context) {
                 if (!preferAI && cached.source === 'ai' && hasNativeOnYouTube && cached.key?.endsWith('.ai.json')) {
                     fallbackCachedAi = cached;
                 } else {
-                    return await cachedResponse(cached, lang, 'HIT');
+                    return await cachedResponse(cached, requestedLanguage, 'HIT');
                 }
             }
         }
