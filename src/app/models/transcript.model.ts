@@ -1,4 +1,9 @@
 import { SubtitleCue, Token } from './index';
+import type { VideoLevelInfo } from './video-level.model';
+
+export type TranscriptLevelEntry = string | VideoLevelInfo;
+
+export type ServerGradingStatus = 'ready' | 'pending' | 'unavailable';
 
 export interface TranscriptSegment {
   id?: number;
@@ -21,7 +26,8 @@ export interface TranscriptResponse {
     ai: string[];
   };
   subLanguages?: string[];
-  levels?: Record<string, string>;
+  levels?: Record<string, TranscriptLevelEntry>;
+  gradingStatus?: ServerGradingStatus;
   whisperAvailable?: boolean;
   diamonds?: number;
   maxDiamonds?: number;

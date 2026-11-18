@@ -17,14 +17,15 @@ label { display: grid; gap: var(--space-xs); color: var(--text-secondary); font-
 .experience-form .btn { justify-self: start; }
 .visibility-control { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); min-height: var(--touch-target-min); color: var(--text-secondary); font-size: var(--text-base); }
 .actions { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-xs); margin-top: var(--space-md); }
-.notice { padding: var(--space-sm) var(--space-md); margin-bottom: var(--space-md); border-radius: var(--border-radius-md); background: var(--bg-surface); color: var(--text-secondary); font-size: var(--text-base); line-height: 1.65; overflow-wrap: anywhere; }
-.notice.error { color: var(--error-text); }
+.notice { padding: var(--space-sm) var(--space-md); margin-bottom: var(--space-md); border-radius: var(--border-radius-md); background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-secondary); font-size: var(--text-base); line-height: 1.65; overflow-wrap: anywhere; }
+.notice.error { color: var(--error-text); background: rgba(var(--error-rgb), 0.08); border-color: rgba(var(--error-rgb), 0.25); }
 .detail-row { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: start; gap: var(--space-xs) var(--space-md); padding-block: var(--space-sm); border-bottom: 1px solid var(--border-color-light); font-size: var(--text-base); line-height: 1.5; }
 .detail-row:last-child { border: 0; padding-bottom: 0; }
 .detail-row > * { min-width: 0; overflow-wrap: anywhere; }
 .detail-row span { color: var(--text-secondary); }
-.detail-row strong { font-weight: 650; font-variant-numeric: tabular-nums; }
-.payment-detail { text-align: end; }
+.detail-row strong { color: var(--text-primary); font-weight: 650; font-variant-numeric: tabular-nums; }
+.payment-detail { text-align: end; display: grid; gap: var(--space-2xs); justify-items: end; }
+.payment-status-row { display: flex; justify-content: flex-end; }
 .plan-summary { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
 .plan-summary h2 { margin: 0; }
 .experience-loading { display: grid; gap: var(--space-md); }
@@ -37,12 +38,12 @@ label { display: grid; gap: var(--space-xs); color: var(--text-secondary); font-
 .profile-avatar--fallback { display: grid; place-items: center; color: var(--accent-primary-text); }
 .experience-section .profile-name { font-size: var(--text-lg); margin-bottom: 0; overflow-wrap: anywhere; }
 .profile-bio { margin-block: var(--space-md); white-space: pre-line; }
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xs); margin-block: var(--space-md); }
-.stats div { padding: var(--space-sm) var(--space-xs); border-radius: var(--border-radius-md); background: var(--bg-surface); border: 1px solid var(--border-color); text-align: center; }
-.stats strong { display: block; font-size: var(--text-lg); font-variant-numeric: tabular-nums; }
-.stats span { color: var(--text-secondary); font-size: var(--text-xs); overflow-wrap: anywhere; }
+.learner-stats { margin-block: var(--space-md); }
+.learner-stats .stat-item { padding: var(--space-sm) var(--space-xs); }
+.learner-stats .stat-value { font-size: var(--text-lg); font-variant-numeric: tabular-nums; }
+.learner-stats .stat-label { font-size: var(--text-xs); white-space: normal; }
 .stamps { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
-.stamps img { width: 80px; height: 80px; object-fit: contain; }
+.stamps img { width: 80px; height: 80px; object-fit: contain; border-radius: var(--border-radius-md); background: var(--bg-surface); border: 1px solid var(--border-color-light); padding: var(--space-2xs); }
 .experience-state .actions { justify-content: center; }
 @media (max-width: 1024px) {
   /* These sidebars contain account actions, so retain them below the main panel. */
@@ -50,5 +51,6 @@ label { display: grid; gap: var(--space-xs); color: var(--text-secondary); font-
 }
 @media (max-width: 640px) {
   .experience-form { max-width: none; }
-  .payment-detail { text-align: start; }
+  .payment-detail { text-align: start; justify-items: start; }
+  .payment-status-row { justify-content: flex-start; }
 }

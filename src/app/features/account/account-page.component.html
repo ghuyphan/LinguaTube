@@ -6,7 +6,7 @@
       }
       @if (!recovery) {
         <nav class="panel-toolbar" [attr.aria-label]="i18n.t('accountExperience.account')"><div class="panel-toolbar__top">
-          <div class="segmented-control">
+          <div class="segmented-control" [style.--tab-count]="2" [style.--active-index]="0">
             <a class="segmented-control__item active" routerLink="/account" aria-current="page"><app-icon name="user" [size]="14" />{{ i18n.t('accountExperience.account') }}</a>
             <a class="segmented-control__item" routerLink="/account/subscription" [attr.aria-label]="i18n.t('accountExperience.subscription')"><app-icon name="diamond" [size]="14" />{{ i18n.t('accountExperience.subscriptionTab') }}</a>
           </div>

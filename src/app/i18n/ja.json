@@ -162,7 +162,7 @@
     "resumingHint": "前回の続きから再開",
     "videoTooLongTitle": "動画が長すぎます",
     "videoTooLongHint": "AI文字起こしは最大20分まで対応しています（Premiumは最大45分）。",
-    "videoTooLongForAI": "AI文字起こしは最大10分までの動画に対応しています（サポーターは20分、ファウンダーは45分）。",
+    "videoTooLongForAI": "現在のプランでは最大{{minutes}}分までの動画でAI文字起こしを利用できます。",
     "needMoreDiamonds": "この動画を文字起こしするには、ダイヤが不足しています。",
     "diamond": "ダイヤ",
     "diamonds": "ダイヤ",
@@ -182,7 +182,7 @@
     "fallbackAvailable": "AI文字起こし可能",
     "gotIt": "OK",
     "unsupportedLanguageTitle": "対応していない言語",
-    "unsupportedLanguageHint": "日本語・中国語・韓国語・英語の動画のみ対応しています。",
+    "unsupportedLanguageHint": "現在は日本語・中国語・韓国語・英語・ベトナム語の動画に対応しています。",
     "refreshCaptions": "字幕を更新",
     "noCaptionsAvailable": "この動画に字幕がありません",
     "useAITranscription": "AI文字起こしを使用",
@@ -210,7 +210,7 @@
     "nativeCaptionsTitle": "字幕付き動画",
     "nativeCaptionsDesc": "常に完全無料で無制限。ダイヤは一切消費しません。",
     "aiTranscriptionTitle": "音声文字起こし同期",
-    "aiTranscriptionDesc": "字幕のない動画向け（1〜2ダイヤ）。時間経過で自動回復します。",
+    "aiTranscriptionDesc": "字幕のない動画向け（長さに応じて1〜4ダイヤ）。時間経過で自動回復します。",
     "allCreditsAvailable": "ダイヤ満タン",
     "depletedNotice": "ダイヤ（{{max}}個）をすべて消費しました。公式字幕付きの通常動画は引き続き無料で学習できます！",
     "upgradeToPro": "Proにアップグレード",
@@ -220,7 +220,19 @@
     "dualSubs": "対訳字幕",
     "dualSubsHint": "母国語の翻訳字幕を同時に表示",
     "translating": "字幕を翻訳中...",
-    "reading": "読み方"
+    "reading": "読み方",
+    "livestreamNotSupportedTitle": "ライブ配信には非対応です",
+    "livestreamNotSupportedHint": "AI文字起こしは公開済みの動画のみ対応しており、ライブ配信では利用できません。",
+    "durationUnavailableTitle": "動画の長さを確認できません",
+    "durationUnavailableHint": "動画情報を取得できませんでした。しばらくしてから再試行してください。",
+    "videoUnavailableTitle": "動画を再生できません",
+    "videoUnavailableHint": "非公開または利用できない動画のため、文字起こしできません。",
+    "captchaFailedTitle": "認証の有効期限が切れました",
+    "captchaFailedHint": "もう一度人間認証を完了してください。",
+    "diamondPriceChangedTitle": "必要ダイヤ数が更新されました",
+    "diamondPriceChangedHint": "動画の長さに応じて必要数が変更されました。再試行して更新してください。",
+    "providerUnavailableTitle": "字幕サービスが一時的に混雑しています",
+    "providerUnavailableHint": "字幕の取得に失敗しました。再試行するか、AI文字起こしをお試しください。"
   },
   "pro": {
     "title": "Voca サポーター",
@@ -377,7 +389,7 @@
     "recent": "履歴",
     "recentSearches": "最近の検索",
     "enterWordAbove": "単語を検索",
-    "enterWordHint": "単語を入力して意味を調べる",
+    "enterWordHint": "日本語・中国語・韓国語・英語・ベトナム語で検索",
     "saveToVocab": "単語帳に保存",
     "clearAll": "履歴をすべて削除",
     "grammarPatterns": "該当する文法パターン",
@@ -1445,5 +1457,10 @@
     "paymentProcessing": "処理中",
     "paymentFailed": "支払い失敗",
     "subscriptionTab": "プラン"
+  },
+  "landing": {
+    "homeLink": "ホーム",
+    "mobileAppLink": "モバイルアプリ",
+    "launchWebApp": "Webアプリを開く"
   }
 }

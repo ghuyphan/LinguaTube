@@ -61,6 +61,12 @@ export class SubtitleDisplayComponent implements OnDestroy {
     return Boolean(firstLang && normalizeLanguageCode(firstLang) !== normalizeLanguageCode(requestedLang));
   });
 
+  readonly canOfferAiFallback = computed(() => {
+    if (!this.transcript.whisperAvailable() || this.transcript.diamonds() <= 0) return false;
+    const err = this.transcript.error();
+    return err === 'NO_NATIVE' || err === 'NO_SUBTITLES' || err === 'NATIVE_PROVIDER_UNAVAILABLE' || this.hasNativeInOtherLanguage();
+  });
+
   readonly firstAvailableNativeLanguage = computed(() => {
     const nativeLangs = this.transcript.availableLanguages().native || [];
     for (const p of LEARNING_LANGUAGE_CODES) {

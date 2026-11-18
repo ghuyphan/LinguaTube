@@ -150,7 +150,7 @@
     "resumingHint": "Tiếp tục tiến trình trước",
     "videoTooLongTitle": "Video quá dài",
     "videoTooLongHint": "Tạo phụ đề AI hỗ trợ video tối đa 10 phút (20 phút với Người đồng hành, 45 phút với Nhà tài trợ).",
-    "videoTooLongForAI": "Tạo phụ đề AI hỗ trợ video tối đa 10 phút (20 phút với gói Supporter, 45 phút với gói Founder).",
+    "videoTooLongForAI": "Tạo phụ đề AI hỗ trợ video tối đa {{minutes}} phút ở gói hiện tại.",
     "needMoreDiamonds": "Không đủ Kim cương cho thời lượng video này.",
     "diamond": "Kim cương",
     "diamonds": "Kim cương",
@@ -170,7 +170,7 @@
     "fallbackAvailable": "Có thể tạo phụ đề AI",
     "gotIt": "Đã hiểu",
     "unsupportedLanguageTitle": "Ngôn ngữ không được hỗ trợ",
-    "unsupportedLanguageHint": "Chỉ hỗ trợ video tiếng Nhật, Trung, Hàn và Anh.",
+    "unsupportedLanguageHint": "Hiện chỉ hỗ trợ video tiếng Nhật, Trung, Hàn, Anh và Việt.",
     "refreshCaptions": "Làm mới phụ đề",
     "noCaptionsAvailable": "Video này không có phụ đề",
     "useAITranscription": "Tạo phụ đề bằng AI",
@@ -209,7 +209,7 @@
     "nativeCaptionsTitle": "Video có sẵn phụ đề",
     "nativeCaptionsDesc": "Hoàn toàn miễn phí và không giới hạn. Không tiêu tốn Kim cương.",
     "aiTranscriptionTitle": "Phiên âm giọng nói AI",
-    "aiTranscriptionDesc": "Dành cho video chưa có phụ đề (1–2 Kim cương). Tự động hồi phục theo thời gian.",
+    "aiTranscriptionDesc": "Dành cho video chưa có phụ đề (1–4 Kim cương tùy độ dài). Tự động hồi phục theo thời gian.",
     "allCreditsAvailable": "Đầy đủ Kim cương",
     "depletedNotice": "Bạn đã dùng hết {{max}} Kim cương. Các video có sẵn phụ đề vẫn xem hoàn toàn miễn phí!",
     "upgradeToPro": "Ủng hộ dự án",
@@ -220,7 +220,19 @@
     "dualSubs": "Phụ đề song ngữ",
     "dualSubsHint": "Hiển thị song song phụ đề gốc và bản dịch",
     "translating": "Đang dịch phụ đề...",
-    "reading": "Phiên âm"
+    "reading": "Phiên âm",
+    "livestreamNotSupportedTitle": "Không hỗ trợ livestream",
+    "livestreamNotSupportedHint": "Phụ đề AI chỉ hỗ trợ video đã đăng tải, chưa hỗ trợ phát trực tiếp.",
+    "durationUnavailableTitle": "Không xác minh được thời lượng",
+    "durationUnavailableHint": "Thông tin video tạm thời chưa khả dụng. Vui lòng thử lại sau giây lát.",
+    "videoUnavailableTitle": "Video không khả dụng",
+    "videoUnavailableHint": "Video này đang ở chế độ riêng tư hoặc không còn khả dụng.",
+    "captchaFailedTitle": "Xác minh đã hết hạn",
+    "captchaFailedHint": "Vui lòng thực hiện lại bước xác minh bảo mật.",
+    "diamondPriceChangedTitle": "Số kim cương vừa cập nhật",
+    "diamondPriceChangedHint": "Chi phí theo thời lượng đã thay đổi. Hãy thử lại để cập nhật báo giá.",
+    "providerUnavailableTitle": "Máy chủ phụ đề đang bận",
+    "providerUnavailableHint": "Không thể lấy phụ đề gốc lúc này. Hãy thử lại hoặc dùng phụ đề AI."
   },
   "pro": {
     "title": "Voca Supporter",
@@ -377,7 +389,7 @@
     "recent": "Gần đây",
     "recentSearches": "Tìm kiếm gần đây",
     "enterWordAbove": "Tra cứu từ vựng",
-    "enterWordHint": "Nhập từ cần tra vào ô tìm kiếm ở trên để xem định nghĩa",
+    "enterWordHint": "Tra cứu từ vựng tiếng Nhật, Trung, Hàn, Anh hoặc Việt",
     "saveToVocab": "Lưu vào sổ từ",
     "clearAll": "Xóa tất cả",
     "grammarPatterns": "Mẫu ngữ pháp liên quan",
@@ -1445,5 +1457,10 @@
     "paymentProcessing": "Đang xử lý",
     "paymentFailed": "Thanh toán thất bại",
     "subscriptionTab": "Gói đăng ký"
+  },
+  "landing": {
+    "homeLink": "Trang chủ",
+    "mobileAppLink": "Ứng dụng di động",
+    "launchWebApp": "Mở ứng dụng Web"
   }
 }

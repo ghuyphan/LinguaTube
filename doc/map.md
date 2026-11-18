@@ -632,3 +632,8 @@ The D1 `video_languages.levels` map is the shared source for transcript, recomme
 Server grading uses `services/video-grading-jobs.js` for job registration and status
 and `services/video-grading.js` for grading and publication. The maintenance
 route and native and AI caption flows share that job state.
+
+## Landing page & BE↔FE alignment
+
+- Root `/` serves `src/app/features/landing/landing-page.component.ts` (`publicPage` layout) with a dedicated `#download` section powered by `src/app/core/config/app-download.config.ts` (`APP_DOWNLOAD_TARGETS`) for Flutter Android/iOS releases, while `/?v=`, `/?id=`, and `/?playlist=` redirect seamlessly to `/video`.
+- `TranscriptService`, `VideoLevelService`, `VideoHeaderComponent`, `VideoPageComponent`, `SubtitleDisplayComponent`, `VideoRecommendationService`, `SeoService`, and all five `src/app/i18n/*.json` locales align with backend 5-language support (`ja`, `zh`, `ko`, `en`, `vi`), tier AI duration caps (up to 45 mins / 1–4 diamonds), structured `levels` + `gradingStatus`, and backend transcript error codes (`NATIVE_PROVIDER_UNAVAILABLE`, `LIVESTREAM_NOT_SUPPORTED`, `VIDEO_DURATION_UNAVAILABLE`, `CAPTCHA_FAILED`, `DIAMOND_PRICE_CHANGED`).

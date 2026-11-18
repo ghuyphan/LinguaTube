@@ -6,7 +6,9 @@ import {
   TranscriptResponse,
   TranscriptSegment,
   DiamondStatusResponse,
-  TranscriptState
+  TranscriptState,
+  TranscriptLevelEntry,
+  ServerGradingStatus
 } from '../../models';
 import { TranscriptCacheService } from '../../services/transcript-cache.service';
 import { AuthService } from '../../core/services/auth.service';
@@ -67,8 +69,11 @@ export class TranscriptService {
   /** Verified server subtitle languages (sub_languages in D1/R2) */
   readonly subLanguages = signal<string[]>([]);
 
-  /** Verified proficiency levels from D1 server (e.g. { ja: 'JLPT N4' }) */
-  readonly serverLevels = signal<Record<string, string>>({});
+  /** Verified proficiency levels from D1 server (e.g. { ja: 'JLPT N4' } or structured grading records) */
+  readonly serverLevels = signal<Record<string, TranscriptLevelEntry>>({});
+
+  /** Async server difficulty grading status returned by /api/transcript */
+  readonly gradingStatus = signal<ServerGradingStatus | null>(null);
 
   /** Fallback info when server returned different language than requested */
   readonly fallbackInfo = signal<{ requested: string; returned: string } | null>(null);
@@ -288,6 +293,9 @@ export class TranscriptService {
         if (res && typeof res.maxDiamonds === 'number') {
           this.maxDiamonds.set(res.maxDiamonds);
         }
+        if (res && typeof res.maxDurationSeconds === 'number' && res.maxDurationSeconds > 0) {
+          this.maxVideoDurationSec.set(res.maxDurationSeconds);
+        }
       }),
       catchError(err => {
         const errorData = err?.error || {};
@@ -297,6 +305,9 @@ export class TranscriptService {
           diamonds: this.diamonds(),
           maxDiamonds: this.maxDiamonds(),
           canGenerate: false,
+          reason: errorData.reason ?? (errorData.errorCode === 'VIDEO_TOO_LONG' ? 'VIDEO_TOO_LONG' : null),
+          durationSeconds: errorData.durationSeconds,
+          maxDurationSeconds: errorData.maxDurationSeconds ?? this.maxVideoDurationSec(),
           errorCode: errorData.errorCode || 'QUOTE_FAILED',
           error: errorData.error || err.message
         });
@@ -454,6 +465,7 @@ export class TranscriptService {
     this.availableLanguages.set({ native: [], ai: [] });
     this.subLanguages.set([]);
     this.serverLevels.set({});
+    this.gradingStatus.set(null);
     this.fallbackInfo.set(null);
     this.pendingRequests.clear();
     this.currentVideoId = null;
@@ -512,11 +524,25 @@ export class TranscriptService {
       if (err.status >= 400) {
         const body = err.error as Partial<TranscriptResponse> | null;
         const errorCode = body?.errorCode || (err.status >= 500 ? 'SERVER_ERROR' : 'REQUEST_ERROR');
-        const isAIBlocked = errorCode === 'VIDEO_TOO_LONG' || errorCode === 'INSUFFICIENT_DIAMONDS';
+        const retryAfter = body?.retryAfter ?? this.extractRetryAfter(err);
+        if (typeof body?.diamonds === 'number') {
+          this.diamonds.set(body.diamonds);
+        }
+        if (typeof body?.maxDiamonds === 'number') {
+          this.maxDiamonds.set(body.maxDiamonds);
+        }
+        const blockedErrorCodes = new Set([
+          'VIDEO_TOO_LONG',
+          'INSUFFICIENT_DIAMONDS',
+          'LIVESTREAM_NOT_SUPPORTED',
+          'VIDEO_UNAVAILABLE'
+        ]);
+        const isAIBlocked = blockedErrorCodes.has(errorCode);
         this._state.set({
           status: 'error',
           code: errorCode,
-          whisperAvailable: isAIBlocked ? false : (body?.whisperAvailable ?? whisperAvailable)
+          whisperAvailable: isAIBlocked ? false : (body?.whisperAvailable ?? whisperAvailable),
+          retryAfter
         });
         return of([]);
       }
@@ -624,9 +650,12 @@ export class TranscriptService {
       this.subLanguages.set([response.language.split('-')[0].toLowerCase()]);
     }
 
-    // Update server-verified proficiency levels if returned
+    // Update server-verified proficiency levels and grading status if returned
     if (response.levels && typeof response.levels === 'object') {
       this.serverLevels.set(response.levels);
+    }
+    if (response.gradingStatus) {
+      this.gradingStatus.set(response.gradingStatus);
     }
 
     // Update diamond info

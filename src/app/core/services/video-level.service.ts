@@ -96,6 +96,13 @@ export class VideoLevelService {
                 intermediate: 'CEFR B1',
                 upper_intermediate: 'CEFR B2',
                 advanced: 'CEFR C1'
+            },
+            vi: {
+                beginner: 'CEFR A1',
+                elementary: 'CEFR A2',
+                intermediate: 'CEFR B1',
+                upper_intermediate: 'CEFR B2',
+                advanced: 'CEFR C1'
             }
         };
         return map[lang]?.[tier] || tier.toUpperCase();
@@ -232,7 +239,7 @@ export class VideoLevelService {
             const serverLevel = serverLevels[lang];
             let info: VideoLevelInfo;
             if (typeof serverLevel === 'object' && serverLevel !== null && 'score' in serverLevel && typeof serverLevel.score === 'number') {
-                const s = serverLevel as VideoLevelInfo;
+                const s = serverLevel as VideoLevelInfo & { isProvisional?: boolean };
                 info = {
                     level: s.level,
                     tier: s.tier || deriveLevelTier(s.level),
@@ -244,16 +251,19 @@ export class VideoLevelService {
                     breakdown: s.breakdown
                 };
             } else {
+                const obj = typeof serverLevel === 'object' && serverLevel !== null ? (serverLevel as Partial<VideoLevelInfo>) : null;
                 const label = typeof serverLevel === 'string'
                     ? serverLevel
-                    : (typeof serverLevel === 'object' && serverLevel !== null && 'level' in serverLevel && typeof (serverLevel as VideoLevelInfo).level === 'string'
-                        ? (serverLevel as VideoLevelInfo).level
-                        : '');
+                    : (obj && typeof obj.level === 'string' ? obj.level : '');
                 info = this.buildInfoFromLabel(label, 'server');
+                if (obj?.tier) info.tier = obj.tier;
+                if (typeof obj?.confidence === 'number') info.confidence = obj.confidence;
             }
-            this.setCache(cacheKey, info);
-            this.currentLevel.set(info);
-            return info;
+            if (info.level) {
+                this.setCache(cacheKey, info);
+                this.currentLevel.set(info);
+                return info;
+            }
         }
 
         // 2. Fast-Path: Title/Channel metadata regex (<1ms resolution)

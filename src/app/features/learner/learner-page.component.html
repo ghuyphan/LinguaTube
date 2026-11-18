@@ -26,10 +26,10 @@
         <div><h2 class="profile-name">{{ p.name }}</h2>@if (p.details) { <p>{{ p.details }}</p> }</div>
       </header>
       @if (p.bio) { <p class="profile-bio">{{ p.bio }}</p> }
-      <div class="stats">
-        <div><strong>{{ p.level | localeNumber: i18n.currentLanguage() }}</strong><span>{{ i18n.t('accountExperience.level') }}</span></div>
-        <div><strong>{{ p.current_streak | localeNumber: i18n.currentLanguage() }}</strong><span>{{ i18n.t('accountExperience.streak') }}</span></div>
-        <div><strong>{{ p.total_videos_watched | localeNumber: i18n.currentLanguage() }}</strong><span>{{ i18n.t('accountExperience.videos') }}</span></div>
+      <div class="stats-grid learner-stats">
+        <div class="stat-item"><strong class="stat-value">{{ p.level | localeNumber: i18n.currentLanguage() }}</strong><span class="stat-label">{{ i18n.t('accountExperience.level') }}</span></div>
+        <div class="stat-item"><strong class="stat-value">{{ p.current_streak | localeNumber: i18n.currentLanguage() }}</strong><span class="stat-label">{{ i18n.t('accountExperience.streak') }}</span></div>
+        <div class="stat-item"><strong class="stat-value">{{ p.total_videos_watched | localeNumber: i18n.currentLanguage() }}</strong><span class="stat-label">{{ i18n.t('accountExperience.videos') }}</span></div>
       </div>
       @if (p.stamps.length) {
         <div class="stamps">

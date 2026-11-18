@@ -69,8 +69,12 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         <div class="app__content">
           @if (experience.publicLayout()) {
             <header class="public-header">
-              <a class="public-brand" routerLink="/video"><img src="/favicon.svg" alt="" width="32" height="32" />Voca</a>
+              <a class="public-brand" routerLink="/"><img src="/favicon.svg" alt="" width="32" height="32" />Voca</a>
               <div class="public-header__actions">
+                <a class="btn btn-primary" routerLink="/video">
+                  <app-icon name="play-circle" [size]="16" />
+                  <span>{{ i18n.t('landing.launchWebApp') }}</span>
+                </a>
                 <button type="button" class="btn btn-secondary public-language" (click)="showPublicLanguagePicker.set(true)"
                   [attr.aria-label]="i18n.t('settings.interfaceLanguage') + ': ' + currentPublicLanguage().nativeName" aria-haspopup="dialog" [attr.aria-expanded]="showPublicLanguagePicker()">
                   <img [src]="currentPublicLanguage().flag" width="20" height="15" alt="" />
@@ -103,6 +107,8 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
             <footer class="public-footer">
               <span>Voca</span>
               <nav [attr.aria-label]="i18n.t('legal.documents')">
+                <a routerLink="/">{{ i18n.t('landing.homeLink') }}</a>
+                <a routerLink="/" fragment="download">{{ i18n.t('landing.mobileAppLink') }}</a>
                 <a routerLink="/terms">{{ i18n.t('legal.tabTerms') }}</a>
                 <a routerLink="/privacy">{{ i18n.t('legal.tabPrivacy') }}</a>
                 <a routerLink="/video">{{ i18n.t('legal.backToApp') }}</a>

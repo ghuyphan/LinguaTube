@@ -1,12 +1,35 @@
 import { inject } from '@angular/core';
-import { Routes, Router } from '@angular/router';
+import { CanActivateFn, Routes, Router } from '@angular/router';
 
 const learningPage = { layout: 'app', onboarding: true } as const;
 const accountPage = { layout: 'app', onboarding: false } as const;
 const publicPage = { layout: 'public', onboarding: false } as const;
 
+const landingVideoParamRedirect: CanActivateFn = (route) => {
+    const params = route.queryParamMap;
+    if (params.has('v') || params.has('id') || params.has('playlist')) {
+        return inject(Router).createUrlTree(['/video'], {
+            queryParams: route.queryParams,
+            fragment: route.fragment ?? undefined
+        });
+    }
+    return true;
+};
+
 export const routes: Routes = [
-    { path: '', redirectTo: 'video', pathMatch: 'full' },
+    {
+        path: '',
+        pathMatch: 'full',
+        canActivate: [landingVideoParamRedirect],
+        title: 'Voca — Learn Languages from YouTube with Interactive Subtitles',
+        data: {
+            ...publicPage,
+            description: 'Learn Japanese, Chinese, Korean, English, and Vietnamese by watching YouTube videos with interactive dual subtitles, dictionary lookups, AI transcription, and SM-2 flashcards on Web and Mobile.',
+            keywords: 'youtube language learning, voca app, flutter language app, dual subtitles, furigana, pinyin, srs flashcards, japanese, chinese, korean, english, vietnamese'
+        },
+        loadComponent: () => import('./features/landing/landing-page.component')
+            .then(m => m.LandingPageComponent)
+    },
     { path: 'learner/:userId', data: publicPage, title: 'Learner Profile | Voca', loadComponent: () => import('./features/learner/learner-page.component').then(m => m.LearnerPageComponent) },
     { path: 'account/subscription', data: accountPage, title: 'Subscription | Voca', loadComponent: () => import('./features/account/subscription-page.component').then(m => m.SubscriptionPageComponent) },
     { path: 'auth/mobile-recovery', title: 'Password Recovery | Voca', data: {...publicPage, recovery: true}, loadComponent: () => import('./features/account/account-page.component').then(m => m.AccountPageComponent) },

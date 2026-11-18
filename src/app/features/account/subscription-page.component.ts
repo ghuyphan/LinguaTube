@@ -66,6 +66,13 @@ export class SubscriptionPageComponent implements OnDestroy {
             ...order,
             planLabel: plans[order.plan_id] ? this.i18n.t(plans[order.plan_id]) : this.label('unknownPlan'),
             statusLabel: this.label(statuses[order.status] || 'unknownStatus'),
+            statusClass: order.status === 'PAID'
+                ? 'badge--success'
+                : (order.status === 'PENDING' || order.status === 'PROCESSING')
+                    ? 'badge--warning'
+                    : (order.status === 'FAILED' || order.status === 'CANCELLED' || order.status === 'EXPIRED')
+                        ? 'badge--error'
+                        : 'badge--primary',
             supportUrl: this.support(order),
         }));
     });

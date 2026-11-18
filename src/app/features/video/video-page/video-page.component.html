@@ -593,7 +593,17 @@
         @if (isVideoTooLongForAI()) {
         <div class="dialog-banner dialog-banner--danger">
             <app-icon name="alert-circle" [size]="16" class="banner-icon" />
-            <span>{{ i18n.t('subtitle.videoTooLongForAI') || 'AI transcription is limited to videos under 20 minutes.' }}</span>
+            <span>{{ i18n.t('subtitle.videoTooLongForAI', { minutes: maxAiDurationMinutes() }) || ('AI transcription is limited to videos up to ' + maxAiDurationMinutes() + ' minutes.') }}</span>
+        </div>
+        } @else if (aiQuoteError() === 'LIVESTREAM_NOT_SUPPORTED') {
+        <div class="dialog-banner dialog-banner--danger">
+            <app-icon name="alert-circle" [size]="16" class="banner-icon" />
+            <span>{{ i18n.t('subtitle.livestreamNotSupportedHint') || 'Live streams cannot be transcribed with AI.' }}</span>
+        </div>
+        } @else if (aiQuoteError() === 'VIDEO_DURATION_UNAVAILABLE' || aiQuoteError() === 'VIDEO_UNAVAILABLE' || aiQuoteError() === 'QUOTE_FAILED') {
+        <div class="dialog-banner dialog-banner--warning">
+            <app-icon name="alert-circle" [size]="16" class="banner-icon" />
+            <span>{{ i18n.t(aiQuoteError() === 'VIDEO_UNAVAILABLE' ? 'subtitle.videoUnavailableHint' : 'subtitle.durationUnavailableHint') || 'Video duration could not be verified yet. Please retry.' }}</span>
         </div>
         } @else if (transcript.diamonds() < aiDiamondCost()) {
         <div class="dialog-banner dialog-banner--warning">
@@ -603,7 +613,7 @@
         }
 
         <!-- Cloudflare Turnstile Verification -->
-        @if (!isVideoTooLongForAI() && transcript.diamonds() >= aiDiamondCost()) {
+        @if (!isVideoTooLongForAI() && !aiQuoteError() && transcript.diamonds() >= aiDiamondCost()) {
         <div class="dialog-turnstile">
             <app-turnstile (resolved)="onCaptchaResolved($event)" (expired)="aiCaptchaToken.set(null)"
                 (captchaError)="aiCaptchaToken.set(null)" />
@@ -614,7 +624,7 @@
             <button type="button" class="btn btn-secondary dialog-btn" (click)="onCloseAiConfirmDialog()">
                 {{ i18n.t('vocab.cancel') || 'Cancel' }}
             </button>
-            <button type="button" class="btn btn-primary dialog-btn" [disabled]="!aiCaptchaToken() || isSubmittingAi() || isVideoTooLongForAI() || transcript.diamonds() < aiDiamondCost() || isLoadingQuote()"
+            <button type="button" class="btn btn-primary dialog-btn" [disabled]="!aiCaptchaToken() || isSubmittingAi() || isVideoTooLongForAI() || !!aiQuoteError() || transcript.diamonds() < aiDiamondCost() || isLoadingQuote()"
                 (click)="confirmGenerateAI()">
                 @if (isSubmittingAi()) {
                 <app-icon name="loader" [size]="16" class="spin-icon" />

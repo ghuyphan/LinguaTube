@@ -162,7 +162,7 @@
     "resumingHint": "이전 세션에서 계속",
     "videoTooLongTitle": "동영상이 너무 깁니다",
     "videoTooLongHint": "AI 자막 생성은 최대 20분까지 지원됩니다(Premium은 최대 45분).",
-    "videoTooLongForAI": "AI 자막 생성은 최대 10분 길이의 영상을 지원합니다 (서포터는 20분, 파운더는 45분).",
+    "videoTooLongForAI": "현재 플랜에서는 최대 {{minutes}}분 길이의 영상까지 AI 자막 생성을 지원합니다.",
     "needMoreDiamonds": "이 동영상 길이에 필요한 다이아몬드가 부족합니다.",
     "diamond": "다이아몬드",
     "diamonds": "다이아몬드",
@@ -182,7 +182,7 @@
     "fallbackAvailable": "AI 자막 생성 가능",
     "gotIt": "확인",
     "unsupportedLanguageTitle": "지원되지 않는 언어",
-    "unsupportedLanguageHint": "일본어, 중국어, 한국어, 영어 동영상만 지원됩니다.",
+    "unsupportedLanguageHint": "일본어, 중국어, 한국어, 영어, 베트남어 동영상만 지원됩니다.",
     "refreshCaptions": "자막 새로고침",
     "noCaptionsAvailable": "이 동영상에 자막이 없습니다",
     "useAITranscription": "AI 자막 생성하기",
@@ -210,7 +210,7 @@
     "nativeCaptionsTitle": "기본 제공 자막",
     "nativeCaptionsDesc": "언제나 무료로 무제한 시청할 수 있어요. 다이아몬드가 소모되지 않아요.",
     "aiTranscriptionTitle": "음성 인식 자막 생성",
-    "aiTranscriptionDesc": "자막이 없는 영상에 사용돼요 (1~2개 소모). 시간이 지나면 자동으로 충전돼요.",
+    "aiTranscriptionDesc": "자막이 없는 영상에 사용돼요 (영상 길이에 따라 1~4개 소모). 시간이 지나면 자동으로 충전돼요.",
     "allCreditsAvailable": "모든 다이아몬드 사용 가능",
     "depletedNotice": "보유한 다이아몬드({{max}}개)를 모두 사용했어요. 기본 자막이 있는 동영상은 언제든 무료로 볼 수 있어요!",
     "upgradeToPro": "Pro로 업그레이드",
@@ -220,7 +220,19 @@
     "dualSubs": "이중 자막",
     "dualSubsHint": "보조 번역 자막 표시",
     "translating": "자막 번역 중...",
-    "reading": "발음"
+    "reading": "발음",
+    "livestreamNotSupportedTitle": "실시간 스트리밍 미지원",
+    "livestreamNotSupportedHint": "AI 자막 생성은 실시간 방송이 아닌 업로드된 동영상에서만 사용할 수 있습니다.",
+    "durationUnavailableTitle": "영상 길이를 확인할 수 없음",
+    "durationUnavailableHint": "지금은 동영상 메타데이터를 확인할 수 없습니다. 잠시 후 다시 시도해 주세요.",
+    "videoUnavailableTitle": "동영상을 사용할 수 없음",
+    "videoUnavailableHint": "비공개이거나 재생할 수 없는 동영상이라 자막을 생성할 수 없습니다.",
+    "captchaFailedTitle": "보안 확인이 만료됨",
+    "captchaFailedHint": "사람 확인 절차를 다시 진행해 주세요.",
+    "diamondPriceChangedTitle": "필요한 다이아 수가 변경됨",
+    "diamondPriceChangedHint": "영상 길이에 맞춰 비용이 새로고침되었습니다. 다시 시도해 주세요.",
+    "providerUnavailableTitle": "자막 서버가 일시적으로 혼잡함",
+    "providerUnavailableHint": "원본 자막을 불러올 수 없습니다. 다시 시도하거나 AI 자막 생성을 이용해 주세요."
   },
   "pro": {
     "title": "Voca 서포터",
@@ -377,7 +389,7 @@
     "recent": "최근",
     "recentSearches": "최근 검색어",
     "enterWordAbove": "단어 검색",
-    "enterWordHint": "검색창에 단어를 입력해 뜻을 확인해 보세요",
+    "enterWordHint": "일본어, 중국어, 한국어, 영어, 베트남어로 검색해 보세요",
     "saveToVocab": "단어장에 저장",
     "clearAll": "모두 삭제",
     "grammarPatterns": "관련 문법 패턴",
@@ -1445,5 +1457,10 @@
     "paymentProcessing": "처리 중",
     "paymentFailed": "결제 실패",
     "subscriptionTab": "구독"
+  },
+  "landing": {
+    "homeLink": "홈",
+    "mobileAppLink": "모바일 앱",
+    "launchWebApp": "웹 앱 열기"
   }
 }

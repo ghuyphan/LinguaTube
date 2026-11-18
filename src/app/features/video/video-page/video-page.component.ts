@@ -350,12 +350,27 @@ export class VideoPageComponent implements OnInit {
   aiDiamondCost = computed(() => {
     const q = this.aiQuote();
     if (q && q.success && typeof q.cost === 'number') return q.cost;
-    return this.youtube.duration() > 10 * 60 ? 2 : 1;
+    const dur = this.youtube.duration();
+    return dur > 2100 ? 4 : dur > 1200 ? 3 : dur > 600 ? 2 : 1;
+  });
+  maxAiDurationMinutes = computed(() => {
+    const q = this.aiQuote();
+    const maxSec = q?.maxDurationSeconds || this.transcript.maxVideoDurationSec() || 600;
+    return Math.max(1, Math.round(maxSec / 60));
+  });
+  aiQuoteError = computed(() => {
+    const q = this.aiQuote();
+    if (!q || q.success) return null;
+    if (q.errorCode && q.errorCode !== 'VIDEO_TOO_LONG' && q.errorCode !== 'INSUFFICIENT_DIAMONDS') {
+      return q.errorCode;
+    }
+    return null;
   });
   isVideoTooLongForAI = computed(() => {
     const q = this.aiQuote();
-    if (q && q.reason === 'VIDEO_TOO_LONG') return true;
-    return this.youtube.duration() > 20 * 60;
+    if (q && (q.reason === 'VIDEO_TOO_LONG' || q.errorCode === 'VIDEO_TOO_LONG')) return true;
+    const maxSec = q?.maxDurationSeconds || this.transcript.maxVideoDurationSec() || 600;
+    return this.youtube.duration() > maxSec;
   });
 
   selectedWord = signal<Token | null>(null);
@@ -1020,9 +1035,19 @@ export class VideoPageComponent implements OnInit {
 
     const currentError = this.transcript.error();
 
-    // If the failure was an AI timeout, service error, or quota, cancel old job and re-open AI dialog to retry
-    if (currentError === 'AI_TIMEOUT' || currentError === 'AI_SERVICE_ERROR' || currentError === 'AI_JOB_FAILED' || currentError === 'AI_FAILED' || currentError === 'AI_QUOTA_EXCEEDED' || currentError === 'NO_SPEECH_DETECTED') {
+    // If the failure was an AI timeout, service error, quote change, captcha, or quota, cancel old job and re-open AI dialog to retry
+    if (
+      currentError === 'AI_TIMEOUT' ||
+      currentError === 'AI_SERVICE_ERROR' ||
+      currentError === 'AI_JOB_FAILED' ||
+      currentError === 'AI_FAILED' ||
+      currentError === 'AI_QUOTA_EXCEEDED' ||
+      currentError === 'NO_SPEECH_DETECTED' ||
+      currentError === 'CAPTCHA_FAILED' ||
+      currentError === 'DIAMOND_PRICE_CHANGED'
+    ) {
       this.aiJobManager.cancelJob(currentVideo.id);
+      this.aiCaptchaToken.set(null);
       this.showAiConfirmDialog.set(true);
       this.fetchAiQuote();
       return;
@@ -1055,7 +1080,7 @@ export class VideoPageComponent implements OnInit {
     const lang = this.selectedAiLanguage();
     const token = this.aiCaptchaToken();
 
-    if (!currentVideo || !token || this.isSubmittingAi() || this.isVideoTooLongForAI() || this.transcript.diamonds() < this.aiDiamondCost()) return;
+    if (!currentVideo || !token || this.isSubmittingAi() || this.isVideoTooLongForAI() || this.aiQuoteError() || this.transcript.diamonds() < this.aiDiamondCost()) return;
 
     // Immediately invalidate single-use Turnstile token to prevent replay
     this.aiCaptchaToken.set(null);

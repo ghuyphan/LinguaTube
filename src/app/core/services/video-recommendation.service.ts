@@ -94,11 +94,12 @@ export class VideoRecommendationService {
     /**
      * Check whether recommended videos for given language and tier are present in cache
      */
-    hasCache(language: string, tier?: string, limit = 16, query = ''): boolean {
+    hasCache(language: string, tier?: string, limit = 16, query = '', category?: string): boolean {
         if (!language) return false;
         const activeTier = tier && tier !== 'all' ? tier : undefined;
         const cleanQuery = query ? query.trim() : '';
-        const cacheKey = `${language}_${activeTier || 'all'}_${limit}_${cleanQuery}`;
+        const currentCat = category !== undefined ? category : this.activeCategory();
+        const cacheKey = `${language}_${activeTier || 'all'}_${currentCat || 'all'}_${limit}_${cleanQuery}`;
         const cached = this.cache.get(cacheKey);
         return !!cached && cached.length > 0 && !cached.some(v => !v.channelAvatar);
     }

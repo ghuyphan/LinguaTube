@@ -153,13 +153,47 @@
 
                     <!-- Error -->
                     <div class="state-item state-error">
-                        <div class="error-icon-box" [class.ai-icon-box]="((transcript.error() === 'NO_NATIVE' || transcript.error() === 'NO_SUBTITLES') && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)">
-                            <app-icon [name]="(((transcript.error() === 'NO_NATIVE' || transcript.error() === 'NO_SUBTITLES') && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)) ? 'subtitles-ai' : 'alert-circle'" [size]="20" [class.ai-icon]="((transcript.error() === 'NO_NATIVE' || transcript.error() === 'NO_SUBTITLES') && transcript.diamonds() > 0) || (hasNativeInOtherLanguage() && transcript.diamonds() > 0)" class="error-icon" />
+                        <div class="error-icon-box" [class.ai-icon-box]="canOfferAiFallback()">
+                            <app-icon [name]="canOfferAiFallback() ? 'subtitles-ai' : 'alert-circle'" [size]="20" [class.ai-icon]="canOfferAiFallback()" class="error-icon" />
                         </div>
                         <div class="error-text">
                             @if (transcript.error() === 'VIDEO_TOO_LONG') {
                             <span class="empty-title">{{ i18n.t('subtitle.videoTooLongTitle') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.videoTooLongHint') }}</span>
+                            } @else if (transcript.error() === 'LIVESTREAM_NOT_SUPPORTED') {
+                            <span class="empty-title">{{ i18n.t('subtitle.livestreamNotSupportedTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.livestreamNotSupportedHint') }}</span>
+                            } @else if (transcript.error() === 'VIDEO_DURATION_UNAVAILABLE') {
+                            <span class="empty-title">{{ i18n.t('subtitle.durationUnavailableTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.durationUnavailableHint') }}</span>
+                            <ng-container *ngTemplateOutlet="retryAction" />
+                            } @else if (transcript.error() === 'VIDEO_UNAVAILABLE') {
+                            <span class="empty-title">{{ i18n.t('subtitle.videoUnavailableTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.videoUnavailableHint') }}</span>
+                            } @else if (transcript.error() === 'CAPTCHA_FAILED') {
+                            <span class="empty-title">{{ i18n.t('subtitle.captchaFailedTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.captchaFailedHint') }}</span>
+                            <ng-container *ngTemplateOutlet="retryAction" />
+                            } @else if (transcript.error() === 'DIAMOND_PRICE_CHANGED') {
+                            <span class="empty-title">{{ i18n.t('subtitle.diamondPriceChangedTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.diamondPriceChangedHint') }}</span>
+                            <ng-container *ngTemplateOutlet="retryAction" />
+                            } @else if (transcript.error() === 'NATIVE_PROVIDER_UNAVAILABLE') {
+                            <span class="empty-title">{{ i18n.t('subtitle.providerUnavailableTitle') }}</span>
+                            <span class="empty-hint">{{ i18n.t('subtitle.providerUnavailableHint') }}</span>
+                            <div class="empty-actions">
+                                <button type="button" class="empty-action-btn empty-action-btn--retry" (click)="retryCaptions()">
+                                    <app-icon name="refresh-cw" [size]="14" />
+                                    <span>{{ i18n.t('common.retry') || 'Retry' }}</span>
+                                </button>
+                                @if (canOfferAiFallback()) {
+                                <button type="button" class="try-ai-btn try-ai-btn--secondary" (click)="manualAITrigger.emit()">
+                                    <app-icon name="diamond" [size]="14" />
+                                    <span>{{ i18n.t('subtitle.useAITranscription') }}</span>
+                                    <span class="diamond-count">({{ transcript.diamonds() }}/{{ transcript.maxDiamonds() }})</span>
+                                </button>
+                                }
+                            </div>
                             } @else if (transcript.error() === 'UNSUPPORTED_LANGUAGE' || transcript.error() ===
                             'UNSUPPORTED_VIDEO_LANGUAGE') {
                             <span class="empty-title">{{ i18n.t('subtitle.unsupportedLanguageTitle') }}</span>
@@ -195,7 +229,7 @@
                                     <app-icon name="globe" [size]="14" />
                                     <span>{{ i18n.t('subtitle.switchLanguage', { language: getLanguageDisplayName(firstAvailableNativeLanguage() || '') }) }}</span>
                                 </button>
-                                @if (transcript.diamonds() > 0) {
+                                @if (transcript.diamonds() > 0 && transcript.whisperAvailable()) {
                                 <button type="button" class="try-ai-btn try-ai-btn--secondary" (click)="manualAITrigger.emit()">
                                     <app-icon name="diamond" [size]="14" />
                                     <span>{{ i18n.t('subtitle.useAITranscription') }}</span>
@@ -203,7 +237,7 @@
                                 </button>
                                 }
                             </div>
-                            } @else if ((transcript.error() === 'NO_NATIVE' || transcript.error() === 'NO_SUBTITLES') && transcript.diamonds() > 0) {
+                            } @else if ((transcript.error() === 'NO_NATIVE' || transcript.error() === 'NO_SUBTITLES') && transcript.diamonds() > 0 && transcript.whisperAvailable()) {
                             <!-- No native captions but AI available -->
                             <span class="empty-title">{{ i18n.t('subtitle.noCaptionsAvailable') }}</span>
                             <span class="empty-hint">{{ i18n.t('subtitle.fallbackAvailable') || 'AI transcription available' }}</span>

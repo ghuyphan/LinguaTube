@@ -241,6 +241,7 @@ export class VideoHeaderComponent {
       case 'zh': return this.i18n.t('settings.chinese') || 'Chinese';
       case 'ko': return this.i18n.t('settings.korean') || 'Korean';
       case 'en': return this.i18n.t('settings.english') || 'English';
+      case 'vi': return this.i18n.t('settings.vietnamese') || 'Vietnamese';
       default: return codeStr.toUpperCase();
     }
   }

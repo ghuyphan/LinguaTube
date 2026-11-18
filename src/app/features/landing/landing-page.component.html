@@ -1,0 +1,178 @@
+<div class="landing-page">
+  <!-- Hero -->
+  <section class="landing-hero">
+    <div class="landing-hero__copy">
+      <span class="badge badge--accent landing-eyebrow">
+        <app-icon name="sparkles" [size]="14" />
+        <span>{{ copy().eyebrow }}</span>
+      </span>
+
+      <h1 class="landing-hero__title">{{ copy().heroTitle }}</h1>
+      <p class="landing-hero__subtitle">{{ copy().heroSubtitle }}</p>
+
+      <div class="landing-hero__actions">
+        <a class="btn btn-primary landing-cta" routerLink="/video">
+          <app-icon name="play-circle" [size]="18" />
+          <span>{{ copy().launchWebApp }}</span>
+        </a>
+        <a class="btn btn-secondary landing-cta" href="#download" (click)="scrollToDownload($event)">
+          <app-icon name="download" [size]="18" />
+          <span>{{ copy().getMobileApp }}</span>
+        </a>
+      </div>
+
+      <p class="landing-hero__note">
+        <app-icon name="check-circle" [size]="14" />
+        <span>{{ copy().freeToStartNote }}</span>
+      </p>
+    </div>
+
+    <!-- Interactive Workspace Preview Card (Voca UI showcase) -->
+    <div class="card landing-preview" aria-hidden="true">
+      <div class="landing-preview__top">
+        <span class="badge badge--primary">
+          <app-icon name="video" [size]="13" />
+          <span>{{ copy().previewTag }}</span>
+        </span>
+        <span class="badge badge--accent">JLPT N4</span>
+      </div>
+
+      <div class="landing-preview__player">
+        <div class="landing-preview__caption-box">
+          <p class="landing-preview__ruby-line">
+            <ruby>毎日<rt>まいにち</rt></ruby>
+            <ruby>動画<rt>どうが</rt></ruby>を
+            <span class="landing-preview__token">見て</span>
+            <ruby>勉強<rt>べんきょう</rt></ruby>します
+          </p>
+          <p class="landing-preview__trans-line">{{ copy().previewTranslation }}</p>
+        </div>
+      </div>
+
+      <div class="landing-preview__lookup">
+        <div class="landing-preview__lookup-head">
+          <div>
+            <strong>動画</strong>
+            <span class="landing-preview__reading">どうが · n.</span>
+          </div>
+          <span class="badge badge--sm badge--success">+ SRS</span>
+        </div>
+        <p class="landing-preview__lookup-def">{{ copy().previewDefinition }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Supported Languages -->
+  <section class="landing-languages" [attr.aria-label]="copy().languagesTitle">
+    <div class="landing-section-head">
+      <h2>{{ copy().languagesTitle }}</h2>
+      <p>{{ copy().languagesSubtitle }}</p>
+    </div>
+    <div class="landing-languages__grid">
+      @for (lang of languages; track lang.code) {
+        <button type="button" class="card card-interactive landing-lang-card" (click)="openLanguageInApp(lang.code)">
+          <img [src]="lang.flag" width="28" height="21" alt="" class="landing-lang-card__flag" />
+          <div class="landing-lang-card__info">
+            <strong>{{ i18n.t(lang.labelKey) }}</strong>
+            <span>{{ lang.levelLabel }}</span>
+          </div>
+          <app-icon name="arrow-right" [size]="16" class="landing-lang-card__arrow" />
+        </button>
+      }
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section class="landing-features" [attr.aria-label]="copy().featuresTitle">
+    <div class="landing-section-head">
+      <h2>{{ copy().featuresTitle }}</h2>
+      <p>{{ copy().featuresSubtitle }}</p>
+    </div>
+    <div class="landing-features__grid">
+      @for (item of features; track item.titleKey) {
+        <article class="card landing-feature-card">
+          <div class="landing-feature-card__icon">
+            <app-icon [name]="item.icon" [size]="20" />
+          </div>
+          <h3>{{ copy()[item.titleKey] }}</h3>
+          <p>{{ copy()[item.descKey] }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Flutter Mobile App Download Section -->
+  <section id="download" class="card landing-download" [attr.aria-label]="copy().downloadTitle">
+    <div class="landing-download__intro">
+      <span class="badge badge--accent">
+        <app-icon name="cloud" [size]="14" />
+        <span>{{ copy().downloadEyebrow }}</span>
+      </span>
+      <h2>{{ copy().downloadTitle }}</h2>
+      <p>{{ copy().downloadSubtitle }}</p>
+      <ul class="landing-download__perks">
+        <li>
+          <app-icon name="check-circle" [size]="16" />
+          <span>{{ copy().downloadPerkSync }}</span>
+        </li>
+        <li>
+          <app-icon name="check-circle" [size]="16" />
+          <span>{{ copy().downloadPerkOffline }}</span>
+        </li>
+        <li>
+          <app-icon name="check-circle" [size]="16" />
+          <span>{{ copy().downloadPerkSameAccount }}</span>
+        </li>
+      </ul>
+      <div class="landing-download__footer-links">
+        <a class="btn btn-secondary" routerLink="/account">
+          <app-icon name="user" [size]="16" />
+          <span>{{ copy().manageSyncAccount }}</span>
+        </a>
+        <a class="btn btn-secondary" routerLink="/video">
+          <app-icon name="play-circle" [size]="16" />
+          <span>{{ copy().useInBrowser }}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="landing-download__targets">
+      @for (target of downloadTargets; track target.id) {
+        @if (target.url) {
+          <a class="card card-interactive landing-download-card" [href]="target.url" target="_blank" rel="noopener noreferrer">
+            <div class="landing-download-card__icon">
+              <app-icon [name]="target.icon" [size]="20" />
+            </div>
+            <div class="landing-download-card__body">
+              <div class="landing-download-card__title-row">
+                <strong>{{ copy()[target.titleKey] }}</strong>
+                <span class="badge badge--sm badge--accent">{{ copy()[target.badgeKey] }}</span>
+              </div>
+              <p>{{ copy()[target.subtitleKey] }}</p>
+            </div>
+            <span class="landing-download-card__action">
+              <span>{{ copy()[target.ctaKey] }}</span>
+              <app-icon name="external-link" [size]="14" />
+            </span>
+          </a>
+        } @else {
+          <div class="card landing-download-card landing-download-card--soon" aria-disabled="true">
+            <div class="landing-download-card__icon">
+              <app-icon [name]="target.icon" [size]="20" />
+            </div>
+            <div class="landing-download-card__body">
+              <div class="landing-download-card__title-row">
+                <strong>{{ copy()[target.titleKey] }}</strong>
+                <span class="badge badge--sm badge--primary">{{ copy()[target.badgeKey] }}</span>
+              </div>
+              <p>{{ copy()[target.subtitleKey] }}</p>
+            </div>
+            <span class="landing-download-card__action landing-download-card__action--muted">
+              <span>{{ copy()[target.ctaKey] }}</span>
+            </span>
+          </div>
+        }
+      }
+    </div>
+  </section>
+</div>

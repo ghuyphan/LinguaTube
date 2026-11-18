@@ -150,7 +150,7 @@
     "resumingHint": "Continuing from a previous session",
     "videoTooLongTitle": "Video exceeds length limit",
     "videoTooLongHint": "Free AI transcription supports videos up to 10 minutes.",
-    "videoTooLongForAI": "AI transcription supports videos up to 10 mins (20 mins with Supporter, 45 mins with Founder).",
+    "videoTooLongForAI": "AI transcription is limited to videos up to {{minutes}} minutes on your current plan.",
     "needMoreDiamonds": "Not enough diamonds for this video duration.",
     "diamond": "Diamond",
     "diamonds": "Diamonds",
@@ -170,7 +170,7 @@
     "fallbackAvailable": "AI transcription available",
     "gotIt": "Got It",
     "unsupportedLanguageTitle": "Language not supported",
-    "unsupportedLanguageHint": "Only Japanese, Chinese, Korean, and English videos are supported.",
+    "unsupportedLanguageHint": "Only Japanese, Chinese, Korean, English, and Vietnamese videos are supported.",
     "refreshCaptions": "Refresh Captions",
     "noCaptionsAvailable": "No captions available for this video",
     "useAITranscription": "Use AI Transcription",
@@ -209,7 +209,7 @@
     "nativeCaptionsTitle": "Videos with Captions",
     "nativeCaptionsDesc": "Free and unlimited. Doesn't use diamonds.",
     "aiTranscriptionTitle": "AI Audio Transcription",
-    "aiTranscriptionDesc": "Used for videos without captions (1–2 diamonds). Refills automatically over time.",
+    "aiTranscriptionDesc": "Used for videos without captions (1–4 diamonds depending on video length). Refills automatically over time.",
     "allCreditsAvailable": "All diamonds available",
     "depletedNotice": "You've used all {{max}} diamonds. Videos with existing captions are always free.",
     "upgradeToPro": "Support Voca",
@@ -220,7 +220,19 @@
     "dualSubs": "Dual Subtitles",
     "dualSubsHint": "Show translated subtitles below the original",
     "translating": "Translating...",
-    "reading": "Reading"
+    "reading": "Reading",
+    "livestreamNotSupportedTitle": "Live stream not supported",
+    "livestreamNotSupportedHint": "AI transcription is available for uploaded videos, not active live streams.",
+    "durationUnavailableTitle": "Could not verify video duration",
+    "durationUnavailableHint": "Video metadata is unavailable right now. Please try again in a moment.",
+    "videoUnavailableTitle": "Video unavailable",
+    "videoUnavailableHint": "This video cannot be transcribed because it is private or unavailable.",
+    "captchaFailedTitle": "Verification expired",
+    "captchaFailedHint": "Please complete the human verification check again.",
+    "diamondPriceChangedTitle": "Credit cost updated",
+    "diamondPriceChangedHint": "Video duration changed the required diamonds. Retry to refresh the quote.",
+    "providerUnavailableTitle": "Caption service busy",
+    "providerUnavailableHint": "YouTube caption extraction is temporarily unavailable. Retry or generate with AI."
   },
   "pro": {
     "title": "Voca Supporter",
@@ -377,7 +389,7 @@
     "recent": "Recent",
     "recentSearches": "Recent Searches",
     "enterWordAbove": "Dictionary Search",
-    "enterWordHint": "Search in Japanese, Chinese, Korean, or English",
+    "enterWordHint": "Search in Japanese, Chinese, Korean, English, or Vietnamese",
     "saveToVocab": "Save to Vocabulary",
     "clearAll": "Clear All",
     "grammarPatterns": "Matching Grammar Patterns",
@@ -1445,5 +1457,10 @@
     "paymentProcessing": "Processing",
     "paymentFailed": "Payment failed",
     "subscriptionTab": "Plans"
+  },
+  "landing": {
+    "homeLink": "Home",
+    "mobileAppLink": "Mobile App",
+    "launchWebApp": "Open Web App"
   }
 }

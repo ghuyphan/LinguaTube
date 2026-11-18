@@ -11,8 +11,8 @@ export interface RouteSeoData {
   keywords?: string;
 }
 
-const DEFAULT_TITLE = 'Voca - Learn Japanese, Chinese, Korean & English from YouTube';
-const DEFAULT_DESCRIPTION = 'Learn Japanese, Chinese, Korean, and English by watching YouTube videos with interactive subtitles, real-time tokenization, furigana, pinyin, dictionary lookups, and SM-2 spaced repetition.';
+const DEFAULT_TITLE = 'Voca - Learn Japanese, Chinese, Korean, English & Vietnamese from YouTube';
+const DEFAULT_DESCRIPTION = 'Learn Japanese, Chinese, Korean, English, and Vietnamese by watching YouTube videos with interactive subtitles, real-time tokenization, furigana, pinyin, dictionary lookups, and SM-2 spaced repetition.';
 const DEFAULT_IMAGE = 'https://voca.study/og-image.png';
 const BASE_URL = 'https://voca.study';
 
@@ -91,7 +91,7 @@ export class SeoService {
     this.isCustomVideoMeta = true;
     const fullTitle = `${videoTitle} | Voca - Learn Languages with YouTube`;
     const desc = description
-      ? `${description.slice(0, 150)}... Learn Japanese, Chinese, Korean, or English with interactive subtitles on Voca.`
+      ? `${description.slice(0, 150)}... Learn Japanese, Chinese, Korean, English, or Vietnamese with interactive subtitles on Voca.`
       : `Watch "${videoTitle}" with interactive dual subtitles, furigana, pinyin, and instant dictionary lookups on Voca.`;
     const videoUrl = `${BASE_URL}/video?v=${videoId}`;
     const thumbnailUrl = getYouTubeThumbnail(videoId, 'hqdefault');

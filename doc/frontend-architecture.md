@@ -1173,10 +1173,12 @@ handoff](../../voca_flutter/doc/account-experience-implementation-2026-10-24.md)
 
 ### Shared screen design and route presentation
 
-Account, Subscription, Learner Profile, recovery, Not Found, Terms and Privacy reuse
-`page-layout`, `card`, `panel-header`, `panel-toolbar`, segmented controls, buttons,
-empty states and skeletons from Dictionary, Study, Playlists and History. Account
-forms use grouped sections rather than nested cards. Desktop contextual panels use
+Account, Subscription, Learner Profile, recovery, Not Found, Landing, Terms and Privacy reuse
+`page-layout`, `card`, `panel-header`, `panel-toolbar`, segmented controls, `.badge` status/tier pills, `.stats-grid`, buttons,
+empty states and skeletons from Dictionary, Study, Playlists and History. Root `/` renders `LandingPageComponent`
+with quick web launch (`/video`), 5-language deep links, and Flutter download targets sourced from
+`src/app/core/config/app-download.config.ts`, while `/?v=`, `/?id=`, and `/?playlist=` redirect straight to `/video`.
+Account forms use grouped sections rather than nested cards. Desktop contextual panels use
 the existing right-sidebar layout; required account actions remain stacked below
 the main panel on tablet/mobile. Legal summaries follow the existing contextual
 sidebar behavior. Recovery and short public states use `page-layout--focus`.

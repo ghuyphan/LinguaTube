@@ -311,7 +311,7 @@ graph TD
   - **Tier 3 (Soft Length Clamping)**: If a segment exceeds natural reading length (20–22 CJK characters or 60 Latin characters), cleanly segments at word boundaries or natural phrase pauses.
 - **Subtitle Track Picker & On-Demand AI Target Generation**:
   - The video header provides a subtitle track selector button and bottom sheet displaying available native caption tracks and AI-generated tracks.
-  - **Strict 4-Language Filtering (`ja`, `zh`, `ko`, `en`)**: Only Voca's supported learning languages are displayed in the track picker and empty-state recommendations. Unsupported YouTube caption tracks (Spanish, Russian, Vietnamese, German, etc.) are strictly filtered out to prevent HTTP 400 rejection and subtitle desynchronization.
+  - **5-Language Filtering (`ja`, `zh`, `ko`, `en`, `vi`)**: Only Voca's supported learning languages are displayed in the track picker and empty-state recommendations. Unsupported YouTube caption tracks (Spanish, Russian, German, etc.) are filtered out to match backend validation.
   - **Speech-to-Text Waveform Caption Icon (`subtitles-ai`)**: Distinguishes AI-generated transcripts from native YouTube captions (`subtitles`) using a speech-recognition audio waveform icon rather than generic sparkle symbols.
   - When an AI track is actively playing, the header track button and player bottom-bar CC toggle dynamically render the `subtitles-ai` icon with a diamond-accented active bar indicator (`var(--color-diamond)`).
   - Inside the Subtitle Tracks sheet, native tracks display `[CC]` (`subtitles`), while AI-transcribed tracks display `[Waveform]` (`subtitles-ai`) and an `AI` pill badge.

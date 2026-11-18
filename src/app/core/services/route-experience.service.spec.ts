@@ -22,10 +22,10 @@ describe('Resolved route experience', () => {
     expect(experience.onboardingEligible()).toBeFalse();
   });
 
-  it('keeps public documents, aliases, recovery and unknown URLs free of learning UI', async () => {
+  it('keeps landing, public documents, aliases, recovery and unknown URLs free of learning UI', async () => {
     const experience = TestBed.inject(RouteExperienceService);
     const harness = await RouterTestingHarness.create();
-    for (const path of ['/terms', '/tos?from=email#terms-section-2', '/terms-of-service', '/privacy-policy', '/privacy', '/learner/abc', '/account/recovery?code=test', '/auth/mobile-recovery#token', '/missing']) {
+    for (const path of ['/', '/terms', '/tos?from=email#terms-section-2', '/terms-of-service', '/privacy-policy', '/privacy', '/learner/abc', '/account/recovery?code=test', '/auth/mobile-recovery#token', '/missing']) {
       await harness.navigateByUrl(path);
       expect(experience.publicLayout()).withContext(path).toBeTrue();
       expect(experience.onboardingEligible()).withContext(path).toBeFalse();
@@ -35,7 +35,7 @@ describe('Resolved route experience', () => {
   it('enables onboarding only for learning destinations after redirects', async () => {
     const experience = TestBed.inject(RouteExperienceService);
     const harness = await RouterTestingHarness.create();
-    for (const path of ['/', '/video?id=test#player', '/video/abc', '/dictionary', '/study', '/history', '/explore', '/playlists', '/playlist', '/vocabulary']) {
+    for (const path of ['/?id=test', '/?v=test#player', '/?playlist=abc', '/video?id=test#player', '/video/abc', '/dictionary', '/study', '/history', '/explore', '/playlists', '/playlist', '/vocabulary']) {
       await harness.navigateByUrl(path);
       expect(experience.publicLayout()).withContext(path).toBeFalse();
       expect(experience.onboardingEligible()).withContext(path).toBeTrue();

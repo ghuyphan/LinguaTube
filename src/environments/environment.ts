@@ -21,7 +21,10 @@ export const environment = {
     // Transcripts
     transcript: '/api/transcript',
 
-    // Video recommendations
+    // Video metadata, difficulty grading & recommendations
+    videoInfo: '/api/video-info',
+    videoLevel: '/api/video-level',
     recommendedVideos: '/api/recommended-videos',
+    relatedVideos: '/api/related-videos',
   }
 };
