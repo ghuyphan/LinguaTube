@@ -2,6 +2,8 @@
 
 This document details the architectural layout, component hierarchy, data flow pathways, and execution lifecycle across **Voca** (formerly LinguaTube).
 
+Flutter web at `app.voca.study` calls the same Pages Functions API at `voca.study`. The API middleware accepts preflights from the Flutter web origin.
+
 ---
 
 ## 1. High-Level Architecture Topology

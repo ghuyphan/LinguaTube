@@ -13,6 +13,26 @@ import { verifyTurnstileToken } from '../functions-src/services/turnstile.servic
 import { onRequest as middleware } from '../functions-src/api/_middleware.js';
 
 const request = body => new Request('https://voca.study/api/transcript',{method:'POST',headers:{'User-Agent':'Mozilla/5.0'},body});
+test('API preflights allow the exact Flutter web origin', async () => {
+    const origin = 'https://app.voca.study';
+    for (const [path, method] of [['recommended-videos', 'GET'], ['transcript', 'POST']]) {
+        const response = await middleware({
+            request: new Request(`https://voca.study/api/${path}`, {
+                method: 'OPTIONS',
+                headers: {
+                    Origin: origin,
+                    'Access-Control-Request-Method': method,
+                    'Access-Control-Request-Headers': 'authorization, content-type',
+                },
+            }),
+            next: () => assert.fail('Preflight reached the route handler'),
+        });
+        assert.equal(response.status, 200);
+        assert.equal(response.headers.get('Access-Control-Allow-Origin'), origin);
+        assert.equal(response.headers.get('Vary'), 'Origin');
+    }
+    assert.equal(getAllowedOrigin('https://app.voca.study.example.com'), 'https://voca.study');
+});
 test('edge-case inventory names every Pages API source and exercises each route',async()=>{
  const names=(await readdir(new URL('../functions-src/api/',import.meta.url),{recursive:true})).filter(s=>s.endsWith('.js')&&s!=='_middleware.js').map(s=>s.slice(0,-3)).sort();
  assert.deepEqual(routes.map(r=>r[0]).sort(),names);

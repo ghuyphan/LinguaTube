@@ -57,7 +57,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
   | **Free** | 30 | 10 | 100 | 100 | 5,000 |
   | **Pro** | 60 | 50 | 100 | 100 | 25,000 |
   | **Premium** | 120 | 100 | 100 | 100 | 100,000 |
-- **CORS & Preflight Compatibility**: `rateLimitResponse()`, `jsonResponse()`, and `handleOptions()` dynamically validate the incoming `Origin` against whitelisted development and production patterns (`https://voca.study`, `https://*.voca.pages.dev`, `http://localhost:*`, `http://127.0.0.1:*`) using `getAllowedOrigin()`. Responses include `Vary: Origin`, ensuring safe cross-origin resource sharing while preventing wildcard exposure on stateful endpoints.
+- **CORS preflights** use `handleOptions()` and `getAllowedOrigin()` to match the incoming browser origin. The production web origins are `https://voca.study` and `https://app.voca.study`. The existing Pages preview pattern and local development ports remain supported. Preflight responses include `Vary: Origin`.
 
 
 ### 2.3. Supabase JWT Authentication (`auth.js`)

@@ -13,6 +13,7 @@ export const CORS_HEADERS = {
 
 const ALLOWED_ORIGIN_PATTERNS = [
     /^https:\/\/voca\.study$/,
+    /^https:\/\/app\.voca\.study$/,
     /^https:\/\/.*\.voca\.pages\.dev$/,
     /^http:\/\/localhost:(?:4200|3000|3001|8788)$/,
     /^http:\/\/127\.0.0\.1:(?:4200|3000|3001|8788)$/
