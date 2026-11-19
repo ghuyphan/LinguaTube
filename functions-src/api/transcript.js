@@ -35,7 +35,7 @@ import { serverGradingActive, serverGradingEnabled } from '../services/video-gra
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
 import { GladiaProvider } from '../providers/gladia.js';
-import { SupadataProvider } from '../providers/supadata.js';
+import { SupadataProvider, resolveSupadataApiKeys } from '../providers/supadata.js';
 import { DiamondService } from '../services/diamond.service.js';
 import { TranscriptService } from '../services/transcript.service.js';
 import { verifyTurnstileToken } from '../services/turnstile.service.js';
@@ -64,7 +64,7 @@ export async function onRequestGet(context) {
         storage: Boolean(env.TRANSCRIPT_STORAGE),
         hasGladiaKey: Boolean(env.GLADIA_API_KEY),
         hasYouTubeDataKey: Boolean(env.YOUTUBE_DATA_API_KEY),
-        hasSupadataKey: Boolean(env.SUPADATA_API_KEY),
+        hasSupadataKey: resolveSupadataApiKeys(env).length > 0,
         hasTurnstileKey: Boolean(env.TURNSTILE_SECRET_KEY)
     });
 }
@@ -165,7 +165,7 @@ export async function onRequestPost(context) {
         if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
 
         // Providers
-        const supadataKeys = [env.SUPADATA_API_KEY, env.SUPADATA_API_KEY_2, env.SUPADATA_API_KEY_3];
+        const supadataKeys = resolveSupadataApiKeys(env);
         const rotator = { getNextApiKey, markKeyRateLimited };
 
         const supadata = new SupadataProvider(supadataKeys, rotator);

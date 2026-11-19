@@ -831,6 +831,69 @@ test('SupadataProvider: immediately returns notFound when captions are unavailab
   assert.deepEqual(attemptedKeysList, ['key_1']);
 });
 
+test('resolveSupadataApiKeys: collects SUPADATA_API_KEY, arbitrary numbered SUPADATA_API_KEY_<N>, and SUPADATA_API_KEYS in order without duplicates', async () => {
+  const { resolveSupadataApiKeys } = await import('../functions-src/providers/supadata.js');
+
+  assert.deepEqual(resolveSupadataApiKeys(null), []);
+  assert.deepEqual(resolveSupadataApiKeys({}), []);
+
+  const keys = resolveSupadataApiKeys({
+    SUPADATA_API_KEY: ' key_primary ',
+    SUPADATA_API_KEY_10: 'key_10',
+    SUPADATA_API_KEY_2: 'key_2',
+    SUPADATA_API_KEY_4: 'key_4',
+    SUPADATA_API_KEY_3: '',
+    SUPADATA_API_KEYS: ' key_2 , key_list_a ; key_list_b\nkey_4 '
+  });
+
+  assert.deepEqual(keys, ['key_primary', 'key_2', 'key_4', 'key_10', 'key_list_a', 'key_list_b']);
+});
+
+test('SupadataProvider: fails over across 4+ keys when earlier keys hit 401/402/429', async () => {
+  const { SupadataProvider } = await import('../functions-src/providers/supadata.js');
+  const { getNextApiKey, markKeyRateLimited } = await import('../functions-src/utils/api-key-rotator.js');
+
+  const provider = new SupadataProvider(
+    ['key_1_402', 'key_2_429', 'key_3_401', 'key_4_ok'],
+    { getNextApiKey, markKeyRateLimited }
+  );
+
+  const attempted = [];
+  provider._executeFetch = async (_videoId, _lang, apiKey) => {
+    attempted.push(apiKey);
+    if (apiKey === 'key_1_402') throw Object.assign(new Error('Quota'), { status: 402 });
+    if (apiKey === 'key_2_429') throw Object.assign(new Error('Rate limit'), { status: 429 });
+    if (apiKey === 'key_3_401') throw Object.assign(new Error('Unauthorized'), { status: 401 });
+    return {
+      segments: [{ id: 0, start: 0, duration: 1.5, text: 'Fallback key 4 succeeded' }],
+      source: 'supadata',
+      availableLangs: ['en'],
+      detectedLang: 'en'
+    };
+  };
+
+  const result = await provider.fetchCaptions('test_video_4keys', 'en', null);
+  assert.equal(attempted.length, 4);
+  assert.ok(attempted.includes('key_4_ok'));
+  assert.equal(result?.segments?.[0]?.text, 'Fallback key 4 succeeded');
+});
+
+test('GET /api/transcript reports hasSupadataKey=true when SUPADATA_API_KEY_4 or SUPADATA_API_KEYS is set', async () => {
+  const { onRequestGet } = await import('../functions-src/api/transcript.js');
+
+  const resNumbered = await onRequestGet({ env: { SUPADATA_API_KEY_4: 'sd_four' } });
+  const bodyNumbered = await resNumbered.json();
+  assert.equal(bodyNumbered.hasSupadataKey, true);
+
+  const resList = await onRequestGet({ env: { SUPADATA_API_KEYS: 'sd_a,sd_b' } });
+  const bodyList = await resList.json();
+  assert.equal(bodyList.hasSupadataKey, true);
+
+  const resEmpty = await onRequestGet({ env: { SUPADATA_API_KEYS: '  ,  ' } });
+  const bodyEmpty = await resEmpty.json();
+  assert.equal(bodyEmpty.hasSupadataKey, false);
+});
+
 test('validateVideoRequest: AI verifies upstream duration and handles title hint', async t => {
   const { validateVideoRequest } = await import('../functions-src/middlewares/video-validator.js');
   let serverDuration = 384;

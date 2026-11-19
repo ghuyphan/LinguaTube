@@ -29,6 +29,7 @@ import {
 } from '../data/transcript-r2.js';
 
 import { cleanTranscriptSegments, normalizeLanguageCode, extractGladiaSegments, extractGladiaDetectedLanguage, resolveIngestedLanguage, adjustAvailableLanguages } from '../utils/transcript-utils.js';
+import { resolveSupadataApiKeys } from '../providers/supadata.js';
 import { resolveVideoChannelAvatar } from '../middlewares/video-validator.js';
 import { getTierDiamondConfig, transcriptionDiamondCost } from './diamond.service.js';
 import { generateDerivedWebhookToken } from '../utils/svix-verifier.js';
@@ -176,7 +177,8 @@ export class TranscriptService {
 
         // Only cache failure if the provider explicitly confirmed captions do NOT exist (404/notFound).
         // Never poison the negative cache on transient network failures, timeouts, or exhausted keys!
-        if (nativeResult?.notFound && env.SUPADATA_API_KEY) {
+        const hasSupadataKey = (this.supadataProvider?.apiKeys?.length ?? 0) > 0 || resolveSupadataApiKeys(env).length > 0;
+        if (nativeResult?.notFound && hasSupadataKey) {
             const negativeOps = [
                 markNoTranscript(db, cache, videoId, lang, 'native')
             ];

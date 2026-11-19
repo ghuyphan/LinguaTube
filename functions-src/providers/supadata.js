@@ -13,13 +13,60 @@ const MAX_TRANSCRIPT_BYTES = 8 * 1024 * 1024;
 const MAX_ERROR_BYTES = 16 * 1024;
 const MAX_TRANSCRIPT_CUES = 20000;
 
+/**
+ * Resolve all configured Supadata API keys from environment bindings.
+ * Supports `SUPADATA_API_KEY`, numbered `SUPADATA_API_KEY_<N>` (e.g., _2, _3, _4...),
+ * and comma/whitespace/semicolon-delimited `SUPADATA_API_KEYS`.
+ *
+ * @param {Object} env
+ * @returns {string[]} Deduplicated non-empty keys in priority order
+ */
+export function resolveSupadataApiKeys(env) {
+    if (!env || typeof env !== 'object') return [];
+
+    const numberedKeys = Object.keys(env)
+        .map(name => {
+            const match = /^SUPADATA_API_KEY_(\d+)$/.exec(name);
+            return match ? { name, index: Number(match[1]) } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.index - b.index)
+        .map(entry => env[entry.name]);
+
+    const listRaw = env.SUPADATA_API_KEYS;
+    const listKeys = Array.isArray(listRaw)
+        ? listRaw
+        : typeof listRaw === 'string'
+            ? listRaw.split(/[\s,;]+/)
+            : [];
+
+    const seen = new Set();
+    const keys = [];
+    for (const raw of [env.SUPADATA_API_KEY, ...numberedKeys, ...listKeys]) {
+        const key = typeof raw === 'string' ? raw.trim() : '';
+        if (key && !seen.has(key)) {
+            seen.add(key);
+            keys.push(key);
+        }
+    }
+    return keys;
+}
+
 export class SupadataProvider {
     /**
      * @param {string[]} apiKeys - Array of available Supadata API keys
      * @param {Object} apiKeyRotator - Utility object to get next key
      */
     constructor(apiKeys, apiKeyRotator) {
-        this.apiKeys = apiKeys.filter(Boolean);
+        const seen = new Set();
+        this.apiKeys = [];
+        for (const raw of (Array.isArray(apiKeys) ? apiKeys : [])) {
+            const key = typeof raw === 'string' ? raw.trim() : '';
+            if (key && !seen.has(key)) {
+                seen.add(key);
+                this.apiKeys.push(key);
+            }
+        }
         this.apiKeyRotator = apiKeyRotator;
     }
 

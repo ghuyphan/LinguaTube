@@ -46,9 +46,12 @@ GLADIA_API_KEY="your_gladia_api_key"
 TURNSTILE_SECRET_KEY="1x00000000000000000000000000000000BB"
 
 # Supadata API Keys (https://supadata.ai) - Multiple keys supported for rotation
+# Supports SUPADATA_API_KEY, any numbered SUPADATA_API_KEY_<N> (_2, _3, _4...), or comma-separated SUPADATA_API_KEYS
 SUPADATA_API_KEY="your_primary_key"
 SUPADATA_API_KEY_2="your_secondary_key"
 SUPADATA_API_KEY_3="your_tertiary_key"
+SUPADATA_API_KEY_4="your_fourth_key"
+SUPADATA_API_KEYS="optional_comma_separated_keys"
 
 # Supabase Configuration (Authentication, Cloud Sync, RLS)
 SUPABASE_URL="https://edbkvzviqeulwzcnrrlb.supabase.co"
@@ -180,7 +183,7 @@ Under **Settings $\rightarrow$ Functions**:
 Under **Settings $\rightarrow$ Environment Variables**:
 - `GLADIA_API_KEY`: Production API key from Gladia.
 - `TURNSTILE_SECRET_KEY`: Production secret key from Cloudflare Turnstile.
-- `SUPADATA_API_KEY`, `SUPADATA_API_KEY_2`, `SUPADATA_API_KEY_3`: Production keys for Supadata.
+- `SUPADATA_API_KEY`, `SUPADATA_API_KEY_<N>` (`_2`, `_3`, `_4`, ...), `SUPADATA_API_KEYS` (comma/whitespace-separated): Production keys for Supadata rotation.
 - `GOOGLE_CLIENT_ID`: Google OAuth Web Client ID.
 - `SUPABASE_URL`: `https://edbkvzviqeulwzcnrrlb.supabase.co`
 - `SUPABASE_ANON_KEY`: Supabase public anonymous key.
