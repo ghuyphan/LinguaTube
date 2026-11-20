@@ -16,7 +16,7 @@ import {
     getRateLimitHeaders
 } from '../../middlewares/rate-limiter.js';
 
-import { validateAuthToken } from '../../middlewares/auth.js';
+import { authenticateIdentity } from '../../middlewares/auth.js';
 
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'tokenize' };
 const MAX_TEXT_LENGTH = 10000; // 10KB max
@@ -118,7 +118,7 @@ export async function onRequest(context) {
         }
 
         // Cache MISS: Rate limiting (Atomic)
-        const authResult = await validateAuthToken(request, env);
+        const authResult = await authenticateIdentity(request, env);
         if (authResult.response) return authResult.response;
         const clientId = getClientIdentifier(request, authResult);
         const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, RATE_LIMIT_CONFIG, context);

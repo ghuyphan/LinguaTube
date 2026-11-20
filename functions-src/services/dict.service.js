@@ -1,3 +1,5 @@
+const normalizeHeadword = value => value?.normalize('NFC').trim().replace(/\s+/gu, ' ').toLowerCase();
+
 /** Concrete source orchestration: provider failure is not a dictionary miss. */
 export class DictionaryService {
     constructor(dictionaryProvider, translationProvider) {
@@ -12,22 +14,27 @@ export class DictionaryService {
         try {
             // Don't make the exact same English lookup twice.
             const directSources = this.dictProvider.getSources(from, to);
-            const direct = this._fetchFromSources(directSources, word, options);
-            const englishSources = this.dictProvider.getSources(from, 'en').filter(source => !directSources.some(direct => direct.url === source.url));
-            const english = to === 'en' ? null : this._fetchFromSources(englishSources, word, options);
-            const first = await direct;
-            const fallback = first.entries.length ? null : await english;
+            const englishSources = to === 'en' ? [] : this.dictProvider.getSources(from, 'en')
+                .filter(source => !directSources.some(direct => direct.url === source.url));
+            const first = await this._fetchFromSources(directSources, word, options);
+            const fallback = first.entries.length || to === 'en' ? null : await this._fetchFromSources(englishSources, word, options);
             const found = first.entries.length ? first : fallback;
             if (!found?.entries.length) return { entries: [], source: 'none', outcome: first.outcome === 'unavailable' || fallback?.outcome === 'unavailable' ? 'unavailable' : 'empty' };
-            if (found === first && english && first.entries.some(e => !e.level || !e.reading || !e.partOfSpeech || !e.audio)) {
-                const engResult = await Promise.race([
-                    english.catch(() => null),
-                    new Promise(resolve => setTimeout(() => resolve(null), 400))
-                ]);
-                if (engResult?.entries?.length) {
+            if (found === first && englishSources.length &&
+                first.entries.some(entry => !entry.reading || !entry.audio || !entry.partOfSpeech || !entry.level)) {
+                const engResult = await this._fetchFromSources(englishSources, word, {
+                    signal: combined, deadline: Math.min(deadline, Date.now() + 400)
+                });
+                if (engResult.entries.length) {
                     for (const entry of found.entries) {
-                        const match = engResult.entries.find(e => e.word.toLowerCase() === entry.word.toLowerCase()) || engResult.entries[0];
-                        if (! match) continue;
+                        const headword = normalizeHeadword(entry.word);
+                        const reading = normalizeHeadword(entry.reading);
+                        const match = engResult.entries.find(candidate => {
+                            const candidateReading = normalizeHeadword(candidate.reading);
+                            return headword && headword === normalizeHeadword(candidate.word) &&
+                                (!reading || !candidateReading || reading === candidateReading);
+                        });
+                        if (!match) continue;
                         if (!entry.level && match.level) entry.level = match.level;
                         if (!entry.reading && match.reading) entry.reading = match.reading;
                         if (!entry.partOfSpeech && match.partOfSpeech) entry.partOfSpeech = match.partOfSpeech;
@@ -64,8 +71,11 @@ export class DictionaryService {
                         entry.definitions.every(value => typeof value === 'string' && value.trim()));
                 for (let n = 0; n < indices.length; n++) {
                     const i = indices[n];
-                    if (valid) {
-                        entries[i] = { ...translated[n], definitionLanguage: to, definitionKind: 'translated' };
+                    const definitions = !valid ? [] : translated[n].definitions.filter(value =>
+                        from !== to || normalizeHeadword(value) !== normalizeHeadword(entries[i].word));
+                    if (definitions.length > 0) {
+                        entries[i] = { ...translated[n], definitions: [...new Set(definitions)],
+                            definitionLanguage: to, definitionKind: 'translated' };
                         didTranslate = true;
                     } else {
                         entries[i] = { ...entries[i],
@@ -81,11 +91,15 @@ export class DictionaryService {
 
     async _fetchFromSources(sources, word, options) {
         let unavailable = false;
+        const query = normalizeHeadword(word);
+        const phrase = query?.includes(' ');
         for (const source of sources) {
             if (Date.now() >= options.deadline || options.signal.aborted) { unavailable = true; break; }
             try {
-                const entries = await this.dictProvider.fetchFromSource(source, word,
+                const results = await this.dictProvider.fetchFromSource(source, word,
                     Math.min(this.dictProvider.primaryTimeout, options.deadline - Date.now()), options.signal);
+                const entries = phrase ? results.filter(entry =>
+                    query === normalizeHeadword(entry.word) || query === normalizeHeadword(entry.reading)) : results;
                 if (entries.length) return { entries, source: source.parser, language: source.definitionLanguage, outcome: 'found' };
             } catch { unavailable = true; }
         }

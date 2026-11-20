@@ -15,7 +15,7 @@
  * - ?lang=vi&id=vi_b1_01[&ui=ja]           -> Single localized GrammarPattern (404 if missing)
  */
 
-import { validateAuthToken } from '../middlewares/auth.js';
+import { authenticateIdentity } from '../middlewares/auth.js';
 import {
     consumeRateLimit,
     getClientIdentifier,
@@ -79,7 +79,7 @@ export async function onRequestGet(context) {
         return jsonResponse({ error: 'Missing or invalid grammar pattern parameter: id' }, 400, {}, request);
     }
 
-    const authResult = await validateAuthToken(request, env);
+    const authResult = await authenticateIdentity(request, env);
     if (authResult.response) return authResult.response;
 
     // Resolve artifact before consuming rate limit when served from warm isolate memory,

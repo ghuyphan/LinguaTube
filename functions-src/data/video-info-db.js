@@ -19,9 +19,19 @@ const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
 // Only public, verified catalog metadata is shared. Learner context and ranked
 // responses are never retained here. Weak binding ownership isolates environments.
 const recommendationCandidates = new WeakMap();
+const recommendationInFlight = new WeakMap();
 const dbsWithoutTagsColumn = new WeakSet();
+const dbsWithoutCatalogIndex = new WeakSet();
 const RECOMMENDATION_CANDIDATE_TTL_MS = 15_000;
+const EDGE_CANDIDATE_TTL_SECONDS = 60;
 const MAX_RECOMMENDATION_CANDIDATE_KEYS = 20;
+let catalogCacheEpoch = 0;
+
+function invalidateRecommendationCache(db) {
+    catalogCacheEpoch++;
+    recommendationCandidates.delete(db);
+    recommendationInFlight.delete(db);
+}
 
 
 // ============================================================================
@@ -227,7 +237,7 @@ function mergeJsonArraySql(column, emptyExpr = `video_languages.${column}`) {
             resolvedCategory || 'general',
             JSON.stringify(mergedTags)
         ).run();
-        recommendationCandidates.delete(db);
+        invalidateRecommendationCache(db);
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoLanguages error:', err.message);
     }
@@ -247,7 +257,7 @@ export async function saveVideoCategory(db, videoId, category) {
             SET category = ?, category_source='manual', updated_at = strftime('%s', 'now')
             WHERE video_id = ?
         `).bind(category, videoId).run();
-        recommendationCandidates.delete(db);
+        invalidateRecommendationCache(db);
         return true;
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoCategory error:', err.message);
@@ -302,7 +312,7 @@ async function appendLanguageColumn(db, videoId, column, lang) {
                 continue;
             }
             if (column === 'sub_languages') {
-                recommendationCandidates.delete(db);
+                invalidateRecommendationCache(db);
             }
             return;
         }
@@ -371,7 +381,7 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
                     `).bind(serialized, videoId).run();
                 if (result.success === false) return null;
                 if (result.meta?.changes === 0) return undefined;
-                recommendationCandidates.delete(db);
+                invalidateRecommendationCache(db);
                 return currentLevels;
             };
 
@@ -935,24 +945,73 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
     }
     const cached = cache.get(cacheKey);
     const refresh = options?.isRefresh === true;
-    if (!cleanQuery && !refresh && cached && cached.r2 === r2 && cached.expiresAt > Date.now()
-        && await catalogLevelsMatch(db, lang, cached)) {
+    const epoch = catalogCacheEpoch;
+    if (!cleanQuery && !refresh && cached && cached.r2 === r2 && cached.epoch === epoch && cached.expiresAt > Date.now()) {
         if (options?.metrics) options.metrics.candidateCache = 'HIT';
         return cached.videos;
     }
+
+    const edgeCache = (!cleanQuery && !refresh && typeof caches !== 'undefined' && caches?.default) ? caches.default : null;
+    const edgeCacheUrl = edgeCache
+        ? `https://internal.voca/rec-pool/v1/${encodeURIComponent(lang)}/${encodeURIComponent(targetTier || 'all')}/${encodeURIComponent(category || 'all')}`
+        : null;
+
+    if (edgeCache && edgeCacheUrl) {
+        try {
+            const edgeHit = await edgeCache.match(edgeCacheUrl);
+            if (edgeHit?.ok) {
+                const videos = await edgeHit.json();
+                if (Array.isArray(videos)) {
+                    cache.set(cacheKey, { r2, videos, epoch, expiresAt: Date.now() + RECOMMENDATION_CANDIDATE_TTL_MS });
+                    if (options?.metrics) options.metrics.candidateCache = 'HIT';
+                    return videos;
+                }
+            }
+        } catch { /* Fall through to D1 discovery */ }
+    }
+
     if (options?.metrics) options.metrics.candidateCache = cleanQuery ? 'BYPASS-SEARCH' : 'MISS';
     if (!cleanQuery) cache.delete(cacheKey);
-    const subLanguages = new Map();
-    const candidates = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, subLanguages);
-    // Publish only completed successful discovery. No shared in-flight I/O.
-    if (!cleanQuery) {
-        for (const [key, entry] of cache) {
-            if (entry.expiresAt <= Date.now()) cache.delete(key);
+
+    // Single-flight deduplication for concurrent cold misses on public pools.
+    let inFlightMap = recommendationInFlight.get(db);
+    if (!cleanQuery && !refresh) {
+        if (!inFlightMap) {
+            inFlightMap = new Map();
+            recommendationInFlight.set(db, inFlightMap);
         }
-        if (cache.size >= MAX_RECOMMENDATION_CANDIDATE_KEYS) cache.delete(cache.keys().next().value);
-        cache.set(cacheKey, { r2, videos: candidates, subLanguages, expiresAt: Date.now() + RECOMMENDATION_CANDIDATE_TTL_MS });
+        const pending = inFlightMap.get(cacheKey);
+        if (pending) return pending;
     }
-    return candidates;
+
+    const discovery = (async () => {
+        const candidates = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery);
+        if (!cleanQuery && catalogCacheEpoch === epoch) {
+            for (const [key, entry] of cache) {
+                if (entry.expiresAt <= Date.now()) cache.delete(key);
+            }
+            if (cache.size >= MAX_RECOMMENDATION_CANDIDATE_KEYS) cache.delete(cache.keys().next().value);
+            cache.set(cacheKey, { r2, videos: candidates, epoch, expiresAt: Date.now() + RECOMMENDATION_CANDIDATE_TTL_MS });
+            if (edgeCache && edgeCacheUrl) {
+                edgeCache.put(edgeCacheUrl, new Response(JSON.stringify(candidates), {
+                    headers: { 'Content-Type': 'application/json', 'Cache-Control': `public, max-age=${EDGE_CANDIDATE_TTL_SECONDS}` }
+                })).catch(() => {});
+            }
+        }
+        return candidates;
+    })();
+
+    if (inFlightMap && !cleanQuery && !refresh) {
+        inFlightMap.set(cacheKey, discovery);
+    }
+
+    try {
+        return await discovery;
+    } finally {
+        if (inFlightMap && inFlightMap.get(cacheKey) === discovery) {
+            inFlightMap.delete(cacheKey);
+        }
+    }
 }
 
 export async function getRecommendedVideosFromCloudflare(db, r2, rawLang, limit = 12, tier = null, _shuffle = false, offset = 0, query = null, options = {}) {
@@ -997,28 +1056,7 @@ export async function getRelatedVideosFromCloudflare(db, r2, rawLang, limit = 16
     return { videos, hasMore: safeOffset + videos.length < ranked.length };
 }
 
-async function catalogLevelsMatch(db, lang, cached) {
-    const videos = cached?.videos || [];
-    if (!videos.length) return true;
-    const subLanguages = cached?.subLanguages;
-    const { results } = await db.prepare(`
-        SELECT video_id, levels, sub_languages, category FROM video_languages
-        WHERE video_id IN (SELECT value FROM json_each(?))
-    `).bind(JSON.stringify(videos.map(video => video.videoId))).all();
-    const current = new Map(results.map(row => [row.video_id, row]));
-    return videos.every(video => {
-        const row = current.get(video.videoId);
-        if (!row) return false;
-        const parsedLevels = readCatalogLevels(row.levels);
-        const currentLevel = parsedLevels[lang] || parsedLevels.overall;
-        const storedCategory = row.category && row.category !== 'general' ? row.category : video.category;
-        return (!subLanguages || (row.sub_languages ?? null) === subLanguages.get(video.videoId))
-            && (video.category === undefined || storedCategory === video.category)
-            && JSON.stringify(currentLevel) === JSON.stringify(video.levels?.[lang]);
-    });
-}
-
-async function discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, subLanguages = null) {
+async function discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery) {
     const candidates = new Map();
     const batchSize = 200;
     const maxScans = 20;
@@ -1030,23 +1068,41 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
         try { const parsed = JSON.parse(value || '[]'); return Array.isArray(parsed) ? parsed : []; }
         catch { return []; }
     };
-    const queryBatch = async withTags => {
-        // LIKE is only a coarse index filter; exact language membership is checked below.
-        let sql = `SELECT *
-            FROM video_languages
-            WHERE (sub_languages LIKE ? OR ((sub_languages IS NULL OR sub_languages = '[]') AND available_languages LIKE ?))
-            AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
-            AND title IS NOT NULL AND TRIM(title) != ''
-            AND channel IS NOT NULL AND TRIM(channel) != ''`;
-        const bindings = [`%${lang}%`, `%${lang}%`];
-        if (category && category !== 'all') {
-            sql += " AND (category = ? OR category IS NULL OR category = 'general')";
-            bindings.push(category);
+    const queryBatch = async (withTags, useCatalogIndex) => {
+        let sql;
+        const bindings = [];
+        const alias = useCatalogIndex ? 'v.' : '';
+        if (useCatalogIndex) {
+            sql = `SELECT v.*
+                FROM video_language_catalog c
+                JOIN video_languages v ON v.video_id = c.video_id
+                WHERE c.language = ?
+                AND (v.duration_seconds IS NULL OR v.duration_seconds = 0 OR v.duration_seconds BETWEEN 20 AND 7200)
+                AND v.title IS NOT NULL AND TRIM(v.title) != ''
+                AND v.channel IS NOT NULL AND TRIM(v.channel) != ''`;
+            bindings.push(lang);
+            if (category && category !== 'all') {
+                sql += " AND (c.category = ? OR c.category = 'general')";
+                bindings.push(category);
+            }
+        } else {
+            // Fallback for unmigrated D1 instances without video_language_catalog.
+            sql = `SELECT *
+                FROM video_languages
+                WHERE (sub_languages LIKE ? OR ((sub_languages IS NULL OR sub_languages = '[]') AND available_languages LIKE ?))
+                AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
+                AND title IS NOT NULL AND TRIM(title) != ''
+                AND channel IS NOT NULL AND TRIM(channel) != ''`;
+            bindings.push(`%${lang}%`, `%${lang}%`);
+            if (category && category !== 'all') {
+                sql += " AND (category = ? OR category IS NULL OR category = 'general')";
+                bindings.push(category);
+            }
         }
         if (cleanQuery) {
             const fieldSql = withTags
-                ? "(title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\' OR tags LIKE ? ESCAPE '\\')"
-                : "(title LIKE ? ESCAPE '\\' OR channel LIKE ? ESCAPE '\\')";
+                ? `(${alias}title LIKE ? ESCAPE '\\' OR ${alias}channel LIKE ? ESCAPE '\\' OR ${alias}tags LIKE ? ESCAPE '\\')`
+                : `(${alias}title LIKE ? ESCAPE '\\' OR ${alias}channel LIKE ? ESCAPE '\\')`;
             const tokens = cleanQuery.split(/[\s\u3000]+/).filter(t => t.length > 0).slice(0, 3);
             const terms = tokens.length > 1 ? tokens : [cleanQuery];
             const tokenClauses = [];
@@ -1059,24 +1115,40 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
             sql += ` AND (${tokenClauses.join(' AND ')})`;
         }
         if (cursor) {
-            sql += ' AND (COALESCE(updated_at, 0) < ? OR (COALESCE(updated_at, 0) = ? AND video_id > ?))';
+            if (useCatalogIndex) {
+                sql += ' AND (c.updated_at < ? OR (c.updated_at = ? AND c.video_id > ?))';
+            } else {
+                sql += ' AND (COALESCE(updated_at, 0) < ? OR (COALESCE(updated_at, 0) = ? AND video_id > ?))';
+            }
             bindings.push(cursor.time, cursor.time, cursor.id);
         }
-        sql += ' ORDER BY COALESCE(updated_at, 0) DESC, video_id ASC LIMIT ?';
+        sql += useCatalogIndex
+            ? ' ORDER BY c.updated_at DESC, c.video_id ASC LIMIT ?'
+            : ' ORDER BY COALESCE(updated_at, 0) DESC, video_id ASC LIMIT ?';
         bindings.push(batchSize);
         return db.prepare(sql).bind(...bindings).all();
     };
 
     for (let scan = 0; scan < maxScans && candidates.size < 200; scan++) {
         let result;
-        const tryTags = Boolean(cleanQuery) && !dbsWithoutTagsColumn.has(db);
-        try {
-            result = await queryBatch(tryTags);
-        } catch (err) {
-            if (tryTags && /no such column/i.test(err?.message || '')) {
-                dbsWithoutTagsColumn.add(db);
-                result = await queryBatch(false);
-            } else {
+        let tryTags = Boolean(cleanQuery) && !dbsWithoutTagsColumn.has(db);
+        let tryCatalogIndex = !dbsWithoutCatalogIndex.has(db);
+        while (true) {
+            try {
+                result = await queryBatch(tryTags, tryCatalogIndex);
+                break;
+            } catch (err) {
+                const msg = err?.message || '';
+                if (tryCatalogIndex && /no such table.*video_language_catalog/i.test(msg)) {
+                    dbsWithoutCatalogIndex.add(db);
+                    tryCatalogIndex = false;
+                    continue;
+                }
+                if (tryTags && /no such column/i.test(msg)) {
+                    dbsWithoutTagsColumn.add(db);
+                    tryTags = false;
+                    continue;
+                }
                 throw err;
             }
         }
@@ -1138,7 +1210,6 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
             for (const item of verified) {
                 if (!item || candidates.size >= 200) continue;
                 const { row, level, catalogLevel, videoTier, languages, tags, inferredLang, resolvedCategory } = item;
-                subLanguages?.set(row.video_id, row.sub_languages ?? null);
                 candidates.set(row.video_id, {
                     videoId: row.video_id, title: row.title, channel: row.channel,
                     channelAvatar: row.channel_avatar || null,

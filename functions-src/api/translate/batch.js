@@ -134,7 +134,7 @@ export async function onRequestPost(context) {
             const consumeAmount = uncachedTexts.length;
 
             // Rate limit by number of unique texts
-            const authResult = consumeAmount ? await validateAuthToken(request, env) : { valid: false };
+            const authResult = consumeAmount ? await validateAuthToken(request, env, { accessState: 'cached' }) : { valid: false };
             if (authResult.response) return authResult.response;
             const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
             const rateLimitConfig = getTieredConfig(TRANSLATION_RATE_LIMIT, tier);

@@ -1,4 +1,6 @@
 import { readBoundedBody } from '../utils/response-body.js';
+import { coalesceCacheFetch, SimpleLRUCache } from '../utils/cache-manager.js';
+import { withDictionaryUpstream } from '../providers/dictionary-upstream.js';
 /**
  * Optimized Kanji Breakdown & Stroke Order API (Cloudflare Function)
  * Endpoint: GET /api/kanji?query={query}&lang={optionalLanguage}
@@ -11,10 +13,9 @@ import { readBoundedBody } from '../utils/response-body.js';
  * Incurs 0 KV operations on cache hits via in-memory and 30-day Edge CDN caching.
  */
 
-import { validateAuthToken } from '../middlewares/auth.js';
+import { authenticateIdentity } from '../middlewares/auth.js';
 import {
     jsonResponse,
-    handleOptions,
     sanitizeWord
 } from '../utils/utils.js';
 import {
@@ -27,9 +28,7 @@ import {
 const RATE_LIMIT_CONFIG = { max: 120, windowSeconds: 3600, keyPrefix: 'kanji' };
 
 // In-memory positive kanji LRU cache across warm Worker isolates
-const memPosKanjiCache = new Map();
-const MAX_MEM_POS_KANJI = 1000;
-const MEM_POS_KANJI_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours warm memory cache
+const memPosKanjiCache = new SimpleLRUCache(1000, 24 * 60 * 60 * 1000);
 
 export async function onRequestGet(context) {
     const { request, env } = context;
@@ -43,15 +42,15 @@ export async function onRequestGet(context) {
 
     // Fast-path: in-memory positive cache check (< 0.1ms)
     const memHit = memPosKanjiCache.get(query);
-    if (memHit && (Date.now() - memHit.timestamp < MEM_POS_KANJI_TTL_MS)) {
-        return jsonResponse(memHit.data, 200, {
+    if (memHit) {
+        return jsonResponse(memHit, 200, {
             'X-Cache': 'HIT-MEMORY',
             'Cache-Control': 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400'
         }, request);
     }
 
     // Rate limiting
-    const authResult = await validateAuthToken(request, env);
+    const authResult = await authenticateIdentity(request, env);
     if (authResult.response) return authResult.response;
     const clientId = getClientIdentifier(request, authResult);
     const rateCheck = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
@@ -60,72 +59,73 @@ export async function onRequestGet(context) {
     }
 
     try {
-        const signal = AbortSignal.timeout(5000);
-        const jotobaRes = await fetch('https://jotoba.de/api/search/kanji', {
-            method: 'POST', signal,
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-                'Referer': 'https://jotoba.de/'
-            },
-            body: JSON.stringify({
-                query,
-                language: 'English'
-            })
+        const pending = coalesceCacheFetch(`kanji:${query}`, () => {
+            const signal = AbortSignal.timeout(5000);
+            return withDictionaryUpstream('jotoba', signal, async fetchUpstream => {
+                const jotobaRes = await fetchUpstream('https://jotoba.de/api/search/kanji', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+                        'Referer': 'https://jotoba.de/'
+                    },
+                    body: JSON.stringify({
+                        query,
+                        language: 'English'
+                    })
+                });
+
+                if (!jotobaRes.ok) throw new Error('Kanji provider unavailable');
+                const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(jotobaRes, signal, 2 * 1024 * 1024)));
+                if (!Array.isArray(data?.kanji)) throw new Error('Malformed kanji response');
+                const rawList = data.kanji;
+
+                const formattedList = rawList.map(formatKanji);
+
+                const result = {
+                    query,
+                    count: formattedList.length,
+                    kanji: formattedList,
+                    timestamp: Date.now()
+                };
+                if (formattedList.length) memPosKanjiCache.set(query, result);
+                return result;
+            });
         });
-
-        if (!jotobaRes.ok) return jsonResponse({ error: 'Kanji provider unavailable' }, 502, { 'Cache-Control': 'no-store' }, request);
-        const data = JSON.parse(new TextDecoder().decode(await readBoundedBody(jotobaRes, signal, 2 * 1024 * 1024)));
-        if (!Array.isArray(data?.kanji)) throw new Error('Malformed kanji response');
-        const rawList = Array.isArray(data?.kanji) ? data.kanji : [];
-
-        const formattedList = rawList.map(item => {
-            const literal = item.literal || '';
-            return {
-                literal,
-                meanings: Array.isArray(item.meanings) ? item.meanings : [],
-                grade: typeof item.grade === 'number' ? item.grade : null,
-                stroke_count: typeof item.stroke_count === 'number' ? item.stroke_count : 0,
-                frequency: typeof item.frequency === 'number' ? item.frequency : null,
-                jlpt: typeof item.jlpt === 'number' ? item.jlpt : null,
-                onyomi: Array.isArray(item.onyomi) ? item.onyomi : [],
-                kunyomi: Array.isArray(item.kunyomi) ? item.kunyomi : [],
-                chinese: Array.isArray(item.chinese) ? item.chinese : [],
-                korean_r: Array.isArray(item.korean_r) ? item.korean_r : [],
-                korean_h: Array.isArray(item.korean_h) ? item.korean_h : [],
-                radical: item.radical || null,
-                parts: Array.isArray(item.parts) ? item.parts : [],
-                stroke_order_svg: literal ? `https://jotoba.de/resource/kanji/animation/${encodeURIComponent(literal)}` : null,
-                stroke_frames_svg: literal ? `https://jotoba.de/resource/kanji/frames/${encodeURIComponent(literal)}` : null
-            };
-        });
-
-        const responsePayload = {
-            query,
-            count: formattedList.length,
-            kanji: formattedList,
-            timestamp: Date.now()
-        };
-
-        // Cache in memory
-        if (memPosKanjiCache.size >= MAX_MEM_POS_KANJI) {
-            const oldest = memPosKanjiCache.keys().next().value;
-            if (oldest) memPosKanjiCache.delete(oldest);
-        }
-        memPosKanjiCache.set(query, { data: responsePayload, timestamp: Date.now() });
+        context.waitUntil?.(pending.catch(() => {}));
+        const responsePayload = await pending;
 
         return jsonResponse(responsePayload, 200, {
             'X-Cache': 'MISS',
-            'Cache-Control': 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400',
+            'Cache-Control': responsePayload.count ? 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400' : 'public, max-age=60, s-maxage=60',
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         }, request);
 
     } catch (err) {
-        console.warn('[Kanji] Provider unavailable', { name: err.name });
         return jsonResponse({ error: 'Kanji provider unavailable' }, ['TimeoutError','AbortError'].includes(err.name) ? 504 : 502, { 'Cache-Control': 'no-store' }, request);
     }
 }
 
-export const onRequest = onRequestGet;
+function formatKanji(item) {
+    const literal = item.literal || '';
+    return {
+        literal,
+        meanings: Array.isArray(item.meanings) ? item.meanings : [],
+        grade: typeof item.grade === 'number' ? item.grade : null,
+        stroke_count: typeof item.stroke_count === 'number' ? item.stroke_count : 0,
+        frequency: typeof item.frequency === 'number' ? item.frequency : null,
+        jlpt: typeof item.jlpt === 'number' ? item.jlpt : null,
+        onyomi: Array.isArray(item.onyomi) ? item.onyomi : [],
+        kunyomi: Array.isArray(item.kunyomi) ? item.kunyomi : [],
+        chinese: Array.isArray(item.chinese) ? item.chinese : [],
+        korean_r: Array.isArray(item.korean_r) ? item.korean_r : [],
+        korean_h: Array.isArray(item.korean_h) ? item.korean_h : [],
+        radical: item.radical || null,
+        parts: Array.isArray(item.parts) ? item.parts : [],
+        stroke_order_svg: literal ? `https://jotoba.de/resource/kanji/animation/${encodeURIComponent(literal)}` : null,
+        stroke_frames_svg: literal ? `https://jotoba.de/resource/kanji/frames/${encodeURIComponent(literal)}` : null
+    };
+}
 
+export const onRequest = onRequestGet;

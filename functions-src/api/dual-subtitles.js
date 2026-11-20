@@ -169,7 +169,7 @@ async function handlePost(context, body) {
         }
 
         // 2. Auth & Rate Limit
-        const authResult = await validateAuthToken(request, env);
+        const authResult = await validateAuthToken(request, env, { accessState: 'cached' });
         if (authResult.response) return authResult.response;
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
         const isSave = Boolean(saveOnly || onlySave);

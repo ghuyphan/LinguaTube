@@ -4,7 +4,7 @@ import { serviceRoleRequest } from '../services/supabase-rest.js';
  * Provides global learner rankings and XP synchronization.
  */
 
-import { validateAuthToken } from '../middlewares/auth.js';
+import { authenticateIdentity } from '../middlewares/auth.js';
 import { consumeRateLimit, getClientIdentifier } from '../middlewares/rate-limiter.js';
 import { jsonResponse, handleOptions, getRequestJson, SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
 
@@ -380,7 +380,7 @@ export async function onRequestPost(context) {
     const { request, env } = context;
 
     try {
-        const authResult = await validateAuthToken(request, env);
+        const authResult = await authenticateIdentity(request, env);
         if (authResult.response) return authResult.response;
         const clientId = getClientIdentifier(request, authResult);
 

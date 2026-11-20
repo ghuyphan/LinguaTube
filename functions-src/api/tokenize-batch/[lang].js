@@ -168,7 +168,7 @@ export async function onRequest(context) {
         }
 
         // 3. Cache MISS: Check auth and consume per-caller rate limit quota before coalescing work
-        const authResult = await validateAuthToken(request, env);
+        const authResult = await validateAuthToken(request, env, { accessState: 'cached' });
         if (authResult.response) return authResult.response;
         const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
         const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);

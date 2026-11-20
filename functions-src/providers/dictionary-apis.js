@@ -1,4 +1,5 @@
 import { readBoundedBody, requestSignal } from '../utils/response-body.js';
+import { withDictionaryUpstream } from './dictionary-upstream.js';
 /**
  * Provider for Dictionary APIs
  */
@@ -10,7 +11,6 @@ import {
 } from '../utils/dict-parsers.js';
 
 const PRIMARY_TIMEOUT_MS = 5000;
-const FALLBACK_TIMEOUT_MS = 3000;
 
 const BROWSER_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -118,13 +118,6 @@ export class DictionaryProvider {
     }
 
     /**
-     * Get fallback timeout configured for fetch 
-     */
-    get fallbackTimeout() {
-        return FALLBACK_TIMEOUT_MS;
-    }
-
-    /**
      * Fetch from a specific source configuration
      */
     async fetchFromSource(source, word, timeout, parentSignal) {
@@ -179,50 +172,58 @@ export class DictionaryProvider {
                 break;
         }
 
-        const response = await fetch(url, {
-            method: source.method,
-            headers,
-            body,
-            signal
+        return withDictionaryUpstream(source.parser, signal, async fetchUpstream => {
+            const response = await fetchUpstream(url, {
+                method: source.method,
+                headers,
+                body
+            });
+
+            if (!response.ok) {
+                if (response.status === 404 && ['freedict', 'glosbe', 'wiktionary_rest'].includes(source.parser)) return [];
+                throw new Error(`HTTP ${response.status}`);
+            }
+
+            const bytes = await readBoundedBody(response, signal, 2 * 1024 * 1024);
+            const text = new TextDecoder().decode(bytes);
+            let data;
+            const jsonParsers = ['naver', 'jotoba', 'mazii', 'freedict', 'datamuse', 'jisho', 'wiktionary_rest', 'vi_wiktionary'];
+            if (jsonParsers.includes(source.parser)) {
+                data = JSON.parse(text);
+                const results = data?.searchResultMap?.searchResultListMap;
+                const valid = source.parser === 'naver' ? (results && typeof results === 'object' &&
+                    !Array.isArray(results) && (results.WORD == null || Array.isArray(results.WORD.items)))
+                    : source.parser === 'jotoba' ? Array.isArray(data?.words)
+                    : source.parser === 'mazii' ? (Array.isArray(data?.data || data?.results) || data?.found === 0)
+                    : source.parser === 'jisho' ? Array.isArray(data?.data)
+                    : source.parser === 'wiktionary_rest' ? (data !== null && typeof data === 'object' && !Array.isArray(data))
+                    : source.parser === 'vi_wiktionary' ? Boolean(data?.query?.pages && typeof data.query.pages === 'object')
+                    : Array.isArray(data);
+                if (!valid) throw new Error('Malformed dictionary response');
+            } else if (!/<html|<!doctype/i.test(text)) throw new Error('Malformed dictionary document');
+            // Parse response
+            switch (source.parser) {
+                case 'naver': {
+                    const items = data.searchResultMap.searchResultListMap.WORD?.items ?? [];
+                    if (items.length && !items.some(item => item?.meansCollector?.some?.(collector =>
+                        Array.isArray(collector?.means) && collector.means.some(mean => typeof mean?.value === 'string')))) {
+                        throw new Error('Malformed Naver definitions');
+                    }
+                    return parseNaver(data, word, source.from, source.to);
+                }
+                case 'jotoba': return parseJotoba(data, word);
+                case 'mazii': return parseMazii(data, word);
+                case 'freedict': return parseFreeDictionary(data);
+                case 'datamuse': return parseDatamuse(data);
+                case 'mdbg': return checkedHtmlEntries(await parseMdbg(new Response(text), word), text);
+                case 'glosbe': return checkedHtmlEntries(await parseGlosbe(new Response(text), word, source.from), text);
+                case 'jisho': return parseJisho(data);
+                case 'krdict': return checkedHtmlEntries(await parseKrdict(new Response(text)), text);
+                case 'wiktionary_rest': return parseWiktionaryRest(data, word, source.from);
+                case 'vi_wiktionary': return parseViWiktionaryExtract(data, word);
+                default: return [];
+            }
         });
-
-        if (!response.ok) {
-            if (response.status === 404 && ['freedict', 'glosbe', 'wiktionary_rest'].includes(source.parser)) return [];
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        const bytes = await readBoundedBody(response, signal, 2 * 1024 * 1024);
-        const text = new TextDecoder().decode(bytes);
-        const parsedResponse = new Response(text, { headers: response.headers });
-        let data;
-        const jsonParsers = ['naver', 'jotoba', 'mazii', 'freedict', 'datamuse', 'jisho', 'wiktionary_rest', 'vi_wiktionary'];
-        if (jsonParsers.includes(source.parser)) {
-            data = JSON.parse(text);
-            const valid = source.parser === 'naver' ? (typeof data?.searchResultMap?.searchResultListMap === 'object' && data.searchResultMap.searchResultListMap !== null && !Array.isArray(data.searchResultMap.searchResultListMap) && (data.searchResultMap.searchResultListMap.WORD == null || (typeof data.searchResultMap.searchResultListMap.WORD === 'object' && Array.isArray(data.searchResultMap.searchResultListMap.WORD.items))))
-                : source.parser === 'jotoba' ? Array.isArray(data?.words)
-                : source.parser === 'mazii' ? (Array.isArray(data?.data || data?.results) || data?.found === 0)
-                : source.parser === 'jisho' ? Array.isArray(data?.data)
-                : source.parser === 'wiktionary_rest' ? (data !== null && typeof data === 'object' && !Array.isArray(data))
-                : source.parser === 'vi_wiktionary' ? Boolean(data?.query?.pages && typeof data.query.pages === 'object')
-                : Array.isArray(data);
-            if (!valid) throw new Error('Malformed dictionary response');
-        } else if (!/<html|<!doctype/i.test(text)) throw new Error('Malformed dictionary document');
-        // Parse response
-        switch (source.parser) {
-            case 'naver': return parseNaver(data, word, source.from, source.to);
-            case 'jotoba': return parseJotoba(data, word);
-            case 'mazii': return parseMazii(data, word);
-            case 'freedict': return parseFreeDictionary(data);
-            case 'datamuse': return parseDatamuse(data);
-            case 'mdbg': return checkedHtmlEntries(await parseMdbg(parsedResponse, word), text);
-            case 'glosbe': return checkedHtmlEntries(await parseGlosbe(parsedResponse, word, source.from || ''), text);
-            case 'jisho': return parseJisho(data);
-            case 'krdict': return checkedHtmlEntries(await parseKrdict(parsedResponse), text);
-            case 'wiktionary_rest': return parseWiktionaryRest(data, word, source.from);
-            case 'vi_wiktionary': return parseViWiktionaryExtract(data, word);
-            default: return [];
-        }
-
     }
 }
 

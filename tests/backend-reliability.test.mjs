@@ -6,6 +6,7 @@ import { onRequest as dictionary } from '../functions-src/api/dict.js';
 import { onRequest as kanji } from '../functions-src/api/kanji.js';
 import { onRequest as tts } from '../functions-src/api/tts.js';
 import { DictionaryProvider } from '../functions-src/providers/dictionary-apis.js';
+import { withDictionaryUpstream } from '../functions-src/providers/dictionary-upstream.js';
 import { DictionaryService } from '../functions-src/services/dict.service.js';
 import { normalizeDictionaryText, parseNaver, parseJotoba } from '../functions-src/utils/dict-parsers.js';
 import { readBoundedBody } from '../functions-src/utils/response-body.js';
@@ -64,12 +65,12 @@ test('dictionary normalizes nested ruby and provider POS without substituting ka
     assert.equal(parseJotoba({ words: [{ reading: { kanji: '猫', kana: 'ねこ' }, senses: [{ glosses: ['cat'] }] }], kanji: [{ jlpt: 3 }] })[0].level, null);
 });
 
-test('all twenty dictionary pairs declare actual language and translate mismatches', async () => {
+test('all thirty dictionary pairs declare actual language and translate mismatches', async () => {
     const provider = new DictionaryProvider(); let translations = 0;
     provider.fetchFromSource = async () => [{ word: 'fixture', definitions: ['meaning'] }];
     const translator = { async translateEntries(entries) { translations++; return entries.map(entry => ({ ...entry, definitions: ['translated meaning'] })); } };
     const service = new DictionaryService(provider, translator);
-    for (const from of ['ja','zh','ko','en']) for (const to of ['ja','zh','ko','en','vi']) {
+    for (const from of ['ja','zh','ko','en','vi']) for (const to of ['ja','zh','ko','en','vi','ru']) {
         const result = await service.fetchWithFallback('fixture', from, to);
         assert.equal(result.outcome, 'found'); assert.equal(result.entries[0].definitionLanguage, to);
         assert.ok(['native','translated'].includes(result.entries[0].definitionKind));
@@ -93,7 +94,13 @@ test('dictionary outage stays retryable; a clean negative expires', async t => {
     const empty = () => dictionary(context('/api/dict?word=negative-regression&from=en&to=en'));
     assert.equal((await empty()).status, 200); const attempts = calls;
     assert.equal((await empty()).headers.get('X-Cache'), 'NEG'); assert.equal(calls, attempts);
-    const now = Date.now(); t.mock.method(Date, 'now', () => now + 61000);
+    const now = Date.now();
+    let age = 59000;
+    t.mock.method(Date, 'now', () => now + age);
+    const lateHit = await empty();
+    assert.equal(lateHit.headers.get('X-Cache'), 'NEG');
+    assert.match(lateHit.headers.get('Cache-Control'), /^public, max-age=[01], s-maxage=[01]$/);
+    age = 61000;
     await empty(); assert.ok(calls > attempts);
 });
 
@@ -232,4 +239,114 @@ test('Naver malformed search shape remains unavailable and does not become a neg
     assert.equal((await make()).status, 503);
     malformed = false;
     assert.equal((await (await make()).json()).entries[0].definitions[0], 'valid');
+});
+
+
+test('changed Naver definition fields stay retryable when other providers confirm no match', async t => {
+    let recovered = false;
+    t.mock.method(globalThis, 'fetch', async url => {
+        const host = new URL(url).hostname;
+        if (host === 'api.datamuse.com') return Response.json([]);
+        if (host === 'api.dictionaryapi.dev') return new Response(null, { status: 404 });
+        const entry = { expEntry: 'driftfixture', languageCode: 'ENEN',
+            ...(recovered ? { meansCollector: [{ means: [{ value: 'recoverable definition' }] }] }
+                : { definitionSections: [{ value: 'changed schema' }] }) };
+        return Response.json({ searchResultMap: { searchResultListMap: { WORD: { items: [entry] } } } });
+    });
+    const lookup = () => dictionary(context('/api/dict?word=driftfixture&from=en&to=en'));
+    const first = await lookup();
+    assert.equal(first.status, 503);
+    assert.equal(first.headers.get('Cache-Control'), 'no-store');
+    recovered = true;
+    assert.deepEqual((await (await lookup()).json()).entries[0].definitions, ['recoverable definition']);
+});
+
+test('phrase resolution continues beyond fragments and enriches matching headwords only', async () => {
+    const partial = { url: 'partial', parser: 'naver', definitionLanguage: 'ko' };
+    const full = { url: 'full', parser: 'glosbe', definitionLanguage: 'ko' };
+    const english = { url: 'english', parser: 'test', definitionLanguage: 'en' };
+    const seen = [];
+    const provider = {
+        primaryTimeout: 1000,
+        getSources: (_, to) => to === 'en' ? [english] : [partial, full],
+        async fetchFromSource(source) {
+            seen.push(source.url);
+            if (source === partial) return [{ word: 'chào', definitions: ['인사하다'] }];
+            if (source === full) return [{ word: 'xin chào', definitions: ['안녕'] }];
+            return [{ word: 'xin chào', reading: 'correct' }, { word: 'chào', level: 4, audio: 'wrong-audio' }];
+        }
+    };
+    const result = await new DictionaryService(provider, {}).fetchWithFallback('Xin chào', 'vi', 'ko');
+    assert.deepEqual(seen, ['partial', 'full', 'english']);
+    assert.equal(result.source, 'glosbe');
+    assert.equal(result.entries[0].reading, 'correct');
+    assert.equal(result.entries[0].audio, undefined);
+
+    provider.fetchFromSource = async source => source === english
+        ? [{ word: '別語', reading: 'べつご', level: 4, audio: 'wrong-audio' }]
+        : [{ word: '約束', definitions: ['lời hứa'] }];
+    const unrelated = (await new DictionaryService(provider, {}).fetchWithFallback('約束', 'ja', 'vi')).entries[0];
+    assert.equal(unrelated.reading, undefined);
+    assert.equal(unrelated.audio, undefined);
+    assert.equal(unrelated.level, undefined);
+});
+
+test('an echoed monolingual translation retains the labeled original gloss', async () => {
+    const provider = {
+        primaryTimeout: 1000,
+        getSources: () => [{ url: 'mdbg', parser: 'mdbg', definitionLanguage: 'en' }],
+        async fetchFromSource() { return [{ word: '图书馆', definitions: ['library'] }]; }
+    };
+    const translator = { async translateEntries(entries) {
+        return entries.map(entry => ({ ...entry, definitions: ['图书馆'] }));
+    } };
+    const result = await new DictionaryService(provider, translator).fetchWithFallback('图书馆', 'zh', 'zh');
+    assert.deepEqual(result.entries[0].definitions, ['[EN] library']);
+    assert.equal(result.entries[0].definitionKind, 'fallback');
+});
+
+test('dictionary upstream bounds active work and releases cancelled waiters', async () => {
+    const controller = new AbortController();
+    const signal = new AbortController().signal;
+    let release;
+    const barrier = new Promise(resolve => { release = resolve; });
+    let active = 0;
+    let peak = 0;
+    const lookup = requestSignal => withDictionaryUpstream('queue-fixture', requestSignal, async () => {
+        peak = Math.max(peak, ++active);
+        await barrier;
+        active--;
+    });
+    const inProgress = Array.from({ length: 12 }, () => lookup(signal));
+    const cancelled = lookup(controller.signal);
+    const waiting = Array.from({ length: 35 }, () => lookup(signal));
+    await assert.rejects(lookup(signal), /at capacity/);
+    controller.abort();
+    await assert.rejects(cancelled, { name: 'AbortError' });
+    const admitted = lookup(signal);
+    release();
+    await Promise.all([...inProgress, ...waiting, admitted]);
+    assert.equal(peak, 12);
+});
+
+test('dictionary upstream honors Retry-After without retrying blocked requests', async t => {
+    let now = Date.now();
+    let calls = 0;
+    t.mock.method(Date, 'now', () => now);
+    t.mock.method(globalThis, 'fetch', async () => {
+        calls++;
+        return calls === 1 ? new Response(null, { status: 429, headers: { 'Retry-After': '90' } }) : Response.json({});
+    });
+    const attempt = () => withDictionaryUpstream('cooldown-fixture', new AbortController().signal, async fetchUpstream => {
+        const response = await fetchUpstream('https://fixture.invalid');
+        if (!response.ok) throw new Error('Blocked');
+        return response.status;
+    });
+    await assert.rejects(attempt(), /Blocked/);
+    now += 89000;
+    await assert.rejects(attempt(), /cooling down/);
+    assert.equal(calls, 1);
+    now += 1000;
+    assert.equal(await attempt(), 200);
+    assert.equal(calls, 2);
 });

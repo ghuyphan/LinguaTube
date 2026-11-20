@@ -12,6 +12,14 @@ const memCache = new Map();
 const inFlightFetches = new Map();
 const MAX_MEM_CACHE_ENTRIES = 500;
 
+/** Share pending work by cache key within a warm isolate. */
+export function coalesceCacheFetch(key, fetchFn) {
+    if (inFlightFetches.has(key)) return inFlightFetches.get(key);
+    const pending = Promise.resolve().then(fetchFn).finally(() => inFlightFetches.delete(key));
+    inFlightFetches.set(key, pending);
+    return pending;
+}
+
 function setMemCache(key, data, ttl, timestamp = Date.now()) {
     if (memCache.size >= MAX_MEM_CACHE_ENTRIES) {
         const oldest = memCache.keys().next().value;
@@ -103,7 +111,7 @@ export class CacheManager {
 
         // Cache miss or force refresh (coalesce concurrent fetches per key)
         const coalesceKey = forceRefresh ? `refresh:${key}` : key;
-        const data = await this._coalesceFetch(coalesceKey, async () => {
+        const data = await coalesceCacheFetch(coalesceKey, async () => {
             const fetched = await fetchFn();
             const effectiveTtl = fetched == null ? ttl : ttlForData(fetched);
 
@@ -126,22 +134,10 @@ export class CacheManager {
     }
 
     /**
-     * Coalesce concurrent async work for identical keys within the isolate
-     */
-    _coalesceFetch(key, fn) {
-        if (inFlightFetches.has(key)) return inFlightFetches.get(key);
-        const promise = Promise.resolve().then(fn).finally(() => {
-            if (inFlightFetches.get(key) === promise) inFlightFetches.delete(key);
-        });
-        inFlightFetches.set(key, promise);
-        return promise;
-    }
-
-    /**
      * Internally wrap fetch and set to KV
      */
     async _refreshAndSet(key, fetchFn, ttl, skipKvWrite = this.skipKvWrite, ttlForData = () => ttl) {
-        return this._coalesceFetch(`swr:${key}`, async () => {
+        return coalesceCacheFetch(`swr:${key}`, async () => {
             const data = await fetchFn();
             const effectiveTtl = data == null ? ttl : ttlForData(data);
             if (data !== null && data !== undefined) {

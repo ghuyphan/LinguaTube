@@ -63,7 +63,7 @@ export async function onRequestGet(context) {
     }
 
     // Rate limiting (Atomic)
-    const authResult = await validateAuthToken(request, env);
+    const authResult = await validateAuthToken(request, env, { accessState: 'cached' });
     if (authResult.response) return authResult.response;
     const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
 

@@ -1,109 +1,80 @@
-/**
- * Optimized Dictionary API (Cloudflare Function)
- * Endpoint: GET /api/dict?word={word}&from={learningLang}&to={uiLang}
- */
-
-import { validateAuthToken } from '../middlewares/auth.js';
+/** GET /api/dict?word={word}&from={learningLang}&to={uiLang} */
+import { authenticateIdentity } from '../middlewares/auth.js';
+import { jsonResponse, sanitizeWord, sanitizeLanguage, SUPPORTED_LEARNING_LANGUAGES } from '../utils/utils.js';
 import {
-    jsonResponse,
-    handleOptions,
-    sanitizeWord,
-    sanitizeLanguage,
-    logError
-} from '../utils/utils.js';
-import {
-    consumeRateLimit,
-    getClientIdentifier,
-    rateLimitResponse,
-    getRateLimitHeaders
+    consumeRateLimit, getClientIdentifier, rateLimitResponse, getRateLimitHeaders
 } from '../middlewares/rate-limiter.js';
-
-import { CacheManager, SimpleLRUCache } from '../utils/cache-manager.js';
+import { CacheManager } from '../utils/cache-manager.js';
 import { DictionaryProvider } from '../providers/dictionary-apis.js';
 import { TranslationProvider } from '../providers/lingva.js';
 import { DictionaryService } from '../services/dict.service.js';
 
-const CACHE_VERSION = 'v6';
+const CACHE_VERSION = 'v7';
 const RATE_LIMIT_CONFIG = { max: 100, windowSeconds: 3600, keyPrefix: 'dict' };
-const memNegDictCache = new SimpleLRUCache(1000, 60000);
+const SECOND = 1000;
+const DAY = 86400;
+const cacheManager = new CacheManager(null);
+const dictService = new DictionaryService(new DictionaryProvider(), new TranslationProvider());
+const remaining = result => Math.max(0, (result.expiresAt - Date.now()) / SECOND);
 
 export async function onRequestGet(context) {
     const { request, env } = context;
-    const deadline = Date.now() + 12000;
-
     const url = new URL(request.url);
     const word = sanitizeWord(url.searchParams.get('word'));
     const from = sanitizeLanguage(url.searchParams.get('from'));
-    const to = sanitizeLanguage(url.searchParams.get('to'), ['ja', 'zh', 'ko', 'en', 'vi', 'ru']);
+    const to = sanitizeLanguage(url.searchParams.get('to'), [...SUPPORTED_LEARNING_LANGUAGES, 'ru']);
 
-    // Validate parameters
     if (!word) return jsonResponse({ error: 'Missing logic parameter: word' }, 400);
     if (!from) return jsonResponse({ error: 'Invalid or missing "from" parameter.' }, 400);
     if (!to) return jsonResponse({ error: 'Invalid or missing "to" parameter.' }, 400);
 
-    // Fast-path 2: in-memory negative cache check (0 KV ops, 0 API calls)
-    const negKey = `dict:neg:${from}:${to}:${word}`;
-    if (memNegDictCache.get(negKey)) {
-        return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
-            'X-Cache': 'NEG',
-            'Cache-Control': 'public, max-age=60, s-maxage=60'
-        });
-    }
-
-    // Rate limiting
-    const authResult = await validateAuthToken(request, env);
+    const authResult = await authenticateIdentity(request, env);
     if (authResult.response) return authResult.response;
     const clientId = getClientIdentifier(request, authResult);
     const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
-    if (!rateCheck.allowed) {
-        return rateLimitResponse(rateCheck.resetAt);
-    }
+    if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
 
-    // Initialize Services - skip KV write to preserve free tier quota (Rule 2)
-    // Responses are cached at Cloudflare Edge CDN (7-day s-maxage) and in-memory
-    const cacheManager = new CacheManager(env.TRANSCRIPT_CACHE, { skipKvWrite: true });
-    const dictProvider = new DictionaryProvider();
-    const transProvider = new TranslationProvider();
-    const dictService = new DictionaryService(dictProvider, transProvider);
-
-    const cacheKey = `dict:${CACHE_VERSION}:${from}:${to}:${word}`;
-
+    const query = new URLSearchParams({ word, from, to });
+    const cacheKey = `dict:${CACHE_VERSION}:${query}`;
+    const cacheUrl = new URL(`/api/dict?${query}`, url.origin);
     try {
-        // Automatically handle STALE/HIT/MISS via getOrFetch
-        const { data: result, cached, stale } = await cacheManager.getOrFetch(context, cacheKey, async () => {
-            const raw = await dictService.fetchWithFallback(word, from, to, { signal: request.signal, deadline });
-            if (raw.outcome === 'unavailable') throw new Error('Dictionary providers unavailable');
-            if (!raw.entries.length) return null;
-            return raw;
-        }, { forceRefresh: false, staleTtl: 0, ttl: 7 * 24 * 60 * 60, ttlForData: value => value.entries.some(entry => entry.definitionKind === 'fallback') ? 60 : 7 * 24 * 60 * 60 }); // 7 days TTL
+        const pending = cacheManager.getOrFetch(context, cacheKey, async () => {
+            let regional;
+            try {
+                regional = await globalThis.caches?.open(`dictionary-${CACHE_VERSION}`);
+                const response = await regional?.match(cacheUrl);
+                if (response) {
+                    const saved = await response.json();
+                    if (Array.isArray(saved.entries) && remaining(saved) > 0) return { ...saved, regionalHit: true };
+                }
+            } catch { /* The upstream path is still available if regional caching fails. */ }
 
-        if (!result) {
-            // Negative caching in-memory (avoids wasting KV write quota on misses)
-            memNegDictCache.set(negKey, true);
-            return jsonResponse({ word, from, to, source: 'none', entries: [] }, 200, {
-                'X-Cache': 'MISS',
-                'Cache-Control': 'public, max-age=60, s-maxage=60',
-                ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
-            });
-        }
+            const lookup = await dictService.fetchWithFallback(word, from, to);
+            if (lookup.outcome === 'unavailable') throw new Error('Dictionary providers unavailable');
 
-        const responseData = {
-            word, from, to,
-            source: result.source,
-            entries: result.entries || [],
-            timestamp: Date.now()
-        };
-
-        const cacheHeader = cached ? (stale ? 'STALE' : 'HIT') : 'MISS';
-
-        return jsonResponse(responseData, 200, {
+            const { entries, source } = lookup;
+            const timestamp = Date.now();
+            const ttl = entries.length && !entries.some(entry => entry.definitionKind === 'fallback') ? 7 * DAY : 60;
+            const result = { entries, source, timestamp, expiresAt: timestamp + ttl * SECOND };
+            if (regional && context.waitUntil) {
+                context.waitUntil(regional.put(cacheUrl, Response.json(result, {
+                    headers: { 'Cache-Control': `public, max-age=${ttl}` }
+                })).catch(() => {}));
+            }
+            return result;
+        }, { ttlForData: remaining });
+        // The shared lookup has its own deadline. A disconnected caller cannot abort other readers.
+        context.waitUntil?.(pending.catch(() => {}));
+        const { data: result, cached } = await pending;
+        const { source, entries, timestamp } = result;
+        const ttl = Math.floor(remaining(result));
+        const cacheHeader = cached && !entries.length ? 'NEG' : cached ? 'HIT' : result.regionalHit ? 'HIT-EDGE' : 'MISS';
+        return jsonResponse({ word, from, to, source, entries, ...(entries.length ? { timestamp } : {}) }, 200, {
             'X-Cache': cacheHeader,
-            'Cache-Control': result.entries.some(entry => entry.definitionKind === 'fallback') ? 'public, max-age=60, s-maxage=60' : 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400',
+            'Cache-Control': `public, max-age=${Math.min(DAY, ttl)}, s-maxage=${ttl}`,
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
-
-    } catch (error) {
-        logError('Dict', error, { from, to });
+    } catch {
         return jsonResponse({ error: 'Dictionary providers unavailable' }, 503, { 'Cache-Control': 'no-store' });
     }
 }

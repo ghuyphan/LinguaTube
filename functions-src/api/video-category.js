@@ -10,7 +10,7 @@ import { jsonResponse, sanitizeVideoId, errorResponse, getRequestJson } from '..
 import { saveVideoCategory } from '../data/video-info-db.js';
 import { VALID_CATEGORIES } from '../services/category.service.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
-import { validateAuthToken, unauthorizedResponse } from '../middlewares/auth.js';
+import { authenticateIdentity, unauthorizedResponse } from '../middlewares/auth.js';
 
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_category' };
 
@@ -64,7 +64,7 @@ export async function onRequestPost(context) {
     }
 
     // Require authentication
-    const authResult = await validateAuthToken(request, env);
+    const authResult = await authenticateIdentity(request, env);
     if (authResult.response) return authResult.response;
     if (!authResult.valid) {
         return unauthorizedResponse(authResult.error || 'Authentication required to submit video category');

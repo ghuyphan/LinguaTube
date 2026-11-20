@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { getRecommendedVideosFromCloudflare, getRelatedVideosFromCloudflare, saveVideoCategory, detectLevelFromMetadata } from '../functions-src/data/video-info-db.js';
 import { rankVideos, rankRelatedVideos, declusterChannels, normalizeRecommendationContext, getDeterministicJitter } from '../functions-src/services/recommendation.service.js';
@@ -17,12 +18,18 @@ function catalog(count = 400) {
         duration_seconds: 300, levels: JSON.stringify({ ja: 'N3' }), available_languages: '["ja"]',
         sub_languages: '["ja"]', category: 'education', updated_at: 10000 - i }));
 }
+const CATALOG_INDEX_MIGRATION = fs.readFileSync(
+    new URL('../db/migrations/d1/20261120_video_catalog_index.sql', import.meta.url),
+    'utf8'
+);
+
 function database(t, rows) {
     const sqlite = new DatabaseSync(':memory:');
     t.after(() => sqlite.close());
     sqlite.exec(`CREATE TABLE video_languages (video_id TEXT PRIMARY KEY, title TEXT, channel TEXT,
         channel_avatar TEXT, duration_seconds INTEGER, levels TEXT, available_languages TEXT,
         sub_languages TEXT, category TEXT, updated_at INTEGER, tags TEXT DEFAULT '[]', category_source TEXT)`);
+    sqlite.exec(CATALOG_INDEX_MIGRATION);
     const insert = sqlite.prepare(`INSERT INTO video_languages
         (video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, category, updated_at)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);

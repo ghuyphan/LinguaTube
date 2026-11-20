@@ -12,7 +12,7 @@ import {
     rateLimitResponse,
     getRateLimitHeaders
 } from '../middlewares/rate-limiter.js';
-import { validateAuthToken } from '../middlewares/auth.js';
+import { authenticateIdentity } from '../middlewares/auth.js';
 import {
     jsonResponse,
     handleOptions,
@@ -35,7 +35,8 @@ const RATE_LIMIT_CONFIG = {
 export async function onRequestPost(context) {
     const { request, env } = context;
 
-    const authResult = await validateAuthToken(request, env);
+    const authResult = await authenticateIdentity(request, env);
+    if (authResult.response) return authResult.response;
     const clientId = getClientIdentifier(request, authResult);
     const rateCheck = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateCheck.allowed) {
