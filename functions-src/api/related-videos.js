@@ -60,7 +60,8 @@ async function handleRelatedVideos(context, method) {
     try {
         ({ videos, hasMore } = await getRelatedVideosFromCloudflare(
             db, r2, lang, limit, offset,
-            { currentVideo, excludeIds, context: userContext, sessionSeed, isRefresh, metrics }
+            { currentVideo, excludeIds, context: userContext, sessionSeed, isRefresh, metrics,
+                waitUntil: context.waitUntil?.bind(context) }
         ));
     } catch (error) {
         console.error('[RelatedVideos] Retrieval failed:', error.message);

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { performance } from 'node:perf_hooks';
-import { getRecommendedVideosFromCloudflare, getRelatedVideosFromCloudflare, saveVideoCategory, detectLevelFromMetadata } from '../functions-src/data/video-info-db.js';
+import { getRecommendedVideosFromCloudflare, getRelatedVideosFromCloudflare, indexPendingVideoSearchText, saveVideoCategory, detectLevelFromMetadata } from '../functions-src/data/video-info-db.js';
 import { rankVideos, rankRelatedVideos, declusterChannels, normalizeRecommendationContext, getDeterministicJitter } from '../functions-src/services/recommendation.service.js';
 import { detectVideoCategory } from '../functions-src/services/category.service.js';
 import { inferSpokenLanguage } from '../functions-src/services/video-language.service.js';
@@ -30,18 +30,31 @@ function database(t, rows) {
         channel_avatar TEXT, duration_seconds INTEGER, levels TEXT, available_languages TEXT,
         sub_languages TEXT, category TEXT, updated_at INTEGER, tags TEXT DEFAULT '[]', category_source TEXT)`);
     sqlite.exec(CATALOG_INDEX_MIGRATION);
+    sqlite.exec(fs.readFileSync(new URL('../db/migrations/d1/20261120_video_search_text.sql', import.meta.url), 'utf8'));
     const insert = sqlite.prepare(`INSERT INTO video_languages
         (video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, category, updated_at)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
     for (const row of rows) insert.run(...Object.values(row));
     let calls = 0;
-    return { get calls() { return calls; }, prepare(sql) { return { bind(...args) { return {
-        async all() {
-            if (!sql.includes('SELECT video_id, levels')) calls++;
-            return { results: sqlite.prepare(sql).all(...args), success: true };
+    return {
+        get calls() { return calls; },
+        prepare(sql) {
+            const bind = (...args) => ({
+                async all() {
+                    if (!sql.includes('SELECT video_id, levels')) calls++;
+                    return { results: sqlite.prepare(sql).all(...args), success: true };
+                },
+                async run() {
+                    const { changes } = sqlite.prepare(sql).run(...args);
+                    return { success: true, meta: { changes } };
+                }
+            });
+            return { bind, ...bind() };
         },
-        async run() { sqlite.prepare(sql).run(...args); return { success: true }; }
-    }; } }; } };
+        async batch(statements) {
+            return Promise.all(statements.map(statement => statement.run()));
+        }
+    };
 }
 const options = { skip: !DatabaseSync };
 
@@ -172,6 +185,108 @@ test('rankVideos with search query prioritizes exact title match and disables se
     assert.equal(ranked[1].videoId, 'v2');
     assert.equal(ranked[2].videoId, 'v1');
     assert.equal(ranked[3].videoId, 'v4');
+});
+
+test('keyword discovery admits older exact titles before filling its window', options, async t => {
+    const rows = catalog(202).map((row, i) => ({
+        ...row,
+        title: i === 200 ? 'lesson' : i === 201 ? 'Lesson primer' : `Japanese lesson ${i}`
+    }));
+    const db = database(t, rows);
+    const ids = [];
+    for (let offset = 0; offset < 200; offset += 50) {
+        const page = await getRecommendedVideosFromCloudflare(db, null, 'ja', 50, null, false,
+            offset, 'lesson', { includePage: true });
+        ids.push(...page.videos.map(video => video.videoId));
+        assert.equal(page.hasMore, offset < 150);
+    }
+    assert.equal(ids[0], rows[200].video_id);
+    assert.ok(ids.includes(rows[201].video_id));
+    assert.equal(new Set(ids).size, 200);
+});
+
+test('normalized search matches width, composed accents and kana across catalog fields', options, async t => {
+    const rows = catalog(3).map((row, i) => ({ ...row,
+        title: ['Ｒａｍｅｎ', 'Japanese ramen lesson', 'Japanese food'][i],
+        channel: i === 2 ? 'CA\u0300 PHE\u0302' : row.channel
+    }));
+    const db = database(t, rows);
+    await db.prepare('UPDATE video_languages SET tags = ? WHERE video_id = ?')
+        .bind(JSON.stringify(['ハ\u309aン', '１００％＿']), rows[2].video_id).run();
+    const search = async (query, offset = 0) => getRecommendedVideosFromCloudflare(
+        db, null, 'ja', 1, null, false, offset, query, { includePage: true });
+
+    // A row still pending normalization remains searchable by its original title.
+    assert.equal((await search('Ｒａｍｅｎ')).videos[0].title, 'Ｒａｍｅｎ');
+    assert.equal(await indexPendingVideoSearchText(db), 3);
+    assert.equal(await indexPendingVideoSearchText(db), 0);
+    for (const query of ['ramen', 'ＲＡＭＥＮ']) {
+        const first = await search(query);
+        assert.equal(first.videos[0].title, 'Ｒａｍｅｎ');
+        assert.equal(first.hasMore, true);
+        const next = await search(query, 1);
+        assert.equal(next.videos[0].title, 'Japanese ramen lesson');
+        assert.equal(next.hasMore, false);
+    }
+    for (const query of ['cà phê', 'パン', '100%_']) {
+        assert.equal((await search(query)).videos[0].videoId, rows[2].video_id);
+    }
+    assert.deepEqual((await search('100xyz')).videos, []);
+    const longTerm = '日本語'.repeat(15);
+    await db.prepare('UPDATE video_languages SET title = ? WHERE video_id = ?')
+        .bind(longTerm, rows[2].video_id).run();
+    assert.equal((await search(longTerm)).videos[0].title, longTerm);
+});
+
+test('metadata changes invalidate search text and a concurrent write stays pending', options, async t => {
+    const [row] = catalog(1);
+    const db = database(t, [row]);
+    const setTitle = title => db.prepare('UPDATE video_languages SET title = ? WHERE video_id = ?')
+        .bind(title, row.video_id).run();
+    const search = query => getRecommendedVideosFromCloudflare(db, null, 'ja', 12, null, false, 0, query);
+    assert.equal(await indexPendingVideoSearchText(db), 1);
+    await setTitle('Ｍｏｃｈｉ');
+    assert.deepEqual(await search(row.title), []);
+    const batch = db.batch.bind(db);
+    db.batch = async statements => {
+        await setTitle('Ｄａｎｇｏ');
+        return batch(statements);
+    };
+    assert.equal(await indexPendingVideoSearchText(db), 0);
+    db.batch = batch;
+    assert.equal(await indexPendingVideoSearchText(db), 1);
+    assert.deepEqual(await search('mochi'), []);
+    assert.equal((await search('dango'))[0].title, 'Ｄａｎｇｏ');
+});
+
+test('keyword search reports incomplete scans as retryable', options, async t => {
+    const rows = catalog(4001).map((row, i) => ({
+        ...row,
+        levels: JSON.stringify({ ja: i === 4000 ? 'N5' : 'N3' })
+    }));
+    const db = database(t, rows);
+    const response = await onRequestGet({
+        request: new Request('https://voca.study/api/recommended-videos?lang=ja&tier=beginner&q=lesson'),
+        env: { VOCAB_DB: db }
+    });
+    assert.equal(response.status, 503);
+    assert.equal(response.headers.get('Retry-After'), '5');
+    assert.equal(db.calls, 20);
+});
+
+test('keyword level filtering precedes page exhaustion', options, async t => {
+    const rows = catalog(5).map((row, i) => ({ ...row,
+        levels: JSON.stringify({ ja: i < 4 ? 'HSK 3' : 'HSK 4' })
+    }));
+    const db = database(t, rows);
+    const response = await onRequestGet({
+        request: new Request('https://voca.study/api/recommended-videos?lang=ja&tier=intermediate&level=HSK%204&q=lesson&limit=1'),
+        env: { VOCAB_DB: db }
+    });
+    assert.equal(response.status, 200);
+    const page = await response.json();
+    assert.deepEqual(page.videos.map(video => video.videoId), ['video_0004']);
+    assert.equal(page.hasMore, false);
 });
 
 test('search mode does not fail on sparse candidate sets under 200 items', options, async t => {

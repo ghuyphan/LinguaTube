@@ -578,7 +578,7 @@ provide layout rather than replacement control geometry.
 
 ## Recommendation reliability (2026-10-25)
 
-The production recommendation path now uses a fixed eligible discovery window, stable pagination, bounded metadata/transcript verification and personalized-cache isolation. See [API contract](backend-api.md) section 3.10. No schema migration is needed; rebuild generated functions from `functions-src` before release.
+The production recommendation path now uses a fixed eligible discovery window, stable pagination, bounded metadata/transcript verification and personalized-cache isolation. See [API contract](backend-api.md) section 3.10. Keyword discovery prioritizes exact and prefix titles before filling its window and applies conflicting badge exclusions before pagination. Apply the catalog reverse index after the language catalog migration. The existing maintenance route fills normalized search fields on `video_languages` for updated and legacy metadata.
 
 ## Backend optimization flow (25 October 2026)
 

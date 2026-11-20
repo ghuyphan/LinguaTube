@@ -728,3 +728,8 @@ Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de
 Video grading uses `video_grading_jobs` for lease, retry, review and rollback state.
 The confirmed grade and diagnostics live in the language entry of
 `video_languages.levels`. Caption content stays in R2.
+
+
+### Video search text
+
+Apply [the video search text migration](../db/migrations/d1/20261120_video_search_text.sql) before deploying the updated Functions. The migration adds nullable normalized title, channel, and tag fields to `video_languages` and an index over pending rows. A trigger clears stale search fields when source metadata changes. The existing `POST /api/internal/reconcile` job processes up to 50 rows per invocation and publishes normalized text only if the source metadata still matches. The `indexedVideos` log field reports progress. When the pending set is empty, new and edited metadata continue through the same maintenance path. Original titles, channels, and tags are still used for display.

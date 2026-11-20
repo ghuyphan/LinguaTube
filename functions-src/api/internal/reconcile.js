@@ -4,6 +4,7 @@ import { jsonResponse } from '../../utils/utils.js';
 import { atomicFailAndRefundAiJob } from '../../data/transcript-db.js';
 import { recoverRefundBatch } from '../../services/refund-recovery.js';
 import { recoverRevenueCatEvent } from '../../services/revenuecat-recovery.js';
+import { indexPendingVideoSearchText } from '../../data/video-info-db.js';
 
 export async function onRequestPost({ request, env }) {
     if (!env.BACKEND_MAINTENANCE_SECRET) return jsonResponse({ error: 'Maintenance unavailable' }, 503);
@@ -26,7 +27,13 @@ export async function onRequestPost({ request, env }) {
             if (!(await recoverRevenueCatEvent(env, null, started + 20000))) break;
             subscriptions++;
         }
-        console.log(JSON.stringify({ event: 'backend_recovery', callbacks, refunds, subscriptions, elapsedMs: Date.now()-started }));
+        let indexedVideos = 0;
+        try {
+            indexedVideos = await indexPendingVideoSearchText(db);
+        } catch (error) {
+            console.warn('[Recovery] Video search indexing unavailable', { message: error.message });
+        }
+        console.log(JSON.stringify({ event: 'backend_recovery', callbacks, refunds, subscriptions, indexedVideos, elapsedMs: Date.now()-started }));
         return jsonResponse({ success: true, callbacks, refunds, subscriptions }, 200, { 'Cache-Control': 'no-store' });
     } catch (error) {
         console.error('[Recovery] Batch unavailable', { message: error.message });

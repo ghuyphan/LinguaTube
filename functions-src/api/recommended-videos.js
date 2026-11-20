@@ -23,27 +23,32 @@ async function handleRecommendedVideos(context, method) {
     const parsed = await parseRecommendationRequest(context, method, { defaultLimit: 12 });
     if (parsed.errorResponse) return parsed.errorResponse;
 
-    const { lang, tier, category, limit, offset, query, isRefresh, sessionSeed, userContext, excludeIds, isPersonalized } = parsed.params;
+    const { lang, tier, category, limit, offset, query, level, isRefresh, sessionSeed, userContext, excludeIds, isPersonalized } = parsed.params;
     const db = context.env?.VOCAB_DB;
     const r2 = context.env?.TRANSCRIPT_STORAGE;
-    const shouldShuffle = isRefresh || offset === 0;
     const metrics = {};
+    const startedAt = Date.now();
 
     let videos;
     let hasMore;
     try {
         ({ videos, hasMore } = await getRecommendedVideosFromCloudflare(
-            db, r2, lang, limit, tier, shouldShuffle, offset, query,
-            { context: userContext, sessionSeed, category, isRefresh, excludeIds, includePage: true, metrics }
+            db, r2, lang, limit, tier, false, offset, query,
+            { context: userContext, sessionSeed, category, isRefresh, excludeIds, includePage: true,
+                level, metrics, waitUntil: context.waitUntil?.bind(context) }
         ));
     } catch (error) {
-        console.error('[Recommendations] Retrieval failed:', error.message);
+        console.error('[Recommendations] Retrieval failed:', error.message, metrics);
         return jsonResponse({ success: false, error: 'Recommendations temporarily unavailable' }, 503, {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
             'Retry-After': '5'
         });
     }
 
+    if (query) {
+        console.log(JSON.stringify({ event: 'video_keyword_search', language: lang, offset,
+            durationMs: Date.now() - startedAt, count: videos.length, ...metrics }));
+    }
     scheduleMetadataHealing(db, context, videos);
 
     return jsonResponse({

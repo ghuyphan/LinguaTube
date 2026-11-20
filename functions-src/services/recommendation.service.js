@@ -23,7 +23,7 @@ const QUOTE_TITLE_RE = /[《「『"“](.*?)[》」』"”]/;
 const BUZZWORDS_RE = /\b(?:official|music|video|mv|hd|4k|1080p|audio|lyrics|vietsub|engsub|sub|español|live|ver|version|full|album|cover|remix|feat|ft|prod|ep)\b/gi;
 const PUNCT_SPLIT_RE = /[\s\u3000/\\|#_~*•–—\-!！?？、。・～~:：;；,，.]+/;
 
-function normalizeMatchKey(value) {
+export function normalizeMatchKey(value) {
     return typeof value === 'string' ? value.normalize('NFKC').trim().toLowerCase() : '';
 }
 
@@ -205,7 +205,7 @@ export async function parseRecommendationRequest(context, method, { defaultLimit
             return { errorResponse: jsonResponse({ success: false, error: 'Invalid JSON object' }, 400) };
         }
     }
-    for (const key of ['lang', 'tier', 'category', 'q', 'query']) {
+    for (const key of ['lang', 'tier', 'category', 'q', 'query', 'level']) {
         if (body[key] != null && typeof body[key] !== 'string') {
             return { errorResponse: jsonResponse({ success: false, error: `Invalid ${key}` }, 400) };
         }
@@ -235,6 +235,7 @@ export async function parseRecommendationRequest(context, method, { defaultLimit
     const rawQuery = firstNonEmpty(body.q, body.query, url.searchParams.get('q'), url.searchParams.get('query'))
         .replace(/[\x00-\x1F\x7F]/g, '');
     const query = rawQuery.length > 0 ? rawQuery.slice(0, 100) : null;
+    const level = firstNonEmpty(body.level, url.searchParams.get('level')).slice(0, 40) || null;
 
     const isRefresh = body.refresh === true || body.force === true
         || url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true';
@@ -269,7 +270,7 @@ export async function parseRecommendationRequest(context, method, { defaultLimit
 
     return {
         params: {
-            body, url, lang, tier, category, limit, offset, query,
+            body, url, lang, tier, category, limit, offset, query, level,
             isRefresh, sessionSeed, userContext, excludeIds, isPersonalized
         }
     };
@@ -454,9 +455,7 @@ export function rankVideos(videos, options = {}) {
         excludeIds = []
     } = options;
 
-    const cleanSearchQuery = (typeof query === 'string' && query.trim())
-        ? query.trim().normalize('NFKC').toLowerCase()
-        : null;
+    const cleanSearchQuery = normalizeMatchKey(query);
     const isSearchMode = Boolean(cleanSearchQuery);
     const searchTokens = isSearchMode
         ? cleanSearchQuery.split(/[\s\u3000]+/).filter(t => t.length > 0)
