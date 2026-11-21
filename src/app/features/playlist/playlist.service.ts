@@ -440,6 +440,7 @@ export class PlaylistService {
      * Load a playlist for playback
      */
     async loadPlaylist(playlistId: string): Promise<PlaylistWithVideos> {
+        const session = this.auth.captureSession();
         this.isLoading.set(true);
 
         try {
@@ -479,8 +480,9 @@ export class PlaylistService {
 
             // Hydrate with video metadata
             const videos = await this.hydrateVideos(playlist.videoIds);
+            if (!this.auth.isCurrentSession(session)) throw new Error('Playlist session changed');
             const isOwner = playlist.userId === (this.auth.getUserId() || 'local');
-            const isSaved = this.savedPlaylists().some(p => p.id === playlistId);
+            const isSaved = this.savedPlaylists().some(p => p.id === playlist?.id);
 
             const playlistWithVideos: PlaylistWithVideos = {
                 ...playlist,
@@ -505,12 +507,17 @@ export class PlaylistService {
      */
     async fetchPublicPlaylist(playlistId: string): Promise<Playlist | null> {
         try {
+            const shared = await this.supabase.client.rpc('get_shared_playlist', { p_share_key: playlistId });
+            if (!shared.error) {
+                return shared.data ? mapRecordToPlaylist(shared.data as Record<string, unknown>) : null;
+            }
+            if (shared.error.code !== 'PGRST202' && shared.error.code !== '42883') return null;
+
             const { data, error } = await this.supabase.client
                 .from('playlists')
                 .select('*')
                 .eq('id', playlistId)
                 .maybeSingle();
-
             if (error || !data) return null;
 
             // Only allow access to public or unlisted playlists

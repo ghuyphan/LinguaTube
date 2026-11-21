@@ -226,11 +226,11 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
 ---
 
 ### 3.4. Dual Subtitles API
-- **Route**: `GET /api/dual-subtitles` (Fast CDN/browser cache lookup) & `POST /api/dual-subtitles` (Live translation and legacy save acknowledgement)
+- **Route**: `GET /api/dual-subtitles` (Browser cache lookup) & `POST /api/dual-subtitles` (Live translation and legacy save acknowledgement)
 - **Source**: `functions-src/api/dual-subtitles.js`
 - **GET Request**:
   - `GET /api/dual-subtitles?videoId={videoId}&sourceLang={sourceLang}&targetLang={targetLang}`
-  - Returns `{ segments: [...], cached: true }` with edge-friendly `Cache-Control: public, max-age=3600` headers on cache hits, avoiding POST overhead for already-translated videos.
+  - Returns `{ segments: [...], cached: true }` with browser-only caching headers on cache hits, avoiding POST overhead for already-translated videos.
 - **POST Payload**:
   ```json
   {
@@ -250,6 +250,7 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
   - Does not require a `segments` payload on cache checks, eliminating unnecessary payload overhead.
   - If cached transcript exists: Returns `{ success: true, segments: [...], cached: true }`.
   - If not cached: Returns `{ success: true, segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
+- **Cached read quota**: Valid GET and POST reads share a 60-per-minute approximate IP quota, checked before accessing R2. Throttled responses include `Retry-After`. Existing live translation limits still apply.
 - **Legacy Client Saves (`saveOnly: true` or `onlySave: true`)**:
   - Signed-in clients receive `success: true, saved: false, cached: false`. The submitted translations stay on the client.
   - Shared R2 objects and D1 metadata come from server-generated translations.

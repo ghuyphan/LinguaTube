@@ -648,4 +648,4 @@ Polling and maintenance expire unconfirmed Scribe submissions after 15 minutes u
 
 The configured Scribe audio budget uses the existing D1 job rows and atomically checks verified duration when reserving a job. The provider billing anchor determines the cycle.
 
-Shared subtitle translations are published by the Pages Functions translation path. Clients keep their own generated translations.
+Shared subtitle translations are published by the Pages Functions translation path. Public cache reads are rate-limited before R2 access. Clients keep their own generated translations.

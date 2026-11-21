@@ -1,3 +1,4 @@
+import { getTranscriptKey, putTranscriptObject, readTranscriptObject } from '../data/transcript-r2.js';
 import { enrichSegmentsWithTokens, segmentsNeedEnrichment } from '../utils/tokenizer.js';
 
 // Optional token enrichment never owns transcript availability or completion.
@@ -5,9 +6,7 @@ import { enrichSegmentsWithTokens, segmentsNeedEnrichment } from '../utils/token
 const pendingEnrichment = new Map();
 export async function enrichPublishedTranscript(bucket, videoId, language, budgetMs = 3000, isAI = false, tokenOpts = {}) {
     if (!bucket) return false;
-    const key = isAI
-        ? `transcripts/${videoId}/${language}.ai.json`
-        : `transcripts/${videoId}/${language}.json`;
+    const key = getTranscriptKey(videoId, language, isAI);
     if (pendingEnrichment.has(key)) return pendingEnrichment.get(key);
     if (pendingEnrichment.size >= 30) return false;
     const pending = (async () => {
@@ -15,7 +14,7 @@ export async function enrichPublishedTranscript(bucket, videoId, language, budge
         try {
             const object = await bucket.get(key);
             if (!object) return false;
-            const data = await object.json();
+            const data = await readTranscriptObject(object);
             if (!data?.segments?.length || !segmentsNeedEnrichment(data.segments, language)) return true;
             const segments = await Promise.race([
                 enrichSegmentsWithTokens(data.segments, language, {
@@ -26,10 +25,10 @@ export async function enrichPublishedTranscript(bucket, videoId, language, budge
                 new Promise(resolve => { timer = setTimeout(() => resolve(null), budgetMs); })
             ]);
             if (!segments || segmentsNeedEnrichment(segments, language)) return false;
-            const saved = await bucket.put(key, JSON.stringify({ ...data, segments }), {
-                onlyIf: { etagMatches: object.etag }, httpMetadata: { contentType: 'application/json' },
+            const saved = await putTranscriptObject(bucket, key, { ...data, segments }, {
+                onlyIf: { etagMatches: object.etag }, httpMetadata: { ...object.httpMetadata, contentType: 'application/json' },
                 customMetadata: { ...object.customMetadata }
-            });
+            }, object.httpMetadata?.contentEncoding === 'gzip');
             return saved !== null;
         } catch { return false; }
         finally { clearTimeout(timer); }

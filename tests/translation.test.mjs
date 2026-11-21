@@ -379,3 +379,26 @@ test('client subtitle save acknowledgements never write to shared storage', asyn
     assert.deepEqual(await response.json(), { success: true, videoId: body.videoId,
         sourceLang: 'ja', targetLang: 'en', saved: false, cached: false });
 });
+
+test('cached subtitle GET and POST share a quota before R2 reads', async () => {
+    const body = { videoId: 'abcdefghijk', sourceLang: 'ja', targetLang: 'en', onlyCache: true };
+    let reads = 0;
+    const env = { TRANSCRIPT_STORAGE: { async get() {
+        reads++;
+        return { async json() { return { timestamp: Date.now(), quality: 100,
+            segments: [{ text: 'こんにちは', translation: 'Hello' }] }; } };
+    } } };
+    const headers = { 'CF-Connecting-IP': '192.0.2.76' };
+    const url = 'https://voca.study/api/dual-subtitles?videoId=abcdefghijk&sourceLang=ja&targetLang=en';
+    for (let i = 0; i < 60; i++) {
+        const response = await dualSubtitlesGet({ env, request: new Request(url, { headers }) });
+        assert.equal(response.status, 200);
+        assert.match(response.headers.get('Cache-Control'), /private/);
+    }
+    const throttled = await dualSubtitlesPost({ env, request: new Request(url, {
+        method: 'POST', headers, body: JSON.stringify(body)
+    }) });
+    assert.equal(throttled.status, 429);
+    assert.ok(Number(throttled.headers.get('Retry-After')) > 0);
+    assert.equal(reads, 60);
+});

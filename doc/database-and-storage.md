@@ -216,6 +216,8 @@ Bucket binding: `TRANSCRIPT_STORAGE` (`linguatube-transcripts`)
   }
   ```
 
+Transcript readers support plain JSON and gzip. Set `TRANSCRIPT_GZIP_WRITES=true` only after deploying compatible readers. New native and AI writes then use R2 `Content-Encoding: gzip`; object keys, response JSON, and conditional write checks retain their existing contracts.
+
 ### 3.2. Dual Subtitle Translation Object Format
 - **Key**: `translations/{videoId}/{sourceLang}_{targetLang}.json`
 - **Incremental Segment Merging**: When clients persist translations (`POST /api/dual-subtitles` with `saveOnly: true`), the backend (`translation-cache.js`) merges incoming segment translations into the existing R2 translation object instead of overwriting. Existing translated cues are preserved, newly translated cues are added or updated, and metadata (`translatedCount`, `totalCues`, `quality`) is dynamically recalculated.

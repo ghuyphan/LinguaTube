@@ -15,6 +15,7 @@ import { execFileSync, execSync } from 'node:child_process';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { gunzipSync } from 'node:zlib';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -65,11 +66,11 @@ async function fetchCachedSegments(videoId, lang, rawSubAliases = []) {
       if (isRemote) r2Args.push('--remote');
       const raw = execFileSync('npx', r2Args, {
         cwd: projectRoot,
-        encoding: 'utf8',
         maxBuffer: 15 * 1024 * 1024,
         stdio: ['ignore', 'pipe', 'ignore']
       });
-      const parsed = JSON.parse(raw);
+      const bytes = raw[0] === 0x1f && raw[1] === 0x8b ? gunzipSync(raw) : raw;
+      const parsed = JSON.parse(bytes.toString('utf8'));
       if (Array.isArray(parsed?.segments) && parsed.segments.length > 0) {
         return parsed.segments;
       }

@@ -65,7 +65,7 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
             AND ingestion_lease_until>strftime('%s','now')`).bind(job.id, lease).first();
         if (!owns) throw new Error('Ingestion lease expired');
         if (!(await saveTranscriptToR2(env.TRANSCRIPT_STORAGE, job.video_id, language, enriched, 'ai',
-            { jobId: job.id, createdAt: job.created_at }, null, wordTimings))) throw new Error('Transcript persistence unavailable');
+            { jobId: job.id, createdAt: job.created_at }, null, wordTimings, env.TRANSCRIPT_GZIP_WRITES === 'true'))) throw new Error('Transcript persistence unavailable');
         const last = enriched[enriched.length - 1];
         const gradingEnabled = serverGradingEnabled(env);
         const level = gradingEnabled ? null : estimateTranscriptLevel(enriched, language);

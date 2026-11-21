@@ -21,6 +21,22 @@ export function getTranscriptKey(videoId, lang, isAI = false) {
         : `transcripts/${videoId}/${cleanLang}.json`;
 }
 
+export function readTranscriptObject(object) {
+    if (object.httpMetadata?.contentEncoding !== 'gzip') return object.json();
+    return new Response(object.body.pipeThrough(new globalThis.DecompressionStream('gzip'))).json();
+}
+
+export async function putTranscriptObject(bucket, key, data, options, gzip) {
+    const json = JSON.stringify(data);
+    if (!gzip) return bucket.put(key, json, options);
+    const stream = new Blob([json]).stream().pipeThrough(new globalThis.CompressionStream('gzip'));
+    const bytes = await new Response(stream).arrayBuffer();
+    return bucket.put(key, bytes, {
+        ...options,
+        httpMetadata: { ...options.httpMetadata, contentEncoding: 'gzip' }
+    });
+}
+
 /**
  * Get transcript from R2 bucket
  * @param {R2Bucket} bucket - R2 bucket binding
@@ -48,7 +64,7 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
                 return null;
             }
 
-            const data = await object.json();
+            const data = await readTranscriptObject(object);
             if (!Array.isArray(data?.segments) || !data.segments.length ||
                 data.segments.some(cue => typeof cue?.text !== 'string' ||
                     !Number.isFinite(cue.start) || cue.start < 0 ||
@@ -122,7 +138,7 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
  * @param {string|null} trackLanguage - Optional track language identifier
  * @param {Array|null} wordTimings - Optional provider word times on the video timeline
  */
-export async function saveTranscriptToR2(bucket, videoId, lang, segments, source, guard = null, trackLanguage = null, wordTimings = null) {
+export async function saveTranscriptToR2(bucket, videoId, lang, segments, source, guard = null, trackLanguage = null, wordTimings = null, gzip = false) {
     if (!bucket || !videoId || !segments?.length) return false;
 
     const cleanLang = normalizeLanguageCode(lang) || lang;
@@ -147,7 +163,7 @@ export async function saveTranscriptToR2(bucket, videoId, lang, segments, source
             timestamp: Date.now()
         };
 
-        const written = await bucket.put(key, JSON.stringify(data), {
+        const written = await putTranscriptObject(bucket, key, data, {
             ...(conditional ? { onlyIf: current ? { etagMatches: current.etag } : { etagDoesNotMatch: '*' } } : {}),
             httpMetadata: {
                 contentType: 'application/json'
@@ -158,7 +174,7 @@ export async function saveTranscriptToR2(bucket, videoId, lang, segments, source
                 segmentCount: String(segments.length),
                 timestamp: String(Date.now())
             }
-        });
+        }, gzip);
 
         if (guard && written === null) throw new Error('Transcript changed during ingestion');
         if (conditional && written === null) return false;

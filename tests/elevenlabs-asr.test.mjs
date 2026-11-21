@@ -4,7 +4,7 @@ import { createHmac } from 'node:crypto';
 import { fixture } from './fixtures/transcription-db.mjs';
 import { onRequestPost } from '../functions-src/api/elevenlabs-webhook.js';
 import { onRequestPost as transcriptRequest } from '../functions-src/api/transcript.js';
-import { getTranscriptFromR2 } from '../functions-src/data/transcript-r2.js';
+import { getTranscriptFromR2, saveTranscriptToR2 } from '../functions-src/data/transcript-r2.js';
 import { recoverGladiaBatch } from '../functions-src/services/gladia-recovery.js';
 import { TranscriptService } from '../functions-src/services/transcript.service.js';
 import { expireStalledScribeJobs, reserveAiJob, scribeBudgetAllows, scribeBudgetCycle } from '../functions-src/data/transcript-db.js';
@@ -279,4 +279,34 @@ test('a full Scribe budget blocks a new job before taking diamonds', async t => 
     assert.equal((await service.quoteAIJob(context, params)).reason, 'AI_AUDIO_BUDGET_EXHAUSTED');
     await assert.rejects(service.startAIJob(context, params), /AI_AUDIO_BUDGET_EXHAUSTED/);
     assert.equal(sqlite.prepare('SELECT count(*) AS n FROM ai_transcription_jobs').get().n, 1);
+});
+
+test('transcript storage reads old JSON and gzip with complete word timings', async () => {
+    const objects = new Map();
+    const r2 = {
+        async head(key) { return objects.get(key); },
+        async get(key) {
+            const object = objects.get(key);
+            if (!object) return null;
+            const response = new Response(object.value);
+            return { ...object, body: response.body, json: () => response.json() };
+        },
+        async put(key, value, options) {
+            const object = { ...options, value, etag: 'etag' };
+            objects.set(key, object);
+            return object;
+        }
+    };
+    const segments = [{ start: 0, duration: 1, text: 'こんにちは'.repeat(100) }];
+    for (const gzip of [false, true]) {
+        assert.equal(await saveTranscriptToR2(r2, videoId, 'ja', segments, 'ai',
+            { jobId: 'fixture', createdAt: 1 }, null, timings, gzip), true);
+        const stored = objects.get(`transcripts/${videoId}/ja.ai.json`);
+        assert.equal(stored.httpMetadata.contentEncoding, gzip ? 'gzip' : undefined);
+        assert.equal(stored.customMetadata.jobId, 'fixture');
+        if (gzip) assert.ok(stored.value.byteLength < 350);
+        const result = await getTranscriptFromR2(r2, videoId, 'ja', { preferAI: true });
+        assert.deepEqual(result.segments, segments);
+        assert.deepEqual(result.wordTimings, timings);
+    }
 });

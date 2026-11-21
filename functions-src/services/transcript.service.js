@@ -94,7 +94,8 @@ export class TranscriptService {
             // Persist useful captions before any optional enrichment work.
             const backgroundSaveTask = async () => {
                 const persisted = !languageMismatch && await saveTranscriptToR2(
-                    r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata', null, nativeResult.trackLanguage
+                    r2, videoId, actualLang, cleanedSegments, nativeResult.source || 'supadata', null, nativeResult.trackLanguage,
+                    null, env.TRANSCRIPT_GZIP_WRITES === 'true'
                 );
                 if (persisted && serverGradingEnabled(env) && waitUntil) {
                     waitUntil(scheduleVideoGrade(env, videoId, actualLang, { regrade: true }));

@@ -23,6 +23,12 @@ const RATE_LIMIT_CONFIG = {
     keyPrefix: 'dual-subs'
 };
 
+const READ_RATE_LIMIT = { max: 60, windowSeconds: 60, keyPrefix: 'dual-subs-read' };
+
+function consumeSubtitleRead(context) {
+    return consumeRateLimit(context.env.TRANSCRIPT_CACHE, getClientIdentifier(context.request), READ_RATE_LIMIT, context);
+}
+
 // Batch size optimized for Lingva/GTX chunking with Workers Paid CPU headroom
 const BATCH_SIZE = 40;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
@@ -33,8 +39,8 @@ const inFlightTranslations = new Map();
 
 // Cache-Control headers
 const CACHE_HEADERS = {
-    HIT: 'public, max-age=86400, stale-while-revalidate=3600',  // 24h + 1h SWR
-    FRESH: 'public, max-age=3600',                               // 1h for fresh translations
+    HIT: 'private, max-age=86400, stale-while-revalidate=3600',  // 24h + 1h SWR
+    FRESH: 'private, max-age=3600',                               // 1h for fresh translations
     PARTIAL: 'no-store'                                          // Don't cache partial/failed
 };
 
@@ -53,6 +59,9 @@ export async function onRequestGet(context) {
         if (!cleanVideoId || !sourceLang || !targetLang) {
             return jsonResponse({ error: 'Missing or invalid parameters' }, 400);
         }
+
+        const readQuota = await consumeSubtitleRead(context);
+        if (!readQuota.allowed) return rateLimitResponse(readQuota.resetAt);
 
         const r2 = env.TRANSCRIPT_STORAGE;
         const cached = await getTranslation(r2, cleanVideoId, sourceLang, targetLang);
@@ -131,9 +140,13 @@ async function handlePost(context, body) {
             return jsonResponse({ error: 'Invalid subtitle cue' }, 400);
         }
 
+        if (!saveOnly && !onlySave) {
+            const readQuota = await consumeSubtitleRead(context);
+            if (!readQuota.allowed) return rateLimitResponse(readQuota.resetAt);
+        }
+
         const r2 = env.TRANSCRIPT_STORAGE;
         const db = env.VOCAB_DB;
-
 
         // 1. Check Cache (skip if forceRefresh or saveOnly)
         if (!forceRefresh && !saveOnly && !onlySave) {

@@ -1,3 +1,4 @@
+import { readTranscriptObject } from '../data/transcript-r2.js';
 /**
  * R2 Translation Cache Utilities
  * Provides read/write operations for dual subtitle translations in R2
@@ -208,7 +209,7 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
                 const matches = (known) => segments.every((seg, idx) => known.has(cueKey(seg, idx)));
                 const loadCanon = async (suffix) => {
                     const obj = await bucket.get(`transcripts/${videoId}/${srcLang}${suffix}`);
-                    const segs = obj ? (await obj.json())?.segments : null;
+                    const segs = obj ? (await readTranscriptObject(obj))?.segments : null;
                     return segs?.length ? { segs, known: new Set(segs.map(cueKey)) } : null;
                 };
                 let canon = await loadCanon('.json');

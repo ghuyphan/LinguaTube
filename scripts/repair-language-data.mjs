@@ -13,6 +13,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
+import { gunzipSync } from 'node:zlib';
 
 import { inferSpokenLanguage } from '../functions-src/services/video-language.service.js';
 import {
@@ -46,10 +47,11 @@ async function getR2Json(key) {
     try {
         const { stdout } = await execFileAsync('npx', ['-y', 'wrangler', 'r2', 'object', 'get', `${R2_BUCKET}/${key}`, ...remoteArgs, '--pipe'], {
             cwd: projectRoot,
-            encoding: 'utf8',
+            encoding: 'buffer',
             maxBuffer: 15 * 1024 * 1024,
         });
-        return JSON.parse(stdout);
+        const bytes = stdout[0] === 0x1f && stdout[1] === 0x8b ? gunzipSync(stdout) : stdout;
+        return JSON.parse(bytes.toString('utf8'));
     } catch {
         return null;
     }
