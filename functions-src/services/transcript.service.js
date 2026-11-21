@@ -3,6 +3,7 @@ import { serverGradingEnabled } from './video-grading-jobs.js';
 import { resolveVerifiedVideoMetadata } from './video-metadata.service.js';
 import { enrichPublishedTranscript } from './transcript-enrichment.js';
 import { ingestGladiaJob, recoverGladiaSubmission } from './gladia-recovery.js';
+import { ElevenLabsProvider, hasElevenLabsConfig } from '../providers/elevenlabs.js';
 import { recoverJobRefund } from './refund-recovery.js';
 /**
  * Service for orchestrating Transcripts (AI & Native)
@@ -236,7 +237,7 @@ export class TranscriptService {
     }
 
     /**
-     * Start an AI Transcription Job using Gladia
+     * Start an AI transcription job using the configured provider
      */
     async startAIJob(context, params) {
         const db = context.db || context.env?.VOCAB_DB;
@@ -266,6 +267,11 @@ export class TranscriptService {
         // Refresh joins existing work; it never cancels somebody else's charge.
         const activeJob = await getActiveAiJob(db, videoId, normalizedLang);
         if (activeJob) return { status: 'processing', jobId: activeJob.id, videoId, availableLanguages, diamondInfo };
+
+        const useElevenLabs = env.ASR_PROVIDER === 'elevenlabs';
+        if (useElevenLabs && !hasElevenLabsConfig(env)) {
+            throw new Error('AI_SERVICE_ERROR: ElevenLabs configuration is incomplete.');
+        }
 
         // Existing D1 durations may originate from clients or incomplete captions.
         // Verify once, only on the path that can create a new paid operation.
@@ -322,38 +328,38 @@ export class TranscriptService {
             nextRegenAt: consumeResult.nextRegenAt
         };
 
-        // 7. Construct secure webhook callback URL with derived HMAC token
-        const derivedToken = await generateDerivedWebhookToken(env.GLADIA_API_KEY || '', jobId, videoId, lang);
-        const origin = env.PUBLIC_ORIGIN || env.APP_URL || 'https://voca.study';
-        const callbackUrl = `${origin}/api/gladia-webhook?token=${derivedToken}&jobId=${jobId}&videoId=${videoId}&lang=${encodeURIComponent(lang)}`;
-
-        // Persist submission intent before the chargeable upstream request.
+        // Persist submission intent and provider before the chargeable upstream request.
         const submission = await db.prepare(`UPDATE ai_transcription_jobs
-            SET submission_state='submitting',submission_started_at=strftime('%s','now')
+            SET submission_state='submitting',submission_started_at=strftime('%s','now'),asr_provider=?
             WHERE id=? AND status='queued' AND charge_status='confirmed'
               AND refund_status='none' AND submission_state='not_started'
-            RETURNING id`).bind(jobId).first();
+            RETURNING id`).bind(useElevenLabs ? 'elevenlabs' : 'gladia', jobId).first();
         if (submission?.id !== jobId) throw new Error('AI_SERVICE_ERROR: Submission authorization unavailable.');
 
-        // 8. Submit to Gladia
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        let gladiaResponse;
+        let upstream;
         try {
-            gladiaResponse = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl, { jobId, language: normalizedLang });
-        } catch (gladiaError) {
-            if (gladiaError.ambiguous) {
+            if (useElevenLabs) {
+                const provider = new ElevenLabsProvider(env.ELEVENLABS_API_KEY, env.ELEVENLABS_WEBHOOK_ID);
+                upstream = await provider.submitTranscriptionJob(youtubeUrl, { jobId });
+            } else {
+                const token = await generateDerivedWebhookToken(env.GLADIA_API_KEY || '', jobId, videoId, lang);
+                const origin = env.PUBLIC_ORIGIN || env.APP_URL || 'https://voca.study';
+                const callbackUrl = `${origin}/api/gladia-webhook?token=${token}&jobId=${jobId}&videoId=${videoId}&lang=${encodeURIComponent(lang)}`;
+                upstream = await this.gladiaProvider.submitTranscriptionJob(youtubeUrl, callbackUrl, { jobId, language: normalizedLang });
+            }
+        } catch (error) {
+            if (error.ambiguous) {
                 await db.prepare("UPDATE ai_transcription_jobs SET submission_state='uncertain' WHERE id=? AND submission_state='submitting'").bind(jobId).run();
                 return { status: 'processing', jobId, videoId, availableLanguages, diamondInfo: updatedDiamondInfo };
             }
             await db.prepare("UPDATE ai_transcription_jobs SET submission_state='rejected' WHERE id=? AND submission_state='submitting'").bind(jobId).run();
-            // Mark job failed and refund consumed diamond on submission failure
-            await atomicFailAndRefundAiJob(db, jobId, null, gladiaError.message || 'gladia_submission_failed');
+            await atomicFailAndRefundAiJob(db, jobId, null, error.message || 'asr_submission_failed');
             if (env.VOCAB_DB) await recoverJobRefund(env, jobId);
-            throw gladiaError;
+            throw error;
         }
 
-        // 9. Activate job in D1
-        await activateAiJob(db, jobId, gladiaResponse.id);
+        await activateAiJob(db, jobId, upstream.id);
 
         return {
             status: 'processing',
@@ -427,7 +433,7 @@ export class TranscriptService {
                         languageMismatch: isMismatch,
                         segments: r2Transcript.segments,
                         source: 'ai',
-                        sourceDetail: 'gladia',
+                        sourceDetail: job.asr_provider || 'gladia',
                         availableLanguages: adjustAvailableLanguages(availableLanguages, targetLang, 'ai'),
                         subLanguages: [targetLang]
                     }
@@ -448,12 +454,12 @@ export class TranscriptService {
         const nowSec = Math.floor(Date.now() / 1000);
         const jobAge = nowSec - (job.created_at || nowSec);
 
-        if (!job.gladia_job_id && ['submitting', 'uncertain'].includes(job.submission_state)) {
+        if (job.asr_provider !== 'elevenlabs' && !job.gladia_job_id && ['submitting', 'uncertain'].includes(job.submission_state)) {
             try { await recoverGladiaSubmission(env, jobId); }
             catch { console.warn('[TranscriptService] Submission reconciliation deferred'); }
         }
 
-        if (jobAge > 15 && job.gladia_job_id && env.GLADIA_API_KEY) {
+        if (jobAge > 15 && job.gladia_job_id && (job.asr_provider === 'elevenlabs' ? env.ELEVENLABS_API_KEY : env.GLADIA_API_KEY)) {
             try {
                 const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider, Date.now() + 20000);
                 if (outcome?.status === 'done' && context.waitUntil) {
@@ -464,7 +470,7 @@ export class TranscriptService {
                     status: 'done', videoInfo: {
                         videoId: targetVideoId, language: outcome.language, requestedLanguage: job.language,
                         languageMismatch: normalizeLanguageCode(outcome.language) !== normalizeLanguageCode(job.language),
-                        segments: outcome.segments, source: 'ai', sourceDetail: 'gladia', availableLanguages, subLanguages: [outcome.language]
+                        segments: outcome.segments, source: 'ai', sourceDetail: job.asr_provider || 'gladia', availableLanguages, subLanguages: [outcome.language]
                     }
                 };
             } catch (healErr) {
@@ -501,7 +507,7 @@ export class TranscriptService {
             // Resolve legacy URLs to the durable job when possible. Unknown legacy
             // results remain readable but cannot publish over a tracked transcript.
             const providerId = new URL(resultUrl).pathname.split('/').pop();
-            const tracked = await db?.prepare('SELECT id FROM ai_transcription_jobs WHERE gladia_job_id=? LIMIT 1').bind(providerId).first();
+            const tracked = await db?.prepare("SELECT id FROM ai_transcription_jobs WHERE gladia_job_id=? AND asr_provider='gladia' LIMIT 1").bind(providerId).first();
             if (tracked) return this.pollAiJobStatus(context, { ...params, jobId: tracked.id });
             const resultData = await this.gladiaProvider.checkJobStatus(resultUrl);
             if (resultData.status === 'done') {

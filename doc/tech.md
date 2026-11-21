@@ -240,3 +240,7 @@ Dictionary result keys now use `dict:v6` for the provider-direction correction. 
 ### Video level consistency (2026-10-29)
 
 Community reports cannot choose trusted provenance or overwrite verified difficulty records. Backend and Flutter share calibrated boundaries and label-derived tiers; responses return canonical saved values. See the video level hardening section in `backend-api.md` for contracts and validation. No migration or automatic regrading is needed.
+
+### ElevenLabs Scribe v3
+
+ElevenLabs Scribe v3 accepts YouTube watch URLs and returns word timestamps for AI subtitle segmentation. New jobs use it when `ASR_PROVIDER=elevenlabs`.

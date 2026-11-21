@@ -34,6 +34,7 @@ import { serverGradingActive, serverGradingEnabled } from '../services/video-gra
 
 // Services
 import { CacheManager } from '../utils/cache-manager.js';
+import { hasElevenLabsConfig } from '../providers/elevenlabs.js';
 import { GladiaProvider } from '../providers/gladia.js';
 import { SupadataProvider, resolveSupadataApiKeys } from '../providers/supadata.js';
 import { DiamondService } from '../services/diamond.service.js';
@@ -63,6 +64,8 @@ export async function onRequestGet(context) {
         database: Boolean(env.VOCAB_DB),
         storage: Boolean(env.TRANSCRIPT_STORAGE),
         hasGladiaKey: Boolean(env.GLADIA_API_KEY),
+        asrProvider: env.ASR_PROVIDER === 'elevenlabs' ? 'elevenlabs' : 'gladia',
+        hasElevenLabsConfig: hasElevenLabsConfig(env),
         hasYouTubeDataKey: Boolean(env.YOUTUBE_DATA_API_KEY),
         hasSupadataKey: resolveSupadataApiKeys(env).length > 0,
         hasTurnstileKey: Boolean(env.TURNSTILE_SECRET_KEY)
@@ -187,7 +190,7 @@ export async function onRequestPost(context) {
         const aiLanguages = knownInfo?.aiLanguages || [];
         const availableLanguages = { native: nativeLanguages, ai: aiLanguages };
 
-        const whisperAvailable = Boolean(env.GLADIA_API_KEY);
+        const whisperAvailable = env.ASR_PROVIDER === 'elevenlabs' ? hasElevenLabsConfig(env) : Boolean(env.GLADIA_API_KEY);
         const diamondInfo = {
             diamonds: diamondStatus.diamonds,
             maxDiamonds: diamondStatus.maxDiamonds,

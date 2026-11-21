@@ -733,3 +733,7 @@ The confirmed grade and diagnostics live in the language entry of
 ### Video search text
 
 Apply [the video search text migration](../db/migrations/d1/20261120_video_search_text.sql) before deploying the updated Functions. The migration adds nullable normalized title, channel, and tag fields to `video_languages` and an index over pending rows. A trigger clears stale search fields when source metadata changes. The existing `POST /api/internal/reconcile` job processes up to 50 rows per invocation and publishes normalized text only if the source metadata still matches. The `indexedVideos` log field reports progress. When the pending set is empty, new and edited metadata continue through the same maintenance path. Original titles, channels, and tags are still used for display.
+
+### ElevenLabs Scribe v3
+
+Apply `db/migrations/d1/20261121_elevenlabs_asr.sql` before activating Scribe. The new `asr_provider` field defaults existing jobs to Gladia. The provider ID remains in the existing `gladia_job_id` column. The shared callback inbox tracks delivery and R2 temporarily stages normalized Scribe cues under `asr-inbox/elevenlabs/` until publication and catalog registration finish.

@@ -12,6 +12,7 @@ export async function fixture(t) {
     sqlite.exec(await readFile(new URL('../../db/migrations/d1/20261026_video_metadata_details.sql',import.meta.url),'utf8'));
     sqlite.exec(await readFile(new URL('../../db/migrations/d1/20261113_ai_languages.sql',import.meta.url),'utf8'));
     sqlite.exec(await readFile(new URL('../../db/migrations/d1/20261114_primary_language.sql',import.meta.url),'utf8'));
+    sqlite.exec(await readFile(new URL('../../db/migrations/d1/20261121_elevenlabs_asr.sql',import.meta.url),'utf8'));
     const db={prepare(sql){
         const statement=sqlite.prepare(sql);
         return {args:[],bind(...args){this.args=args;return this;},runSync(){const value=statement.run(...this.args);return {meta:{changes:Number(value.changes)}};},

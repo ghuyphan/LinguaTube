@@ -14,6 +14,8 @@ export async function onRequest(context) {
     }
 
     const path = new URL(request.url).pathname.replace(/\/$/, '');
+    // The Scribe endpoint bounds and authenticates its raw payload before parsing.
+    if (path === '/api/elevenlabs-webhook') return next();
     const webhook = ['/api/payment/webhook', '/api/payment/revenuecat-webhook', '/api/gladia-webhook', '/api/internal/reconcile'].includes(path);
     if (!webhook) {
         const botCheck = checkBot(request);

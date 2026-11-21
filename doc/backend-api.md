@@ -40,7 +40,7 @@ Every incoming request passes through a multi-tier defense and rate-limiting pip
 - **User-Agent Blacklist**: Blocks automated scrapers and headless clients (e.g. `curl`, `python-requests`, `aiohttp`, `scrapy`, `axios`, `postmanruntime`, `gptbot`, `claudebot`, `bytespider`).
 - **Cloudflare Threat Score**: If `request.cf.threatScore > 40`, request is rejected with `403 BOT_DETECTED`.
 - **Preflight Bypass**: Automatically lets `OPTIONS` requests pass through.
-- **Trusted Webhook Bypass**: Server-to-server webhook callbacks (`/api/payment/webhook` from payOS and `/api/gladia-webhook` from Gladia) bypass the User-Agent check and use cryptographic HMAC-SHA256 signatures for authentication instead.
+- **Trusted Webhook Bypass**: Server-to-server webhook callbacks (`/api/payment/webhook` from payOS, `/api/gladia-webhook` from Gladia, and `/api/elevenlabs-webhook` from ElevenLabs) bypass the User-Agent check and use cryptographic HMAC-SHA256 signatures for authentication instead.
 
 ### 2.2. Distributed In-Memory + KV Rate Limiter (`rate-limiter.js`)
 To protect against DDoS and API credit depletion while strictly preserving Cloudflare KV's **1,000 writes/day free limit**:
@@ -72,7 +72,7 @@ To protect against DDoS and API credit depletion while strictly preserving Cloud
 - **Duration Enforcement & Livestream Blocking**: Rejects requests for videos exceeding maximum durations:
   - Native captions (`innertube` / `supadata`): Max 3 hours (10,800s).
   - Whisper / Gladia AI transcription: Duration is verified from fresh server-side upstream metadata (Free: $\le 600$s, Pro: $\le 1,200$s, Premium: $\le 2,700$s). Quotes and new paid submissions use official YouTube Data API metadata. Client duration, cached catalog fields and subtitle endpoints never authorize a charge. Live broadcasts (`isLive: true`) are rejected immediately.
-  - AI transcription (`gladia`): Max 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
+  - AI transcription: Max 10 mins (600s) for Guest/Free, 20 mins (1,200s) for Pro, 45 mins (2,700s) for Premium.
 - Validates language whitelist: `['ja', 'ko', 'zh', 'en']`.
 - Analyzes video title script using Unicode regex (e.g. rejects Cyrillic/Arabic titles when requesting Asian learning languages) using title hints from the request to bypass redundant oEmbed network calls.
 
@@ -128,20 +128,23 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
      - Verifies Diamond balance ($> 0$) and calculates duration-based cost (1 to 4 diamonds).
      - **Pre-check R2**: Ensures no transcript already exists in R2 before consuming diamonds.
      - **Atomic Lock Reservation (`reserveAiJob`)**: Inserts a new job record with `status: 'queued'` into D1 `ai_transcription_jobs`. The SQLite Partial Unique Index (`WHERE status IN ('queued', 'processing')`) guarantees strict atomic deduplication across concurrent requests from multiple browser tabs or devices.
-     - Submits YouTube audio URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` and a registered callback URL: `https://{host}/api/gladia-webhook?token={derivedToken}&jobId={jobId}&videoId={videoId}&lang={lang}`.
-     - Once upstream Gladia acknowledges job creation, activates job in D1 (`activateAiJob`) with `gladia_id` and transitions status to `'processing'`.
+     - With `ASR_PROVIDER=elevenlabs`, submits the YouTube watch URL to Scribe v3 with an asynchronous webhook and the durable Voca job ID in webhook metadata.
+     - On Gladia deployments, submits the YouTube URL to Gladia `https://api.gladia.io/v2/pre-recorded` with `sentences: true` and a registered callback URL: `https://{host}/api/gladia-webhook?token={derivedToken}&jobId={jobId}&videoId={videoId}&lang={lang}`.
+     - Once the provider acknowledges job creation, activates the job in D1 with the provider transcription ID and transitions status to `'processing'`.
      - Returns `{ status: 'processing', jobId }` immediately ($\sim 1.0\text{--}1.5$s response), entirely eliminating raw Gladia URLs (`resultUrl`) from the client and preventing edge connection timeouts (524).
      - **Active AI Job Short-Circuit & Freshness Guard**: Checks D1 `ai_transcription_jobs` (`getActiveAiJob`) first. If an AI job is already processing, returns `{ status: 'processing', jobId }`. However, if `forceRefresh: true` is passed (e.g. user requested regeneration after a timeout or error), any existing queued/processing record is superseded through a durable failure/refund transition when not leased, with the original record retained, allowing a new reservation without erasing financial history.
   6. **Opaque Job Status Polling & Server-Side Self-Healing (`pollAiJobStatus`)**:
      - Client polls status using the opaque `jobId` every 4–8 seconds (managed by root `AiJobManagerService`).
      - **Edge D1 Read (< 15ms)**: Polling requests check D1 `ai_transcription_jobs` by `jobId`. If the job is `completed`, the server loads the segments directly from R2 and responds with HTTP 200 `{ success: true, segments, source: 'ai' }`.
      - **R2 Storage Self-Healing**: If `jobId` is missing from D1 (due to retention expiration or dev server reboot), the endpoint checks Cloudflare R2 for `transcripts/{videoId}/{lang}.json`. If completed segments exist, it self-heals and immediately delivers `status: 'done'` with full cues.
-     - **Server-Side Self-Healing Fallback**: If Gladia's webhook delivery is dropped or delayed beyond 15 seconds, the edge worker directly checks Gladia's API status using server-held credentials (`GLADIA_API_KEY`) without exposing vendor endpoints. If Gladia reports completion, the worker ingests the transcript, writes to R2, updates D1 to `'completed'`, and returns the subtitles to the client.
+     - **Server-Side Self-Healing Fallback**: After 15 seconds, the worker may look up the stored provider transcription ID. A completed result is published through the same ingestion lease as webhook recovery.
      - **Automated Idempotent Diamond Refund**: If Gladia reports failure or rejects the audio, `atomicFailAndRefundAiJob` atomically transitions the job to `'failed'` in D1 and triggers `refundDiamond()` via Supabase REST API (using `SUPABASE_SERVICE_ROLE_KEY`) to restore the user's credits. Double-refunds are mathematically prevented by single-transaction state checks.
 
 ---
 
 ### 3.2. Gladia Asynchronous Webhook Receiver
+The Scribe receiver at `POST /api/elevenlabs-webhook` verifies the signed raw request, then commits callback work before acknowledging it. Recovery publishes timestamped cues to the existing AI transcript cache and registers the video and language in D1 before completion. A retry or a lost submission response must never send a second provider POST.
+
 - **Route**: `POST /api/gladia-webhook`
 - **Source**: `functions-src/api/gladia-webhook.js`
 - **Dual-Authentication Security**:

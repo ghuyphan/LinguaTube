@@ -501,3 +501,7 @@ Public recommendation candidate caching (2026-11-01): only successful verified b
 Authentication service outages must propagate 503 `AUTH_UNAVAILABLE` with `Retry-After`, including optional-auth routes; never turn a failed authenticated lookup into anonymous billing/quota ownership. Every direct `validateAuthToken` caller checks its availability response. Empty GET/HEAD ingress streams are forwarded without bodies; nonempty ones return 400. Recovery must not import optional NLP enrichment: the transcript caller owns post-publication scheduling. Preserve null-as-zero recommendation ordering with the additive expression index; bounded metadata healing fills absent fields without overwriting newer catalog values or changing discovery timestamps.
 
 Backend audit production activation (2026-11-04): deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and additive recommendation expression index are verified live; no Flutter release is required. Preserve the existing web release and runtime bindings for backend-only deployment. See [deployment evidence](doc/backend-audit-deployment-2026-11-04.md).
+
+## AI subtitle provider routing
+
+When `ASR_PROVIDER=elevenlabs`, new jobs use Scribe v3. Persist provider identity before submission, acknowledge signed callbacks after durable storage, and register the video and AI subtitle language before marking the job complete. Preserve legacy Gladia recovery, cached subtitle reuse, the diamond ledger, and the 10/20/45-minute tier caps. Apply `20261121_elevenlabs_asr.sql` before activating Scribe.

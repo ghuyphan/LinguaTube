@@ -63,7 +63,7 @@ export async function onRequestPost(context) {
     try {
         const payload = JSON.parse(rawBody);
         const job = await env.VOCAB_DB.prepare('SELECT * FROM ai_transcription_jobs WHERE id=?').bind(jobId).first();
-        if (!job || job.video_id !== videoId || job.language !== (normalizeLanguageCode(lang) || lang)) return jsonResponse({ error: 'Job identity mismatch' }, 409);
+        if (!job || job.asr_provider === 'elevenlabs' || job.video_id !== videoId || job.language !== (normalizeLanguageCode(lang) || lang)) return jsonResponse({ error: 'Job identity mismatch' }, 409);
         const providerId = payload.payload?.id || payload.id || job.gladia_job_id;
         if (job.gladia_job_id && providerId !== job.gladia_job_id) return jsonResponse({ error: 'Provider identity mismatch' }, 409);
         const status = payload.payload?.status || payload.status;

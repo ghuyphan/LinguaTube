@@ -135,7 +135,7 @@ For complete architectural guides, database schemas, and developer manuals, see 
 - Licensed under the **MIT License**.
 - Inspired by [Language Reactor](https://www.languagereactor.com/) and [LinguaCafe](https://github.com/simjanos-dev/LinguaCafe).
 - Dictionary data provided by [Jotoba](https://jotoba.de/), [Jisho.org](https://jisho.org/), [Mazii](https://mazii.net/), [Naver](https://dict.naver.com/), and [MDBG](https://www.mdbg.net/).
-- Speech AI powered by [Gladia](https://gladia.io/).
+- AI subtitles support [ElevenLabs Scribe v3](https://elevenlabs.io/speech-to-text-api) and [Gladia](https://gladia.io/). See the [backend setup](doc/development-guide.md#elevenlabs-scribe-v3).
 
 Backend/service review and migration prerequisites: [2026-10-23 report](../voca_flutter/doc/backend-service-review-2026-10-23.md).
 

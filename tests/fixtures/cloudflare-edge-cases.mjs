@@ -1,6 +1,6 @@
 // Explicit route inventory: the default suite rejects an unlisted future API file.
 export const routes = [
- ['diamonds','GET'], ['dict','GET'], ['dual-subtitles','POST'], ['geo','GET'],
+ ['diamonds','GET'], ['dict','GET'], ['dual-subtitles','POST'], ['elevenlabs-webhook','POST'], ['geo','GET'],
  ['gladia-webhook','POST'], ['grammar','GET'], ['grammar-detect','POST'], ['heal-levels','POST'], ['internal/reconcile','POST'],
  ['kanji','GET'], ['leaderboard','GET'], ['payment/check-status','GET'],
  ['payment/create-order','POST'], ['payment/revenuecat-webhook','POST'], ['payment/webhook','POST'],
@@ -16,6 +16,7 @@ const signed = { Authorization: `Bearer ${validToken}` };
 
 // Every public route passes through the real middleware for size/bot controls.
 for (const [route,method] of routes) {
+ if (route === 'elevenlabs-webhook') continue;
  const webhook = ['payment/webhook','payment/revenuecat-webhook','gladia-webhook','internal/reconcile'].includes(route);
  if (!webhook) add('bot rejected',route,{method,headers:{'User-Agent':'python-requests/2.31'},body:method==='POST'?{}:undefined,status:403,noUpstream:true});
  if (method==='POST' || ['tts','video-info','video-category','leaderboard'].includes(route)) {
@@ -55,6 +56,8 @@ add('valid order needs identity','payment/check-status',{query:{orderCode:'12345
 add('admin absent','heal-levels',{body:{},status:401,noUpstream:true});
 add('maintenance absent','internal/reconcile',{body:{},drop:'BACKEND_MAINTENANCE_SECRET',status:503,noUpstream:true});
 add('maintenance incorrect secret','internal/reconcile',{body:{},headers:{Authorization:'Bearer wrong'},status:401,noUpstream:true});
+add('callback unsigned','elevenlabs-webhook',{body:{type:'speech_to_text_transcription'},status:401,noUpstream:true});
+add('callback configuration missing','elevenlabs-webhook',{body:{type:'speech_to_text_transcription'},drop:'ELEVENLABS_WEBHOOK_SECRET',status:503,noUpstream:true});
 add('callback unsigned','gladia-webhook',{body:{id:'fake',status:'done'},status:401,noUpstream:true});
 add('payment unsigned','payment/webhook',{body:{data:{orderCode:12345678,amount:1},signature:'wrong'},status:400,noUpstream:true});
 add('revenuecat unsigned','payment/revenuecat-webhook',{body:{event:{type:'TEST'}},status:401,noUpstream:true});

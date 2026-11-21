@@ -342,6 +342,7 @@ const LANGUAGE_ALIASES = Object.assign(Object.create(null), {
     ko: 'ko', korean: 'ko', kor: 'ko', kr: 'ko',
     zh: 'zh', chinese: 'zh', cmn: 'zh', mandarin: 'zh', yue: 'zh', zho: 'zh', chi: 'zh', cn: 'zh',
     en: 'en', english: 'en', eng: 'en',
+    ru: 'ru', russian: 'ru', rus: 'ru',
     vi: 'vi', vietnamese: 'vi', vie: 'vi', vn: 'vi'
 });
 

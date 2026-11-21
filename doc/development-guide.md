@@ -259,3 +259,7 @@ Without `VOCA_MINIFLARE_MODULE`, this optional integration file reports a skip. 
 Production recommendation deployment (2026-11-01): `4e6ad152-0421-4b8d-a9e9-3b3c2168b11e`. The exact previous web manifest/assets and production configuration were preserved. Backend tests: 246 passed; isolated Flutter release tests: 1,432 passed; signed test APK prepared. See [deployment and benchmark evidence](recommendation-optimization-deployment-2026-11-01.md).
 
 Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de-a042-dc48650b8e81` and the matching D1 expression index are live. Existing API success payloads and web assets are preserved; no Flutter release is required. See [deployment verification](backend-audit-deployment-2026-11-04.md).
+
+### ElevenLabs Scribe v3
+
+For Scribe v3, apply `20261121_elevenlabs_asr.sql` to D1, create an HMAC ElevenLabs webhook for transcription completion at `/api/elevenlabs-webhook`, and enable webhook retries. Set `ELEVENLABS_API_KEY` with Speech to Text access, `ELEVENLABS_WEBHOOK_ID`, and `ELEVENLABS_WEBHOOK_SECRET` in the Pages environment before setting `ASR_PROVIDER=elevenlabs`. Keep the Gladia credentials for existing jobs. Check the transcript health endpoint after activation and verify a paid job completes, is cataloged, and is reused on repeat.
