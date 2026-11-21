@@ -206,7 +206,7 @@ export async function onRequestPost(context) {
                 return jsonResponse({ success: true, ...quote }, 200, { 'Cache-Control': 'no-store' });
             } catch (error) {
                 const errorCode = error.message.split(':')[0];
-                if (!['VIDEO_DURATION_UNAVAILABLE', 'LIVESTREAM_NOT_SUPPORTED', 'VIDEO_UNAVAILABLE', 'VIDEO_METADATA_NOT_CONFIGURED', 'VIDEO_METADATA_STORAGE_UNAVAILABLE'].includes(errorCode)) throw error;
+                if (!error.status && !['VIDEO_DURATION_UNAVAILABLE', 'LIVESTREAM_NOT_SUPPORTED', 'VIDEO_UNAVAILABLE', 'VIDEO_METADATA_NOT_CONFIGURED', 'VIDEO_METADATA_STORAGE_UNAVAILABLE'].includes(errorCode)) throw error;
                 return jsonResponse({ success: false, errorCode, error: error.message }, error.status || 400, { 'Cache-Control': 'no-store', ...(error.retryAfterSeconds ? { 'Retry-After': String(error.retryAfterSeconds) } : {}) });
             }
         }

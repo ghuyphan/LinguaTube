@@ -505,3 +505,5 @@ Backend audit production activation (2026-11-04): deployment `a59861b3-fd06-47de
 ## AI subtitle provider routing
 
 When `ASR_PROVIDER=elevenlabs`, new jobs use Scribe v3. Persist provider identity before submission, acknowledge signed callbacks after durable storage, and register the video and AI subtitle language before marking the job complete. Preserve legacy Gladia recovery, cached subtitle reuse, the diamond ledger, and the 10/20/45-minute tier caps. Apply `20261121_elevenlabs_asr.sql` before activating Scribe.
+
+With the Scribe audio cap enabled, reserve verified audio duration atomically before charging diamonds. Retain the reservation after uncertain provider submissions. Configure the real billing anchor and apply the budget index before activation.

@@ -559,7 +559,7 @@ Returns verified videos with pre-cached transcripts from Cloudflare D1/R2 (<50ms
     "diamonds": 5,                      // Current balance
     "maxDiamonds": 5,                   // Anon: 3, Free: 5, Pro: 10, Premium: 25
     "nextRegenAt": 1725805000000,       // Epoch timestamp in ms
-    "regenIntervalMs": 900000,          // 15 minutes (free)
+    "regenIntervalMs": 1500000,         // 25 minutes (free)
     "tier": "free",                     // "anonymous" | "free" | "pro" | "premium"
     "maxVideoDurationSec": 600          // Free/Anon: 600s, Pro: 1200s, Premium: 2700s
   }

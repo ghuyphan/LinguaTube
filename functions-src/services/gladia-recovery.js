@@ -1,7 +1,7 @@
 import { ElevenLabsProvider, elevenLabsCallbackKey } from '../providers/elevenlabs.js';
 import { enqueueVideoGrade, serverGradingEnabled } from './video-grading-jobs.js';
 import { GladiaProvider } from '../providers/gladia.js';
-import { atomicFailAndRefundAiJob, completeAiJob, activateAiJob } from '../data/transcript-db.js';
+import { ASR_SUBMISSION_TIMEOUT, atomicFailAndRefundAiJob, completeAiJob, activateAiJob } from '../data/transcript-db.js';
 import { saveTranscriptToR2 } from '../data/transcript-r2.js';
 import { cleanTranscriptSegments, extractGladiaSegments, extractGladiaDetectedLanguage, resolveIngestedLanguage } from '../utils/transcript-utils.js';
 import { addAiLanguage, saveVideoLanguages } from '../data/video-info-db.js';
@@ -27,9 +27,12 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
     const db = env.VOCAB_DB;
     const lease = crypto.randomUUID();
     const job = await db.prepare(`UPDATE ai_transcription_jobs SET ingestion_lease=?,ingestion_lease_until=strftime('%s','now')+60
-        WHERE id=? AND status IN ('queued','processing') AND (gladia_job_id IS NOT NULL OR (? AND asr_provider='elevenlabs')) AND charge_status IN ('confirmed','legacy')
+        WHERE id=? AND (status IN ('queued','processing') OR
+            (status='failed' AND asr_provider='elevenlabs' AND error_code=? AND ?))
+        AND (gladia_job_id IS NOT NULL OR (? AND asr_provider='elevenlabs')) AND charge_status IN ('confirmed','legacy')
         AND (ingestion_lease_until IS NULL OR ingestion_lease_until<strftime('%s','now'))
-        AND (? OR next_provider_check_at<=strftime('%s','now')) RETURNING *`).bind(lease, jobId, callbackResult ? 1 : 0, force ? 1 : 0).first();
+        AND (? OR next_provider_check_at<=strftime('%s','now')) RETURNING *`)
+        .bind(lease, jobId, ASR_SUBMISSION_TIMEOUT, callbackResult?.status === 'done' ? 1 : 0, callbackResult ? 1 : 0, force ? 1 : 0).first();
     if (!job) return null;
     try {
         if (Date.now() >= deadline) throw new Error('Ingestion budget exhausted');
@@ -42,6 +45,7 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
         }
         const segments = result.status === 'done' ? cleanTranscriptSegments(isElevenLabs ? result.segments : extractGladiaSegments(result)) : [];
         if (!segments.length) {
+            if (job.error_code === ASR_SUBMISSION_TIMEOUT) return { status: 'no_speech' };
             const errorCode = result.status === 'error' ? (isElevenLabs ? 'AI_JOB_FAILED' : 'GLADIA_ERROR') : 'NO_SPEECH_DETECTED';
             await atomicFailAndRefundAiJob(db, job.id, errorCode,
                 result.status === 'error' ? 'AI transcription failed' : 'Audio contains no detectable speech', lease);
@@ -57,7 +61,7 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
         if (Date.now() >= deadline) throw new Error('Ingestion budget exhausted');
         // Expiration/refund paths respect this lease. Recheck before publishing.
         const owns = await db.prepare(`SELECT id FROM ai_transcription_jobs WHERE id=? AND ingestion_lease=?
-            AND ingestion_lease_until>strftime('%s','now') AND status IN ('queued','processing')`).bind(job.id, lease).first();
+            AND ingestion_lease_until>strftime('%s','now')`).bind(job.id, lease).first();
         if (!owns) throw new Error('Ingestion lease expired');
         if (!(await saveTranscriptToR2(env.TRANSCRIPT_STORAGE, job.video_id, language, enriched, 'ai', { jobId: job.id, createdAt: job.created_at }))) throw new Error('Transcript persistence unavailable');
         const last = enriched[enriched.length - 1];
@@ -104,7 +108,9 @@ export async function recoverGladiaBatch(env, limit = 25, deadline = Date.now() 
             if (!isElevenLabs && job.gladia_job_id && job.gladia_job_id !== event.provider_job_id) {
                 throw new Error('Notification identity mismatch');
             }
-            if (!['completed', 'failed'].includes(job.status)) {
+            const lateScribeResult = isElevenLabs && event.outcome === 'done' && job.error_code === ASR_SUBMISSION_TIMEOUT;
+            let outcome;
+            if (job.status !== 'completed' && (job.status !== 'failed' || lateScribeResult)) {
                 let callbackResult = null;
                 if (isElevenLabs) {
                     if (event.outcome === 'error') {
@@ -117,10 +123,13 @@ export async function recoverGladiaBatch(env, limit = 25, deadline = Date.now() 
                 } else if (!job.gladia_job_id && job.charge_status === 'confirmed') {
                     await db.prepare("UPDATE ai_transcription_jobs SET gladia_job_id=?,submission_state='accepted' WHERE id=? AND gladia_job_id IS NULL").bind(event.provider_job_id, job.id).run();
                 }
-                await ingestGladiaJob(env, job.id, undefined, deadline, { force: true, callbackResult });
+                outcome = await ingestGladiaJob(env, job.id, undefined, deadline, { force: true, callbackResult });
             }
-            const terminal = await db.prepare("SELECT id FROM ai_transcription_jobs WHERE id=? AND status IN ('completed','failed')").bind(job.id).first();
+            const terminal = await db.prepare("SELECT status FROM ai_transcription_jobs WHERE id=? AND status IN ('completed','failed')").bind(job.id).first();
             if (!terminal) throw new Error('Provider processing or job leased');
+            if (lateScribeResult && terminal.status !== 'completed' && outcome?.status !== 'no_speech') {
+                throw new Error('Late result publication pending');
+            }
             await db.prepare("UPDATE gladia_callback_inbox SET status='confirmed' WHERE id=?").bind(event.id).run();
             if (isElevenLabs && event.outcome === 'done') {
                 await env.TRANSCRIPT_STORAGE.delete(elevenLabsCallbackKey(job.id)).catch(() => {});

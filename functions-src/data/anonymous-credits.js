@@ -1,6 +1,7 @@
 import { sha256 } from '../utils/utils.js';
 
-const INTERVAL = 20 * 60 * 1000;
+export const GUEST_REGEN_MINUTES = 30;
+const INTERVAL = GUEST_REGEN_MINUTES * 60 * 1000;
 
 export async function anonymousBalance(db, kv, clientId, now = Date.now()) {
     if (!db || !clientId) throw new Error('Anonymous credit database unavailable');

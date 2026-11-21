@@ -1,36 +1,36 @@
-import { anonymousBalance, consumeAnonymousCredits } from '../data/anonymous-credits.js';
+import { anonymousBalance, consumeAnonymousCredits, GUEST_REGEN_MINUTES } from '../data/anonymous-credits.js';
 import { serviceRoleRequest } from './supabase-rest.js';
 
 export const TIER_CONFIGS = {
     anonymous: {
         tier: 'anonymous',
         maxDiamonds: 3,
-        regenIntervalMinutes: 20,
-        regenIntervalMs: 20 * 60 * 1000,
+        regenIntervalMinutes: GUEST_REGEN_MINUTES,
+        regenIntervalMs: GUEST_REGEN_MINUTES * 60 * 1000,
         regenAmount: 1,
         maxVideoDurationSec: 600, // 10 minutes
     },
     free: {
         tier: 'free',
         maxDiamonds: 5,
-        regenIntervalMinutes: 15,
-        regenIntervalMs: 15 * 60 * 1000,
+        regenIntervalMinutes: 25,
+        regenIntervalMs: 25 * 60 * 1000,
         regenAmount: 1,
         maxVideoDurationSec: 600, // 10 minutes
     },
     pro: {
         tier: 'pro',
         maxDiamonds: 10,
-        regenIntervalMinutes: 10,
-        regenIntervalMs: 10 * 60 * 1000,
+        regenIntervalMinutes: 15,
+        regenIntervalMs: 15 * 60 * 1000,
         regenAmount: 1,
         maxVideoDurationSec: 1200, // 20 minutes
     },
     premium: {
         tier: 'premium',
         maxDiamonds: 25,
-        regenIntervalMinutes: 4,
-        regenIntervalMs: 4 * 60 * 1000,
+        regenIntervalMinutes: 5,
+        regenIntervalMs: 5 * 60 * 1000,
         regenAmount: 1,
         maxVideoDurationSec: 2700, // 45 minutes
     }

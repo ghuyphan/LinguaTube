@@ -143,22 +143,22 @@ test('DiamondService: tier configurations enforce correct limits', async () => {
 
   const anon = getTierDiamondConfig('anonymous');
   assert.equal(anon.maxDiamonds, 3);
-  assert.equal(anon.regenIntervalMinutes, 20);
+  assert.equal(anon.regenIntervalMinutes, 30);
   assert.equal(anon.maxVideoDurationSec, 600);
 
   const free = getTierDiamondConfig('free');
   assert.equal(free.maxDiamonds, 5);
-  assert.equal(free.regenIntervalMinutes, 15);
+  assert.equal(free.regenIntervalMinutes, 25);
   assert.equal(free.maxVideoDurationSec, 600);
 
   const pro = getTierDiamondConfig('pro');
   assert.equal(pro.maxDiamonds, 10);
-  assert.equal(pro.regenIntervalMinutes, 10);
+  assert.equal(pro.regenIntervalMinutes, 15);
   assert.equal(pro.maxVideoDurationSec, 1200);
 
   const premium = getTierDiamondConfig('premium');
   assert.equal(premium.maxDiamonds, 25);
-  assert.equal(premium.regenIntervalMinutes, 4);
+  assert.equal(premium.regenIntervalMinutes, 5);
 });
 
 test('Auth: getUserTier and hasPaidAccess correctly identify pro and premium users', async () => {

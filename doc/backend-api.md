@@ -145,6 +145,10 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 ### 3.2. Gladia Asynchronous Webhook Receiver
 The Scribe receiver at `POST /api/elevenlabs-webhook` verifies the signed raw request, then commits callback work before acknowledging it. Recovery publishes timestamped cues to the existing AI transcript cache and registers the video and language in D1 before completion. A retry or a lost submission response must never send a second provider POST.
 
+Scribe outbound requests use manual redirect handling on Workers. A submission with no provider ID or pending callback expires after 15 minutes on job polling or maintenance and enters the existing diamond refund flow. Polling returns `AI_JOB_FAILED` so existing app versions discard the saved job. A late signed result can still populate the transcript cache and catalog after the refund.
+
+With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour budget per billing month. Quotes report `AI_AUDIO_BUDGET_EXHAUSTED` when the verified duration exceeds the available budget. Submission reserves time atomically in D1 before charging diamonds and returns HTTP 429 with the same code if another request used the remaining capacity. Cached tracks and active jobs bypass the check. Definite rejections release capacity. Uncertain submissions count against the budget even if Voca refunds the diamonds.
+
 - **Route**: `POST /api/gladia-webhook`
 - **Source**: `functions-src/api/gladia-webhook.js`
 - **Dual-Authentication Security**:
@@ -343,7 +347,7 @@ The Scribe receiver at `POST /api/elevenlabs-webhook` verifies the signed raw re
     "diamonds": 5,
     "maxDiamonds": 5,
     "nextRegenAt": 1725732000000,
-    "regenIntervalMs": 900000,
+    "regenIntervalMs": 1500000,
     "tier": "free",
     "maxVideoDurationSec": 900
   }
@@ -351,10 +355,12 @@ The Scribe receiver at `POST /api/elevenlabs-webhook` verifies the signed raw re
 - **Multi-Tier Quotas & Regeneration**:
   | Tier | Max Diamonds | Regen Interval | Max AI Video Duration |
   | :--- | :--- | :--- | :--- |
-  | **Anonymous** | 3 | 20 minutes | 10 minutes (600s) |
-  | **Free** (Signed in) | 5 | 15 minutes | 10 minutes (600s) |
-  | **Pro** | 10 | 10 minutes | 20 minutes (1,200s) |
-  | **Premium** | 25 | 4 minutes | 45 minutes (2,700s) |
+  | **Anonymous** | 3 | 30 minutes | 10 minutes (600s) |
+  | **Free** (Signed in) | 5 | 25 minutes | 10 minutes (600s) |
+  | **Pro** | 10 | 15 minutes | 20 minutes (1,200s) |
+  | **Premium** | 25 | 5 minutes | 45 minutes (2,700s) |
+
+  Apply `db/migrations/20261121_diamond_refill_intervals.sql` to Supabase with the backend release so the signed-in balance and the API countdown use the same intervals.
 - **Dynamic Cost Scaling**:
   - $\le 10$ minutes: **1 Diamond credit**
   - $10$–$20$ minutes: **2 Diamond credits**

@@ -1,5 +1,6 @@
 import { ELEVENLABS_MAX_RESULT_BYTES, elevenLabsCallbackKey, toElevenLabsResult } from '../providers/elevenlabs.js';
 import { recoverGladiaBatch } from '../services/gladia-recovery.js';
+import { ASR_SUBMISSION_TIMEOUT } from '../data/transcript-db.js';
 import { readBoundedBody } from '../utils/response-body.js';
 import { jsonResponse } from '../utils/utils.js';
 
@@ -51,7 +52,8 @@ export async function onRequestPost(context) {
         if (!job || job.asr_provider !== 'elevenlabs' || job.charge_status !== 'confirmed') {
             return jsonResponse({ error: 'Job identity mismatch' }, 409);
         }
-        if (['completed', 'failed'].includes(job.status)) return jsonResponse({ received: true });
+        if (job.status === 'completed' || (job.status === 'failed' &&
+            !(success && job.error_code === ASR_SUBMISSION_TIMEOUT))) return jsonResponse({ received: true });
 
         if (success) {
             const transcription = data.transcription;

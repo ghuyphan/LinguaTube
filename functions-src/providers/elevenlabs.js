@@ -28,9 +28,10 @@ export class ElevenLabsProvider {
         body.set('webhook_id', this.webhookId);
         body.set('webhook_metadata', JSON.stringify({ voca_job_id: jobId }));
         const signal = AbortSignal.timeout(24000);
+        let stage = 'request';
         try {
             const response = await fetch(API, { method: 'POST', body, signal,
-                headers: { 'xi-api-key': this.apiKey }, redirect: 'error' });
+                headers: { 'xi-api-key': this.apiKey }, redirect: 'manual' });
             if (!response.ok) {
                 await response.body?.cancel().catch(() => {});
                 const error = new Error(`ElevenLabs submit failed (${response.status})`);
@@ -38,10 +39,15 @@ export class ElevenLabsProvider {
                 error.ambiguous = response.status >= 500 || response.status === 408;
                 throw error;
             }
+            stage = 'response';
             const result = await parseResponse(response, signal, 65536);
-            if (!ID.test(result.transcription_id || '')) throw new Error('Missing transcription ID');
+            stage = 'missing_transcription_id';
+            if (typeof result.transcription_id !== 'string' || !ID.test(result.transcription_id)) {
+                throw new Error('Missing transcription ID');
+            }
             return { id: result.transcription_id };
         } catch (error) {
+            console.warn('[ElevenLabs] Submission failed', { jobId, stage, status: error.status, timedOut: signal.aborted });
             if (error.status) throw error;
             const uncertain = new Error('ElevenLabs submission outcome is uncertain');
             uncertain.ambiguous = true;
@@ -53,7 +59,7 @@ export class ElevenLabsProvider {
         if (!this.apiKey || !ID.test(id || '')) throw new Error('ElevenLabs result lookup unavailable');
         const signal = requestSignal(deadline, 10000);
         const response = await fetch(`${API}/transcripts/${id}`, {
-            headers: { 'xi-api-key': this.apiKey }, signal, redirect: 'error'
+            headers: { 'xi-api-key': this.apiKey }, signal, redirect: 'manual'
         });
         if (!response.ok || response.status === 202) {
             await response.body?.cancel().catch(() => {});

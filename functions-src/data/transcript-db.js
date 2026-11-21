@@ -9,6 +9,45 @@
 
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 
+export const AI_AUDIO_BUDGET_EXHAUSTED = 'AI_AUDIO_BUDGET_EXHAUSTED';
+const SCRIBE_AUDIO_LIMIT = 25 * 60 * 60;
+const SCRIBE_AUDIO_USED = `
+    SELECT COALESCE(SUM(ceil(verified_duration_seconds)), 0)
+    FROM (
+        SELECT verified_duration_seconds FROM ai_transcription_jobs
+        WHERE asr_provider='elevenlabs' AND submission_state='not_started' AND status='queued'
+        UNION ALL
+        SELECT verified_duration_seconds FROM ai_transcription_jobs
+        WHERE asr_provider='elevenlabs' AND submission_state IN ('submitting','uncertain','accepted')
+          AND COALESCE(submission_started_at, created_at)>=?
+    )
+`;
+
+export function scribeBudgetCycle(env, now = Date.now()) {
+    if (env?.ASR_PROVIDER !== 'elevenlabs' || !env.ELEVENLABS_BILLING_ANCHOR) return null;
+    const value = env.ELEVENLABS_BILLING_ANCHOR;
+    const anchor = new Date(value);
+    if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value) ||
+        !Number.isFinite(+anchor) || anchor.toISOString().replace('.000Z', 'Z') !== value) {
+        throw Object.assign(new Error('AI_SERVICE_ERROR: AI audio budget configuration is invalid.'), { status: 503 });
+    }
+    const current = new Date(now);
+    const boundary = offset => {
+        const month = new Date(Date.UTC(current.getUTCFullYear(), current.getUTCMonth() + offset, 1));
+        const days = new Date(Date.UTC(month.getUTCFullYear(), month.getUTCMonth() + 1, 0)).getUTCDate();
+        month.setUTCDate(Math.min(anchor.getUTCDate(), days));
+        return month.setUTCHours(anchor.getUTCHours(), anchor.getUTCMinutes(), anchor.getUTCSeconds()) / 1000;
+    };
+    const offset = now / 1000 >= boundary(0) ? 0 : -1;
+    return { start: boundary(offset), end: boundary(offset + 1) };
+}
+
+export async function scribeBudgetAllows(db, cycle, seconds) {
+    const row = await db.prepare(`SELECT (${SCRIBE_AUDIO_USED}) + ceil(?) <= ? AS allowed`)
+        .bind(cycle.start, seconds, SCRIBE_AUDIO_LIMIT).first();
+    return row?.allowed === 1;
+}
+
 export function generateJobId() {
     if (typeof crypto !== 'undefined' && crypto.randomUUID) {
         return 'job_' + crypto.randomUUID().replace(/-/g, '').slice(0, 16);
@@ -35,18 +74,27 @@ export function generateJobId() {
  * @param {number} [params.diamondsCharged]
  * @returns {Promise<{ isNew: boolean, job: object }>}
  */
-export async function reserveAiJob(db, { videoId, language, userId = null, clientId, userTier = 'free', diamondsCharged = 1, verifiedDurationSeconds = null, durationSource = null, durationVerifiedAt = null }) {
+export async function reserveAiJob(db, { videoId, language, userId = null, clientId, userTier = 'free', diamondsCharged = 1, verifiedDurationSeconds = null, durationSource = null, durationVerifiedAt = null, scribeCycle = null }) {
     if (!db || !videoId || !language) throw new Error('Missing required parameters for reserveAiJob');
     const normLang = normalizeLanguageCode(language) || language;
     const id = generateJobId();
 
     try {
-        await db.prepare(`
+        const inserted = await db.prepare(`
             INSERT INTO ai_transcription_jobs (
                 id, video_id, language, user_id, client_id, user_tier,
-                diamonds_charged, verified_duration_seconds, duration_source, duration_verified_at, charge_status, refund_status, submission_state, status, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'not_started', 'queued', strftime('%s', 'now'), strftime('%s', 'now'))
-        `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged, verifiedDurationSeconds, durationSource, durationVerifiedAt).run();
+                diamonds_charged, verified_duration_seconds, duration_source, duration_verified_at, charge_status, refund_status, submission_state, status, created_at, updated_at, asr_provider
+            ) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'not_started', 'queued', unixepoch(), unixepoch(), ?
+            ${scribeCycle ? `WHERE unixepoch()>=? AND unixepoch()<? AND (${SCRIBE_AUDIO_USED}) + ceil(?) <= ?` : ''}
+        `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged, verifiedDurationSeconds, durationSource, durationVerifiedAt,
+            scribeCycle ? 'elevenlabs' : 'gladia',
+            ...(scribeCycle ? [scribeCycle.start, scribeCycle.end, scribeCycle.start, verifiedDurationSeconds, SCRIBE_AUDIO_LIMIT] : [])
+        ).run();
+        if (scribeCycle && inserted.meta?.changes === 0) {
+            const existing = await getActiveAiJob(db, videoId, normLang);
+            if (existing) return { isNew: false, job: existing };
+            throw Object.assign(new Error(`${AI_AUDIO_BUDGET_EXHAUSTED}: New AI subtitles are temporarily paused for this video because the shared audio budget is low.`), { status: 429 });
+        }
 
         const newJob = await getAiJobById(db, id);
         return {
@@ -101,6 +149,30 @@ export async function getAiJobById(db, jobId) {
     `).bind(jobId).first();
 }
 
+export const ASR_SUBMISSION_TIMEOUT = 'ASR_SUBMISSION_TIMEOUT';
+export const ASR_SUBMISSION_TIMEOUT_MESSAGE = 'Could not confirm AI transcription. Your diamond charge will be refunded.';
+
+export async function expireUnconfirmedScribeJobs(db, jobId = null) {
+    const { results } = await db.prepare(`
+        UPDATE ai_transcription_jobs
+        SET status='failed', error_code=?, error_message=?, refund_status='pending',
+            updated_at=unixepoch(), completed_at=unixepoch()
+        WHERE id IN (
+            SELECT j.id FROM ai_transcription_jobs j
+            WHERE (? IS NULL OR j.id=?) AND j.status IN ('queued','processing')
+              AND j.asr_provider='elevenlabs' AND j.gladia_job_id IS NULL
+              AND j.submission_state IN ('submitting','uncertain')
+              AND j.charge_status='confirmed' AND j.refund_status='none'
+              AND COALESCE(j.submission_started_at,j.created_at)<=unixepoch()-900
+              AND (j.ingestion_lease_until IS NULL OR j.ingestion_lease_until<unixepoch())
+              AND NOT EXISTS (SELECT 1 FROM gladia_callback_inbox i WHERE i.job_id=j.id AND i.status='pending')
+            ORDER BY j.created_at LIMIT 25
+        )
+        RETURNING id
+    `).bind(ASR_SUBMISSION_TIMEOUT, ASR_SUBMISSION_TIMEOUT_MESSAGE, jobId, jobId).all();
+    return results || [];
+}
+
 /**
  * Get active job by videoId and language (queued or processing)
  * Includes 15-minute auto-expiry for zombie jobs
@@ -150,9 +222,10 @@ export async function completeAiJob(db, jobId, detectedLang = null, lease = null
             detected_language = COALESCE(?, detected_language),
             updated_at = strftime('%s', 'now'),
             completed_at = strftime('%s', 'now')
-        WHERE id = ? AND status IN ('queued','processing')
+        WHERE id = ? AND (status IN ('queued','processing') OR
+            (status='failed' AND asr_provider='elevenlabs' AND error_code=? AND ? IS NOT NULL))
           AND ((ingestion_lease IS NULL AND ? IS NULL) OR (ingestion_lease=? AND ingestion_lease_until>strftime('%s','now')))
-    `).bind(detectedLang, jobId, lease, lease).run();
+    `).bind(detectedLang, jobId, ASR_SUBMISSION_TIMEOUT, lease, lease, lease).run();
     return (result.meta?.changes ?? 0) > 0;
 }
 

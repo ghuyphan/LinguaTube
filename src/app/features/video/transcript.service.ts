@@ -82,7 +82,7 @@ export class TranscriptService {
   readonly diamonds = signal(3);
   readonly maxDiamonds = signal(3);
   readonly nextRegenAt = signal<number | null>(null);
-  readonly regenIntervalMs = signal<number>(20 * 60 * 1000);
+  readonly regenIntervalMs = signal<number>(30 * 60 * 1000);
   readonly userTier = signal<string>('anonymous');
   readonly maxVideoDurationSec = signal<number>(600);
   readonly isDiamondLoading = signal(false);

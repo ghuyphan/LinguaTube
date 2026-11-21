@@ -650,10 +650,10 @@ Voca features a multi-tiered credit and quota management system designed to bala
 ### 11.1. Tier Specifications & Quotas
 | Tier | Trigger / Qualification | Max Credits | Regen Rate | Max AI Video Length | Daily KV Sync Policy |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **`anonymous`** | Unauthenticated guest IP | 3 Diamonds | 1 credit / 20 min | $\le 10$ minutes | In-memory cached; throttled KV sync |
-| **`free`** | Authenticated user (default) | 5 Diamonds | 1 credit / 15 min | $\le 10$ minutes | Supabase profiles record + in-memory cache |
-| **`pro`** | Active Pro subscriber | 10 Diamonds | 1 credit / 10 min | $\le 20$ minutes | Supabase profiles record + instant sync |
-| **`premium`** | Active Premium subscriber | 25 Diamonds | 1 credit / 4 min | $\le 45$ minutes | Supabase profiles record + instant sync |
+| **`anonymous`** | Unauthenticated guest IP | 3 Diamonds | 1 credit / 30 min | $\le 10$ minutes | In-memory cached; throttled KV sync |
+| **`free`** | Authenticated user (default) | 5 Diamonds | 1 credit / 25 min | $\le 10$ minutes | Supabase profiles record + in-memory cache |
+| **`pro`** | Active Pro subscriber | 10 Diamonds | 1 credit / 15 min | $\le 20$ minutes | Supabase profiles record + instant sync |
+| **`premium`** | Active Premium subscriber | 25 Diamonds | 1 credit / 5 min | $\le 45$ minutes | Supabase profiles record + instant sync |
 
 - **Defaulting to Free**: New registered users always default to the `free` tier (awarding 5 diamonds as an onboarding reward). Upgrades to `pro` or `premium` occur exclusively via verified payment or administrative grant.
 - **Dynamic Cost Scaling**:

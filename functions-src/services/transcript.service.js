@@ -21,6 +21,11 @@ import {
     activateAiJob,
     getAiJobById,
     getActiveAiJob,
+    scribeBudgetCycle,
+    scribeBudgetAllows,
+    AI_AUDIO_BUDGET_EXHAUSTED,
+    expireUnconfirmedScribeJobs,
+    ASR_SUBMISSION_TIMEOUT,
     atomicFailAndRefundAiJob
 } from '../data/transcript-db.js';
 
@@ -230,8 +235,12 @@ export class TranscriptService {
             Boolean(await getActiveAiJob(db, videoId, normalizedLang));
         if (reusable) return { cost: 0, ...diamondInfo, canGenerate: true, reason: null };
         const price = await this._verifiedAIPrice(context, videoId, user);
-        const reason = price.durationSeconds > price.maxDurationSeconds ? 'VIDEO_TOO_LONG' :
+        let reason = price.durationSeconds > price.maxDurationSeconds ? 'VIDEO_TOO_LONG' :
             diamondInfo.diamonds < price.cost ? 'INSUFFICIENT_DIAMONDS' : null;
+        const cycle = reason === null ? scribeBudgetCycle(context.env) : null;
+        if (cycle && !(await scribeBudgetAllows(db, cycle, price.durationSeconds))) {
+            reason = AI_AUDIO_BUDGET_EXHAUSTED;
+        }
         return { cost: price.cost, ...diamondInfo, durationSeconds: price.durationSeconds,
             maxDurationSeconds: price.maxDurationSeconds, canGenerate: reason === null, reason };
     }
@@ -292,7 +301,8 @@ export class TranscriptService {
             clientId,
             userTier: tier,
             diamondsCharged: requiredDiamonds,
-            verifiedDurationSeconds: price.durationSeconds, durationSource: price.source, durationVerifiedAt: price.verifiedAt
+            verifiedDurationSeconds: price.durationSeconds, durationSource: price.source, durationVerifiedAt: price.verifiedAt,
+            scribeCycle: scribeBudgetCycle(env)
         });
 
         if (!reservation.isNew) {
@@ -387,7 +397,7 @@ export class TranscriptService {
             return { status: 'error', error: 'Missing jobId for status check' };
         }
 
-        const job = await getAiJobById(db, jobId);
+        let job = await getAiJobById(db, jobId);
         if (!job) {
             // Self-healing fallback: Check if R2 already contains completed transcript for (videoId, lang)
             const fallbackVideoId = videoId || params?.cleanVideoId;
@@ -414,6 +424,16 @@ export class TranscriptService {
                 }
             }
             return { status: 'error', error: 'Transcription job not found or expired' };
+        }
+
+        if (job.asr_provider === 'elevenlabs' && !job.gladia_job_id &&
+            ['queued', 'processing'].includes(job.status) &&
+            (job.submission_started_at ?? job.created_at) <= Date.now() / 1000 - 900) {
+            await expireUnconfirmedScribeJobs(db, jobId);
+            job = await getAiJobById(db, jobId) ?? job;
+        }
+        if (job.error_code === ASR_SUBMISSION_TIMEOUT && job.refund_status === 'pending') {
+            await recoverJobRefund(env, jobId);
         }
 
         const targetVideoId = job.video_id || videoId;
@@ -445,7 +465,9 @@ export class TranscriptService {
         if (job.status === 'failed') {
             return {
                 status: 'error',
-                errorCode: job.error_code || 'AI_JOB_FAILED',
+                errorCode: job.error_code === ASR_SUBMISSION_TIMEOUT
+                    ? 'AI_JOB_FAILED'
+                    : (job.error_code || 'AI_JOB_FAILED'),
                 error: job.error_message || 'AI transcription failed'
             };
         }

@@ -643,3 +643,7 @@ route and native and AI caption flows share that job state.
 ### Scribe v3 ASR
 
 Configured deployments route new AI jobs to ElevenLabs Scribe v3. Its signed webhook and provider lookup share the existing ingestion lease and publish to the same AI transcript cache and D1 catalog. The stored provider keeps existing Gladia jobs recoverable across the switch.
+
+Polling and maintenance expire unconfirmed Scribe submissions after 15 minutes using the shared refund ledger. The existing webhook ingestion path can still publish late signed results.
+
+The configured Scribe audio budget uses the existing D1 job rows and atomically checks verified duration when reserving a job. The provider billing anchor determines the cycle.

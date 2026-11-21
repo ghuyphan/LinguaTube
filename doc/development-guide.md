@@ -263,3 +263,5 @@ Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de
 ### ElevenLabs Scribe v3
 
 For Scribe v3, apply `20261121_elevenlabs_asr.sql` to D1, create an HMAC ElevenLabs webhook for transcription completion at `/api/elevenlabs-webhook`, and enable webhook retries. Set `ELEVENLABS_API_KEY` with Speech to Text access, `ELEVENLABS_WEBHOOK_ID`, and `ELEVENLABS_WEBHOOK_SECRET` in the Pages environment before setting `ASR_PROVIDER=elevenlabs`. Keep the Gladia credentials for existing jobs. Check the transcript health endpoint after activation and verify a paid job completes, is cataloged, and is reused on repeat.
+
+To enable the 25-hour shared audio cap, apply `20261121_elevenlabs_audio_budget.sql`, set `ELEVENLABS_BILLING_ANCHOR` to an actual ElevenLabs monthly renewal timestamp in UTC (`YYYY-MM-DDTHH:mm:ssZ`), and deploy. The day and time recur monthly, using the last day in shorter months. Update the anchor if the provider renewal schedule changes. Jobs submitted outside Voca are outside this budget.
