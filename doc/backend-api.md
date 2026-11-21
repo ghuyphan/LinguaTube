@@ -147,6 +147,8 @@ The Scribe receiver at `POST /api/elevenlabs-webhook` verifies the signed raw re
 
 Scribe outbound requests use manual redirect handling on Workers. A submission with no provider ID or pending callback expires after 15 minutes on job polling or maintenance and enters the existing diamond refund flow. Polling returns `AI_JOB_FAILED` so existing app versions discard the saved job. A late signed result can still populate the transcript cache and catalog after the refund.
 
+Scribe jobs with unconfirmed submission time out after 15 minutes. Accepted jobs time out after one hour if recovery has not produced a result. Timeouts release the job and queue an idempotent diamond refund. An authenticated late result can still publish.
+
 With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour budget per billing month. Quotes report `AI_AUDIO_BUDGET_EXHAUSTED` when the verified duration exceeds the available budget. Submission reserves time atomically in D1 before charging diamonds and returns HTTP 429 with the same code if another request used the remaining capacity. Cached tracks and active jobs bypass the check. Definite rejections release capacity. Uncertain submissions count against the budget even if Voca refunds the diamonds.
 
 - **Route**: `POST /api/gladia-webhook`
@@ -224,7 +226,7 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
 ---
 
 ### 3.4. Dual Subtitles API
-- **Route**: `GET /api/dual-subtitles` (Fast CDN/browser cache lookup) & `POST /api/dual-subtitles` (Live translation & save-back)
+- **Route**: `GET /api/dual-subtitles` (Fast CDN/browser cache lookup) & `POST /api/dual-subtitles` (Live translation and legacy save acknowledgement)
 - **Source**: `functions-src/api/dual-subtitles.js`
 - **GET Request**:
   - `GET /api/dual-subtitles?videoId={videoId}&sourceLang={sourceLang}&targetLang={targetLang}`
@@ -248,24 +250,21 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
   - Does not require a `segments` payload on cache checks, eliminating unnecessary payload overhead.
   - If cached transcript exists: Returns `{ success: true, segments: [...], cached: true }`.
   - If not cached: Returns `{ success: true, segments: [], cached: false }` immediately without triggering batch translation, allowing the client to initiate immediate playback and lazy-load upcoming cues in background chunks.
-- **Client Cache Write-Back (`saveOnly: true` or `onlySave: true`)**:
-  - **Authenticated Sessions Enforced**: To prevent malicious callers from poisoning crowd-sourced translations in R2/D1, `saveOnly: true` strictly requires an authenticated user session (`authResult.valid`). Unauthenticated write-backs are rejected with HTTP 401.
-  - **Incremental Crowd-Cache Merging & Self-Healing**: When the client translates cues during playback, it saves checkpoints (after $\ge 10$ newly translated cues or on video pause/switch), as well as a final save upon reaching $\ge 80\%$ coverage (`QUALITY_THRESHOLD`).
-  - The backend filters out invalid/identical source text, merges incoming translated cues with existing segments in R2 using fuzzy matching (text exact match $\rightarrow$ timestamp proximity within $\pm 0.8$s $\rightarrow$ index), recalculates composite quality, and commits the merged file to Cloudflare R2 and D1 `translation_meta`.
-  - Multiple users watching partial segments of the same video collectively build and heal the full dual-subtitle cache without requiring any single user to watch 80%+ in one session.
-  - **Zero KV Writes**: Transcripts and translations are stored strictly in R2 and D1, guaranteeing 0 KV quota consumption.
+- **Legacy Client Saves (`saveOnly: true` or `onlySave: true`)**:
+  - Signed-in clients receive `success: true, saved: false, cached: false`. The submitted translations stay on the client.
+  - Shared R2 objects and D1 metadata come from server-generated translations.
 - **Process (Live / Fallback Requests)**:
   - Checks R2 cache: `translations/{videoId}/{sourceLang}-{targetLang}.json`. Automatically detects and invalidates legacy poisoned cache entries where translation mirrored source text.
-  - **Worker Timeout Protection**: Live translation requests in `/api/dual-subtitles` are capped at 40 segments (`BATCH_SIZE`) to prevent Cloudflare Worker 30-second execution timeouts. Larger transcripts stream upcoming cues via `/api/translate/batch` and commit via `saveOnly: true`.
+  - **Worker Timeout Protection**: Live translation requests in `/api/dual-subtitles` are capped at 40 segments (`BATCH_SIZE`) to prevent Cloudflare Worker 30-second execution timeouts. Larger transcripts stream upcoming cues via `/api/translate/batch`.
   - Batch translates subtitle text chunks using tagged XML boundary protection (`<t id="N">...</t>`) via direct Google Translate GTX with Lingva fallback.
   - **Fault-Tolerant XML Tag Extraction & Boundary Defense**: `decodeTaggedTranslations` tolerates machine-translated formatting anomalies, including unicode and curly quotation marks (`“`, `”`, `‘`, `’`, `«`, `»`), spacing irregularities, and out-of-order responses without crashing or dropping cues. Negative lookahead (`(?:(?!(?:<|&lt;)[\s]*t[\s]+id)[\s\S])*?`) prevents unclosed tags (e.g. from repeated vocalizations/screams) from swallowing subsequent cues, and strict protocol sanitization discards corrupted boundaries for seamless single-item recovery without leaking internal `<t id="N">` tags into user subtitles or R2 storage.
 - **Thundering Herd / Cache Stampede Defense (`inFlightTranslations`)**: After per-caller validation, R2 cache lookup, authentication, and rate-limit enforcement, an isolate-level promise map deduplicates concurrent batch translation requests for the same `videoId:sourceLang:targetLang` segment slice. When multiple users or components request translation for an un-cached video simultaneously, only one upstream job is dispatched; other concurrent requests await the shared translation result and attach their own rate-limit headers, eliminating 429 upstream rate-limiting and CPU waste without leaking rate-limit or auth state between callers.
 - **R2 Read-Modify-Write Serialization (`inFlightSaves`)**: In `translation-cache.js`, an isolate-level mutex serializes concurrent translation commits for the same subtitle object key. Concurrent writes are sequenced so each read-and-merge incorporates the previous write's updated cues instead of clobbering them.
 - **Rate Limiting**: 
   - Live Translation Quota: Tiered hourly quota (anonymous: 5, free: 15, pro: 60, premium: 120 requests/hr).
-  - Checkpoint Save Quota (`saveOnly: true`): High-capacity `RATE_LIMIT_SAVE_CONFIG` (anonymous: 30, free: 120, pro: 300, premium: 600 requests/hr) dedicated specifically to write-backs. This ensures progressive playback saves never exhaust the live translation rate limit.
 
 ---
+
 
 ### 3.5. Single Text Translation API
 - **Route**: `GET /api/translate/[[path]]`

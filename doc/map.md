@@ -647,3 +647,5 @@ Configured deployments route new AI jobs to ElevenLabs Scribe v3. Its signed web
 Polling and maintenance expire unconfirmed Scribe submissions after 15 minutes using the shared refund ledger. The existing webhook ingestion path can still publish late signed results.
 
 The configured Scribe audio budget uses the existing D1 job rows and atomically checks verified duration when reserving a job. The provider billing anchor determines the cycle.
+
+Shared subtitle translations are published by the Pages Functions translation path. Clients keep their own generated translations.

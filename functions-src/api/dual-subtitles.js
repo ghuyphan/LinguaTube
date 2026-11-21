@@ -14,7 +14,7 @@ import {
 } from '../middlewares/rate-limiter.js';
 import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
 import { translateBatch } from '../providers/lingva.js';
-import { getTranslation, saveTranslation, recordTranslation, translationsMatchLanguage } from '../utils/translation-cache.js';
+import { getTranslation, saveTranslation, recordTranslation } from '../utils/translation-cache.js';
 
 // Tiered rate limiting - anonymous: 5/hr, free: 15/hr, pro: 60/hr, premium: 120/hr
 const RATE_LIMIT_CONFIG = {
@@ -23,12 +23,6 @@ const RATE_LIMIT_CONFIG = {
     keyPrefix: 'dual-subs'
 };
 
-// High-capacity rate limit for saving client-translated subtitles (checkpoints)
-const RATE_LIMIT_SAVE_CONFIG = {
-    max: { anonymous: 10, free: 120, pro: 300, premium: 600 },
-    windowSeconds: 3600,
-    keyPrefix: 'dual-subs-save'
-};
 // Batch size optimized for Lingva/GTX chunking with Workers Paid CPU headroom
 const BATCH_SIZE = 40;
 const TIMEOUT_MS = 25000; // 25s total timeout (CF limit is 30s)
@@ -171,70 +165,27 @@ async function handlePost(context, body) {
         // 2. Auth & Rate Limit
         const authResult = await validateAuthToken(request, env, { accessState: 'cached' });
         if (authResult.response) return authResult.response;
-        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
-        const isSave = Boolean(saveOnly || onlySave);
-        const baseConfig = isSave ? RATE_LIMIT_SAVE_CONFIG : RATE_LIMIT_CONFIG;
-        const rateLimitConfig = getTieredConfig(baseConfig, tier);
+        if (saveOnly || onlySave) {
+            if (!authResult.valid) {
+                return jsonResponse({ error: 'Authentication required to save subtitles' }, 401);
+            }
+            // Compatibility acknowledgement for clients that already keep their own translations.
+            return jsonResponse({ success: true, videoId: cleanVideoId, sourceLang, targetLang,
+                saved: false, cached: false }, 200, { 'Cache-Control': 'no-store' });
+        }
 
+        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
+        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
         const clientId = getClientIdentifier(request, authResult);
         const rateCheck = await consumeRateLimit(env.TRANSCRIPT_CACHE, clientId, rateLimitConfig, context);
         if (!rateCheck.allowed) {
             return rateLimitResponse(rateCheck.resetAt);
         }
 
-        // 3. Handle saveOnly: persisting completed or partial client-side translations to R2 cache
-        if (saveOnly || onlySave) {
-            if (!authResult.valid) {
-                return jsonResponse({ error: 'Authentication required to save subtitles' }, 401);
-            }
-            if (!translationsMatchLanguage(segments, targetLang)) {
-                return jsonResponse({ error: 'Translations do not match target language' }, 400);
-            }
-            const successCount = segments.filter(s => s && s.translation && typeof s.translation === 'string' && s.translation.trim() && (sourceLang === targetLang || s.translation.trim() !== (s.text || '').trim())).length;
-            const successRate = segments.length > 0 ? successCount / segments.length : 0;
-            const quality = Math.round(successRate * 100);
-
-            // Allow incremental crowd-merge if at least 10 cues are translated OR coverage >= 20%
-            if (successCount >= 10 || successRate >= 0.2) {
-                const saveResult = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, segments, quality, 'lingva', { requireCanonical: true });
-                if (!saveResult) return jsonResponse({ success: false, error: 'Subtitle cache save failed' }, 503);
-                const finalQuality = saveResult.quality;
-                const isFullyCached = (finalQuality >= Math.round(QUALITY_THRESHOLD * 100));
-
-                if (db && saveResult?.validCount) {
-                    const saveDbPromise = recordTranslation(db, cleanVideoId, sourceLang, targetLang, saveResult.validCount);
-                    if (waitUntil) {
-                        waitUntil(saveDbPromise);
-                    } else {
-                        await saveDbPromise;
-                    }
-                }
-
-                return jsonResponse({
-                    success: true,
-                    videoId: cleanVideoId,
-                    sourceLang,
-                    targetLang,
-                    cached: isFullyCached,
-                    quality: finalQuality,
-                    translatedCount: saveResult?.validCount ?? successCount,
-                    totalCount: saveResult?.totalCount ?? segments.length,
-                    saved: true
-                }, 200, { 'Cache-Control': CACHE_HEADERS.FRESH });
-            }
-
-            return jsonResponse({
-                error: 'Minimum threshold not met for caching (requires at least 10 translated cues or 20% coverage)',
-                quality,
-                successCount,
-                required: 10
-            }, 400);
-        }
-
         // Live full-transcript translation guard: prevent Cloudflare Worker timeouts on large payloads
         if (segments.length > BATCH_SIZE) {
             return jsonResponse({
-                error: `Live translation in /api/dual-subtitles is capped at ${BATCH_SIZE} cues to avoid worker timeouts. Please stream upcoming cues via /api/translate/batch and save via saveOnly: true.`,
+                error: `Live translation in /api/dual-subtitles is capped at ${BATCH_SIZE} cues to avoid worker timeouts. Stream upcoming cues via /api/translate/batch.`,
                 maxBatchSize: BATCH_SIZE
             }, 400);
         }

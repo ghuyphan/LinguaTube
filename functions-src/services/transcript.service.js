@@ -24,7 +24,9 @@ import {
     scribeBudgetCycle,
     scribeBudgetAllows,
     AI_AUDIO_BUDGET_EXHAUSTED,
-    expireUnconfirmedScribeJobs,
+    expireStalledScribeJobs,
+    SCRIBE_UNCONFIRMED_TIMEOUT_SECONDS,
+    SCRIBE_ACCEPTED_TIMEOUT_SECONDS,
     ASR_SUBMISSION_TIMEOUT,
     atomicFailAndRefundAiJob
 } from '../data/transcript-db.js';
@@ -428,11 +430,20 @@ export class TranscriptService {
             return { status: 'error', error: 'Transcription job not found or expired' };
         }
 
-        if (job.asr_provider === 'elevenlabs' && !job.gladia_job_id &&
-            ['queued', 'processing'].includes(job.status) &&
-            (job.submission_started_at ?? job.created_at) <= Date.now() / 1000 - 900) {
-            await expireUnconfirmedScribeJobs(db, jobId);
-            job = await getAiJobById(db, jobId) ?? job;
+        if (job.asr_provider === 'elevenlabs' && ['queued', 'processing'].includes(job.status)) {
+            const timeout = job.gladia_job_id ? SCRIBE_ACCEPTED_TIMEOUT_SECONDS : SCRIBE_UNCONFIRMED_TIMEOUT_SECONDS;
+            if ((job.submission_started_at ?? job.created_at) <= Date.now() / 1000 - timeout) {
+                // An accepted job gets one last recovery attempt before expiry.
+                if (job.gladia_job_id && env.ELEVENLABS_API_KEY) {
+                    try {
+                        await ingestGladiaJob(env, jobId, this.gladiaProvider, Date.now() + 10000, { force: true });
+                    } catch {
+                        // A missing provider result must not indefinitely hold the charge.
+                    }
+                }
+                await expireStalledScribeJobs(db, jobId);
+                job = await getAiJobById(db, jobId) ?? job;
+            }
         }
         if (job.error_code === ASR_SUBMISSION_TIMEOUT && job.refund_status === 'pending') {
             await recoverJobRefund(env, jobId);

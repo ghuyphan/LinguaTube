@@ -35,7 +35,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 - **Grammar Pattern Recognition**:
   - Automatically identifies grammatical structures across **Japanese** (JLPT N5–N1), **Korean** (TOPIK I–II), **Chinese** (HSK 1–6), **English** (CEFR A1–C2), and **Vietnamese** (CEFR A1–C1).
   - Includes multi-language explanations (translated into Vietnamese, Chinese, Japanese, Korean, and English) and native-to-native explanations (`ja_ja`, `ko_ko`, `zh_zh`).
-- **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching. Powered by a centralized cache-first architecture (`/api/dual-subtitles?onlyCache=true`) with sliding-window lazy translation and zero playback start delay across player overlays and subtitle lists.
+- **Dual-Language Subtitles**: Display learning subtitles alongside translated subtitles in English, Vietnamese, Japanese, Korean, or Chinese with quick flag switching. Powered by a centralized cache-first architecture (`/api/dual-subtitles?onlyCache=true`) with server-generated shared cache entries and sliding-window lazy translation and zero playback start delay across player overlays and subtitle lists.
 
 ### 📚 Study & Retention Tools
 - **Video Difficulty Level Categorization**: Automatic three-stage hybrid classifier profiles videos into standardized levels: **JLPT N5–N1**, **HSK 1–6**, **TOPIK 1–6**, and **CEFR A1–C2**, combining title fast-path heuristics, speech velocity (CPM/WPM), and 2,400+ grammar patterns with global edge persistence in Cloudflare D1. Level badges and filters are integrated directly into **Playlists** and **Watch History**.

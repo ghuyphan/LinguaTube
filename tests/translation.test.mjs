@@ -357,3 +357,25 @@ test('/api/translate/batch does not cache responses that fail target script vali
     const body = await res.json();
     assert.deepEqual(body.translations, [null, null, null]);
 });
+
+test('client subtitle save acknowledgements never write to shared storage', async t => {
+    const userId = '11111111-1111-4111-8111-111111111111';
+    const token = `${btoa('{}')}.${btoa(JSON.stringify({ sub: userId, exp: Math.floor(Date.now() / 1000) + 3600 }))}.fixture`;
+    t.mock.method(globalThis, 'fetch', async url => {
+        if (url.endsWith('/auth/v1/user')) return Response.json({ id: userId });
+        return Response.json({ id: userId, subscription_tier: 'free' });
+    });
+    const env = {
+        SUPABASE_ANON_KEY: 'fixture',
+        TRANSCRIPT_STORAGE: { put() { assert.fail('unexpected R2 write'); } },
+        VOCAB_DB: { prepare() { assert.fail('unexpected D1 access'); } }
+    };
+    const body = { videoId: 'abcdefghijk', sourceLang: 'ja', targetLang: 'en',
+        segments: [{ start: 0, duration: 2, text: 'こんにちは', translation: 'Hello' }], saveOnly: true };
+    const response = await dualSubtitlesPost({ env, request: new Request('https://voca.study/api/dual-subtitles', {
+        method: 'POST', headers: { Authorization: `Bearer ${token}` }, body: JSON.stringify(body)
+    }) });
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { success: true, videoId: body.videoId,
+        sourceLang: 'ja', targetLang: 'en', saved: false, cached: false });
+});

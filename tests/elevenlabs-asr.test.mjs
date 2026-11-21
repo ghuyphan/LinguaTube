@@ -7,7 +7,7 @@ import { onRequestPost as transcriptRequest } from '../functions-src/api/transcr
 import { getTranscriptFromR2 } from '../functions-src/data/transcript-r2.js';
 import { recoverGladiaBatch } from '../functions-src/services/gladia-recovery.js';
 import { TranscriptService } from '../functions-src/services/transcript.service.js';
-import { reserveAiJob, scribeBudgetAllows, scribeBudgetCycle } from '../functions-src/data/transcript-db.js';
+import { expireStalledScribeJobs, reserveAiJob, scribeBudgetAllows, scribeBudgetCycle } from '../functions-src/data/transcript-db.js';
 
 const videoId = 'abcdefghijk';
 const secret = 'test-secret';
@@ -196,6 +196,38 @@ test('an unconfirmed Scribe submission times out, refunds once and still publish
     assert.equal((await service.pollAiJobStatus(context, params)).status, 'done');
     assert.ok(await getTranscriptFromR2(r2, videoId, 'ja', { preferAI: true }));
     assert.equal(refunds, 1);
+});
+
+test('an accepted Scribe job expires only after its deadline and refunds once', async t => {
+    const { db, sqlite, reserve } = await fixture(t);
+    const job = await reserve(videoId, 'user-a');
+    sqlite.exec(`UPDATE ai_transcription_jobs SET asr_provider='elevenlabs', charge_status='confirmed',
+        submission_state='accepted', status='processing', gladia_job_id='scribe-id',
+        submission_started_at=unixepoch()-1800`);
+    assert.equal((await expireStalledScribeJobs(db)).length, 0);
+    sqlite.exec(`UPDATE ai_transcription_jobs SET submission_started_at=unixepoch()-3601,
+        ingestion_lease_until=unixepoch()+60`);
+    assert.equal((await expireStalledScribeJobs(db)).length, 0);
+    sqlite.exec('UPDATE ai_transcription_jobs SET ingestion_lease_until=NULL');
+
+    let refunds = 0;
+    t.mock.method(globalThis, 'fetch', async url => {
+        if (url.includes('/transcripts/scribe-id')) return new Response(null, { status: 404 });
+        assert.ok(url.endsWith('/rpc/refund_transcription_credits'));
+        refunds++;
+        return Response.json({ success: true, state: 'refunded' });
+    });
+    const env = { VOCAB_DB: db, TRANSCRIPT_STORAGE: bucket(),
+        ELEVENLABS_API_KEY: 'fixture', SUPABASE_SERVICE_ROLE_KEY: 'fixture',
+        ELEVENLABS_WEBHOOK_SECRET: secret };
+    const service = new TranscriptService();
+    const poll = () => service.pollAiJobStatus({ env }, { jobId: job.id, videoId });
+    assert.equal((await poll()).errorCode, 'AI_JOB_FAILED');
+    assert.equal((await poll()).errorCode, 'AI_JOB_FAILED');
+    assert.equal(refunds, 1);
+    assert.equal((await onRequestPost({ request: callback(job.id), env })).status, 200);
+    assert.equal((await recoverGladiaBatch(env)).confirmed, 1);
+    assert.equal((await poll()).status, 'done');
 });
 
 test('Scribe billing boundaries keep their UTC time and clamp short months', () => {

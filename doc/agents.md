@@ -104,6 +104,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
   - **Zero technical jargon**: Never mention CSS selectors, container queries, flexbox properties, hex colors, regex patterns, DOM event bubbling, SQL indexes, or API header names.
 ### ⚠️ RULE 11: Concurrency Invariants & Cache Stampede Defense
 - **Backend Stampede Protection**: Batch translations on `/api/dual-subtitles` MUST use warm-isolate Promise deduplication (`inFlightTranslations`) to prevent duplicate upstream calls and 429 rate-limiting.
+- **Shared subtitle translations**: Publish only server-generated translations to shared R2. Acknowledge older clients’ save-only requests without storing their submitted text.
 - **R2 Read-Modify-Write Serialization**: Subtitle cache updates (`translation-cache.js`) MUST use isolate-level mutex serialization (`inFlightSaves`) so concurrent chunk commits safely merge without overwriting.
 - **Atomic Database Operations**: All subscription extensions and diamond balances MUST use atomic PostgreSQL stored procedures (`FOR UPDATE` locks) or D1 single-statement updates; NEVER use read-then-write patterns in application code for shared balances.
 - **Frontend Video-Switch Stale Guard**: Network requests and asynchronous cache loaders MUST verify `currentVideoId === videoId` before updating signals, and cancel pending requests via `takeUntil()` on route/video changes.

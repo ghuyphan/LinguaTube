@@ -1,7 +1,7 @@
 import { recoverGladiaBatch, recoverGladiaJobs } from '../../services/gladia-recovery.js';
 import { matchesSecret } from '../../utils/secret-auth.js';
 import { jsonResponse } from '../../utils/utils.js';
-import { atomicFailAndRefundAiJob, expireUnconfirmedScribeJobs } from '../../data/transcript-db.js';
+import { atomicFailAndRefundAiJob, expireStalledScribeJobs } from '../../data/transcript-db.js';
 import { recoverRefundBatch } from '../../services/refund-recovery.js';
 import { recoverRevenueCatEvent } from '../../services/revenuecat-recovery.js';
 import { indexPendingVideoSearchText } from '../../data/video-info-db.js';
@@ -16,7 +16,7 @@ export async function onRequestPost({ request, env }) {
         const db = env.VOCAB_DB;
         const callbacks = await recoverGladiaBatch(env, 25, started + 8000);
         await recoverGladiaJobs(env, 5, started + 11000);
-        await expireUnconfirmedScribeJobs(db);
+        await expireStalledScribeJobs(db);
         const { results } = await db.prepare(`SELECT id FROM ai_transcription_jobs WHERE status IN ('queued','processing')
             AND NOT EXISTS(SELECT 1 FROM gladia_callback_inbox i WHERE i.job_id=ai_transcription_jobs.id AND i.status='pending')
             AND submission_state NOT IN ('submitting','uncertain','accepted')

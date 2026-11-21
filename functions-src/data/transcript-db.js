@@ -152,7 +152,10 @@ export async function getAiJobById(db, jobId) {
 export const ASR_SUBMISSION_TIMEOUT = 'ASR_SUBMISSION_TIMEOUT';
 export const ASR_SUBMISSION_TIMEOUT_MESSAGE = 'Could not confirm AI transcription. Your diamond charge will be refunded.';
 
-export async function expireUnconfirmedScribeJobs(db, jobId = null) {
+export const SCRIBE_UNCONFIRMED_TIMEOUT_SECONDS = 15 * 60;
+export const SCRIBE_ACCEPTED_TIMEOUT_SECONDS = 60 * 60;
+
+export async function expireStalledScribeJobs(db, jobId = null) {
     const { results } = await db.prepare(`
         UPDATE ai_transcription_jobs
         SET status='failed', error_code=?, error_message=?, refund_status='pending',
@@ -160,16 +163,21 @@ export async function expireUnconfirmedScribeJobs(db, jobId = null) {
         WHERE id IN (
             SELECT j.id FROM ai_transcription_jobs j
             WHERE (? IS NULL OR j.id=?) AND j.status IN ('queued','processing')
-              AND j.asr_provider='elevenlabs' AND j.gladia_job_id IS NULL
-              AND j.submission_state IN ('submitting','uncertain')
+              AND j.asr_provider='elevenlabs'
               AND j.charge_status='confirmed' AND j.refund_status='none'
-              AND COALESCE(j.submission_started_at,j.created_at)<=unixepoch()-900
+              AND (
+                  (j.gladia_job_id IS NULL AND j.submission_state IN ('submitting','uncertain')
+                      AND COALESCE(j.submission_started_at,j.created_at)<=unixepoch()-?)
+                  OR (j.gladia_job_id IS NOT NULL AND j.submission_state='accepted'
+                      AND COALESCE(j.submission_started_at,j.created_at)<=unixepoch()-?)
+              )
               AND (j.ingestion_lease_until IS NULL OR j.ingestion_lease_until<unixepoch())
               AND NOT EXISTS (SELECT 1 FROM gladia_callback_inbox i WHERE i.job_id=j.id AND i.status='pending')
             ORDER BY j.created_at LIMIT 25
         )
         RETURNING id
-    `).bind(ASR_SUBMISSION_TIMEOUT, ASR_SUBMISSION_TIMEOUT_MESSAGE, jobId, jobId).all();
+    `).bind(ASR_SUBMISSION_TIMEOUT, ASR_SUBMISSION_TIMEOUT_MESSAGE, jobId, jobId,
+        SCRIBE_UNCONFIRMED_TIMEOUT_SECONDS, SCRIBE_ACCEPTED_TIMEOUT_SECONDS).all();
     return results || [];
 }
 
