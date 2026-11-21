@@ -266,6 +266,7 @@ export class TranscriptService {
                     language: normalizedLang,
                     requestedLanguage: normalizedLang,
                     segments: existingR2.segments,
+                    wordTimings: existingR2.wordTimings,
                     source: 'ai',
                     sourceDetail: existingR2.source,
                     availableLanguages: adjustAvailableLanguages(params.availableLanguages, normalizedLang, 'ai')
@@ -415,6 +416,7 @@ export class TranscriptService {
                             requestedLanguage: fallbackLang,
                             languageMismatch: isMismatch,
                             segments: r2Transcript.segments,
+                            wordTimings: r2Transcript.wordTimings,
                             source: 'ai',
                             sourceDetail: r2Transcript.source || 'gladia',
                             availableLanguages: adjustAvailableLanguages(availableLanguages, resolvedLang, 'ai'),
@@ -452,6 +454,7 @@ export class TranscriptService {
                         requestedLanguage: job.language,
                         languageMismatch: isMismatch,
                         segments: r2Transcript.segments,
+                        wordTimings: r2Transcript.wordTimings,
                         source: 'ai',
                         sourceDetail: job.asr_provider || 'gladia',
                         availableLanguages: adjustAvailableLanguages(availableLanguages, targetLang, 'ai'),
@@ -492,7 +495,8 @@ export class TranscriptService {
                     status: 'done', videoInfo: {
                         videoId: targetVideoId, language: outcome.language, requestedLanguage: job.language,
                         languageMismatch: normalizeLanguageCode(outcome.language) !== normalizeLanguageCode(job.language),
-                        segments: outcome.segments, source: 'ai', sourceDetail: job.asr_provider || 'gladia', availableLanguages, subLanguages: [outcome.language]
+                        segments: outcome.segments, wordTimings: outcome.wordTimings, source: 'ai',
+                        sourceDetail: job.asr_provider || 'gladia', availableLanguages, subLanguages: [outcome.language]
                     }
                 };
             } catch (healErr) {

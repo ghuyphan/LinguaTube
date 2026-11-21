@@ -515,7 +515,7 @@ test('enrichSegmentsWithTokens: pre-bakes rich tokens onto segments across all 4
     assert.strictEqual(doubleEnriched, enrichedEn);
 });
 
-test('segmentsNeedEnrichment & enrichPublishedTranscript: detects and repairs degraded Japanese fallback tokens in R2', async () => {
+test('R2 enrichment repairs degraded Japanese tokens and preserves the word timeline', async () => {
     const text = '繰り返す季節に慣れないまま';
     const degradedTokens = tokenizeJapaneseFast(text);
     assert.ok(degradedTokens.length > 0);
@@ -532,10 +532,14 @@ test('segmentsNeedEnrichment & enrichPublishedTranscript: detects and repairs de
         true
     );
 
+    const key = 'transcripts/ylLOn6KXzAc/ja.ai.json';
+    const wordTimings = [{ text: '繰り返す', start: 0, end: 0.6 }];
     const store = new Map([
-        ['transcripts/ylLOn6KXzAc/ja.json', JSON.stringify({
+        [key, JSON.stringify({
             videoId: 'ylLOn6KXzAc',
             language: 'ja',
+            source: 'ai',
+            wordTimings,
             segments: [{ start: 0, duration: 3, text, tokens: degradedTokens }]
         })]
     ]);
@@ -552,16 +556,17 @@ test('segmentsNeedEnrichment & enrichPublishedTranscript: detects and repairs de
         }
     };
 
-    const repaired = await enrichPublishedTranscript(mockBucket, 'ylLOn6KXzAc', 'ja', 5000, false);
+    const repaired = await enrichPublishedTranscript(mockBucket, 'ylLOn6KXzAc', 'ja', 5000, true);
     assert.equal(repaired, true);
     assert.equal(putCount, 1);
 
-    const updatedPayload = JSON.parse(store.get('transcripts/ylLOn6KXzAc/ja.json'));
+    const updatedPayload = JSON.parse(store.get(key));
+    assert.deepEqual(updatedPayload.wordTimings, wordTimings);
     assert.equal(segmentsNeedEnrichment(updatedPayload.segments, 'ja'), false);
     assert.ok(updatedPayload.segments[0].tokens.some(t => Boolean(t.partOfSpeech)));
 
     // Second pass must be a no-op (no extra R2 write) because R2 already holds full Kuromoji annotations
-    const secondPass = await enrichPublishedTranscript(mockBucket, 'ylLOn6KXzAc', 'ja', 5000, false);
+    const secondPass = await enrichPublishedTranscript(mockBucket, 'ylLOn6KXzAc', 'ja', 5000, true);
     assert.equal(secondPass, true);
     assert.equal(putCount, 1);
 });

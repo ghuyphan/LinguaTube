@@ -80,13 +80,13 @@ export async function onRequestPost(context) {
     try {
         const body = await getRequestJson(context);
         if (!body || typeof body !== 'object' || Array.isArray(body) ||
-            ['preferAI', 'forceRefresh', 'quoteOnly'].some(key => body[key] != null && typeof body[key] !== 'boolean') ||
+            ['preferAI', 'preferNative', 'forceRefresh', 'quoteOnly', 'includeWordTimings'].some(key => body[key] != null && typeof body[key] !== 'boolean') ||
             (body.expectedDiamondCost != null && (!Number.isInteger(body.expectedDiamondCost) || body.expectedDiamondCost < 0 || body.expectedDiamondCost > 4)) ||
             (body.quoteOnly === true && (body.preferAI !== true || body.jobId != null || body.resultUrl != null)) ||
             (body.jobId != null && (typeof body.jobId !== 'string' || !/^[a-zA-Z0-9_-]{1,200}$/.test(body.jobId)))) {
             return jsonResponse({ success: false, errorCode: 'INVALID_REQUEST', error: 'Invalid transcript request' }, 400);
         }
-        const { videoId, lang, preferAI, forceRefresh, jobId, resultUrl, turnstileToken, duration } = body;
+        const { videoId, lang, preferAI, preferNative, forceRefresh, jobId, resultUrl, turnstileToken, duration } = body;
 
         const cleanVideoId = sanitizeVideoId(videoId);
         if (!cleanVideoId) {
@@ -234,15 +234,24 @@ export async function onRequestPost(context) {
                 ? 'ready' : eligible && serverGradingActive(env) ? 'pending' : 'unavailable' }
             : {};
 
-        const aiResponse = async (videoInfo) => {
+        const timingFields = words => {
+            if (body.includeWordTimings !== true || !words?.length) return {};
+            return tier === 'pro' || tier === 'premium'
+                ? { hasWordTimings: true, wordTimings: words }
+                : { hasWordTimings: true };
+        };
+        const transcriptCacheControl = body.includeWordTimings === true
+            ? 'private, no-store' : CACHE_CONTROL.NO_CACHE;
+
+        const aiResponse = async ({ wordTimings, ...videoInfo }) => {
             const info = await getVideoLanguages(db, videoInfo.videoId);
             const language = normalizeLanguageCode(videoInfo.language);
             const levels = await resolveLevels(videoInfo.videoId,
                 language, videoInfo.segments, info);
             const responseAvailableLanguages = adjustAvailableLanguages(videoInfo.availableLanguages || availableLanguages, language, 'ai');
-            return jsonResponse({ success: true, ...videoInfo, availableLanguages: responseAvailableLanguages, levels,
+            return jsonResponse({ success: true, ...videoInfo, ...timingFields(wordTimings), availableLanguages: responseAvailableLanguages, levels,
                 whisperAvailable, ...grading(levels, language, !videoInfo.languageMismatch), ...diamondInfo, timing: elapsed() },
-                200, { 'Cache-Control': CACHE_CONTROL.NO_CACHE });
+                200, { 'Cache-Control': transcriptCacheControl });
         };
 
         // -------------------------------------------------------------
@@ -293,23 +302,27 @@ export async function onRequestPost(context) {
 
             return jsonResponse({
                 success: true, videoId: cleanVideoId, language, requestedLanguage: lang, segments: saved.segments,
+                ...timingFields(saved.wordTimings),
                 source: preferAI ? 'ai' : 'cache', sourceDetail: saved.source, trackLanguage: saved.trackLanguage,
                 availableLanguages: responseAvailableLanguages, subLanguages: knownInfo?.subLanguages || [language],
                 whisperAvailable, languageMismatch, levels,
                 ...grading(levels, language, !languageMismatch),
                 ...(refreshDeferred ? { refreshDeferred } : {}),
                 ...diamondInfo, timing: elapsed()
-            }, 200, { 'X-Cache': cacheStatus, 'Cache-Control': CACHE_CONTROL.NO_CACHE });
+            }, 200, { 'X-Cache': cacheStatus, 'Cache-Control': transcriptCacheControl });
         };
 
         let fallbackCachedAi = null;
         if (!forceRefresh) {
-            const cached = await getTranscriptFromR2(r2, cleanVideoId, requestedLanguage, { preferAI });
+            const cached = await getTranscriptFromR2(r2, cleanVideoId, requestedLanguage, {
+                preferAI: Boolean(preferAI),
+                preferCachedAi: !preferAI && !preferNative,
+            });
             if (cached && (!preferAI || cached.source === 'ai')) {
                 const hasNativeOnYouTube = nativeLanguages.some(
                     l => normalizeLanguageCode(l) === requestedLanguage
                 );
-                if (!preferAI && cached.source === 'ai' && hasNativeOnYouTube && cached.key?.endsWith('.ai.json')) {
+                if (preferNative && cached.source === 'ai' && hasNativeOnYouTube && cached.key?.endsWith('.ai.json')) {
                     fallbackCachedAi = cached;
                 } else {
                     return await cachedResponse(cached, requestedLanguage, 'HIT');

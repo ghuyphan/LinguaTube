@@ -202,11 +202,26 @@ test('dual-track video serves separate native (.json) and AI (.ai.json) transcri
         }
     };
 
-    const nativeRes = await onRequestPost({
+    const defaultRes = await onRequestPost({
         request: new Request('https://voca.study/api/transcript', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'CF-Connecting-IP': '198.51.100.10' },
             body: JSON.stringify({ videoId, lang: 'zh', preferAI: false })
+        }),
+        env
+    });
+    assert.equal(defaultRes.status, 200);
+    const defaultBody = await defaultRes.json();
+    assert.equal(defaultBody.source, 'cache');
+    assert.equal(defaultBody.sourceDetail, 'ai');
+    assert.equal(defaultBody.segments[0].text, 'AI轉錄中文字幕');
+    assert.deepEqual(defaultBody.availableLanguages, { native: ['en', 'zh'], ai: ['zh'] });
+
+    const nativeRes = await onRequestPost({
+        request: new Request('https://voca.study/api/transcript', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'CF-Connecting-IP': '198.51.100.10' },
+            body: JSON.stringify({ videoId, lang: 'zh', preferAI: false, preferNative: true })
         }),
         env
     });

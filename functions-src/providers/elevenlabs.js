@@ -74,6 +74,7 @@ export class ElevenLabsProvider {
 
 export function toElevenLabsResult(transcription) {
     const segments = [];
+    const wordTimings = [];
     let cue = null;
     let spacing = '';
     const flush = () => {
@@ -87,6 +88,7 @@ export function toElevenLabsResult(transcription) {
         }
         if (word?.type !== 'word' || typeof word.text !== 'string' ||
             !Number.isFinite(word.start) || !Number.isFinite(word.end) || word.start < 0 || word.end < word.start) continue;
+        if (word.text.trim()) wordTimings.push({ text: word.text, start: word.start, end: word.end });
         if (cue && (word.start - cue.end >= 0.8 || word.end - cue.start > 6 || cue.text.length + word.text.length > 72)) flush();
         if (!cue) cue = { start: word.start, end: word.end, text: '' };
         cue.text += (cue.text ? spacing : '') + word.text;
@@ -95,7 +97,7 @@ export function toElevenLabsResult(transcription) {
         if (/[。！？.!?][」』”"]?$/.test(word.text)) flush();
     }
     flush();
-    return { status: 'done', segments, language: transcription.language_code };
+    return { status: 'done', segments, wordTimings, language: transcription.language_code };
 }
 
 export function elevenLabsCallbackKey(jobId) {

@@ -58,12 +58,14 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
             job.language,
         );
         const enriched = segments;
+        const wordTimings = isElevenLabs ? result.wordTimings : undefined;
         if (Date.now() >= deadline) throw new Error('Ingestion budget exhausted');
         // Expiration/refund paths respect this lease. Recheck before publishing.
         const owns = await db.prepare(`SELECT id FROM ai_transcription_jobs WHERE id=? AND ingestion_lease=?
             AND ingestion_lease_until>strftime('%s','now')`).bind(job.id, lease).first();
         if (!owns) throw new Error('Ingestion lease expired');
-        if (!(await saveTranscriptToR2(env.TRANSCRIPT_STORAGE, job.video_id, language, enriched, 'ai', { jobId: job.id, createdAt: job.created_at }))) throw new Error('Transcript persistence unavailable');
+        if (!(await saveTranscriptToR2(env.TRANSCRIPT_STORAGE, job.video_id, language, enriched, 'ai',
+            { jobId: job.id, createdAt: job.created_at }, null, wordTimings))) throw new Error('Transcript persistence unavailable');
         const last = enriched[enriched.length - 1];
         const gradingEnabled = serverGradingEnabled(env);
         const level = gradingEnabled ? null : estimateTranscriptLevel(enriched, language);
@@ -84,7 +86,7 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
                 console.warn(JSON.stringify({ event: 'video_grade_deferred', videoId: job.video_id, language, error: error.name }));
             });
         }
-        return { status: 'done', language, segments: enriched };
+        return { status: 'done', language, segments: enriched, wordTimings };
     } catch (error) {
         const delay = Math.min(300, Math.max(5, error.retryAfterSeconds || 15));
         await db.prepare("UPDATE ai_transcription_jobs SET next_provider_check_at=strftime('%s','now')+? WHERE id=? AND ingestion_lease=?").bind(delay, job.id, lease).run();

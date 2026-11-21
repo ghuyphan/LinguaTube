@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { createHmac } from 'node:crypto';
 import { fixture } from './fixtures/transcription-db.mjs';
 import { onRequestPost } from '../functions-src/api/elevenlabs-webhook.js';
+import { onRequestPost as transcriptRequest } from '../functions-src/api/transcript.js';
 import { getTranscriptFromR2 } from '../functions-src/data/transcript-r2.js';
 import { recoverGladiaBatch } from '../functions-src/services/gladia-recovery.js';
 import { TranscriptService } from '../functions-src/services/transcript.service.js';
@@ -19,6 +20,11 @@ const transcription = {
         { type: 'word', text: '続きです。', start: 3, end: 4 }
     ]
 };
+const timings = [
+    { text: '日本語', start: 0.3, end: 1 },
+    { text: 'です。', start: 1, end: 2 },
+    { text: '続きです。', start: 3, end: 4 }
+];
 
 function bucket() {
     const entries = new Map();
@@ -52,10 +58,17 @@ test('Scribe submission saves provider identity and a completed webhook makes th
     const r2 = bucket();
     const env = { ASR_PROVIDER: 'elevenlabs', ELEVENLABS_API_KEY: 'restricted-test-key',
         ELEVENLABS_WEBHOOK_ID: 'webhook-id', ELEVENLABS_WEBHOOK_SECRET: secret,
-        VOCAB_DB: db, TRANSCRIPT_STORAGE: r2 };
+        VOCAB_DB: db, TRANSCRIPT_STORAGE: r2, SUPABASE_SERVICE_ROLE_KEY: 'fixture' };
     let submissions = 0;
     let charges = 0;
+    const user = '11111111-1111-4111-8111-111111111111';
+    const token = `${btoa('{}')}.${btoa(JSON.stringify({ sub: user, exp: Math.floor(Date.now() / 1000) + 3600 }))}.fixture`;
+    let tier = 'free';
     t.mock.method(globalThis, 'fetch', async (url, init) => {
+        if (url.endsWith('/auth/v1/user')) return Response.json({ id: user });
+        if (url.endsWith('/rpc/get_user_access_state')) return Response.json({
+            id: user, subscription_tier: tier, diamonds: 5, diamonds_updated_at: new Date().toISOString()
+        });
         assert.equal(url, 'https://api.elevenlabs.io/v1/speech-to-text');
         assert.equal(init.redirect, 'manual');
         assert.equal(init.headers['xi-api-key'], 'restricted-test-key');
@@ -91,7 +104,25 @@ test('Scribe submission saves provider identity and a completed webhook makes th
     assert.deepEqual({ ...catalog }, { ai_languages: '["ja"]', sub_languages: '["ja"]', duration_seconds: 60 });
     const cached = await getTranscriptFromR2(r2, videoId, 'ja', { preferAI: true });
     assert.deepEqual(cached.segments.map(cue => cue.text), ['日本語です。', '続きです。']);
+    assert.deepEqual(cached.wordTimings, timings);
     assert.equal((await service.startAIJob({ db, r2, env }, params)).status, 'done');
+    for (const access of ['guest', 'free', 'pro', 'premium']) {
+        tier = access;
+        for (const body of [{}, { includeWordTimings: true }, { jobId: job.jobId, includeWordTimings: true }]) {
+            const response = await transcriptRequest({ env, request: new Request('https://voca.study/api/transcript', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', ...(access === 'guest' ? {} : { Authorization: `Bearer ${token}` }) },
+                body: JSON.stringify({ videoId, lang: 'ja', preferAI: true, ...body })
+            }) });
+            assert.equal(response.status, 200);
+            const track = await response.json();
+            assert.equal(track.hasWordTimings, body.includeWordTimings);
+            assert.deepEqual(track.wordTimings,
+                body.includeWordTimings && ['pro', 'premium'].includes(access) ? timings : undefined);
+            assert.deepEqual(track.segments, cached.segments);
+            if (body.includeWordTimings) assert.equal(response.headers.get('Cache-Control'), 'private, no-store');
+        }
+    }
     assert.equal(submissions, 1);
     assert.equal(charges, 1);
 });
@@ -129,7 +160,8 @@ test('a delayed webhook is recoverable by transcription ID without another paid 
     const result = await service.pollAiJobStatus({ db, r2, env }, params);
     assert.equal(result.status, 'done');
     assert.equal(result.videoInfo.sourceDetail, 'elevenlabs');
-    assert.equal((await service.pollAiJobStatus({ db, r2, env }, params)).status, 'done');
+    assert.deepEqual(result.videoInfo.wordTimings, timings);
+    assert.deepEqual((await service.pollAiJobStatus({ db, r2, env }, params)).videoInfo.wordTimings, timings);
     assert.equal(lookups, 2);
 });
 

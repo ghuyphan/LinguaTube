@@ -36,8 +36,9 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
     const isAI = typeof options === 'boolean'
         ? options
         : Boolean(options?.preferAI || options?.isAI);
+    const preferCachedAi = typeof options === 'object' && Boolean(options?.preferCachedAi);
 
-    const primaryKey = getTranscriptKey(videoId, cleanLang, isAI);
+    const primaryKey = getTranscriptKey(videoId, cleanLang, isAI || preferCachedAi);
 
     const fetchObject = async (key) => {
         try {
@@ -66,6 +67,7 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
             log('R2 hit:', key, `(${data.segments.length} segments)`);
             return {
                 segments: data.segments,
+                wordTimings: source === 'ai' && Array.isArray(data.wordTimings) ? data.wordTimings : undefined,
                 source,
                 language,
                 trackLanguage: data.trackLanguage,
@@ -90,6 +92,12 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
         if (legacy && legacy.source === 'ai') {
             return legacy;
         }
+    } else if (preferCachedAi) {
+        const nativeKey = getTranscriptKey(videoId, cleanLang, false);
+        const nativeFallback = await fetchObject(nativeKey);
+        if (nativeFallback) {
+            return nativeFallback;
+        }
     } else {
         // If native was requested, but no native track exists in R2,
         // check if an AI track is available as fallback
@@ -112,8 +120,9 @@ export async function getTranscriptFromR2(bucket, videoId, lang, options = {}) {
  * @param {string} source - Source of transcript (youtube, supadata, ai, etc.)
  * @param {object|null} guard - Optional AI job guard
  * @param {string|null} trackLanguage - Optional track language identifier
+ * @param {Array|null} wordTimings - Optional provider word times on the video timeline
  */
-export async function saveTranscriptToR2(bucket, videoId, lang, segments, source, guard = null, trackLanguage = null) {
+export async function saveTranscriptToR2(bucket, videoId, lang, segments, source, guard = null, trackLanguage = null, wordTimings = null) {
     if (!bucket || !videoId || !segments?.length) return false;
 
     const cleanLang = normalizeLanguageCode(lang) || lang;
@@ -132,6 +141,7 @@ export async function saveTranscriptToR2(bucket, videoId, lang, segments, source
             videoId,
             language: cleanLang,
             ...(trackLanguage ? { trackLanguage } : {}),
+            ...(isAI && wordTimings?.length ? { wordTimings } : {}),
             segments,
             source,
             timestamp: Date.now()
