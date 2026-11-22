@@ -1,7 +1,18 @@
 import { readBoundedBody, requestSignal } from '../utils/response-body.js';
 
-const LINGVA_INSTANCES = ['https://lingva.ml', 'https://lingva.lunar.icu', 'https://translate.plausibility.cloud'];
-const instanceHealth = new Map();
+const MOZHI_INSTANCES = [
+    'https://mozhi.adminforge.de',
+    'https://mozhi.ducks.party',
+    'https://mozhi.aryak.me',
+    'https://translate.projectsegfau.lt',
+    'https://mozhi.pussthecat.org',
+    'https://mozhi.catsarch.com'
+];
+const providerCooldown = new Map();
+let mozhiCursor = 0;
+
+const isCoolingDown = key => (providerCooldown.get(key) || 0) > Date.now();
+const markCooldown = (key, ms = 60000) => providerCooldown.set(key, Date.now() + ms);
 
 async function fetchTranslationJson(url, init, options, timeout = 3500) {
     if (Date.now() >= options.deadline || options.signal?.aborted) throw new Error('Translation budget exhausted');
@@ -20,7 +31,23 @@ export async function translateText(text, source, target, { deadline = Date.now(
     if (source === target) return text;
     const options = { deadline, signal };
     const headers = { 'User-Agent': 'Mozilla/5.0', Accept: 'application/json' };
+
+    if (!text.startsWith('<t id="')) {
+        const start = mozhiCursor++ % MOZHI_INSTANCES.length;
+        for (let i = 0; i < MOZHI_INSTANCES.length; i++) {
+            const instance = MOZHI_INSTANCES[(start + i) % MOZHI_INSTANCES.length];
+            if (isCoolingDown(instance)) continue;
+            try {
+                const query = new URLSearchParams({ engine: 'duckduckgo', from: source, to: target, text });
+                const data = await fetchTranslationJson(`${instance}/api/translate?${query}`, { headers }, options, 3500);
+                const value = typeof data?.['translated-text'] === 'string' ? data['translated-text'].trim() : '';
+                if (value) { providerCooldown.delete(instance); return value; }
+            } catch { markCooldown(instance); }
+        }
+    }
     for (const client of ['gtx', 'dict-chrome-ex']) {
+        const key = `google:${client}`;
+        if (isCoolingDown(key)) continue;
         try {
             const query = new URLSearchParams({ client, sl: source, tl: target, dt: 't', q: text });
             const url = 'https://translate.googleapis.com/translate_a/single';
@@ -32,21 +59,24 @@ export async function translateText(text, source, target, { deadline = Date.now(
                 catch (error) { if (error.status !== 414) throw error; data = await post(); }
             }
             const value = Array.isArray(data?.[0]) ? data[0].map(item => item?.[0] || '').join('') : '';
-            if (value) return value;
-        } catch { /* Try the next provider within the same budget. */ }
+            if (value) { providerCooldown.delete(key); return value; }
+        } catch (error) {
+            if (error.status === 302 || error.status === 403 || error.status === 429) markCooldown(key);
+        }
     }
-    try {
-        const pair = source === 'auto' ? target : `${source}|${target}`;
-        const data = await fetchTranslationJson(`https://api.mymemory.translated.net/get?${new URLSearchParams({ q: text, langpair: pair, de: 'admin@voca.study' })}`, { headers }, options);
-        const value = data?.responseData?.translatedText;
-        if (data?.responseStatus === 200 && typeof value === 'string' && value && !value.startsWith('MYMEMORY WARNING:')) return value;
-    } catch { /* Continue with healthy Lingva instances. */ }
-    for (const instance of LINGVA_INSTANCES) {
-        if ((instanceHealth.get(instance) || 0) > Date.now()) continue;
+    if (!isCoolingDown('mymemory')) {
         try {
-            const data = await fetchTranslationJson(`${instance}/api/v1/${source}/${target}/${encodeURIComponent(text)}`, { headers }, options, 2000);
-            if (typeof data.translation === 'string' && data.translation) { instanceHealth.delete(instance); return data.translation; }
-        } catch { instanceHealth.set(instance, Date.now() + 60000); }
+            const pair = source === 'auto' ? target : `${source}|${target}`;
+            const data = await fetchTranslationJson(`https://api.mymemory.translated.net/get?${new URLSearchParams({ q: text, langpair: pair, de: 'admin@voca.study' })}`, { headers }, options);
+            const value = data?.responseData?.translatedText;
+            if (data?.responseStatus === 200 && typeof value === 'string' && value && !value.startsWith('MYMEMORY WARNING:')) {
+                providerCooldown.delete('mymemory');
+                return value;
+            }
+            if (data?.responseStatus === 429 || value?.startsWith('MYMEMORY WARNING:')) markCooldown('mymemory');
+        } catch (error) {
+            if (error.status === 429 || error.status >= 500) markCooldown('mymemory');
+        }
     }
     return null;
 }
@@ -116,14 +146,16 @@ export async function translateBatch(texts, source, target, { deadline = Date.no
     const worker = async () => {
         while (chunks.length && Date.now() < deadline && !signal?.aborted) {
             const items = chunks.shift();
-            const translated = await translateText(encodeTaggedTexts(items.map(item => item.text)), source, target, options);
-            const decoded = decodeTaggedTranslations(translated, items.length);
-            const lines = translated?.split(/\n+/).map(line => line.trim()).filter(Boolean) || [];
-            items.forEach((item, index) => {
-                const cleanLine = lines[index];
-                const fallback = (decoded.size === 0 && lines.length === items.length && cleanLine && !/<[\s]*\/?t\b/i.test(cleanLine)) ? cleanLine : null;
-                results[item.index] = decoded.get(index) || fallback;
-            });
+            if (!MOZHI_INSTANCES.some(h => !isCoolingDown(h))) {
+                const translated = await translateText(encodeTaggedTexts(items.map(item => item.text)), source, target, options);
+                const decoded = decodeTaggedTranslations(translated, items.length);
+                const lines = translated?.split(/\n+/).map(line => line.trim()).filter(Boolean) || [];
+                items.forEach((item, index) => {
+                    const cleanLine = lines[index];
+                    const fallback = (decoded.size === 0 && lines.length === items.length && cleanLine && !/<[\s]*\/?t\b/i.test(cleanLine)) ? cleanLine : null;
+                    results[item.index] = decoded.get(index) || fallback;
+                });
+            }
             await recover(items.filter(item => !results[item.index]));
         }
     };
