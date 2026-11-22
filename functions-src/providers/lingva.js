@@ -32,19 +32,6 @@ export async function translateText(text, source, target, { deadline = Date.now(
     const options = { deadline, signal };
     const headers = { 'User-Agent': 'Mozilla/5.0', Accept: 'application/json' };
 
-    if (!text.startsWith('<t id="')) {
-        const start = mozhiCursor++ % MOZHI_INSTANCES.length;
-        for (let i = 0; i < MOZHI_INSTANCES.length; i++) {
-            const instance = MOZHI_INSTANCES[(start + i) % MOZHI_INSTANCES.length];
-            if (isCoolingDown(instance)) continue;
-            try {
-                const query = new URLSearchParams({ engine: 'duckduckgo', from: source, to: target, text });
-                const data = await fetchTranslationJson(`${instance}/api/translate?${query}`, { headers }, options, 3500);
-                const value = typeof data?.['translated-text'] === 'string' ? data['translated-text'].trim() : '';
-                if (value) { providerCooldown.delete(instance); return value; }
-            } catch { markCooldown(instance); }
-        }
-    }
     for (const client of ['gtx', 'dict-chrome-ex']) {
         const key = `google:${client}`;
         if (isCoolingDown(key)) continue;
@@ -62,6 +49,19 @@ export async function translateText(text, source, target, { deadline = Date.now(
             if (value) { providerCooldown.delete(key); return value; }
         } catch (error) {
             if (error.status === 302 || error.status === 403 || error.status === 429) markCooldown(key);
+        }
+    }
+    if (!text.startsWith('<t id="')) {
+        const start = mozhiCursor++ % MOZHI_INSTANCES.length;
+        for (let i = 0; i < MOZHI_INSTANCES.length; i++) {
+            const instance = MOZHI_INSTANCES[(start + i) % MOZHI_INSTANCES.length];
+            if (isCoolingDown(instance)) continue;
+            try {
+                const query = new URLSearchParams({ engine: 'duckduckgo', from: source, to: target, text });
+                const data = await fetchTranslationJson(`${instance}/api/translate?${query}`, { headers }, options, 3500);
+                const value = typeof data?.['translated-text'] === 'string' ? data['translated-text'].trim() : '';
+                if (value) { providerCooldown.delete(instance); return value; }
+            } catch { markCooldown(instance); }
         }
     }
     if (!isCoolingDown('mymemory')) {
@@ -146,7 +146,7 @@ export async function translateBatch(texts, source, target, { deadline = Date.no
     const worker = async () => {
         while (chunks.length && Date.now() < deadline && !signal?.aborted) {
             const items = chunks.shift();
-            if (!MOZHI_INSTANCES.some(h => !isCoolingDown(h))) {
+            if (!isCoolingDown('google:gtx') || !isCoolingDown('google:dict-chrome-ex')) {
                 const translated = await translateText(encodeTaggedTexts(items.map(item => item.text)), source, target, options);
                 const decoded = decodeTaggedTranslations(translated, items.length);
                 const lines = translated?.split(/\n+/).map(line => line.trim()).filter(Boolean) || [];
