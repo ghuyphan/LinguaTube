@@ -1,8 +1,25 @@
 # System Architecture & Component Map
 
-This document details the architectural layout, component hierarchy, data flow pathways, and execution lifecycle across **Voca** (formerly LinguaTube).
+This guide maps LinguaTube's Angular client and the shared Voca backend.
 
-Flutter web at `app.voca.study` calls the same Pages Functions API at `voca.study`. The API middleware accepts preflights from the Flutter web origin.
+## Web app and public links
+
+| Surface | Owner and role |
+| --- | --- |
+| `https://app.voca.study` | The Voca Flutter learning app in the browser. The `voca_flutter` repository owns browser and native learning features. |
+| `https://voca.study` | This repository owns published share links, mobile handoffs, public and account pages, and existing Angular fallbacks. Pages Functions at `/api/*` are shared by Angular, Flutter Web, and native Flutter. The API allows browser requests from both production origins. |
+
+| Path on `voca.study` | Role |
+| --- | --- |
+| `/learner/:userId` | Shared learner profile. |
+| `/video?id=…` | Shared video with an optional start time in `t`. Keep legacy `/video/:videoId` links working. |
+| `/explore?playlist=…` | Shared playlist. |
+| `/account`, `/account/subscription`, `/account/recovery` | Angular account, subscription, and browser password recovery pages. Flutter Web returns its own auth callbacks to its current origin. |
+| `/auth/mobile-recovery` | Android password recovery handoff. |
+| `/terms`, `/privacy` | Public legal pages. |
+| `/.well-known/assetlinks.json` | Android App Links association published for the native Voca app. |
+
+Android can open registered links in the installed app when domain verification and user settings allow it. Without an app handoff, those URLs continue through the [Angular route table](../src/app/app.routes.ts). Keep published link formats, callback paths, and the [association file](../public/.well-known/assetlinks.json) compatible with deployed Flutter clients. The existing Angular learning routes still serve browser visitors and compatibility flows.
 
 ---
 
@@ -277,7 +294,7 @@ sequenceDiagram
     Learner->>SubDisplay: Click on Word Token (e.g., "勉強")
     SubDisplay->>DictService: searchWord(word, fromLang, toLang)
     DictService->>DictAPI: GET /api/dict?word=勉強&from=ja&to=en
-    DictAPI->>DictAPI: Check In-Memory Negative Cache & KV
+    DictAPI->>DictAPI: Check isolate and regional result caches
     alt Cache Miss
         DictAPI->>Upstream: Query Primary Provider (e.g. Jotoba for ja-en)
         alt Upstream Found Entries
@@ -288,7 +305,7 @@ sequenceDiagram
                 DictAPI->>GTX: Translate definitions from EN -> Target UI Lang
             end
         end
-        DictAPI->>DictAPI: Write to KV (7 day TTL)
+        DictAPI->>DictAPI: Store the result with its original expiry
     end
     DictAPI-->>DictService: Return Normalized DictionaryEntry[]
     DictService-->>SubDisplay: Display WordPopupComponent (Meanings, Readings, Examples, Circle Flags)
@@ -513,7 +530,7 @@ sequenceDiagram
 | `src/app/services` | Cross-Cutting | Grammar pattern detector, Translation batch queue, Bottom sheet manager, Streaks |
 | `src/app/data` | Static Data | CJK, English (`253`), and Vietnamese (`180`) grammar rules, single-source version & release metadata (`version-info.json`, `changelog.data.ts`) |
 | `src/app/data/translations` | Localization Data | Multi-language grammar translations (20 pairs across JA, KO, ZH, EN, VI into VI, ZH, KO, JA) |
-| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, geo, dual-subtitles, tokenize, translate, grammar, grammar-detect, diamonds, payment, video-info, video-level, leaderboard, recommended-videos, version |
+| `functions-src/api` | Serverless Backend | Public HTTP endpoints: transcript, dict, tts, geo, dual-subtitles, tokenize, translate, grammar, grammar-detect, diamonds, payment, video-info, video-unplayable, video-level, leaderboard, recommended-videos, version |
 | `functions-src/middlewares` | Security / Filtering | Rate limiting, bot defense, Supabase token verification, video validator |
 | `functions-src/providers` | External Integrations | Third-party adapters for Gladia, Supadata, Lingva, Naver, Jotoba, payOS |
 | `functions-src/data` | Edge Storage Access | D1 SQLite queries (video_languages, video_meta, transcripts) and R2 S3 bucket access |
@@ -649,3 +666,5 @@ Polling and maintenance expire unconfirmed Scribe submissions after 15 minutes u
 The configured Scribe audio budget uses the existing D1 job rows and atomically checks verified duration when reserving a job. The provider billing anchor determines the cycle.
 
 Shared subtitle translations are published by the Pages Functions translation path. Public cache reads are rate-limited before R2 access. Clients keep their own generated translations.
+
+The Scribe ingestion paths retain the provider word timeline alongside subtitle cues in R2. Transcript callers opt in with `includeWordTimings`.

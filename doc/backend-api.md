@@ -1,6 +1,6 @@
 # Backend API & Serverless Edge Reference
 
-This document provides a complete technical specification of the backend APIs, serverless edge functions, security middleware, and provider integrations powering **Voca** (formerly LinguaTube).
+This guide covers the shared Pages Functions API at `https://voca.study/api/*`. The Angular client, Voca Flutter Web at `app.voca.study`, and native Flutter use this backend. See [web app and public links](map.md#web-app-and-public-links) for ownership of browser pages and mobile handoffs.
 
 ---
 
@@ -145,6 +145,8 @@ To prevent Server-Side Request Forgery (SSRF) and intranet penetration:
 ### 3.2. Gladia Asynchronous Webhook Receiver
 The Scribe receiver at `POST /api/elevenlabs-webhook` verifies the signed raw request, then commits callback work before acknowledging it. Recovery publishes timestamped cues to the existing AI transcript cache and registers the video and language in D1 before completion. A retry or a lost submission response must never send a second provider POST.
 
+Send `includeWordTimings: true` to check a completed ElevenLabs track for word timing. Responses with timings return `hasWordTimings: true`. Only authenticated Pro and Premium subscribers also receive `wordTimings`, with `text`, `start`, and `end` in video seconds. These responses use private, no-store caching. Quotes and legacy tracks without timings omit both fields.
+
 Scribe outbound requests use manual redirect handling on Workers. A submission with no provider ID or pending callback expires after 15 minutes on job polling or maintenance and enters the existing diamond refund flow. Polling returns `AI_JOB_FAILED` so existing app versions discard the saved job. A late signed result can still populate the transcript cache and catalog after the refund.
 
 Scribe jobs with unconfirmed submission time out after 15 minutes. Accepted jobs time out after one hour if recovery has not produced a result. Timeouts release the job and queue an idempotent diamond refund. An authenticated late result can still publish.
@@ -169,8 +171,8 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
 ### 3.3. Unified Dictionary API
 - **Route**: `GET /api/dict?word={word}&from={learningLang}&to={uiLang}`
 - **Source**: `functions-src/api/dict.js`
-- **Supported `from` languages**: `ja`, `zh`, `ko`, `en`
-- **Supported `to` languages**: `ja`, `zh`, `ko`, `en`, `vi`, `ru`
+- **Supported `from` languages**: `ja`, `zh`, `ko`, `en`, `vi`
+- **Supported `to` languages**: `ja`, `zh`, `ko`, `en`, `vi`, `ru`. Russian definitions use the English dictionary route and translation.
 - **Response Format**:
   ```json
   {
@@ -191,37 +193,37 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
     "timestamp": 1725513600000
   }
   ```
-- **Provider Routing Matrix (Verified 100% End-to-End Coverage)**:
+- **Provider Routing Matrix**:
   - `ja -> en`: Jotoba (primary with JLPT & POS objects) $\rightarrow$ Jisho.org (fallback)
   - `ja -> vi`: Mazii API (`javi`)
   - `ja -> ko`: Naver Japanese-Korean (`jako`) with native Japanese audio
   - `ja -> zh`: Mazii Japanese-Chinese (`jacn`)
-  - `ja -> ja`: Jisho.org Japanese monolingual
+  - `ja -> ja`: Jisho.org English glosses translated to Japanese
   - `zh -> en`: MDBG HTML parser with clean Pinyin
   - `zh -> vi`: Glosbe Chinese-Vietnamese with automated Pinyin
   - `zh -> ko`: Naver Chinese-Korean (`zhko`) with authentic Pinyin
   - `zh -> ja`: Glosbe Chinese-Japanese
-  - `zh -> zh`: MDBG Chinese dictionary
+  - `zh -> zh`: MDBG English glosses translated to Chinese
   - `ko -> en`: Naver Korean-English (`enko`)
   - `ko -> vi`: Naver Korean-Vietnamese (`kovi`) $\rightarrow$ KRDict (National Institute of Korean Language) $\rightarrow$ Glosbe
   - `ko -> ja`: Naver Korean-Japanese (`koja`)
   - `ko -> zh`: Naver Korean-Chinese (`kozh`)
   - `ko -> ko`: Naver Korean Monolingual Standard Dictionary (`koko`)
   - `en -> en`: Naver Oxford English (`enen`) $\rightarrow$ Datamuse API $\rightarrow$ Free Dictionary API
-  - `en -> vi`: Naver English-Vietnamese (`envi`) $\rightarrow$ Glosbe
+  - `en -> vi`: Glosbe $\rightarrow$ Naver English-Vietnamese (`envi`)
   - `en -> ja`: Naver English-Japanese (`enja`) $\rightarrow$ Jisho.org
   - `en -> ko`: Naver Oxford English-Korean (`enko`)
   - `vi -> vi`: Vietnamese Wiktionary extract (`vi.wiktionary.org`, IPA + Vietnamese glosses)
   - `vi -> en`: English Wiktionary REST API (`en.wiktionary.org`) $\rightarrow$ Glosbe
-  - `vi -> ja / ko / zh`: Glosbe bilingual dictionary with Wiktionary/GTX fallback
+  - `vi -> ja / zh`: Glosbe bilingual dictionary with English dictionary and translation fallback
+  - `vi -> ko`: Naver Korean-Vietnamese $\rightarrow$ Glosbe, with English dictionary and translation fallback
 - **Query Relevance Ranking & Multi-Reading Formatting**:
   - **Relevance Scoring**: Upstream dictionary results (Mazii, Jotoba) are dynamically scored against the query word: exact headword match (100 pts), primary reading match (85 pts), secondary reading match (50 pts), prefix match (40 pts), and `uk` (usually kana) bonus (+15 pts). This ensures kana queries (e.g. `いる`) prioritize true targets (`居る` / `要る`) over words where the query is only a secondary or archaic reading (`入る`).
   - **Clean Multi-Reading Delimiters**: Space-delimited upstream readings are parsed and formatted with clean slashes (`はいる / いる`) and converted to romanization (`hairu / iru`), preventing concatenated syllable runs in client display.
-- **Dual In-Memory + Edge Caching**:
-  - **In-Memory LRU Cache (`memPosDictCache`)**: Warm Worker isolates maintain up to 1,000 positive dictionary lookup entries with a 1-hour TTL. Frequently recurring words (particles, high-frequency verbs) return in $<0.1$ms with zero KV reads or writes (`X-Cache: HIT-MEMORY`).
-  - **In-Memory Negative Cache (`memNegDictCache`)**: Missing words are cached in an isolate `Set` to prevent repeated upstream scraping calls.
-  - **Cloudflare Edge CDN**: `Cache-Control: public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400`. Cloudflare's global edge network caches positive lookups in 300+ edge data centers with unlimited free reads/writes.
-  - **KV Free-Tier Write Protection (Rule 2)**: `dict.js` passes `skipKvWrite: true` to `CacheManager`. Individual word lookups never burn daily Cloudflare KV write quotas (preserving KV for rare user payments and diamond state). Existing KV entries remain readable as a fast fallback.
+- **Caching and upstream limits**. Matching cold requests share work within an isolate. A named regional Cache API namespace stores dictionary results for reuse across isolates in the same data center. Dictionary result caching uses no KV reads or writes. The request quota still uses KV. Regular results expire after seven days. Fallback and confirmed-empty results expire after 60 seconds. HTTP freshness uses the remaining lifetime and provider uncertainty returns a noncacheable 503.
+- **Provider protection**. Each isolate allows 12 active and 36 waiting lookups per provider. Time spent waiting counts toward the provider deadline. Upstream 403 and 429 responses pause that provider in the isolate for at least 30 seconds and honor longer `Retry-After` values. Logs identify the provider, response status, and failure class. The cache and limits operate regionally and per isolate, respectively.
+- **Match quality**. Multiword requests require the full headword or reading before accepting a provider result. Metadata enrichment requires the same headword and a compatible reading. Monolingual translations that only echo the headword return the labeled original gloss instead.
+- **Local parity**. Express uses the same Pages handler and parser contracts. Cloudflare's regional cache is available in the Pages runtime.
 
 ---
 
@@ -334,6 +336,16 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
   3. YouTube oEmbed fallback $\rightarrow$ saves metadata and channel avatar (`fetchChannelAvatar`) to D1 and memory with edge CDN cache headers (`s-maxage=604800, stale-while-revalidate=86400`).
   4. **Zero KV Writes**: Completely avoids writing to Cloudflare KV, saving $\sim 100\text{--}150$ daily KV writes.
   5. **Distributed Rate Limiting**: Max 120 requests/minute per IP with in-memory sliding window and Cloudflare KV fallback to prevent scraper flooding and DoS attacks.
+  6. **Embeddability Ingestion Gate**: When official YouTube Data API metadata reports `status.embeddable === false`, marks `embed_blocked = 1` in D1 `video_languages` (automatically removing it from `video_language_catalog` and recommendation feeds). Restores `embed_blocked = 0` if later re-enabled.
+
+---
+
+### 3.8b. Unplayable / Embed-Blocked Video Auto-Delist API
+- **Route**: `POST /api/video-unplayable`
+- **Source**: `functions-src/api/video-unplayable.js`, `functions-src/data/video-info-db.js` (`markVideoEmbedBlocked`)
+- **Request Body**: `{ videoId: string, errorCode?: number }` (accepts permanent YouTube IFrame error codes `100`, `101`, `150`; non-permanent codes like `2` or `5` are ignored).
+- **Anti-Abuse Verification**: Independently fetches `https://www.youtube.com/embed/{videoId}` with `Referer: https://voca.study/` server-side to confirm `UNPLAYABLE`, `ERROR`, or HTTP `404` before marking `embed_blocked = 1` in D1.
+- **Rate Limit**: 30 requests / 60 seconds per IP.
 
 ---
 
@@ -731,7 +743,7 @@ Additive response fields include `channelId`, `thumbnail`, `youtubeCategoryId`, 
 
 Dictionary provider direction (2026-10-28): Naver entries are filtered by their per-result direction, rather than the endpoint pair; compatible results retain their actual definition language. The service translates each language group within the shared deadline and retains failed groups as explicitly labeled fallbacks. Missing or malformed Naver direction is unavailable, not an authoritative miss. Mixed responses containing any fallback receive the short fallback cache lifetime.
 
-The internal result key is `dict:v6:{from}:{to}:{word}`. This version does not invalidate public HTTP/CDN copies under the unchanged `/api/dict` URL. At rollout, purge affected dictionary URLs using the zone's configured cache purge method, or allow the existing public cache TTL (up to seven days plus configured stale behavior) to expire; verify the deployed cache rules and browser cache behavior. Rollback likewise requires purging the public URL cache or waiting for its expiry; do not assume changing the internal key clears the CDN. No purge or deployment is performed by this change.
+The current internal namespace is `dictionary-v7`, keyed by the normalized word and language pair. A namespace change leaves public HTTP/CDN copies under the unchanged `/api/dict` URL in place. At rollout, purge affected dictionary URLs using the zone's configured cache purge method, or allow the existing public cache TTL (up to seven days plus configured stale behavior) to expire; verify the deployed cache rules and browser cache behavior. Rollback likewise requires purging the public URL cache or waiting for its expiry; do not assume changing the internal key clears the CDN. Datamuse announces a required API key starting February 1, 2027. Confirm the provider-issued authentication details and add secret-backed requests before relying on that fallback after the cutoff.
 
 
 ### Video level hardening (2026-10-29)

@@ -1,6 +1,6 @@
 /** Official YouTube display metadata. Billing evidence remains server-owned and separate. */
 import { jsonResponse, sanitizeVideoId, errorResponse, getRequestJson } from '../utils/utils.js';
-import { getVideoLanguages, parseVideoLanguageRow } from '../data/video-info-db.js';
+import { getVideoLanguages, parseVideoLanguageRow, markVideoEmbedBlocked } from '../data/video-info-db.js';
 import { detectVideoCategory } from '../services/category.service.js';
 import { inferSpokenLanguage } from '../services/video-language.service.js';
 import { resolveVerifiedVideoMetadata } from '../services/video-metadata.service.js';
@@ -55,6 +55,11 @@ export async function onRequestGet(context) {
         const [, selectResult] = await db.batch([insertStmt, selectStmt]);
         const saved = parseVideoLanguageRow(selectResult?.results?.[0]) || await getVideoLanguages(db, videoId);
         const embeddable = official.embeddable ?? metadata?.embeddable ?? true;
+        if (embeddable === false) {
+            await markVideoEmbedBlocked(db, videoId, true, 'youtube_api_not_embeddable');
+        } else if (saved?.embedBlocked) {
+            await markVideoEmbedBlocked(db, videoId, false);
+        }
         return jsonResponse({ videoId, title: metadata.title, channel: metadata.channel,
             channelId: metadata.channelId, thumbnail: metadata.thumbnail, youtubeCategoryId: metadata.youtubeCategoryId,
             duration: official.duration, durationSource: 'youtube_data_api',

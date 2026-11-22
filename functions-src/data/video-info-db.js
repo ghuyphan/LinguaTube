@@ -98,6 +98,7 @@ export function parseVideoLanguageRow(row) {
         categorySource: row.category_source || null,
         metadataSource: row.metadata_source || null,
         primaryLanguage: normalizePrimaryLanguage(row.primary_language),
+        embedBlocked: !!row.embed_blocked,
         tags: parsedTags
     };
 }
@@ -261,6 +262,20 @@ export async function saveVideoCategory(db, videoId, category) {
         return true;
     } catch (err) {
         console.error('[VideoInfoDB] saveVideoCategory error:', err.message);
+        return false;
+    }
+}
+
+export async function markVideoEmbedBlocked(db, videoId, blocked = true, reason = null) {
+    if (!db || !videoId) return false;
+    try {
+        await db.prepare(
+            `UPDATE video_languages SET embed_blocked = ?, embed_blocked_reason = ?, updated_at = strftime('%s', 'now') WHERE video_id = ?`
+        ).bind(blocked ? 1 : 0, blocked ? (reason || 'embed_disabled') : null, videoId).run();
+        invalidateRecommendationCache(db);
+        return true;
+    } catch (err) {
+        console.error('[VideoInfoDB] markVideoEmbedBlocked error:', err.message);
         return false;
     }
 }
@@ -1188,7 +1203,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
 
         const eligible = [];
         for (const row of rows) {
-            if (candidates.has(row.video_id)) continue;
+            if (candidates.has(row.video_id) || row.embed_blocked) continue;
             const parsedCatalogLevels = readCatalogLevels(row.levels);
             const catalogLevel = parsedCatalogLevels[lang] || parsedCatalogLevels.overall;
             let level = catalogLevel || null;
