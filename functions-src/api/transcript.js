@@ -322,7 +322,7 @@ export async function onRequestPost(context) {
                 const hasNativeOnYouTube = nativeLanguages.some(
                     l => normalizeLanguageCode(l) === requestedLanguage
                 );
-                if (preferNative && cached.source === 'ai' && hasNativeOnYouTube && cached.key?.endsWith('.ai.json')) {
+                if (preferNative && cached.source === 'ai' && hasNativeOnYouTube) {
                     fallbackCachedAi = cached;
                 } else {
                     return await cachedResponse(cached, requestedLanguage, 'HIT');
