@@ -64,9 +64,10 @@ export async function onRequestPost(context) {
             const put = await env.TRANSCRIPT_STORAGE.put(elevenLabsCallbackKey(jobId), JSON.stringify(toElevenLabsResult(transcription)));
             if (!put) throw new Error('Callback result not stored');
         }
-        await db.prepare(`INSERT INTO gladia_callback_inbox(job_id,provider_job_id,outcome)
-            VALUES (?,?,?) ON CONFLICT(job_id,provider_job_id,outcome) DO NOTHING`)
-            .bind(jobId, jobId, success ? 'done' : 'error').run();
+        const errorMessage = success ? null : String(event?.error_message || '').slice(0, 300) || null;
+        await db.prepare(`INSERT INTO gladia_callback_inbox(job_id,provider_job_id,outcome,error_message)
+            VALUES (?,?,?,?) ON CONFLICT(job_id,provider_job_id,outcome) DO NOTHING`)
+            .bind(jobId, jobId, success ? 'done' : 'error', errorMessage).run();
         context.waitUntil?.(recoverGladiaBatch(env).catch(() => console.warn('[ASR] Recovery deferred')));
         return jsonResponse({ received: true, jobId });
     } catch {

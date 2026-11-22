@@ -310,3 +310,47 @@ test('transcript storage reads old JSON and gzip with complete word timings', as
         assert.deepEqual(result.wordTimings, timings);
     }
 });
+
+test('ElevenLabs webhook_error logs error_message and falls back to Gladia when configured', async t => {
+    const errorCallback = (jobId, errorMessage) => {
+        const body = JSON.stringify({ type: 'webhook_error', error_message: errorMessage, webhook_metadata: { voca_job_id: jobId } });
+        const ts = Math.floor(Date.now() / 1000);
+        const digest = createHmac('sha256', secret).update(`${ts}.${body}`).digest('hex');
+        return new Request('https://voca.study/api/elevenlabs-webhook', {
+            method: 'POST', headers: { 'ElevenLabs-Signature': `t=${ts},v0=${digest}` }, body
+        });
+    };
+
+    const { db, sqlite, reserve } = await fixture(t);
+    const job = await reserve(videoId, 'user-a');
+    sqlite.exec(`UPDATE ai_transcription_jobs SET asr_provider='elevenlabs', charge_status='confirmed',
+        submission_state='accepted', status='processing', gladia_job_id='scribe-err'`);
+
+    let gladiaSubmitted = 0;
+    t.mock.method(globalThis, 'fetch', async url => {
+        if (url === 'https://api.gladia.io/v2/pre-recorded') {
+            gladiaSubmitted++;
+            return Response.json({ id: 'gladia-fallback-1', result_url: 'https://api.gladia.io/v2/pre-recorded/gladia-fallback-1' });
+        }
+        assert.fail(`Unexpected fetch: ${url}`);
+    });
+    const env = { VOCAB_DB: db, TRANSCRIPT_STORAGE: bucket(), ELEVENLABS_WEBHOOK_SECRET: secret, GLADIA_API_KEY: 'gladia-key' };
+    assert.equal((await onRequestPost({ request: errorCallback(job.id, 'Failed to download (upstream status 400)'), env })).status, 200);
+    assert.equal(sqlite.prepare('SELECT error_message FROM gladia_callback_inbox WHERE job_id=?').get(job.id).error_message,
+        'Failed to download (upstream status 400)');
+    assert.equal((await recoverGladiaBatch(env)).confirmed, 1);
+    assert.equal(gladiaSubmitted, 1);
+    const updated = sqlite.prepare('SELECT asr_provider, status, gladia_job_id FROM ai_transcription_jobs WHERE id=?').get(job.id);
+    assert.deepEqual({ ...updated }, { asr_provider: 'gladia', status: 'processing', gladia_job_id: 'gladia-fallback-1' });
+
+    // Without GLADIA_API_KEY, webhook_error fails with the stored message instead of falling back.
+    const { db: db2, sqlite: sqlite2, reserve: reserve2 } = await fixture(t);
+    const job2 = await reserve2(videoId, 'user-b');
+    sqlite2.exec(`UPDATE ai_transcription_jobs SET asr_provider='elevenlabs', charge_status='confirmed',
+        submission_state='accepted', status='processing', gladia_job_id='scribe-err-2'`);
+    const envNoGladia = { VOCAB_DB: db2, TRANSCRIPT_STORAGE: bucket(), ELEVENLABS_WEBHOOK_SECRET: secret };
+    assert.equal((await onRequestPost({ request: errorCallback(job2.id, 'Upstream 400'), env: envNoGladia })).status, 200);
+    assert.equal((await recoverGladiaBatch(envNoGladia)).confirmed, 1);
+    const failed = sqlite2.prepare('SELECT status, error_code, error_message FROM ai_transcription_jobs WHERE id=?').get(job2.id);
+    assert.deepEqual({ ...failed }, { status: 'failed', error_code: 'AI_JOB_FAILED', error_message: 'Upstream 400' });
+});
