@@ -6,7 +6,7 @@ export const routes = [
  ['payment/create-order','POST'], ['payment/revenuecat-webhook','POST'], ['payment/webhook','POST'],
  ['recommended-videos','POST'], ['related-videos','POST'], ['tokenize/[lang]','POST'], ['tokenize-batch/[lang]','POST'],
  ['transcript','POST'], ['translate/[[path]]','GET'], ['translate/batch','POST'],
- ['tts','GET'], ['version','GET'], ['video-category','GET'], ['video-info','GET'], ['video-level','POST']
+ ['tts','GET'], ['version','GET'], ['video-category','GET'], ['video-info','GET'], ['video-level','POST'], ['video-unplayable','POST']
 ];
 export const cases = [];
 const add = (name, route, options = {}) => cases.push({ name, route, method: routes.find(r=>r[0]===route)[1], ...options });
@@ -41,6 +41,8 @@ for (const videoId of ['../secret','short','a'.repeat(12),{},null]) add('invalid
 for(const body of [{duration:'60'},{duration:-1},{duration:0},{preferAI:'true'},{forceRefresh:1},{jobId:{}},{lang:'xx'}]) add('invalid transcript field '+JSON.stringify(body),'transcript',{body:{videoId:'abcdefghijk',lang:'en',...body},status:400,noUpstream:true});
 for (const resultUrl of ['http://api.gladia.io/v2/pre-recorded/a','https://api.gladia.io.evil.test/v2/pre-recorded/a','https://localhost/a','https://127.0.0.1/a','https://api.gladia.io/admin']) add('unsafe polling URL '+resultUrl,'transcript',{body:{videoId:'abcdefghijk',lang:'en',resultUrl},status:400,noUpstream:true});
 for (const duration of [-1,0,'60',14401,{},null]) add('invalid metadata duration '+JSON.stringify(duration),'video-info',{method:'POST',body:{videoId:'abcdefghijk',duration},status:400,noUpstream:true});
+add('invalid unplayable video ID','video-unplayable',{body:{videoId:'short',errorCode:150},status:400,noUpstream:true});
+add('non-permanent player error ignored','video-unplayable',{body:{videoId:'abcdefghijk',errorCode:5},status:200,noUpstream:true,expect:{delisted:false}});
 for (const route of ['tokenize/[lang]','tokenize-batch/[lang]']) {
  add('unsupported tokenizer language',route,{params:{lang:'xx'},body:{text:'hello',texts:['hello'],videoId:'abcdefghijk'},status:400,noUpstream:true});
  add('unsupported tokenizer method',route,{method:'GET',params:{lang:'en'},status:405,noUpstream:true});
