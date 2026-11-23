@@ -13,7 +13,7 @@ import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
 import { validateVideoRequest } from '../middlewares/video-validator.js';
 import { getNextApiKey, markKeyRateLimited } from '../utils/api-key-rotator.js';
 import {
-    jsonResponse, handleOptions, errorResponse, logError, sanitizeVideoId, getRequestJson
+    jsonResponse, errorResponse, logError, sanitizeVideoId, getRequestJson
 } from '../utils/utils.js';
 import { consumeRateLimit, getClientIdentifier, getTieredConfig, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
@@ -40,6 +40,7 @@ import { SupadataProvider, resolveSupadataApiKeys } from '../providers/supadata.
 import { DiamondService } from '../services/diamond.service.js';
 import { TranscriptService } from '../services/transcript.service.js';
 import { verifyTurnstileToken } from '../services/turnstile.service.js';
+import { playbackAvailability, viewerCountry } from '../services/video-playback.service.js';
 
 const DEBUG = true;
 
@@ -185,6 +186,21 @@ export async function onRequestPost(context) {
         log(`Request: ${cleanVideoId}, lang: ${lang}, diamonds: ${diamondStatus.diamonds}, tier: ${tier}`);
 
         const knownInfo = await getVideoLanguages(db, cleanVideoId);
+        if (!isPolling && knownInfo) {
+            const availability = playbackAvailability(knownInfo, viewerCountry(request));
+            if (availability === 'embed_blocked' || availability === 'region_blocked') {
+                return jsonResponse({
+                    success: false,
+                    videoId: cleanVideoId,
+                    requestedLanguage: lang,
+                    segments: [],
+                    errorCode: availability === 'region_blocked' ? 'VIDEO_REGION_BLOCKED' : 'VIDEO_EMBED_BLOCKED',
+                    error: availability === 'region_blocked' ? 'Video is not available in your region' : 'Video cannot be played in embedded player',
+                    playbackAvailability: availability,
+                    timing: elapsed()
+                }, 422, { 'Cache-Control': CACHE_CONTROL.NO_CACHE });
+            }
+        }
         const nativeLanguages = knownInfo?.availableLanguages || [];
         const subLanguages = knownInfo?.subLanguages || [];
         const aiLanguages = knownInfo?.aiLanguages || [];

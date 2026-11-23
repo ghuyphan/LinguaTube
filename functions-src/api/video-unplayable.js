@@ -6,23 +6,23 @@
 import { jsonResponse, sanitizeVideoId, getRequestJson } from '../utils/utils.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { markVideoEmbedBlocked } from '../data/video-info-db.js';
+import { readBoundedBody } from '../utils/response-body.js';
 
 const RATE_LIMIT = { max: 30, windowSeconds: 60, keyPrefix: 'video_unplayable' };
 const REPORTABLE_CODES = new Set([100, 101, 150]);
 
 async function verifyBlocked(videoId, fetchImpl = fetch) {
     try {
-        const res = await fetchImpl(`https://www.youtube.com/embed/${videoId}`, {
-            headers: { 'Referer': 'https://voca.study/' },
-            signal: AbortSignal.timeout(4000)
+        const signal = AbortSignal.timeout(4000);
+        const res = await fetchImpl(`https://www.youtube.com/embed/${videoId}?hl=en`, {
+            headers: { 'Referer': 'https://voca.study/', 'Accept-Language': 'en-US' },
+            signal, redirect: 'manual'
         });
         if (res.status === 404) return 'not_found';
         if (!res.ok) return null;
-        const html = await res.text();
-        if (/\\?"status\\?":\s*\\?"UNPLAYABLE\\?"/.test(html) || html.includes('Playback on other websites has been disabled')) {
-            return 'embed_disabled';
-        }
-        if (/\\?"status\\?":\s*\\?"ERROR\\?"/.test(html)) return 'video_unavailable';
+        const html = new TextDecoder().decode(await readBoundedBody(res, signal, 1024 * 1024));
+        // A generic UNPLAYABLE response also covers country restrictions.
+        if (html.includes('Playback on other websites has been disabled')) return 'embed_disabled';
         return null;
     } catch {
         return null;

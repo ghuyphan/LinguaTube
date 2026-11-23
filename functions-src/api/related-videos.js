@@ -8,6 +8,7 @@
  */
 
 import { jsonResponse } from '../utils/utils.js';
+import { viewerCountry } from '../services/video-playback.service.js';
 import { scheduleMetadataHealing } from '../middlewares/video-validator.js';
 import { getRelatedVideosFromCloudflare } from '../data/video-info-db.js';
 import { parseRecommendationRequest, recommendationResponseHeaders } from '../services/recommendation.service.js';
@@ -61,7 +62,7 @@ async function handleRelatedVideos(context, method) {
         ({ videos, hasMore } = await getRelatedVideosFromCloudflare(
             db, r2, lang, limit, offset,
             { currentVideo, excludeIds, context: userContext, sessionSeed, isRefresh, metrics,
-                waitUntil: context.waitUntil?.bind(context) }
+                country: viewerCountry(context.request), waitUntil: context.waitUntil?.bind(context) }
         ));
     } catch (error) {
         console.error('[RelatedVideos] Retrieval failed:', error.message);

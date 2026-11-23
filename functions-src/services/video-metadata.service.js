@@ -1,7 +1,10 @@
 import { readBoundedBody } from '../utils/response-body.js';
+import { saveVideoAvailabilityChecks } from '../data/video-info-db.js';
+import { blockReasonFromYouTubeItem, normalizeRegionRestriction } from './video-playback.service.js';
 
 const SOURCE = 'youtube_data_api';
 const QUOTE_TTL_SECONDS = 300;
+const AVAILABILITY_RECHECK_INTERVAL_MS = 7 * 24 * 60 * 60 * 1000;
 
 function metadataError(code, status = 503, retryAfterSeconds = 15) {
     const error = new Error(`${code}: Video metadata verification is unavailable.`);
@@ -32,18 +35,19 @@ function validateMetadata(item, videoId) {
     }
     const duration = parseYouTubeDuration(item.contentDetails?.duration);
     if (broadcastState === 'none' && !duration) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
-    const embeddable = item.status?.embeddable !== false;
-    return { duration, broadcastState, isLive: broadcastState !== 'none', embeddable, source: SOURCE };
+    const blockReason = blockReasonFromYouTubeItem(item);
+    const embeddable = blockReason == null;
+    return { duration, broadcastState, isLive: broadcastState !== 'none', embeddable, blockReason, source: SOURCE };
 }
 
-function videoSnippet(snippet, status) {
+function videoSnippet(snippet, regionRestriction, blockReason = null) {
     if (typeof snippet?.title !== 'string' || !snippet.title.trim() ||
         typeof snippet.channelTitle !== 'string' || !snippet.channelTitle.trim() ||
         typeof snippet.channelId !== 'string' || !/^UC[a-zA-Z0-9_-]{22}$/.test(snippet.channelId) ||
         typeof snippet.categoryId !== 'string' || !/^\d{1,3}$/.test(snippet.categoryId)) return null;
     const tags = Array.isArray(snippet.tags) ? snippet.tags.filter(tag => typeof tag === 'string').slice(0, 100) : [];
     const thumbnail = snippet.thumbnails?.high?.url || snippet.thumbnails?.medium?.url || snippet.thumbnails?.default?.url || null;
-    const embeddable = status?.embeddable !== false;
+    const embeddable = blockReason == null;
     const defaultAudioLanguage = typeof snippet.defaultAudioLanguage === 'string' && snippet.defaultAudioLanguage.trim()
         ? snippet.defaultAudioLanguage.trim()
         : null;
@@ -51,7 +55,7 @@ function videoSnippet(snippet, status) {
         ? snippet.defaultLanguage.trim()
         : null;
     return { title: snippet.title.trim(), channel: snippet.channelTitle.trim(), channelId: snippet.channelId,
-        youtubeCategoryId: snippet.categoryId, tags, thumbnail: typeof thumbnail === 'string' && thumbnail.startsWith('https://i.ytimg.com/') ? thumbnail : null, embeddable,
+        youtubeCategoryId: snippet.categoryId, tags, thumbnail: typeof thumbnail === 'string' && thumbnail.startsWith('https://i.ytimg.com/') ? thumbnail : null, embeddable, blockReason, regionRestriction,
         ...(defaultAudioLanguage ? { defaultAudioLanguage } : {}),
         ...(defaultLanguage ? { defaultLanguage } : {}) };
 }
@@ -68,13 +72,116 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
     catch { throw metadataError('VIDEO_METADATA_STORAGE_UNAVAILABLE'); }
     let snippet = null;
     try { snippet = cached?.snippet_json ? JSON.parse(cached.snippet_json) : null; } catch { /* Older/incomplete metadata must refresh for display. */ }
-    if (!fresh && (!includeDisplay || (snippet?.title && snippet?.channel && snippet?.channelId && snippet?.youtubeCategoryId && Array.isArray(snippet.tags))) && cached?.source === SOURCE && cached.refresh_after > now && cached.verified_at <= now && cached.verified_at > now - QUOTE_TTL_SECONDS) {
-        const embeddable = snippet?.embeddable !== false;
+    if (!fresh && (!includeDisplay || (snippet?.title && snippet?.channel && snippet?.channelId && snippet?.youtubeCategoryId && Array.isArray(snippet.tags) && Object.hasOwn(snippet, 'regionRestriction'))) && cached?.source === SOURCE && cached.refresh_after > now && cached.verified_at <= now && cached.verified_at > now - QUOTE_TTL_SECONDS) {
+        const blockReason = snippet?.blockReason ?? (snippet?.embeddable === false ? 'youtube_api_not_embeddable' : null);
+        const embeddable = blockReason == null;
         if (cached.broadcast_state === 'none' && Number.isSafeInteger(cached.duration_seconds) && cached.duration_seconds > 0) {
-            return { duration: cached.duration_seconds, broadcastState: 'none', isLive: false, embeddable, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, snippet };
+            return { duration: cached.duration_seconds, broadcastState: 'none', isLive: false, embeddable, blockReason, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, regionRestriction: snippet?.regionRestriction ?? null, snippet };
         }
-        if (['live', 'upcoming'].includes(cached.broadcast_state)) return { duration: null, broadcastState: cached.broadcast_state, isLive: true, embeddable, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, snippet };
+        if (['live', 'upcoming'].includes(cached.broadcast_state)) return { duration: null, broadcastState: cached.broadcast_state, isLive: true, embeddable, blockReason, source: SOURCE, verifiedAt: cached.verified_at, observedAt: cached.observed_at, regionRestriction: snippet?.regionRestriction ?? null, snippet };
     }
+    const startedAt = Date.now();
+    try {
+        const items = await fetchYouTubeVideos(env, db, [videoId], {
+            fresh,
+            operation: fresh ? 'start' : 'quote',
+            part: 'contentDetails,snippet,liveStreamingDetails,status',
+            fields: 'items(id,contentDetails(duration,regionRestriction,contentRating/ytRating),status(embeddable,privacyStatus),snippet(title,channelTitle,channelId,categoryId,tags,thumbnails,liveBroadcastContent,defaultAudioLanguage,defaultLanguage),liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))'
+        });
+        if (items.length === 0) throw metadataError('VIDEO_UNAVAILABLE', 404, 0);
+        if (items.length !== 1) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
+        const details = validateMetadata(items[0], videoId);
+        let regionRestriction;
+        try {
+            regionRestriction = normalizeRegionRestriction(items[0].contentDetails?.regionRestriction);
+        } catch (error) {
+            if (includeDisplay) throw error;
+        }
+        snippet = videoSnippet(items[0].snippet, regionRestriction, details.blockReason);
+        if (includeDisplay && !snippet) throw metadataError('VIDEO_METADATA_UNAVAILABLE');
+        const ttl = details.isLive ? 30 : QUOTE_TTL_SECONDS;
+        // Millisecond observation order prevents a slower old request from replacing newer evidence.
+        await db.prepare(`INSERT INTO verified_video_metadata(video_id,duration_seconds,broadcast_state,source,verified_at,refresh_after,observed_at,snippet_json)
+            VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(video_id) DO UPDATE SET duration_seconds=excluded.duration_seconds,
+            broadcast_state=excluded.broadcast_state,source=excluded.source,verified_at=excluded.verified_at,refresh_after=excluded.refresh_after,observed_at=excluded.observed_at,snippet_json=excluded.snippet_json
+            WHERE excluded.observed_at >= verified_video_metadata.observed_at`).bind(videoId, details.duration, details.broadcastState, SOURCE, now, now + ttl, startedAt, snippet ? JSON.stringify(snippet) : null).run();
+        console.log('[VideoMetadata]', { videoId, operation: fresh ? 'start' : 'quote', source: SOURCE, elapsedMs: Date.now() - startedAt });
+        return { ...details, verifiedAt: now, observedAt: startedAt, regionRestriction, snippet };
+    } catch (error) {
+        if (error.status) throw error;
+        console.warn('[VideoMetadata]', { videoId, operation: fresh ? 'start' : 'quote', reason: 'transport_or_invalid_response', elapsedMs: Date.now() - startedAt });
+        throw metadataError('VIDEO_DURATION_UNAVAILABLE');
+    }
+}
+
+// The small catalog batch shares the billing resolver's provider cooldown and
+// non-fresh quota ceiling, fetching region + embed + privacy + age status in 1 quota unit.
+export async function fetchVideoAvailability(env, db, videoIds) {
+    const items = await fetchYouTubeVideos(env, db, videoIds, {
+        operation: 'catalog_availability',
+        part: 'contentDetails,status',
+        fields: 'items(id,contentDetails(duration,regionRestriction,contentRating/ytRating),status(embeddable,privacyStatus))',
+        maxBytes: 256 * 1024
+    });
+    const ids = new Set(videoIds);
+    const availability = new Map();
+    for (const item of items) {
+        if (!ids.has(item?.id) || availability.has(item.id)) {
+            throw metadataError('VIDEO_METADATA_UNAVAILABLE');
+        }
+        let regionRestriction;
+        try {
+            regionRestriction = normalizeRegionRestriction(item.contentDetails?.regionRestriction);
+        } catch {
+            console.warn('[VideoAvailability] Malformed regionRestriction ignored', { videoId: item.id });
+            regionRestriction = undefined;
+        }
+        availability.set(item.id, {
+            blockReason: blockReasonFromYouTubeItem(item),
+            regionRestriction
+        });
+    }
+    return availability;
+}
+
+// One official YouTube videos.list request per reconciliation (50 videos = 1 quota unit).
+// Checks region restrictions, embeddable status, privacy status, age restriction, and deleted videos together.
+export async function refreshCatalogVideoAvailability(env) {
+    if (!env.YOUTUBE_DATA_API_KEY) return 0;
+    const db = env.VOCAB_DB;
+    const checkedAt = Date.now();
+    const { results, success } = await db.prepare(`
+        SELECT v.video_id, v.region_restriction, v.embed_blocked, v.embed_blocked_reason
+        FROM video_languages v
+        WHERE v.title IS NOT NULL
+          AND (v.region_checked_at IS NULL OR v.region_checked_at < ?)
+          AND EXISTS (SELECT 1 FROM video_language_catalog c WHERE c.video_id = v.video_id)
+        ORDER BY v.region_checked_at, v.video_id LIMIT 50
+    `).bind(checkedAt - AVAILABILITY_RECHECK_INTERVAL_MS).all();
+    if (success === false) throw new Error('Video availability scan failed');
+    if (!results.length) return 0;
+
+    const availability = await fetchVideoAvailability(env, db, results.map(row => row.video_id));
+    return saveVideoAvailabilityChecks(db, results.map(row => {
+        const entry = availability.get(row.video_id);
+        const keepVerifiedEmbedBlock = row.embed_blocked && row.embed_blocked_reason === 'embed_disabled' && entry?.blockReason == null;
+        return {
+            videoId: row.video_id,
+            previousRestriction: row.region_restriction,
+            previousBlocked: !!row.embed_blocked,
+            restriction: entry?.regionRestriction === undefined
+                ? undefined
+                : (entry.regionRestriction ? JSON.stringify(entry.regionRestriction) : null),
+            blockReason: keepVerifiedEmbedBlock ? undefined : (entry ? entry.blockReason : 'video_unavailable'),
+            checkedAt
+        };
+    }));
+}
+
+async function fetchYouTubeVideos(env, db, videoIds, {
+    part, fields, operation, fresh = false, maxBytes = 64 * 1024
+}) {
+    const now = Math.floor(Date.now() / 1000);
     const state = await db.prepare("SELECT blocked_until FROM video_metadata_provider_state WHERE provider='youtube'").first();
     if (state?.blocked_until > now) throw metadataError('VIDEO_DURATION_UNAVAILABLE', 503, state.blocked_until - now);
     // A project-wide atomic budget protects Google's shared quota; quotes leave room for paid verification.
@@ -94,42 +201,29 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
     const startedAt = Date.now();
     try {
         const url = new URL('https://www.googleapis.com/youtube/v3/videos');
-        url.searchParams.set('id', videoId);
-        url.searchParams.set('part', 'contentDetails,snippet,liveStreamingDetails,status');
-        url.searchParams.set('fields', 'items(id,contentDetails/duration,status/embeddable,snippet(title,channelTitle,channelId,categoryId,tags,thumbnails,liveBroadcastContent,defaultAudioLanguage,defaultLanguage),liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))');
+        url.searchParams.set('id', videoIds.join(','));
+        url.searchParams.set('part', part);
+        url.searchParams.set('fields', fields);
         const signal = AbortSignal.timeout(4000);
         const response = await fetch(url, {
             headers: { 'X-Goog-Api-Key': env.YOUTUBE_DATA_API_KEY, Accept: 'application/json' },
             signal, redirect: 'manual'
         });
-        const bytes = await readBoundedBody(response, signal, 64 * 1024);
+        const bytes = await readBoundedBody(response, signal, maxBytes);
         if (!response.ok) {
             let reason = 'upstream_http';
             try { reason = JSON.parse(new TextDecoder().decode(bytes)).error?.errors?.[0]?.reason || reason; } catch { /* Never expose upstream bodies or credentials. */ }
             const delay = ['quotaExceeded', 'dailyLimitExceeded'].includes(reason) ? 3600 : response.status === 429 ? 60 : 15;
             await db.prepare(`INSERT INTO video_metadata_provider_state(provider,blocked_until) VALUES('youtube',?)
                 ON CONFLICT(provider) DO UPDATE SET blocked_until=MAX(blocked_until,excluded.blocked_until)`).bind(now + delay).run();
-            console.warn('[VideoMetadata]', { videoId, operation: fresh ? 'start' : 'quote', status: response.status, reason, elapsedMs: Date.now() - startedAt });
+            console.warn('[VideoMetadata]', { videoCount: videoIds.length, operation, status: response.status, reason, elapsedMs: Date.now() - startedAt });
             throw metadataError(response.status === 401 || reason === 'keyInvalid' || reason === 'accessNotConfigured' ? 'VIDEO_METADATA_NOT_CONFIGURED' : 'VIDEO_DURATION_UNAVAILABLE', 503, delay);
         }
         const data = JSON.parse(new TextDecoder().decode(bytes));
         if (!Array.isArray(data.items)) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
-        if (data.items.length === 0) throw metadataError('VIDEO_UNAVAILABLE', 404, 0);
-        if (data.items.length !== 1) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
-        const details = validateMetadata(data.items[0], videoId);
-        snippet = videoSnippet(data.items[0].snippet, data.items[0].status);
-        if (includeDisplay && !snippet) throw metadataError('VIDEO_METADATA_UNAVAILABLE');
-        const ttl = details.isLive ? 30 : QUOTE_TTL_SECONDS;
-        // Millisecond observation order prevents a slower old request from replacing newer evidence.
-        await db.prepare(`INSERT INTO verified_video_metadata(video_id,duration_seconds,broadcast_state,source,verified_at,refresh_after,observed_at,snippet_json)
-            VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(video_id) DO UPDATE SET duration_seconds=excluded.duration_seconds,
-            broadcast_state=excluded.broadcast_state,source=excluded.source,verified_at=excluded.verified_at,refresh_after=excluded.refresh_after,observed_at=excluded.observed_at,snippet_json=excluded.snippet_json
-            WHERE excluded.observed_at >= verified_video_metadata.observed_at`).bind(videoId, details.duration, details.broadcastState, SOURCE, now, now + ttl, startedAt, snippet ? JSON.stringify(snippet) : null).run();
-        console.log('[VideoMetadata]', { videoId, operation: fresh ? 'start' : 'quote', source: SOURCE, elapsedMs: Date.now() - startedAt });
-        return { ...details, verifiedAt: now, observedAt: startedAt, snippet };
+        return data.items;
     } catch (error) {
         if (error.status) throw error;
-        console.warn('[VideoMetadata]', { videoId, operation: fresh ? 'start' : 'quote', reason: 'transport_or_invalid_response', elapsedMs: Date.now() - startedAt });
         throw metadataError('VIDEO_DURATION_UNAVAILABLE');
     }
 }

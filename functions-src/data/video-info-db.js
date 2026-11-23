@@ -12,6 +12,7 @@ import { detectVideoCategory } from '../services/category.service.js';
 import { inferSpokenLanguage, normalizePrimaryLanguage } from '../services/video-language.service.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
+import { playbackAvailability } from '../services/video-playback.service.js';
 
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
@@ -99,6 +100,7 @@ export function parseVideoLanguageRow(row) {
         metadataSource: row.metadata_source || null,
         primaryLanguage: normalizePrimaryLanguage(row.primary_language),
         embedBlocked: !!row.embed_blocked,
+        regionRestriction: row.region_restriction || null,
         tags: parsedTags
     };
 }
@@ -268,12 +270,21 @@ export async function saveVideoCategory(db, videoId, category) {
 
 export async function markVideoEmbedBlocked(db, videoId, blocked = true, reason = null) {
     if (!db || !videoId) return false;
+    const nextBlocked = blocked ? 1 : 0;
+    const nextReason = blocked ? (reason || 'embed_disabled') : null;
+    const nowMs = Date.now();
     try {
-        await db.prepare(
-            `UPDATE video_languages SET embed_blocked = ?, embed_blocked_reason = ?, updated_at = strftime('%s', 'now') WHERE video_id = ?`
-        ).bind(blocked ? 1 : 0, blocked ? (reason || 'embed_disabled') : null, videoId).run();
-        invalidateRecommendationCache(db);
-        return true;
+        const res = await db.prepare(`
+            UPDATE video_languages
+            SET embed_blocked = ?,
+                embed_blocked_reason = ?,
+                region_checked_at = MAX(COALESCE(region_checked_at, 0), ?)
+            WHERE video_id = ?
+              AND (embed_blocked != ? OR embed_blocked_reason IS NOT ?)
+        `).bind(nextBlocked, nextReason, nowMs, videoId, nextBlocked, nextReason).run();
+        const changed = (res.meta?.changes ?? 0) > 0;
+        if (changed) invalidateRecommendationCache(db);
+        return changed;
     } catch (err) {
         console.error('[VideoInfoDB] markVideoEmbedBlocked error:', err.message);
         return false;
@@ -965,18 +976,67 @@ export async function indexPendingVideoSearchText(db) {
     }, 0);
 }
 
+// Persist region restriction and global block state in one write without
+// altering discovery ordering (updated_at) or firing catalog triggers when embed_blocked is unchanged.
+export async function saveVideoAvailabilityChecks(db, checks) {
+    if (!checks.length) return 0;
+    const prepared = checks.map(check => {
+        const { videoId, restriction, blockReason, previousBlocked, checkedAt } = check;
+        const shouldWriteBlock = blockReason !== undefined &&
+            (previousBlocked === undefined || Boolean(blockReason) !== Boolean(previousBlocked));
+        const stmt = shouldWriteBlock
+            ? db.prepare(`
+                UPDATE video_languages
+                SET region_restriction = CASE WHEN ? THEN region_restriction ELSE ? END,
+                    embed_blocked = ?,
+                    embed_blocked_reason = ?,
+                    region_checked_at = ?
+                WHERE video_id = ? AND (region_checked_at IS NULL OR region_checked_at < ?)
+            `).bind(
+                restriction === undefined ? 1 : 0, restriction ?? null,
+                blockReason ? 1 : 0, blockReason ?? null,
+                checkedAt, videoId, checkedAt
+            )
+            : db.prepare(`
+                UPDATE video_languages
+                SET region_restriction = CASE WHEN ? THEN region_restriction ELSE ? END,
+                    region_checked_at = ?
+                WHERE video_id = ? AND (region_checked_at IS NULL OR region_checked_at < ?)
+            `).bind(
+                restriction === undefined ? 1 : 0, restriction ?? null,
+                checkedAt, videoId, checkedAt
+            );
+        return { stmt, shouldWriteBlock, check };
+    });
+    const results = await db.batch(prepared.map(p => p.stmt));
+    let count = 0;
+    let eligibilityChanged = false;
+    for (const [index, result] of results.entries()) {
+        if (result.success === false) throw new Error('Video availability write failed');
+        const changes = result.meta?.changes ?? 0;
+        count += changes;
+        const { shouldWriteBlock, check } = prepared[index];
+        eligibilityChanged ||= changes > 0 && (
+            (check.restriction !== undefined && check.restriction !== check.previousRestriction) ||
+            shouldWriteBlock
+        );
+    }
+    if (eligibilityChanged) invalidateRecommendationCache(db);
+    return count;
+}
+
 /**
  * Collect a fixed discovery window before ranking. Offset, page size and seed
  * never change candidate membership. Metadata scans and R2 probes are bounded.
  */
 async function loadRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options = {}) {
     if (!db || !lang) throw new Error('Recommendation database unavailable');
-    const { metrics, isRefresh, waitUntil, level } = options;
+    const { metrics, isRefresh, waitUntil, level, country = null } = options;
     if (cleanQuery) {
         if (metrics) metrics.candidateCache = 'BYPASS-SEARCH';
-        return discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, level, metrics);
+        return discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, level, country, metrics);
     }
-    const key = JSON.stringify([lang, targetTier, category || null]);
+    const key = JSON.stringify([lang, targetTier, category || null, country]);
     let cache = recommendationCandidates.get(db);
     if (!cache) {
         cache = new Map();
@@ -990,7 +1050,7 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
         return cached.videos;
     }
     const edge = typeof caches !== 'undefined' ? caches.default : null;
-    const edgeKey = 'https://internal.voca/rec-pool/v2/' + [epoch, lang, targetTier || 'all', category || 'all']
+    const edgeKey = 'https://internal.voca/rec-pool/v3/' + [epoch, lang, targetTier || 'all', category || 'all', country || 'unknown']
         .map(encodeURIComponent).join('/');
     const store = videos => {
         if (catalogCacheEpoch !== epoch || (cache.get(key)?.version ?? 0) > version) return;
@@ -1009,7 +1069,7 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
         } catch { /* Retry through D1. */ }
     }
     if (metrics) metrics.candidateCache = 'MISS';
-    const videos = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, '', null, metrics);
+    const videos = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, '', null, country, metrics);
     store(videos);
     if (!isRefresh && edge && waitUntil && catalogCacheEpoch === epoch && cache.get(key)?.videos === videos) {
         waitUntil(edge.put(edgeKey, new Response(JSON.stringify(videos), {
@@ -1061,7 +1121,7 @@ export async function getRelatedVideosFromCloudflare(db, r2, rawLang, limit = 16
     return { videos, hasMore: safeOffset + videos.length < ranked.length };
 }
 
-async function discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, selectedLevel, metrics) {
+async function discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, selectedLevel, country, metrics) {
     const candidates = new Map();
     const batchSize = 200;
     const maxScans = 20;
@@ -1203,7 +1263,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
 
         const eligible = [];
         for (const row of rows) {
-            if (candidates.has(row.video_id) || row.embed_blocked) continue;
+            if (candidates.has(row.video_id) || playbackAvailability(row, country) !== 'available') continue;
             const parsedCatalogLevels = readCatalogLevels(row.levels);
             const catalogLevel = parsedCatalogLevels[lang] || parsedCatalogLevels.overall;
             let level = catalogLevel || null;

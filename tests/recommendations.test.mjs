@@ -31,12 +31,14 @@ function database(t, rows) {
         sub_languages TEXT, category TEXT, updated_at INTEGER, tags TEXT DEFAULT '[]', category_source TEXT)`);
     sqlite.exec(CATALOG_INDEX_MIGRATION);
     sqlite.exec(fs.readFileSync(new URL('../db/migrations/d1/20261120_video_search_text.sql', import.meta.url), 'utf8'));
+    sqlite.exec(fs.readFileSync(new URL('../db/migrations/d1/20261123_video_region_availability.sql', import.meta.url), 'utf8'));
     const insert = sqlite.prepare(`INSERT INTO video_languages
         (video_id, title, channel, channel_avatar, duration_seconds, levels, available_languages, sub_languages, category, updated_at)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
     for (const row of rows) insert.run(...Object.values(row));
     let calls = 0;
     return {
+        sqlite,
         get calls() { return calls; },
         prepare(sql) {
             const bind = (...args) => ({
@@ -855,4 +857,49 @@ test('inferSpokenLanguage recovers non-English lessons from YouTube Studio en de
         title: '圧倒的感謝',
         subLanguages: ['ja']
     }), 'ja');
+});
+
+test('country eligibility applies before the candidate cap and partitions Home and related caches', options, async t => {
+    const db = database(t, catalog(203));
+    db.sqlite.prepare("UPDATE video_languages SET title = 'Doraemon episode' WHERE video_id = 'video_0000'").run();
+    db.sqlite.prepare("UPDATE video_languages SET region_restriction = ? WHERE updated_at >= 9801")
+        .run(JSON.stringify({ allowed: ['JP'] }));
+    db.sqlite.prepare("UPDATE video_languages SET region_restriction = ? WHERE video_id = 'video_0200'")
+        .run(JSON.stringify({ blocked: ['JP'] }));
+    db.sqlite.prepare("UPDATE video_languages SET region_restriction = ? WHERE video_id = 'video_0202'")
+        .run(JSON.stringify({ allowed: [] }));
+
+    const env = { VOCAB_DB: db };
+    const home = (country, params = '') => {
+        const request = new Request(`https://example.test/api/recommended-videos?lang=ja&seed=1${params}`, {
+            headers: { 'CF-IPCountry': country }
+        });
+        return onRequestGet({ request, env });
+    };
+    const related = async country => {
+        const request = new Request('https://example.test/api/related-videos', {
+            method: 'POST',
+            headers: { 'CF-IPCountry': country },
+            body: JSON.stringify({ lang: 'ja', currentVideo: { videoId: 'other-video' } })
+        });
+        return onRelatedPost({ request, env });
+    };
+    const ids = async response => (await response.json()).videos.map(video => video.videoId).sort();
+    const japan = await home('JP');
+    assert.equal(japan.headers.get('X-Candidate-Cache'), 'MISS');
+    assert.ok((await ids(japan)).every(id => Number(id.slice(6)) < 200));
+
+    const vietnam = await home('VN', '&limit=1');
+    assert.equal(vietnam.headers.get('X-Candidate-Cache'), 'MISS');
+    assert.equal((await vietnam.clone().json()).hasMore, true);
+    const first = await ids(vietnam);
+    const next = await home('VN', '&limit=1&offset=1');
+    assert.equal(next.headers.get('X-Candidate-Cache'), 'HIT');
+    assert.equal((await next.clone().json()).hasMore, false);
+    assert.deepEqual([...first, ...await ids(next)].sort(), ['video_0200', 'video_0201']);
+
+    assert.deepEqual(await ids(await related('VN')), ['video_0200', 'video_0201']);
+    assert.deepEqual(await ids(await home('VN', '&q=Doraemon')), []);
+    assert.deepEqual(await ids(await home('JP', '&q=Doraemon')), ['video_0000']);
+    assert.deepEqual(await ids(await home('XX')), ['video_0201']);
 });

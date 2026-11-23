@@ -7,6 +7,7 @@
  */
 
 import { jsonResponse } from '../utils/utils.js';
+import { viewerCountry } from '../services/video-playback.service.js';
 import { scheduleMetadataHealing } from '../middlewares/video-validator.js';
 import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 import { parseRecommendationRequest, recommendationResponseHeaders } from '../services/recommendation.service.js';
@@ -35,7 +36,7 @@ async function handleRecommendedVideos(context, method) {
         ({ videos, hasMore } = await getRecommendedVideosFromCloudflare(
             db, r2, lang, limit, tier, false, offset, query,
             { context: userContext, sessionSeed, category, isRefresh, excludeIds, includePage: true,
-                level, metrics, waitUntil: context.waitUntil?.bind(context) }
+                level, metrics, country: viewerCountry(context.request), waitUntil: context.waitUntil?.bind(context) }
         ));
     } catch (error) {
         console.error('[Recommendations] Retrieval failed:', error.message, metrics);

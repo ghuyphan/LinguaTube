@@ -1,9 +1,10 @@
 /** Official YouTube display metadata. Billing evidence remains server-owned and separate. */
 import { jsonResponse, sanitizeVideoId, errorResponse, getRequestJson } from '../utils/utils.js';
-import { getVideoLanguages, parseVideoLanguageRow, markVideoEmbedBlocked } from '../data/video-info-db.js';
+import { getVideoLanguages, parseVideoLanguageRow, saveVideoAvailabilityChecks } from '../data/video-info-db.js';
 import { detectVideoCategory } from '../services/category.service.js';
 import { inferSpokenLanguage } from '../services/video-language.service.js';
 import { resolveVerifiedVideoMetadata } from '../services/video-metadata.service.js';
+import { playbackAvailability, viewerCountry } from '../services/video-playback.service.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
 const RATE_LIMIT_CONFIG = { max: 120, windowSeconds: 60, keyPrefix: 'video_info' };
@@ -20,8 +21,8 @@ export async function onRequestGet(context) {
         const metadata = official.snippet;
         const inferredCategory = detectVideoCategory(metadata);
         const existingRow = await db.prepare(
-            'SELECT primary_language, sub_languages, ai_languages FROM video_languages WHERE video_id = ?'
-        ).bind(videoId).first().catch(() => null);
+            'SELECT primary_language, sub_languages, ai_languages, embed_blocked, embed_blocked_reason, region_restriction, region_checked_at FROM video_languages WHERE video_id = ?'
+        ).bind(videoId).first();
         const parseJsonArray = raw => { try { const v = JSON.parse(raw || '[]'); return Array.isArray(v) ? v : []; } catch { return []; } };
         const inferredPrimaryLanguage = inferSpokenLanguage({
             defaultAudioLanguage: metadata.defaultAudioLanguage,
@@ -54,26 +55,42 @@ export async function onRequestGet(context) {
         `).bind(videoId);
         const [, selectResult] = await db.batch([insertStmt, selectStmt]);
         const saved = parseVideoLanguageRow(selectResult?.results?.[0]) || await getVideoLanguages(db, videoId);
-        const embeddable = official.embeddable ?? metadata?.embeddable ?? true;
-        if (embeddable === false) {
-            await markVideoEmbedBlocked(db, videoId, true, 'youtube_api_not_embeddable');
-        } else if (saved?.embedBlocked) {
-            await markVideoEmbedBlocked(db, videoId, false);
+        const restriction = official.regionRestriction ? JSON.stringify(official.regionRestriction) : null;
+        const previousRestriction = existingRow?.region_restriction ?? null;
+        const blockReason = official.blockReason ?? null;
+        const hasVerifiedEmbedBlock = Boolean(existingRow?.embed_blocked && existingRow?.embed_blocked_reason === 'embed_disabled');
+        const storedCheckIsFresher = (existingRow?.region_checked_at ?? 0) >= official.observedAt;
+        if (!storedCheckIsFresher) {
+            await saveVideoAvailabilityChecks(db, [{
+                videoId, restriction, previousRestriction,
+                blockReason: hasVerifiedEmbedBlock && blockReason == null ? undefined : blockReason,
+                previousBlocked: existingRow ? !!existingRow.embed_blocked : undefined,
+                checkedAt: official.observedAt
+            }]);
         }
+        const effectiveBlocked = storedCheckIsFresher
+            ? Boolean(existingRow?.embed_blocked || blockReason)
+            : Boolean(blockReason || hasVerifiedEmbedBlock);
+        const effectiveAvailability = playbackAvailability({
+            embedBlocked: effectiveBlocked,
+            regionRestriction: storedCheckIsFresher ? previousRestriction : official.regionRestriction
+        }, viewerCountry(request));
+        const embeddable = effectiveAvailability !== 'embed_blocked';
         return jsonResponse({ videoId, title: metadata.title, channel: metadata.channel,
             channelId: metadata.channelId, thumbnail: metadata.thumbnail, youtubeCategoryId: metadata.youtubeCategoryId,
             duration: official.duration, durationSource: 'youtube_data_api',
-            embeddable,
+            embeddable, playbackAvailability: effectiveAvailability,
             availableLanguages: saved.availableLanguages, subLanguages: saved.subLanguages, hasAutoCaptions: saved.hasAutoCaptions,
             channelAvatar: saved.channelAvatar, levels: saved.levels, category: ['manual','legacy'].includes(saved.categorySource) ? saved.category : inferredCategory, categorySource: saved.categorySource,
             primaryLanguage: saved?.primaryLanguage ?? inferredPrimaryLanguage,
             tags: metadata.tags, source: 'youtube_data_api', metadataSource: 'youtube_data_api', metadataVerifiedAt: official.verifiedAt,
-            broadcastState: official.broadcastState }, 200, { 'Cache-Control': 'public, max-age=60, s-maxage=60' });
+            broadcastState: official.broadcastState }, 200, { 'Cache-Control': 'private, no-store' });
     } catch (error) {
         const errorCode = error.message?.split(':')[0] || 'VIDEO_METADATA_UNAVAILABLE';
         console.warn('[VideoInfo]', { videoId, errorCode });
-        return jsonResponse({ videoId, errorCode, error: 'Video metadata is unavailable' }, error.status || 503,
-            { 'Cache-Control': 'no-store', 'Retry-After': String(error.retryAfterSeconds || 15) });
+        const headers = { 'Cache-Control': 'no-store' };
+        if (error.retryAfterSeconds !== 0) headers['Retry-After'] = String(error.retryAfterSeconds ?? 15);
+        return jsonResponse({ videoId, errorCode, error: 'Video metadata is unavailable' }, error.status || 503, headers);
     }
 }
 

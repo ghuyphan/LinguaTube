@@ -45,6 +45,7 @@ function setupTestDb() {
     `);
     sqlite.exec(fs.readFileSync(path.resolve('db/migrations/d1/20261120_video_catalog_index.sql'), 'utf8'));
     sqlite.exec(fs.readFileSync(path.resolve('db/migrations/d1/20261122_add_embed_blocked.sql'), 'utf8'));
+    sqlite.exec(fs.readFileSync(path.resolve('db/migrations/d1/20261123_video_region_availability.sql'), 'utf8'));
     return { sqlite, db: createD1Adapter(sqlite) };
 }
 
@@ -64,11 +65,34 @@ describe('POST /api/video-unplayable', () => {
         const res = await onRequestPost({
             request: req,
             env: { VOCAB_DB: db },
-            _fetchImpl: async () => ({ ok: true, status: 200, text: async () => '<html>playable</html>' })
+            _fetchImpl: async () => new Response('<html>playable</html>')
         });
         const body = await res.json();
         assert.equal(body.delisted, false);
         assert.equal(sqlite.prepare('SELECT embed_blocked FROM video_languages WHERE video_id = ?').get('dQw4w9WgXcQ').embed_blocked, 0);
+    });
+
+    it('does not globally delist a country-restricted video', async () => {
+        const { sqlite, db } = setupTestDb();
+        try {
+            sqlite.prepare("INSERT INTO video_languages (video_id) VALUES ('yNCJCeZq85k')").run();
+            const request = new Request('https://voca.study/api/video-unplayable', {
+                method: 'POST',
+                headers: { 'CF-Connecting-IP': '192.0.2.5' },
+                body: JSON.stringify({ videoId: 'yNCJCeZq85k', errorCode: 150 })
+            });
+            const response = await onRequestPost({
+                request, env: { VOCAB_DB: db },
+                _fetchImpl: async () => new Response(JSON.stringify({
+                    previewPlayabilityStatus: { status: 'UNPLAYABLE',
+                        reason: 'The uploader has not made this video available in your country' }
+                }))
+            });
+            assert.equal((await response.json()).delisted, false);
+            assert.equal(sqlite.prepare('SELECT embed_blocked FROM video_languages').get().embed_blocked, 0);
+        } finally {
+            sqlite.close();
+        }
     });
 
     it('delists a verified blocked video and excludes it from recommendations', async () => {
@@ -87,7 +111,7 @@ describe('POST /api/video-unplayable', () => {
         const res = await onRequestPost({
             request: req,
             env: { VOCAB_DB: db },
-            _fetchImpl: async () => ({ ok: true, status: 200, text: async () => '\\"previewPlayabilityStatus\\":{\\"status\\":\\"UNPLAYABLE\\"}' })
+            _fetchImpl: async () => new Response('{"status":"UNPLAYABLE","reason":"Playback on other websites has been disabled"}')
         });
         const body = await res.json();
         assert.equal(body.delisted, true);
@@ -104,5 +128,42 @@ describe('POST /api/video-unplayable', () => {
         // Restoring embed_blocked = 0 re-indexes it cleanly
         await markVideoEmbedBlocked(db, 'blockedVid1', false);
         assert.equal(sqlite.prepare('SELECT * FROM video_language_catalog WHERE video_id = ?').all('blockedVid1').length, 1);
+    });
+
+    it('returns delisted=false for unknown or already-blocked videos without mutating updated_at', async () => {
+        const { sqlite, db } = setupTestDb();
+        sqlite.prepare(`
+            INSERT INTO video_languages (video_id, available_languages, sub_languages, title, channel, duration_seconds, updated_at)
+            VALUES ('alreadyBlk1', '["ja"]', '["ja"]', 'Blocked Video', 'Channel', 200, 1000)
+        `).run();
+        const blockedFetch = async () => new Response('{"status":"UNPLAYABLE","reason":"Playback on other websites has been disabled"}');
+
+        const first = await onRequestPost({
+            request: new Request('https://voca.study/api/video-unplayable', {
+                method: 'POST', headers: { 'CF-Connecting-IP': '1.2.3.6' },
+                body: JSON.stringify({ videoId: 'alreadyBlk1', errorCode: 150 })
+            }),
+            env: { VOCAB_DB: db }, _fetchImpl: blockedFetch
+        });
+        assert.equal((await first.json()).delisted, true);
+        assert.equal(sqlite.prepare('SELECT updated_at FROM video_languages WHERE video_id = ?').get('alreadyBlk1').updated_at, 1000);
+
+        const repeat = await onRequestPost({
+            request: new Request('https://voca.study/api/video-unplayable', {
+                method: 'POST', headers: { 'CF-Connecting-IP': '1.2.3.6' },
+                body: JSON.stringify({ videoId: 'alreadyBlk1', errorCode: 150 })
+            }),
+            env: { VOCAB_DB: db }, _fetchImpl: blockedFetch
+        });
+        assert.equal((await repeat.json()).delisted, false);
+
+        const unknown = await onRequestPost({
+            request: new Request('https://voca.study/api/video-unplayable', {
+                method: 'POST', headers: { 'CF-Connecting-IP': '1.2.3.6' },
+                body: JSON.stringify({ videoId: 'notInDb0001', errorCode: 150 })
+            }),
+            env: { VOCAB_DB: db }, _fetchImpl: blockedFetch
+        });
+        assert.equal((await unknown.json()).delisted, false);
     });
 });
