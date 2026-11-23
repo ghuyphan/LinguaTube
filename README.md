@@ -1,8 +1,8 @@
-# Voca 📺 🎌 🇨🇳 🇰🇷 🇬🇧 🇻🇳
+# LinguaTube
 
-**Turn any YouTube video into an interactive, high-retention language lesson.**
+**Looking for Voca in your browser? Open [app.voca.study](https://app.voca.study).** The [Voca Flutter repository](https://github.com/ghuyphan/voca-flutter) owns the learning app for browsers and native platforms.
 
-Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (PWA) designed to help you master **Japanese**, **Chinese**, **Korean**, **English**, and **Vietnamese** directly from authentic video content. It combines YouTube's massive library with cutting-edge language tools: interactive clickable subtitles, instant multi-source dictionary lookups, grammar pattern detection, an SM-2 spaced repetition system (SRS), and Gladia AI-powered audio transcription.
+This repository serves [voca.study](https://voca.study) and owns canonical share URLs, Android App Links, public and account pages, and the shared `/api/*` backend. Its existing Angular screens still serve browser visitors on that domain. See [Web app and public links](doc/map.md#web-app-and-public-links) for route ownership and compatibility.
 
 ![Angular 19](https://img.shields.io/badge/Angular-19-%23DD0031?style=flat-square&logo=angular)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-%233178C6?style=flat-square&logo=typescript)
@@ -11,7 +11,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 
 ---
 
-## ✨ Key Features
+## Existing Angular Features
 
 ### 🎬 Universal Video Support & Player Controls
 - **YouTube & Instant Transcript Discovery**: Paste any YouTube URL or explore **"For You"** recommendations featuring single videos with pre-cached database transcripts (<100ms loading, zero AI credit cost) and curated community playlists.
@@ -50,10 +50,10 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 
 ---
 
-## 🚀 Getting Started
+## LinguaTube Development Setup
 
 ### Prerequisites
-- **Node.js**: `v20.11` to `<23.0` (Node 20 or 22 LTS recommended)
+- **Node.js**: Use Node 22 to match `.nvmrc` and CI. The backend suite uses `node:sqlite`.
 - **npm**: `v10+`
 
 ### Installation
@@ -87,7 +87,7 @@ Voca (formerly LinguaTube) is a modern, immersive Progressive Web Application (P
 
 | Command | Action |
 |---------|--------|
-| `npm run dev` | Runs Angular dev server (`localhost:4200`) and local backend (`localhost:3001`) |
+| `npm run dev` | Runs Angular dev server (`localhost:4200`) and local backend (`127.0.0.1:3001`) |
 | `npm run build:functions` | Bundles Cloudflare Pages Functions from `functions-src/` into `functions/` via esbuild |
 | `npm run build` | Full production build: compiles functions and Angular client into `dist/` |
 | `npm run lint` | Runs ESLint 9 checks across TypeScript and HTML templates |
@@ -188,7 +188,7 @@ Video names, channels, tags and category IDs also use the shared official metada
 
 ### Dictionary direction and language metadata
 
-Dictionary results preserve provider-reported direction and actual per-entry definition languages, including bounded translation fallback. Cache v6 requires coordinated public CDN invalidation or expiry at rollout; see [the API implementation and rollout notes](doc/backend-api.md). Changes remain local until deployed.
+Dictionary results preserve provider-reported direction and actual per-entry definition languages, including bounded translation fallback. The dictionary shares provider routing between Express and Pages, with regional caching in Cloudflare. Cache namespace changes require coordinated public CDN invalidation or expiry at rollout. See the [API and rollout notes](doc/backend-api.md#33-unified-dictionary-api).
 
 
 ### Video level consistency (2026-10-29)
@@ -210,3 +210,6 @@ Backend audit verification: see [verified findings and local checks](doc/backend
 
 Server video grading and the catalog backfill are documented in the
 [backend API guide](doc/backend-api.md#server-owned-video-grades).
+
+
+The development backend requires `VOCA_DEV_LIVE_GLADIA=1` before it can charge live Gladia credits. Shared Postgres changes belong in the Flutter repository’s Supabase migration chain. LinguaTube owns the D1 schema.

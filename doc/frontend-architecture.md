@@ -1,6 +1,6 @@
 # Frontend Architecture & UI System
 
-This document outlines the frontend design principles, Angular 19 Signal state architecture, component hierarchy, repository patterns, and UI design system for **Voca** (formerly LinguaTube).
+This guide covers the Angular client served by LinguaTube at `voca.study`, including existing fallback screens and public routes. The Flutter learning app at `app.voca.study` has its own UI in the Voca Flutter repository. See [web app and public links](map.md#web-app-and-public-links) for route ownership.
 
 ---
 

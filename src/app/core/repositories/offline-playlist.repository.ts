@@ -92,6 +92,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                 const payload = {
                     id: playlist.id,
                     user_id: userId,
+                    user_name: playlist.userName || this.auth.user()?.name || null,
                     title: playlist.title,
                     description: playlist.description || '',
                     visibility: playlist.visibility,
@@ -267,6 +268,7 @@ export class OfflinePlaylistRepository implements IPlaylistRepository {
                     await this.supabase.client.from('playlists').upsert({
                         id: p.id,
                         user_id: userId,
+                        user_name: p.userName || this.auth.user()?.name || null,
                         title: p.title,
                         description: p.description || '',
                         visibility: p.visibility,

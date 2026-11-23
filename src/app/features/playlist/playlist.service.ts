@@ -671,12 +671,12 @@ export class PlaylistService {
      * Get shareable URL for a playlist
      */
     getShareUrl(playlistId: string, videoId?: string): string {
-        const base = window.location.origin;
-        let url = `${base}/video?playlist=${playlistId}`;
+        const url = new URL(videoId ? '/video' : '/explore', window.location.origin);
+        url.searchParams.set('playlist', playlistId);
         if (videoId) {
-            url += `&id=${videoId}`;
+            url.searchParams.set('id', videoId);
         }
-        return url;
+        return url.toString();
     }
 
     /**

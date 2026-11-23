@@ -306,3 +306,51 @@ test('catalog refresh keeps unlisted videos playable and skips malformed items w
     assert.equal(f.sqlite.prepare('SELECT region_restriction FROM video_languages WHERE video_id = ?').get(badRegionId).region_restriction, '{"blocked":["US"]}');
     assert.equal(await refreshCatalogVideoAvailability(env), 0, 'All 3 rows advanced region_checked_at so batch does not stall');
 });
+
+test('latest availability wins regardless of write arrival order', async t => {
+    const f = await fixture(t);
+    const videoId = 'abcdefghijk';
+    f.sqlite.prepare("INSERT INTO video_languages(video_id,available_languages) VALUES (?,'[]')").run(videoId);
+    const older = { videoId, blockReason: 'age_restricted', checkedAt: 100 };
+    const newer = { videoId, blockReason: null, checkedAt: 200 };
+    const read = () => f.sqlite.prepare(
+        'SELECT embed_blocked, embed_blocked_reason, region_checked_at FROM video_languages WHERE video_id = ?'
+    ).get(videoId);
+    for (const order of [[older, newer], [newer, older]]) {
+        f.sqlite.prepare('UPDATE video_languages SET embed_blocked=0,embed_blocked_reason=NULL,region_checked_at=NULL WHERE video_id=?').run(videoId);
+        for (const observation of order) await saveVideoAvailabilityChecks(f.db, [observation]);
+        assert.equal(read().embed_blocked, 0);
+        assert.equal(read().embed_blocked_reason, null);
+        assert.equal(read().region_checked_at, 200);
+    }
+});
+
+test('availability refresh batches writes and keeps candidates warm on timestamp-only updates', async t => {
+    const f = await fixture(t);
+    const videoId = 'abcdefghijk';
+    f.sqlite.prepare(`
+        INSERT INTO video_languages(video_id,available_languages,sub_languages,title,channel)
+        VALUES (?, '["en"]', '["en"]', 'English lesson', 'Teacher')
+    `).run(videoId);
+    const candidates = metrics => getRecommendedVideosFromCloudflare(
+        f.db, null, 'en', 12, null, false, 0, null, { metrics, country: 'VN' }
+    );
+    assert.ok((await candidates({})).some(video => video.videoId === videoId));
+
+    const batch = t.mock.method(f.db, 'batch');
+    assert.equal(await saveVideoAvailabilityChecks(f.db, [
+        { videoId, restriction: null, blockReason: null, checkedAt: 100 }
+    ]), 1);
+    assert.equal(batch.mock.calls[0].arguments[0].length, 3);
+    const unchanged = {};
+    await candidates(unchanged);
+    assert.equal(unchanged.candidateCache, 'HIT');
+
+    assert.equal(await saveVideoAvailabilityChecks(f.db, [
+        { videoId, restriction: '{"blocked":["VN"]}', blockReason: null, checkedAt: 200 },
+        { videoId: 'missing0001', restriction: null, blockReason: null, checkedAt: 200 }
+    ]), 1);
+    const changed = {};
+    assert.ok(!(await candidates(changed)).some(video => video.videoId === videoId));
+    assert.equal(changed.candidateCache, 'MISS');
+});

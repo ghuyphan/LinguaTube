@@ -1,3 +1,4 @@
+import { applyD1Schema, loadD1Schema } from './fixtures/d1-schema.mjs';
 // Regression tests by default; VOCA_EXPECT_DEFECTS=1 replays the historical evidence.
 // Uses optional Miniflare installed outside this repository. No production bindings.
 import test from 'node:test';
@@ -34,7 +35,10 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
     await build({entryPoints:[entry],nodePaths:[new URL('../node_modules',import.meta.url).pathname],bundle:true,format:'esm',platform:'browser',target:'es2022',outfile:worker,
         conditions:['worker','browser','import','default'],mainFields:['browser','module','main'],logLevel:'silent'});
     assert.deepEqual(await fingerprint(join(sourceRoot,'functions-src')),sourcesBefore,'Source changed while compiling validation fixture');
-    const schemas=await Promise.all(['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql',...(!defects?['db/migrations/d1/20261025_gladia_submission_state.sql','db/migrations/d1/20261026_verified_video_metadata.sql','db/migrations/d1/20261026_video_metadata_details.sql','db/migrations/d1/20261114_primary_language.sql','db/migrations/d1/20261121_elevenlabs_asr.sql']:[])].map(path=>readFile(join(sourceRoot,path),'utf8')));
+    const schemas = defects
+        ? await Promise.all(['db/schema.sql', 'db/migrations/d1/20261023_credit_recovery.sql',
+            'db/migrations/d1/20261024_gladia_inbox.sql'].map(file => readFile(join(sourceRoot, file), 'utf8')))
+        : await loadD1Schema(sourceRoot);
     const evidence=[];
     for(const scenario of ['native','duration','refresh','balance','stampede','translation','recommendation','gladia','tokenizer']){
         await t.test(scenario,async()=>{
@@ -44,12 +48,7 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
                 outboundService:()=>new Response('Unexpected network disabled',{status:599}),log:new Log(LogLevel.ERROR)});
             try{
                 const db=await mf.getD1Database('VOCAB_DB'),r2=await mf.getR2Bucket('TRANSCRIPT_STORAGE');
-                // D1 exec is line-oriented. Keep each checked-in CREATE/ALTER
-                // statement intact, including the internal semicolons in triggers.
-                for(const schema of schemas){
-                    const statements=schema.replace(/--[^\n]*/g,'').split(schema.includes('ADD COLUMN snippet_json') ? /;\s*(?=(?:CREATE|ALTER|UPDATE)\b|$)/i : /;\s*(?=(?:CREATE|ALTER)\b|$)/i).map(sql=>sql.trim()).filter(Boolean);
-                    for(const statement of statements)await db.prepare(statement).run();
-                }
+                await applyD1Schema(db, schemas);
                 const hash=createHash('sha256').update('198.51.100.10').digest('hex');
                 if(['refresh','balance'].includes(scenario))await db.prepare('INSERT INTO anonymous_credit_balances VALUES(?,?,?)').bind(hash,0,Date.now()).run();
                 if(['balance','tokenizer','refresh'].includes(scenario)){
@@ -76,7 +75,7 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
                 if(scenario==='refresh'){assert.equal(r.afterControl.status,'processing');assert.equal(r.observed.body.errorCode,'INSUFFICIENT_DIAMONDS');assert.equal(r.victim.status,'failed');assert.equal(r.victim.error_code,'SUPERSEDED');assert.equal(r.charges.n,0);assert.equal(r.providerCalls,0);}
                 if(scenario==='balance'){assert.equal(r.observed.body.diamonds,3);assert.equal(r.control.body.diamonds,0);}
                 if(scenario==='stampede'){assert.ok(r.results.every(item=>item.status===200));assert.equal(r.providerCallsBeforeControl,2);assert.equal(r.providerCallsAfterControl,2);assert.equal(r.control.body.cached,true);}
-                if(scenario==='translation'){assert.equal(r.controlCount,3);assert.equal(r.before.length,3);assert.equal(r.before[0].translation,'Translation 0');assert.equal(r.observedCount,1);assert.equal(r.after.length,1);}
+                if(scenario==='translation'){assert.equal(r.controlCount,3);assert.equal(r.before.length,3);assert.equal(r.before[0].translation,'Bản dịch 0');assert.equal(r.observedCount,1);assert.equal(r.after.length,1);}
                 if(scenario==='stampede')await r2.put('transcripts/abcdefghijk/en.json',JSON.stringify({segments:[{text:'Hello',start:0,duration:1}]}));
                 if(scenario==='recommendation'){assert.equal(r.control.videos.length,1);assert.equal(r.observed.videos.length,0);assert.equal(r.observed.hasMore,false);assert.equal(r.existingKey,true);}
                 if(scenario==='gladia'){assert.equal(r.observed.status,202);assert.equal(r.acceptedPosts,2);assert.equal(r.jobs.results.length,1);assert.equal(r.jobs.results[0].gladia_job_id,'accepted-2');assert.equal(r.charges.n,1);assert.equal(r.charges.total,1);}
@@ -87,7 +86,7 @@ test('Cloudflare regression scenarios execute with workerd and local D1/R2 bindi
                 if(scenario==='refresh'){assert.equal(r.afterControl.status,'processing');assert.equal(r.observed.status,202);assert.equal(r.victim.status,'processing');assert.equal(r.victim.refund_status,'none');assert.equal(r.charges.n,0);assert.equal(r.providerCalls,0);}
                 if(scenario==='balance'){assert.equal(r.observed.body.diamonds,0);assert.equal(r.control.body.diamonds,0);}
                 if(scenario==='stampede'){assert.ok(r.results.every(item=>item.status===200));assert.equal(r.providerCallsBeforeControl,1);assert.equal(r.providerCallsAfterControl,1);assert.equal(r.control.body.cached,true);}
-                if(scenario==='translation'){assert.equal(r.controlCount,3);assert.equal(r.before.length,3);assert.equal(r.observedCount,3);assert.equal(r.after.length,3);assert.equal(r.after[0].translation,'Translation 0');}
+                if(scenario==='translation'){assert.equal(r.controlCount,3);assert.equal(r.before.length,3);assert.equal(r.observedCount,3);assert.equal(r.after.length,3);assert.equal(r.after[0].translation,'Bản dịch 0');}
                 if(scenario==='recommendation'){assert.equal(r.control.videos.length,1);assert.match(r.observed.error,/verification budget/);assert.equal(r.existingKey,true);}
                 if(scenario==='gladia'){assert.equal(r.observed.status,202);assert.equal(r.acceptedPosts,1);assert.equal(r.jobs.results.length,1);assert.equal(r.jobs.results[0].submission_state,'uncertain');assert.equal(r.jobs.results[0].gladia_job_id,null);assert.equal(r.charges.n,1);assert.equal(r.charges.total,1);assert.equal(r.recoveredJob.gladia_job_id,'accepted-1');assert.equal(r.recoveredJob.submission_state,'accepted');assert.equal(r.totalPostsAfterRecovery,1);}
                 if(scenario==='tokenizer'){assert.equal(r.beforeRelease.settled,true);assert.equal(r.beforeRelease.timedOut,false);assert.equal(r.afterRelease.status,200);}

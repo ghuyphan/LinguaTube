@@ -33,7 +33,7 @@ globalThis.fetch = async (input, init = {}) => {
     }
     if (url.hostname === 'translate.googleapis.com') {
         await new Promise(resolve => setTimeout(resolve, 50));
-        return Response.json([[['<t id="0">Bonjour</t>']]]);
+        return Response.json([[['<t id="0">Xin chào</t>']]]);
     }
     if (url.hostname === 'cdn.jsdelivr.net') {
         if (dictionaryMode === 'stall') return new Promise((_, reject) => dictionaryRejectors.push(reject));
@@ -96,19 +96,19 @@ async function run(env) {
     }
     if (scenario === 'translation') {
         const key=`translations/${videoId}/en-vi.json`;
-        const full=[0,1,2].map(i=>({text:`Source ${i}`,start:i,duration:1,translation:`Translation ${i}`}));
+        const full=[0,1,2].map(i=>({text:`Source ${i}`,start:i,duration:1,translation:`Bản dịch ${i}`}));
         await r2.put(key,JSON.stringify({segments:full,timestamp:Date.now(),quality:100}));
-        const control=await saveTranslation(r2,videoId,'en','vi',full.map((s,i)=>({...s,translation:i===1?'Updated':null})));
+        const control=await saveTranslation(r2,videoId,'en','vi',full.map((s,i)=>({...s,translation:i===1?'Đã cập nhật':null})));
         const before=(await (await r2.get(key)).json()).segments;
-        const observed=await saveTranslation(r2,videoId,'en','vi',[{...full[1],translation:'Checkpoint'}]);
+        const observed=await saveTranslation(r2,videoId,'en','vi',[{...full[1],translation:'Điểm kiểm tra'}]);
         const after=(await (await r2.get(key)).json()).segments;
         return {controlCount:control.totalCount,before,observedCount:observed.totalCount,after};
     }
     if (scenario === 'recommendation') {
         const control=await getRecommendedVideosFromCloudflare(db,r2,'en',12,null,false,0,null,{includePage:true});
-        await db.prepare("UPDATE video_languages SET sub_languages='[]'").run();
+        await db.prepare(`UPDATE video_languages SET sub_languages='[]', available_languages='["en"]'`).run();
         let observed;
-        try { observed=await getRecommendedVideosFromCloudflare(db,r2,'en',12,null,false,0,null,{includePage:true}); }
+        try { observed=await getRecommendedVideosFromCloudflare(db,r2,'en',12,null,false,0,null,{includePage:true,isRefresh:true}); }
         catch (error) { observed={error:error.message}; }
         return {control,observed,existingKey:!!await r2.head('transcripts/video000010/en.json')};
     }

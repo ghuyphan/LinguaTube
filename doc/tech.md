@@ -143,7 +143,8 @@ Correct segmentation and pronunciation generation are central to Voca:
   - Batch translation cache: `trbatch:v1:{source}:{target}:{hash}`
   - Precomputed tokens: `tokens:{lang}:{hash}`
   - Fast video info: `video-info:{videoId}`
-  - Dictionary cache: `dict:v4:{from}:{to}:{word}`
+
+Dictionary results use warm isolate memory and the regional Cloudflare Cache API namespace `dictionary-v7`. Dictionary request quotas use KV.
 
 ### 4.5. Supabase (`https://edbkvzviqeulwzcnrrlb.supabase.co`)
 - Cloud PostgreSQL backend hosting user authentication (GoTrue) and synchronized tables (`profiles`, `vocabulary`, `streaks`, `history`, `playlists`, `playlist_saves`, `gamification`, `legacy_pb_users`).
@@ -244,3 +245,6 @@ Community reports cannot choose trusted provenance or overwrite verified difficu
 ### ElevenLabs Scribe v3
 
 ElevenLabs Scribe v3 accepts YouTube watch URLs and returns word timestamps for AI subtitle segmentation. New jobs use it when `ASR_PROVIDER=elevenlabs`.
+
+
+The backend CI job runs workerd integration on Node 22 with pinned Miniflare and PGlite fixtures. Express binds to loopback by default. Live development Gladia calls require the opt-in described in the development guide.

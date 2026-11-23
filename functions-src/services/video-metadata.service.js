@@ -150,13 +150,19 @@ export async function refreshCatalogVideoAvailability(env) {
     if (!env.YOUTUBE_DATA_API_KEY) return 0;
     const db = env.VOCAB_DB;
     const checkedAt = Date.now();
-    const { results, success } = await db.prepare(`
-        SELECT v.video_id, v.region_restriction, v.embed_blocked, v.embed_blocked_reason
+    const catalogEntry = `
+        SELECT v.video_id, v.region_checked_at
         FROM video_languages v
         WHERE v.title IS NOT NULL
-          AND (v.region_checked_at IS NULL OR v.region_checked_at < ?)
           AND EXISTS (SELECT 1 FROM video_language_catalog c WHERE c.video_id = v.video_id)
-        ORDER BY v.region_checked_at, v.video_id LIMIT 50
+    `;
+    // Separate the NULL and stale ranges so SQLite can stop at the due range
+    // boundary instead of scanning fresh catalog entries on each maintenance run.
+    const { results, success } = await db.prepare(`
+        ${catalogEntry} AND v.region_checked_at IS NULL
+        UNION ALL
+        ${catalogEntry} AND v.region_checked_at < ?
+        ORDER BY region_checked_at, video_id LIMIT 50
     `).bind(checkedAt - AVAILABILITY_RECHECK_INTERVAL_MS).all();
     if (success === false) throw new Error('Video availability scan failed');
     if (!results.length) return 0;
@@ -164,15 +170,12 @@ export async function refreshCatalogVideoAvailability(env) {
     const availability = await fetchVideoAvailability(env, db, results.map(row => row.video_id));
     return saveVideoAvailabilityChecks(db, results.map(row => {
         const entry = availability.get(row.video_id);
-        const keepVerifiedEmbedBlock = row.embed_blocked && row.embed_blocked_reason === 'embed_disabled' && entry?.blockReason == null;
         return {
             videoId: row.video_id,
-            previousRestriction: row.region_restriction,
-            previousBlocked: !!row.embed_blocked,
             restriction: entry?.regionRestriction === undefined
                 ? undefined
                 : (entry.regionRestriction ? JSON.stringify(entry.regionRestriction) : null),
-            blockReason: keepVerifiedEmbedBlock ? undefined : (entry ? entry.blockReason : 'video_unavailable'),
+            blockReason: entry ? entry.blockReason : 'video_unavailable',
             checkedAt
         };
     }));

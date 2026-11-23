@@ -6,7 +6,9 @@ This document provides essential instructions, architectural design, codebase ma
 
 ## 1. Executive Summary & Purpose
 
-**Voca** (formerly LinguaTube) is a high-performance Progressive Web Application (PWA) designed for language learners (specifically **Japanese**, **Chinese**, **Korean**, **English**, and **Vietnamese**) using authentic YouTube videos. It combines interactive synchronized subtitles, morphological tokenization, multi-source dictionary lookups, grammar pattern detection, an SM-2 spaced repetition (SRS) vocabulary notebook, and Gladia AI-powered audio transcription.
+LinguaTube owns `voca.study`: canonical share URLs, Android App Links, public and account pages, existing Angular browser fallbacks, and the shared Pages Functions API. The Voca learning app at `app.voca.study` is built in `../voca_flutter`. Put new learning UI in Flutter and maintain Angular routes for link compatibility and existing users. Follow the [web and public-link contract](doc/map.md#web-app-and-public-links) when changing routes, auth callbacks, association assets, or shared APIs.
+
+The Flutter repository owns shared Supabase Postgres migrations. LinguaTube owns D1 migrations and keeps historical Postgres files for fixtures and reference.
 
 ### Key Metrics & Technologies
 - **Frontend**: Angular 19 (Standalone Components, Signals, `ChangeDetectionStrategy.OnPush`, RxJS 7.8, TypeScript 5.6)
@@ -298,7 +300,7 @@ lingua-tube/
 
 ### Workflow 2: Updating or Adding a Dictionary Provider
 1. Dictionary scraping/API logic resides in `functions-src/providers/dictionary-apis.js` and `functions-src/utils/dict-parsers.js`.
-2. For local dev server support, mirror changes in `server/server.js` under `fetchDictLocal()`.
+2. Express delegates dictionary lookups to the Pages handler. Keep one provider routing and response contract in `functions-src/`.
 3. Rebuild functions:
    ```bash
    npm run build:functions
@@ -478,7 +480,7 @@ Apply `20261026_video_metadata_details.sql` after the verified-duration migratio
 
 ## Dictionary result authority (2026-10-28)
 
-Naver source/target direction comes from each result's provider language metadata, not the request endpoint or script guessing. Preserve per-entry definitionLanguage/definitionKind; translate homogeneous source-language groups under the shared bounded deadline and retain truthful fallback metadata on partial failures. Missing/malformed provider metadata is unavailable, not a negative-cache miss. Internal dictionary cache v6 does not invalidate cached public URLs: coordinate a CDN purge or expiry before verifying deployed semantic fixes. See doc/backend-api.md for validation and rollback.
+Naver source/target direction comes from each result's provider language metadata, not the request endpoint or script guessing. Preserve per-entry definitionLanguage/definitionKind; translate homogeneous source-language groups under the shared bounded deadline and retain truthful fallback metadata on partial failures. Missing/malformed provider metadata is unavailable, not a negative-cache miss. Internal dictionary cache generations use a named regional Cache API namespace. Coordinate public CDN purge or expiry independently before verifying deployed semantic fixes. See doc/backend-api.md for validation and rollback.
 
 
 ## Video level authority and calibration (2026-10-29)

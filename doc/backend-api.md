@@ -329,14 +329,10 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
 ### 3.8. Video Info Discovery API
 - **Route**: `GET /api/video-info?videoId={videoId}`
 - **Source**: `functions-src/api/video-info.js`
-- **Response**: `{ videoId, title, duration, availableLanguages, subLanguages, hasAutoCaptions, channel, channelAvatar, levels }`
-- **D1 + In-Memory Zero-KV Architecture**:
-  1. Warm in-memory isolate cache check (`memVideoInfoCache`, 500 entries, 1-hour TTL) $\rightarrow$ returns in $<0.1$ms (`X-Cache: HIT-MEMORY`).
-  2. Cloudflare D1 query (`video_languages` table) $\rightarrow$ persistent SQLite at the edge (100,000 writes/day, 5,000,000 reads/day free tier). Exposes verified server transcript languages via `subLanguages: string[]`.
-  3. YouTube oEmbed fallback $\rightarrow$ saves metadata and channel avatar (`fetchChannelAvatar`) to D1 and memory with edge CDN cache headers (`s-maxage=604800, stale-while-revalidate=86400`).
-  4. **Zero KV Writes**: Completely avoids writing to Cloudflare KV, saving $\sim 100\text{--}150$ daily KV writes.
-  5. **Distributed Rate Limiting**: Max 120 requests/minute per IP with in-memory sliding window and Cloudflare KV fallback to prevent scraper flooding and DoS attacks.
-  6. **Embeddability Ingestion Gate**: When official YouTube Data API metadata reports `status.embeddable === false`, marks `embed_blocked = 1` in D1 `video_languages` (automatically removing it from `video_language_catalog` and recommendation feeds). Restores `embed_blocked = 0` if later re-enabled.
+- **Response** `{ videoId, title, duration, availableLanguages, subLanguages, hasAutoCaptions, channel, channelAvatar, levels, embeddable, playbackAvailability }`
+- The official YouTube Data API supplies display details and country restrictions. D1 retains the shared provider metadata and transcript languages. The server evaluates country availability per request using Cloudflare's viewer country and returns `Cache-Control: private, no-store`.
+- `playbackAvailability` is `region_blocked` when YouTube's allow/block lists deny the viewer's country, `embed_blocked` when YouTube explicitly disables embedding, `unknown` when a country restriction exists and the viewer's country is unavailable, or `available` when these checks permit playback. Confirmed country blocks take precedence when both restrictions apply. The existing `embeddable` flag remains compatible with older clients. A video that is confirmed unavailable from YouTube still returns HTTP 404 with `VIDEO_UNAVAILABLE`.
+- Display lookups store verified country restrictions separately from the global embed flag. Official `status.embeddable === false` continues to globally delist a video. The endpoint allows up to 120 requests per minute per IP.
 
 ---
 
@@ -344,7 +340,7 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
 - **Route**: `POST /api/video-unplayable`
 - **Source**: `functions-src/api/video-unplayable.js`, `functions-src/data/video-info-db.js` (`markVideoEmbedBlocked`)
 - **Request Body**: `{ videoId: string, errorCode?: number }` (accepts permanent YouTube IFrame error codes `100`, `101`, `150`; non-permanent codes like `2` or `5` are ignored).
-- **Anti-Abuse Verification**: Independently fetches `https://www.youtube.com/embed/{videoId}` with `Referer: https://voca.study/` server-side to confirm `UNPLAYABLE`, `ERROR`, or HTTP `404` before marking `embed_blocked = 1` in D1.
+- **Anti-Abuse Verification** independently checks the YouTube embed response. Explicit evidence that embedding is disabled or an HTTP 404 can set the global D1 flag. Generic player failures such as `UNPLAYABLE` or `ERROR` leave the flag alone.
 - **Rate Limit**: 30 requests / 60 seconds per IP.
 
 ---
@@ -424,6 +420,7 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
   - Strict Server Verification: Verifies that transcript files (`transcripts/{videoId}/{lang}.json`) actually exist on our server (Cloudflare R2 storage / dev cache) before recommending, eliminating phantom recommendations and un-transcribed language badges.
   - Subrequest Quota Safety (`MAX_R2_HEAD_CHECKS = 10`): R2 object existence checks are strictly budgeted to a maximum of 10 HEAD requests per invocation.
 - **Reliability and privacy**: POST JSON is bounded to 64 KiB (400 for invalid JSON/types; 413 for oversized bodies). Context collections are bounded: 200 watched/progress/favorite entries, ten channels, 50 unique vocabulary words. Latin vocabulary matches word boundaries; CJK vocabulary matches phrases. Personalized requests, including favorites-only and tier-only context, bypass shared caches. D1/R2 outages return 503. Stable pagination assumes unchanged catalog/query/seed/context. An incomplete keyword scan returns 503 with `Retry-After`. Exhausting an eligible result window returns `hasMore: false`. Keyword requests log duration, discovery query count and D1 rows read when available. The catalog reverse-index migration speeds up maintenance by video ID.
+- **Viewer-country eligibility** applies to browse, keyword search, and `/api/related-videos` before discovery fills its candidate window and before ranking or pagination. The public candidate cache keys include country. Known country-limited videos are omitted when the viewer's country is unknown. Legacy rows become country-aware as the metadata backfill reaches them.
 - **Validation**: `tests/recommendations.test.mjs` exercises real SQLite on Node 22.13+. `node tests/recommendation-benchmark.mjs` compares working source with Git HEAD using a fixed local catalog; it measures engineering fixtures, not engagement or production latency.
 - **Response**:
   ```json
@@ -685,6 +682,9 @@ Payment callbacks now require authentication and use transactional PostgreSQL ev
 ## Durable backend recovery
 
 `POST /api/internal/reconcile` is a dedicated-secret maintenance route, never a client API. It processes bounded pending refunds/subscriber recovery and expires abandoned nonlegacy transcription jobs. It also normalizes up to 50 pending catalog rows after recovery and logs the completed count as `indexedVideos`. RevenueCat callbacks authenticate and persist a minimized inbox record before returning `queued`; background work and the five-minute scheduler reconcile canonical subscriber grants. Use `services/supabase-rest.js` for bounded service-role calls; user-token authentication remains separate. Public transcript/order response contracts are retained.
+
+The same maintenance route refreshes up to 50 previously unchecked or week-old catalog entries per invocation using one YouTube `videos.list` request. The refresh shares the official resolver's quota and cooldown and logs `checkedVideoAvailability`. Apply the [D1 availability migration](../db/migrations/d1/20261123_video_region_availability.sql) before deploying the Functions. New direct lookups store the data immediately. D1 compares observation order against the current row in the write transaction so a newer successful check can clear an outdated official block. Verified embed denials stay in effect until independently cleared. The due scan uses the existing timestamp index for unchecked and stale entries. Each refresh submits three set-based D1 statements for the batch. Timestamp-only observations leave recommendation caches intact.
+
 
 Security follow-up (2026-10-23): anonymous-credit amounts are validated before mutation; refund recovery checks the persisted charge owner, amount and terminal state before confirmation. Shared Supabase XP-spending hardening is prepared at `../voca_flutter/supabase/migrations/20261023170000_secure_xp_spending.sql`; apply once to the shared project. See `../voca_flutter/doc/security-follow-up-2026-10-23.md` for tests and limits. Cloudflare functions were bundled locally; deployment remains with Gemini and the earlier private release snapshot is stale.
 

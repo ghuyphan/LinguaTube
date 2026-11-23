@@ -597,6 +597,8 @@ provide layout rather than replacement control geometry.
 
 The production recommendation path now uses a fixed eligible discovery window, stable pagination, bounded metadata/transcript verification and personalized-cache isolation. See [API contract](backend-api.md) section 3.10. Keyword discovery prioritizes exact and prefix titles before filling its window and applies conflicting badge exclusions before pagination. Apply the catalog reverse index after the language catalog migration. The existing maintenance route fills normalized search fields on `video_languages` for updated and legacy metadata.
 
+YouTube country availability flows through the official metadata resolver into D1. Home and More Videos use Cloudflare's viewer country to select eligible candidates before ranking, and the video-info route returns the playback availability reason for direct links. The existing reconciliation job backfills and refreshes catalog rows in bounded batches. See [the video-info contract](backend-api.md#38-video-info-discovery-api).
+
 ## Backend optimization flow (25 October 2026)
 
 - New paid transcript: shared-job/cache lookup → fresh duration verification → atomic charge → durable submission intent → single Gladia POST. Uncertain intent → callback inbox or bounded metadata lookup → shared ingestion lease → clean R2 transcript → completed D1 job.
@@ -668,3 +670,6 @@ The configured Scribe audio budget uses the existing D1 job rows and atomically 
 Shared subtitle translations are published by the Pages Functions translation path. Public cache reads are rate-limited before R2 access. Clients keep their own generated translations.
 
 The Scribe ingestion paths retain the provider word timeline alongside subtitle cues in R2. Transcript callers opt in with `includeWordTimings`.
+
+
+The shared Supabase deployment chain lives in `voca_flutter/supabase/migrations`. LinguaTube deploys the Pages Functions and D1 migrations. A fresh Supabase environment must pass the Worker billing RPC contract checks before switching any traffic.

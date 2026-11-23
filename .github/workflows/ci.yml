@@ -10,7 +10,6 @@ on:
       - '.gitignore'
       - 'LICENSE'
       - 'streaks.pb.js'
-      - 'db/**'
       - 'scripts/grammar-chunks/**'
       - 'scripts/translations-builder/**'
       - 'scripts/generate-translations.js'
@@ -22,7 +21,6 @@ on:
       - '.gitignore'
       - 'LICENSE'
       - 'streaks.pb.js'
-      - 'db/**'
       - 'scripts/grammar-chunks/**'
       - 'scripts/translations-builder/**'
       - 'scripts/generate-translations.js'
@@ -55,6 +53,13 @@ jobs:
 
       - name: Test
         run: npm run test:ci
+
+      - name: Backend integration tests
+        run: |
+          npm install --prefix "$RUNNER_TEMP/voca-backend-test" --no-audit --no-fund miniflare@4.20260730.0 @electric-sql/pglite@0.5.17
+          VOCA_MINIFLARE_MODULE="$RUNNER_TEMP/voca-backend-test/node_modules/miniflare/dist/src/index.js" \
+          VOCA_PGLITE_MODULE="$RUNNER_TEMP/voca-backend-test/node_modules/@electric-sql/pglite/dist/index.js" \
+          node --test tests/*.integration.mjs
 
       - name: Build
         run: npm run build

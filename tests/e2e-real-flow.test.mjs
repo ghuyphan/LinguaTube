@@ -4,12 +4,12 @@ import { join } from 'node:path';
 import assert from 'node:assert/strict';
 
 const PORT = 3001;
-const BASE_URL = `http://localhost:${PORT}`;
+const BASE_URL = `http://127.0.0.1:${PORT}`;
 const VIDEO_ID = 'u9vpfPlvF7U';
 const CACHE_FILE = join(process.cwd(), 'server', 'transcripts_cache', `${VIDEO_ID}_zh.json`);
 
 // Guard live Gladia API calls: skip during CI or default test runs to preserve credits and test speed
-if (process.env.CI || process.env.SKIP_LIVE_E2E || (!process.env.RUN_E2E && !process.env.GLADIA_API_KEY)) {
+if (process.env.CI || process.env.SKIP_LIVE_E2E || process.env.RUN_E2E !== '1') {
   console.log('[E2E Test] Skipping live Gladia E2E flow (to run: RUN_E2E=1 node tests/e2e-real-flow.test.mjs)');
   process.exit(0);
 }
@@ -36,7 +36,7 @@ async function main() {
     console.log('[E2E Test] Starting server/server.js in background...');
     serverProcess = spawn('node', ['server/server.js'], {
       cwd: process.cwd(),
-      env: { ...process.env, PORT: String(PORT) },
+      env: { ...process.env, PORT: String(PORT), VOCA_DEV_LIVE_GLADIA: '1' },
       stdio: ['ignore', 'pipe', 'pipe']
     });
 

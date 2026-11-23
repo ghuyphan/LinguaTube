@@ -1,8 +1,6 @@
-# Voca Documentation Portal
+# LinguaTube documentation
 
-Welcome to the technical documentation for **Voca** (formerly LinguaTube) — an immersive language learning Progressive Web Application (PWA) that transforms authentic YouTube videos into interactive, high-retention language lessons for **Japanese**, **Chinese**, **Korean**, and **English**.
-
-This documentation suite serves as the definitive technical reference for human software engineers and autonomous AI agents.
+This repository serves `voca.study` for public links, mobile handoffs, existing Angular pages, and the shared API. The Flutter learning app for browsers is at [app.voca.study](https://app.voca.study). Start with [web app and public links](map.md#web-app-and-public-links) when working across the two repositories.
 
 ---
 
@@ -25,12 +23,12 @@ This documentation suite serves as the definitive technical reference for human 
 
 ---
 
-## 🚀 Quick Glance at Voca
+## Existing Angular client
 
 ```
                      ┌───────────────────────────────┐
-                     │             VOCA              │
-                     │    Next-Gen Language PWA      │
+                     │          LINGUATUBE          │
+                     │         Angular client        │
                      └───────────────┬───────────────┘
                                      │
            ┌─────────────────────────┼─────────────────────────┐

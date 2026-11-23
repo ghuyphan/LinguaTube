@@ -1,19 +1,19 @@
 # Developer & Operations Guide
 
-This guide details how to set up, develop, test, debug, and deploy **Voca** (formerly LinguaTube).
+Use this guide to develop and deploy the LinguaTube public site and shared API. For the Flutter learning app, see [web app and public links](map.md#web-app-and-public-links).
 
 ---
 
 ## 1. Prerequisites & Environment Setup
 
 ### 1.1. System Requirements
-- **Node.js**: `v20.11` to `<23.0` (Recommended: Node 20 or 22 LTS). Check `.nvmrc` (`20`).
+- **Node.js**: Use Node 22 to match `.nvmrc` and CI. The backend suite uses `node:sqlite`.
 - **npm**: `v10+`
 - **Operating System**: macOS, Linux, or Windows (WSL recommended on Windows).
 
 ```bash
 # Verify Node.js version
-node -v  # e.g., v20.18.0
+node -v  # Expect v22.x
 ```
 
 ### 1.2. Repository Setup
@@ -82,7 +82,7 @@ The standard workflow uses the dual-server script:
 npm run dev
 ```
 This concurrently executes:
-1. **Express Local Server** on `http://localhost:3001` (`server/server.js`):
+1. **Express Local Server** on `http://127.0.0.1:3001` (`server/server.js`):
    - Integrates `youtubei.js` (Innertube) to fetch real YouTube timed-text tracks directly in local dev!
    - Saves transcripts locally in `server/transcripts_cache/` for instant subsequent replays.
    - Provides mock/live Gladia AI generation, local dual subtitles, local batch translation, and batch tokenization.
@@ -92,7 +92,7 @@ Open your browser at:
 👉 **`http://localhost:4200`**
 
 ### 3.2. Cloudflare Pages Local Preview (`wrangler`)
-To test actual Cloudflare Pages Functions against D1 and KV locally:
+The Express dictionary route uses the Pages handler. To exercise Cloudflare bindings and the regional dictionary cache locally, use the Pages runtime. To test Pages Functions against D1 and KV:
 ```bash
 # First build functions
 npm run build:functions
@@ -265,3 +265,6 @@ Production activation (2026-11-04): backend audit deployment `a59861b3-fd06-47de
 For Scribe v3, apply `20261121_elevenlabs_asr.sql` to D1, create an HMAC ElevenLabs webhook for transcription completion at `/api/elevenlabs-webhook`, and enable webhook retries. Set `ELEVENLABS_API_KEY` with Speech to Text access, `ELEVENLABS_WEBHOOK_ID`, and `ELEVENLABS_WEBHOOK_SECRET` in the Pages environment before setting `ASR_PROVIDER=elevenlabs`. Keep the Gladia credentials for existing jobs. Check the transcript health endpoint after activation and verify a paid job completes, is cataloged, and is reused on repeat.
 
 To enable the 25-hour shared audio cap, apply `20261121_elevenlabs_audio_budget.sql`, set `ELEVENLABS_BILLING_ANCHOR` to an actual ElevenLabs monthly renewal timestamp in UTC (`YYYY-MM-DDTHH:mm:ssZ`), and deploy. The day and time recur monthly, using the last day in shorter months. Update the anchor if the provider renewal schedule changes. Jobs submitted outside Voca are outside this budget.
+
+
+The Express backend binds to loopback by default. Use `VOCA_DEV_HOST` when a device needs deliberate LAN access. Set `VOCA_DEV_LIVE_GLADIA=1` alongside `GLADIA_API_KEY` to allow real transcription requests. The live Gladia integration additionally requires `RUN_E2E=1`. Node 22 CI runs the backend integration suites with local workerd, D1, R2, KV, and Postgres fixtures.

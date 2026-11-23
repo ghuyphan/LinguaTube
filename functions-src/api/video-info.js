@@ -55,26 +55,20 @@ export async function onRequestGet(context) {
         `).bind(videoId);
         const [, selectResult] = await db.batch([insertStmt, selectStmt]);
         const saved = parseVideoLanguageRow(selectResult?.results?.[0]) || await getVideoLanguages(db, videoId);
-        const restriction = official.regionRestriction ? JSON.stringify(official.regionRestriction) : null;
-        const previousRestriction = existingRow?.region_restriction ?? null;
-        const blockReason = official.blockReason ?? null;
-        const hasVerifiedEmbedBlock = Boolean(existingRow?.embed_blocked && existingRow?.embed_blocked_reason === 'embed_disabled');
-        const storedCheckIsFresher = (existingRow?.region_checked_at ?? 0) >= official.observedAt;
-        if (!storedCheckIsFresher) {
+        const checkedAt = official.observedAt;
+        let availabilityRow = existingRow;
+        if ((existingRow?.region_checked_at ?? 0) < checkedAt) {
             await saveVideoAvailabilityChecks(db, [{
-                videoId, restriction, previousRestriction,
-                blockReason: hasVerifiedEmbedBlock && blockReason == null ? undefined : blockReason,
-                previousBlocked: existingRow ? !!existingRow.embed_blocked : undefined,
-                checkedAt: official.observedAt
+                videoId,
+                restriction: official.regionRestriction ? JSON.stringify(official.regionRestriction) : null,
+                blockReason: official.blockReason ?? null,
+                checkedAt
             }]);
+            availabilityRow = await db.prepare(
+                'SELECT embed_blocked, region_restriction FROM video_languages WHERE video_id = ?'
+            ).bind(videoId).first();
         }
-        const effectiveBlocked = storedCheckIsFresher
-            ? Boolean(existingRow?.embed_blocked || blockReason)
-            : Boolean(blockReason || hasVerifiedEmbedBlock);
-        const effectiveAvailability = playbackAvailability({
-            embedBlocked: effectiveBlocked,
-            regionRestriction: storedCheckIsFresher ? previousRestriction : official.regionRestriction
-        }, viewerCountry(request));
+        const effectiveAvailability = playbackAvailability(availabilityRow, viewerCountry(request));
         const embeddable = effectiveAvailability !== 'embed_blocked';
         return jsonResponse({ videoId, title: metadata.title, channel: metadata.channel,
             channelId: metadata.channelId, thumbnail: metadata.thumbnail, youtubeCategoryId: metadata.youtubeCategoryId,

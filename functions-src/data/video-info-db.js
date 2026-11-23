@@ -976,53 +976,61 @@ export async function indexPendingVideoSearchText(db) {
     }, 0);
 }
 
-// Persist region restriction and global block state in one write without
-// altering discovery ordering (updated_at) or firing catalog triggers when embed_blocked is unchanged.
+// Apply the newest observations atomically. Timestamp-only checks do not
+// rebuild the catalog or invalidate recommendation candidates.
 export async function saveVideoAvailabilityChecks(db, checks) {
     if (!checks.length) return 0;
-    const prepared = checks.map(check => {
-        const { videoId, restriction, blockReason, previousBlocked, checkedAt } = check;
-        const shouldWriteBlock = blockReason !== undefined &&
-            (previousBlocked === undefined || Boolean(blockReason) !== Boolean(previousBlocked));
-        const stmt = shouldWriteBlock
-            ? db.prepare(`
-                UPDATE video_languages
-                SET region_restriction = CASE WHEN ? THEN region_restriction ELSE ? END,
-                    embed_blocked = ?,
-                    embed_blocked_reason = ?,
-                    region_checked_at = ?
-                WHERE video_id = ? AND (region_checked_at IS NULL OR region_checked_at < ?)
-            `).bind(
-                restriction === undefined ? 1 : 0, restriction ?? null,
-                blockReason ? 1 : 0, blockReason ?? null,
-                checkedAt, videoId, checkedAt
-            )
-            : db.prepare(`
-                UPDATE video_languages
-                SET region_restriction = CASE WHEN ? THEN region_restriction ELSE ? END,
-                    region_checked_at = ?
-                WHERE video_id = ? AND (region_checked_at IS NULL OR region_checked_at < ?)
-            `).bind(
-                restriction === undefined ? 1 : 0, restriction ?? null,
-                checkedAt, videoId, checkedAt
-            );
-        return { stmt, shouldWriteBlock, check };
-    });
-    const results = await db.batch(prepared.map(p => p.stmt));
-    let count = 0;
-    let eligibilityChanged = false;
-    for (const [index, result] of results.entries()) {
-        if (result.success === false) throw new Error('Video availability write failed');
-        const changes = result.meta?.changes ?? 0;
-        count += changes;
-        const { shouldWriteBlock, check } = prepared[index];
-        eligibilityChanged ||= changes > 0 && (
-            (check.restriction !== undefined && check.restriction !== check.previousRestriction) ||
-            shouldWriteBlock
-        );
+    const latest = new Map();
+    for (const check of checks) {
+        const previous = latest.get(check.videoId);
+        if (!previous || previous.checkedAt < check.checkedAt) {
+            latest.set(check.videoId, check);
+        }
     }
-    if (eligibilityChanged) invalidateRecommendationCache(db);
-    return count;
+
+    const payload = JSON.stringify([...latest.values()].map(
+        ({ videoId, restriction, blockReason, checkedAt }) => ({
+            videoId, restriction, blockReason, checkedAt
+        })
+    ));
+    const observations = `
+        WITH observations AS (
+            SELECT value ->> '$.videoId' AS id,
+                   value ->> '$.checkedAt' AS checked_at,
+                   json_type(value, '$.restriction') IS NOT NULL AS has_restriction,
+                   value ->> '$.restriction' AS restriction,
+                   json_type(value, '$.blockReason') IS NOT NULL AS has_block,
+                   value ->> '$.blockReason' AS reason
+            FROM json_each(?)
+        )
+        UPDATE video_languages
+    `;
+    const newer = `
+        FROM observations
+        WHERE video_languages.video_id = observations.id
+          AND (region_checked_at IS NULL OR region_checked_at < checked_at)
+    `;
+    const [blocks, regions, timestamps] = await db.batch([
+        db.prepare(`${observations}
+            SET embed_blocked = (reason IS NOT NULL),
+                embed_blocked_reason = reason,
+                region_restriction = CASE WHEN has_restriction THEN restriction ELSE region_restriction END,
+                region_checked_at = checked_at
+            ${newer} AND has_block AND embed_blocked_reason IS NOT 'embed_disabled'
+              AND (embed_blocked IS NOT (reason IS NOT NULL) OR embed_blocked_reason IS NOT reason)
+        `).bind(payload),
+        db.prepare(`${observations}
+            SET region_restriction = restriction, region_checked_at = checked_at
+            ${newer} AND has_restriction AND region_restriction IS NOT restriction
+        `).bind(payload),
+        db.prepare(`${observations} SET region_checked_at = checked_at ${newer}`).bind(payload)
+    ]);
+    if ([blocks, regions, timestamps].some(result => result.success === false)) {
+        throw new Error('Video availability write failed');
+    }
+    const eligibilityChanges = (blocks.meta?.changes ?? 0) + (regions.meta?.changes ?? 0);
+    if (eligibilityChanges) invalidateRecommendationCache(db);
+    return eligibilityChanges + (timestamps.meta?.changes ?? 0);
 }
 
 /**

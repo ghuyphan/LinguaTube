@@ -157,11 +157,11 @@ export interface PlaylistRecord {
  */
 export function mapRecordToPlaylist(record: PlaylistRecord | Record<string, unknown>): Playlist {
     const r = record as PlaylistRecord;
-    const userName = r.expand?.user?.name || r.expand?.user?.username;
+    const userName = r.expand?.user?.name || r.expand?.user?.username || (r['user_name'] as string) || (r['userName'] as string);
 
     return {
         id: r.id,
-        userId: r.user || '',
+        userId: (r.user as string) || (r['user_id'] as string) || '',
         userName: userName,
         title: r.title || '',
         description: r.description,
@@ -174,8 +174,8 @@ export function mapRecordToPlaylist(record: PlaylistRecord | Record<string, unkn
         thumbnail: r.thumbnail || (r.video_ids?.[0] ? getYouTubeThumbnail(r.video_ids[0], 'hqdefault') : undefined),
         saveCount: r.save_count || 0,
         isFeatured: r.is_featured || false,
-        createdAt: r.created ? new Date(r.created) : new Date(),
-        updatedAt: r.updated ? new Date(r.updated) : new Date(),
+        createdAt: r.created ? new Date(r.created) : (r['created_at'] ? new Date(r['created_at'] as string) : new Date()),
+        updatedAt: r.updated ? new Date(r.updated) : (r['updated_at'] ? new Date(r['updated_at'] as string) : new Date()),
         synced: true
     };
 }

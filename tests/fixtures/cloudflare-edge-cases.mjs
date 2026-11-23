@@ -85,8 +85,9 @@ add('same-language batch bypass','translate/batch',{body:{source:'en',target:'en
 add('blank translation batch bypass','translate/batch',{body:{source:'en',target:'vi',texts:['',' ']},status:200,noUpstream:true,expect:{translations:['',' ']}});
 add('empty leaderboard falls back to seeds','leaderboard',{query:{limit:'-3'},status:200,providerOnly:true});
 add('version compiled fallback','version',{status:200,noUpstream:true});
-for (const mode of ['auth-outage','auth-redirect','auth-identity-mismatch','profile-outage'])
+for (const mode of ['auth-outage','auth-redirect','auth-identity-mismatch'])
  add('authentication fails closed '+mode,'video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,fixture:mode,status:mode==='auth-identity-mismatch'?401:503,authOnly:true});
+add('category only depends on identity','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,fixture:'profile-outage',status:200,authOnly:true});
 add('authenticated level rejects invalid video ID','video-level',{body:{videoId:'short',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:400,authOnly:true});
 add('authenticated category persistence','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,status:200,authOnly:true,expect:{category:'news'}});
 add('authenticated level confidence clamps','video-level',{body:{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{confidence:0.85,details:{score:6,tier:'advanced',grammarCount:10000,speechRateCpm:2000}}});

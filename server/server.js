@@ -11,7 +11,40 @@ const versionData = require('../src/app/data/version-info.json');
 
 const app = express();
 
-const PORT = process.env.PORT || 3001;
+const PORT = Number(process.env.PORT || 3001);
+const HOST = process.env.VOCA_DEV_HOST || '127.0.0.1';
+const liveGladiaKey = process.env.VOCA_DEV_LIVE_GLADIA === '1'
+    ? process.env.GLADIA_API_KEY
+    : undefined;
+
+function boundedDevCache(limit, ttlMs) {
+    const entries = new Map();
+    function removeExpired() {
+        const now = Date.now();
+        for (const [key, entry] of entries) {
+            if (entry.expiresAt <= now) entries.delete(key);
+        }
+    }
+    return {
+        get(key) {
+            const entry = entries.get(key);
+            if (entry?.expiresAt > Date.now()) return entry.value;
+            entries.delete(key);
+            return undefined;
+        },
+        set(key, value) {
+            removeExpired();
+            entries.delete(key);
+            if (entries.size >= limit) entries.delete(entries.keys().next().value);
+            entries.set(key, { value, expiresAt: Date.now() + ttlMs });
+        },
+        delete(key) { entries.delete(key); },
+        *entries() {
+            removeExpired();
+            for (const [key, entry] of entries) yield [key, entry.value];
+        }
+    };
+}
 
 // Middleware
 const allowedOrigins = ['http://localhost:4200', 'http://127.0.0.1:4200', 'https://voca.study'];
@@ -170,17 +203,6 @@ app.get('/api/translate/:source/:target/*query', async (req, res) => {
     }
 });
 
-/**
- * GET /api/dict
- * Unified dictionary lookup supporting ja, zh, ko, en across target languages
- */
-const BROWSER_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Cache-Control': 'no-cache'
-};
-
 async function translateWithGtx(text, source, target) {
     if (!text) return text;
     if (source === target) return text;
@@ -202,476 +224,21 @@ async function translateWithGtx(text, source, target) {
     return null;
 }
 
-let dictParsersPromise = null;
-async function getDictParsers() {
-    if (!dictParsersPromise) {
-        dictParsersPromise = import('../functions-src/utils/dict-parsers.js').catch(err => {
-            console.warn('[server] Notice: using local fallback dict parsers:', err.message);
-            return null;
-        });
-    }
-    return dictParsersPromise;
-}
-
-function parseNaverLocalItem(item) {
-    const word = (item.expEntry || '')
-        .replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '')
-        .replace(/<[^>]+>/g, '')
-        .trim();
-
-    const phoneticObj = item.searchPhoneticSymbolList?.find(s => s?.symbolValue)
-        || item.searchPhoneticSymbolList?.[0];
-    const rawPhonetic = (phoneticObj?.symbolValue || item.phoneticSigns?.[0]?.sign || '')
-        .replace(/<[^>]+>/g, '')
-        .trim();
-
-    let reading = '';
-    if (rawPhonetic && rawPhonetic !== word) {
-        if (/[a-zA-Z]/.test(rawPhonetic) || rawPhonetic.startsWith('/') || rawPhonetic.startsWith('[')) {
-            reading = rawPhonetic;
-        } else {
-            reading = `[${rawPhonetic}]`;
-        }
-    }
-
-    const definitions = [];
-    const examples = [];
-    let primaryPos = '';
-    (item.meansCollector || []).forEach(collector => {
-        if (!primaryPos && (collector.partOfSpeech2 || collector.partOfSpeech)) {
-            primaryPos = (collector.partOfSpeech2 || collector.partOfSpeech)
-                .replace(/<[^>]+>/g, '')
-                .trim();
-        }
-        (collector.means || []).forEach(mean => {
-            const def = (mean.value || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-            if (def && !definitions.some(d => d.toLowerCase() === def.toLowerCase())) {
-                definitions.push(def);
-            }
-            const exOri = (mean.exampleOri || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-            const exTrans = (mean.exampleTrans || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-            if (exOri) {
-                const formatted = exTrans ? `${exOri} (${exTrans})` : exOri;
-                if (!examples.some(e => e.toLowerCase() === formatted.toLowerCase())) {
-                    examples.push(formatted);
-                }
-            }
-        });
-    });
-
-    const partOfSpeech = primaryPos || (item.partsOfSpeech ? item.partsOfSpeech.join(', ') : '');
-
-    const audioObj = item.searchPhoneticSymbolList?.find(s => s?.symbolFile?.startsWith('http'))
-        || item.searchPhoneticSymbolList?.[0];
-    const rawSymbolFile = audioObj?.symbolFile || '';
-    const symbolAudio = rawSymbolFile.startsWith('http') ? rawSymbolFile.split('|')[0].trim() : '';
-
-    const audio = symbolAudio
-        || item.searchSearchResultAudioList?.[0]?.url
-        || item.searchSearchResultAudioList?.[0]?.audioUrl
-        || item.phoneticSigns?.[0]?.signFile
-        || item.pronFile
-        || item.audioUrl
-        || '';
-
-    return {
-        word,
-        reading,
-        definitions,
-        ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
-        partOfSpeech,
-        ...(audio ? { audio } : {})
-    };
-}
-
-let sharedDictServicePromise = null;
-async function getSharedDictService() {
-    if (!sharedDictServicePromise) {
-        sharedDictServicePromise = Promise.all([
-            import('../functions-src/providers/dictionary-apis.js'),
-            import('../functions-src/providers/lingva.js'),
-            import('../functions-src/services/dict.service.js')
-        ]).then(([{ DictionaryProvider }, { TranslationProvider }, { DictionaryService }]) =>
-            new DictionaryService(new DictionaryProvider(), new TranslationProvider())
-        ).catch(err => {
-            sharedDictServicePromise = null;
-            throw err;
-        });
-    }
-    return sharedDictServicePromise;
-}
-
-async function fetchDictLocal(word, from, to) {
-    if (from === 'vi') {
-        try {
-            const service = await getSharedDictService();
-            const res = await service.fetchWithFallback(word, from, to);
-            return { word, from, to, source: res.source || 'none', entries: res.entries || [], timestamp: Date.now() };
-        } catch (err) {
-            console.warn('[fetchDictLocal vi] Fallback error:', err.message);
-            return { word, from, to, source: 'none', entries: [], timestamp: Date.now() };
-        }
-    }
-
-    const pair = `${from}-${to}`;
-    let entries = [];
-    let source = 'none';
-
+app.get('/api/dict', async (req, res, next) => {
     try {
-        // 1. Naver official bilingual & Oxford monolingual dictionaries
-        const naverMap = {
-            'ko-en': 'https://en.dict.naver.com/api3/enko/search',
-            'ko-vi': 'https://ko.dict.naver.com/api3/kovi/search',
-            'ko-ja': 'https://ja.dict.naver.com/api3/koja/search',
-            'ko-zh': 'https://zh.dict.naver.com/api3/kozh/search',
-            'ko-ko': 'https://ko.dict.naver.com/api3/koko/search',
-            'ja-ko': 'https://ko.dict.naver.com/api3/jako/search',
-            'zh-ko': 'https://ko.dict.naver.com/api3/zhko/search',
-            'en-en': 'https://en.dict.naver.com/api3/enen/search',
-            'en-vi': 'https://en.dict.naver.com/api3/envi/search',
-            'en-ja': 'https://en.dict.naver.com/api3/enja/search',
-            'en-ko': 'https://en.dict.naver.com/api3/enko/search',
-            'en-zh': 'https://en.dict.naver.com/api3/enzh/search'
-        };
-
-        const naverEndpoint = naverMap[pair];
-        if (naverEndpoint) {
-            try {
-                const referer = naverEndpoint.startsWith('https://en.') ? 'https://en.dict.naver.com/' : naverEndpoint;
-                const res = await fetch(`${naverEndpoint}?query=${encodeURIComponent(word)}&m=pc&range=all`, {
-                    headers: { ...BROWSER_HEADERS, 'Referer': referer },
-                    signal: AbortSignal.timeout(5000)
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    const parsers = await getDictParsers();
-                    if (parsers?.parseNaver) {
-                        entries = parsers.parseNaver(data).filter(e => e.word && e.definitions.length > 0);
-                    } else {
-                        const items = data?.searchResultMap?.searchResultListMap?.WORD?.items || [];
-                        entries = items.slice(0, 5).map(parseNaverLocalItem).filter(e => e.word && e.definitions.length > 0);
-                    }
-                    if (entries.length > 0) source = 'naver';
-                }
-            } catch (e) { }
+        const { onRequestGet } = await import('../functions-src/api/dict.js');
+        const headers = new Headers();
+        for (const name of ['authorization', 'origin']) {
+            const value = req.get(name);
+            if (value) headers.set(name, value);
         }
-
-        // 2. Japanese -> English (Jotoba + Jisho)
-        if (entries.length === 0 && (pair === 'ja-en' || pair === 'ja-ja')) {
-            if (pair === 'ja-en') {
-                try {
-                    const res = await fetch('https://jotoba.de/api/search/words', {
-                        method: 'POST',
-                        headers: { ...BROWSER_HEADERS, 'Content-Type': 'application/json', 'Referer': 'https://jotoba.de/' },
-                        body: JSON.stringify({ query: word, language: 'English', no_english: false }),
-                        signal: AbortSignal.timeout(5000)
-                    });
-                    if (res.ok) {
-                        const data = await res.json();
-                        const parsers = await getDictParsers();
-                        if (parsers?.parseJotoba) {
-                            entries = parsers.parseJotoba(data).filter(e => e.word && e.definitions.length > 0);
-                        } else {
-                            const kanjiJlpt = data.kanji?.find(k => k.jlpt)?.jlpt || null;
-                            entries = (data.words || []).slice(0, 5).map(e => {
-                                let audio = e.audio?.url || (typeof e.audio === 'string' ? e.audio : '') || e.pitch?.audio || '';
-                                if (audio && audio.startsWith('/')) audio = `https://jotoba.de${audio}`;
-                                const partOfSpeech = (e.senses?.[0]?.pos || []).map(p => {
-                                    if (typeof p === 'string') return p;
-                                    if (p && typeof p === 'object') return Object.entries(p).map(([cat, sub]) => (sub ? `${cat} (${sub})` : cat)).join(', ');
-                                    return '';
-                                }).filter(Boolean).join(', ');
-                                const level = e.jlpt ? parseInt(String(e.jlpt).replace(/\D/g, '')) : (kanjiJlpt ? parseInt(String(kanjiJlpt).replace(/\D/g, '')) : null);
-                                return {
-                                    word: e.reading?.kanji || e.reading?.kana || word,
-                                    reading: e.reading?.kana || '',
-                                    definitions: (e.senses || []).map(s => (s.glosses || []).join(', ')).filter(Boolean),
-                                    partOfSpeech,
-                                    level,
-                                    ...(audio ? { audio } : {})
-                                };
-                            }).filter(e => e.word && e.definitions.length > 0);
-                        }
-                        if (entries.length > 0) source = 'jotoba';
-                    }
-                } catch (e) { }
-            }
-
-            if (entries.length === 0) {
-                try {
-                    const jishoRes = await fetch(`https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(word)}`, {
-                        headers: { ...BROWSER_HEADERS, 'Referer': 'https://jisho.org/' },
-                        signal: AbortSignal.timeout(5000)
-                    });
-                    if (jishoRes.ok) {
-                        const data = await jishoRes.json();
-                        entries = (data.data || []).slice(0, 5).map(entry => {
-                            const japanese = entry.japanese?.[0] || {};
-                            const w = japanese.word || japanese.reading || '';
-                            const reading = japanese.reading || '';
-                            const defs = [];
-                            (entry.senses || []).forEach(s => { if (s.english_definitions) defs.push(s.english_definitions.join(', ')); });
-                            const jlptTag = entry.jlpt?.find(t => t.startsWith('jlpt-n'));
-                            const level = jlptTag ? parseInt(jlptTag.replace('jlpt-n', '')) : null;
-                            return { word: w, reading, definitions: defs.slice(0, 5), partOfSpeech: '', level };
-                        }).filter(e => e.word && e.definitions.length > 0);
-                        if (entries.length > 0) source = 'jisho';
-                    }
-                } catch (e) { }
-            }
-        }
-
-        // 3. Japanese -> Vietnamese (Mazii javi) & Japanese -> Chinese (Mazii jacn)
-        if (entries.length === 0 && (pair === 'ja-vi' || pair === 'ja-zh')) {
-            const dictCode = pair === 'ja-zh' ? 'jacn' : 'javi';
-            try {
-                const res = await fetch('https://mazii.net/api/search', {
-                    method: 'POST',
-                    headers: { ...BROWSER_HEADERS, 'Content-Type': 'application/json', 'Referer': 'https://mazii.net/' },
-                    body: JSON.stringify({ dict: dictCode, type: 'word', query: word, page: 1 }),
-                    signal: AbortSignal.timeout(5000)
-                });
-                if (res.ok) {
-                    const data = await res.json();
-                    const parsers = await getDictParsers();
-                    if (parsers?.parseMazii) {
-                        entries = parsers.parseMazii(data, word);
-                    } else {
-                        let results = data.data || data.results || [];
-                        if (word && word.trim()) {
-                            const q = word.trim().toLowerCase();
-                            results = [...results].sort((a, b) => {
-                            const scoreEntry = (entry) => {
-                                const w = (entry.word || '').toLowerCase();
-                                const rawPhonetic = (entry.phonetic || entry.reading || '').toLowerCase();
-                                const parts = rawPhonetic.split(/[\s,、/]+/).filter(Boolean);
-                                const kind = (entry.means?.[0]?.kind || entry.type || '').toLowerCase();
-                                let s = 0;
-                                if (w === q) s = 100;
-                                else if (parts[0] === q) s = 85;
-                                else if (parts.includes(q)) s = 50;
-                                else if (w.startsWith(q)) s = 40;
-                                else if (parts.some(p => p.startsWith(q))) s = 30;
-                                else s = 10;
-                                if (kind.includes('uk')) s += 15;
-                                return s;
-                            };
-                            return scoreEntry(b) - scoreEntry(a);
-                        });
-                    }
-                    entries = results.slice(0, 5).map(e => {
-                        const defs = [];
-                        const examples = [];
-                        const seenDefs = new Set();
-                        const seenEx = new Set();
-                        if (Array.isArray(e.means)) {
-                            e.means.forEach(m => {
-                                if (m.mean) {
-                                    const clean = m.mean.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-                                    const k = clean.toLowerCase();
-                                    if (clean && !seenDefs.has(k)) {
-                                        seenDefs.add(k);
-                                        defs.push(clean);
-                                    }
-                                }
-                                if (Array.isArray(m.examples)) {
-                                    m.examples.forEach(ex => {
-                                        const c = (ex.content || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-                                        const mn = (ex.mean || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-                                        if (c) {
-                                            const formatted = mn ? `${c} (${mn})` : c;
-                                            const exK = formatted.toLowerCase();
-                                            if (!seenEx.has(exK)) {
-                                                seenEx.add(exK);
-                                                examples.push(formatted);
-                                            }
-                                        }
-                                    });
-                                }
-                            });
-                        }
-                        if (defs.length === 0 && e.short_mean) defs.push(e.short_mean.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
-                        let audio = e.audio || e.phonetic_audio || '';
-                        if (audio && !audio.startsWith('http')) audio = '';
-                        const rawLevel = Array.isArray(e.level) ? e.level[0] : e.level;
-                        const level = rawLevel ? parseInt(String(rawLevel).replace(/\D/g, '')) : null;
-                        const rawReading = (e.phonetic || '').trim();
-                        const readingParts = rawReading.split(/[\s,、/]+/).filter(Boolean);
-                        const reading = readingParts.length > 1 ? readingParts.join(' / ') : rawReading;
-                        return {
-                            word: e.word || word,
-                            reading,
-                            definitions: defs,
-                            ...(examples.length > 0 ? { examples: examples.slice(0, 3) } : {}),
-                            partOfSpeech: e.means?.[0]?.kind || '',
-                            level,
-                            ...(audio ? { audio } : {})
-                        };
-                    }).filter(e => e.word && e.definitions.length > 0);
-                    }
-                    if (entries.length > 0) source = 'mazii';
-                }
-            } catch (e) { }
-        }
-
-        // 4. Chinese -> English (MDBG)
-        if (entries.length === 0 && (pair === 'zh-en' || pair === 'zh-zh')) {
-            try {
-                const url = `https://www.mdbg.net/chinese/dictionary?page=worddict&wdqt=${encodeURIComponent(word)}&wdrst=0`;
-                const res = await fetch(url, { headers: BROWSER_HEADERS, signal: AbortSignal.timeout(5000) });
-                if (res.ok) {
-                    const html = await res.text();
-                    const rowSplits = html.split('<tr class="row">');
-                    for (let i = 1; i < rowSplits.length && entries.length < 5; i++) {
-                        const rowFragment = rowSplits[i].split('</tr>')[0];
-                        const otxtMatch = rowFragment.match(/<td[^>]*class="[^"]*otxtbot[^"]*"[^>]*>([\s\S]*?)<\/td>/);
-                        const hanziMatch = rowFragment.match(/<div class="hanzi">([\s\S]*?)<\/div>/);
-                        let w = '';
-                        if (otxtMatch && otxtMatch[1].replace(/<[^>]+>/g, '').trim()) {
-                            w = otxtMatch[1].replace(/<[^>]+>/g, '').trim();
-                        } else if (hanziMatch) {
-                            w = [...hanziMatch[1].matchAll(/<span[^>]*>([^<]+)<\/span>/g)].map(m => m[1].trim()).join('');
-                        }
-                        if (!w) continue;
-                        const pinyinMatch = rowFragment.match(/<div class="pinyin"[^>]*>([\s\S]*?)<\/div>/);
-                        const rd = pinyinMatch ? [...pinyinMatch[1].replace(/&#8203;|<wbr\s*\/?>/gi, '').matchAll(/<span[^>]*>([^<]+)<\/span>/g)].map(m => m[1].trim()).join(' ') : '';
-                        const defsMatch = rowFragment.match(/<div class="defs">([\s\S]*?)<\/div>/);
-                        let defs = [];
-                        if (defsMatch) {
-                            defs = defsMatch[1].replace(/<[^>]+>/g, '/').split('/').map(d => d.trim()).filter(d => d && d !== '&nbsp;');
-                        }
-                        const hskMatch = rowFragment.match(/HSK\s*(\d+)/i);
-                        const level = hskMatch ? parseInt(hskMatch[1]) : null;
-                        if (defs.length > 0) {
-                            entries.push({ word: w, reading: rd, definitions: defs, partOfSpeech: '', level });
-                        }
-                    }
-                    if (entries.length > 0) source = 'mdbg';
-                }
-            } catch (e) { }
-        }
-
-        // 5. Glosbe (zh-vi, zh-ja, en-vi, en-ko, ko-vi)
-        if (entries.length === 0 && (pair === 'zh-vi' || pair === 'zh-ja' || pair === 'en-vi' || pair === 'en-ko')) {
-            try {
-                const url = `https://glosbe.com/${from}/${to}/${encodeURIComponent(word)}`;
-                const res = await fetch(url, { headers: BROWSER_HEADERS, signal: AbortSignal.timeout(5000) });
-                if (res.ok) {
-                    const html = await res.text();
-                    const h3Matches = [...html.matchAll(/<h3[^>]*class="[^"]*translation__item__(?:pharse|phrase)[^"]*"[^>]*>([\s\S]*?)<\/h3>/g)];
-                    const seenDefs = new Set();
-                    const py = from === 'zh' ? pinyin(word, { toneType: 'symbol' }) : '';
-                    for (const match of h3Matches) {
-                        const def = match[1].replace(/<[^>]+>/g, '').trim();
-                        if (def && !seenDefs.has(def.toLowerCase())) {
-                            seenDefs.add(def.toLowerCase());
-                            entries.push({ word, reading: py, definitions: [def], partOfSpeech: '' });
-                            if (entries.length >= 5) break;
-                        }
-                    }
-                    if (entries.length > 0) source = 'glosbe';
-                }
-            } catch (e) { }
-        }
-
-        // 6. English monolingual fallback (Datamuse -> Free Dictionary API)
-        if (entries.length === 0 && pair === 'en-en') {
-            try {
-                const dmRes = await fetch(`https://api.datamuse.com/words?sp=${encodeURIComponent(word)}&md=dp&max=3`, { signal: AbortSignal.timeout(3000) });
-                if (dmRes.ok) {
-                    const dmData = await dmRes.json();
-                    if (dmData[0]?.defs && dmData[0].defs.length > 0) {
-                        const defs = dmData[0].defs.map(d => d.replace(/^[a-z]+\t/, '').trim()).filter(Boolean);
-                        const pos = dmData[0].defs.map(d => d.match(/^([a-z]+)\t/)?.[1]).filter(Boolean);
-                        entries = [{
-                            word: dmData[0].word || word,
-                            reading: '',
-                            definitions: defs.slice(0, 5),
-                            partOfSpeech: [...new Set(pos)].join(', ')
-                        }];
-                        source = 'datamuse';
-                    }
-                }
-            } catch (e) { }
-
-            if (entries.length === 0) {
-                try {
-                    const fdRes = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`, {
-                        headers: BROWSER_HEADERS,
-                        signal: AbortSignal.timeout(4000)
-                    });
-                    if (fdRes.ok) {
-                        const data = await fdRes.json();
-                        if (Array.isArray(data)) {
-                            entries = data.slice(0, 3).map(entry => {
-                                const defs = [];
-                                const posList = [];
-                                (entry.meanings || []).forEach(m => {
-                                    if (m.partOfSpeech && !posList.includes(m.partOfSpeech)) posList.push(m.partOfSpeech);
-                                    (m.definitions || []).forEach(d => { if (d.definition) defs.push(d.definition); });
-                                });
-                                const audio = entry.phonetics?.find(p => p.audio && p.audio.endsWith('.mp3'))?.audio
-                                    || entry.phonetics?.find(p => p.audio)?.audio
-                                    || '';
-                                return {
-                                    word: entry.word || word,
-                                    reading: entry.phonetics?.find(p => p.text)?.text || '',
-                                    definitions: defs.slice(0, 5),
-                                    partOfSpeech: posList.join(', '),
-                                    ...(audio ? { audio } : {})
-                                };
-                            }).filter(e => e.word && e.definitions.length > 0);
-                            if (entries.length > 0) source = 'freedict';
-                        }
-                    }
-                } catch (e) { }
-            }
-        }
-
-        // Fallback: If no entries found and target language is not English, try English source + GTX translation
-        if (entries.length === 0 && to !== 'en') {
-            const englishResult = await fetchDictLocal(word, from, 'en');
-            if (englishResult.entries && englishResult.entries.length > 0) {
-                const translatedEntries = [];
-                for (const enEntry of englishResult.entries.slice(0, 2)) {
-                    const translatedDefs = [];
-                    for (const def of enEntry.definitions.slice(0, 3)) {
-                        const tr = await translateWithGtx(def, 'en', to);
-                        if (tr) translatedDefs.push(tr);
-                    }
-                    if (translatedDefs.length > 0) {
-                        translatedEntries.push({ ...enEntry, definitions: translatedDefs });
-                    }
-                }
-                if (translatedEntries.length > 0) {
-                    return { word, from, to, source: `${englishResult.source}+gtx`, entries: translatedEntries, timestamp: Date.now() };
-                }
-            }
-        }
-
-        return { word, from, to, source, entries, timestamp: Date.now() };
-
-    } catch (err) {
-        console.error(`[fetchDictLocal] Error (${from}->${to}):`, err.message);
-        return { word, from, to, source: 'none', entries: [], timestamp: Date.now() };
-    }
-}
-
-app.get('/api/dict', async (req, res) => {
-    const word = (req.query.word || '').trim();
-    const from = (req.query.from || 'en').trim();
-    const to = (req.query.to || 'en').trim();
-
-    if (!word) {
-        return res.status(400).json({ error: 'Missing logic parameter: word' });
-    }
-
-    try {
-        const result = await fetchDictLocal(word, from, to);
-        res.json(result);
+        if (req.ip) headers.set('CF-Connecting-IP', req.ip);
+        const request = new Request(new URL(req.originalUrl, 'http://localhost'), { headers });
+        const response = await onRequestGet({ request, env: process.env });
+        response.headers.forEach((value, name) => res.set(name, value));
+        res.status(response.status).send(await response.text());
     } catch (error) {
-        console.error('[Dict Local] Error:', error.message);
-        res.status(500).json({ error: error.message });
+        next(error);
     }
 });
 
@@ -1029,7 +596,7 @@ app.get('/api/geo', (req, res) => {
 });
 
 // Local Dev Payment Mock Endpoints
-const devOrders = new Map();
+const devOrders = boundedDevCache(1000, 60 * 60 * 1000);
 const DEV_PLANS = {
     pro_1m: { amount: 49000, diamonds: 10, tier: 'pro' },
     pro_1y: { amount: 450000, diamonds: 10, tier: 'pro' },
@@ -1077,8 +644,8 @@ app.get('/api/payment/check-status', (req, res) => {
 app.post('/api/payment/webhook', (req, res) => {
     const data = req.body?.data || req.body || {};
     const orderCode = parseInt(data.orderCode, 10);
-    if (orderCode && devOrders.has(orderCode)) {
-        const order = devOrders.get(orderCode);
+    const order = orderCode ? devOrders.get(orderCode) : null;
+    if (order) {
         devOrders.set(orderCode, { ...order, status: 'PAID' });
         devDiamonds = order.diamonds || 25;
     }
@@ -1854,12 +1421,11 @@ const DEV_SEED_VIDEOS = {
     ]
 };
 
-const localVideoMetaCache = new Map();
+const localVideoMetaCache = boundedDevCache(1000, 30 * 60 * 1000);
 
 async function fetchVideoMetaLocal(videoId) {
-    if (localVideoMetaCache.has(videoId)) {
-        return localVideoMetaCache.get(videoId);
-    }
+    const cached = localVideoMetaCache.get(videoId);
+    if (cached) return cached;
     try {
         const oembedRes = await fetch(`https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=${videoId}`, {
             signal: AbortSignal.timeout(3000)
@@ -2305,7 +1871,7 @@ const DEV_DUAL_TRANSLATIONS = {
  * 2. Fetches native YouTube subtitles via Innertube
  */
 // In-memory registry for dev AI transcription jobs
-const localAiJobs = new Map();
+const localAiJobs = boundedDevCache(100, 30 * 60 * 1000);
 
 function normalizeLanguageCode(lang) {
     if (!lang || typeof lang !== 'string') return '';
@@ -2369,61 +1935,44 @@ function extractGladiaDetectedLanguage(resultData, defaultLang = 'ja') {
     return normalizeLanguageCode(rawLang) || defaultLang;
 }
 
-function pollDevGladiaJob(jobId, resultUrl, videoId, lang, gladiaKey) {
-    let attempts = 0;
-    const interval = setInterval(async () => {
-        attempts++;
-        if (attempts > 60) {
-            clearInterval(interval);
-            const job = localAiJobs.get(jobId);
-            if (job) {
-                job.status = 'failed';
-                job.error = 'Transcription timed out after 3 minutes';
-            }
-            return;
-        }
-
+async function pollDevGladiaJob(job, gladiaKey) {
+    const deadline = Date.now() + 180000;
+    while (Date.now() < deadline && localAiJobs.get(job.id) === job) {
+        await new Promise(resolve => setTimeout(resolve, 4000));
+        if (localAiJobs.get(job.id) !== job || Date.now() >= deadline) break;
         try {
-            const gladiaRes = await fetch(resultUrl, {
+            const response = await fetch(job.resultUrl, {
                 headers: { 'x-gladia-key': gladiaKey },
-                signal: AbortSignal.timeout(10000)
+                signal: AbortSignal.timeout(Math.min(10000, Math.max(1, deadline - Date.now()))),
+                redirect: 'error'
             });
-
-            if (!gladiaRes.ok) return;
-
-            const resultData = await gladiaRes.json();
-            if (resultData.status === 'done') {
-                clearInterval(interval);
-                const rawSegments = extractGladiaSegments(resultData);
-                const cleaned = cleanTranscriptSegments(rawSegments);
-                const detectedLang = extractGladiaDetectedLanguage(resultData, lang);
-
-                if (cleaned.length > 0) {
-                    saveCachedTranscript(videoId, detectedLang, {
-                        videoId,
-                        language: detectedLang,
-                        source: 'ai',
-                        segments: cleaned
-                    });
-                }
-
-                const job = localAiJobs.get(jobId);
-                if (job) {
-                    job.status = 'completed';
-                    job.detectedLanguage = detectedLang;
-                }
-            } else if (resultData.status === 'error') {
-                clearInterval(interval);
-                const job = localAiJobs.get(jobId);
-                if (job) {
-                    job.status = 'failed';
-                    job.error = resultData.error_message || 'Gladia transcription failed';
-                }
+            if (!response.ok) continue;
+            const result = await response.json();
+            if (localAiJobs.get(job.id) !== job) return;
+            if (result.status === 'error') {
+                job.status = 'failed';
+                job.error = result.error_message || 'Gladia transcription failed';
+                return;
             }
+            if (result.status !== 'done') continue;
+            const cleaned = cleanTranscriptSegments(extractGladiaSegments(result));
+            const language = extractGladiaDetectedLanguage(result, job.language);
+            if (cleaned.length) {
+                saveCachedTranscript(job.videoId, language, {
+                    videoId: job.videoId, language, source: 'ai', segments: cleaned
+                });
+            }
+            job.status = 'completed';
+            job.detectedLanguage = language;
+            return;
         } catch {
-            // Non-blocking transient error
+            // Transient errors remain retryable within the deadline.
         }
-    }, 4000);
+    }
+    if (localAiJobs.get(job.id) === job) {
+        job.status = 'failed';
+        job.error = 'Transcription timed out after 3 minutes';
+    }
 }
 
 /**
@@ -2440,7 +1989,7 @@ app.post('/api/transcript', async (req, res) => {
     }
 
     const normalizedLang = (lang || 'ja').split('-')[0].toLowerCase();
-    const gladiaKey = process.env.GLADIA_API_KEY;
+    const gladiaKey = liveGladiaKey;
 
     // -------------------------------------------------------------
     // Scenario 1: Polling an existing AI job by jobId
@@ -2533,14 +2082,15 @@ app.post('/api/transcript', async (req, res) => {
         }
 
         if (!gladiaKey) {
-            return res.status(500).json({ success: false, errorCode: 'GLADIA_NOT_CONFIGURED', error: 'GLADIA_API_KEY not configured' });
+            return res.status(500).json({ success: false, errorCode: 'GLADIA_NOT_CONFIGURED', error: 'Live Gladia requires VOCA_DEV_LIVE_GLADIA=1 and GLADIA_API_KEY' });
         }
 
         try {
             console.log(`[Dev Server] Polling Gladia job: ${resultUrl}`);
             const gladiaRes = await fetch(resultUrl, {
                 headers: { 'x-gladia-key': gladiaKey },
-                signal: AbortSignal.timeout(15000)
+                signal: AbortSignal.timeout(15000),
+                redirect: 'error'
             });
 
             if (!gladiaRes.ok) {
@@ -2672,7 +2222,7 @@ app.post('/api/transcript', async (req, res) => {
             return res.status(500).json({
                 success: false,
                 errorCode: 'GLADIA_NOT_CONFIGURED',
-                error: 'GLADIA_API_KEY is not configured in .env'
+                error: 'Live Gladia requires VOCA_DEV_LIVE_GLADIA=1 and GLADIA_API_KEY'
             });
         }
 
@@ -2691,35 +2241,30 @@ app.post('/api/transcript', async (req, res) => {
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
         console.log(`[Dev Server] Submitting AI transcription to Gladia for ${youtubeUrl}`);
 
-        let submitData = null;
-        let lastErr = null;
-        for (let attempt = 1; attempt <= 2; attempt++) {
-            try {
-                const submitResponse = await fetch('https://api.gladia.io/v2/pre-recorded', {
-                    method: 'POST',
-                    headers: {
-                        'x-gladia-key': gladiaKey,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ audio_url: youtubeUrl, sentences: true, subtitles: false }),
-                    signal: AbortSignal.timeout(24000)
-                });
-
-                if (!submitResponse.ok) {
-                    const errData = await submitResponse.json().catch(() => ({}));
-                    throw new Error(`Gladia submission failed (${submitResponse.status}): ${JSON.stringify(errData)}`);
-                }
-
-                submitData = await submitResponse.json();
-                break;
-            } catch (err) {
-                lastErr = err;
-                console.warn(`[Dev Server] Gladia submit attempt ${attempt}/2 failed: ${err.message}`);
-                if (attempt < 2) await new Promise(r => setTimeout(r, 1000));
-            }
+        let submitData;
+        let lastErr;
+        try {
+            const response = await fetch('https://api.gladia.io/v2/pre-recorded', {
+                method: 'POST',
+                headers: { 'x-gladia-key': gladiaKey, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ audio_url: youtubeUrl, sentences: true, subtitles: false }),
+                signal: AbortSignal.timeout(24000),
+                redirect: 'error'
+            });
+            if (!response.ok) throw new Error(`Gladia submission failed (${response.status})`);
+            submitData = await response.json();
+        } catch (error) {
+            lastErr = error;
         }
 
-        if (!submitData?.result_url) {
+        let resultUrl;
+        try {
+            const supplied = new URL(submitData?.result_url);
+            if (supplied.origin === 'https://api.gladia.io' && supplied.pathname.startsWith('/v2/pre-recorded/')) {
+                resultUrl = supplied.href;
+            }
+        } catch { /* Provider did not confirm a job URL. */ }
+        if (!resultUrl) {
             console.error('[Dev Server] Gladia AI error:', lastErr?.message);
             return res.status(500).json({
                 success: false,
@@ -2732,18 +2277,17 @@ app.post('/api/transcript', async (req, res) => {
             });
         }
 
-        const devJobId = 'dev_job_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
-        localAiJobs.set(devJobId, {
+        const devJobId = `dev_job_${crypto.randomUUID()}`;
+        const job = {
             id: devJobId,
             videoId,
             language: normalizedLang,
             status: 'processing',
-            resultUrl: submitData.result_url,
+            resultUrl,
             createdAt: Date.now()
-        });
-
-        // Launch background event-loop poller in Node
-        pollDevGladiaJob(devJobId, submitData.result_url, videoId, normalizedLang, gladiaKey);
+        };
+        localAiJobs.set(devJobId, job);
+        void pollDevGladiaJob(job, gladiaKey);
 
         console.log(`[Dev Server] Gladia job created with ID: ${devJobId}`);
 
@@ -3443,12 +2987,8 @@ app.get('/api/version', (req, res) => {
     });
 });
 
-const serverInstance = app.listen(PORT, () => {
-    console.log(`[Server] Gladia transcription server running on port ${PORT}`);
-    if (!process.env.GLADIA_API_KEY) {
-        console.warn('[Server] WARNING: GLADIA_API_KEY not set!');
-        console.warn('[Server] Get your free key at: https://gladia.io');
-    }
+const serverInstance = app.listen(PORT, HOST, () => {
+    console.log(`[Server] Development server listening on ${HOST}:${PORT}`);
 });
 
 serverInstance.on('error', (err) => {

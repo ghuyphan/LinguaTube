@@ -1,6 +1,6 @@
 # Feature Specifications & Deep Dive
 
-This document details the functional specifications, algorithms, and business logic governing each major feature in **Voca** (formerly LinguaTube).
+This guide documents existing Angular features and shared backend behavior. See [web app and public links](map.md#web-app-and-public-links) for the role of these screens alongside the Flutter learning app.
 
 ---
 
@@ -370,7 +370,7 @@ graph TD
 
 ## 5. Multi-Source Hybrid Dictionary
 
-When a learner clicks any subtitle word token, `DictionaryService` queries `/api/dict`:
+When a learner clicks a subtitle word, the app queries `/api/dict`. The backend checks the full phrase before accepting multiword results and preserves the definition language on each entry. Pronunciation, audio, and proficiency metadata carry over only for matching headwords with compatible readings.
 
 ```
                  ┌────────────────────────────────┐
@@ -384,7 +384,7 @@ When a learner clicks any subtitle word token, `DictionaryService` queries `/api
  [ JAPANESE ]               [ CHINESE ]                [ KOREAN ]
  Jotoba API (JLPT+POS)      MDBG (Pinyin)              Naver Dict (EnKo/KoVi/KoJa/KoZh/KoKo)
  Mazii (Vi / Zh 'jacn')     Glosbe (Vi / Ja)           KRDict (National Inst)
- Jisho.org (Monolingual)    Naver Chinese-Korean       Glosbe (Fallback)
+ Jisho.org + translation    Naver Chinese-Korean       Glosbe (Fallback)
       │                          │                          │
       └──────────────────────────┼──────────────────────────┘
                                  │

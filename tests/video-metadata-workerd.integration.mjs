@@ -1,3 +1,4 @@
+import { applyD1Schema, loadD1Schema } from './fixtures/d1-schema.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, mkdtemp, rm } from 'node:fs/promises';
@@ -25,11 +26,7 @@ test('official metadata cache, quota and fresh verification execute in workerd/D
         }});
     t.after(()=>mf.dispose());
     const db=await mf.getD1Database('VOCAB_DB');
-    for (const file of ['db/schema.sql','db/migrations/d1/20261023_credit_recovery.sql','db/migrations/d1/20261024_gladia_inbox.sql','db/migrations/d1/20261025_gladia_submission_state.sql','db/migrations/d1/20261026_verified_video_metadata.sql','db/migrations/d1/20261026_video_metadata_details.sql','db/migrations/d1/20261114_primary_language.sql','db/migrations/d1/20261120_video_catalog_index.sql','db/migrations/d1/20261122_add_embed_blocked.sql','db/migrations/d1/20261123_video_region_availability.sql']) {
-        const schema=await readFile(join(root,file),'utf8');
-        const statements=schema.replace(/--[^\n]*/g,'').split(schema.includes('ADD COLUMN snippet_json') ? /;\s*(?=(?:CREATE|ALTER|DROP|UPDATE)\b|$)/i : /;\s*(?=(?:CREATE|ALTER|DROP)\b|$)/i);
-        for(const sql of statements.map(s=>s.trim()).filter(Boolean)) await db.prepare(sql).run();
-    }
+    await applyD1Schema(db, await loadD1Schema(root));
     for(const [path,expected] of [['/',601],['/',601],['/?fresh',1201]]) {
         const response=await mf.dispatchFetch('https://fixture.invalid'+path);
         assert.equal(response.status,200,await response.clone().text());assert.equal((await response.json()).duration,expected);
