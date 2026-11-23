@@ -207,7 +207,9 @@ Under **Settings $\rightarrow$ Environment Variables**:
 
 ## Backend reliability update (2026-10-24)
 
-Use supported Node 22 for backend fixtures and the built-in SQLite D1 adapter. Run `SKIP_LIVE_E2E=1 npm run test:backend`, then `node --test tests/d1-recovery.integration.mjs tests/gladia-recovery.integration.mjs`. Embedded PostgreSQL tests require `VOCA_PGLITE_MODULE` pointing to an external PGlite installation; include the sibling Flutter `supabase/tests/*.mjs` suites.
+Use supported Node 22 for backend fixtures and the built-in SQLite D1 adapter. Run `SKIP_LIVE_E2E=1 npm run test:backend`, then `node --test tests/d1-recovery.integration.mjs tests/gladia-recovery.integration.mjs`. Set `VOCA_PGLITE_MODULE` to the absolute path to PGlite's `dist/index.js` to run `node --test tests/database-security.integration.mjs`.
+
+LinguaTube CI runs the embedded PostgreSQL checks for payment, diamonds, and profile access using this checkout. To additionally validate the proximity and reminder migrations, set `VOCA_FLUTTER_MIGRATIONS` to the `supabase/migrations` directory in a Flutter checkout and rerun the database security suite.
 
 Run web lint, TypeScript checking and headless Angular tests. Rebuild `functions/` from source only after editing `functions-src/`. Test live provider output content separately from HTTP status; local Node Japanese tokenization may use Intl fallback when the packaged Kuromoji dictionary is unavailable.
 

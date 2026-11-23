@@ -3,9 +3,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 
 const modulePath = process.env.VOCA_PGLITE_MODULE;
-test('payment, diamond and proximity migrations execute with role isolation and replay protection', { skip: !modulePath }, async () => {
+const flutterMigrations = process.env.VOCA_FLUTTER_MIGRATIONS;
+
+test('payment and diamond migrations execute with role isolation and replay protection', { skip: !modulePath }, async (t) => {
     const { PGlite } = await import(modulePath);
     const db = new PGlite();
     try {
@@ -30,10 +33,7 @@ test('payment, diamond and proximity migrations execute with role isolation and 
             '../db/migrations/20261023_access_state.sql',
             '../db/migrations/20261023_reliable_credit_operations.sql',
             '../db/migrations/20261023_revenuecat_recovery.sql',
-            '../db/migrations/20261020_device_tokens_and_push_notifications.sql',
-            '../../voca_flutter/supabase/migrations/20261021065235_create_vocapass_tokens_and_rpcs.sql',
-            '../../voca_flutter/supabase/migrations/20261023090000_secure_proximity_and_reminders.sql',
-            '../../voca_flutter/supabase/migrations/20261023120000_reminder_delivery_ledger.sql'
+            '../db/migrations/20261020_device_tokens_and_push_notifications.sql'
         ]) await db.exec(await readFile(new URL(path, import.meta.url), 'utf8'));
         const uid = '11111111-1111-4111-8111-111111111111';
         const payment = `SELECT public.apply_payos_payment(12345678,'${uid}','pro',30,10,49000) AS result`;
@@ -46,7 +46,6 @@ test('payment, diamond and proximity migrations execute with role isolation and 
         assert.equal((await db.query('SELECT count(*)::int AS n FROM payment_events')).rows[0].n, 1);
         await db.exec(`SET ROLE authenticated`);
         await assert.rejects(db.query(payment), /permission denied/);
-        await assert.rejects(db.query('SELECT public.get_streak_reminder_targets()'), /permission denied/);
         await db.exec('RESET ROLE');
         await assert.rejects(db.query(`SELECT public.apply_payos_payment(12345678,'22222222-2222-4222-8222-222222222222','pro',30,10,49000)`), /Order mismatch/);
         await db.exec(`UPDATE profiles SET diamonds=1,diamonds_updated_at=now() WHERE id='${uid}'`);
@@ -73,19 +72,6 @@ test('payment, diamond and proximity migrations execute with role isolation and 
         await db.exec(`UPDATE public.subscription_grants SET expires_at=now()-interval '1 second' WHERE user_id='${uid}' AND tier='premium'`);
         assert.equal((await db.query(`SELECT public.reconcile_user_subscription('${uid}') AS result`)).rows[0].result.tier,'pro');
 
-        await db.exec(`SET request.jwt.claim.sub='${uid}'; SET ROLE authenticated`);
-        const slots = (await db.query(`SELECT floor(extract(epoch FROM now())/900)::bigint AS slot`)).rows[0].slot;
-        const slot = Number(slots);
-        const register = (token, expirySlot=slot) => `SELECT public.register_vocapass_tokens('[{"token":"${token}","slot_index":${expirySlot},"expires_at":"${new Date((expirySlot+1)*900000).toISOString()}"}]'::jsonb)`;
-        await db.query(register('abcdef12'));
-        await assert.rejects(db.query(register('12345678',slot+10)),/Invalid token slot/);
-        await db.exec(`RESET ROLE; SET request.jwt.claim.sub='22222222-2222-4222-8222-222222222222'; SET ROLE authenticated`);
-        assert.equal((await db.query('SELECT * FROM vocapass_tokens')).rows.length,0);
-        assert.equal((await db.query("SELECT public.resolve_vocapass_token('abcdef12') AS result")).rows[0].result.user_id,uid);
-        await assert.rejects(db.query(register('abcdef12')),/Token collision/);
-        await db.exec('RESET ROLE; SET ROLE anon');
-        await assert.rejects(db.query("SELECT public.resolve_vocapass_token('abcdef12')"),/permission denied/);
-        await db.exec('RESET ROLE');
         // A committed charge/refund remains replay-safe when the HTTP acknowledgement is lost.
         await db.exec(`UPDATE profiles SET diamonds=5,diamonds_updated_at=now() WHERE id='${uid}'`);
         const charge = `SELECT public.consume_transcription_credits('credit-job','${uid}',1) AS result`;
@@ -159,30 +145,58 @@ test('payment, diamond and proximity migrations execute with role isolation and 
         await renew('same-period-duplicate');
         assert.equal((await db.query(`SELECT diamonds FROM profiles WHERE id='${other}'`)).rows[0].diamonds,2);
 
-        await db.exec(`INSERT INTO streaks VALUES('${uid}',5,now()-interval '2 days');
-            INSERT INTO device_tokens(user_id,token,platform) VALUES('${uid}','valid-device','ios');`);
-        const delivery=(await db.query('SELECT public.claim_streak_reminders(500) AS result')).rows[0].result;
-        assert.equal(delivery.length,1);
-        assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
-        const finish=(lease,success)=>db.query('SELECT public.finish_streak_reminder($1,$2,$3,$4,$5) AS result',
-            [uid,delivery[0].token_hash,delivery[0].delivery_date,lease,success]);
-        await finish(delivery[0].lease_token,false);
-        assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
-        await db.exec("UPDATE streak_reminder_deliveries SET lease_until=now()-interval '1 second',next_attempt=now()-interval '1 second'");
-        const retry=(await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result[0];
-        assert.equal((await finish(delivery[0].lease_token,true)).rows[0].result,false);
-        assert.equal((await finish(retry.lease_token,true)).rows[0].result,true);
-        assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
-        await db.exec(`INSERT INTO device_tokens(user_id,token,platform) VALUES('${uid}','bad-payload-device','ios')`);
-        const bad=(await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result[0];
-        await db.query('SELECT public.finish_streak_reminder($1,$2,$3,$4,false,false)',[uid,bad.token_hash,bad.delivery_date,bad.lease_token]);
-        assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
         await db.exec('SET ROLE authenticated');
-        await assert.rejects(db.query('SELECT public.claim_streak_reminders()'),/permission denied/);
         await assert.rejects(db.query("SELECT public.claim_revenuecat_event('transfer')"),/permission denied/);
         await assert.rejects(db.query(refund),/permission denied/);
         await db.exec('RESET ROLE');
         await db.exec(await readFile(new URL('../db/operations/diamond-authority-audit.sql', import.meta.url), 'utf8'));
+
+        await t.test('Flutter-owned proximity and reminder migrations enforce role and replay protection', {
+            skip: !flutterMigrations && 'Set VOCA_FLUTTER_MIGRATIONS to a Flutter migration directory',
+        }, async () => {
+            for (const file of [
+                '20261021065235_create_vocapass_tokens_and_rpcs.sql',
+                '20261023090000_secure_proximity_and_reminders.sql',
+                '20261023120000_reminder_delivery_ledger.sql',
+            ]) await db.exec(await readFile(resolve(flutterMigrations, file), 'utf8'));
+
+            await db.exec(`SET request.jwt.claim.sub='${uid}'; SET ROLE authenticated`);
+            const slots = (await db.query(`SELECT floor(extract(epoch FROM now())/900)::bigint AS slot`)).rows[0].slot;
+            const slot = Number(slots);
+            const register = (token, expirySlot=slot) => `SELECT public.register_vocapass_tokens('[{"token":"${token}","slot_index":${expirySlot},"expires_at":"${new Date((expirySlot+1)*900000).toISOString()}"}]'::jsonb)`;
+            await db.query(register('abcdef12'));
+            await assert.rejects(db.query(register('12345678',slot+10)),/Invalid token slot/);
+            await db.exec(`RESET ROLE; SET request.jwt.claim.sub='22222222-2222-4222-8222-222222222222'; SET ROLE authenticated`);
+            assert.equal((await db.query('SELECT * FROM vocapass_tokens')).rows.length,0);
+            assert.equal((await db.query("SELECT public.resolve_vocapass_token('abcdef12') AS result")).rows[0].result.user_id,uid);
+            await assert.rejects(db.query(register('abcdef12')),/Token collision/);
+            await db.exec('RESET ROLE; SET ROLE anon');
+            await assert.rejects(db.query("SELECT public.resolve_vocapass_token('abcdef12')"),/permission denied/);
+            await db.exec('RESET ROLE');
+
+            await db.exec(`INSERT INTO streaks VALUES('${uid}',5,now()-interval '2 days');
+                INSERT INTO device_tokens(user_id,token,platform) VALUES('${uid}','valid-device','ios');`);
+            const delivery=(await db.query('SELECT public.claim_streak_reminders(500) AS result')).rows[0].result;
+            assert.equal(delivery.length,1);
+            assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
+            const finish=(lease,success)=>db.query('SELECT public.finish_streak_reminder($1,$2,$3,$4,$5) AS result',
+                [uid,delivery[0].token_hash,delivery[0].delivery_date,lease,success]);
+            await finish(delivery[0].lease_token,false);
+            assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
+            await db.exec("UPDATE streak_reminder_deliveries SET lease_until=now()-interval '1 second',next_attempt=now()-interval '1 second'");
+            const retry=(await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result[0];
+            assert.equal((await finish(delivery[0].lease_token,true)).rows[0].result,false);
+            assert.equal((await finish(retry.lease_token,true)).rows[0].result,true);
+            assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
+            await db.exec(`INSERT INTO device_tokens(user_id,token,platform) VALUES('${uid}','bad-payload-device','ios')`);
+            const bad=(await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result[0];
+            await db.query('SELECT public.finish_streak_reminder($1,$2,$3,$4,false,false)',[uid,bad.token_hash,bad.delivery_date,bad.lease_token]);
+            assert.equal((await db.query('SELECT public.claim_streak_reminders() AS result')).rows[0].result.length,0);
+            await db.exec('SET ROLE authenticated');
+            await assert.rejects(db.query('SELECT public.claim_streak_reminders()'),/permission denied/);
+            await assert.rejects(db.query('SELECT public.get_streak_reminder_targets()'), /permission denied/);
+            await db.exec('RESET ROLE');
+        });
     } finally { await db.close(); }
 });
 
