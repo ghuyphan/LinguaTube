@@ -517,7 +517,7 @@ sequenceDiagram
 | `src/app/shared/directives` | UI Directives | Standalone reusable directives: `InfiniteScrollDirective` (`[appInfiniteScroll]` declarative IntersectionObserver infinite scroll) |
 | `src/app/shared/pipes` | Pure Pipes | Standalone presentation pipes: `FormatTimePipe` (`formatTime`), `LanguageFlagPipe` (`langFlag`), `CountryFlagPipe` (`countryFlag`) |
 | `src/app/shared/utils` | Shared Utilities | Cross-cutting helpers: `date.utils.ts` (local/UTC date & week keys), `teleport.utils.ts` (`DomTeleporter`), `language.utils.ts` (language detection & reading label keys), `sync.utils.ts` (timestamp merge & `TombstoneStore`), `japanese-romaji.ts` (canonical Romaji transliteration) |
-| `public` | Static & Discovery | PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `og-image.png`, `_headers` |
+| `public` | Static & Discovery | Browser favicon, social card, PWA icons, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`, `_headers` |
 | `src/app/core/repositories` | Data Layer | Offline-first sync repositories for Vocab, Streaks, Playlists, History, Gamification |
 | `src/app/features/video` | Presentation / Logic | YouTube player wrapper, subtitle synchronization, draggable fullscreen subtitles, controls, video header level badge |
 | `src/app/features/dictionary` | Linguistics | Multi-provider dictionary lookups, word popup, grammar popup |

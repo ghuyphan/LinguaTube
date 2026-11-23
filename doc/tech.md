@@ -51,6 +51,7 @@ Voca fully embraces modern Angular paradigms:
 
 ### 2.2. Progressive Web App (PWA)
 - **Configuration**: Defined in `ngsw-config.json` and `public/manifest.webmanifest`.
+- **Brand assets**: `public/icons/brand-fox.png` supplies the browser favicon, share card, and Apple launch screens. The 512 pixel PNG masters in `public/icons/` supply the installed-app icons.
 - **Precached Assets**: App shell, HTML, CSS, JavaScript bundles, SVGs, and translation JSONs.
 - **Performance**: Instant subsequent loads and offline navigation capability.
 

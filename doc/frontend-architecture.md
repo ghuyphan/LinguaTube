@@ -878,13 +878,11 @@ To maintain complete visual, structural, and functional harmony across all prima
   - **Sidebar & More Sheet**: Surfaces a non-intrusive pulsating dot badge on the Settings item when an update is available but was dismissed for later.
   - **GlobalErrorHandler Protection**: Guards against infinite chunk reload loops with a 15-second debounce and awaits cache clearance before reloading.
 
-### 7.3. Brand Identity & Vector Iconography (Kikyo Kamon)
-- **Heritage Design**: The app icon is modeled after the authentic Japanese **Kikyo Kamon (桔梗紋 / Bellflower Crest)**, a celebrated samurai family crest (Akechi Mitsuhide) representing elegance, focus, and cultural scholarship.
-- **Mathematical 5-Fold Symmetry**: Crafted with 5-fold rotational symmetry ($72^\circ$ intervals), defining a single master petal rotated around origin `(256, 256)` and smoothly capped by a concentric circular pistil ring.
-- **Colorway & Container**: Features Voca's signature radiant Coral-to-Crimson (`#FF5C6C` to `#C91842`) squircle container (`rx="118"` on 512x512) with subtle inner rim highlight framing a crisp pearl-white (`#FFFDFB`) flower with soft depth shadow.
-- **Multi-Resolution PWA Icons**: Full suite of raster resolutions rendered via native `sips` in `public/icons/` (`icon-72x72.png` through `icon-512x512.png`, dedicated full-bleed `apple-icon-180.png` without transparent corners to follow Apple HIG, and full-bleed `manifest-icon-*.maskable.png` with safe zone padding).
-- **Apple-Inspired Chill Pastel Open Graph Preview Card**: High-resolution 1200x630 branded social share card (`public/og-image.png`) featuring a dreamy sunrise-to-lavender pastel atmosphere, pillowy tactile Kikyou icon, clean Avenir / SF typography, and frosted glass language capsule (`🇯🇵 日本語` • `🇨🇳 中文` • `🇰🇷 한국어` • `🇬🇧 English`).
-- **Universal Application**: Unified across `src/favicon.svg`, `public/favicon.svg`, `src/assets/icon.svg`, the desktop sidebar header (`sidebar.component.html`), the iOS install sheet (`app.component.ts`), the dark `#0f172a` Apple splash screens, and the Open Graph card (`public/og-image.png`).
+### 7.3. Browser and installed-app branding
+
+- `public/icons/brand-fox.png` is the artwork used by the browser tab, public header, share card, and Apple launch screens. The ICO fallback contains 16, 32, and 48 pixel versions.
+- The static Open Graph and Twitter tags and Angular's default SEO image reference the same versioned 1200 × 630 share card.
+- The PWA manifest and Apple home-screen icon use the peeking fox artwork shared with Flutter.
 
 ---
 

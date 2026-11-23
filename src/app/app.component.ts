@@ -69,7 +69,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         <div class="app__content">
           @if (experience.publicLayout()) {
             <header class="public-header">
-              <a class="public-brand" routerLink="/"><img src="/favicon.svg" alt="" width="32" height="32" />Voca</a>
+              <a class="public-brand" routerLink="/"><img src="/favicon.png" alt="" width="32" height="32" />Voca</a>
               <div class="public-header__actions">
                 <a class="btn btn-primary" routerLink="/video">
                   <app-icon name="play-circle" [size]="16" />
@@ -454,7 +454,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         <div class="ios-install-sheet">
           <div class="ios-install-sheet__header">
             <div class="ios-install-sheet__icon">
-              <img src="favicon.svg" alt="Voca" class="ios-install-logo-kikyou" />
+              <img src="icons/apple-icon-180.png" alt="Voca" class="ios-install-logo" />
             </div>
             <h3 class="ios-install-sheet__title">{{ i18n.t('pwa.iosGuideTitle') }}</h3>
             <p class="ios-install-sheet__desc">{{ i18n.t('pwa.installDesc') }}</p>
@@ -508,7 +508,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
         <div class="update-sheet update-sheet--updating">
           <div class="update-sheet__logo-wrap">
             <div class="update-sheet__logo-box">
-              <img src="favicon.svg" alt="Voca" class="update-sheet__logo-kikyou" />
+              <img src="icons/icon-192x192.png" alt="Voca" class="update-sheet__logo" />
             </div>
             <div class="update-sheet__pulse-ring"></div>
           </div>
@@ -807,7 +807,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       overflow: hidden;
     }
 
-    .update-sheet__logo-kikyou {
+    .update-sheet__logo {
       width: 100%;
       height: 100%;
       display: block;
@@ -1116,7 +1116,7 @@ import { IdlePreloadStrategy } from './core/strategies/idle-preload.strategy';
       box-shadow: 0 6px 18px rgba(2, 132, 199, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     }
 
-    .ios-install-logo-kikyou {
+    .ios-install-logo {
       width: 100%;
       height: 100%;
       display: block;

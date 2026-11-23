@@ -13,7 +13,7 @@ export interface RouteSeoData {
 
 const DEFAULT_TITLE = 'Voca - Learn Japanese, Chinese, Korean, English & Vietnamese from YouTube';
 const DEFAULT_DESCRIPTION = 'Learn Japanese, Chinese, Korean, English, and Vietnamese by watching YouTube videos with interactive subtitles, real-time tokenization, furigana, pinyin, dictionary lookups, and SM-2 spaced repetition.';
-const DEFAULT_IMAGE = 'https://voca.study/og-image.png';
+const DEFAULT_IMAGE = 'https://voca.study/og-image.png?v=fox';
 const BASE_URL = 'https://voca.study';
 
 @Injectable({

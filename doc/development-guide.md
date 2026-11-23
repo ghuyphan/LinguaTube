@@ -121,6 +121,8 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 | `test:ci` | `npm run test:ci` | Runs `check:i18n`, backend tests, and Angular Karma CI tests |
 | `test` | `npm run test` | Runs Angular unit test suite in Karma |
 
+On macOS with Pillow installed, run `python3 scripts/generate-og-image.py` to regenerate the social card and browser icons from `public/icons/brand-fox.png`. Run `python3 scripts/generate-pwa-assets.py` to refresh Apple launch screens and derive smaller install icons from the checked-in 512 pixel masters.
+
 ### 4.1. Versioning & Release Pipeline
 - **Single Source of Truth**: `src/app/data/version-info.json` holds all version metadata (`version`, `buildDate`, and 5-language `highlights`). Client, dev server, and edge functions all import this file directly.
 - **Controlled Release**: Run `npm run release patch` (or `minor`, `major`, or an explicit version) to update version files and bundle edge functions in a single, controlled step.
