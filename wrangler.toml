@@ -25,6 +25,8 @@ binding = "TRANSCRIPT_STORAGE"
 bucket_name = "linguatube-transcripts"
 
 [vars]
+VIDEO_ELIGIBILITY = "true"
+VIDEO_ASSET_PURGE = "report"
 TRANSCRIPT_GZIP_WRITES = "true"
 # YOUTUBE_DATA_API_KEY, GLADIA_API_KEY, SUPADATA_API_KEY, PAYOS keys, and SUPABASE_SERVICE_ROLE_KEY should be set in Cloudflare Dashboard
 SUPABASE_URL = "https://edbkvzviqeulwzcnrrlb.supabase.co"

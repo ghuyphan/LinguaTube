@@ -175,7 +175,7 @@ When modifying this repository, you **MUST** adhere to the following rules:
     │
     └── Cloud Infrastructure:
           ├── Cloudflare D1             -> SQLite Tables: ai_transcription_jobs, transcripts, video_meta, video_languages, no_transcript_cache, leaderboard
-          ├── Cloudflare R2             -> transcripts/{videoId}/{lang}.json & translations/{videoId}/{source}_{target}.json
+          ├── Cloudflare R2             -> transcripts/{videoId}/{lang}.json, {lang}.ai.json & translations/{videoId}/{source}-{target}.json
           ├── Cloudflare KV             -> Rate limits, short-lived tokens, video-info, batch translation cache
           ├── Supabase (PostgreSQL)     -> Cloud user records (profiles), vocabulary, streaks, history, playlists, gamification
           └── External APIs             -> Gladia (ASR), Supadata, Lingva, Naver, Jotoba, PayOS, Innertube (dev)
@@ -511,3 +511,7 @@ Backend audit production activation (2026-11-04): deployment `a59861b3-fd06-47de
 When `ASR_PROVIDER=elevenlabs`, new jobs use Scribe v3. Persist provider identity before submission, acknowledge signed callbacks after durable storage, and register the video and AI subtitle language before marking the job complete. Preserve legacy Gladia recovery, cached subtitle reuse, the diamond ledger, and the 10/20/45-minute tier caps. Apply `20261121_elevenlabs_asr.sql` before activating Scribe.
 
 With the Scribe audio cap enabled, reserve verified audio duration atomically before charging diamonds. Retain the reservation after uncertain provider submissions. Configure the real billing anchor and apply the budget index before activation.
+
+## Video eligibility and shared asset lifecycle
+
+Keep Cloudflare as the video eligibility authority. Gate caption, video tokenization, translation, and catalog work before processing. Preserve generation fences and the verified seven-day global-block recheck. Deploy the additive D1 migration first and leave destructive maintenance in report mode until verified. See the backend API guide for rollout.

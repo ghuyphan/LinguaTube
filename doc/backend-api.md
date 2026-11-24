@@ -857,3 +857,11 @@ to restore the prior grade only if the catalog still contains the exact grade
 published by that job. Other languages and newer results are preserved.
 For a full version rollback, use `--apply --rollback-version "$GRADER_VERSION"`
 with the target origin. It uses the same exact-grade check in resumable pages.
+
+### Video eligibility and asset retirement
+
+With `VIDEO_ELIGIBILITY=true`, video-info, transcripts, video tokenization, translation, and catalog writes require official playback eligibility. First-seen blocked IDs do not create video records. Confirmed missing videos return 404, playback or region blocks return 422, and inconclusive verification returns 503 with Retry-After. Verification accepts positive evidence for at most five minutes and paid job reservations use fresh evidence. Native captions are bounded by provider bytes and cue count rather than video duration.
+
+Eligible AI quotes and polls reuse the verified YouTube metadata cache. Polling recovery writes to the job's active asset generation, and recommendation fallback probes use the current generation.
+
+Apply `20261124_video_asset_lifecycle.sql` before enabling the eligibility flag. Leave `VIDEO_ASSET_PURGE=report` during rollout. The existing reconciliation job reports `videoAssetCleanup.candidates` and `videoAssetCleanup.purged`. Verify cron success and review confirmed candidates before changing purge to `enabled`. Set the flag back to `report` to stop object deletion.

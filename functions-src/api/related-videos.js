@@ -1,3 +1,4 @@
+import { videoEligibilityEnabled } from '../services/video-metadata.service.js';
 /**
  * Related Videos API (Cloudflare Pages Function)
  * Player "More Videos" feed: ranks content similarity to the active video,
@@ -10,7 +11,7 @@
 import { jsonResponse } from '../utils/utils.js';
 import { viewerCountry } from '../services/video-playback.service.js';
 import { scheduleMetadataHealing } from '../middlewares/video-validator.js';
-import { getRelatedVideosFromCloudflare } from '../data/video-info-db.js';
+import { filterCurrentVideoAvailability, getRelatedVideosFromCloudflare } from '../data/video-info-db.js';
 import { parseRecommendationRequest, recommendationResponseHeaders } from '../services/recommendation.service.js';
 
 export async function onRequestGet(context) {
@@ -54,6 +55,8 @@ async function handleRelatedVideos(context, method) {
 
     const db = context.env?.VOCAB_DB;
     const r2 = context.env?.TRANSCRIPT_STORAGE;
+    const strict = videoEligibilityEnabled(context.env);
+    const country = strict ? context.request.cf?.country : viewerCountry(context.request);
     const metrics = {};
 
     let videos;
@@ -62,8 +65,9 @@ async function handleRelatedVideos(context, method) {
         ({ videos, hasMore } = await getRelatedVideosFromCloudflare(
             db, r2, lang, limit, offset,
             { currentVideo, excludeIds, context: userContext, sessionSeed, isRefresh, metrics,
-                country: viewerCountry(context.request), waitUntil: context.waitUntil?.bind(context) }
+                country, useAssetGenerations: strict, waitUntil: context.waitUntil?.bind(context) }
         ));
+        if (strict) videos = await filterCurrentVideoAvailability(db, videos, country);
     } catch (error) {
         console.error('[RelatedVideos] Retrieval failed:', error.message);
         return jsonResponse({ success: false, error: 'Recommendations temporarily unavailable' }, 503, {

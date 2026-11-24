@@ -208,6 +208,8 @@ Production recommendation optimization and signed Android test build: [deploymen
 
 Backend audit verification: see [verified findings and local checks](doc/backend-audit-verification-2026-11-04.md) for auth outage handling, GET/HEAD ingress, lighter callback bundles, bounded metadata repair, and the additive D1 ordering-index migration. The backend and additive index are [deployed and verified in production](doc/backend-audit-deployment-2026-11-04.md); no Flutter release is required.
 
+Video eligibility requires the D1 asset lifecycle migration before Pages deploys. See the [rollout instructions](doc/backend-api.md#video-eligibility-and-asset-retirement).
+
 Server video grading and the catalog backfill are documented in the
 [backend API guide](doc/backend-api.md#server-owned-video-grades).
 

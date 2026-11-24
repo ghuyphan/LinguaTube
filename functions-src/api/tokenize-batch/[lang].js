@@ -1,3 +1,4 @@
+import { requireVideoEligibility, videoEligibilityEnabled, videoEligibilityFailure } from '../../services/video-metadata.service.js';
 /**
  * Batch Tokenization API (Cloudflare Function)
  * Tokenizes multiple texts at once and caches as single entry per video
@@ -52,6 +53,8 @@ function isValidTokensArray(tokens, expectedLength) {
 export async function onRequest(context) {
     const { request, params, env } = context;
     const lang = params.lang;
+    const strict = videoEligibilityEnabled(env);
+    const cacheControl = strict ? 'private, no-store' : 'public, max-age=604800';
     const TOKEN_CACHE = env.TRANSCRIPT_CACHE;
 
     if (request.signal?.aborted) {
@@ -119,12 +122,16 @@ export async function onRequest(context) {
             });
         }
 
+        if (strict && texts.reduce((characters, text) => characters + text.length, 0) > 64000) {
+            return jsonResponse({ error: 'Tokenization batch is too large' }, 413);
+        }
+
         // Check cache first - include hash of texts to differentiate subtitle versions
         const textsHash = await sha256(JSON.stringify(texts));
         const cacheKey = `tokens:v7:${lang}:${videoId}:${textsHash}`;
 
         // 1. Check warm in-memory cache (0 KV ops, < 0.1ms)
-        const memHit = memTokenBatchCache.get(cacheKey);
+        const memHit = strict ? null : memTokenBatchCache.get(cacheKey);
         if (memHit) {
             const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));
             const shouldUpgradeFallback = memHit.isFallback && isTokenizerReady(lang);
@@ -132,7 +139,7 @@ export async function onRequest(context) {
                 memTokenBatchCache.delete(cacheKey);
             } else if (isValidTokensArray(memHit.tokens, texts.length)) {
                 return jsonResponse(memHit, 200, {
-                    'Cache-Control': 'public, max-age=604800',
+                    'Cache-Control': cacheControl,
                     'X-Cache': 'HIT-MEM'
                 });
             } else {
@@ -141,21 +148,21 @@ export async function onRequest(context) {
         }
 
         // 2. Check KV cache before consuming per-caller rate limit quota
-        if (TOKEN_CACHE && !request.signal?.aborted) {
+        if (!strict && TOKEN_CACHE && !request.signal?.aborted) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 if (cached && isValidTokensArray(cached.tokens, texts.length)) {
                     const isDegraded = cached.isFallback && isTokenizerReady(lang);
                     if (!isDegraded) {
                         console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
-                        if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                        if (!strict && memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
                             const oldest = memTokenBatchCache.keys().next().value;
                             if (oldest) memTokenBatchCache.delete(oldest);
                         }
                         const entry = { ...cached, cachedAt: Date.now() };
                         memTokenBatchCache.set(cacheKey, entry);
                         return jsonResponse(entry, 200, {
-                            'Cache-Control': 'public, max-age=604800',
+                            'Cache-Control': cacheControl,
                             'X-Cache': 'HIT'
                         });
                     }
@@ -186,9 +193,14 @@ export async function onRequest(context) {
             });
         }
 
+        if (strict) await requireVideoEligibility(context, videoId);
+
         // 4. Deduplicate concurrent in-flight tokenization work (isolated from caller abort/rate state)
         let inFlight = inFlightBatches.get(cacheKey);
         if (!inFlight) {
+            if (inFlightBatches.size >= 8) {
+                return jsonResponse({ error: 'Tokenizer busy' }, 503, { 'Retry-After': '2' });
+            }
             inFlight = (async () => {
                 console.log(`[Tokenize Batch] Tokenizing ${texts.length} texts for ${videoId} (${lang}) [tier: ${tier}]`);
 
@@ -207,11 +219,11 @@ export async function onRequest(context) {
                     isFallback
                 };
 
-                if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                if (!strict && memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
                     const oldest = memTokenBatchCache.keys().next().value;
                     if (oldest) memTokenBatchCache.delete(oldest);
                 }
-                memTokenBatchCache.set(cacheKey, computed);
+                if (!strict) memTokenBatchCache.set(cacheKey, computed);
 
                 return computed;
             })();
@@ -232,11 +244,13 @@ export async function onRequest(context) {
         }
 
         return jsonResponse(result, 200, {
-            'Cache-Control': 'public, max-age=604800',
+            'Cache-Control': cacheControl,
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 
     } catch (error) {
+        const failure = videoEligibilityFailure(error, jsonResponse);
+        if (failure) return failure;
         console.error(`[Tokenize Batch ${lang.toUpperCase()}] Error:`, error);
         return errorResponse(error.message);
     }

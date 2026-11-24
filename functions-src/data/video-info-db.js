@@ -13,6 +13,7 @@ import { inferSpokenLanguage, normalizePrimaryLanguage } from '../services/video
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
 import { playbackAvailability } from '../services/video-playback.service.js';
+import { videoAssetPrefix } from './video-assets.js';
 
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
@@ -141,7 +142,7 @@ export async function getVideoLanguages(db, videoId) {
  * @param {string} [category] - Video category (anime_drama, music, news, conversation, vlog, education, general)
  * @param {string[]} [tags] - Extracted creator tags
  */
-export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null, channelAvatar = null, subLanguages = null, category = null, tags = null) {
+export async function saveVideoLanguages(db, videoId, languages, duration = null, title = null, channel = null, hasAutoCaptions = false, levels = null, channelAvatar = null, subLanguages = null, category = null, tags = null, assetGeneration = null) {
     if (!db || !videoId) return;
 
     try {
@@ -204,7 +205,11 @@ function mergeJsonArraySql(column, emptyExpr = `video_languages.${column}`) {
         await db.prepare(`
             INSERT INTO video_languages 
             (video_id, available_languages, sub_languages, has_auto_captions, duration_seconds, title, channel, channel_avatar, levels, category, tags, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now'))
+            SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, strftime('%s', 'now'), strftime('%s', 'now')
+            WHERE ${assetGeneration == null ? '1' : `COALESCE((
+                SELECT CASE WHEN embed_blocked=0 THEN asset_generation ELSE -1 END
+                FROM video_languages WHERE video_id=?
+            ),0)=?`}
             ON CONFLICT(video_id) DO UPDATE SET
               available_languages = ${mergeJsonArraySql('available_languages')},
               sub_languages = ${mergeJsonArraySql('sub_languages')},
@@ -238,7 +243,8 @@ function mergeJsonArraySql(column, emptyExpr = `video_languages.${column}`) {
             resolvedAvatar,
             JSON.stringify(incomingLevels),
             resolvedCategory || 'general',
-            JSON.stringify(mergedTags)
+            JSON.stringify(mergedTags),
+            ...(assetGeneration == null ? [] : [videoId, assetGeneration])
         ).run();
         invalidateRecommendationCache(db);
     } catch (err) {
@@ -252,14 +258,16 @@ function mergeJsonArraySql(column, emptyExpr = `video_languages.${column}`) {
  * @param {string} videoId
  * @param {string} category
  */
-export async function saveVideoCategory(db, videoId, category) {
+export async function saveVideoCategory(db, videoId, category, assetGeneration = null) {
     if (!db || !videoId || !category) return false;
     try {
-        await db.prepare(`
+        const result = await db.prepare(`
             UPDATE video_languages
             SET category = ?, category_source='manual', updated_at = strftime('%s', 'now')
             WHERE video_id = ?
-        `).bind(category, videoId).run();
+            ${assetGeneration == null ? '' : 'AND asset_generation=? AND embed_blocked=0'}
+        `).bind(category, videoId, ...(assetGeneration == null ? [] : [assetGeneration])).run();
+        if (assetGeneration != null && !result.meta?.changes) return false;
         invalidateRecommendationCache(db);
         return true;
     } catch (err) {
@@ -298,7 +306,7 @@ export async function markVideoEmbedBlocked(db, videoId, blocked = true, reason 
  * @param {string} videoId
  * @param {string} lang
  */
-async function appendLanguageColumn(db, videoId, column, lang) {
+async function appendLanguageColumn(db, videoId, column, lang, assetGeneration = null) {
     if (!db || !videoId || !lang) return;
     if (column !== 'sub_languages' && column !== 'ai_languages') return;
     const cleanLang = normalizeLanguageCode(lang);
@@ -308,7 +316,9 @@ async function appendLanguageColumn(db, videoId, column, lang) {
         for (let attempt = 0; attempt < 3; attempt++) {
             const row = await db.prepare(`
                 SELECT ${column} FROM video_languages WHERE video_id = ?
-            `).bind(videoId).first();
+                ${assetGeneration == null ? '' : 'AND asset_generation=? AND embed_blocked=0'}
+            `).bind(videoId, ...(assetGeneration == null ? [] : [assetGeneration])).first();
+            if (!row && assetGeneration != null) return;
 
             const rawCurrent = row ? row[column] : null;
             let current = [];
@@ -327,7 +337,8 @@ async function appendLanguageColumn(db, videoId, column, lang) {
                     UPDATE video_languages
                     SET ${column} = ?, updated_at = strftime('%s', 'now')
                     WHERE video_id = ? AND ${column} IS ?
-                `).bind(next, videoId, rawCurrent).run()
+                    ${assetGeneration == null ? '' : 'AND asset_generation=? AND embed_blocked=0'}
+                `).bind(next, videoId, rawCurrent, ...(assetGeneration == null ? [] : [assetGeneration])).run()
                 : await db.prepare(`
                     INSERT INTO video_languages (video_id, available_languages, ${column})
                     VALUES (?, '[]', ?)
@@ -364,8 +375,8 @@ export async function addSubLanguage(db, videoId, lang) {
  * @param {string} videoId
  * @param {string} lang
  */
-export async function addAiLanguage(db, videoId, lang) {
-    return appendLanguageColumn(db, videoId, 'ai_languages', lang);
+export async function addAiLanguage(db, videoId, lang, assetGeneration) {
+    return appendLanguageColumn(db, videoId, 'ai_languages', lang, assetGeneration);
 }
 
 /**
@@ -379,15 +390,18 @@ export async function addAiLanguage(db, videoId, lang) {
  * @param {string} [method] - Assessment method ('metadata' | 'linguistics')
  * @param {object} [details] - Diagnostic details (score, tier, grammarCount, speechRateCpm, breakdown)
  */
-export async function saveVideoLevel(db, _kv, videoId, language, level, confidence = 0.8, method = 'linguistics', details = null) {
+export async function saveVideoLevel(db, _kv, videoId, language, level, confidence = 0.8, method = 'linguistics', details = null, assetGeneration = null) {
     language = normalizeLanguageCode(language);
     if (!db || !videoId || !SUPPORTED_LEARNING_LANGUAGE_SET.has(language) || !level) return null;
 
     try {
         for (let attempt = 0; attempt < 3; attempt++) {
             const row = await db.prepare(`
-                SELECT levels, sub_languages, available_languages, title, channel FROM video_languages WHERE video_id = ?
+                SELECT levels, sub_languages, available_languages, title, channel
+                    ${assetGeneration == null ? '' : ', asset_generation, embed_blocked'}
+                FROM video_languages WHERE video_id = ?
             `).bind(videoId).first();
+            if (assetGeneration != null && (row?.embed_blocked || (row?.asset_generation ?? 0) !== assetGeneration)) return null;
 
             const currentLevels = readCatalogLevels(row?.levels);
             const write = async () => {
@@ -400,7 +414,9 @@ export async function saveVideoLevel(db, _kv, videoId, language, level, confiden
                         UPDATE video_languages SET levels = ?, updated_at = strftime('%s', 'now')
                         WHERE video_id = ? AND levels IS ? AND sub_languages IS ?
                           AND title IS ? AND channel IS ?
-                    `).bind(serialized, videoId, row.levels, row.sub_languages, row.title, row.channel).run()
+                          ${assetGeneration == null ? '' : 'AND asset_generation=? AND embed_blocked=0'}
+                    `).bind(serialized, videoId, row.levels, row.sub_languages, row.title, row.channel,
+                        ...(assetGeneration == null ? [] : [assetGeneration])).run()
                     : await db.prepare(`
                         INSERT INTO video_languages (levels, video_id, available_languages)
                         VALUES (?, ?, '[]') ON CONFLICT(video_id) DO NOTHING
@@ -978,7 +994,7 @@ export async function indexPendingVideoSearchText(db) {
 
 // Apply the newest observations atomically. Timestamp-only checks do not
 // rebuild the catalog or invalidate recommendation candidates.
-export async function saveVideoAvailabilityChecks(db, checks) {
+export async function saveVideoAvailabilityChecks(db, checks, { replaceEmbedReports = false } = {}) {
     if (!checks.length) return 0;
     const latest = new Map();
     for (const check of checks) {
@@ -1016,7 +1032,7 @@ export async function saveVideoAvailabilityChecks(db, checks) {
                 embed_blocked_reason = reason,
                 region_restriction = CASE WHEN has_restriction THEN restriction ELSE region_restriction END,
                 region_checked_at = checked_at
-            ${newer} AND has_block AND embed_blocked_reason IS NOT 'embed_disabled'
+            ${newer} AND has_block ${replaceEmbedReports ? '' : "AND embed_blocked_reason IS NOT 'embed_disabled'"}
               AND (embed_blocked IS NOT (reason IS NOT NULL) OR embed_blocked_reason IS NOT reason)
         `).bind(payload),
         db.prepare(`${observations}
@@ -1033,18 +1049,29 @@ export async function saveVideoAvailabilityChecks(db, checks) {
     return eligibilityChanges + (timestamps.meta?.changes ?? 0);
 }
 
+// Warm candidate caches contain ranking inputs, not current playback permission.
+export async function filterCurrentVideoAvailability(db, videos, country) {
+    if (!videos.length) return videos;
+    const { results } = await db.prepare(`SELECT video_id, embed_blocked, region_restriction
+        FROM video_languages WHERE video_id IN (SELECT value FROM json_each(?))`)
+        .bind(JSON.stringify(videos.map(video => video.videoId))).all();
+    const allowed = new Set(results.filter(row => playbackAvailability(row, country) === 'available')
+        .map(row => row.video_id));
+    return videos.filter(video => allowed.has(video.videoId));
+}
+
 /**
  * Collect a fixed discovery window before ranking. Offset, page size and seed
  * never change candidate membership. Metadata scans and R2 probes are bounded.
  */
 async function loadRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options = {}) {
     if (!db || !lang) throw new Error('Recommendation database unavailable');
-    const { metrics, isRefresh, waitUntil, level, country = null } = options;
+    const { metrics, isRefresh, waitUntil, country = null, useAssetGenerations = false } = options;
     if (cleanQuery) {
         if (metrics) metrics.candidateCache = 'BYPASS-SEARCH';
-        return discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, level, country, metrics);
+        return discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options);
     }
-    const key = JSON.stringify([lang, targetTier, category || null, country]);
+    const key = JSON.stringify([lang, targetTier, category || null, country, useAssetGenerations]);
     let cache = recommendationCandidates.get(db);
     if (!cache) {
         cache = new Map();
@@ -1058,7 +1085,7 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
         return cached.videos;
     }
     const edge = typeof caches !== 'undefined' ? caches.default : null;
-    const edgeKey = 'https://internal.voca/rec-pool/v3/' + [epoch, lang, targetTier || 'all', category || 'all', country || 'unknown']
+    const edgeKey = 'https://internal.voca/rec-pool/v3/' + [epoch, lang, targetTier || 'all', category || 'all', country || 'unknown', useAssetGenerations]
         .map(encodeURIComponent).join('/');
     const store = videos => {
         if (catalogCacheEpoch !== epoch || (cache.get(key)?.version ?? 0) > version) return;
@@ -1077,7 +1104,7 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
         } catch { /* Retry through D1. */ }
     }
     if (metrics) metrics.candidateCache = 'MISS';
-    const videos = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, '', null, country, metrics);
+    const videos = await discoverRecommendationCandidates(db, r2, lang, targetTier, category, '', options);
     store(videos);
     if (!isRefresh && edge && waitUntil && catalogCacheEpoch === epoch && cache.get(key)?.videos === videos) {
         waitUntil(edge.put(edgeKey, new Response(JSON.stringify(videos), {
@@ -1129,7 +1156,8 @@ export async function getRelatedVideosFromCloudflare(db, r2, rawLang, limit = 16
     return { videos, hasMore: safeOffset + videos.length < ranked.length };
 }
 
-async function discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, selectedLevel, country, metrics) {
+async function discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery,
+    { level: selectedLevel, country, metrics, useAssetGenerations }) {
     const candidates = new Map();
     const batchSize = 200;
     const maxScans = 20;
@@ -1140,7 +1168,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
     const levelBadge = value => normalizeMatchKey(value)
         .match(/\b(?:jlpt\s*)?n[1-5]\b|\b(?:hsk\s*[1-6]|topik\s*(?:[1-6]|i{1,2})|(?:cefr\s*)?[abc][12])\b/)?.[0]
         .replace(/^(?:jlpt|cefr)\s*/, '').replace(/\s+/g, '') || null;
-    const requestedBadge = levelBadge(selectedLevel);
+    const requestedBadge = cleanQuery ? levelBadge(selectedLevel) : null;
     const normalizedQuery = normalizeMatchKey(cleanQuery);
     const terms = cleanQuery.split(/\s+/).filter(Boolean).slice(0, 3)
         .map(term => [term, normalizeMatchKey(term)]);
@@ -1314,7 +1342,9 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
                 if (!r2 || probes >= 10) { verificationIncomplete = true; return null; }
                 probes++;
                 try {
-                    if (!await r2.head(`transcripts/${item.row.video_id}/${lang}.json`)) return null;
+                    const generation = useAssetGenerations ? item.row.asset_generation : 0;
+                    const prefix = videoAssetPrefix('transcripts', item.row.video_id, generation);
+                    if (!await r2.head(`${prefix}${lang}.json`)) return null;
                     item.languages.push(lang);
                     return item;
                 } catch { throw new Error('Recommendation transcript verification unavailable'); }

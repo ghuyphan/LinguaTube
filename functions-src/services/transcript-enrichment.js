@@ -4,6 +4,8 @@ import { enrichSegmentsWithTokens, segmentsNeedEnrichment } from '../utils/token
 // Optional token enrichment never owns transcript availability or completion.
 // Keep Gemini's tokenizer implementation unchanged; bound only the caller's wait.
 const pendingEnrichment = new Map();
+const MAX_ENRICHMENT_CUES = 800;
+const MAX_ENRICHMENT_CHARACTERS = 64000;
 export async function enrichPublishedTranscript(bucket, videoId, language, budgetMs = 3000, isAI = false, tokenOpts = {}) {
     if (!bucket) return false;
     const key = getTranscriptKey(videoId, language, isAI);
@@ -15,6 +17,8 @@ export async function enrichPublishedTranscript(bucket, videoId, language, budge
             const object = await bucket.get(key);
             if (!object) return false;
             const data = await readTranscriptObject(object);
+            if (data?.segments?.length > MAX_ENRICHMENT_CUES ||
+                data?.segments?.reduce((length, cue) => length + (cue.text?.length ?? 0), 0) > MAX_ENRICHMENT_CHARACTERS) return false;
             if (!data?.segments?.length || !segmentsNeedEnrichment(data.segments, language)) return true;
             const segments = await Promise.race([
                 enrichSegmentsWithTokens(data.segments, language, {

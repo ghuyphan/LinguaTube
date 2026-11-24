@@ -1,6 +1,6 @@
 import { scheduleVideoGrade } from './video-grading.js';
 import { serverGradingEnabled } from './video-grading-jobs.js';
-import { resolveVerifiedVideoMetadata } from './video-metadata.service.js';
+import { resolveVerifiedVideoMetadata, requireVideoEligibility, videoEligibilityEnabled } from './video-metadata.service.js';
 import { enrichPublishedTranscript } from './transcript-enrichment.js';
 import { ingestGladiaJob, recoverGladiaSubmission } from './gladia-recovery.js';
 import { ElevenLabsProvider, hasElevenLabsConfig } from '../providers/elevenlabs.js';
@@ -105,7 +105,7 @@ export class TranscriptService {
                 ];
 
                 let avatar = options.channelAvatar || null;
-                if (!avatar && db && (options.title || options.channel || effectiveDuration)) {
+                if (!videoEligibilityEnabled(env) && !avatar && db && (options.title || options.channel || effectiveDuration)) {
                     try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
                 }
                 savePromises.push(saveVideoLanguages(
@@ -118,7 +118,7 @@ export class TranscriptService {
                     false,
                     null,
                     avatar,
-                    persisted ? [actualLang] : null
+                    persisted ? [actualLang] : null, null, null, context.assetGeneration
                 ));
 
                 await Promise.allSettled(savePromises);
@@ -152,7 +152,7 @@ export class TranscriptService {
             if (options.title || options.channel || options.duration) {
                 const saveLanguages = async () => {
                     let avatar = options.channelAvatar || null;
-                    if (!avatar && db) {
+                    if (!videoEligibilityEnabled(env) && !avatar && db) {
                         try { avatar = await resolveVideoChannelAvatar(videoId); } catch { }
                     }
                     await saveVideoLanguages(
@@ -164,10 +164,13 @@ export class TranscriptService {
                         options.channel || null,
                         false,
                         null,
-                        avatar
+                        avatar, null, null, null, context.assetGeneration
                     );
                 };
                 savePromises.push(saveLanguages());
+            } else if (context.assetGeneration != null) {
+                savePromises.push(saveVideoLanguages(db, videoId, normalizedAvailable,
+                    null, null, null, false, null, null, null, null, null, context.assetGeneration));
             } else {
                 savePromises.push(addVideoLanguages(db, videoId, normalizedAvailable));
             }
@@ -187,7 +190,7 @@ export class TranscriptService {
         // Only cache failure if the provider explicitly confirmed captions do NOT exist (404/notFound).
         // Never poison the negative cache on transient network failures, timeouts, or exhausted keys!
         const hasSupadataKey = (this.supadataProvider?.apiKeys?.length ?? 0) > 0 || resolveSupadataApiKeys(env).length > 0;
-        if (nativeResult?.notFound && hasSupadataKey) {
+        if (nativeResult?.notFound && hasSupadataKey && context.assetGeneration == null) {
             const negativeOps = [
                 markNoTranscript(db, cache, videoId, lang, 'native')
             ];
@@ -220,12 +223,14 @@ export class TranscriptService {
     }
 
     async _verifiedAIPrice(context, videoId, user, fresh = false) {
-        const details = await resolveVerifiedVideoMetadata(context, videoId, { fresh });
-        if (details.isLive) throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
-        const cost = transcriptionDiamondCost(details.duration);
         const tier = this.diamondService.resolveTier(user);
         const maxDurationSeconds = getTierDiamondConfig(tier).maxVideoDurationSec || MAX_AI_VIDEO_DURATION_SECONDS;
-        return { cost, tier, durationSeconds: details.duration, maxDurationSeconds, source: details.source, verifiedAt: details.verifiedAt };
+        const details = videoEligibilityEnabled(context.env)
+            ? (!fresh && context.videoDetails) || await requireVideoEligibility(context, videoId, { fresh, maxDuration: maxDurationSeconds })
+            : await resolveVerifiedVideoMetadata(context, videoId, { fresh });
+        if (details.isLive) throw new Error('LIVESTREAM_NOT_SUPPORTED: Live streams cannot be transcribed with AI.');
+        const cost = transcriptionDiamondCost(details.duration);
+        return { cost, tier, assetGeneration: details.assets?.generation, durationSeconds: details.duration, maxDurationSeconds, source: details.source, verifiedAt: details.verifiedAt };
     }
 
     // A quote never reserves a job, debits credits or submits provider work.
@@ -236,7 +241,10 @@ export class TranscriptService {
         const cached = await getTranscriptFromR2(r2, videoId, normalizedLang, { preferAI: true });
         const reusable = (cached?.source === 'ai' && cached.segments?.length > 0) ||
             Boolean(await getActiveAiJob(db, videoId, normalizedLang));
-        if (reusable) return { cost: 0, ...diamondInfo, canGenerate: true, reason: null };
+        if (reusable) {
+            if (videoEligibilityEnabled(context.env) && !context.videoDetails) await requireVideoEligibility(context, videoId);
+            return { cost: 0, ...diamondInfo, canGenerate: true, reason: null };
+        }
         const price = await this._verifiedAIPrice(context, videoId, user);
         let reason = price.durationSeconds > price.maxDurationSeconds ? 'VIDEO_TOO_LONG' :
             diamondInfo.diamonds < price.cost ? 'INSUFFICIENT_DIAMONDS' : null;
@@ -306,7 +314,8 @@ export class TranscriptService {
             userTier: tier,
             diamondsCharged: requiredDiamonds,
             verifiedDurationSeconds: price.durationSeconds, durationSource: price.source, durationVerifiedAt: price.verifiedAt,
-            scribeCycle: scribeBudgetCycle(env)
+            scribeCycle: scribeBudgetCycle(env),
+            assetGeneration: price.assetGeneration
         });
 
         if (!reservation.isNew) {
@@ -394,7 +403,7 @@ export class TranscriptService {
     async pollAiJobStatus(context, params) {
         const db = context.db || context.env?.VOCAB_DB;
         const r2 = context.r2 || context.env?.TRANSCRIPT_STORAGE;
-        const env = { ...context.env, VOCAB_DB: db, TRANSCRIPT_STORAGE: r2 };
+        const env = { ...context.env, VOCAB_DB: db, TRANSCRIPT_STORAGE: context.env?.TRANSCRIPT_STORAGE ?? r2 };
         const { jobId, videoId, availableLanguages, diamondInfo } = params;
 
         if (!jobId) {
@@ -402,6 +411,9 @@ export class TranscriptService {
         }
 
         let job = await getAiJobById(db, jobId);
+        if (videoEligibilityEnabled(env) && job && job.video_id !== videoId) {
+            return { status: 'error', error: 'Transcription job not found or expired' };
+        }
         if (!job) {
             // Self-healing fallback: Check if R2 already contains completed transcript for (videoId, lang)
             const fallbackVideoId = videoId || params?.cleanVideoId;

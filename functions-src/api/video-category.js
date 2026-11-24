@@ -1,3 +1,4 @@
+import { requireVideoEligibility, videoEligibilityEnabled, videoEligibilityFailure } from '../services/video-metadata.service.js';
 /**
  * Video Category API (Cloudflare Function)
  * Allows authenticated clients or moderators to classify or update video categories.
@@ -86,7 +87,8 @@ export async function onRequestPost(context) {
         }
 
         const db = env.VOCAB_DB;
-        const ok = await saveVideoCategory(db, videoId, rawCategory);
+        const assets = videoEligibilityEnabled(env) ? (await requireVideoEligibility(context, videoId)).assets : null;
+        const ok = await saveVideoCategory(db, videoId, rawCategory, assets?.generation);
 
         if (!ok) {
             return jsonResponse({ error: 'Failed to update video category in database' }, 500);
@@ -99,6 +101,8 @@ export async function onRequestPost(context) {
         }, 200);
 
     } catch (err) {
+        const failure = videoEligibilityFailure(err, jsonResponse);
+        if (failure) return failure;
         console.error('[VideoCategory] Error:', err.message);
         return errorResponse('Failed to update category', 500);
     }

@@ -3,7 +3,7 @@ import { jsonResponse, sanitizeVideoId, errorResponse, getRequestJson } from '..
 import { getVideoLanguages, parseVideoLanguageRow, saveVideoAvailabilityChecks } from '../data/video-info-db.js';
 import { detectVideoCategory } from '../services/category.service.js';
 import { inferSpokenLanguage } from '../services/video-language.service.js';
-import { resolveVerifiedVideoMetadata } from '../services/video-metadata.service.js';
+import { requireVideoEligibility, resolveVerifiedVideoMetadata, videoEligibilityEnabled, videoEligibilityFailure } from '../services/video-metadata.service.js';
 import { playbackAvailability, viewerCountry } from '../services/video-playback.service.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 
@@ -17,7 +17,10 @@ export async function onRequestGet(context) {
     if (!videoId) return jsonResponse({ error: 'Missing or invalid videoId parameter' }, 400);
     const db = env.VOCAB_DB;
     try {
-        const official = await resolveVerifiedVideoMetadata(context, videoId, { includeDisplay: true });
+        const strict = videoEligibilityEnabled(env);
+        const official = strict
+            ? await requireVideoEligibility(context, videoId, { includeDisplay: true })
+            : await resolveVerifiedVideoMetadata(context, videoId, { includeDisplay: true });
         const metadata = official.snippet;
         const inferredCategory = detectVideoCategory(metadata);
         const existingRow = await db.prepare(
@@ -37,7 +40,9 @@ export async function onRequestGet(context) {
         // Refreshing public details must not alter recommendation discovery timestamps.
         const insertStmt = db.prepare(`INSERT INTO video_languages
             (video_id,available_languages,sub_languages,has_auto_captions,duration_seconds,duration_source,title,channel,category,category_source,tags,primary_language,metadata_source,metadata_observed_at,created_at,updated_at)
-            VALUES(?,'[]','[]',0,?,'youtube_data_api',?,?,?,'official_mapping',?,?,'youtube_data_api',?,strftime('%s','now'),strftime('%s','now'))
+            SELECT ?,'[]','[]',0,?,'youtube_data_api',?,?,?,'official_mapping',?,?,'youtube_data_api',?,strftime('%s','now'),strftime('%s','now')
+            WHERE ${strict ? `COALESCE((SELECT CASE WHEN embed_blocked=0 THEN asset_generation ELSE -1 END
+                FROM video_languages WHERE video_id=?),0)=?` : '1'}
             ON CONFLICT(video_id) DO UPDATE SET
                 title=excluded.title,channel=excluded.channel,duration_seconds=excluded.duration_seconds,duration_source=excluded.duration_source,
                 category=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category ELSE excluded.category END,
@@ -48,13 +53,19 @@ export async function onRequestGet(context) {
             WHERE excluded.metadata_observed_at > COALESCE(video_languages.metadata_observed_at,0)
                 OR (excluded.metadata_observed_at = video_languages.metadata_observed_at
                     AND video_languages.category_source='official_mapping' AND video_languages.category IS NOT excluded.category)`)
-            .bind(videoId, official.duration, metadata.title, metadata.channel, inferredCategory, JSON.stringify(metadata.tags), inferredPrimaryLanguage, official.observedAt);
+            .bind(videoId, official.duration, metadata.title, metadata.channel, inferredCategory, JSON.stringify(metadata.tags), inferredPrimaryLanguage, official.observedAt, ...(strict ? [videoId, official.assets.generation] : []));
         const selectStmt = db.prepare(`
             SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, duration_source, title, channel, channel_avatar, levels, category, category_source, metadata_source, tags, primary_language
+            ${strict ? ', embed_blocked, asset_generation' : ''}
             FROM video_languages WHERE video_id = ?
         `).bind(videoId);
         const [, selectResult] = await db.batch([insertStmt, selectStmt]);
-        const saved = parseVideoLanguageRow(selectResult?.results?.[0]) || await getVideoLanguages(db, videoId);
+        const row = selectResult?.results?.[0];
+        if (strict && (row?.embed_blocked || row?.asset_generation !== official.assets.generation)) {
+            return jsonResponse({ success: false, videoId, errorCode: 'VIDEO_ELIGIBILITY_CHANGED' }, 503,
+                { 'Retry-After': '5', 'Cache-Control': 'private, no-store' });
+        }
+        const saved = parseVideoLanguageRow(row) || await getVideoLanguages(db, videoId);
         const checkedAt = official.observedAt;
         let availabilityRow = existingRow;
         if ((existingRow?.region_checked_at ?? 0) < checkedAt) {
@@ -80,6 +91,10 @@ export async function onRequestGet(context) {
             tags: metadata.tags, source: 'youtube_data_api', metadataSource: 'youtube_data_api', metadataVerifiedAt: official.verifiedAt,
             broadcastState: official.broadcastState }, 200, { 'Cache-Control': 'private, no-store' });
     } catch (error) {
+        if (videoEligibilityEnabled(env)) {
+            const failure = videoEligibilityFailure(error, jsonResponse, { videoId });
+            if (failure) return failure;
+        }
         const errorCode = error.message?.split(':')[0] || 'VIDEO_METADATA_UNAVAILABLE';
         console.warn('[VideoInfo]', { videoId, errorCode });
         const headers = { 'Cache-Control': 'no-store' };
@@ -106,6 +121,16 @@ export async function onRequestPost(context) {
         const duration = typeof body.duration === 'number' && Number.isFinite(body.duration) ? Math.round(body.duration) : null;
         if (body.isEstimate != null && typeof body.isEstimate !== 'boolean') return jsonResponse({ error: 'Invalid estimate flag' }, 400);
         const durationSource = body.isEstimate === true ? 'client_estimate' : 'client_player';
+        if (videoEligibilityEnabled(env) && videoId) {
+            try {
+                const info = await requireVideoEligibility(context, videoId);
+                return jsonResponse({ success: true, videoId, duration: info.duration }, 200);
+            } catch (error) {
+                const failure = videoEligibilityFailure(error, jsonResponse, { videoId });
+                if (failure) return failure;
+                throw error;
+            }
+        }
         if (!videoId || !duration || duration <= 0 || duration > 14400) {
             return jsonResponse({ error: 'Invalid videoId or duration' }, 400);
         }

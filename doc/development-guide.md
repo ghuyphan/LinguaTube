@@ -124,6 +124,9 @@ npx wrangler pages dev dist/lingua-tube/browser --compatibility-date=2024-12-20
 On macOS with Pillow installed, run `python3 scripts/generate-og-image.py` to regenerate the social card and browser icons from `public/icons/brand-fox.png`. Run `python3 scripts/generate-pwa-assets.py` to refresh Apple launch screens and derive smaller install icons from the checked-in 512 pixel masters.
 
 ### 4.1. Versioning & Release Pipeline
+
+Apply the [video asset lifecycle migration](../db/migrations/d1/20261124_video_asset_lifecycle.sql) to the target D1 database before pushing a Pages deployment that enables `VIDEO_ELIGIBILITY`. Keep `VIDEO_ASSET_PURGE=report` during rollout.
+
 - **Single Source of Truth**: `src/app/data/version-info.json` holds all version metadata (`version`, `buildDate`, and 5-language `highlights`). Client, dev server, and edge functions all import this file directly.
 - **Controlled Release**: Run `npm run release patch` (or `minor`, `major`, or an explicit version) to update version files and bundle edge functions in a single, controlled step.
 - **CI/CD Optimization**: Non-deployable commits (docs, tests, config) ignore CI via GitHub Actions path-filtering and `[skip ci]` commit messages, saving Cloudflare Pages and GitHub Actions build minutes.

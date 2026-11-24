@@ -1,3 +1,4 @@
+import { videoEligibilityEnabled } from '../services/video-metadata.service.js';
 /**
  * Recommended Videos API (Cloudflare Pages Function)
  * Home/Explore discovery feed with personalized learner ranking and deterministic pagination.
@@ -9,7 +10,7 @@
 import { jsonResponse } from '../utils/utils.js';
 import { viewerCountry } from '../services/video-playback.service.js';
 import { scheduleMetadataHealing } from '../middlewares/video-validator.js';
-import { getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
+import { filterCurrentVideoAvailability, getRecommendedVideosFromCloudflare } from '../data/video-info-db.js';
 import { parseRecommendationRequest, recommendationResponseHeaders } from '../services/recommendation.service.js';
 
 export async function onRequestGet(context) {
@@ -27,6 +28,8 @@ async function handleRecommendedVideos(context, method) {
     const { lang, tier, category, limit, offset, query, level, isRefresh, sessionSeed, userContext, excludeIds, isPersonalized } = parsed.params;
     const db = context.env?.VOCAB_DB;
     const r2 = context.env?.TRANSCRIPT_STORAGE;
+    const strict = videoEligibilityEnabled(context.env);
+    const country = strict ? context.request.cf?.country : viewerCountry(context.request);
     const metrics = {};
     const startedAt = Date.now();
 
@@ -36,8 +39,9 @@ async function handleRecommendedVideos(context, method) {
         ({ videos, hasMore } = await getRecommendedVideosFromCloudflare(
             db, r2, lang, limit, tier, false, offset, query,
             { context: userContext, sessionSeed, category, isRefresh, excludeIds, includePage: true,
-                level, metrics, country: viewerCountry(context.request), waitUntil: context.waitUntil?.bind(context) }
+                level, metrics, country, useAssetGenerations: strict, waitUntil: context.waitUntil?.bind(context) }
         ));
+        if (strict) videos = await filterCurrentVideoAvailability(db, videos, country);
     } catch (error) {
         console.error('[Recommendations] Retrieval failed:', error.message, metrics);
         return jsonResponse({ success: false, error: 'Recommendations temporarily unavailable' }, 503, {

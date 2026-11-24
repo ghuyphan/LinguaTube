@@ -219,7 +219,7 @@ Bucket binding: `TRANSCRIPT_STORAGE` (`linguatube-transcripts`)
 Transcript readers support plain JSON and gzip. Set `TRANSCRIPT_GZIP_WRITES=true` only after deploying compatible readers. New native and AI writes then use R2 `Content-Encoding: gzip`; object keys, response JSON, and conditional write checks retain their existing contracts.
 
 ### 3.2. Dual Subtitle Translation Object Format
-- **Key**: `translations/{videoId}/{sourceLang}_{targetLang}.json`
+- **Key**: `translations/{videoId}/{sourceLang}-{targetLang}.json` (hyphenated — never underscores)
 - **Incremental Segment Merging**: When clients persist translations (`POST /api/dual-subtitles` with `saveOnly: true`), the backend (`translation-cache.js`) merges incoming segment translations into the existing R2 translation object instead of overwriting. Existing translated cues are preserved, newly translated cues are added or updated, and metadata (`translatedCount`, `totalCues`, `quality`) is dynamically recalculated.
 - **JSON Structure**:
   ```json
@@ -753,3 +753,7 @@ Apply [the D1 availability migration](../db/migrations/d1/20261123_video_region_
 
 
 Flutter owns the shared Supabase Postgres migration chain under `supabase/migrations` in `voca_flutter`. Root SQL files under this repository’s `db/migrations` preserve historical definitions and local fixtures. Add new shared Postgres definitions to the Flutter chain. This repository continues to own and apply its D1 migrations.
+
+### Video asset retirement
+
+Apply the additive `20261124_video_asset_lifecycle.sql` migration before deploying video eligibility. Generation zero reads existing transcript and translation keys. Subsequent generations use a `gN/` directory under the same video prefix. A global block retires the previous generation and resets its stored caption and AI language listings. Only a second official observation after seven days can authorize deletion. The scheduled sweep deletes bounded R2 pages and records completion in D1. User-owned playlist, history, and payment records remain intact.

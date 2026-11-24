@@ -74,7 +74,7 @@ export function generateJobId() {
  * @param {number} [params.diamondsCharged]
  * @returns {Promise<{ isNew: boolean, job: object }>}
  */
-export async function reserveAiJob(db, { videoId, language, userId = null, clientId, userTier = 'free', diamondsCharged = 1, verifiedDurationSeconds = null, durationSource = null, durationVerifiedAt = null, scribeCycle = null }) {
+export async function reserveAiJob(db, { videoId, language, userId = null, clientId, userTier = 'free', diamondsCharged = 1, verifiedDurationSeconds = null, durationSource = null, durationVerifiedAt = null, scribeCycle = null, assetGeneration = null }) {
     if (!db || !videoId || !language) throw new Error('Missing required parameters for reserveAiJob');
     const normLang = normalizeLanguageCode(language) || language;
     const id = generateJobId();
@@ -84,12 +84,26 @@ export async function reserveAiJob(db, { videoId, language, userId = null, clien
             INSERT INTO ai_transcription_jobs (
                 id, video_id, language, user_id, client_id, user_tier,
                 diamonds_charged, verified_duration_seconds, duration_source, duration_verified_at, charge_status, refund_status, submission_state, status, created_at, updated_at, asr_provider
-            ) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'not_started', 'queued', unixepoch(), unixepoch(), ?
-            ${scribeCycle ? `WHERE unixepoch()>=? AND unixepoch()<? AND (${SCRIBE_AUDIO_USED}) + ceil(?) <= ?` : ''}
+                ${assetGeneration == null ? '' : ', asset_generation'}
+            ) SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', 'none', 'not_started', 'queued', unixepoch(), unixepoch(), ? ${assetGeneration == null ? '' : ', ?'}
+            WHERE 1
+            ${scribeCycle ? `AND unixepoch()>=? AND unixepoch()<? AND (${SCRIBE_AUDIO_USED}) + ceil(?) <= ?` : ''}
+            ${assetGeneration == null ? '' : `AND COALESCE((
+                SELECT CASE WHEN embed_blocked=0 THEN asset_generation ELSE -1 END
+                FROM video_languages WHERE video_id=?
+            ),0)=?`}
         `).bind(id, videoId, normLang, userId, clientId, userTier, diamondsCharged, verifiedDurationSeconds, durationSource, durationVerifiedAt,
             scribeCycle ? 'elevenlabs' : 'gladia',
-            ...(scribeCycle ? [scribeCycle.start, scribeCycle.end, scribeCycle.start, verifiedDurationSeconds, SCRIBE_AUDIO_LIMIT] : [])
+            ...(assetGeneration == null ? [] : [assetGeneration]),
+            ...(scribeCycle ? [scribeCycle.start, scribeCycle.end, scribeCycle.start, verifiedDurationSeconds, SCRIBE_AUDIO_LIMIT] : []),
+            ...(assetGeneration == null ? [] : [videoId, assetGeneration])
         ).run();
+        if (assetGeneration != null && inserted.meta?.changes === 0) {
+            const current = await db.prepare('SELECT embed_blocked, asset_generation FROM video_languages WHERE video_id=?').bind(videoId).first();
+            if (current?.embed_blocked || (current?.asset_generation ?? 0) !== assetGeneration) {
+                throw Object.assign(new Error('VIDEO_ELIGIBILITY_CHANGED: Video availability changed. Please retry.'), { status: 503, retryAfterSeconds: 5 });
+            }
+        }
         if (scribeCycle && inserted.meta?.changes === 0) {
             const existing = await getActiveAiJob(db, videoId, normLang);
             if (existing) return { isNew: false, job: existing };

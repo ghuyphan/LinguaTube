@@ -1,3 +1,4 @@
+import { requireVideoEligibility, videoEligibilityEnabled, videoEligibilityFailure } from '../services/video-metadata.service.js';
 import { enrichPublishedTranscript } from '../services/transcript-enrichment.js';
 /**
  * Unified Transcript API (Cloudflare Function)
@@ -37,7 +38,7 @@ import { CacheManager } from '../utils/cache-manager.js';
 import { hasElevenLabsConfig } from '../providers/elevenlabs.js';
 import { GladiaProvider } from '../providers/gladia.js';
 import { SupadataProvider, resolveSupadataApiKeys } from '../providers/supadata.js';
-import { DiamondService } from '../services/diamond.service.js';
+import { DiamondService, getTierDiamondConfig } from '../services/diamond.service.js';
 import { TranscriptService } from '../services/transcript.service.js';
 import { verifyTurnstileToken } from '../services/turnstile.service.js';
 import { playbackAvailability, viewerCountry } from '../services/video-playback.service.js';
@@ -109,7 +110,7 @@ export async function onRequestPost(context) {
             const validationError = await validateVideoRequest(
                 cleanVideoId,
                 lang,
-                duration,
+                videoEligibilityEnabled(env) ? null : duration,
                 'innertube',
                 null,
                 { title: body.title, channel: body.channel, skipMetadata: true }
@@ -159,7 +160,7 @@ export async function onRequestPost(context) {
 
         // Setup Services
         const db = env.VOCAB_DB;
-        const r2 = env.TRANSCRIPT_STORAGE;
+        let r2 = env.TRANSCRIPT_STORAGE;
         const cache = env.TRANSCRIPT_CACHE;
         const _cacheManager = new CacheManager(cache);
 
@@ -178,7 +179,21 @@ export async function onRequestPost(context) {
         const diamondService = new DiamondService(_cacheManager);
         const transcriptService = new TranscriptService(supadata, gladia, diamondService, _cacheManager);
 
-        const serviceContext = { env, db, r2, cache, waitUntil };
+        const serviceContext = { env, db, r2, cache, waitUntil, request };
+        if (videoEligibilityEnabled(env)) {
+            try {
+                const maxDuration = preferAI && !isPolling ? getTierDiamondConfig(tier).maxVideoDurationSec : null;
+                const info = await requireVideoEligibility(serviceContext, cleanVideoId, { maxDuration });
+                const { assets } = info;
+                serviceContext.videoDetails = info;
+                serviceContext.r2 = r2 = assets.bucket;
+                serviceContext.assetGeneration = assets.generation;
+            } catch (error) {
+                const failure = videoEligibilityFailure(error, jsonResponse, { videoId: cleanVideoId, segments: [] });
+                if (failure) return failure;
+                throw error;
+            }
+        }
 
         // Diamond status immediately
         const user = authResult.valid ? authResult.user : null;
@@ -186,7 +201,7 @@ export async function onRequestPost(context) {
         log(`Request: ${cleanVideoId}, lang: ${lang}, diamonds: ${diamondStatus.diamonds}, tier: ${tier}`);
 
         const knownInfo = await getVideoLanguages(db, cleanVideoId);
-        if (!isPolling && knownInfo) {
+        if (!isPolling && knownInfo && !videoEligibilityEnabled(env)) {
             const availability = playbackAvailability(knownInfo, viewerCountry(request));
             if (availability === 'embed_blocked' || availability === 'region_blocked') {
                 return jsonResponse({
@@ -221,6 +236,8 @@ export async function onRequestPost(context) {
                 const quote = await transcriptService.quoteAIJob(serviceContext, orchestratorParams);
                 return jsonResponse({ success: true, ...quote }, 200, { 'Cache-Control': 'no-store' });
             } catch (error) {
+                const failure = videoEligibilityFailure(error, jsonResponse);
+                if (failure) return failure;
                 const errorCode = error.message.split(':')[0];
                 if (!error.status && !['VIDEO_DURATION_UNAVAILABLE', 'LIVESTREAM_NOT_SUPPORTED', 'VIDEO_UNAVAILABLE', 'VIDEO_METADATA_NOT_CONFIGURED', 'VIDEO_METADATA_STORAGE_UNAVAILABLE'].includes(errorCode)) throw error;
                 return jsonResponse({ success: false, errorCode, error: error.message }, error.status || 400, { 'Cache-Control': 'no-store', ...(error.retryAfterSeconds ? { 'Retry-After': String(error.retryAfterSeconds) } : {}) });
@@ -239,7 +256,7 @@ export async function onRequestPost(context) {
             });
             if (!estimated) return levels;
             const stored = await saveVideoLevel(db, null, videoId, language,
-                estimated.level, estimated.confidence, estimated.method, { ...estimated, onlyIfMissing: true });
+                estimated.level, estimated.confidence, estimated.method, { ...estimated, onlyIfMissing: true }, serviceContext.assetGeneration);
             return stored?.[language] ? stored : {
                 ...levels, [language]: { ...estimated, language, isProvisional: true }
             };
@@ -256,7 +273,7 @@ export async function onRequestPost(context) {
                 ? { hasWordTimings: true, wordTimings: words }
                 : { hasWordTimings: true };
         };
-        const transcriptCacheControl = body.includeWordTimings === true
+        const transcriptCacheControl = videoEligibilityEnabled(env) ? 'private, no-store' : body.includeWordTimings === true
             ? 'private, no-store' : CACHE_CONTROL.NO_CACHE;
 
         const aiResponse = async ({ wordTimings, ...videoInfo }) => {
@@ -377,10 +394,10 @@ export async function onRequestPost(context) {
 
             // A known native miss skips the provider, but still allows R2 alternatives.
             const nativeResult = nativeSkipReason ? null : await transcriptService.fetchNativeCaptions(serviceContext, cleanVideoId, lang, {
-                title: body.title,
-                channel: body.channel,
-                duration: body.duration,
-                channelAvatar: body.channelAvatar,
+                title: videoEligibilityEnabled(env) ? serviceContext.videoDetails?.snippet?.title : body.title,
+                channel: videoEligibilityEnabled(env) ? serviceContext.videoDetails?.snippet?.channel : body.channel,
+                duration: videoEligibilityEnabled(env) ? serviceContext.videoDetails?.duration : body.duration,
+                channelAvatar: videoEligibilityEnabled(env) ? null : body.channelAvatar,
                 retryTimeout: !forceRefresh || !subLanguages.some(l => normalizeLanguageCode(l) === requestedLanguage)
             });
             if (nativeResult?.availableLangs?.length > 0) {
@@ -523,6 +540,10 @@ export async function onRequestPost(context) {
         }
 
     } catch (error) {
+        if (videoEligibilityEnabled(context.env)) {
+            const failure = videoEligibilityFailure(error, jsonResponse);
+            if (failure) return failure;
+        }
         logError('Transcript', error, { endpoint: 'onRequestPost' });
         return errorResponse(error.message);
     }

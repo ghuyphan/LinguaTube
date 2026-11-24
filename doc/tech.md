@@ -249,3 +249,5 @@ ElevenLabs Scribe v3 accepts YouTube watch URLs and returns word timestamps for 
 
 
 The backend CI job runs workerd integration on Node 22 with pinned Miniflare and PGlite fixtures. Express binds to loopback by default. Live development Gladia calls require the opt-in described in the development guide.
+
+The Pages variables `VIDEO_ELIGIBILITY` and `VIDEO_ASSET_PURGE` control the Cloudflare video pipeline rollout. Use `report` for purge verification before changing it to `enabled`. See the video eligibility section in [the backend API guide](backend-api.md).

@@ -1,3 +1,4 @@
+import { requireVideoEligibility, videoEligibilityEnabled, videoEligibilityFailure } from '../services/video-metadata.service.js';
 import { readGradeStatus, serverGradingEnabled } from '../services/video-grading-jobs.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 /**
@@ -163,7 +164,8 @@ export async function onRequestPost(context) {
 
         const db = env.VOCAB_DB;
         // Strict adherence to Rule 2: kv is passed as null to guarantee ZERO KV writes
-        const updatedLevels = await saveVideoLevel(db, null, videoId, language, level, confidence, method, details);
+        const assets = videoEligibilityEnabled(env) ? (await requireVideoEligibility(context, videoId)).assets : null;
+        const updatedLevels = await saveVideoLevel(db, null, videoId, language, level, confidence, method, details, assets?.generation);
 
         const saved = updatedLevels?.[language];
         if (!saved) return errorResponse('Failed to save video level', 503);
@@ -181,6 +183,8 @@ export async function onRequestPost(context) {
         }, 200);
 
     } catch (err) {
+        const failure = videoEligibilityFailure(err, jsonResponse);
+        if (failure) return failure;
         console.error('[VideoLevel] Error:', err.message);
         return errorResponse('Failed to save video level', 500);
     }

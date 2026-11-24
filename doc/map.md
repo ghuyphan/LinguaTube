@@ -673,3 +673,5 @@ The Scribe ingestion paths retain the provider word timeline alongside subtitle 
 
 
 The shared Supabase deployment chain lives in `voca_flutter/supabase/migrations`. LinguaTube deploys the Pages Functions and D1 migrations. A fresh Supabase environment must pass the Worker billing RPC contract checks before switching any traffic.
+
+The video metadata service owns Cloudflare playback eligibility. The D1 video asset generation fences transcript and translation storage. The existing reconciliation route rechecks delisted videos and owns report-only or enabled asset retirement.

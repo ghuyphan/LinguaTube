@@ -1,3 +1,4 @@
+import { captureVideoAssets } from '../data/video-assets.js';
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { getVideoLanguages } from '../data/video-info-db.js';
 import { normalizeLanguageCode } from '../utils/transcript-utils.js';
@@ -20,7 +21,8 @@ export const protectedGrade = grade => grade && !grade.isProvisional &&
         (grade.confidence >= 0.90 && !grade.graderVersion));
 
 export async function readGradingTranscript(env, videoId, language, info) {
-    const bucket = env.TRANSCRIPT_STORAGE;
+    const { bucket, blocked } = await captureVideoAssets(env, videoId);
+    if (blocked) return null;
     const exact = await getTranscriptFromR2(bucket, videoId, language);
     if (exact) return exact;
     info ??= await getVideoLanguages(env.VOCAB_DB, videoId);

@@ -1,3 +1,4 @@
+import { reconcileRetiredVideoAssets } from '../../data/video-assets.js';
 import { recoverGladiaBatch, recoverGladiaJobs } from '../../services/gladia-recovery.js';
 import { matchesSecret } from '../../utils/secret-auth.js';
 import { jsonResponse } from '../../utils/utils.js';
@@ -41,7 +42,13 @@ export async function onRequestPost({ request, env }) {
         } catch (error) {
             console.warn('[Recovery] Video availability refresh unavailable', { message: error.message });
         }
-        console.log(JSON.stringify({ event: 'backend_recovery', callbacks, refunds, subscriptions, indexedVideos, checkedVideoAvailability, elapsedMs: Date.now()-started }));
+        let videoAssetCleanup = { candidates: 0, purged: 0 };
+        try {
+            videoAssetCleanup = await reconcileRetiredVideoAssets(env);
+        } catch (error) {
+            console.warn('[Recovery] Video asset cleanup deferred', { error: error.name });
+        }
+        console.log(JSON.stringify({ event: 'backend_recovery', callbacks, refunds, subscriptions, indexedVideos, checkedVideoAvailability, videoAssetCleanup, elapsedMs: Date.now()-started }));
         return jsonResponse({ success: true, callbacks, refunds, subscriptions }, 200, { 'Cache-Control': 'no-store' });
     } catch (error) {
         console.error('[Recovery] Batch unavailable', { message: error.message });

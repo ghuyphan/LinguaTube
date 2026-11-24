@@ -4,7 +4,7 @@ function normalizeCountry(value) {
 }
 
 export function viewerCountry(request) {
-    return normalizeCountry(request.cf?.country ?? request.headers.get('CF-IPCountry'));
+    return normalizeCountry(request?.cf?.country ?? request?.headers.get('CF-IPCountry'));
 }
 
 export function normalizeRegionRestriction(value) {

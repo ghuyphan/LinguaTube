@@ -1,3 +1,4 @@
+import { captureVideoAssets } from '../data/video-assets.js';
 import { ElevenLabsProvider, elevenLabsCallbackKey } from '../providers/elevenlabs.js';
 import { enqueueVideoGrade, serverGradingEnabled } from './video-grading-jobs.js';
 import { GladiaProvider } from '../providers/gladia.js';
@@ -37,6 +38,12 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
     if (!job) return null;
     try {
         if (Date.now() >= deadline) throw new Error('Ingestion budget exhausted');
+        const assets = await captureVideoAssets(env, job.video_id);
+        if (assets.blocked || assets.generation !== (job.asset_generation ?? 0)) {
+            await atomicFailAndRefundAiJob(db, job.id, 'VIDEO_EMBED_BLOCKED', 'Video is unavailable', lease);
+            if (Date.now() < deadline) await recoverJobRefund(env, job.id, deadline);
+            return { status: 'error', errorCode: 'VIDEO_EMBED_BLOCKED', error: 'Video is unavailable' };
+        }
         const isElevenLabs = job.asr_provider === 'elevenlabs';
         const resultProvider = isElevenLabs ? new ElevenLabsProvider(env.ELEVENLABS_API_KEY) : provider;
         const result = callbackResult ?? await resultProvider.checkJobStatusById(job.gladia_job_id, { deadline });
@@ -91,16 +98,21 @@ export async function ingestGladiaJob(env, jobId, provider = new GladiaProvider(
         const owns = await db.prepare(`SELECT id FROM ai_transcription_jobs WHERE id=? AND ingestion_lease=?
             AND ingestion_lease_until>strftime('%s','now')`).bind(job.id, lease).first();
         if (!owns) throw new Error('Ingestion lease expired');
-        if (!(await saveTranscriptToR2(env.TRANSCRIPT_STORAGE, job.video_id, language, enriched, 'ai',
+        if (!(await saveTranscriptToR2(assets.bucket, job.video_id, language, enriched, 'ai',
             { jobId: job.id, createdAt: job.created_at }, null, wordTimings, env.TRANSCRIPT_GZIP_WRITES === 'true'))) throw new Error('Transcript persistence unavailable');
+        const currentAssets = await captureVideoAssets(env, job.video_id);
+        if (currentAssets.blocked || currentAssets.generation !== assets.generation) {
+            throw new Error('Video eligibility changed during ingestion');
+        }
         const last = enriched[enriched.length - 1];
         const gradingEnabled = serverGradingEnabled(env);
         const level = gradingEnabled ? null : estimateTranscriptLevel(enriched, language);
         await saveVideoLanguages(
             db, job.video_id, [], job.verified_duration_seconds || Math.round((last.start || 0) + (last.duration || 0)),
-            null, null, false, level ? { [language]: level } : null, null, [language],
+            null, null, false, level ? { [language]: level } : null, null, [language], null, null,
+            env.VIDEO_ELIGIBILITY === 'true' ? assets.generation : null,
         );
-        await addAiLanguage(db, job.video_id, language);
+        await addAiLanguage(db, job.video_id, language, env.VIDEO_ELIGIBILITY === 'true' ? assets.generation : null);
         if (isElevenLabs) {
             const registered = await db.prepare(`SELECT 1 FROM video_languages WHERE video_id=?
                 AND EXISTS (SELECT 1 FROM json_each(ai_languages) WHERE value=?)

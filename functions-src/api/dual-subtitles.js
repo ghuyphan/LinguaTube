@@ -1,3 +1,4 @@
+import { requireVideoEligibility, videoEligibilityEnabled, videoEligibilityFailure } from '../services/video-metadata.service.js';
 /**
  * Dual Subtitles API
  * Generates and caches dual subtitles for a video
@@ -63,7 +64,9 @@ export async function onRequestGet(context) {
         const readQuota = await consumeSubtitleRead(context);
         if (!readQuota.allowed) return rateLimitResponse(readQuota.resetAt);
 
-        const r2 = env.TRANSCRIPT_STORAGE;
+        const assets = videoEligibilityEnabled(env)
+            ? (await requireVideoEligibility(context, cleanVideoId)).assets : null;
+        const r2 = assets ? assets.bucket : env.TRANSCRIPT_STORAGE;
         const cached = await getTranslation(r2, cleanVideoId, sourceLang, targetLang);
         if (cached) {
             return jsonResponse({
@@ -74,7 +77,7 @@ export async function onRequestGet(context) {
                 cached: true,
                 quality: cached.quality || 100,
                 timestamp: cached.timestamp
-            }, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
+            }, 200, { 'Cache-Control': videoEligibilityEnabled(env) ? 'private, no-store' : CACHE_HEADERS.HIT });
         }
 
         return jsonResponse({
@@ -85,6 +88,8 @@ export async function onRequestGet(context) {
             cached: false
         }, 200, { 'Cache-Control': 'no-store' });
     } catch (error) {
+        const failure = videoEligibilityFailure(error, jsonResponse);
+        if (failure) return failure;
         logError('Dual Subtitles GET', error);
         return errorResponse('Failed to check dual subtitles cache', 500);
     }
@@ -145,7 +150,9 @@ async function handlePost(context, body) {
             if (!readQuota.allowed) return rateLimitResponse(readQuota.resetAt);
         }
 
-        const r2 = env.TRANSCRIPT_STORAGE;
+        const assets = videoEligibilityEnabled(env)
+            ? (await requireVideoEligibility(context, cleanVideoId)).assets : null;
+        const r2 = assets ? assets.bucket : env.TRANSCRIPT_STORAGE;
         const db = env.VOCAB_DB;
 
         // 1. Check Cache (skip if forceRefresh or saveOnly)
@@ -160,7 +167,7 @@ async function handlePost(context, body) {
                     cached: true,
                     quality: cached.quality || 100,
                     timestamp: cached.timestamp
-                }, 200, { 'Cache-Control': CACHE_HEADERS.HIT });
+                }, 200, { 'Cache-Control': videoEligibilityEnabled(env) ? 'private, no-store' : CACHE_HEADERS.HIT });
             }
         }
 
@@ -204,9 +211,12 @@ async function handlePost(context, body) {
         }
 
         // Coalesce concurrent upstream translation work across callers after auth/rate-limit checks
-        const stampedeKey = await sha256(JSON.stringify([cleanVideoId, sourceLang, targetLang, segments, Boolean(forceRefresh)]));
+        const stampedeKey = await sha256(JSON.stringify([cleanVideoId, assets?.generation, sourceLang, targetLang, segments, Boolean(forceRefresh)]));
         let pending = inFlightTranslations.get(stampedeKey);
         if (!pending) {
+            if (inFlightTranslations.size >= 16) {
+                return jsonResponse({ error: 'Subtitle translation busy' }, 503, { 'Retry-After': '2' });
+            }
             pending = (async () => {
                 const textChunks = [];
                 for (let i = 0; i < segments.length; i += BATCH_SIZE) {
@@ -306,11 +316,13 @@ async function handlePost(context, body) {
         // 7. Build per-caller response with caller's own rate-limit headers
         const { response, cacheControl } = await pending;
         return jsonResponse(response, 200, {
-            'Cache-Control': cacheControl,
+            'Cache-Control': videoEligibilityEnabled(env) ? 'private, no-store' : cacheControl,
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 
     } catch (error) {
+        const failure = videoEligibilityFailure(error, jsonResponse);
+        if (failure) return failure;
         logError('Dual Subtitles', error);
         return errorResponse(error.message);
     }
