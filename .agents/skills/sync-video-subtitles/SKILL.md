@@ -11,7 +11,8 @@ metadata:
 Produces **millisecond-accurate, synchronized subtitles** with Furigana/Romaji/Pinyin/Hangul/VI-compound morphological tokens, real-time word-level `wordTimings`, dual-language translations, and automated proficiency level grading (JLPT / CEFR / HSK / TOPIK) across **any YouTube video** (spoken content, anime/drama, or music) using a **single canonical two-command pipeline**:
 
 1. **Transcribe & Align**: `scripts/ultra_align.py`
-   - **JA / EN / ZH / KO**: `Qwen/Qwen3-ASR-1.7B` + `17slever17/Qwen3-ForcedAligner-Ultra` (`LocalBoundaryAligner`)
+   - **JA (Japanese)**: `Qwen/Qwen3-ASR-1.7B` + **`NextFire/mms-300m-ForcedAligner-karaoke-ja-Latn`** (with `nagisa` + pronunciation romaji for singing/music via `--music` or `lyrics`/`lrc`) or **`17slever17/Qwen3-ForcedAligner-Ultra`** (`LocalBoundaryAligner` for spoken speech/dialogue)
+   - **EN / ZH / KO**: `Qwen/Qwen3-ASR-1.7B` + `17slever17/Qwen3-ForcedAligner-Ultra` (`LocalBoundaryAligner`)
    - **VI (Vietnamese)**: `vinai/PhoWhisper-medium` ASR + `nguyenvulebinh/wav2vec2-base-vietnamese-250h` CTC Viterbi aligner + Vietnamese phonetic matcher (`đ->d`, digraph normalization)
 2. **Verify & Publish**: `scripts/verify_and_publish.js` (exact Flutter & backend contract verifier + canonical R2/D1 publisher)
 
@@ -148,7 +149,7 @@ Always publish dual translations for both standard target languages correspondin
 ### ⚠️ INVARIANT 4: Canonical R2 Keys, Native/AI Separation & Shared Translation Identity
 - **Canonical R2 Keys (NEVER use underscores in R2 translation keys)**:
   - **Native track**: `transcripts/{videoId}/{lang}.json` — `source: "human_aligned"`, **NO `wordTimings`**.
-  - **AI track**: `transcripts/{videoId}/{lang}.ai.json` — `source: "ai"`, `provider: "qwen3_fa_ultra_localhead"` (`ja`/`en`/`zh`/`ko`) or `"phowhisper_vi_wav2vec2_ctc"` (`vi`), **WITH** per-segment and top-level `wordTimings`.
+  - **AI track**: `transcripts/{videoId}/{lang}.ai.json` — `source: "ai"`, `provider: "mms_karaoke_ja_ctc"` (`ja` music), `"qwen3_fa_ultra_localhead"` (`ja`/`en`/`zh`/`ko` speech), or `"phowhisper_vi_wav2vec2_ctc"` (`vi`), **WITH** per-segment and top-level `wordTimings`.
   - **Dual translations**: `translations/{videoId}/{lang}-{target}.json` (**HYPHEN `-`**, e.g. `ja-vi.json`, `en-ja.json` — required by `functions-src/utils/translation-cache.js:111`).
 - **Flutter `matchesSubtitleSource` Contract**:
   - In `voca_flutter/lib/utils/subtitle_track_identity.dart`, cached translations only bind to a cue if text matches AND $|\text{cue.start} - \text{cached.start}| \le 0.25\text{s}$ AND $|\text{cue.duration} - \text{cached.duration}| \le 0.5\text{s}$.

@@ -812,45 +812,24 @@ def _viterbi_ctc_align(log_probs, token_seqs, blank_id):
     return spans
 
 
-def align_sections_vi_ctc(audio, sr, lyric_lines, sections, model_name="nguyenvulebinh/wav2vec2-base-vietnamese-250h"):
-    """Acoustic CTC forced alignment for Vietnamese using wav2vec2-base-vietnamese-250h."""
+def _align_sections_ctc(audio, sr, lyric_lines, sections, model_name, build_section_tokens, label="CTC Aligner"):
+    """Shared HuggingFace Wav2Vec2ForCTC section forced-alignment engine using vectorized Viterbi DP."""
     import gc
     from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 
     device = "mps" if torch.backends.mps.is_available() else "cpu"
-    print(f"[VI CTC Aligner] Loading {model_name} on {device}...")
+    print(f"[{label}] Loading {model_name} on {device}...")
     processor = Wav2Vec2Processor.from_pretrained(model_name)
     model = Wav2Vec2ForCTC.from_pretrained(model_name).to(device)
     model.eval()
 
     vocab = processor.tokenizer.get_vocab()
-    blank_id = processor.tokenizer.pad_token_id
-    unk_id = vocab.get("<unk>", processor.tokenizer.unk_token_id)
-
-    def encode_vi_word(raw_w):
-        s = unicodedata.normalize("NFC", raw_w).lower()
-        ids = []
-        for ch in s:
-            if ch in vocab and vocab[ch] not in (blank_id, vocab.get("|")):
-                ids.append(vocab[ch])
-            elif ch.isalnum():
-                base = "".join(c for c in unicodedata.normalize("NFKD", ch.replace("đ", "d")) if not unicodedata.combining(c))
-                if base and base in vocab:
-                    ids.append(vocab[base])
-                elif unk_id is not None:
-                    ids.append(unk_id)
-        return ids or ([unk_id] if unk_id is not None else [blank_id])
+    ctx = {"vocab": vocab, "processor": processor}
 
     cue_words_map = {}
     for s_idx, (c_start, c_end, t_start, t_end) in enumerate(sections):
-        c_lines = lyric_lines[c_start:c_end]
-        clean_lines = [clean_for_align(l) for l in c_lines]
-        sec_text = " ".join(l for l in clean_lines if l)
-        if not sec_text:
-            continue
-
-        raw_words = [w for w in sec_text.split() if normalize_align(w)]
-        if not raw_words:
+        raw_words, token_seqs, blank_id = build_section_tokens(lyric_lines, c_start, c_end, ctx)
+        if not raw_words or not token_seqs:
             continue
 
         a_s = int(t_start * sr)
@@ -866,18 +845,17 @@ def align_sections_vi_ctc(audio, sr, lyric_lines, sections, model_name="nguyenvu
 
         T = log_probs.shape[0]
         frame_sec = slice_dur / max(1, T)
-        token_seqs = [encode_vi_word(w) for w in raw_words]
         spans = _viterbi_ctc_align(log_probs, token_seqs, blank_id)
 
-        abs_words = []
-        for w, (fs, fe) in zip(raw_words, spans):
-            abs_words.append({
+        abs_words = [
+            {
                 "word": w,
                 "text": w,
                 "start": round(t_start + fs * frame_sec, 3),
                 "end": round(t_start + fe * frame_sec, 3),
-            })
-
+            }
+            for w, (fs, fe) in zip(raw_words, spans)
+        ]
         _map_section_words_to_cues(abs_words, lyric_lines, c_start, c_end, cue_words_map)
 
     del model, processor
@@ -885,6 +863,91 @@ def align_sections_vi_ctc(audio, sr, lyric_lines, sections, model_name="nguyenvu
     if torch.backends.mps.is_available():
         torch.mps.empty_cache()
     return cue_words_map
+
+
+def align_sections_vi_ctc(audio, sr, lyric_lines, sections, model_name="nguyenvulebinh/wav2vec2-base-vietnamese-250h"):
+    """Acoustic CTC forced alignment for Vietnamese using wav2vec2-base-vietnamese-250h."""
+    def build_vi(lines, c_start, c_end, ctx):
+        vocab = ctx["vocab"]
+        proc = ctx["processor"]
+        blank_id = proc.tokenizer.pad_token_id
+        unk_id = vocab.get("<unk>", proc.tokenizer.unk_token_id)
+
+        sec_text = " ".join(clean_for_align(l) for l in lines[c_start:c_end] if clean_for_align(l))
+        raw_words = [w for w in sec_text.split() if normalize_align(w)]
+        token_seqs = []
+        for raw_w in raw_words:
+            s = unicodedata.normalize("NFC", raw_w).lower()
+            ids = []
+            for ch in s:
+                if ch in vocab and vocab[ch] not in (blank_id, vocab.get("|")):
+                    ids.append(vocab[ch])
+                elif ch.isalnum():
+                    base = "".join(c for c in unicodedata.normalize("NFKD", ch.replace("đ", "d")) if not unicodedata.combining(c))
+                    if base and base in vocab:
+                        ids.append(vocab[base])
+                    elif unk_id is not None:
+                        ids.append(unk_id)
+            token_seqs.append(ids or ([unk_id] if unk_id is not None else [blank_id]))
+        return raw_words, token_seqs, blank_id
+
+    return _align_sections_ctc(audio, sr, lyric_lines, sections, model_name, build_vi, label="VI CTC Aligner")
+
+
+def align_sections_ja_karaoke(audio, sr, lyric_lines, sections, model_name="NextFire/mms-300m-ForcedAligner-karaoke-ja-Latn"):
+    """Singing-specialized Japanese CTC forced alignment using MMS-300M fine-tuned on karaoke timings."""
+    try:
+        import nagisa
+    except ImportError:
+        nagisa = None
+
+    def to_sung_romaji(word, pos):
+        if pos == "助詞":
+            if word == "は":
+                return "wa"
+            if word == "へ":
+                return "e"
+            if word == "を":
+                return "o"
+        if _kks:
+            rom = "".join(it["hepburn"] for it in _kks.convert(word)).lower()
+        else:
+            rom = word.lower()
+        return re.sub(r"[^a-z']+", "", rom)
+
+    def build_ja(lines, c_start, c_end, ctx):
+        vocab = ctx["vocab"]
+        proc = ctx["processor"]
+        blank_id = vocab.get("[PAD]", proc.tokenizer.pad_token_id)
+        unk_id = vocab.get("[UNK]", proc.tokenizer.unk_token_id)
+
+        raw_words = []
+        token_seqs = []
+        for ci in range(c_start, c_end):
+            cleaned = clean_for_align(lines[ci])
+            if not cleaned:
+                continue
+            if nagisa is not None:
+                tag = nagisa.tagging(cleaned)
+                pairs = list(zip(tag.words, tag.postags))
+            elif _kks is not None:
+                pairs = [(it["orig"], "") for it in _kks.convert(cleaned)]
+            else:
+                pairs = [(w, "") for w in cleaned.split()]
+
+            for w, pos in pairs:
+                wc = w.strip()
+                if not wc or not normalize_align(wc):
+                    continue
+                rom = to_sung_romaji(wc, pos)
+                ids = [vocab[c] for c in rom if c in vocab]
+                if not ids:
+                    ids = [unk_id] if unk_id is not None else [blank_id]
+                raw_words.append(wc)
+                token_seqs.append(ids)
+        return raw_words, token_seqs, blank_id
+
+    return _align_sections_ctc(audio, sr, lyric_lines, sections, model_name, build_ja, label="JA Karaoke CTC Aligner")
 
 
 def align_sections_ultra(audio, sr, lyric_lines, sections, lang):
@@ -1109,6 +1172,9 @@ def main():
     parser.add_argument("--artist", default="", help="Channel/artist name (used for LRCLIB search)")
     parser.add_argument("--asr-model", default="auto", help="ASR model ('auto' selects vinai/PhoWhisper-medium for vi, Qwen/Qwen3-ASR-1.7B otherwise)")
     parser.add_argument("--vi-aligner-model", default="nguyenvulebinh/wav2vec2-base-vietnamese-250h", help="Vietnamese CTC forced-aligner model")
+    parser.add_argument("--ja-aligner", choices=["auto", "ultra", "karaoke"], default="auto",
+                        help="Japanese forced aligner backend: auto (karaoke CTC for lyrics/lrc or --music, Ultra for speech), ultra, karaoke")
+    parser.add_argument("--music", action="store_true", help="Hint that input is a music track (enables JA singing-specialized karaoke CTC aligner in auto mode)")
     parser.add_argument("--context", default="", help="Optional space-separated domain/character vocabulary context for Qwen3-ASR")
     parser.add_argument("--min-auth-score", type=float, default=0.40, help="Min phonetic authenticity score (0-1)")
     parser.add_argument("--skip-auth-check", action="store_true", help="Skip phonetic authenticity gate")
@@ -1211,6 +1277,9 @@ def main():
     if lang == "vi":
         cue_words_map = align_sections_vi_ctc(audio, sr, lyric_lines, sections, model_name=args.vi_aligner_model)
         provider_name = "phowhisper_vi_wav2vec2_ctc"
+    elif lang == "ja" and (args.ja_aligner == "karaoke" or (args.ja_aligner == "auto" and (args.music or effective_mode in ("lyrics", "lrc")))):
+        cue_words_map = align_sections_ja_karaoke(audio, sr, lyric_lines, sections)
+        provider_name = "mms_karaoke_ja_ctc"
     else:
         cue_words_map = align_sections_ultra(audio, sr, lyric_lines, sections, lang)
         provider_name = "qwen3_fa_ultra_localhead"

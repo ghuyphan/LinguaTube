@@ -140,6 +140,7 @@ The following 37 core music tracks have been upgraded to **Qwen3-ForcedAligner-U
 | `id3tzhaC5EY` | 升温 | zh | 63 | 451 | ✅ Ultra Local Boundary (0 collapsed, 0 collisions) |
 | `yCEMu2KnEF8` | Khách Mời 嘉宾 (Duet) | zh | 161 | 1058 | ✅ Ultra Local Boundary (0 collapsed, 0 collisions) |
 | `xDxW42EhksI` | Phép Màu (奇跡) - Heather JP Cover | ja | 37 | 183 | ✅ Ultra Local Boundary + Curated VI/EN (0 collapsed, 0 collisions) |
+| `SX_ViT4Ra7k` | 米津玄師 Kenshi Yonezu - Lemon (Official MV) | ja | 43 | 311 | ✅ MMS JA Karaoke CTC (`NextFire`) + Curated VI/EN (0 collapsed, 0 collisions) |
 | `5QhwXoy8CT8` | KOKIA - Spirits | ja | 19 | 235 | ✅ Ultra Local Boundary + Dual VI/EN (0 collapsed, 0 collisions) |
 | `t2mQxEtNgA0` | Mili - Bulbel / ENDER LILIES | en | 44 | 262 | ✅ Ultra Local Boundary + Official VI/JA (0 collapsed, 0 collisions) |
 | `BXB26PzV31k` | Mori Calliope - end of a life | en | 112 | 716 | ✅ Ultra Local Boundary + Curated VI/JA (0 collapsed, 0 collisions) |
