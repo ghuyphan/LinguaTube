@@ -329,6 +329,108 @@ function _tokenizeKuromojiSafeSpan(spanText, tokenizer) {
     });
 }
 
+const JP_NUMERAL_BEFORE_PERSON_REGEX = /[0-9０-９十百千万億兆〇零一二三四五六七八九]$/u;
+
+/**
+ * Corrects well-known Kuromoji/IPADIC misreadings and split compounds
+ * (e.g. 一+人 -> 一人(ひとり), 二+人 -> 二人(ふたり), Xの間 -> 間(あいだ)).
+ */
+function applyJapaneseReadingFixes(tokens) {
+    if (!Array.isArray(tokens) || tokens.length === 0) return tokens;
+
+    const merged = [];
+    for (let i = 0; i < tokens.length; i++) {
+        const cur = tokens[i];
+        const next = tokens[i + 1];
+        const prev = merged.length > 0 ? merged[merged.length - 1] : null;
+        const afterNext = tokens[i + 2];
+
+        // Merge split 一+人 -> 一人(ひとり) and 二+人 -> 二人(ふたり)
+        // Guard against compound numerals (二十一人 -> にじゅういちにん) and lexicalized compounds (一人称, 二人称, 二人三脚, 二人羽織)
+        if (
+            next &&
+            next.surface === '人' &&
+            (cur.surface === '一' || cur.surface === '二') &&
+            !(prev && JP_NUMERAL_BEFORE_PERSON_REGEX.test(prev.surface || '')) &&
+            !(afterNext && /^(?:前|称|三|羽)/u.test(afterNext.surface || ''))
+        ) {
+            const surface = cur.surface + next.surface;
+            const reading = cur.surface === '一' ? 'ひとり' : 'ふたり';
+            merged.push({
+                surface,
+                reading,
+                rubyParts: segmentJapaneseRuby(surface, reading),
+                romanization: getJapaneseRomaji(reading, surface),
+                partOfSpeech: '名詞'
+            });
+            i++; // consume next
+            continue;
+        }
+
+        // Merge split スネ + 夫 -> スネ夫(すねお) (IPADIC splits スネ + 夫[おっと])
+        if (next && cur.surface === 'スネ' && next.surface === '夫') {
+            const surface = 'スネ夫';
+            const reading = 'すねお';
+            merged.push({
+                surface,
+                reading,
+                rubyParts: segmentJapaneseRuby(surface, reading),
+                romanization: getJapaneseRomaji(reading, surface),
+                partOfSpeech: '名詞'
+            });
+            i++; // consume next
+            continue;
+        }
+
+        merged.push(cur);
+    }
+
+    // Context-aware single-token reading fixes
+    for (let i = 0; i < merged.length; i++) {
+        const cur = merged[i];
+        const prev = i > 0 ? merged[i - 1] : null;
+        const next = i + 1 < merged.length ? merged[i + 1] : null;
+        const afterNext = i + 2 < merged.length ? merged[i + 2] : null;
+
+        // X の 間 -> あいだ (IPADIC frequently misreads standalone 間 as ま)
+        // Preserve いつの間にか (いつのまにか) if ever split into いつ + の + 間 + に + か
+        if (
+            cur.surface === '間' &&
+            cur.reading === 'ま' &&
+            prev?.surface === 'の' &&
+            !(next?.surface === 'に' && afterNext?.surface === 'か')
+        ) {
+            cur.reading = 'あいだ';
+            cur.rubyParts = segmentJapaneseRuby('間', 'あいだ');
+            cur.romanization = getJapaneseRomaji('あいだ', '間');
+            continue;
+        }
+
+        // Single-token 一人/二人 read as いちにん/ににん outside compound suffixes
+        if (
+            cur.surface === '一人' &&
+            cur.reading === 'いちにん' &&
+            !(prev && JP_NUMERAL_BEFORE_PERSON_REGEX.test(prev.surface || '')) &&
+            !(next && /^(?:前|称)/u.test(next.surface || ''))
+        ) {
+            cur.reading = 'ひとり';
+            cur.rubyParts = segmentJapaneseRuby('一人', 'ひとり');
+            cur.romanization = getJapaneseRomaji('ひとり', '一人');
+        } else if (
+            cur.surface === '二人' &&
+            cur.reading === 'ににん' &&
+            !(prev && JP_NUMERAL_BEFORE_PERSON_REGEX.test(prev.surface || '')) &&
+            !(next && /^(?:称|三|羽)/u.test(next.surface || ''))
+        ) {
+            cur.reading = 'ふたり';
+            cur.rubyParts = segmentJapaneseRuby('二人', 'ふたり');
+            cur.romanization = getJapaneseRomaji('ふたり', '二人');
+        }
+    }
+
+    return merged;
+}
+
 /**
  * Tokenize Japanese text with kuromoji
  * Only adds reading (furigana) for tokens containing kanji
@@ -351,7 +453,7 @@ export async function tokenizeJapanese(text) {
                 allTokens.push(...tokenizeJapaneseFast(span.text));
             }
         }
-        return allTokens;
+        return applyJapaneseReadingFixes(allTokens);
     } catch (err) {
         console.warn('[Tokenizer] Kuromoji unavailable or timed out, falling back to Intl.Segmenter:', err?.message || err);
         return tokenizeJapaneseFast(text);

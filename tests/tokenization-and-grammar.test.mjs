@@ -12,6 +12,7 @@ import {
     katakanaToHiragana,
     segmentJapaneseRuby,
     detachKoreanParticle,
+    tokenizeJapanese,
     tokenizeJapaneseFast,
     segmentsNeedEnrichment,
     enrichSegmentsWithTokens
@@ -878,4 +879,34 @@ test('POST /api/grammar-detect detects EN syntactic + split phrasal rules and VI
         env: envWithGuard
     });
     assert.equal(badLang.status, 400);
+});
+
+test('Tokenizer [JA]: fixes Kuromoji/IPADIC misreadings for 二人, 一人, and Xの間 without breaking exceptions', async () => {
+    const fmt = (tokens) => tokens.map(t => (t.reading ? `${t.surface}(${t.reading})` : t.surface)).join(' ');
+
+    const futariAida = fmt(await tokenizeJapanese('二人の間 通り過ぎた風は'));
+    assert.ok(futariAida.includes('二人(ふたり) の 間(あいだ)'), `Expected 二人(ふたり) の 間(あいだ), got: ${futariAida}`);
+
+    const hitori = fmt(await tokenizeJapanese('一人で行く'));
+    assert.ok(hitori.includes('一人(ひとり) で'), `Expected 一人(ひとり), got: ${hitori}`);
+
+    const kimiToAida = fmt(await tokenizeJapanese('君との間に風が吹く'));
+    assert.ok(kimiToAida.includes('の 間(あいだ) に'), `Expected の 間(あいだ) に, got: ${kimiToAida}`);
+
+    // Exceptions must remain untouched
+    const twentyOne = fmt(await tokenizeJapanese('二十一人いる'));
+    assert.ok(twentyOne.includes('一(いち) 人(にん)'), `Must preserve 二十一人 reading, got: ${twentyOne}`);
+
+    const ichininmae = fmt(await tokenizeJapanese('一人前になる'));
+    assert.ok(!ichininmae.includes('ひとり'), `Must preserve 一人前 reading, got: ${ichininmae}`);
+
+    const nininSankyaku = fmt(await tokenizeJapanese('二人三脚で走る'));
+    assert.ok(nininSankyaku.includes('二人三脚(ににんさんきゃく)'), `Must preserve 二人三脚 reading, got: ${nininSankyaku}`);
+
+    const itsunomanika = fmt(await tokenizeJapanese('いつの間にか消えた'));
+    assert.ok(itsunomanika.includes('いつの間にか(いつのまにか)'), `Must preserve いつの間にか reading, got: ${itsunomanika}`);
+
+    const suneo = fmt(await tokenizeJapanese('スネ夫が開けろ'));
+    assert.ok(suneo.includes('スネ夫(すねお) が'), `Expected スネ夫(すねお), got: ${suneo}`);
+    assert.ok(!suneo.includes('おっと'), `Must not read スネ夫 as おっと, got: ${suneo}`);
 });

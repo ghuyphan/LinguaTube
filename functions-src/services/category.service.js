@@ -54,16 +54,16 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
 
     // 1. Music
     if (
-        /\b(?:mv|m\/v|music\s*video|official\s*(?:video|audio|mv|music)|ost|bgm|cover)\b|the\s*first\s*take/i.test(allText) ||
-        /歌ってみた|歌回|弾き語り|主題歌|作詞|作曲|音楽|歌词|노래|음악|\bsing(?:ing)?\b/i.test(allText)
+        /\b(?:mv|m\/v|music\s*video|official\s*(?:video|audio|mv|music)|ost|bgm|cover|kara(?:oke)?|lyrics?|english\s*ver\.?)\b|the\s*first\s*take/i.test(allText) ||
+        /歌ってみた|歌回|弾き語り|主題歌|のうた|作詞|作曲|音楽|歌词|노래|음악|\bsing(?:ing)?\b/i.test(allText)
     ) {
         return 'music';
     }
 
     // 2. Anime & Drama
     if (
-        /\b(?:amv|mad)\b|アニメ|\banime\b|漫画|manga|進撃の巨人|呪術廻戦|鬼滅の刃|チェンソーマン|動漫|애니|drama|ドラマ|kdrama|cdrama|jdrama|opening\s*(?:theme|full)/i.test(allText) ||
-        /animation|anime|toho|toei|kadokawa/i.test(rawChannel.toLowerCase())
+        /\b(?:amv|mad)\b|アニメ|\banime\b|漫画|manga|進撃の巨人|呪術廻戦|鬼滅の刃|チェンソーマン|ドラえもん|doraemon|doremon|dorami|多啦a夢|哆啦a梦|クレヨンしんちゃん|crayon\s*shin|はなかっぱ|動漫|애니|drama|ドラマ|kdrama|cdrama|jdrama|opening\s*(?:theme|full)|第\d+話|エピソード\s*\d+|phim\s*(?:hàn|trung|nhật|hoạt\s*hình|song\s*ngữ)|hoạt\s*hình|tập\s*cuối|short\s*movie|harry\s*potter|extra\s*english\s+episode/i.test(allText) ||
+        /animation|anime|toho|toei|kadokawa|ani-one|pops\s*kids/i.test(rawChannel.toLowerCase())
     ) {
         return 'anime_drama';
     }
@@ -76,21 +76,26 @@ export function detectVideoCategory({ title = '', channel = '', genre = null, ta
         return 'news';
     }
 
-    // 4. Conversation & Podcasts (High educational value for language immersion)
+    // 4. Explicit vlog in title takes precedence over generic listening/conversation tags
+    if (/\bvlog\b/i.test(rawTitle) && !/\bpodcast\b|ポッドキャスト/i.test(rawTitle)) {
+        return 'vlog';
+    }
+
+    // 5. Conversation & Podcasts (High educational value for language immersion)
     if (
         /ポッドキャスト|podcast|ラジオ|\bradio\b|会話|雑談|対談|インタビュー|interview|\btalk\b|speaking\s*practice|listening\s*practice|日常会話|대화|聊天|talkshow/i.test(allText)
     ) {
         return 'conversation';
     }
 
-    // 5. Education / Lessons (check before People & Blogs fallback so tutorials aren't demoted to vlog)
+    // 6. Education / Lessons (check before People & Blogs fallback so tutorials aren't demoted to vlog)
     if (
         /文法|単語|解説|レッスン|lesson|grammar|jlpt|hsk|tocfl|topik|tutorial|learn\s+(?:japanese|english|korean|chinese)|bbc\s+learning/i.test(allText)
     ) {
         return 'education';
     }
 
-    // 6. Vlog & Daily Life
+    // 7. Vlog & Daily Life
     if (
         /\bvlog\b|日常|ルームツアー|ルーティン|一人暮らし|旅|브이로그/i.test(allText) ||
         rawGenre === 'people & blogs'

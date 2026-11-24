@@ -633,6 +633,10 @@ test('detectVideoCategory classifies music, anime_drama, conversation, and educa
     assert.equal(detectVideoCategory({ title: 'Japanese Listening Practice #12', channel: 'Yuyu Podcast' }), 'conversation');
     assert.equal(detectVideoCategory({ title: 'JLPT N3 Complete Grammar Course', channel: 'Nihongo' }), 'education');
     assert.equal(detectVideoCategory({ title: 'Learn Japanese with a song & daily news', channel: 'Teacher', youtubeCategoryId: '27' }), 'education');
+    assert.equal(detectVideoCategory({ title: '大山版ドラえもん　第1443話　カードテレビ電話', channel: 'ドラちゃん', youtubeCategoryId: '22' }), 'anime_drama');
+    assert.equal(detectVideoCategory({ title: 'Doraemon The Short Movie 2001', channel: 'Huy Huy', youtubeCategoryId: '22' }), 'anime_drama');
+    assert.equal(detectVideoCategory({ title: '[Vietsub + Kara] Muốn gặp anh', channel: 'Yeran', youtubeCategoryId: '22' }), 'music');
+    assert.equal(detectVideoCategory({ title: 'a vlog to improve your vietnamese!', channel: 'Actually Understand', tags: ['listening practice'], youtubeCategoryId: '22' }), 'vlog');
 });
 
 test('candidate discovery lazily classifies general rows, searches tags cleanly, caches targetTier, and recovers without throwing on partial scans', options, async t => {
