@@ -252,7 +252,7 @@ test('tokenizeJapaneseFast: segments Japanese text using Intl.Segmenter with rom
     assert.equal(Array.isArray(tokens), true);
     assert.equal(tokens.length >= 2, true);
     assert.equal(tokens[0].surface, 'こんにちは');
-    assert.equal(tokens[0].romanization, 'konnichiha');
+    assert.equal(tokens[0].romanization, 'konnichiwa');
     const punc = tokens.find(t => t.surface === '！');
     assert.equal(punc?.isPunctuation, true);
 });

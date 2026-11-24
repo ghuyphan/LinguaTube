@@ -226,6 +226,10 @@ export function segmentJapaneseRuby(surface, reading) {
  * Zero dictionary downloads; protects against Worker CPU 1102 limits on cold starts.
  */
 export function tokenizeJapaneseFast(text) {
+    return applyJapaneseReadingFixes(segmentJapaneseFast(text));
+}
+
+function segmentJapaneseFast(text) {
     if (!text || typeof text !== 'string') return [];
     const segmenter = new Intl.Segmenter('ja', { granularity: 'word' });
     const segments = [...segmenter.segment(text)];
@@ -275,7 +279,7 @@ function _tokenizeKuromojiSafeSpan(spanText, tokenizer) {
     const surfaceStr = kuromojiTokens.map(t => t.surface_form).join('');
     if (compact(surfaceStr) !== compact(spanText)) {
         // Fallback if Kuromoji dropped anything
-        return tokenizeJapaneseFast(spanText);
+        return segmentJapaneseFast(spanText);
     }
 
     return kuromojiTokens.map(t => {
@@ -287,20 +291,11 @@ function _tokenizeKuromojiSafeSpan(spanText, tokenizer) {
 
         const nfkc = t.surface_form.normalize('NFKC');
         const isKana = isJapaneseKanaText(t.surface_form) || isJapaneseKanaText(nfkc);
-        let kanaReading = !isPunc && t.reading
+        const kanaReading = !isPunc && t.reading
             ? katakanaToHiragana(t.reading)
             : !isPunc && isKana
                 ? katakanaToHiragana(nfkc)
                 : undefined;
-
-        // Correct spoken particle pronunciation for は (wa) and へ (e)
-        if (t.pos === '助詞' || t.pos_detail_1?.includes('助詞')) {
-            if (t.surface_form === 'は') {
-                kanaReading = 'わ';
-            } else if (t.surface_form === 'へ') {
-                kanaReading = 'え';
-            }
-        }
 
         // Only add reading for tokens containing kanji (skip punctuation)
         if (kanaReading && hasKanji(t.surface_form)) {
@@ -331,104 +326,94 @@ function _tokenizeKuromojiSafeSpan(spanText, tokenizer) {
 
 const JP_NUMERAL_BEFORE_PERSON_REGEX = /[0-9０-９十百千万億兆〇零一二三四五六七八九]$/u;
 
-/**
- * Corrects well-known Kuromoji/IPADIC misreadings and split compounds
- * (e.g. 一+人 -> 一人(ひとり), 二+人 -> 二人(ふたり), Xの間 -> 間(あいだ)).
- */
+const JP_PERSON_READINGS = new Map([
+    ['一', 'ひとり'], ['1', 'ひとり'], ['１', 'ひとり'],
+    ['二', 'ふたり'], ['2', 'ふたり'], ['２', 'ふたり']
+]);
+const JP_SPOKEN_KANA = new Map([
+    ['は', 'わ'], ['へ', 'え'], ['こんにちは', 'こんにちわ'], ['こんばんは', 'こんばんわ']
+]);
+
+function personReading(number, previous, next, afterNext) {
+    const reading = JP_PERSON_READINGS.get(number);
+    if (!reading || JP_NUMERAL_BEFORE_PERSON_REGEX.test(previous?.surface || '')) return null;
+    const suffix = (next?.surface || '') + (afterNext?.surface || '');
+    if (suffix.startsWith('前') || suffix.startsWith('称') ||
+        (reading === 'ふたり' && /^(?:三脚|羽織)/u.test(suffix))) return null;
+    return reading;
+}
+
+function withJapaneseReading(token, reading) {
+    return {
+        ...token,
+        reading,
+        rubyParts: segmentJapaneseRuby(token.surface, reading),
+        romanization: getJapaneseRomaji(reading, token.surface)
+    };
+}
+
+// Share pronunciation corrections across fresh, fallback, and stored tokens.
 function applyJapaneseReadingFixes(tokens) {
-    if (!Array.isArray(tokens) || tokens.length === 0) return tokens;
-
-    const merged = [];
+    const fixed = [];
     for (let i = 0; i < tokens.length; i++) {
-        const cur = tokens[i];
+        const token = tokens[i];
+        if (!token?.surface || token.isPunctuation) {
+            fixed.push(token);
+            continue;
+        }
+        const { surface } = token;
+        const previous = fixed.at(-1);
         const next = tokens[i + 1];
-        const prev = merged.length > 0 ? merged[merged.length - 1] : null;
         const afterNext = tokens[i + 2];
+        let corrected = token;
 
-        // Merge split 一+人 -> 一人(ひとり) and 二+人 -> 二人(ふたり)
-        // Guard against compound numerals (二十一人 -> にじゅういちにん) and lexicalized compounds (一人称, 二人称, 二人三脚, 二人羽織)
-        if (
-            next &&
-            next.surface === '人' &&
-            (cur.surface === '一' || cur.surface === '二') &&
-            !(prev && JP_NUMERAL_BEFORE_PERSON_REGEX.test(prev.surface || '')) &&
-            !(afterNext && /^(?:前|称|三|羽)/u.test(afterNext.surface || ''))
-        ) {
-            const surface = cur.surface + next.surface;
-            const reading = cur.surface === '一' ? 'ひとり' : 'ふたり';
-            merged.push({
-                surface,
-                reading,
-                rubyParts: segmentJapaneseRuby(surface, reading),
-                romanization: getJapaneseRomaji(reading, surface),
-                partOfSpeech: '名詞'
-            });
-            i++; // consume next
+        if (next?.surface === '人') {
+            const reading = personReading(surface, previous, afterNext, tokens[i + 3]);
+            if (reading) {
+                fixed.push(withJapaneseReading({ surface: surface + '人', partOfSpeech: '名詞' }, reading));
+                i++;
+                continue;
+            }
+        }
+
+        if (surface === 'スネ' && next?.surface === '夫') {
+            fixed.push(withJapaneseReading({ surface: 'スネ夫', partOfSpeech: '名詞' }, 'すねお'));
+            i++;
             continue;
         }
 
-        // Merge split スネ + 夫 -> スネ夫(すねお) (IPADIC splits スネ + 夫[おっと])
-        if (next && cur.surface === 'スネ' && next.surface === '夫') {
-            const surface = 'スネ夫';
-            const reading = 'すねお';
-            merged.push({
-                surface,
-                reading,
-                rubyParts: segmentJapaneseRuby(surface, reading),
-                romanization: getJapaneseRomaji(reading, surface),
-                partOfSpeech: '名詞'
-            });
-            i++; // consume next
-            continue;
+        if (/^[一二12１２]人$/u.test(surface)) {
+            const reading = personReading(surface[0], previous, next, afterNext);
+            if (reading && (!token.reading || token.reading === 'いちにん' || token.reading === 'ににん' ||
+                (token.reading === reading && /^(?:ichinin|ninin)$/.test(token.romanization)))) {
+                corrected = withJapaneseReading(token, reading);
+            }
+        } else if (surface === '間' && token.reading === 'ま' && previous?.surface === 'の' &&
+            !(next?.surface === 'に' && afterNext?.surface === 'か')) {
+            corrected = withJapaneseReading(token, 'あいだ');
+        } else if (JP_SPOKEN_KANA.has(surface)) {
+            const isParticle = token.partOfSpeech === '助詞';
+            const followsWord = !token.partOfSpeech && previous?.surface?.trim() &&
+                !previous.isPunctuation && /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}0-9０-９]$/u.test(previous.surface) &&
+                previous.surface !== surface && next?.surface !== surface;
+            if (surface.length > 1 || isParticle || followsWord) {
+                const reading = JP_SPOKEN_KANA.get(surface);
+                const romanization = getJapaneseRomaji(reading, surface);
+                if (token.reading !== reading || token.romanization !== romanization) {
+                    corrected = { ...token, reading, romanization };
+                }
+            }
         }
-
-        merged.push(cur);
+        fixed.push(corrected);
     }
+    return fixed;
+}
 
-    // Context-aware single-token reading fixes
-    for (let i = 0; i < merged.length; i++) {
-        const cur = merged[i];
-        const prev = i > 0 ? merged[i - 1] : null;
-        const next = i + 1 < merged.length ? merged[i + 1] : null;
-        const afterNext = i + 2 < merged.length ? merged[i + 2] : null;
-
-        // X の 間 -> あいだ (IPADIC frequently misreads standalone 間 as ま)
-        // Preserve いつの間にか (いつのまにか) if ever split into いつ + の + 間 + に + か
-        if (
-            cur.surface === '間' &&
-            cur.reading === 'ま' &&
-            prev?.surface === 'の' &&
-            !(next?.surface === 'に' && afterNext?.surface === 'か')
-        ) {
-            cur.reading = 'あいだ';
-            cur.rubyParts = segmentJapaneseRuby('間', 'あいだ');
-            cur.romanization = getJapaneseRomaji('あいだ', '間');
-            continue;
-        }
-
-        // Single-token 一人/二人 read as いちにん/ににん outside compound suffixes
-        if (
-            cur.surface === '一人' &&
-            cur.reading === 'いちにん' &&
-            !(prev && JP_NUMERAL_BEFORE_PERSON_REGEX.test(prev.surface || '')) &&
-            !(next && /^(?:前|称)/u.test(next.surface || ''))
-        ) {
-            cur.reading = 'ひとり';
-            cur.rubyParts = segmentJapaneseRuby('一人', 'ひとり');
-            cur.romanization = getJapaneseRomaji('ひとり', '一人');
-        } else if (
-            cur.surface === '二人' &&
-            cur.reading === 'ににん' &&
-            !(prev && JP_NUMERAL_BEFORE_PERSON_REGEX.test(prev.surface || '')) &&
-            !(next && /^(?:称|三|羽)/u.test(next.surface || ''))
-        ) {
-            cur.reading = 'ふたり';
-            cur.rubyParts = segmentJapaneseRuby('二人', 'ふたり');
-            cur.romanization = getJapaneseRomaji('ふたり', '二人');
-        }
-    }
-
-    return merged;
+export function correctTranscriptPronunciation(segments, lang) {
+    if (lang !== 'ja' || !Array.isArray(segments)) return segments;
+    return segments.map(cue => Array.isArray(cue?.tokens) && /[人はへ間夫]/u.test(cue.text)
+        ? { ...cue, tokens: applyJapaneseReadingFixes(cue.tokens) }
+        : cue);
 }
 
 /**
@@ -450,7 +435,7 @@ export async function tokenizeJapanese(text) {
             if (span.isSafe) {
                 allTokens.push(..._tokenizeKuromojiSafeSpan(span.text, tokenizer));
             } else {
-                allTokens.push(...tokenizeJapaneseFast(span.text));
+                allTokens.push(...segmentJapaneseFast(span.text));
             }
         }
         return applyJapaneseReadingFixes(allTokens);

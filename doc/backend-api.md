@@ -309,7 +309,7 @@ With `ELEVENLABS_BILLING_ANCHOR` configured, new Scribe jobs share a 25-hour bud
 - **Source**: `functions-src/api/tokenize/[lang].js`, `functions-src/api/tokenize-batch/[lang].js`
 - **Dual-Layer Cache Architecture**:
   - In-memory warm isolate cache (`memTokenBatchCache`, up to 100 videos) resolves repeated requests in $<0.1$ms (`X-Cache: HIT-MEM`).
-  - Cloudflare KV (`tokens:v6:{lang}:{videoId}:{textsHash}`) provides edge persistence across isolates.
+  - Cloudflare KV (`tokens:v7:{lang}:{videoId}:{textsHash}` (`v8` for Japanese)) provides edge persistence across isolates.
   - Cache hits consume **0 rate limit quota** and return with `X-Cache: HIT`.
   - **Isolated In-Flight Coalescing (`inFlightBatches`)**: Concurrent misses execute per-caller auth, rate-limit, and `request.signal` abort checks independently while sharing only the underlying tokenization work, preventing caller aborts or 429 states from poisoning other callers.
 - **Caching**: 30-day TTL in Cloudflare KV.

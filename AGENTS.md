@@ -454,6 +454,7 @@ Keep the 200 eligible-candidate window independent of offset/page size/seed. App
 - Apply `db/migrations/d1/20261025_gladia_submission_state.sql` before activating the updated Functions. Preserve submitting/uncertain/accepted jobs beyond ordinary age expiry; lack of provider-list evidence cannot authorize refunds or replacement POSTs.
 - New paid AI submissions use one fresh server duration for both tier validation and pricing. Cache reads and active-job joins avoid this lookup; force refresh joins active work before credit checks.
 - Gladia creation is a single POST with durable correlation metadata. Callback, poll and metadata recovery share the ingestion lease and persisted provider due times.
+- Apply Japanese pronunciation corrections at the transcript response boundary so stored readings can be repaired without rewriting cue text or timing.
 - Publish clean transcripts and confirm completion before optional token enrichment. Enrichment has a bounded caller wait and ETag-conditional publication; underlying tokenizer cancellation remains its own concern.
 - HTTP translation saves require canonical source cues and preserve the complete cue list. Unknown native-language metadata must not suppress native discovery; incomplete recommendation verification remains retryable.
 

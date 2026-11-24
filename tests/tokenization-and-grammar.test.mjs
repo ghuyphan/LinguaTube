@@ -14,6 +14,7 @@ import {
     detachKoreanParticle,
     tokenizeJapanese,
     tokenizeJapaneseFast,
+    correctTranscriptPronunciation,
     segmentsNeedEnrichment,
     enrichSegmentsWithTokens
 } from '../functions-src/utils/tokenizer.js';
@@ -909,4 +910,50 @@ test('Tokenizer [JA]: fixes Kuromoji/IPADIC misreadings for 二人, 一人, and 
     const suneo = fmt(await tokenizeJapanese('スネ夫が開けろ'));
     assert.ok(suneo.includes('スネ夫(すねお) が'), `Expected スネ夫(すねお), got: ${suneo}`);
     assert.ok(!suneo.includes('おっと'), `Must not read スネ夫 as おっと, got: ${suneo}`);
+});
+
+test('Japanese pronunciation handles numeric counters, particles and greetings on both tokenization paths', async () => {
+    for (const tokenizeJa of [tokenizeJapanese, tokenizeJapaneseFast]) {
+        for (const surface of ['二人', '2人', '２人']) {
+            const tokens = await tokenizeJa(`${surface}は友達。`);
+            assert.equal(tokens.find(t => t.surface === surface)?.romanization, 'futari');
+            assert.equal(tokens.find(t => t.surface === 'は')?.romanization, 'wa');
+        }
+
+        const greetings = await tokenizeJa('こんにちは。こんばんは。');
+        assert.equal(greetings.find(t => t.surface === 'こんにちは')?.romanization, 'konnichiwa');
+        assert.equal(greetings.find(t => t.surface === 'こんばんは')?.romanization, 'konbanwa');
+
+        const lexical = await tokenizeJa('はじめから。');
+        assert.equal(lexical.find(t => t.surface === 'はじめ')?.romanization, 'hajime');
+    }
+
+    assert.equal(tokenizeJapaneseFast('「は」').find(t => t.surface === 'は')?.romanization, 'ha');
+
+    const separateQuantity = await tokenizeJapanese('二人三時間も待っていた。');
+    assert.equal(separateQuantity.find(t => t.surface === '二人')?.romanization, 'futari');
+    const compound = await tokenizeJapanese('二人三脚で走る。');
+    assert.equal(compound.find(t => t.surface === '二人三脚')?.romanization, 'nininsankyaku');
+});
+
+test('Japanese transcript response corrects stored readings without changing cue timing or text', () => {
+    const cues = [{
+        text: '二人は友達。',
+        start: 1,
+        duration: 3,
+        tokens: [
+            { surface: '二人', reading: 'ににん', romanization: 'ninin', partOfSpeech: '名詞' },
+            { surface: 'は', romanization: 'ha', partOfSpeech: '助詞' },
+            { surface: '友達', reading: 'ともだち', romanization: 'tomodachi' },
+            { surface: '。', isPunctuation: true }
+        ]
+    }];
+    const [cue] = correctTranscriptPronunciation(cues, 'ja');
+    assert.equal(cue.text, cues[0].text);
+    assert.equal(cue.start, cues[0].start);
+    assert.equal(cue.duration, cues[0].duration);
+    assert.deepEqual(cue.tokens.map(t => t.romanization), ['futari', 'wa', 'tomodachi', undefined]);
+    assert.equal(cues[0].tokens[1].romanization, 'ha');
+    assert.deepEqual(correctTranscriptPronunciation([cue], 'ja'), [cue]);
+    assert.strictEqual(correctTranscriptPronunciation(cues, 'zh'), cues);
 });

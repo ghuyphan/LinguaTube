@@ -145,7 +145,7 @@ test('feed, cached transcript and submission agree after a catalog update', asyn
     TRANSCRIPT_CACHE: { get: async () => null, put: async () => {} },
     TRANSCRIPT_STORAGE: { get: async () => ({
       json: async () => ({ language: 'ja', segments: [
-        { start: 0, duration: 2, text: 'こんにちは', tokens: [{ surface: 'こんにちは' }] }
+        { start: 0, duration: 2, text: 'こんにちは', tokens: [{ surface: 'こんにちは', romanization: 'konnichiha' }] }
       ] })
     }) }
   };
@@ -188,7 +188,8 @@ test('feed, cached transcript and submission agree after a catalog update', asyn
   assert.equal(submit.status, 200);
   assert.equal(captions.status, 200);
   const submitted = await submit.json();
-  const captionLevels = (await captions.json()).levels;
+  const { levels: captionLevels, segments } = await captions.json();
+  assert.equal(segments[0].tokens[0].romanization, 'konnichiwa');
   const card = await feed();
   assert.equal(card.level, 'JLPT N2');
   assert.equal(submitted.level, 'JLPT N2');

@@ -23,7 +23,7 @@ This repository serves [voca.study](https://voca.study) and owns canonical share
 
 ### 🧠 Smart Linguistics & Interactive Dictionaries
 - **Language-Specific Tokenization**:
-  - **Japanese**: Morphological analysis via `@patdx/kuromoji` with on-demand CDN dictionary loading.
+  - **Japanese**: Morphological analysis via `@patdx/kuromoji` with on-demand CDN dictionary loading and pronunciation corrections for fresh and stored subtitle tokens.
   - **Chinese**: Word boundary segmentation with `Intl.Segmenter` and `pinyin-pro` tone marks.
   - **Korean**: `Intl.Segmenter` paired with `hangul-romanization` (Revised Romanization).
   - **English**: Word and punctuation segmentation via `Intl.Segmenter`.

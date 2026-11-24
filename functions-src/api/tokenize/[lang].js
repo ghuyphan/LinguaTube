@@ -76,7 +76,7 @@ export async function onRequest(context) {
         }
 
         // 1. Check in-memory cache (0 KV ops, < 0.1ms)
-        const cacheKey = `tokens:v7:${lang}:${await sha256(JSON.stringify(text))}`;
+        const cacheKey = `tokens:${lang === 'ja' ? 'v8' : 'v7'}:${lang}:${await sha256(JSON.stringify(text))}`;
         const memHit = memTokenSingleCache.get(cacheKey);
         if (memHit) {
             const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));

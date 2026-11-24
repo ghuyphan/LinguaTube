@@ -602,6 +602,7 @@ YouTube country availability flows through the official metadata resolver into D
 ## Backend optimization flow (25 October 2026)
 
 - New paid transcript: shared-job/cache lookup → fresh duration verification → atomic charge → durable submission intent → single Gladia POST. Uncertain intent → callback inbox or bounded metadata lookup → shared ingestion lease → clean R2 transcript → completed D1 job.
+- The transcript API applies the shared Japanese pronunciation corrections when returning stored tokens.
 - `services/transcript-enrichment.js` owns optional background token enrichment, warm promise deduplication and conditional R2 publication. It calls the existing tokenizer without changing its internals.
 - `services/gladia-recovery.js` owns callback recovery, provider-status backoff and uncertain-submission correlation. `api/internal/reconcile.js` runs these with existing refund and billing maintenance.
 - Dual-subtitle requests deduplicate before cache reads. `utils/translation-cache.js` uses canonical full cue lists, the existing mutex and R2 conditions to preserve concurrent and partial translations.

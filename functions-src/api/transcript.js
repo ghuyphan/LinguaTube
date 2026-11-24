@@ -28,7 +28,7 @@ import {
 import { getTranscriptFromR2 } from '../data/transcript-r2.js';
 import { getActiveAiJob } from '../data/transcript-db.js';
 import { normalizeLanguageCode, adjustAvailableLanguages } from '../utils/transcript-utils.js';
-import { segmentsNeedEnrichment } from '../utils/tokenizer.js';
+import { correctTranscriptPronunciation, segmentsNeedEnrichment } from '../utils/tokenizer.js';
 import { estimateTranscriptLevel } from '../utils/level-estimator.js';
 import { scheduleVideoGrade } from '../services/video-grading.js';
 import { serverGradingActive, serverGradingEnabled } from '../services/video-grading-jobs.js';
@@ -282,7 +282,8 @@ export async function onRequestPost(context) {
             const levels = await resolveLevels(videoInfo.videoId,
                 language, videoInfo.segments, info);
             const responseAvailableLanguages = adjustAvailableLanguages(videoInfo.availableLanguages || availableLanguages, language, 'ai');
-            return jsonResponse({ success: true, ...videoInfo, ...timingFields(wordTimings), availableLanguages: responseAvailableLanguages, levels,
+            return jsonResponse({ success: true, ...videoInfo, segments: correctTranscriptPronunciation(videoInfo.segments, language),
+                ...timingFields(wordTimings), availableLanguages: responseAvailableLanguages, levels,
                 whisperAvailable, ...grading(levels, language, !videoInfo.languageMismatch), ...diamondInfo, timing: elapsed() },
                 200, { 'Cache-Control': transcriptCacheControl });
         };
@@ -334,7 +335,8 @@ export async function onRequestPost(context) {
             const responseAvailableLanguages = adjustAvailableLanguages(availableLanguages, language, saved.source);
 
             return jsonResponse({
-                success: true, videoId: cleanVideoId, language, requestedLanguage: lang, segments: saved.segments,
+                success: true, videoId: cleanVideoId, language, requestedLanguage: lang,
+                segments: correctTranscriptPronunciation(saved.segments, language),
                 ...timingFields(saved.wordTimings),
                 source: preferAI ? 'ai' : 'cache', sourceDetail: saved.source, trackLanguage: saved.trackLanguage,
                 availableLanguages: responseAvailableLanguages, subLanguages: knownInfo?.subLanguages || [language],
@@ -411,7 +413,8 @@ export async function onRequestPost(context) {
                         await getVideoLanguages(db, cleanVideoId));
 
                 return jsonResponse({
-                    success: true, videoId: cleanVideoId, language: actualLang, requestedLanguage: lang, segments: nativeResult.segments,
+                    success: true, videoId: cleanVideoId, language: actualLang, requestedLanguage: lang,
+                    segments: correctTranscriptPronunciation(nativeResult.segments, actualLang),
                     source: 'native', sourceDetail: nativeResult.source, trackLanguage: nativeResult.trackLanguage,
                     availableLanguages: adjustAvailableLanguages(availableLanguages, actualLang, nativeResult.source || 'supadata'),
                     subLanguages: knownInfo?.subLanguages || [actualLang], whisperAvailable,

@@ -64,6 +64,7 @@ Correct segmentation and pronunciation generation are central to Voca:
 ### 3.1. Japanese Morphological Analysis (`@patdx/kuromoji` + Romaji)
 - Standard JavaScript implementations of Kuromoji require large dictionary files (~17MB).
 - **CDN Loading Strategy**: A custom dictionary loader (`cdnLoader` in `tokenizer.js`) pulls compressed array buffers on demand from `cdn.jsdelivr.net` to avoid bloating the initial bundle.
+- Japanese pronunciation corrections also run at the transcript response boundary, so previously stored token readings can be repaired while preserving cue timing and source text.
 - **Token Output**: Extracts `surface_form`, `reading` (converted from Katakana to Hiragana via `katakanaToHiragana`), `basic_form`, `partOfSpeech`, and derives Hepburn Romanization via `getJapaneseRomaji()`.
 - **5 Reading Display Modes**:
   - `native`: Original Japanese script only.
