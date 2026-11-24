@@ -2,22 +2,23 @@
 """
 Voca Unified Ultra Acoustic Aligner (scripts/ultra_align.py)
 ------------------------------------------------------------
-Single canonical acoustic forced-alignment pipeline using
-17slever17/Qwen3-ForcedAligner-Ultra + LocalBoundaryAligner (Apple Silicon MPS / CPU).
+Canonical acoustic forced-alignment pipeline:
+- JA / EN / ZH / KO: Qwen/Qwen3-ASR-1.7B (MLX) + 17slever17/Qwen3-ForcedAligner-Ultra (MPS / CPU)
+- VI (Vietnamese):   vinai/PhoWhisper-medium ASR + nguyenvulebinh/wav2vec2-base-vietnamese-250h
+                     CTC Viterbi forced aligner + Vietnamese phonetic matcher (đ->d, digraphs)
 
 Modes:
+  --mode=auto        : Auto-selects refine-only / lrc / lyrics / asr based on inputs.
+  --mode=asr         : General spoken videos (transcribes + segments natural clauses).
   --mode=refine-only : Preserves existing refined official cues 100% (ZERO ASR text changes).
-                       Clusters cues into continuous 10-26s musical sections and computes
-                       millisecond wordTimings.
   --mode=lyrics      : Ingests authentic lyrics (--lyrics-file or 'auto' via LRCLIB), runs
-                       coarse ASR (mlx-qwen3-asr) for vocal section discovery + phonetic
-                       authenticity gate (aborts on wrong/hallucinated lyrics), then runs
-                       continuous section Ultra alignment.
+                       coarse ASR for vocal section discovery + phonetic authenticity gate,
+                       then runs continuous section forced alignment.
   --mode=lrc         : Uses human-timed .lrc timestamps + coarse ASR histogram peak offset
-                       for section bounds, then runs continuous section Ultra alignment.
+                       for section bounds, then runs continuous section forced alignment.
 
 Outputs a candidate AI transcript JSON for verification & publishing via:
-  node scripts/verify_and_publish.js --video-id <ID> --lang <LANG> ...
+  node scripts/verify_and_publish.js --video-id=<ID> --lang=<LANG> ...
 """
 
 import argparse
@@ -106,6 +107,17 @@ def clean_for_align(text):
     return re.sub(r"[「」『』？?！!（）\(\)\[\]、。…~\-—\"'’`]+", " ", text or "").strip()
 
 
+def _normalize_vi_phonetics(clean_text):
+    """Normalizes Vietnamese text for phonetic ASR/lyric matching (preserves đ->d and syllable equivalences)."""
+    s = (clean_text or "").lower().replace("đ", "d").replace("ð", "d")
+    s = "".join(ch for ch in unicodedata.normalize("NFKD", s) if not unicodedata.combining(ch))
+    s = re.sub(r"[^a-z0-9]+", "", s)
+    # Normalize common orthographic equivalents (c/q->k, ngh->ng, gh->g, ph->f, y->i)
+    s = s.replace("ngh", "ng").replace("gh", "g").replace("ph", "f").replace("qu", "kw")
+    s = s.replace("c", "k").replace("q", "k").replace("y", "i")
+    return s
+
+
 def normalize_phonetics(text, lang="ja"):
     clean = re.sub(r"[\s、。！？!?,.~…「」『』\(\)\[\]\"'’]+", "", text or "")
     if not clean:
@@ -124,7 +136,9 @@ def normalize_phonetics(text, lang="ja"):
         return clean.lower()
     if lang == "ko":
         return "".join(c for c in unicodedata.normalize("NFD", clean) if not unicodedata.combining(c)).lower()
-    norm = unicodedata.normalize("NFKD", clean)
+    if lang == "vi":
+        return _normalize_vi_phonetics(clean)
+    norm = unicodedata.normalize("NFKD", clean.replace("đ", "d").replace("Đ", "D"))
     return re.sub(r"[^a-z0-9]+", "", norm.lower())
 
 
@@ -284,14 +298,111 @@ def _project_punctuation_onto_words(words, full_text):
     return words
 
 
-def run_coarse_asr(audio_wav, lang, model_name="Qwen/Qwen3-ASR-1.7B", context=""):
+def run_coarse_asr_vi(audio_wav, model_name="vinai/PhoWhisper-medium"):
+    """Runs dedicated Vietnamese ASR (VinAI PhoWhisper via CTranslate2 int8) and emits coarse word stream."""
     import gc
+    from faster_whisper import WhisperModel
+    from huggingface_hub import snapshot_download
+
+    if os.path.isdir(model_name):
+        ct2_dir = model_name
+    else:
+        slug = re.sub(r"[^a-zA-Z0-9._-]+", "_", model_name)
+        ct2_dir = os.path.expanduser(f"~/.cache/huggingface/hub/{slug}-ct2-int8")
+        if model_name == "vinai/PhoWhisper-medium":
+            legacy_dir = os.path.expanduser("~/.cache/huggingface/hub/phowhisper-medium-ct2-int8")
+            if os.path.isfile(os.path.join(legacy_dir, "model.bin")):
+                ct2_dir = legacy_dir
+
+        if not os.path.isfile(os.path.join(ct2_dir, "model.bin")):
+            print(f"[Coarse ASR - VI] Preparing CTranslate2 int8 model from {model_name}...")
+            src_dir = snapshot_download(model_name)
+            converter = resolve_binary("ct2-transformers-converter")
+            os.makedirs(ct2_dir, exist_ok=True)
+            copy_candidates = [
+                f for f in [
+                    "preprocessor_config.json", "tokenizer_config.json", "vocab.json",
+                    "merges.txt", "normalizer.json", "added_tokens.json", "special_tokens_map.json",
+                ]
+                if os.path.exists(os.path.join(src_dir, f))
+            ]
+            cmd = [converter, "--model", src_dir, "--output_dir", ct2_dir, "--quantization", "int8", "--force"]
+            if copy_candidates:
+                cmd += ["--copy_files", *copy_candidates]
+            subprocess.check_call(cmd)
+            tok_src = os.path.join(src_dir, "tokenizer.json")
+            if os.path.exists(tok_src):
+                shutil.copy2(tok_src, os.path.join(ct2_dir, "tokenizer.json"))
+
+    print(f"[Coarse ASR - VI] Running {model_name} (CTranslate2 int8, faster-whisper)...")
+    audio_arr, _ = sf.read(audio_wav, dtype="float32")
+    model = WhisperModel(ct2_dir, device="cpu", compute_type="int8")
+    segs_iter, _info = model.transcribe(
+        audio_arr,
+        language="vi",
+        beam_size=2,
+        word_timestamps=True,
+        condition_on_previous_text=False,
+        vad_filter=True,
+        no_speech_threshold=0.6,
+        log_prob_threshold=-1.0,
+        compression_ratio_threshold=2.0,
+    )
+
+    words = []
+    seg_count = 0
+    for seg in segs_iter:
+        seg_dur = max(0.0, float(seg.end) - float(seg.start))
+        raw_txt = (seg.text or "").strip()
+        # Filter Whisper hallucinations on sub-second SFX/noise bursts
+        if seg_dur < 0.35 and len(raw_txt.split()) >= 4:
+            continue
+        seg_count += 1
+        if getattr(seg, "words", None):
+            for w in seg.words:
+                txt = (w.word or "").strip()
+                if not txt:
+                    continue
+                phon = normalize_phonetics(txt, "vi")
+                if not phon:
+                    continue
+                ws = float(w.start)
+                we = max(ws + 0.05, float(w.end))
+                words.append({"text": txt, "phon": phon, "start": round(ws, 3), "end": round(we, 3)})
+        else:
+            toks = [t for t in raw_txt.split() if t.strip()]
+            if toks:
+                dur = max(0.4, seg_dur)
+                step = dur / len(toks)
+                for k, t in enumerate(toks):
+                    phon = normalize_phonetics(t, "vi")
+                    if phon:
+                        ws = round(float(seg.start) + k * step, 3)
+                        we = round(float(seg.start) + (k + 1) * step, 3)
+                        words.append({"text": t, "phon": phon, "start": ws, "end": max(ws + 0.05, we)})
+
+    del model
+    gc.collect()
+    print(f"[Coarse ASR - VI] Transcribed {seg_count} segments -> {len(words)} coarse VI words.")
+    return words
+
+
+def run_coarse_asr(audio_wav, lang, model_name="auto", context=""):
+    import gc
+    resolved_model = model_name
+    if not resolved_model or resolved_model == "auto":
+        resolved_model = "vinai/PhoWhisper-medium" if lang == "vi" else "Qwen/Qwen3-ASR-1.7B"
+
+    if lang == "vi" and not resolved_model.startswith("Qwen/"):
+        return run_coarse_asr_vi(audio_wav, model_name=resolved_model)
+
     import mlx_qwen3_asr
-    print(f"[Coarse ASR] Running {model_name} (lang={lang}) on Apple Silicon MLX...")
+    asr_lang = LANG_NAME_MAP.get(lang, lang) if lang == "vi" else lang
+    print(f"[Coarse ASR] Running {resolved_model} (lang={asr_lang}) on Apple Silicon MLX...")
     res = mlx_qwen3_asr.transcribe(
         audio_wav,
-        model=model_name,
-        language=lang,
+        model=resolved_model,
+        language=asr_lang,
         context=context or "",
         return_timestamps=True,
         return_chunks=True,
@@ -572,6 +683,210 @@ def cluster_continuous_sections(cue_windows, total_sec, max_sec_dur=None, split_
     return sections
 
 
+def _map_section_words_to_cues(abs_words, lyric_lines, c_start, c_end, cue_words_map):
+    """Maps continuous aligned word stream back to individual cues using Flutter's normalize_align."""
+    w_ptr = 0
+    for c_idx in range(c_start, c_end):
+        target_norm = normalize_align(lyric_lines[c_idx])
+        matched = []
+        acc = ""
+        while w_ptr < len(abs_words) and len(acc) < len(target_norm):
+            cand = abs_words[w_ptr]
+            cand_norm = normalize_align(cand["text"])
+            need = len(target_norm) - len(acc)
+            if cand_norm and len(cand_norm) > need and target_norm.startswith(acc + cand_norm[:need]):
+                # Aligner merged a token across the space-joined cue boundary; split cleanly.
+                raw_txt = cand["text"]
+                taken_norm = 0
+                split_raw_idx = 0
+                for r_i, ch in enumerate(raw_txt):
+                    cn = normalize_align(ch)
+                    if taken_norm + len(cn) > need:
+                        break
+                    taken_norm += len(cn)
+                    split_raw_idx = r_i + 1
+                    if taken_norm == need:
+                        break
+                left_txt = raw_txt[:split_raw_idx].strip()
+                right_txt = raw_txt[split_raw_idx:].strip()
+                if left_txt and right_txt and normalize_align(left_txt) == cand_norm[:need]:
+                    frac = need / len(cand_norm)
+                    split_t = round(cand["start"] + (cand["end"] - cand["start"]) * frac, 3)
+                    left_word = {"word": left_txt, "text": left_txt, "start": cand["start"], "end": split_t}
+                    right_word = {"word": right_txt, "text": right_txt, "start": split_t, "end": cand["end"]}
+                    matched.append(left_word)
+                    acc += normalize_align(left_txt)
+                    abs_words[w_ptr] = right_word
+                    continue
+            matched.append(cand)
+            acc += cand_norm
+            w_ptr += 1
+        cue_words_map[c_idx] = matched
+        if acc != target_norm:
+            print(f"    WARNING: Cue {c_idx + 1} norm mismatch ('{acc}' != '{target_norm}')")
+
+
+def _viterbi_ctc_align(log_probs, token_seqs, blank_id):
+    """
+    Runs vectorized NumPy CTC Viterbi forced alignment over emission log-probabilities.
+    Returns list of (start_frame, end_frame_exclusive) for each token in token_seqs.
+    """
+    T = log_probs.shape[0]
+    targets = [blank_id]
+    word_state_ranges = []
+    for seq in token_seqs:
+        w_start = len(targets)
+        for ch_id in seq:
+            targets.append(ch_id)
+            targets.append(blank_id)
+        w_end = len(targets) - 2  # last non-blank state for this word
+        word_state_ranges.append((w_start, w_end))
+
+    S = len(targets)
+    if S <= 1 or T == 0:
+        return [(0, max(1, T)) for _ in token_seqs]
+
+    # Minimum frames needed if every non-blank transition uses 1 frame
+    min_req = sum(len(s) for s in token_seqs)
+    if T < min_req:
+        spans = []
+        total_chars = max(1, min_req)
+        cur = 0
+        for seq in token_seqs:
+            span_f = max(1, int(round(T * len(seq) / total_chars)))
+            spans.append((min(T - 1, cur), min(T, cur + span_f)))
+            cur = min(T - 1, cur + span_f)
+        return spans
+
+    t_arr = np.asarray(targets, dtype=np.int32)
+    skip_mask = np.zeros(S, dtype=bool)
+    for s in range(2, S):
+        if t_arr[s] != blank_id and t_arr[s] != t_arr[s - 2]:
+            skip_mask[s] = True
+
+    neg_inf = -1e9
+    dp = np.full(S, neg_inf, dtype=np.float32)
+    dp[0] = log_probs[0, t_arr[0]]
+    if S > 1:
+        dp[1] = log_probs[0, t_arr[1]]
+
+    backptr = np.zeros((T, S), dtype=np.uint8)
+    for t in range(1, T):
+        emit = log_probs[t, t_arr]
+        stay = dp.copy()
+        best = stay
+        choice = np.zeros(S, dtype=np.uint8)
+
+        step1 = np.empty(S, dtype=np.float32)
+        step1[0] = neg_inf
+        step1[1:] = dp[:-1]
+        m1 = step1 > best
+        best = np.where(m1, step1, best)
+        choice = np.where(m1, 1, choice)
+
+        if S > 2:
+            step2 = np.full(S, neg_inf, dtype=np.float32)
+            step2[2:] = np.where(skip_mask[2:], dp[:-2], neg_inf)
+            m2 = step2 > best
+            best = np.where(m2, step2, best)
+            choice = np.where(m2, 2, choice)
+
+        dp = best + emit
+        backptr[t] = choice
+
+    # Backtrack from final blank or final char state
+    s = (S - 1) if (S == 1 or dp[S - 1] >= dp[S - 2]) else (S - 2)
+    path = np.empty(T, dtype=np.int32)
+    for t in range(T - 1, -1, -1):
+        path[t] = s
+        s -= int(backptr[t, s])
+
+    spans = []
+    for w_start, w_end in word_state_ranges:
+        frames = np.where((path >= w_start) & (path <= w_end))[0]
+        if len(frames) > 0:
+            spans.append((int(frames[0]), int(frames[-1]) + 1))
+        else:
+            prev_e = spans[-1][1] if spans else 0
+            spans.append((min(T - 1, prev_e), min(T, prev_e + 1)))
+    return spans
+
+
+def align_sections_vi_ctc(audio, sr, lyric_lines, sections, model_name="nguyenvulebinh/wav2vec2-base-vietnamese-250h"):
+    """Acoustic CTC forced alignment for Vietnamese using wav2vec2-base-vietnamese-250h."""
+    import gc
+    from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
+
+    device = "mps" if torch.backends.mps.is_available() else "cpu"
+    print(f"[VI CTC Aligner] Loading {model_name} on {device}...")
+    processor = Wav2Vec2Processor.from_pretrained(model_name)
+    model = Wav2Vec2ForCTC.from_pretrained(model_name).to(device)
+    model.eval()
+
+    vocab = processor.tokenizer.get_vocab()
+    blank_id = processor.tokenizer.pad_token_id
+    unk_id = vocab.get("<unk>", processor.tokenizer.unk_token_id)
+
+    def encode_vi_word(raw_w):
+        s = unicodedata.normalize("NFC", raw_w).lower()
+        ids = []
+        for ch in s:
+            if ch in vocab and vocab[ch] not in (blank_id, vocab.get("|")):
+                ids.append(vocab[ch])
+            elif ch.isalnum():
+                base = "".join(c for c in unicodedata.normalize("NFKD", ch.replace("đ", "d")) if not unicodedata.combining(c))
+                if base and base in vocab:
+                    ids.append(vocab[base])
+                elif unk_id is not None:
+                    ids.append(unk_id)
+        return ids or ([unk_id] if unk_id is not None else [blank_id])
+
+    cue_words_map = {}
+    for s_idx, (c_start, c_end, t_start, t_end) in enumerate(sections):
+        c_lines = lyric_lines[c_start:c_end]
+        clean_lines = [clean_for_align(l) for l in c_lines]
+        sec_text = " ".join(l for l in clean_lines if l)
+        if not sec_text:
+            continue
+
+        raw_words = [w for w in sec_text.split() if normalize_align(w)]
+        if not raw_words:
+            continue
+
+        a_s = int(t_start * sr)
+        a_e = min(len(audio), int(t_end * sr))
+        slice_audio = audio[a_s:a_e].astype(np.float32)
+        slice_dur = len(slice_audio) / sr
+
+        print(f"  Section {s_idx + 1}/{len(sections)} (Cues {c_start + 1}..{c_end}): [{t_start:.2f}s - {t_end:.2f}s]")
+        inputs = processor(slice_audio, sampling_rate=sr, return_tensors="pt", padding=False)
+        with torch.no_grad():
+            logits = model(inputs.input_values.to(device)).logits[0]
+            log_probs = torch.log_softmax(logits.float(), dim=-1).cpu().numpy()
+
+        T = log_probs.shape[0]
+        frame_sec = slice_dur / max(1, T)
+        token_seqs = [encode_vi_word(w) for w in raw_words]
+        spans = _viterbi_ctc_align(log_probs, token_seqs, blank_id)
+
+        abs_words = []
+        for w, (fs, fe) in zip(raw_words, spans):
+            abs_words.append({
+                "word": w,
+                "text": w,
+                "start": round(t_start + fs * frame_sec, 3),
+                "end": round(t_start + fe * frame_sec, 3),
+            })
+
+        _map_section_words_to_cues(abs_words, lyric_lines, c_start, c_end, cue_words_map)
+
+    del model, processor
+    gc.collect()
+    if torch.backends.mps.is_available():
+        torch.mps.empty_cache()
+    return cue_words_map
+
+
 def align_sections_ultra(audio, sr, lyric_lines, sections, lang):
     from qwen_fa_ultra import LocalBoundaryAligner
 
@@ -612,46 +927,7 @@ def align_sections_ultra(audio, sr, lyric_lines, sections, lang):
                 "end": round(t_start + item.end_time, 3),
             })
 
-        # Map continuous word stream back to individual cues using Flutter's exact normalize_align
-        w_ptr = 0
-        for c_idx in range(c_start, c_end):
-            target_norm = normalize_align(lyric_lines[c_idx])
-            matched = []
-            acc = ""
-            while w_ptr < len(abs_words) and len(acc) < len(target_norm):
-                cand = abs_words[w_ptr]
-                cand_norm = normalize_align(cand["text"])
-                need = len(target_norm) - len(acc)
-                if cand_norm and len(cand_norm) > need and target_norm.startswith(acc + cand_norm[:need]):
-                    # LocalBoundaryAligner merged a token across the space-joined cue boundary; split cleanly.
-                    raw_txt = cand["text"]
-                    taken_norm = 0
-                    split_raw_idx = 0
-                    for r_i, ch in enumerate(raw_txt):
-                        cn = normalize_align(ch)
-                        if taken_norm + len(cn) > need:
-                            break
-                        taken_norm += len(cn)
-                        split_raw_idx = r_i + 1
-                        if taken_norm == need:
-                            break
-                    left_txt = raw_txt[:split_raw_idx].strip()
-                    right_txt = raw_txt[split_raw_idx:].strip()
-                    if left_txt and right_txt and normalize_align(left_txt) == cand_norm[:need]:
-                        frac = need / len(cand_norm)
-                        split_t = round(cand["start"] + (cand["end"] - cand["start"]) * frac, 3)
-                        left_word = {"word": left_txt, "text": left_txt, "start": cand["start"], "end": split_t}
-                        right_word = {"word": right_txt, "text": right_txt, "start": split_t, "end": cand["end"]}
-                        matched.append(left_word)
-                        acc += normalize_align(left_txt)
-                        abs_words[w_ptr] = right_word
-                        continue
-                matched.append(cand)
-                acc += cand_norm
-                w_ptr += 1
-            cue_words_map[c_idx] = matched
-            if acc != target_norm:
-                print(f"    WARNING: Cue {c_idx + 1} norm mismatch ('{acc}' != '{target_norm}')")
+        _map_section_words_to_cues(abs_words, lyric_lines, c_start, c_end, cue_words_map)
 
     return cue_words_map
 
@@ -831,7 +1107,8 @@ def main():
     parser.add_argument("--lyrics-file", help="Path to authentic lyrics/LRC file (or 'auto' for LRCLIB)")
     parser.add_argument("--title", default="", help="Video/song title (used for LRCLIB search)")
     parser.add_argument("--artist", default="", help="Channel/artist name (used for LRCLIB search)")
-    parser.add_argument("--asr-model", default="Qwen/Qwen3-ASR-1.7B", help="ASR model for asr/lyrics/lrc modes")
+    parser.add_argument("--asr-model", default="auto", help="ASR model ('auto' selects vinai/PhoWhisper-medium for vi, Qwen/Qwen3-ASR-1.7B otherwise)")
+    parser.add_argument("--vi-aligner-model", default="nguyenvulebinh/wav2vec2-base-vietnamese-250h", help="Vietnamese CTC forced-aligner model")
     parser.add_argument("--context", default="", help="Optional space-separated domain/character vocabulary context for Qwen3-ASR")
     parser.add_argument("--min-auth-score", type=float, default=0.40, help="Min phonetic authenticity score (0-1)")
     parser.add_argument("--skip-auth-check", action="store_true", help="Skip phonetic authenticity gate")
@@ -931,7 +1208,13 @@ def main():
     sections = cluster_continuous_sections(cue_windows, total_sec, max_sec_dur=args.max_sec_dur)
     print(f"[{video_id}] Clustered {len(lyric_lines)} cues into {len(sections)} continuous sections.")
 
-    cue_words_map = align_sections_ultra(audio, sr, lyric_lines, sections, lang)
+    if lang == "vi":
+        cue_words_map = align_sections_vi_ctc(audio, sr, lyric_lines, sections, model_name=args.vi_aligner_model)
+        provider_name = "phowhisper_vi_wav2vec2_ctc"
+    else:
+        cue_words_map = align_sections_ultra(audio, sr, lyric_lines, sections, lang)
+        provider_name = "qwen3_fa_ultra_localhead"
+
     segments, all_words = apply_timing_invariants(
         lyric_lines,
         cue_words_map,
@@ -943,7 +1226,7 @@ def main():
         "videoId": video_id,
         "language": lang,
         "source": "ai",
-        "provider": "qwen3_fa_ultra_localhead",
+        "provider": provider_name,
         "timestamp": int(time.time() * 1000),
         "segments": segments,
         "wordTimings": all_words,

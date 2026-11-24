@@ -145,7 +145,7 @@ The following 37 core music tracks have been upgraded to **Qwen3-ForcedAligner-U
 | `BXB26PzV31k` | Mori Calliope - end of a life | en | 112 | 716 | ✅ Ultra Local Boundary + Curated VI/JA (0 collapsed, 0 collisions) |
 | `dQw4w9WgXcQ` | Rick Astley - Never Gonna Give You Up | en | 64 | 369 | ✅ Ultra Local Boundary (0 collapsed, 0 collisions) |
 | `RvIlfvCNUew` | AmaLee - I Say Yes | en | 48 | 306 | ✅ Ultra Local Boundary + Curated VI/JA (0 collapsed, 0 collisions) |
-| `9eL4Scy4-Ys` | Đạt G - Ác Mộng Đẹp | vi | 66 | 448 | ✅ Ultra Local Boundary (0 collapsed, 0 collisions) |
+| `9eL4Scy4-Ys` | Đạt G - Ác Mộng Đẹp | vi | 47 | 469 | ✅ PhoWhisper + wav2vec2 VI CTC + Curated EN/JA (0 collapsed, 0 collisions) |
 
 | Video ID | Song / Artist | Lang | Duration | Sub Languages |
 | :--- | :--- | :---: | :---: | :---: |

@@ -1,16 +1,18 @@
 ---
 name: sync-video-subtitles
-description: "Use when creating, synchronizing, or fixing transcripts and dual subtitles for any YouTube video (podcasts, educational lectures, vlogs, anime/drama episodes, interviews, news, or music/songs) across JA, EN, ZH, KO, and VI. Covers audio extraction, Qwen3-ASR clause chunking, Qwen3-ForcedAligner-Ultra (LocalBoundaryAligner on Apple Silicon MPS) continuous section alignment, zero-ASR refine-only mode, phonetic authenticity gating, morphological tokenization, Flutter subtitleWordRanges & matchesSubtitleSource verification, canonical Cloudflare R2 upload, and D1 sync."
+description: "Use when creating, synchronizing, or fixing transcripts and dual subtitles for any YouTube video (podcasts, educational lectures, vlogs, anime/drama episodes, interviews, news, or music/songs) across JA, EN, ZH, KO, and VI. Routes JA/EN/ZH/KO to Qwen3-ASR + Qwen3-ForcedAligner-Ultra and VI (Vietnamese) to VinAI PhoWhisper ASR + wav2vec2-base-vietnamese-250h CTC forced aligner, with phonetic authenticity gating, morphological tokenization, Flutter subtitleWordRanges & matchesSubtitleSource verification, canonical Cloudflare R2 upload, and D1 sync."
 metadata:
   author: voca
-  version: "3.3.0"
+  version: "3.4.0"
 ---
 
-# Sync Video Subtitles & Acoustic Alignment Skill (v3.3)
+# Sync Video Subtitles & Acoustic Alignment Skill (v3.4)
 
-Produces **millisecond-accurate, synchronized subtitles** with Furigana/Romaji/Pinyin/Hangul morphological tokens, real-time word-level `wordTimings`, dual-language translations, and automated proficiency level grading (JLPT / CEFR / HSK / TOPIK) across **any YouTube video** (spoken content, anime/drama, or music) using a **single canonical two-command pipeline**:
+Produces **millisecond-accurate, synchronized subtitles** with Furigana/Romaji/Pinyin/Hangul/VI-compound morphological tokens, real-time word-level `wordTimings`, dual-language translations, and automated proficiency level grading (JLPT / CEFR / HSK / TOPIK) across **any YouTube video** (spoken content, anime/drama, or music) using a **single canonical two-command pipeline**:
 
-1. **Transcribe & Align**: `scripts/ultra_align.py` (`Qwen/Qwen3-ASR-1.7B` + `17slever17/Qwen3-ForcedAligner-Ultra` `LocalBoundaryAligner`)
+1. **Transcribe & Align**: `scripts/ultra_align.py`
+   - **JA / EN / ZH / KO**: `Qwen/Qwen3-ASR-1.7B` + `17slever17/Qwen3-ForcedAligner-Ultra` (`LocalBoundaryAligner`)
+   - **VI (Vietnamese)**: `vinai/PhoWhisper-medium` ASR + `nguyenvulebinh/wav2vec2-base-vietnamese-250h` CTC Viterbi aligner + Vietnamese phonetic matcher (`đ->d`, digraph normalization)
 2. **Verify & Publish**: `scripts/verify_and_publish.js` (exact Flutter & backend contract verifier + canonical R2/D1 publisher)
 
 > [!CAUTION]
@@ -146,7 +148,7 @@ Always publish dual translations for both standard target languages correspondin
 ### ⚠️ INVARIANT 4: Canonical R2 Keys, Native/AI Separation & Shared Translation Identity
 - **Canonical R2 Keys (NEVER use underscores in R2 translation keys)**:
   - **Native track**: `transcripts/{videoId}/{lang}.json` — `source: "human_aligned"`, **NO `wordTimings`**.
-  - **AI track**: `transcripts/{videoId}/{lang}.ai.json` — `source: "ai"`, `provider: "qwen3_fa_ultra_localhead"`, **WITH** per-segment and top-level `wordTimings`.
+  - **AI track**: `transcripts/{videoId}/{lang}.ai.json` — `source: "ai"`, `provider: "qwen3_fa_ultra_localhead"` (`ja`/`en`/`zh`/`ko`) or `"phowhisper_vi_wav2vec2_ctc"` (`vi`), **WITH** per-segment and top-level `wordTimings`.
   - **Dual translations**: `translations/{videoId}/{lang}-{target}.json` (**HYPHEN `-`**, e.g. `ja-vi.json`, `en-ja.json` — required by `functions-src/utils/translation-cache.js:111`).
 - **Flutter `matchesSubtitleSource` Contract**:
   - In `voca_flutter/lib/utils/subtitle_track_identity.dart`, cached translations only bind to a cue if text matches AND $|\text{cue.start} - \text{cached.start}| \le 0.25\text{s}$ AND $|\text{cue.duration} - \text{cached.duration}| \le 0.5\text{s}$.
