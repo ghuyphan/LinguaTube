@@ -158,7 +158,7 @@ CREATE INDEX IF NOT EXISTS idx_leaderboard_updated ON leaderboard(updated_at);
 
 CREATE TABLE IF NOT EXISTS video_grading_jobs (
     video_id TEXT NOT NULL,
-    language TEXT NOT NULL CHECK (language IN ('ja','zh','ko','en')),
+    language TEXT NOT NULL CHECK (language IN ('ja','zh','ko','en','vi')),
     revision TEXT NOT NULL,
     grader_version INTEGER NOT NULL,
     published_at INTEGER NOT NULL,
