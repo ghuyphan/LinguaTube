@@ -2,9 +2,14 @@ import catalog from '../data/video-grading-catalog.mjs';
 import { labelToTier, scoreToLevelLabel } from '../data/video-info-db.js';
 import { estimateTranscriptLevel } from './level-estimator.js';
 
-const normalize = text => text.toLowerCase().replace(/[~～〜。、・….\s?？！!,，:：;；"“”‘’'()\[\]（）【】+＋\-－\x60]/g, '');
+const normalize = text => text.toLowerCase().replace(/[\s~～〜。、・·….,，?？！!:：;；"“”‘’'()\[\]{}（）【】+＋\-－_/／|#\x60]+/g, '');
 const pos = token => (token.partOfSpeech || '').toLowerCase();
-const noun = token => /^(n|r$|prp$|pronoun$)|noun|名詞|명사/.test(pos(token));
+const NOUN_POS = new Set(['n', 'nn', 'nns', 'nnp', 'nnps', 'nng', 'nnb', 'np', 'nr', 'ns', 'nt', 'nz', 'noun', 'propernoun', 'pronoun', 'prp', 'r']);
+const ADJ_POS = new Set(['a', 'ad', 'an', 'adj', 'adjective', 'jj', 'jjr', 'jjs', 'va']);
+const ZH_MEASURES = new Set('个 位 本 张 件 条 只 辆 间 块 元 斤 次 遍 天 年 月 点 分 种 些 杯 瓶 碗 双 把 台 家 门 首 岁'.split(' '));
+const ZH_TIMES = new Set('今天 明天 昨天 现在 以后 以前 时候 小时 分钟 星期 周 早上 晚上 中午 下午 上午 刚才 去年 明年 今年 三天 两天 一年 两年 三年'.split(' '));
+const ZH_NUM_RE = /^[零一二两三四五六七八九十百千万亿\d]+$/;
+const noun = token => { const p = pos(token); return NOUN_POS.has(p) || p.startsWith('noun') || p.includes('名詞') || p.includes('명사'); };
 const endingNoun = token => /^(noun|n$|nng$|nnp$)|名詞|명사/.test(pos(token));
 const verb = token => /^verb|動詞/.test(pos(token)) && !pos(token).includes('助動詞');
 const sentenceEnd = token => token.isPunctuation && /^[。！？.!?]$/.test(token.surface);
@@ -12,16 +17,37 @@ const adverb = token => /^(adverb|rb|rbr|rbs)$/.test(pos(token));
 const own = (map, key) => Object.hasOwn(map, key) ? map[key] : undefined;
 const participles = new Set('been done gone seen taken come made read said bought brought left felt found written spoken eaten'.split(' '));
 
-function matchesSlot(slot, token, surface, base) {
+function endsWithRieulBatchim(surface) {
+    if (!surface) return false;
+    const code = surface.charCodeAt(surface.length - 1);
+    return code >= 0xAC00 && code <= 0xD7A3 && ((code - 0xAC00) % 28) === 8;
+}
+
+function matchConcat(surfaces, tokens, target, from) {
+    for (let i = from; i < surfaces.length; i++) {
+        if (tokens[i].isPunctuation || !surfaces[i]) continue;
+        let acc = '';
+        for (let j = i; j < surfaces.length && j < i + 3; j++) {
+            if (tokens[j].isPunctuation) break;
+            acc += surfaces[j];
+            if (acc === target) return [i, j];
+            if (acc.length >= target.length) break;
+        }
+    }
+    return null;
+}
+
+function matchesSlot(slot, token, surface, base, allowOpenUntagged = false) {
     if (slot.op === 'surf') return surface === slot.val || base === slot.val;
     if (slot.op !== 'pos') return true;
+    const p = pos(token);
     switch (slot.pos) {
-        case 'noun': return noun(token);
-        case 'verb': return /^v|verb|動詞|동사/.test(pos(token));
-        case 'adj': return /^a|adj|形容詞|형용사/.test(pos(token));
-        case 'num': return /^(m|cd)$|num/.test(pos(token)) || /^\d+$/.test(token.surface);
-        case 'measure': return /^q$|measure|助数詞/.test(pos(token));
-        case 'time': return /^t$|time|temporal/.test(pos(token));
+        case 'noun': return p ? noun(token) : allowOpenUntagged;
+        case 'verb': return p ? (/^(v$|vb|vv$|vx$)|verb|동사/.test(p) || (p.includes('動詞') && !p.includes('助動詞'))) : allowOpenUntagged;
+        case 'adj': return p ? (ADJ_POS.has(p) || /adj|形容詞|형용사/.test(p)) : allowOpenUntagged;
+        case 'num': return /^(m|cd)$|num/.test(p) || ZH_NUM_RE.test(token.surface);
+        case 'measure': return /^q$|measure|助数詞/.test(p) || (!p && ZH_MEASURES.has(token.surface));
+        case 'time': return /^t$|time|temporal/.test(p) || (!p && (ZH_TIMES.has(token.surface) || /(年|月|天|小时|分钟)$/.test(token.surface)));
         default: return true;
     }
 }
@@ -60,7 +86,10 @@ function tenseMatches(tokens, surfaces, sequences, add) {
 }
 
 function grammarLevels(tokens, lang) {
-    const { sequences, endings, auxiliaries, correlatives, templates, stoplist } = catalog[lang];
+    const {
+        sequences, endings, auxiliaries, correlatives, templates, stoplist,
+        phrasalVerbs = null, guardedSequences = null
+    } = catalog[lang];
     const surfaces = tokens.map(token => normalize(token.surface));
     const bases = tokens.map(token => normalize(token.baseForm || token.surface));
     const matches = [];
@@ -91,19 +120,32 @@ function grammarLevels(tokens, lang) {
     }
     for (const [connective, stem, pattern] of auxiliaries) {
         for (let i = 0; i + 1 < tokens.length; i++) {
-            if (!tokens[i].isPunctuation && !tokens[i + 1].isPunctuation && !endingNoun(tokens[i]) &&
-                tokens[i].surface.endsWith(connective) && tokens[i + 1].surface.startsWith(stem)) {
-                add(pattern, i, i + 1, [i, i + 1]);
+            if (tokens[i].isPunctuation || tokens[i + 1].isPunctuation) continue;
+            if (connective === '수') {
+                if (tokens[i].surface !== '수' || !tokens[i + 1].surface.startsWith(stem)) continue;
+                if (i === 0 || tokens[i - 1].isPunctuation || !endsWithRieulBatchim(tokens[i - 1].surface)) continue;
+            } else {
+                if (noun(tokens[i])) continue;
+                if (!tokens[i].surface.endsWith(connective) || !tokens[i + 1].surface.startsWith(stem)) continue;
             }
+            add(pattern, i, i + 1, [i, i + 1]);
         }
     }
     for (const [head, tail, pattern] of correlatives) {
-        for (let start = surfaces.indexOf(head); start >= 0;) {
-            const end = surfaces.indexOf(tail, start + 1);
-            if (end < 0) break;
-            const broken = tokens.slice(start + 1, end).some(sentenceEnd);
-            if (!broken) add(pattern, start, end, [start, end]);
-            start = surfaces.indexOf(head, !broken && head === tail ? end + 1 : start + 1);
+        let cursor = 0;
+        while (cursor < tokens.length) {
+            const headHit = matchConcat(surfaces, tokens, head, cursor);
+            if (!headHit) break;
+            const tailHit = matchConcat(surfaces, tokens, tail, headHit[1] + 1);
+            if (!tailHit) break;
+            const broken = tokens.slice(headHit[1] + 1, tailHit[0]).some(sentenceEnd);
+            if (!broken) {
+                const indices = [];
+                for (let k = headHit[0]; k <= headHit[1]; k++) indices.push(k);
+                for (let k = tailHit[0]; k <= tailHit[1]; k++) indices.push(k);
+                add(pattern, headHit[0], tailHit[1], indices);
+            }
+            cursor = (!broken && head === tail) ? tailHit[1] + 1 : headHit[0] + 1;
         }
     }
     if (lang === 'en') tenseMatches(tokens, surfaces, sequences, add);
@@ -111,32 +153,83 @@ function grammarLevels(tokens, lang) {
         if (tokens[i].isPunctuation) continue;
         for (const { pattern, anchorSlot, slots } of own(templates, surfaces[i]) ?? own(templates, bases[i]) ?? []) {
             const indices = [];
+            const allowOpenUntagged = slots.filter(s => s.op === 'surf').length >= 2;
             const accepts = (slot, j) => tokens[j] && !tokens[j].isPunctuation &&
-                matchesSlot(slot, tokens[j], surfaces[j], bases[j]);
+                matchesSlot(slot, tokens[j], surfaces[j], bases[j], allowOpenUntagged);
+            let matchedSurf = 0;
+            let usedUntaggedOpen = false;
             let left = i - 1;
             let valid = true;
-            for (let s = anchorSlot - 1; s >= 0; s--, left--) {
-                if (!accepts(slots[s], left)) { valid = false; break; }
+            for (let s = anchorSlot - 1; s >= 0; s--) {
+                const min = slots[s].min ?? 1;
+                if (!accepts(slots[s], left)) {
+                    if (min === 0) continue;
+                    valid = false;
+                    break;
+                }
+                if (slots[s].op === 'surf') matchedSurf++;
+                if (slots[s].op === 'pos' && !pos(tokens[left]) && /^(noun|verb|adj)$/.test(slots[s].pos)) usedUntaggedOpen = true;
                 if (slots[s].bind !== false && !noun(tokens[left])) indices.push(left);
+                left--;
             }
             if (!valid) continue;
+            matchedSurf++;
             if (slots[anchorSlot].bind !== false) indices.push(i);
             let right = i + 1;
             for (const slot of slots.slice(anchorSlot + 1)) {
                 let count = 0;
-                if (slot.op === 'gap') {
-                    while (right < tokens.length && count++ < (slot.max ?? 1) && !sentenceEnd(tokens[right])) right++;
-                    continue;
-                }
-                if (right >= tokens.length) { valid = false; break; }
+                const min = slot.min ?? 1;
                 while (count < (slot.max ?? 1) && accepts(slot, right)) {
+                    if (slot.op === 'surf') matchedSurf++;
+                    if (slot.op === 'pos' && !pos(tokens[right]) && /^(noun|verb|adj)$/.test(slot.pos)) usedUntaggedOpen = true;
                     if (slot.bind !== false && !noun(tokens[right])) indices.push(right);
                     right++;
                     count++;
                 }
-                if (count < (slot.min ?? 1)) { valid = false; break; }
+                if (count < min) { valid = false; break; }
             }
-            if (valid && indices.length) add(pattern, left + 1, right - 1, indices);
+            if (valid && indices.length && (!usedUntaggedOpen || matchedSurf >= 2)) add(pattern, left + 1, right - 1, indices);
+        }
+    }
+    if (phrasalVerbs) {
+        const isVerbToken = t => !pos(t) || /^(v$|vb|vv$|vx$)|verb/.test(pos(t));
+        for (let i = 0; i + 1 < tokens.length; i++) {
+            if (tokens[i].isPunctuation || !isVerbToken(tokens[i])) continue;
+            const list = own(phrasalVerbs, bases[i]) ?? own(phrasalVerbs, surfaces[i]);
+            if (!list) continue;
+            for (const [particle, separable, pattern] of list) {
+                const maxJ = separable ? Math.min(tokens.length - 1, i + 4) : i + 1;
+                for (let j = i + 1; j <= maxJ; j++) {
+                    if (tokens[j].isPunctuation) break;
+                    if (surfaces[j] === particle) {
+                        add(pattern, i, j, [i, j]);
+                        break;
+                    }
+                    if (j > i + 1 && pos(tokens[j]) && isVerbToken(tokens[j]) && !noun(tokens[j])) break;
+                }
+            }
+        }
+    }
+    if (guardedSequences) {
+        for (const rule of guardedSequences) {
+            let cursor = 0;
+            while (cursor < tokens.length) {
+                const hit = matchConcat(surfaces, tokens, rule.key, cursor);
+                if (!hit) break;
+                const [start, end] = hit;
+                cursor = end + 1;
+                if (rule.excludePrev && start > 0 && !tokens[start - 1].isPunctuation && rule.excludePrev.includes(surfaces[start - 1])) continue;
+                if (rule.excludeNext && end + 1 < tokens.length && !tokens[end + 1].isPunctuation && rule.excludeNext.includes(surfaces[end + 1])) continue;
+                if (rule.prevPos && (start === 0 || tokens[start - 1].isPunctuation || !rule.prevPos.includes(pos(tokens[start - 1])))) continue;
+                if (rule.nextPos && (end + 1 >= tokens.length || tokens[end + 1].isPunctuation || !rule.nextPos.includes(pos(tokens[end + 1])))) continue;
+                if (rule.sentenceEnd) {
+                    const atEnd = end === tokens.length - 1 || (tokens[end + 1].isPunctuation && (sentenceEnd(tokens[end + 1]) || tokens[end + 1].surface === ','));
+                    if (!atEnd) continue;
+                }
+                const indices = [];
+                for (let k = start; k <= end; k++) indices.push(k);
+                add(rule.pattern, start, end, indices);
+            }
         }
     }
     matches.sort((a, b) => (b.end - b.start) - (a.end - a.start) || a.start - b.start);

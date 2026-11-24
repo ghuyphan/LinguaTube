@@ -6,7 +6,7 @@ import { SUPPORTED_LEARNING_LANGUAGES } from '../utils/utils.js';
 
 export const serverGradingActive = env => env?.SERVER_VIDEO_GRADING === '1';
 export const serverGradingEnabled = env => serverGradingActive(env) || env?.SERVER_VIDEO_GRADING === 'paused';
-export const GRADER_VERSION = 1;
+export const GRADER_VERSION = 2;
 export const gradingLanguages = SUPPORTED_LEARNING_LANGUAGES;
 
 export async function transcriptRevision(segments) {

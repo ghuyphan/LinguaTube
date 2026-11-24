@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { fixture } from './fixtures/transcription-db.mjs';
 import { scoreVideoTranscript } from '../functions-src/utils/video-grader.js';
-import { enqueueVideoGrade, transcriptRevision } from '../functions-src/services/video-grading-jobs.js';
+import { enqueueVideoGrade, GRADER_VERSION, transcriptRevision } from '../functions-src/services/video-grading-jobs.js';
 import { runVideoGrade } from '../functions-src/services/video-grading.js';
 import { onRequestGet as status } from '../functions-src/api/video-level.js';
 import { onRequest as heal } from '../functions-src/api/heal-levels.js';
@@ -23,6 +23,69 @@ for (const { language, text, tokens, breakdown, score, level } of parity) {
         assert.equal(grade.speechRateUnit, language === 'en' ? 'wpm' : 'cpm');
     });
 }
+
+test('everyday English words do not inject C1/B2 grammar hits into server video grading', () => {
+    const words = ['I', 'had', 'dinner', 'so', 'I', 'got', 'tired', 'and', 'she', 'has', 'a', 'cat'];
+    const grade = scoreVideoTranscript(
+        [{ text: words.join(' '), tokens: words.map(surface => ({ surface })), duration: 4 }],
+        'en',
+    );
+    assert.equal(grade.grammarCount, 0);
+    assert.deepEqual(grade.breakdown, {});
+});
+
+test('server grader matches POS-less Korean auxiliaries and Chinese multi-token correlatives', () => {
+    const koGrade = scoreVideoTranscript(
+        [{ text: '갈 수 있어요', tokens: [{ surface: '갈' }, { surface: '수' }, { surface: '있어요' }], duration: 2 }],
+        'ko',
+    );
+    assert.equal(koGrade.grammarCount, 1);
+
+    const zhGrade = scoreVideoTranscript(
+        [{ text: '不但便宜而且好吃', tokens: [{ surface: '不但' }, { surface: '便宜' }, { surface: '而且' }, { surface: '好吃' }], duration: 2 }],
+        'zh',
+    );
+    assert.equal(zhGrade.grammarCount, 1);
+});
+
+test('server grader matches unified EN phrasal verbs and VI guarded/split rules', () => {
+    const enPv = scoreVideoTranscript(
+        [{
+            text: 'She gave it up',
+            tokens: [
+                { surface: 'She', partOfSpeech: 'Pronoun' },
+                { surface: 'gave', baseForm: 'give', partOfSpeech: 'Verb' },
+                { surface: 'it', partOfSpeech: 'Pronoun' },
+                { surface: 'up', partOfSpeech: 'Preposition' },
+            ],
+            duration: 2,
+        }],
+        'en',
+    );
+    assert.equal(enPv.grammarCount, 1);
+    assert.deepEqual(enPv.breakdown, { 'CEFR B1': 1 });
+
+    const viGrade = scoreVideoTranscript(
+        [{
+            text: 'Mặc dù trời mưa nhưng tôi đã tìm ra nhé!',
+            tokens: [
+                { surface: 'Mặc dù' },
+                { surface: 'trời', partOfSpeech: 'Noun' },
+                { surface: 'mưa', partOfSpeech: 'Verb' },
+                { surface: 'nhưng' },
+                { surface: 'tôi', partOfSpeech: 'Pronoun' },
+                { surface: 'đã' },
+                { surface: 'tìm', partOfSpeech: 'Verb' },
+                { surface: 'ra', partOfSpeech: 'Preposition' },
+                { surface: 'nhé', partOfSpeech: 'Particle' },
+                { surface: '!', isPunctuation: true },
+            ],
+            duration: 3,
+        }],
+        'vi',
+    );
+    assert.ok(viGrade.grammarCount >= 3, `Expected >= 3 VI grammar matches, got ${viGrade.grammarCount}`);
+});
 
 async function catalog(t) {
     const { db, sqlite } = await fixture(t);
@@ -52,7 +115,7 @@ test('duplicate jobs share a lease, survive an expired claim, and publish one co
     assert.equal(claims.filter(Boolean).length, 1);
     assert.equal(job().attempts, 1);
     assert.equal(job().state, 'ready');
-    assert.equal(grades().en.graderVersion, 1);
+    assert.equal(grades().en.graderVersion, GRADER_VERSION);
     assert.equal(grades().en.transcriptRevision, await transcriptRevision(cues));
     assert.equal(await transcriptRevision(cues.map(c => ({ ...c, tokens: [{ surface: 'I' }] }))), job().revision);
     assert.equal((await getStatus()).level, grades().en.level);
@@ -125,11 +188,11 @@ test('large shifts require review and rollback restores only the exact published
     const rollbackVersion = async () => (await heal({
         request: new Request('https://example.test/api/heal-levels?action=rollback', {
             method: 'POST', headers: { 'x-admin-secret': 'fixture-admin' },
-            body: JSON.stringify({ graderVersion: 1, dryRun: false })
+            body: JSON.stringify({ graderVersion: GRADER_VERSION, dryRun: false })
         }), env
     })).json();
     assert.equal((await rollbackVersion()).restored, 1);
-    const newer = { ...result, graderVersion: 2 };
+    const newer = { ...result, graderVersion: GRADER_VERSION + 1 };
     sqlite.prepare('UPDATE video_languages SET levels=? WHERE video_id=?')
         .run(JSON.stringify({ en: newer, ja: 'JLPT N2' }), videoId);
     assert.equal((await rollbackVersion()).restored, 0);
