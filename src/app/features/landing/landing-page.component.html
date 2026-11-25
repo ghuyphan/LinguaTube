@@ -1,173 +1,305 @@
 <div class="landing-page">
-  <!-- Hero -->
+  <!-- Opening: Clean Editorial Masthead + Working YouTube Launcher + Matte Interactive Workbench -->
   <section class="landing-hero">
-    <div class="landing-hero__copy">
-      <span class="badge badge--accent landing-eyebrow">
-        <app-icon name="sparkles" [size]="14" />
-        <span>{{ copy().eyebrow }}</span>
-      </span>
-
-      <h1 class="landing-hero__title">{{ copy().heroTitle }}</h1>
-      <p class="landing-hero__subtitle">{{ copy().heroSubtitle }}</p>
-
-      <div class="landing-hero__actions">
-        <a class="btn btn-primary landing-cta" routerLink="/video">
-          <app-icon name="play-circle" [size]="18" />
-          <span>{{ copy().launchWebApp }}</span>
-        </a>
-        <a class="btn btn-secondary landing-cta" href="#download" (click)="scrollToDownload($event)">
-          <app-icon name="download" [size]="18" />
-          <span>{{ copy().getMobileApp }}</span>
-        </a>
+    <div class="hero-masthead">
+      <div class="hero-masthead__lead">
+        <h1 class="landing-hero__title">{{ copy().heroTitle }}</h1>
       </div>
 
-      <p class="landing-hero__note">
-        <app-icon name="check-circle" [size]="14" />
-        <span>{{ copy().freeToStartNote }}</span>
-      </p>
+      <div class="hero-masthead__action">
+        <p class="landing-hero__subtitle">{{ copy().heroSubtitle }}</p>
+
+        <form class="hero-launcher" (submit)="openYoutubeUrl($event)" novalidate>
+          <div class="hero-launcher__field" [class.has-error]="youtubeError()">
+            <app-icon name="link" [size]="16" class="hero-launcher__icon" />
+            <input
+              type="url"
+              name="youtubeUrl"
+              class="hero-launcher__input"
+              [value]="youtubeInput()"
+              [placeholder]="copy().urlPlaceholder"
+              [attr.aria-label]="copy().urlPlaceholder"
+              [attr.aria-invalid]="youtubeError()"
+              (input)="onYoutubeInputChange($event)"
+            />
+            <button type="submit" class="btn btn-primary hero-launcher__submit">
+              <app-icon name="play" [size]="14" />
+              <span>{{ copy().urlSubmit }}</span>
+            </button>
+          </div>
+          @if (youtubeError()) {
+            <p class="hero-launcher__error" role="alert">{{ copy().urlError }}</p>
+          }
+        </form>
+
+        <div class="hero-links">
+          <a class="hero-text-link" routerLink="/video">
+            <span>{{ copy().launchWebApp }}</span>
+            <app-icon name="arrow-right" [size]="15" />
+          </a>
+          <span class="hero-links__sep" aria-hidden="true">·</span>
+          <a class="hero-text-link" href="#download" (click)="scrollToDownload($event)">
+            <span>{{ copy().getMobileApp }}</span>
+          </a>
+          <span class="hero-links__note">{{ copy().freeToStartNote }}</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Interactive Workspace Preview Card (Voca UI showcase) -->
-    <div class="card landing-preview" aria-hidden="true">
-      <div class="landing-preview__top">
-        <span class="badge badge--primary">
-          <app-icon name="video" [size]="13" />
-          <span>{{ copy().previewTag }}</span>
-        </span>
-        <span class="badge badge--accent">JLPT N4</span>
-      </div>
-
-      <div class="landing-preview__player">
-        <div class="landing-preview__caption-box">
-          <p class="landing-preview__ruby-line">
-            <ruby>毎日<rt>まいにち</rt></ruby>
-            <ruby>動画<rt>どうが</rt></ruby>を
-            <span class="landing-preview__token">見て</span>
-            <ruby>勉強<rt>べんきょう</rt></ruby>します
-          </p>
-          <p class="landing-preview__trans-line">{{ copy().previewTranslation }}</p>
-        </div>
-      </div>
-
-      <div class="landing-preview__lookup">
-        <div class="landing-preview__lookup-head">
-          <div>
-            <strong>動画</strong>
-            <span class="landing-preview__reading">どうが · n.</span>
+    <!-- Single Flat Matte Cinema Subtitle & Dictionary Workbench -->
+    <div class="workbench" [attr.aria-label]="copy().previewTag">
+      <div class="workbench__player">
+        <div class="workbench__bar">
+          <div class="workbench__channel">
+            <img src="/avatars/fox.svg" width="22" height="22" alt="" class="workbench__mascot" />
+            <span>{{ activeScene().channelTitle }}</span>
+            <span class="workbench__level">{{ activeScene().levelBadge }}</span>
           </div>
-          <span class="badge badge--sm badge--success">+ SRS</span>
+
+          <div class="workbench__tabs" role="tablist" [attr.aria-label]="copy().previewTag">
+            @for (scene of demoScenes; track scene.id) {
+              <button
+                type="button"
+                role="tab"
+                class="workbench__tab"
+                [class.is-active]="activeSceneId() === scene.id"
+                [attr.aria-selected]="activeSceneId() === scene.id"
+                (click)="selectDemoScene(scene.id)"
+              >
+                {{ scene.tabLabel }}
+              </button>
+            }
+          </div>
         </div>
-        <p class="landing-preview__lookup-def">{{ copy().previewDefinition }}</p>
+
+        <div class="workbench__stage">
+          <p class="workbench__hint">{{ copy().demoHeading }}</p>
+
+          <div class="workbench__tokens" role="group" [attr.aria-label]="copy().demoHint">
+            @for (token of activeScene().tokens; track token.id) {
+              <button
+                type="button"
+                class="demo-token"
+                [class.demo-token--new]="tokenEffectiveStatus(token) === 'new'"
+                [class.demo-token--learning]="tokenEffectiveStatus(token) === 'learning'"
+                [class.demo-token--known]="tokenEffectiveStatus(token) === 'known'"
+                [class.demo-token--grammar]="!!token.grammarTag"
+                [class.is-selected]="selectedToken().id === token.id"
+                [attr.aria-pressed]="selectedToken().id === token.id"
+                (click)="selectDemoToken(token.id)"
+              >
+                @if (token.ruby) {
+                  <span class="demo-token__ruby">{{ token.ruby }}</span>
+                } @else {
+                  <span class="demo-token__ruby demo-token__ruby--empty" aria-hidden="true">&nbsp;</span>
+                }
+                <span class="demo-token__surface">{{ token.surface }}</span>
+                <span class="demo-token__dot" aria-hidden="true"></span>
+              </button>
+            }
+          </div>
+
+          <p class="workbench__translation">{{ activeTranslation() }}</p>
+        </div>
+
+        <div class="workbench__scrubber" aria-hidden="true">
+          <span class="workbench__play-dot">
+            <app-icon name="play" [size]="11" />
+          </span>
+          <div class="workbench__track">
+            <div class="workbench__fill"></div>
+          </div>
+          <span class="workbench__time">{{ activeScene().timestamp }}</span>
+        </div>
       </div>
+
+      <!-- Hairline-Separated Live Dictionary & SRS Inspector -->
+      <aside class="workbench__inspector" aria-live="polite">
+        <div class="inspector__head">
+          <div class="inspector__word-row">
+            <strong class="demo-lookup__word">{{ selectedToken().surface }}</strong>
+            <span class="inspector__pos">{{ selectedToken().pos }}</span>
+          </div>
+          <div class="inspector__reading-row">
+            <span class="inspector__reading">{{ selectedToken().reading }}</span>
+            @if (selectedToken().pitch) {
+              <span class="inspector__pitch">{{ selectedToken().pitch }}</span>
+            }
+          </div>
+        </div>
+
+        <p class="inspector__def">{{ selectedDefinition() }}</p>
+
+        @if (selectedToken().grammarTag) {
+          <div class="inspector__grammar demo-lookup__grammar">
+            <span class="inspector__grammar-dot" aria-hidden="true"></span>
+            <span>{{ copy().demoGrammarLabel }}:</span>
+            <strong>{{ selectedToken().grammarTag }}</strong>
+          </div>
+        }
+
+        <div class="inspector__footer">
+          <button
+            type="button"
+            class="demo-save-btn"
+            [class.is-saved]="isSelectedSaved()"
+            [attr.aria-pressed]="isSelectedSaved()"
+            (click)="toggleSaveSelectedToken()"
+          >
+            <app-icon [name]="isSelectedSaved() ? 'check' : 'plus'" [size]="14" />
+            <span>{{ isSelectedSaved() ? copy().demoSavedWord : copy().demoSaveWord }}</span>
+          </button>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- 5 Supported Languages -->
+  <!-- 5 Immersion Languages: Architectural Hairline Directory -->
   <section class="landing-languages" [attr.aria-label]="copy().languagesTitle">
     <div class="landing-section-head">
       <h2>{{ copy().languagesTitle }}</h2>
       <p>{{ copy().languagesSubtitle }}</p>
     </div>
-    <div class="landing-languages__grid">
+
+    <div class="languages-ledger">
       @for (lang of languages; track lang.code) {
-        <button type="button" class="card card-interactive landing-lang-card" (click)="openLanguageInApp(lang.code)">
-          <img [src]="lang.flag" width="28" height="21" alt="" class="landing-lang-card__flag" />
-          <div class="landing-lang-card__info">
+        <button type="button" class="landing-lang-card" (click)="openLanguageInApp(lang.code)">
+          <span class="lang-native">{{ lang.nativeName }}</span>
+          <div class="lang-meta">
+            <img [src]="lang.flag" width="22" height="16" alt="" class="lang-flag" />
             <strong>{{ i18n.t(lang.labelKey) }}</strong>
-            <span>{{ lang.levelLabel }}</span>
+            <span class="lang-level">{{ lang.levelLabel }}</span>
           </div>
-          <app-icon name="arrow-right" [size]="16" class="landing-lang-card__arrow" />
+          <app-icon name="arrow-right" [size]="16" class="lang-arrow" />
         </button>
       }
     </div>
   </section>
 
-  <!-- Core Features -->
+  <!-- Core Capabilities: Unboxed Editorial Spec Grid -->
   <section class="landing-features" [attr.aria-label]="copy().featuresTitle">
     <div class="landing-section-head">
       <h2>{{ copy().featuresTitle }}</h2>
       <p>{{ copy().featuresSubtitle }}</p>
     </div>
-    <div class="landing-features__grid">
-      @for (item of features; track item.titleKey) {
-        <article class="card landing-feature-card">
-          <div class="landing-feature-card__icon">
-            <app-icon [name]="item.icon" [size]="20" />
-          </div>
+
+    <div class="editorial-grid">
+      @for (item of features; track item.id) {
+        <article class="landing-feature-card" [class]="'landing-feature-card landing-feature-card--' + item.id">
           <h3>{{ copy()[item.titleKey] }}</h3>
-          <p>{{ copy()[item.descKey] }}</p>
+          <p class="landing-feature-card__desc">{{ copy()[item.descKey] }}</p>
+
+          @switch (item.id) {
+            @case ('subtitles') {
+              <div class="artifact artifact--legend" aria-hidden="true">
+                <span class="legend-item"><span class="legend-dot legend-dot--new"></span>{{ copy().legendNew }}</span>
+                <span class="legend-item"><span class="legend-dot legend-dot--learning"></span>{{ copy().legendLearning }}</span>
+                <span class="legend-item"><span class="legend-dot legend-dot--known"></span>{{ copy().legendKnown }}</span>
+                <span class="legend-item legend-item--grammar">{{ copy().legendGrammar }}</span>
+              </div>
+            }
+            @case ('dict') {
+              <div class="artifact artifact--dict" aria-hidden="true">
+                <span class="artifact-dict__term">〜てみる</span>
+                <span class="artifact-dict__level">JLPT N4</span>
+                <span class="artifact-dict__gloss">try doing</span>
+              </div>
+            }
+            @case ('ai') {
+              <div class="artifact artifact--waveform" aria-hidden="true">
+                <span class="wave-bar" style="height: 36%"></span>
+                <span class="wave-bar" style="height: 78%"></span>
+                <span class="wave-bar" style="height: 50%"></span>
+                <span class="wave-bar" style="height: 94%"></span>
+                <span class="wave-bar" style="height: 62%"></span>
+                <span class="wave-bar" style="height: 44%"></span>
+                <span class="wave-bar" style="height: 82%"></span>
+                <span class="wave-bar" style="height: 54%"></span>
+                <span class="wave-time">00:00 → 45:00</span>
+              </div>
+            }
+            @case ('srs') {
+              <div class="artifact artifact--srs" aria-hidden="true">
+                <span class="srs-tag">{{ copy().srsAgain }} · 1m</span>
+                <span class="srs-tag">{{ copy().srsHard }} · 1d</span>
+                <span class="srs-tag">{{ copy().srsGood }} · 4d</span>
+                <span class="srs-tag">{{ copy().srsEasy }} · 9d</span>
+              </div>
+            }
+          }
         </article>
       }
     </div>
   </section>
 
-  <!-- Flutter Mobile App Download Section -->
-  <section id="download" class="card landing-download" [attr.aria-label]="copy().downloadTitle">
+  <!-- Mobile App: Flat Tonal Band + Hairline List -->
+  <section id="download" class="landing-download" [attr.aria-label]="copy().downloadTitle">
     <div class="landing-download__intro">
-      <span class="badge badge--accent">
-        <app-icon name="cloud" [size]="14" />
-        <span>{{ copy().downloadEyebrow }}</span>
-      </span>
-      <h2>{{ copy().downloadTitle }}</h2>
-      <p>{{ copy().downloadSubtitle }}</p>
-      <ul class="landing-download__perks">
+      <div class="download-heading-row">
+        <img src="/avatars/fox.svg" width="36" height="36" alt="" class="download-mascot" />
+        <h2>{{ copy().downloadTitle }}</h2>
+      </div>
+
+      <p class="download-lead">{{ copy().downloadSubtitle }}</p>
+
+      <ul class="download-perks">
         <li>
-          <app-icon name="check-circle" [size]="16" />
+          <app-icon name="check" [size]="15" />
           <span>{{ copy().downloadPerkSync }}</span>
         </li>
         <li>
-          <app-icon name="check-circle" [size]="16" />
+          <app-icon name="check" [size]="15" />
           <span>{{ copy().downloadPerkOffline }}</span>
         </li>
         <li>
-          <app-icon name="check-circle" [size]="16" />
+          <app-icon name="check" [size]="15" />
           <span>{{ copy().downloadPerkSameAccount }}</span>
         </li>
       </ul>
-      <div class="landing-download__footer-links">
-        <a class="btn btn-secondary" routerLink="/account">
-          <app-icon name="user" [size]="16" />
-          <span>{{ copy().manageSyncAccount }}</span>
-        </a>
-        <a class="btn btn-secondary" routerLink="/video">
+
+      <div class="download-actions">
+        <a class="btn btn-primary download-btn" routerLink="/video">
           <app-icon name="play-circle" [size]="16" />
           <span>{{ copy().useInBrowser }}</span>
+        </a>
+        <a class="btn btn-secondary download-btn" routerLink="/account">
+          <app-icon name="user" [size]="16" />
+          <span>{{ copy().manageSyncAccount }}</span>
         </a>
       </div>
     </div>
 
-    <div class="landing-download__targets">
+    <div class="download-list">
       @for (target of downloadTargets; track target.id) {
         @if (target.url) {
-          <a class="card card-interactive landing-download-card" [href]="target.url" target="_blank" rel="noopener noreferrer">
-            <div class="landing-download-card__icon">
-              <app-icon [name]="target.icon" [size]="20" />
-            </div>
-            <div class="landing-download-card__body">
-              <div class="landing-download-card__title-row">
+          <a
+            class="landing-download-card download-row download-row--live"
+            [href]="target.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="download-row__meta">
+              <div class="download-row__title">
                 <strong>{{ copy()[target.titleKey] }}</strong>
-                <span class="badge badge--sm badge--accent">{{ copy()[target.badgeKey] }}</span>
+                <span class="download-pill download-pill--live">{{ copy()[target.badgeKey] }}</span>
               </div>
               <p>{{ copy()[target.subtitleKey] }}</p>
             </div>
-            <span class="landing-download-card__action">
+            <span class="download-row__cta">
               <span>{{ copy()[target.ctaKey] }}</span>
               <app-icon name="external-link" [size]="14" />
             </span>
           </a>
         } @else {
-          <div class="card landing-download-card landing-download-card--soon" aria-disabled="true">
-            <div class="landing-download-card__icon">
-              <app-icon [name]="target.icon" [size]="20" />
-            </div>
-            <div class="landing-download-card__body">
-              <div class="landing-download-card__title-row">
+          <div class="landing-download-card download-row download-row--soon" aria-disabled="true">
+            <div class="download-row__meta">
+              <div class="download-row__title">
                 <strong>{{ copy()[target.titleKey] }}</strong>
-                <span class="badge badge--sm badge--primary">{{ copy()[target.badgeKey] }}</span>
+                <span class="download-pill">{{ copy()[target.badgeKey] }}</span>
               </div>
               <p>{{ copy()[target.subtitleKey] }}</p>
             </div>
-            <span class="landing-download-card__action landing-download-card__action--muted">
+            <span class="download-row__cta download-row__cta--muted">
               <span>{{ copy()[target.ctaKey] }}</span>
             </span>
           </div>
