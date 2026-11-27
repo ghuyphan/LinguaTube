@@ -1,4 +1,4 @@
-import { readTranscriptObject } from '../data/transcript-r2.js';
+import { putTranscriptObject, readTranscriptObject } from '../data/transcript-r2.js';
 /**
  * R2 Translation Cache Utilities
  * Provides read/write operations for dual subtitle translations in R2
@@ -118,7 +118,7 @@ export async function getTranslation(bucket, videoId, srcLang, tgtLang) {
             return null;
         }
 
-        const data = await object.json();
+        const data = await readTranscriptObject(object);
 
         if (!data?.segments?.length) {
             log('Cache hit but empty:', key);
@@ -184,7 +184,7 @@ export async function getTranslation(bucket, videoId, srcLang, tgtLang) {
 // Isolate-level write mutex to serialize concurrent Read-Modify-Write operations to R2
 const inFlightSaves = new Map();
 
-export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segments, quality = 100, source = 'lingva', { requireCanonical = false } = {}) {
+export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segments, quality = 100, source = 'lingva', { requireCanonical = false, gzip = false } = {}) {
     if (!bucket || !videoId || !segments?.length) return null;
     if (!translationsMatchLanguage(segments, tgtLang)) return null;
 
@@ -204,7 +204,7 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
             for (let attempt = 0; attempt < 5; attempt++) {
                 // R2 preconditions protect across isolates; the mutex only reduces local contention.
                 const existingObject = await bucket.get(key);
-                const existingData = existingObject ? await existingObject.json() : null;
+                const existingData = existingObject ? await readTranscriptObject(existingObject) : null;
                 const cueKey = (seg, idx) => JSON.stringify([seg.start ?? `idx:${idx}`, seg.text || '']);
                 const matches = (known) => segments.every((seg, idx) => known.has(cueKey(seg, idx)));
                 const loadCanon = async (suffix) => {
@@ -246,12 +246,12 @@ export async function saveTranslation(bucket, videoId, srcLang, tgtLang, segment
                 const computedQuality = finalSegments.length ? Math.round(validCount / finalSegments.length * 100) : quality;
                 const data = { videoId, sourceLang: srcLang, targetLang: tgtLang, segments: finalSegments,
                     source, quality: computedQuality, timestamp: now };
-                const saved = await bucket.put(key, JSON.stringify(data), {
+                const saved = await putTranscriptObject(bucket, key, data, {
                     onlyIf: existingObject ? { etagMatches: existingObject.etag } : new Headers({ 'If-None-Match': '*' }),
                     httpMetadata: { contentType: 'application/json' },
                     customMetadata: { source, segmentCount: String(finalSegments.length), translatedCount: String(validCount),
                         timestamp: String(now), expiresAt: String(now + CACHE_MAX_AGE_MS), version: CACHE_VERSION }
-                });
+                }, gzip);
                 if (saved === null) continue;
                 return { segments: finalSegments, quality: computedQuality, validCount, totalCount: finalSegments.length };
             }

@@ -277,7 +277,10 @@ async function handlePost(context, body) {
                 // 6. Save to Cache (only if quality threshold met)
                 if (shouldCache) {
                     const persist = async () => {
-                        const saved = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, resultSegments, quality, 'lingva', { requireCanonical: true });
+                        const saved = await saveTranslation(r2, cleanVideoId, sourceLang, targetLang, resultSegments, quality, 'lingva', {
+                            requireCanonical: true,
+                            gzip: env.TRANSLATION_GZIP_WRITES === 'true'
+                        });
                         if (saved?.validCount && db) await recordTranslation(db, cleanVideoId, sourceLang, targetLang, saved.validCount);
                     };
                     if (waitUntil) waitUntil(persist().catch(() => {}));
