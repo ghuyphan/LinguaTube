@@ -1085,7 +1085,7 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
         return cached.videos;
     }
     const edge = typeof caches !== 'undefined' ? caches.default : null;
-    const edgeKey = 'https://internal.voca/rec-pool/v3/' + [epoch, lang, targetTier || 'all', category || 'all', country || 'unknown', useAssetGenerations]
+    const edgeKey = 'https://voca.study/__internal/rec-pool/v3/' + [epoch, lang, targetTier || 'all', category || 'all', country || 'unknown', useAssetGenerations]
         .map(encodeURIComponent).join('/');
     const store = videos => {
         if (catalogCacheEpoch !== epoch || (cache.get(key)?.version ?? 0) > version) return;
@@ -1206,7 +1206,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
                 FROM video_language_catalog c
                 JOIN video_languages v ON v.video_id = c.video_id
                 WHERE c.language = ?
-                AND (v.duration_seconds IS NULL OR v.duration_seconds = 0 OR v.duration_seconds BETWEEN 20 AND 7200)
+                AND (v.duration_seconds IS NULL OR v.duration_seconds = 0 OR v.duration_seconds BETWEEN 20 AND 14400)
                 AND v.title IS NOT NULL AND TRIM(v.title) != ''
                 AND v.channel IS NOT NULL AND TRIM(v.channel) != ''`;
             bindings.push(lang);
@@ -1219,7 +1219,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
             sql = `SELECT ${projection}
                 FROM video_languages
                 WHERE (sub_languages LIKE ? OR ((sub_languages IS NULL OR sub_languages = '[]') AND available_languages LIKE ?))
-                AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 7200)
+                AND (duration_seconds IS NULL OR duration_seconds = 0 OR duration_seconds BETWEEN 20 AND 14400)
                 AND title IS NOT NULL AND TRIM(title) != ''
                 AND channel IS NOT NULL AND TRIM(channel) != ''`;
             bindings.push(`%${lang}%`, `%${lang}%`);
@@ -1356,6 +1356,8 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
                     videoId: row.video_id, title: row.title, channel: row.channel,
                     channelAvatar: row.channel_avatar || null,
                     duration: row.duration_seconds || 0,
+                    embeddable: true,
+                    playbackAvailability: 'available',
                     thumbnail: `https://i.ytimg.com/vi/${row.video_id}/mqdefault.jpg`,
                     languages: [...new Set(languages.filter(l => SUPPORTED_LEARNING_LANGUAGE_SET.has(l)))],
                     level: typeof level === 'string' ? level : level?.level,
@@ -1364,6 +1366,7 @@ async function discoverRecommendationCandidates(db, r2, lang, targetTier, catego
                     category: resolvedCategory,
                     ...(inferredLang ? { primaryLanguage: inferredLang } : {}),
                     ...(tags.length ? { tags } : {}),
+                    ...(row.created_at ? { createdAt: row.created_at } : {}),
                     updatedAt: row.updated_at || 0
                 });
             }

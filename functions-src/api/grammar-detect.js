@@ -43,7 +43,7 @@ export async function onRequestPost(context) {
         return rateLimitResponse(rateCheck.resetAt);
     }
 
-    const body = await getRequestJson(request);
+    const body = await getRequestJson(context);
     if (!body || typeof body !== 'object' || Array.isArray(body)) {
         return jsonResponse({ error: 'Invalid JSON request body' }, 400, { 'Cache-Control': 'no-store' }, request);
     }
@@ -97,7 +97,16 @@ export async function onRequestPost(context) {
             { 'Cache-Control': 'no-store' },
             request
         );
-    } else if (typeof body.text !== 'string' && !Array.isArray(body.tokens)) {
+    } else if (Array.isArray(body.tokens)) {
+        if (body.tokens.length > 2000) {
+            return jsonResponse(
+                { error: 'Too many tokens (max 2000 per request)' },
+                400,
+                { 'Cache-Control': 'no-store' },
+                request
+            );
+        }
+    } else if (typeof body.text !== 'string') {
         return jsonResponse(
             { error: 'Either cues array, text string, or tokens array is required' },
             400,

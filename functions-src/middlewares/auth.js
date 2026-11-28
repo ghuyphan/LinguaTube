@@ -166,8 +166,11 @@ async function tryVerifyAsymmetricJwt(token, payload, supabaseUrl) {
     }
 
     const expectedIss = `${supabaseUrl.replace(/\/$/, '')}/auth/v1`;
-    if (payload.iss && payload.iss !== expectedIss) {
+    if (!payload.iss || payload.iss !== expectedIss) {
         return { valid: false, error: 'Invalid token issuer' };
+    }
+    if (payload.aud !== 'authenticated' || payload.role !== 'authenticated') {
+        return { valid: false, error: 'Invalid token audience or role' };
     }
     const nowSec = Math.floor(Date.now() / 1000);
     if (typeof payload.nbf === 'number' && payload.nbf > nowSec + 30) {

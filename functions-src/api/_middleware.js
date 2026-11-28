@@ -6,7 +6,31 @@
 import { checkBot } from '../middlewares/bot-defense.js';
 import { jsonResponse, handleOptions } from '../utils/utils.js';
 
+const API_SECURITY_HEADERS = {
+    'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+    'X-Content-Type-Options': 'nosniff',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'X-Frame-Options': 'DENY',
+};
+
+function withSecurityHeaders(response) {
+    if (!(response instanceof Response)) return response;
+    const headers = new Headers(response.headers);
+    for (const [k, v] of Object.entries(API_SECURITY_HEADERS)) {
+        if (!headers.has(k)) headers.set(k, v);
+    }
+    return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+    });
+}
+
 export async function onRequest(context) {
+    return withSecurityHeaders(await handleApiMiddleware(context));
+}
+
+async function handleApiMiddleware(context) {
     const { request, next } = context;
 
     if (request.method === 'OPTIONS') {

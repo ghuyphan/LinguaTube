@@ -116,6 +116,48 @@ export async function onRequest(context) {
   const resolvedVoice = normalizeVoiceName(voice, cleanLang);
   const cacheKey = `${cleanLang}:${resolvedVoice}:${cleanText}`;
   const isMemoryHit = !!getCachedAudio(cacheKey);
+  const edgeCacheUrl = new URL(
+    `/api/tts?lang=${encodeURIComponent(cleanLang)}&voice=${encodeURIComponent(resolvedVoice)}&text=${encodeURIComponent(cleanText)}`,
+    new URL(request.url).origin
+  );
+
+  const audioResponse = (buffer, engine, cacheStatus) => new Response(buffer, {
+    status: 200,
+    headers: {
+      'Content-Type': 'audio/mpeg',
+      'Content-Length': buffer.byteLength.toString(),
+      'Cache-Control': 'public, max-age=2592000, immutable',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'X-TTS-Engine': engine,
+      'X-TTS-Voice': resolvedVoice,
+      'X-Cache': cacheStatus,
+    },
+  });
+
+  let regional;
+  if (!isMemoryHit) {
+    try {
+      regional = await globalThis.caches?.open('tts-v1');
+      const edgeHit = await regional?.match(edgeCacheUrl);
+      if (edgeHit?.ok) {
+        return audioResponse(await edgeHit.arrayBuffer(), edgeHit.headers.get('X-TTS-Engine') || 'Edge-Neural', 'HIT-EDGE');
+      }
+    } catch { /* Fall through to synthesis. */ }
+  }
+
+  const putEdgeCache = (buffer, engine) => {
+    if (regional && context.waitUntil && buffer.byteLength > 0) {
+      context.waitUntil(regional.put(edgeCacheUrl, new Response(buffer.slice(0), {
+        headers: {
+          'Content-Type': 'audio/mpeg',
+          'Cache-Control': 'public, max-age=2592000, immutable',
+          'X-TTS-Engine': engine,
+        },
+      })).catch(() => {}));
+    }
+  };
 
   // 1. Primary: Microsoft Edge Neural TTS
   try {
@@ -124,46 +166,19 @@ export async function onRequest(context) {
       voice,
       timeoutMs: 5000,
     });
-
-    return new Response(audioBuffer, {
-      status: 200,
-      headers: {
-        'Content-Type': 'audio/mpeg',
-        'Content-Length': audioBuffer.byteLength.toString(),
-        'Cache-Control': 'public, max-age=2592000, immutable',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        'X-TTS-Engine': 'Edge-Neural',
-        'X-TTS-Voice': resolvedVoice,
-        'X-Cache': isMemoryHit ? 'HIT-MEMORY' : 'MISS',
-      },
-    });
-  } catch (edgeErr) {
+    putEdgeCache(audioBuffer, 'Edge-Neural');
+    return audioResponse(audioBuffer, 'Edge-Neural', isMemoryHit ? 'HIT-MEMORY' : 'MISS');
+  } catch {
     console.warn('[EdgeTTS] Synthesis failed; trying fallback');
 
     // 2. Server-side fallback with a bounded audio read
     try {
       const googleBuffer = await fetchGoogleTts(cleanText, cleanLang);
-      return new Response(googleBuffer, {
-        status: 200,
-        headers: {
-          'Content-Type': 'audio/mpeg',
-          'Content-Length': googleBuffer.byteLength.toString(),
-          'Cache-Control': 'public, max-age=2592000, immutable',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-          'X-TTS-Engine': 'Google-Fallback',
-          'X-Cache': 'MISS',
-        },
-      });
+      putEdgeCache(googleBuffer, 'Google-Fallback');
+      return audioResponse(googleBuffer, 'Google-Fallback', 'MISS');
     } catch {
       console.error('[TTS] Both providers unavailable');
-      return jsonResponse({
-        error: 'TTS synthesis failed',
-        message: edgeErr.message || 'Internal error',
-      }, 502, { 'Cache-Control': 'no-store' });
+      return jsonResponse({ error: 'TTS synthesis failed' }, 502, { 'Cache-Control': 'no-store' });
     }
   }
 }

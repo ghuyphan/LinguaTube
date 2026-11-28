@@ -46,16 +46,19 @@ export function jsonResponse(data, status = 200, extraHeaders = {}, request = nu
         const reqOrigin = request.headers.get('Origin');
         if (reqOrigin) origin = getAllowedOrigin(reqOrigin);
     }
-    return new Response(JSON.stringify(data), {
-        status,
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': origin,
-            'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-            ...extraHeaders
-        }
+    const headers = new Headers({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': origin,
+        'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        ...extraHeaders
     });
+    if (origin !== '*') {
+        const existingVary = headers.get('Vary');
+        if (!existingVary) headers.set('Vary', 'Origin');
+        else if (!existingVary.toLowerCase().includes('origin')) headers.set('Vary', `${existingVary}, Origin`);
+    }
+    return new Response(JSON.stringify(data), { status, headers });
 }
 
 /**

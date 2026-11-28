@@ -9,10 +9,13 @@ import { videoEligibilityEnabled } from '../services/video-metadata.service.js';
  */
 
 import { jsonResponse } from '../utils/utils.js';
+import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { viewerCountry } from '../services/video-playback.service.js';
 import { scheduleMetadataHealing } from '../middlewares/video-validator.js';
 import { filterCurrentVideoAvailability, getRelatedVideosFromCloudflare } from '../data/video-info-db.js';
 import { parseRecommendationRequest, recommendationResponseHeaders } from '../services/recommendation.service.js';
+
+const RATE_LIMIT_CONFIG = { max: 120, windowSeconds: 60, keyPrefix: 'related_videos' };
 
 export async function onRequestGet(context) {
     return handleRelatedVideos(context, 'GET');
@@ -44,6 +47,9 @@ function parseCurrentVideo(body, url) {
 }
 
 async function handleRelatedVideos(context, method) {
+    const rateLimit = await consumeRateLimit(context.env?.TRANSCRIPT_CACHE, getClientIdentifier(context.request), RATE_LIMIT_CONFIG, context);
+    if (!rateLimit.allowed) return rateLimitResponse(rateLimit.resetAt);
+
     const parsed = await parseRecommendationRequest(context, method, { defaultLimit: 16 });
     if (parsed.errorResponse) return parsed.errorResponse;
 

@@ -48,6 +48,8 @@ test('JWKS ES256: authenticateIdentity verifies locally with 0 /auth/v1/user and
         {
             sub: uid,
             email: 'learner@voca.study',
+            aud: 'authenticated',
+            role: 'authenticated',
             iss: `${supabaseUrl}/auth/v1`,
             exp: Math.floor(Date.now() / 1000) + 3600
         }
@@ -131,7 +133,7 @@ test('accessState cached mode reuses tier state across calls while live mode alw
     const token = await signEs256Jwt(
         privateKey,
         { alg: 'ES256', typ: 'JWT', kid: 'kid-2' },
-        { sub: uid, iss: `${supabaseUrl}/auth/v1`, exp: Math.floor(Date.now() / 1000) + 3600 }
+        { sub: uid, aud: 'authenticated', role: 'authenticated', iss: `${supabaseUrl}/auth/v1`, exp: Math.floor(Date.now() / 1000) + 3600 }
     );
 
     let accessCalls = 0;

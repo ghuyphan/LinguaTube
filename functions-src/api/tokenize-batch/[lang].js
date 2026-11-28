@@ -126,12 +126,29 @@ export async function onRequest(context) {
             return jsonResponse({ error: 'Tokenization batch is too large' }, 413);
         }
 
-        // Check cache first - include hash of texts to differentiate subtitle versions
         const textsHash = await sha256(JSON.stringify(texts));
-        const cacheKey = `tokens:${lang === 'ja' ? 'v8' : 'v7'}:${lang}:${videoId}:${textsHash}`;
+        let assetGeneration = 0;
+        let rateCheck = null;
+        let tier = 'anonymous';
+
+        if (strict) {
+            // Rate-limit BEFORE eligibility checks so callers cannot burn YouTube API quota.
+            const authResult = await validateAuthToken(request, env, { accessState: 'cached' });
+            if (authResult.response) return authResult.response;
+            tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
+            const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+            rateCheck = await consumeRateLimit(TOKEN_CACHE, getClientIdentifier(request, authResult), rateLimitConfig, context);
+            if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
+
+            const eligibility = await requireVideoEligibility(context, videoId);
+            assetGeneration = eligibility?.assets?.generation ?? 0;
+        }
+
+        // Check cache - include hash of texts & generation to differentiate subtitle versions
+        const cacheKey = `tokens:${lang === 'ja' ? 'v8' : 'v7'}:${lang}:${videoId}:g${assetGeneration}:${textsHash}`;
 
         // 1. Check warm in-memory cache (0 KV ops, < 0.1ms)
-        const memHit = strict ? null : memTokenBatchCache.get(cacheKey);
+        const memHit = memTokenBatchCache.get(cacheKey);
         if (memHit) {
             const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));
             const shouldUpgradeFallback = memHit.isFallback && isTokenizerReady(lang);
@@ -147,15 +164,15 @@ export async function onRequest(context) {
             }
         }
 
-        // 2. Check KV cache before consuming per-caller rate limit quota
-        if (!strict && TOKEN_CACHE && !request.signal?.aborted) {
+        // 2. Check KV cache before running CPU-heavy tokenization
+        if (TOKEN_CACHE && !request.signal?.aborted) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
                 if (cached && isValidTokensArray(cached.tokens, texts.length)) {
                     const isDegraded = cached.isFallback && isTokenizerReady(lang);
                     if (!isDegraded) {
                         console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
-                        if (!strict && memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                        if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
                             const oldest = memTokenBatchCache.keys().next().value;
                             if (oldest) memTokenBatchCache.delete(oldest);
                         }
@@ -174,16 +191,14 @@ export async function onRequest(context) {
             }
         }
 
-        // 3. Cache MISS: Check auth and consume per-caller rate limit quota before coalescing work
-        const authResult = await validateAuthToken(request, env, { accessState: 'cached' });
-        if (authResult.response) return authResult.response;
-        const tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
-        const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
-
-        const clientId = getClientIdentifier(request, authResult);
-        const rateCheck = await consumeRateLimit(TOKEN_CACHE, clientId, rateLimitConfig, context);
-        if (!rateCheck.allowed) {
-            return rateLimitResponse(rateCheck.resetAt);
+        // 3. Cache MISS (non-strict): Check auth and consume per-caller rate limit quota
+        if (!rateCheck) {
+            const authResult = await validateAuthToken(request, env, { accessState: 'cached' });
+            if (authResult.response) return authResult.response;
+            tier = authResult.valid ? getUserTier(authResult.user) : 'anonymous';
+            const rateLimitConfig = getTieredConfig(RATE_LIMIT_CONFIG, tier);
+            rateCheck = await consumeRateLimit(TOKEN_CACHE, getClientIdentifier(request, authResult), rateLimitConfig, context);
+            if (!rateCheck.allowed) return rateLimitResponse(rateCheck.resetAt);
         }
 
         if (request.signal?.aborted) {
@@ -192,8 +207,6 @@ export async function onRequest(context) {
                 headers: { 'Content-Type': 'application/json' }
             });
         }
-
-        if (strict) await requireVideoEligibility(context, videoId);
 
         // 4. Deduplicate concurrent in-flight tokenization work (isolated from caller abort/rate state)
         let inFlight = inFlightBatches.get(cacheKey);
@@ -219,11 +232,11 @@ export async function onRequest(context) {
                     isFallback
                 };
 
-                if (!strict && memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
                     const oldest = memTokenBatchCache.keys().next().value;
                     if (oldest) memTokenBatchCache.delete(oldest);
                 }
-                if (!strict) memTokenBatchCache.set(cacheKey, computed);
+                memTokenBatchCache.set(cacheKey, computed);
 
                 return computed;
             })();

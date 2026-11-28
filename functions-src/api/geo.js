@@ -13,6 +13,6 @@ export async function onRequestGet(context) {
         success: true,
         country
     }, 200, {
-        'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800'
+        'Cache-Control': 'private, max-age=86400'
     });
 }

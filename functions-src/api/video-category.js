@@ -12,8 +12,31 @@ import { saveVideoCategory } from '../data/video-info-db.js';
 import { VALID_CATEGORIES } from '../services/category.service.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { authenticateIdentity, unauthorizedResponse } from '../middlewares/auth.js';
+import { matchesSecret } from '../utils/secret-auth.js';
 
 const RATE_LIMIT_CONFIG = { max: 60, windowSeconds: 3600, keyPrefix: 'video_category' };
+
+async function isCategoryModerator(request, env) {
+    const maintenanceSecret = env?.BACKEND_MAINTENANCE_SECRET;
+    if (maintenanceSecret && await matchesSecret(request.headers.get('Authorization'), `Bearer ${maintenanceSecret}`)) {
+        return { allowed: true };
+    }
+    const adminIds = new Set(
+        String(env?.ADMIN_USER_IDS || '')
+            .split(',')
+            .map(s => s.trim())
+            .filter(Boolean)
+    );
+    const authResult = await authenticateIdentity(request, env);
+    if (authResult.response) return { response: authResult.response };
+    if (!authResult.valid) {
+        return { response: unauthorizedResponse(authResult.error || 'Moderator authentication required') };
+    }
+    if (!adminIds.has(authResult.user?.id)) {
+        return { response: jsonResponse({ error: 'Moderator privileges required to update catalog categories' }, 403) };
+    }
+    return { allowed: true };
+}
 
 export async function onRequestGet(context) {
     const { request, env } = context;
@@ -64,12 +87,9 @@ export async function onRequestPost(context) {
         return rateLimitResponse(rateLimit.resetAt);
     }
 
-    // Require authentication
-    const authResult = await authenticateIdentity(request, env);
-    if (authResult.response) return authResult.response;
-    if (!authResult.valid) {
-        return unauthorizedResponse(authResult.error || 'Authentication required to submit video category');
-    }
+    // Require moderator/maintenance authorization to prevent catalog category vandalism
+    const modCheck = await isCategoryModerator(request, env);
+    if (modCheck.response) return modCheck.response;
 
     try {
         const body = await getRequestJson(context);

@@ -49,6 +49,24 @@ export async function onRequestGet(context) {
         }, request);
     }
 
+    // Regional Edge Cache API check (survives cold isolates)
+    const cacheUrl = new URL(`/api/kanji?query=${encodeURIComponent(query)}`, url.origin);
+    let regional;
+    try {
+        regional = await globalThis.caches?.open('kanji-v1');
+        const edgeHit = await regional?.match(cacheUrl);
+        if (edgeHit?.ok) {
+            const saved = await edgeHit.json();
+            if (Array.isArray(saved?.kanji) && saved.kanji.length > 0) {
+                memPosKanjiCache.set(query, saved);
+                return jsonResponse(saved, 200, {
+                    'X-Cache': 'HIT-EDGE',
+                    'Cache-Control': 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400'
+                }, request);
+            }
+        }
+    } catch { /* Fall through to upstream lookup. */ }
+
     // Rate limiting
     const authResult = await authenticateIdentity(request, env);
     if (authResult.response) return authResult.response;
@@ -89,7 +107,14 @@ export async function onRequestGet(context) {
                     kanji: formattedList,
                     timestamp: Date.now()
                 };
-                if (formattedList.length) memPosKanjiCache.set(query, result);
+                if (formattedList.length) {
+                    memPosKanjiCache.set(query, result);
+                    if (regional && context.waitUntil) {
+                        context.waitUntil(regional.put(cacheUrl, Response.json(result, {
+                            headers: { 'Cache-Control': 'public, max-age=2592000' }
+                        })).catch(() => {}));
+                    }
+                }
                 return result;
             });
         });

@@ -11,6 +11,7 @@ import { enrichPublishedTranscript } from '../services/transcript-enrichment.js'
  */
 
 import { validateAuthToken, getUserTier } from '../middlewares/auth.js';
+import { matchesSecret } from '../utils/secret-auth.js';
 import { validateVideoRequest } from '../middlewares/video-validator.js';
 import { getNextApiKey, markKeyRateLimited } from '../utils/api-key-rotator.js';
 import {
@@ -59,7 +60,15 @@ const CACHE_CONTROL = {
 const MAX_FALLBACK_CACHE_READS = 6;
 
 export async function onRequestGet(context) {
-    const { env } = context;
+    const { request, env } = context;
+    const maintenanceSecret = env?.BACKEND_MAINTENANCE_SECRET;
+    const isAdmin = Boolean(
+        maintenanceSecret &&
+        await matchesSecret(request?.headers?.get('Authorization'), `Bearer ${maintenanceSecret}`)
+    );
+    if (!isAdmin) {
+        return jsonResponse({ status: 'ok' }, 200, { 'Cache-Control': 'no-store' });
+    }
     return jsonResponse({
         status: 'ok',
         version: 'v4',
@@ -71,7 +80,7 @@ export async function onRequestGet(context) {
         hasYouTubeDataKey: Boolean(env.YOUTUBE_DATA_API_KEY),
         hasSupadataKey: resolveSupadataApiKeys(env).length > 0,
         hasTurnstileKey: Boolean(env.TURNSTILE_SECRET_KEY)
-    });
+    }, 200, { 'Cache-Control': 'no-store' });
 }
 
 export async function onRequestPost(context) {

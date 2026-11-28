@@ -82,6 +82,24 @@ export async function onRequestGet(context) {
     const authResult = await authenticateIdentity(request, env);
     if (authResult.response) return authResult.response;
 
+    // Regional Edge Cache API check (avoids re-reading 1.18 MB grammar packs on cold isolates)
+    const cacheQuery = new URLSearchParams({ type });
+    if (lang) cacheQuery.set('lang', lang);
+    if (ui) cacheQuery.set('ui', ui);
+    if (rawId) cacheQuery.set('id', rawId);
+    const cacheUrl = new URL(`/api/grammar?${cacheQuery}`, url.origin);
+    let regional;
+    try {
+        regional = await globalThis.caches?.open('grammar-v1');
+        const edgeHit = await regional?.match(cacheUrl);
+        if (edgeHit?.ok) {
+            return jsonResponse(await edgeHit.json(), 200, {
+                ...PUBLIC_CACHE_HEADERS,
+                'X-Cache': 'HIT-EDGE'
+            }, request);
+        }
+    } catch { /* Fall through to grammar loader. */ }
+
     // Resolve artifact before consuming rate limit when served from warm isolate memory,
     // or charge one lightweight read unit on cold miss (still 0 KV writes below threshold).
     let payload = null;
@@ -156,6 +174,12 @@ export async function onRequestGet(context) {
     const rateCheck = await consumeRateLimit(env?.TRANSCRIPT_CACHE, clientId, RATE_LIMIT_CONFIG, context);
     if (!rateCheck.allowed) {
         return rateLimitResponse(rateCheck.resetAt);
+    }
+
+    if (regional && context.waitUntil) {
+        context.waitUntil(regional.put(cacheUrl, Response.json(payload, {
+            headers: { 'Cache-Control': 'public, max-age=604800' }
+        })).catch(() => {}));
     }
 
     return jsonResponse(payload, 200, {

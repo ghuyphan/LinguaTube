@@ -5,7 +5,8 @@ import { serviceRoleRequest } from '../services/supabase-rest.js';
  */
 
 import { authenticateIdentity } from '../middlewares/auth.js';
-import { consumeRateLimit, getClientIdentifier } from '../middlewares/rate-limiter.js';
+import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
+import { SimpleLRUCache } from '../utils/cache-manager.js';
 import { jsonResponse, handleOptions, getRequestJson, SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
 
 export const SEED_LEADERBOARD = [
@@ -55,8 +56,9 @@ export const SEED_LEADERBOARD = [
     { user_id: 'seed_vi_7', name: 'Ethan Carter', avatar: '', xp: 480, weekly_xp: 65, level: 1, streak: 1, badges_count: 1, target_lang: 'vi', country: '🇦🇺' }
 ];
 
-const memLeaderboardCache = new Map();
 const MEM_LEADERBOARD_TTL_MS = 60 * 1000;
+const memLeaderboardCache = new SimpleLRUCache(100, MEM_LEADERBOARD_TTL_MS);
+const LEADERBOARD_GET_RATE_LIMIT = { max: 120, windowSeconds: 60, keyPrefix: 'leaderboard_get' };
 
 /**
  * Merge real learners with baseline community seeds so the leaderboard
@@ -130,23 +132,26 @@ export async function onRequestGet(context) {
     const { request, env } = context;
     const db = env.VOCAB_DB || env.DB;
 
+    const rateLimit = await consumeRateLimit(env?.TRANSCRIPT_CACHE, getClientIdentifier(request), LEADERBOARD_GET_RATE_LIMIT, context);
+    if (!rateLimit.allowed) {
+        return rateLimitResponse(rateLimit.resetAt);
+    }
+
     try {
         const url = new URL(request.url);
-        const lang = url.searchParams.get('lang');
+        const rawLang = url.searchParams.get('lang');
+        const lang = rawLang && SUPPORTED_LEARNING_LANGUAGE_SET.has(rawLang) ? rawLang : null;
         const userId = url.searchParams.get('userId');
         const period = url.searchParams.get('period') === 'all_time' ? 'all_time' : 'weekly';
         const limitParam = parseInt(url.searchParams.get('limit') || '50', 10);
         const limit = Math.max(1, Math.min(100, isNaN(limitParam) ? 50 : limitParam));
-        const isRefresh = url.searchParams.get('refresh') === 'true' || url.searchParams.get('force') === 'true' || url.searchParams.has('_t');
 
         let rawRealUsers = null;
         const cacheKey = `${lang || 'all'}_${period}_${limit}`;
 
-        if (!isRefresh) {
-            const cached = memLeaderboardCache.get(cacheKey);
-            if (cached && Date.now() < cached.expiresAt) {
-                rawRealUsers = cached.data;
-            }
+        const cached = memLeaderboardCache.get(cacheKey);
+        if (cached) {
+            rawRealUsers = cached;
         }
 
         if (rawRealUsers === null) {
@@ -159,7 +164,7 @@ export async function onRequestGet(context) {
                     `;
                     const params = [];
 
-                    if (lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang)) {
+                    if (lang) {
                         query += ` WHERE target_lang = ?`;
                         params.push(lang);
                     }
@@ -185,7 +190,7 @@ export async function onRequestGet(context) {
                             targetLang: row.target_lang,
                             country: row.country || ''
                         }));
-                        memLeaderboardCache.set(cacheKey, { data: rawRealUsers, expiresAt: Date.now() + MEM_LEADERBOARD_TTL_MS });
+                        memLeaderboardCache.set(cacheKey, rawRealUsers);
                     }
                 } catch (d1Err) {
                     // Fallback query without weekly_xp column if schema not updated yet
@@ -195,7 +200,7 @@ export async function onRequestGet(context) {
                             FROM leaderboard
                         `;
                         const fbParams = [];
-                        if (lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang)) {
+                        if (lang) {
                             fallbackQuery += ` WHERE target_lang = ?`;
                             fbParams.push(lang);
                         }
@@ -215,7 +220,7 @@ export async function onRequestGet(context) {
                                 targetLang: row.target_lang,
                                 country: row.country || ''
                             }));
-                            memLeaderboardCache.set(cacheKey, { data: rawRealUsers, expiresAt: Date.now() + MEM_LEADERBOARD_TTL_MS });
+                            memLeaderboardCache.set(cacheKey, rawRealUsers);
                         }
                     } catch {
                         console.warn('[Leaderboard API] D1 query failed:', d1Err.message);
@@ -223,43 +228,42 @@ export async function onRequestGet(context) {
                 }
             }
 
-            // If D1 returned no rows, query Supabase gamification & profiles
-            if (rawRealUsers.length === 0) {
-                const supabaseUrl = env.SUPABASE_URL || 'https://edbkvzviqeulwzcnrrlb.supabase.co';
-                const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY || env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkYmt2enZpcWV1bHd6Y25ycmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NTI5NjAsImV4cCI6MjEwNTAyODk2MH0.F2Js6UWUyUX-uVfDMVCNLJBG7eL6Clo9EGimjh2wgUg';
+            // If D1 returned no rows, query Supabase public get_leaderboard RPC with anon key (respects is_public)
+            if (rawRealUsers.length === 0 && env.SUPABASE_URL && env.SUPABASE_ANON_KEY) {
+                const supabaseUrl = env.SUPABASE_URL.replace(/\/$/, '');
                 try {
-                    const orderParam = period === 'weekly' ? 'weekly_xp.desc,xp.desc' : 'xp.desc';
-                    const supaRes = await fetch(`${supabaseUrl}/rest/v1/gamification?select=*,profiles:user_id(id,name,avatar_url)&order=${orderParam}&limit=${limit}`, {
+                    const supaRes = await fetch(`${supabaseUrl}/rest/v1/rpc/get_leaderboard`, {
+                        method: 'POST',
                         headers: {
-                            'apikey': supabaseKey,
-                            'Authorization': `Bearer ${supabaseKey}`,
+                            'apikey': env.SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${env.SUPABASE_ANON_KEY}`,
+                            'Content-Type': 'application/json',
                             'Accept': 'application/json'
                         },
+                        body: JSON.stringify({
+                            p_lang: lang || 'all',
+                            p_period: period,
+                            p_limit: limit
+                        }),
                         signal: AbortSignal.timeout(4000)
                     });
 
                     if (supaRes.ok) {
                         const supaData = await supaRes.json();
                         if (Array.isArray(supaData) && supaData.length > 0) {
-                            rawRealUsers = supaData.map(row => {
-                                const profile = row.profiles || {};
-                                const name = profile.name || 'Learner';
-                                const avatar = profile.avatar_url || '';
-                                const badgesCount = row.unlocked_achievements ? Object.keys(row.unlocked_achievements).length : 0;
-                                return {
-                                    userId: row.user_id || row.id,
-                                    name,
-                                    avatar,
-                                    xp: row.xp || 0,
-                                    weeklyXp: row.weekly_xp || Math.round((row.xp || 0) * 0.08),
-                                    level: row.level || Math.max(1, Math.floor(Math.sqrt((row.xp || 0) / 100)) + 1),
-                                    streak: 0,
-                                    badgesCount,
-                                    targetLang: lang && SUPPORTED_LEARNING_LANGUAGE_SET.has(lang) ? lang : 'ja',
-                                    country: ''
-                                };
-                            });
-                            memLeaderboardCache.set(cacheKey, { data: rawRealUsers, expiresAt: Date.now() + MEM_LEADERBOARD_TTL_MS });
+                            rawRealUsers = supaData.map(row => ({
+                                userId: row.user_id,
+                                name: row.name || 'Learner',
+                                avatar: row.avatar_url || '',
+                                xp: row.xp || 0,
+                                weeklyXp: row.weekly_xp || 0,
+                                level: row.level || Math.max(1, Math.floor(Math.sqrt((row.xp || 0) / 100)) + 1),
+                                streak: row.current_streak || 0,
+                                badgesCount: row.badges_count || 0,
+                                targetLang: row.target_lang || lang || 'ja',
+                                country: row.country || ''
+                            }));
+                            memLeaderboardCache.set(cacheKey, rawRealUsers);
                         }
                     }
                 } catch (supaErr) {

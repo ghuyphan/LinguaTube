@@ -878,18 +878,39 @@ test('SupadataProvider: fails over across 4+ keys when earlier keys hit 401/402/
   assert.equal(result?.segments?.[0]?.text, 'Fallback key 4 succeeded');
 });
 
-test('GET /api/transcript reports hasSupadataKey=true when SUPADATA_API_KEY_4 or SUPADATA_API_KEYS is set', async () => {
+test('GET /api/transcript reports hasSupadataKey=true only when authenticated with maintenance secret', async () => {
   const { onRequestGet } = await import('../functions-src/api/transcript.js');
+  const adminReq = new Request('https://voca.study/api/transcript', {
+    headers: { Authorization: 'Bearer maint-secret' }
+  });
 
-  const resNumbered = await onRequestGet({ env: { SUPADATA_API_KEY_4: 'sd_four' } });
+  // Unauthenticated callers only receive { status: 'ok' }
+  const resPublic = await onRequestGet({
+    request: new Request('https://voca.study/api/transcript'),
+    env: { BACKEND_MAINTENANCE_SECRET: 'maint-secret', SUPADATA_API_KEY_4: 'sd_four' }
+  });
+  const bodyPublic = await resPublic.json();
+  assert.equal(bodyPublic.status, 'ok');
+  assert.equal(bodyPublic.hasSupadataKey, undefined);
+
+  const resNumbered = await onRequestGet({
+    request: adminReq,
+    env: { BACKEND_MAINTENANCE_SECRET: 'maint-secret', SUPADATA_API_KEY_4: 'sd_four' }
+  });
   const bodyNumbered = await resNumbered.json();
   assert.equal(bodyNumbered.hasSupadataKey, true);
 
-  const resList = await onRequestGet({ env: { SUPADATA_API_KEYS: 'sd_a,sd_b' } });
+  const resList = await onRequestGet({
+    request: adminReq,
+    env: { BACKEND_MAINTENANCE_SECRET: 'maint-secret', SUPADATA_API_KEYS: 'sd_a,sd_b' }
+  });
   const bodyList = await resList.json();
   assert.equal(bodyList.hasSupadataKey, true);
 
-  const resEmpty = await onRequestGet({ env: { SUPADATA_API_KEYS: '  ,  ' } });
+  const resEmpty = await onRequestGet({
+    request: adminReq,
+    env: { BACKEND_MAINTENANCE_SECRET: 'maint-secret', SUPADATA_API_KEYS: '  ,  ' }
+  });
   const bodyEmpty = await resEmpty.json();
   assert.equal(bodyEmpty.hasSupadataKey, false);
 });

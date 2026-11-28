@@ -23,9 +23,13 @@ export async function onRequestGet(context) {
             : await resolveVerifiedVideoMetadata(context, videoId, { includeDisplay: true });
         const metadata = official.snippet;
         const inferredCategory = detectVideoCategory(metadata);
-        const existingRow = await db.prepare(
-            'SELECT primary_language, sub_languages, ai_languages, embed_blocked, embed_blocked_reason, region_restriction, region_checked_at FROM video_languages WHERE video_id = ?'
-        ).bind(videoId).first();
+        const existingRow = await db.prepare(`
+            SELECT available_languages, sub_languages, ai_languages, has_auto_captions, duration_seconds, duration_source,
+                   title, channel, channel_avatar, levels, category, category_source, metadata_source, metadata_observed_at,
+                   tags, primary_language, embed_blocked, embed_blocked_reason, region_restriction, region_checked_at
+                   ${strict ? ', asset_generation' : ''}
+            FROM video_languages WHERE video_id = ?
+        `).bind(videoId).first();
         const parseJsonArray = raw => { try { const v = JSON.parse(raw || '[]'); return Array.isArray(v) ? v : []; } catch { return []; } };
         const inferredPrimaryLanguage = inferSpokenLanguage({
             defaultAudioLanguage: metadata.defaultAudioLanguage,
@@ -36,31 +40,39 @@ export async function onRequestGet(context) {
             subLanguages: parseJsonArray(existingRow?.sub_languages),
             aiLanguages: parseJsonArray(existingRow?.ai_languages),
         });
-        // Preserve verified caption discovery and explicit/legacy category edits.
-        // Refreshing public details must not alter recommendation discovery timestamps.
-        const insertStmt = db.prepare(`INSERT INTO video_languages
-            (video_id,available_languages,sub_languages,has_auto_captions,duration_seconds,duration_source,title,channel,category,category_source,tags,primary_language,metadata_source,metadata_observed_at,created_at,updated_at)
-            SELECT ?,'[]','[]',0,?,'youtube_data_api',?,?,?,'official_mapping',?,?,'youtube_data_api',?,strftime('%s','now'),strftime('%s','now')
-            WHERE ${strict ? `COALESCE((SELECT CASE WHEN embed_blocked=0 THEN asset_generation ELSE -1 END
-                FROM video_languages WHERE video_id=?),0)=?` : '1'}
-            ON CONFLICT(video_id) DO UPDATE SET
-                title=excluded.title,channel=excluded.channel,duration_seconds=excluded.duration_seconds,duration_source=excluded.duration_source,
-                category=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category ELSE excluded.category END,
-                category_source=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category_source ELSE excluded.category_source END,
-                tags=excluded.tags,
-                primary_language=COALESCE(excluded.primary_language, video_languages.primary_language),
-                metadata_source=excluded.metadata_source,metadata_observed_at=excluded.metadata_observed_at
-            WHERE excluded.metadata_observed_at > COALESCE(video_languages.metadata_observed_at,0)
-                OR (excluded.metadata_observed_at = video_languages.metadata_observed_at
-                    AND video_languages.category_source='official_mapping' AND video_languages.category IS NOT excluded.category)`)
-            .bind(videoId, official.duration, metadata.title, metadata.channel, inferredCategory, JSON.stringify(metadata.tags), inferredPrimaryLanguage, official.observedAt, ...(strict ? [videoId, official.assets.generation] : []));
-        const selectStmt = db.prepare(`
-            SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, duration_source, title, channel, channel_avatar, levels, category, category_source, metadata_source, tags, primary_language
-            ${strict ? ', embed_blocked, asset_generation' : ''}
-            FROM video_languages WHERE video_id = ?
-        `).bind(videoId);
-        const [, selectResult] = await db.batch([insertStmt, selectStmt]);
-        const row = selectResult?.results?.[0];
+        const needsUpsert = !existingRow
+            || official.observedAt > (existingRow.metadata_observed_at ?? 0)
+            || (official.observedAt === existingRow.metadata_observed_at
+                && existingRow.category_source === 'official_mapping'
+                && existingRow.category !== inferredCategory);
+        let row = existingRow;
+        if (needsUpsert) {
+            // Preserve verified caption discovery and explicit/legacy category edits.
+            // Refreshing public details must not alter recommendation discovery timestamps.
+            const insertStmt = db.prepare(`INSERT INTO video_languages
+                (video_id,available_languages,sub_languages,has_auto_captions,duration_seconds,duration_source,title,channel,category,category_source,tags,primary_language,metadata_source,metadata_observed_at,created_at,updated_at)
+                SELECT ?,'[]','[]',0,?,'youtube_data_api',?,?,?,'official_mapping',?,?,'youtube_data_api',?,strftime('%s','now'),strftime('%s','now')
+                WHERE ${strict ? `COALESCE((SELECT CASE WHEN embed_blocked=0 THEN asset_generation ELSE -1 END
+                    FROM video_languages WHERE video_id=?),0)=?` : '1'}
+                ON CONFLICT(video_id) DO UPDATE SET
+                    title=excluded.title,channel=excluded.channel,duration_seconds=excluded.duration_seconds,duration_source=excluded.duration_source,
+                    category=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category ELSE excluded.category END,
+                    category_source=CASE WHEN video_languages.category_source IN ('manual','legacy') THEN video_languages.category_source ELSE excluded.category_source END,
+                    tags=excluded.tags,
+                    primary_language=COALESCE(excluded.primary_language, video_languages.primary_language),
+                    metadata_source=excluded.metadata_source,metadata_observed_at=excluded.metadata_observed_at
+                WHERE excluded.metadata_observed_at > COALESCE(video_languages.metadata_observed_at,0)
+                    OR (excluded.metadata_observed_at = video_languages.metadata_observed_at
+                        AND video_languages.category_source='official_mapping' AND video_languages.category IS NOT excluded.category)`)
+                .bind(videoId, official.duration, metadata.title, metadata.channel, inferredCategory, JSON.stringify(metadata.tags), inferredPrimaryLanguage, official.observedAt, ...(strict ? [videoId, official.assets.generation] : []));
+            const selectStmt = db.prepare(`
+                SELECT available_languages, sub_languages, has_auto_captions, duration_seconds, duration_source, title, channel, channel_avatar, levels, category, category_source, metadata_source, tags, primary_language
+                ${strict ? ', embed_blocked, asset_generation' : ''}
+                FROM video_languages WHERE video_id = ?
+            `).bind(videoId);
+            const [, selectResult] = await db.batch([insertStmt, selectStmt]);
+            row = selectResult?.results?.[0];
+        }
         if (strict && (row?.embed_blocked || row?.asset_generation !== official.assets.generation)) {
             return jsonResponse({ success: false, videoId, errorCode: 'VIDEO_ELIGIBILITY_CHANGED' }, 503,
                 { 'Retry-After': '5', 'Cache-Control': 'private, no-store' });

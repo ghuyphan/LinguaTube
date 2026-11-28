@@ -145,8 +145,7 @@ export async function consumeRateLimit(cache, clientIP, config, context = null) 
 export function getRateLimitHeaders(remaining, resetAt) {
     return {
         'X-RateLimit-Remaining': String(remaining),
-        'X-RateLimit-Reset': String(Math.ceil(resetAt / 1000)),
-        'Retry-After': String(Math.max(0, Math.ceil((resetAt - Date.now()) / 1000)))
+        'X-RateLimit-Reset': String(Math.ceil(resetAt / 1000))
     };
 }
 
@@ -216,6 +215,7 @@ export function rateLimitResponse(resetAt) {
             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
             'Access-Control-Expose-Headers': 'Retry-After',
             'Cache-Control': 'no-store',
+            'Retry-After': String(retryAfter),
             ...getRateLimitHeaders(0, resetAt)
         }
     });
