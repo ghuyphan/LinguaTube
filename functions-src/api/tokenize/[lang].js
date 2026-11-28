@@ -75,21 +75,18 @@ export async function onRequest(context) {
             });
         }
 
-        // 1. Check in-memory cache (0 KV ops, < 0.1ms)
+        // 1. Check in-memory cache (0 KV ops, < 0.1ms) — never serve fallback entries
         const cacheKey = `tokens:${lang === 'ja' ? 'v8' : 'v7'}:${lang}:${await sha256(JSON.stringify(text))}`;
         const memHit = memTokenSingleCache.get(cacheKey);
         if (memHit) {
-            const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));
-            const shouldUpgradeFallback = memHit.isFallback && isTokenizerReady(lang);
-            if (isExpired || shouldUpgradeFallback) {
+            const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > 7 * 24 * 3600 * 1000);
+            if (isExpired || memHit.isFallback || !Array.isArray(memHit.tokens)) {
                 memTokenSingleCache.delete(cacheKey);
-            } else if (Array.isArray(memHit.tokens)) {
+            } else {
                 return jsonResponse(memHit, 200, {
                     'Cache-Control': 'public, max-age=604800',
                     'X-Cache': 'HIT-MEM'
                 });
-            } else {
-                memTokenSingleCache.delete(cacheKey);
             }
         }
 
@@ -97,20 +94,17 @@ export async function onRequest(context) {
         if (TOKEN_CACHE && !request.signal?.aborted) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
-                if (cached && Array.isArray(cached.tokens)) {
-                    const isDegraded = cached.isFallback && isTokenizerReady(lang);
-                    if (!isDegraded) {
-                        if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
-                            const oldest = memTokenSingleCache.keys().next().value;
-                            if (oldest) memTokenSingleCache.delete(oldest);
-                        }
-                        const entry = { ...cached, cachedAt: Date.now() };
-                        memTokenSingleCache.set(cacheKey, entry);
-                        return jsonResponse(entry, 200, {
-                            'Cache-Control': 'public, max-age=604800',
-                            'X-Cache': 'HIT'
-                        });
+                if (cached && !cached.isFallback && Array.isArray(cached.tokens)) {
+                    if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
+                        const oldest = memTokenSingleCache.keys().next().value;
+                        if (oldest) memTokenSingleCache.delete(oldest);
                     }
+                    const entry = { ...cached, cachedAt: Date.now() };
+                    memTokenSingleCache.set(cacheKey, entry);
+                    return jsonResponse(entry, 200, {
+                        'Cache-Control': 'public, max-age=604800',
+                        'X-Cache': 'HIT'
+                    });
                 }
             } catch {
                 // Cache read failed, continue
@@ -138,15 +132,17 @@ export async function onRequest(context) {
         const isFallback = !isTokenizerReady(lang);
         const result = { tokens, cachedAt: Date.now(), isFallback };
 
-        // Save to warm in-memory cache (Rule 2: zero KV writes for micro tokenization)
-        if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
-            const oldest = memTokenSingleCache.keys().next().value;
-            if (oldest) memTokenSingleCache.delete(oldest);
+        // Save only non-fallback results to warm in-memory cache (Rule 2: zero KV writes)
+        if (!isFallback) {
+            if (memTokenSingleCache.size >= MAX_MEM_TOKEN_CACHE) {
+                const oldest = memTokenSingleCache.keys().next().value;
+                if (oldest) memTokenSingleCache.delete(oldest);
+            }
+            memTokenSingleCache.set(cacheKey, result);
         }
-        memTokenSingleCache.set(cacheKey, result);
 
         return jsonResponse(result, 200, {
-            'Cache-Control': 'public, max-age=604800',  // 7 day cache for tokenization
+            'Cache-Control': isFallback ? 'no-store' : 'public, max-age=604800',  // 7 day cache for tokenization
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 

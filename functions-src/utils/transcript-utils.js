@@ -274,21 +274,31 @@ export function splitRunOnSegments(segments) {
             continue;
         }
 
-        let currentStart = segment.start;
         const totalDuration = segment.duration || (MIN_CUE_DURATION * finalParts.length);
+        const segmentEnd = segment.start + totalDuration;
+        // Scale proportionally inside [segment.start, segmentEnd] so split cues never overshoot
+        // the next segment's start time and invert monotonic ordering.
+        const rawDurations = finalParts.map(part =>
+            Math.max(0.05, totalDuration * (part.length / totalChars))
+        );
+        const rawSum = rawDurations.reduce((sum, d) => sum + d, 0);
+        const scale = rawSum > 0 ? totalDuration / rawSum : 1;
 
+        let currentStart = segment.start;
         for (let i = 0; i < finalParts.length; i++) {
             const part = finalParts[i];
-            const partRatio = part.length / totalChars;
-            const partDuration = Math.max(MIN_CUE_DURATION, Math.round((totalDuration * partRatio) * 100) / 100);
+            const isLast = i === finalParts.length - 1;
+            const partDuration = isLast
+                ? Math.max(0.05, segmentEnd - currentStart)
+                : Math.max(0.05, rawDurations[i] * scale);
 
             result.push({
                 text: part,
                 start: Math.round(currentStart * 100) / 100,
-                duration: Math.min(partDuration, MAX_CUE_DURATION)
+                duration: Math.round(Math.min(partDuration, MAX_CUE_DURATION) * 100) / 100
             });
 
-            currentStart += partDuration;
+            currentStart = Math.min(segmentEnd, currentStart + partDuration);
         }
     }
 

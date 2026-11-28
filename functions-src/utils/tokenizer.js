@@ -5,7 +5,7 @@
  * and Vietnamese (Intl.Segmenter + MIT compound longest-match) tokenization.
  */
 
-import * as kuromoji from '@patdx/kuromoji';
+import { getCompactKuromojiTokenizer, isCompactKuromojiReady } from './compact-kuromoji.js';
 import { getJapaneseRomaji, isJapaneseKanaText, katakanaToHiragana } from './japanese-romaji.js';
 import { SUPPORTED_LEARNING_LANGUAGE_SET } from './utils.js';
 import {
@@ -73,73 +73,25 @@ export function isPunctuation(text) {
 }
 
 // ============================================================================
-// Kuromoji Tokenizer (Japanese) - Singleton
+// Kuromoji Tokenizer (Japanese) - Shared Compact Isolate Singleton
 // ============================================================================
 
-let tokenizerPromise = null;
-let kuromojiReady = false;
-
 export function isKuromojiReady() {
-    return kuromojiReady;
+    return isCompactKuromojiReady();
 }
 
 export function isTokenizerReady(lang) {
-    if (lang === 'ja') return kuromojiReady;
+    if (lang === 'ja') return isCompactKuromojiReady();
     if (lang === 'vi') return isVietnameseCompoundsReady();
     return true;
 }
 
-const cdnLoader = {
-    async loadArrayBuffer(url) {
-        if (typeof globalThis !== 'undefined' && globalThis.process?.versions?.node) {
-            try {
-                const fs = await import('fs');
-                const path = await import('path');
-                const zlib = await import('zlib');
-                const gzName = url.endsWith('.gz') ? url : url + '.gz';
-                const localGz = path.resolve('node_modules/@patdx/kuromoji/dict', gzName);
-                if (fs.existsSync(localGz)) {
-                    const buf = fs.readFileSync(localGz);
-                    const decompressed = zlib.gunzipSync(buf);
-                    return decompressed.buffer.slice(decompressed.byteOffset, decompressed.byteOffset + decompressed.byteLength);
-                }
-            } catch {
-                // Fallback to CDN fetch
-            }
-        }
-        url = url.replace('.gz', '');
-        const cdnUrl = 'https://cdn.jsdelivr.net/npm/@aiktb/kuromoji@1.0.2/dict/' + url;
-        const res = await fetch(cdnUrl, { signal: AbortSignal.timeout(60000) });
-        if (!res.ok) {
-            throw new Error(`Failed to fetch dictionary: ${cdnUrl}, status: ${res.status}`);
-        }
-        return res.arrayBuffer();
-    }
-};
-
 /**
- * Get or create the kuromoji tokenizer (singleton with failure recovery)
- * 
- * NOTE: If initialization fails (e.g., network error fetching dictionary),
- * the promise is reset so subsequent calls can retry. This prevents a
- * permanent failure state from a single transient error.
+ * Get or create the shared compact IPADIC tokenizer (singleton on globalThis
+ * across esbuild route bundles, with failure recovery on transient load errors).
  */
-export async function getKuromojiTokenizer() {
-    if (!tokenizerPromise) {
-        console.log('[Tokenizer] Initializing kuromoji tokenizer...');
-        tokenizerPromise = new kuromoji.TokenizerBuilder({
-            loader: cdnLoader
-        }).build().then(t => {
-            kuromojiReady = true;
-            return t;
-        }).catch(err => {
-            console.error('[Tokenizer] Initialization failed:', err.message);
-            tokenizerPromise = null; // Reset on failure to allow retry
-            kuromojiReady = false;
-            throw err;
-        });
-    }
-    return tokenizerPromise;
+export function getKuromojiTokenizer(options = {}) {
+    return getCompactKuromojiTokenizer(options);
 }
 
 export { katakanaToHiragana };
@@ -256,6 +208,16 @@ function segmentJapaneseFast(text) {
 }
 
 const UNSAFE_KUROMOJI_PATTERN = /[^\u0000-\uFFFF]|[\u0300-\u036F\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F\u3099\u309A\u200B-\u200D\uFEFF\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/u;
+
+export function isKuromojiSafeToken(token) {
+    return Boolean(
+        token &&
+        !token.isPunctuation &&
+        typeof token.surface === 'string' &&
+        token.surface.trim() &&
+        !UNSAFE_KUROMOJI_PATTERN.test(token.surface)
+    );
+}
 
 function partitionJapaneseText(text) {
     const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
@@ -421,12 +383,15 @@ export function correctTranscriptPronunciation(segments, lang) {
  * Only adds reading (furigana) for tokens containing kanji
  * Automatically falls back to fast Intl.Segmenter if Kuromoji initialization times out (>2000ms)
  */
-export async function tokenizeJapanese(text) {
+export async function tokenizeJapanese(text, options = {}) {
     if (!text || typeof text !== 'string') return [];
+    let timer;
     try {
-        const tokenizer = await Promise.race([
-            getKuromojiTokenizer(),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('Kuromoji init timeout')), 10000))
+        const tokenizer = options?.kuromojiTokenizer || await Promise.race([
+            getKuromojiTokenizer(options),
+            new Promise((_, reject) => {
+                timer = setTimeout(() => reject(new Error('Kuromoji init timeout')), 10000);
+            })
         ]);
 
         const spans = partitionJapaneseText(text);
@@ -442,6 +407,8 @@ export async function tokenizeJapanese(text) {
     } catch (err) {
         console.warn('[Tokenizer] Kuromoji unavailable or timed out, falling back to Intl.Segmenter:', err?.message || err);
         return tokenizeJapaneseFast(text);
+    } finally {
+        if (timer) clearTimeout(timer);
     }
 }
 
@@ -1164,7 +1131,7 @@ export async function tokenize(text, lang, options = {}) {
     }
 
     if (lang === 'ja') {
-        return tokenizeJapanese(text);
+        return tokenizeJapanese(text, options);
     }
 
     if (lang === 'en') {
@@ -1180,20 +1147,32 @@ export async function tokenize(text, lang, options = {}) {
 
 /**
  * Whether a single transcript segment still needs morphological enrichment.
- * Japanese segments require POS tags (and readings when kanji are present),
- * so degraded Intl.Segmenter fallback tokens are re-enriched once Kuromoji is ready.
+ * Japanese segments require POS tags on Kuromoji-safe words so degraded
+ * Intl.Segmenter fallback tokens are re-enriched once Kuromoji is ready,
+ * without rejecting valid IPADIC-UNKNOWN kanji cues that have POS but no reading.
  */
+export function segmentHasMorphologicalTokens(segment, lang) {
+    if (!segment) return true;
+    const text = segment.text || '';
+    if (!text.trim()) return true;
+    if (!Array.isArray(segment.tokens) || segment.tokens.length === 0) return false;
+    const normLang = (lang || '').split('-')[0].toLowerCase();
+    if (normLang === 'ja') {
+        const words = segment.tokens.filter(isKuromojiSafeToken);
+        if (words.length > 0 && !words.some(t => typeof t.partOfSpeech === 'string' && t.partOfSpeech.trim())) {
+            return false;
+        }
+    }
+    return true;
+}
+
 export function segmentNeedsEnrichment(segment, lang) {
     if (!segment) return false;
     const text = segment.text || '';
     if (!text.trim()) return false;
-    if (!Array.isArray(segment.tokens) || segment.tokens.length === 0) return true;
+    if (!segmentHasMorphologicalTokens(segment, lang)) return true;
     const normLang = (lang || '').split('-')[0].toLowerCase();
     if (normLang === 'ja') {
-        const words = segment.tokens.filter(t => t && !t.isPunctuation && (t.surface || '').trim());
-        if (words.length > 0 && !words.some(t => typeof t.partOfSpeech === 'string' && t.partOfSpeech.trim())) {
-            return true;
-        }
         if (hasKanji(text) && !segment.tokens.some(t => t.reading || t.rubyParts)) {
             return true;
         }
@@ -1234,13 +1213,18 @@ export async function enrichSegmentsWithTokens(segments, lang, { allowFallback =
     }
 
     // Pre-initialize tokenizer modules for performance before the map loop with a bounded timeout
-    let kuromojiAvailable = false;
+    let kuromojiTokenizer = null;
     if (normLang === 'ja') {
-        kuromojiAvailable = await Promise.race([
-            getKuromojiTokenizer().then(() => true),
-            new Promise(resolve => setTimeout(() => resolve(false), kuromojiTimeoutMs))
-        ]).catch(() => false);
-        if (!kuromojiAvailable && !allowFallback) {
+        let timer;
+        try {
+            kuromojiTokenizer = await Promise.race([
+                getKuromojiTokenizer({ assets, requestUrl }),
+                new Promise(resolve => { timer = setTimeout(() => resolve(null), kuromojiTimeoutMs); })
+            ]).catch(() => null);
+        } finally {
+            if (timer) clearTimeout(timer);
+        }
+        if (!kuromojiTokenizer && !allowFallback) {
             return null;
         }
     }
@@ -1249,7 +1233,11 @@ export async function enrichSegmentsWithTokens(segments, lang, { allowFallback =
     if (normLang === 'en') await getNlp().catch(() => null);
     if (normLang === 'vi') await getVietnameseCompounds({ assets, requestUrl }).catch(() => null);
 
-    const tokenizeOptions = normLang === 'vi' ? { assets, requestUrl } : undefined;
+    const tokenizeOptions = normLang === 'ja'
+        ? { assets, requestUrl, kuromojiTokenizer }
+        : normLang === 'vi'
+            ? { assets, requestUrl }
+            : undefined;
     const enriched = await Promise.all(
         segments.map(async (segment) => {
             if (!segment) return segment;
@@ -1263,7 +1251,7 @@ export async function enrichSegmentsWithTokens(segments, lang, { allowFallback =
             }
 
             try {
-                const tokens = (normLang === 'ja' && !kuromojiAvailable)
+                const tokens = (normLang === 'ja' && !kuromojiTokenizer)
                     ? tokenizeJapaneseFast(text)
                     : await tokenize(text, normLang, tokenizeOptions);
                 return {

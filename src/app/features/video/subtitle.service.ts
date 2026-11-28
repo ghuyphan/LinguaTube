@@ -311,14 +311,19 @@ export class SubtitleService {
 
       // Process in batches of MAX_TOKENIZE_BATCH_SIZE (usually 1 batch of <= 800 texts)
       // Updating progressively per batch ensures the first 800 cues are available immediately
+      let hasPersistableTokens = false;
       for (let i = 0; i < texts.length; i += MAX_TOKENIZE_BATCH_SIZE) {
         const chunk = texts.slice(i, i + MAX_TOKENIZE_BATCH_SIZE);
-        const chunkResults = await this.batchTokenize(chunk, lang || 'en', videoId);
+        const { tokens: chunkResults, isFallback } = await this.batchTokenize(chunk, lang || 'en', videoId);
 
         chunk.forEach((text, chunkIdx) => {
-          const tokens = chunkResults[chunkIdx] || this.fallbackTokenize(text, lang);
-          const cacheKey = `${lang}:${text}`;
-          this.addToCache(cacheKey, tokens);
+          const lineTokens = chunkResults[chunkIdx];
+          const isLineFallback = isFallback || !Array.isArray(lineTokens);
+          const tokens = Array.isArray(lineTokens) ? lineTokens : this.fallbackTokenize(text, lang);
+          if (!isLineFallback && this.hasRichTokens(tokens, lang)) {
+            this.addToCache(`${lang}:${text}`, tokens);
+            hasPersistableTokens = true;
+          }
 
           uniqueTexts.get(text)?.forEach(cueIndex => {
             updatedCues[cueIndex].tokens = tokens;
@@ -329,8 +334,8 @@ export class SubtitleService {
         this.subtitles.set([...updatedCues]);
       }
 
-      // Save tokens to localStorage for future visits (debounced)
-      if (videoId && lang) {
+      // Save only non-fallback rich tokens to localStorage for future visits (debounced)
+      if (videoId && lang && hasPersistableTokens) {
         this.scheduleTokenSave(videoId, lang);
       }
 
@@ -1050,13 +1055,23 @@ export class SubtitleService {
   // Private: Tokenization
   // ============================================================================
 
-  private async batchTokenize(texts: string[], lang: string, videoId?: string): Promise<Token[][]> {
+  private hasRichTokens(tokens: Token[] | undefined, lang: string | null): boolean {
+    if (!Array.isArray(tokens) || tokens.length === 0) return false;
+    if ((lang || '').split('-')[0].toLowerCase() !== 'ja') return true;
+    const words = tokens.filter(t => t && !t.isPunctuation && (t.surface || '').trim());
+    return words.length === 0 || words.some(t => typeof t.partOfSpeech === 'string' && t.partOfSpeech.trim().length > 0);
+  }
+
+  private async batchTokenize(texts: string[], lang: string, videoId?: string): Promise<{ tokens: Token[][]; isFallback: boolean }> {
     const signal = this.abortController?.signal;
 
     // Circuit breaker: If recently rate-limited, skip network calls and use local fallback
     if (Date.now() < this.rateLimitedUntil) {
       console.warn('[SubtitleService] Rate limit active, using local tokenization fallback');
-      return texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null));
+      return {
+        tokens: texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null)),
+        isFallback: true
+      };
     }
 
     // Try batch endpoint first (requires videoId)
@@ -1089,16 +1104,22 @@ export class SubtitleService {
           const retryAfterSec = parseInt(response.headers.get('Retry-After') || '60', 10);
           this.rateLimitedUntil = Date.now() + Math.max(30, retryAfterSec) * 1000;
           console.warn(`[SubtitleService] Tokenize rate limit hit (429). Circuit breaker enabled for ${retryAfterSec}s. Using local fallback.`);
-          return texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null));
+          return {
+            tokens: texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null)),
+            isFallback: true
+          };
         }
 
         if (response.ok) {
           const data = await response.json();
           if (data.tokens && Array.isArray(data.tokens) && data.tokens.length === texts.length) {
-            return data.tokens.map((line: unknown, idx: number) => {
-              if (Array.isArray(line)) return line;
-              return this.fallbackTokenize(texts[idx], lang as SupportedLearningLanguage | null);
-            });
+            return {
+              tokens: data.tokens.map((line: unknown, idx: number) => {
+                if (Array.isArray(line)) return line;
+                return this.fallbackTokenize(texts[idx], lang as SupportedLearningLanguage | null);
+              }),
+              isFallback: Boolean(data.isFallback)
+            };
           }
           console.warn(`[SubtitleService] Batch tokenize response shape mismatch: expected ${texts.length}, got ${data?.tokens?.length}`);
         } else {
@@ -1115,7 +1136,10 @@ export class SubtitleService {
     // This is less accurate than server-side kuromoji for Japanese,
     // but prevents exhausting user's rate limit
     console.log('[SubtitleService] Using local fallback tokenization');
-    return texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null));
+    return {
+      tokens: texts.map(text => this.fallbackTokenize(text, lang as SupportedLearningLanguage | null)),
+      isFallback: true
+    };
   }
 
 
@@ -1357,14 +1381,14 @@ export class SubtitleService {
       const cues = this.subtitles();
       for (const cue of cues) {
         const key = `${prefix}${cue.text}`;
-        if (cue.tokens && cue.tokens.length > 0) {
+        if (cue.tokens && cue.tokens.length > 0 && this.hasRichTokens(cue.tokens, lang)) {
           if (!videoTokens[key]) {
             videoTokens[key] = cue.tokens;
             count++;
           }
         } else {
           const cached = this.tokenCache.get(key);
-          if (cached && !videoTokens[key]) {
+          if (cached && this.hasRichTokens(cached, lang) && !videoTokens[key]) {
             videoTokens[key] = cached;
             count++;
           }
@@ -1403,6 +1427,7 @@ export class SubtitleService {
       const entry = stored[`${videoId}:${lang}`];
 
       if (entry?.tokens) {
+        let loaded = 0;
         Object.entries(entry.tokens).forEach(([key, tokens]) => {
           // Patch legacy tokens that don't have isPunctuation flag
           const patchedTokens = (tokens as Token[]).map(t => {
@@ -1411,10 +1436,15 @@ export class SubtitleService {
             }
             return t;
           });
+          // Skip previously poisoned fallback entries so they auto-heal via /api/tokenize-batch
+          if (!this.hasRichTokens(patchedTokens, lang)) return;
           this.tokenCache.set(key, patchedTokens);
+          loaded++;
         });
-        console.log(`[SubtitleService] Loaded tokens for ${videoId}:${lang} from localStorage`);
-        return true;
+        if (loaded > 0) {
+          console.log(`[SubtitleService] Loaded ${loaded} tokens for ${videoId}:${lang} from localStorage`);
+          return true;
+        }
       }
     } catch {
       // Ignore errors

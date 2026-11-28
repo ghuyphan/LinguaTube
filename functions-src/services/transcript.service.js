@@ -1,7 +1,8 @@
 import { scheduleVideoGrade } from './video-grading.js';
 import { serverGradingEnabled } from './video-grading-jobs.js';
 import { resolveVerifiedVideoMetadata, requireVideoEligibility, videoEligibilityEnabled } from './video-metadata.service.js';
-import { enrichPublishedTranscript } from './transcript-enrichment.js';
+import { BACKGROUND_ENRICHMENT_BUDGET_MS, enrichPublishedTranscript } from './transcript-enrichment.js';
+import { segmentsNeedEnrichment } from '../utils/tokenizer.js';
 import { ingestGladiaJob, recoverGladiaSubmission } from './gladia-recovery.js';
 import { ElevenLabsProvider, hasElevenLabsConfig } from '../providers/elevenlabs.js';
 import { recoverJobRefund } from './refund-recovery.js';
@@ -126,7 +127,14 @@ export class TranscriptService {
                     if (serverGradingEnabled(env) && !waitUntil) {
                         await scheduleVideoGrade(env, videoId, actualLang, { regrade: true });
                     }
-                    await enrichPublishedTranscript(r2, videoId, actualLang);
+                    await enrichPublishedTranscript(
+                        r2,
+                        videoId,
+                        actualLang,
+                        waitUntil ? BACKGROUND_ENRICHMENT_BUDGET_MS : 3000,
+                        false,
+                        { assets: env?.ASSETS, requestUrl: context?.request?.url }
+                    );
                 }
             };
 
@@ -470,6 +478,18 @@ export class TranscriptService {
         if (job.status === 'completed') {
             const r2Transcript = await getTranscriptFromR2(r2, targetVideoId, targetLang, { preferAI: true });
             if (r2Transcript?.segments?.length > 0) {
+                if (context.waitUntil && segmentsNeedEnrichment(r2Transcript.segments, targetLang)) {
+                    context.waitUntil(
+                        enrichPublishedTranscript(
+                            r2,
+                            targetVideoId,
+                            targetLang,
+                            BACKGROUND_ENRICHMENT_BUDGET_MS,
+                            true,
+                            { assets: env?.ASSETS, requestUrl: context?.request?.url }
+                        )
+                    );
+                }
                 return {
                     status: 'done',
                     videoInfo: {
@@ -512,7 +532,16 @@ export class TranscriptService {
             try {
                 const outcome = await ingestGladiaJob(env, jobId, this.gladiaProvider, Date.now() + 20000);
                 if (outcome?.status === 'done' && context.waitUntil) {
-                    context.waitUntil(enrichPublishedTranscript(r2, targetVideoId, outcome.language, 3000, true));
+                    context.waitUntil(
+                        enrichPublishedTranscript(
+                            r2,
+                            targetVideoId,
+                            outcome.language,
+                            BACKGROUND_ENRICHMENT_BUDGET_MS,
+                            true,
+                            { assets: env?.ASSETS, requestUrl: context?.request?.url }
+                        )
+                    );
                 }
                 if (outcome?.status === 'error') return outcome;
                 if (outcome?.status === 'done') return {

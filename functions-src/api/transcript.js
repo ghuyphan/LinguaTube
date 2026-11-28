@@ -1,5 +1,5 @@
 import { requireVideoEligibility, videoEligibilityEnabled, videoEligibilityFailure } from '../services/video-metadata.service.js';
-import { enrichPublishedTranscript } from '../services/transcript-enrichment.js';
+import { BACKGROUND_ENRICHMENT_BUDGET_MS, enrichPublishedTranscript } from '../services/transcript-enrichment.js';
 /**
  * Unified Transcript API (Cloudflare Function)
  * 
@@ -322,7 +322,7 @@ export async function onRequestPost(context) {
             if (!refreshDeferred) {
                 if (waitUntil && segmentsNeedEnrichment(saved.segments, storageLanguage)) {
                     const isAiKey = Boolean(saved.key?.endsWith('.ai.json'));
-                    waitUntil(enrichPublishedTranscript(r2, cleanVideoId, storageLanguage, 3000, isAiKey, {
+                    waitUntil(enrichPublishedTranscript(r2, cleanVideoId, storageLanguage, BACKGROUND_ENRICHMENT_BUDGET_MS, isAiKey, {
                         assets: env?.ASSETS,
                         requestUrl: request.url
                     }));

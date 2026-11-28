@@ -5,6 +5,7 @@
 /dist
 /functions
 /public/data/grammar
+/public/data/ipadic-compact.bin.gz
 /out-tsc
 /.angular
 .wrangler/

@@ -24,7 +24,7 @@ import {
     getRequestJson,
     SUPPORTED_LEARNING_LANGUAGE_SET
 } from '../../utils/utils.js';
-import { tokenize, isTokenizerReady } from '../../utils/tokenizer.js';
+import { tokenize, isTokenizerReady, getKuromojiTokenizer, isKuromojiSafeToken } from '../../utils/tokenizer.js';
 
 // Tiered rate limiting - anonymous: 50/hr, free: 100/hr, premium: 1000/hr (effectively unlimited)
 const RATE_LIMIT_CONFIG = {
@@ -147,20 +147,17 @@ export async function onRequest(context) {
         // Check cache - include hash of texts & generation to differentiate subtitle versions
         const cacheKey = `tokens:${lang === 'ja' ? 'v8' : 'v7'}:${lang}:${videoId}:g${assetGeneration}:${textsHash}`;
 
-        // 1. Check warm in-memory cache (0 KV ops, < 0.1ms)
+        // 1. Check warm in-memory cache (0 KV ops, < 0.1ms) — never serve fallback entries
         const memHit = memTokenBatchCache.get(cacheKey);
         if (memHit) {
-            const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > (memHit.isFallback ? 60000 : 7 * 24 * 3600 * 1000));
-            const shouldUpgradeFallback = memHit.isFallback && isTokenizerReady(lang);
-            if (isExpired || shouldUpgradeFallback) {
+            const isExpired = memHit.cachedAt && (Date.now() - memHit.cachedAt > 7 * 24 * 3600 * 1000);
+            if (isExpired || memHit.isFallback || !isValidTokensArray(memHit.tokens, texts.length)) {
                 memTokenBatchCache.delete(cacheKey);
-            } else if (isValidTokensArray(memHit.tokens, texts.length)) {
+            } else {
                 return jsonResponse(memHit, 200, {
                     'Cache-Control': cacheControl,
                     'X-Cache': 'HIT-MEM'
                 });
-            } else {
-                memTokenBatchCache.delete(cacheKey);
             }
         }
 
@@ -168,22 +165,19 @@ export async function onRequest(context) {
         if (TOKEN_CACHE && !request.signal?.aborted) {
             try {
                 const cached = await TOKEN_CACHE.get(cacheKey, 'json');
-                if (cached && isValidTokensArray(cached.tokens, texts.length)) {
-                    const isDegraded = cached.isFallback && isTokenizerReady(lang);
-                    if (!isDegraded) {
-                        console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
-                        if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
-                            const oldest = memTokenBatchCache.keys().next().value;
-                            if (oldest) memTokenBatchCache.delete(oldest);
-                        }
-                        const entry = { ...cached, cachedAt: Date.now() };
-                        memTokenBatchCache.set(cacheKey, entry);
-                        return jsonResponse(entry, 200, {
-                            'Cache-Control': cacheControl,
-                            'X-Cache': 'HIT'
-                        });
+                if (cached && !cached.isFallback && isValidTokensArray(cached.tokens, texts.length)) {
+                    console.log(`[Tokenize Batch] Cache hit for ${videoId} (hash: ${textsHash})`);
+                    if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                        const oldest = memTokenBatchCache.keys().next().value;
+                        if (oldest) memTokenBatchCache.delete(oldest);
                     }
-                } else if (cached) {
+                    const entry = { ...cached, cachedAt: Date.now() };
+                    memTokenBatchCache.set(cacheKey, entry);
+                    return jsonResponse(entry, 200, {
+                        'Cache-Control': cacheControl,
+                        'X-Cache': 'HIT'
+                    });
+                } else if (cached && !cached.isFallback) {
                     console.log(`[Tokenize Batch] Cache mismatch or corrupt for ${videoId}`);
                 }
             } catch {
@@ -218,11 +212,22 @@ export async function onRequest(context) {
                 console.log(`[Tokenize Batch] Tokenizing ${texts.length} texts for ${videoId} (${lang}) [tier: ${tier}]`);
 
                 const tokenOpts = { assets: env?.ASSETS, requestUrl: request.url };
+                if (lang === 'ja') {
+                    let timer;
+                    try {
+                        tokenOpts.kuromojiTokenizer = await Promise.race([
+                            getKuromojiTokenizer(tokenOpts),
+                            new Promise(resolve => { timer = setTimeout(() => resolve(null), 10000); })
+                        ]).catch(() => null);
+                    } finally {
+                        if (timer) clearTimeout(timer);
+                    }
+                }
                 const allTokens = await Promise.all(
                     texts.map(text => tokenize(text, lang, tokenOpts))
                 );
                 const missingJaPos = lang === 'ja' && allTokens.some(line =>
-                    line.some(t => t && !t.isPunctuation && !t.partOfSpeech)
+                    line.some(t => isKuromojiSafeToken(t) && !t.partOfSpeech)
                 );
                 const isFallback = !isTokenizerReady(lang) || missingJaPos;
 
@@ -232,11 +237,13 @@ export async function onRequest(context) {
                     isFallback
                 };
 
-                if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
-                    const oldest = memTokenBatchCache.keys().next().value;
-                    if (oldest) memTokenBatchCache.delete(oldest);
+                if (!isFallback) {
+                    if (memTokenBatchCache.size >= MAX_MEM_BATCH_VIDEOS) {
+                        const oldest = memTokenBatchCache.keys().next().value;
+                        if (oldest) memTokenBatchCache.delete(oldest);
+                    }
+                    memTokenBatchCache.set(cacheKey, computed);
                 }
-                memTokenBatchCache.set(cacheKey, computed);
 
                 return computed;
             })();
@@ -257,7 +264,7 @@ export async function onRequest(context) {
         }
 
         return jsonResponse(result, 200, {
-            'Cache-Control': cacheControl,
+            'Cache-Control': result.isFallback ? 'no-store' : cacheControl,
             ...getRateLimitHeaders(rateCheck.remaining, rateCheck.resetAt)
         });
 
