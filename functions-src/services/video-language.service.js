@@ -72,6 +72,32 @@ function hasStrongScriptCue(text, lang) {
     return false;
 }
 
+const LEARNER_CONTENT_CUE_REGEX = /(?<![a-z])(?:learn|hsk|jlpt|topik|tocfl|genki|podcast|listening|vlog|beginner)(?![a-z])/i;
+
+function recoverStudioDefaultEnglish(combined, titleChannel, verifiedLangs, defaultDocLang = null) {
+    const explicitCue = detectExplicitSpokenCue(combined);
+    if (explicitCue === 'en') return null;
+    if (explicitCue && verifiedLangs.has(explicitCue)) return explicitCue;
+    if (defaultDocLang && defaultDocLang !== 'en' && defaultDocLang !== 'other'
+        && hasStrongScriptCue(titleChannel, defaultDocLang)) {
+        return defaultDocLang;
+    }
+    const topicCue = detectTopicLanguageCue(combined);
+    if (topicCue && topicCue !== 'en' && verifiedLangs.has(topicCue)
+        && !/(?<![a-z])english(?![a-z])/i.test(titleChannel)
+        && (hasStrongScriptCue(titleChannel, topicCue) || LEARNER_CONTENT_CUE_REGEX.test(combined))) {
+        return topicCue;
+    }
+    const nonEnTracks = [...verifiedLangs].filter(l => l !== 'en' && l !== 'other');
+    if (!verifiedLangs.has('en') && nonEnTracks.length === 1) {
+        const trackLang = nonEnTracks[0];
+        if (hasStrongScriptCue(titleChannel, trackLang) || topicCue === trackLang) {
+            return trackLang;
+        }
+    }
+    return null;
+}
+
 /**
  * Infer a video's primary spoken/sung language from official audio metadata, scripts, and AI tracks.
  * Returns null only when evidence is genuinely absent/ambiguous.
@@ -80,41 +106,35 @@ function hasStrongScriptCue(text, lang) {
  */
 export function inferSpokenLanguage(meta = {}) {
     const storedPrimary = normalizePrimaryLanguage(meta.primaryLanguage);
-    if (storedPrimary) return storedPrimary;
+    if (storedPrimary && storedPrimary !== 'en') return storedPrimary;
 
     const title = typeof meta.title === 'string' ? meta.title.trim() : '';
     const channel = typeof meta.channel === 'string' ? meta.channel.trim() : '';
     const tags = Array.isArray(meta.tags) ? meta.tags.filter(t => typeof t === 'string').join(' ') : '';
     const combined = `${title} ${channel} ${tags}`.trim();
+    const titleChannel = `${title} ${channel}`.trim();
 
     const aiLanguages = Array.isArray(meta.aiLanguages) ? meta.aiLanguages : [];
     const availableLanguages = Array.isArray(meta.availableLanguages) ? meta.availableLanguages : [];
     const subLanguages = Array.isArray(meta.subLanguages) ? meta.subLanguages : [];
+    const verifiedTrackLangs = new Set([...aiLanguages, ...subLanguages].map(normalizePrimaryLanguage).filter(Boolean));
     // Prefer verified/ingested caption tracks over noisy YouTube community-translated availableLanguages.
     const primaryTrackSource = (aiLanguages.length || subLanguages.length)
         ? [...aiLanguages, ...subLanguages]
         : availableLanguages;
     const knownLangs = new Set(primaryTrackSource.map(normalizePrimaryLanguage).filter(Boolean));
 
+    if (storedPrimary === 'en') {
+        return recoverStudioDefaultEnglish(combined, titleChannel, verifiedTrackLangs) || 'en';
+    }
+
     const audioLang = normalizePrimaryLanguage(meta.defaultAudioLanguage);
     if (audioLang) {
         const defaultDocLang = normalizePrimaryLanguage(meta.defaultLanguage);
-        const explicitCue = detectExplicitSpokenCue(combined);
         // YouTube creators frequently leave defaultAudioLanguage at the Studio 'en' default
         // even when defaultLanguage, verified tracks, or title/channel indicate another language.
-        if (audioLang === 'en' && explicitCue !== 'en') {
-            if (defaultDocLang && defaultDocLang !== 'en' && defaultDocLang !== 'other'
-                && hasStrongScriptCue(`${title} ${channel}`, defaultDocLang)) {
-                return defaultDocLang;
-            }
-            const verifiedTrackLangs = new Set([...aiLanguages, ...subLanguages].map(normalizePrimaryLanguage).filter(Boolean));
-            const nonEnTracks = [...verifiedTrackLangs].filter(l => l !== 'en' && l !== 'other');
-            if (!verifiedTrackLangs.has('en') && nonEnTracks.length === 1) {
-                const trackLang = nonEnTracks[0];
-                if (hasStrongScriptCue(`${title} ${channel}`, trackLang) || detectTopicLanguageCue(combined) === trackLang) {
-                    return trackLang;
-                }
-            }
+        if (audioLang === 'en') {
+            return recoverStudioDefaultEnglish(combined, titleChannel, verifiedTrackLangs, defaultDocLang) || 'en';
         }
         return audioLang;
     }

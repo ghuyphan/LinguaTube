@@ -14,6 +14,7 @@ import { normalizeLanguageCode } from '../utils/transcript-utils.js';
 import { SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js';
 import { playbackAvailability } from '../services/video-playback.service.js';
 import { videoAssetPrefix } from './video-assets.js';
+import { SimpleLRUCache } from '../utils/cache-manager.js';
 
 // D1 cleanup threshold (7 days)
 const NO_TRANSCRIPT_MAX_AGE_SECONDS = 7 * 24 * 60 * 60;
@@ -994,7 +995,7 @@ export async function indexPendingVideoSearchText(db) {
 
 // Apply the newest observations atomically. Timestamp-only checks do not
 // rebuild the catalog or invalidate recommendation candidates.
-export async function saveVideoAvailabilityChecks(db, checks, { replaceEmbedReports = false } = {}) {
+export async function saveVideoAvailabilityChecks(db, checks) {
     if (!checks.length) return 0;
     const latest = new Map();
     for (const check of checks) {
@@ -1032,7 +1033,8 @@ export async function saveVideoAvailabilityChecks(db, checks, { replaceEmbedRepo
                 embed_blocked_reason = reason,
                 region_restriction = CASE WHEN has_restriction THEN restriction ELSE region_restriction END,
                 region_checked_at = checked_at
-            ${newer} AND has_block ${replaceEmbedReports ? '' : "AND embed_blocked_reason IS NOT 'embed_disabled'"}
+            ${newer} AND has_block
+              AND (embed_blocked_reason IS NOT 'embed_disabled' OR reason = 'video_unavailable')
               AND (embed_blocked IS NOT (reason IS NOT NULL) OR embed_blocked_reason IS NOT reason)
         `).bind(payload),
         db.prepare(`${observations}
@@ -1069,37 +1071,39 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
     const { metrics, isRefresh, waitUntil, country = null, useAssetGenerations = false } = options;
     if (cleanQuery) {
         if (metrics) metrics.candidateCache = 'BYPASS-SEARCH';
-        return discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options);
+        return {
+            videos: await discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options),
+            fromCache: false
+        };
     }
     const key = JSON.stringify([lang, targetTier, category || null, country, useAssetGenerations]);
     let cache = recommendationCandidates.get(db);
     if (!cache) {
-        cache = new Map();
+        cache = new SimpleLRUCache(MAX_RECOMMENDATION_CANDIDATE_KEYS, RECOMMENDATION_CANDIDATE_TTL_MS);
         recommendationCandidates.set(db, cache);
     }
     const cached = cache.get(key);
     const version = ++candidateReadVersion;
     const epoch = catalogCacheEpoch;
-    if (!isRefresh && cached && cached.r2 === r2 && cached.epoch === epoch && cached.expiresAt > Date.now()) {
+    if (!isRefresh && cached && cached.r2 === r2 && cached.epoch === epoch) {
         if (metrics) metrics.candidateCache = 'HIT';
-        return cached.videos;
+        return { videos: cached.videos, fromCache: true };
     }
     const edge = typeof caches !== 'undefined' ? caches.default : null;
     const edgeKey = 'https://voca.study/__internal/rec-pool/v3/' + [epoch, lang, targetTier || 'all', category || 'all', country || 'unknown', useAssetGenerations]
         .map(encodeURIComponent).join('/');
     const store = videos => {
         if (catalogCacheEpoch !== epoch || (cache.get(key)?.version ?? 0) > version) return;
-        if (cache.size >= MAX_RECOMMENDATION_CANDIDATE_KEYS && !cache.has(key)) cache.delete(cache.keys().next().value);
-        cache.set(key, { r2, videos, version, epoch, expiresAt: Date.now() + RECOMMENDATION_CANDIDATE_TTL_MS });
+        cache.set(key, { r2, videos, version, epoch });
     };
     if (!isRefresh && edge) {
         try {
             const hit = await edge.match(edgeKey);
             const videos = hit?.ok ? await hit.json() : null;
-            if (Array.isArray(videos) && catalogCacheEpoch === epoch && cache.get(key) === cached) {
+            if (Array.isArray(videos) && catalogCacheEpoch === epoch && (cache.get(key)?.version ?? 0) <= version) {
                 store(videos);
                 if (metrics) metrics.candidateCache = 'HIT';
-                return videos;
+                return { videos, fromCache: true };
             }
         } catch { /* Retry through D1. */ }
     }
@@ -1111,28 +1115,36 @@ async function loadRecommendationCandidates(db, r2, lang, targetTier, category, 
             headers: { 'Content-Type': 'application/json', 'Cache-Control': `public, max-age=${EDGE_CANDIDATE_TTL_SECONDS}` }
         })).catch(error => console.warn('[Recommendations] Candidate cache write failed:', error.message)));
     }
-    return videos;
+    return { videos, fromCache: false };
+}
+
+async function selectRecommendationPage(db, r2, rawLang, limit, offset, defaultLimit, candidateParams, rankFn, rankOptions, options = {}) {
+    const lang = normalizeLanguageCode(rawLang);
+    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || defaultLimit, 1), 50);
+    const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
+    const { filterAvailability = false, country = null, includePage = false } = options || {};
+    const { videos: rawCandidates, fromCache } = await loadRecommendationCandidates(
+        db, r2, lang, candidateParams.targetTier, candidateParams.category, candidateParams.cleanQuery, { ...options, country }
+    );
+    const candidates = filterAvailability && fromCache
+        ? await filterCurrentVideoAvailability(db, rawCandidates, country)
+        : rawCandidates;
+    const ranked = rankFn(candidates, { language: lang, ...rankOptions });
+    const videos = globalThis.structuredClone(ranked.slice(safeOffset, safeOffset + safeLimit));
+    return includePage ? { videos, hasMore: safeOffset + videos.length < ranked.length } : videos;
 }
 
 export async function getRecommendedVideosFromCloudflare(db, r2, rawLang, limit = 12, tier = null, _shuffle = false, offset = 0, query = null, options = {}) {
-    const lang = normalizeLanguageCode(rawLang);
-    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 12, 1), 50);
-    const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
     const targetTier = tier ? labelToTier(tier) : null;
     const cleanQuery = typeof query === 'string' ? query.trim().slice(0, 100) : '';
-    const { context = null, sessionSeed = null, category = null, includePage = false, excludeIds = [] } = options || {};
-    const candidates = await loadRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery, options);
-    const ranked = rankVideos(candidates, {
-        language: lang,
-        tier: targetTier,
-        context,
-        sessionSeed,
-        query: cleanQuery,
-        category,
-        excludeIds
-    });
-    const videos = globalThis.structuredClone(ranked.slice(safeOffset, safeOffset + safeLimit));
-    return includePage ? { videos, hasMore: safeOffset + videos.length < ranked.length } : videos;
+    const { context = null, sessionSeed = null, category = null, excludeIds = [] } = options || {};
+    return selectRecommendationPage(
+        db, r2, rawLang, limit, offset, 12,
+        { targetTier, category, cleanQuery },
+        rankVideos,
+        { tier: targetTier, context, sessionSeed, query: cleanQuery, category, excludeIds },
+        options
+    );
 }
 
 /**
@@ -1140,20 +1152,14 @@ export async function getRecommendedVideosFromCloudflare(db, r2, rawLang, limit 
  * reusing the 15s public language candidate pool with zero extra D1 scans on cache hits.
  */
 export async function getRelatedVideosFromCloudflare(db, r2, rawLang, limit = 16, offset = 0, options = {}) {
-    const lang = normalizeLanguageCode(rawLang);
-    const safeLimit = Math.min(Math.max(parseInt(limit, 10) || 16, 1), 50);
-    const safeOffset = Math.max(parseInt(offset, 10) || 0, 0);
     const { currentVideo = {}, excludeIds = [], context = null, sessionSeed = null } = options || {};
-    const candidates = await loadRecommendationCandidates(db, r2, lang, null, null, '', options);
-    const ranked = rankRelatedVideos(candidates, {
-        language: lang,
-        currentVideo,
-        excludeIds,
-        context,
-        sessionSeed
-    });
-    const videos = globalThis.structuredClone(ranked.slice(safeOffset, safeOffset + safeLimit));
-    return { videos, hasMore: safeOffset + videos.length < ranked.length };
+    return selectRecommendationPage(
+        db, r2, rawLang, limit, offset, 16,
+        { targetTier: null, category: null, cleanQuery: '' },
+        rankRelatedVideos,
+        { currentVideo, excludeIds, context, sessionSeed },
+        { ...options, includePage: true }
+    );
 }
 
 async function discoverRecommendationCandidates(db, r2, lang, targetTier, category, cleanQuery,

@@ -9,6 +9,11 @@ const ADJ_POS = new Set(['a', 'ad', 'an', 'adj', 'adjective', 'jj', 'jjr', 'jjs'
 const ZH_MEASURES = new Set('个 位 本 张 件 条 只 辆 间 块 元 斤 次 遍 天 年 月 点 分 种 些 杯 瓶 碗 双 把 台 家 门 首 岁'.split(' '));
 const ZH_TIMES = new Set('今天 明天 昨天 现在 以后 以前 时候 小时 分钟 星期 周 早上 晚上 中午 下午 上午 刚才 去年 明年 今年 三天 两天 一年 两年 三年'.split(' '));
 const ZH_NUM_RE = /^[零一二两三四五六七八九十百千万亿\d]+$/;
+const JA_AMBIGUOUS_ENDINGS = new Set(['れる', 'とく', 'どく', 'だら', 'だり', 'たり', 'たら']);
+const EN_PHRASAL_BLOCKERS = new Set('to in on at for with from by of and or but that which who when if because'.split(' '));
+const EN_DUAL_PREPOSITIONS = new Set('on in for with to from into through after about over'.split(' '));
+const EN_CLAUSE_END_FOLLOWERS = new Set('and or but so then now too again'.split(' '));
+const VI_MODAL_VERBS = new Set(['muốn', 'cần', 'phải', 'nên', 'định', 'thích', 'biết']);
 const noun = token => { const p = pos(token); return NOUN_POS.has(p) || p.startsWith('noun') || p.includes('名詞') || p.includes('명사'); };
 const endingNoun = token => /^(noun|n$|nng$|nnp$)|名詞|명사/.test(pos(token));
 const verb = token => /^verb|動詞/.test(pos(token)) && !pos(token).includes('助動詞');
@@ -115,7 +120,9 @@ function grammarLevels(tokens, lang) {
         const token = tokens[i];
         if (token.isPunctuation || endingNoun(token)) continue;
         const match = endings.find(([suffix]) => token.surface.length > suffix.length && token.surface.endsWith(suffix) &&
-            !(suffix.length === 1 && token.surface.length <= 2 && !pos(token).includes('v')));
+            !(suffix.length === 1 && token.surface.length <= 2 && !pos(token).includes('v')) &&
+            !(JA_AMBIGUOUS_ENDINGS.has(suffix) && token.baseForm && token.baseForm === token.surface) &&
+            !((suffix === 'とく' || suffix === 'どく') && token.surface.length < 4));
         if (match) add(match[1], i, i, [i]);
     }
     for (const [connective, stem, pattern] of auxiliaries) {
@@ -200,12 +207,18 @@ function grammarLevels(tokens, lang) {
             for (const [particle, separable, pattern] of list) {
                 const maxJ = separable ? Math.min(tokens.length - 1, i + 4) : i + 1;
                 for (let j = i + 1; j <= maxJ; j++) {
-                    if (tokens[j].isPunctuation) break;
+                    const cand = tokens[j];
+                    if (cand.isPunctuation) break;
                     if (surfaces[j] === particle) {
+                        const cp = pos(cand);
+                        if (cp && (noun(cand) || isVerbToken(cand) || cp === 'determiner' || cp === 'dt')) break;
+                        if (j > i + 1 && EN_DUAL_PREPOSITIONS.has(particle) && j + 1 < tokens.length &&
+                            !tokens[j + 1].isPunctuation && !EN_CLAUSE_END_FOLLOWERS.has(surfaces[j + 1])) break;
                         add(pattern, i, j, [i, j]);
                         break;
                     }
-                    if (j > i + 1 && pos(tokens[j]) && isVerbToken(tokens[j]) && !noun(tokens[j])) break;
+                    if (EN_PHRASAL_BLOCKERS.has(surfaces[j])) break;
+                    if (j > i + 1 && pos(cand) && isVerbToken(cand) && !noun(cand)) break;
                 }
             }
         }
@@ -220,8 +233,15 @@ function grammarLevels(tokens, lang) {
                 cursor = end + 1;
                 if (rule.excludePrev && start > 0 && !tokens[start - 1].isPunctuation && rule.excludePrev.includes(surfaces[start - 1])) continue;
                 if (rule.excludeNext && end + 1 < tokens.length && !tokens[end + 1].isPunctuation && rule.excludeNext.includes(surfaces[end + 1])) continue;
-                if (rule.prevPos && (start === 0 || tokens[start - 1].isPunctuation || !rule.prevPos.includes(pos(tokens[start - 1])))) continue;
-                if (rule.nextPos && (end + 1 >= tokens.length || tokens[end + 1].isPunctuation || !rule.nextPos.includes(pos(tokens[end + 1])))) continue;
+                if (rule.prevPos) {
+                    if (start === 0 || tokens[start - 1].isPunctuation || !rule.prevPos.includes(pos(tokens[start - 1]))) continue;
+                    if (!rule.sentenceEnd && rule.prevPos.includes('verb') && VI_MODAL_VERBS.has(surfaces[start - 1])) continue;
+                }
+                if (rule.nextPos) {
+                    if (end + 1 >= tokens.length || tokens[end + 1].isPunctuation || !rule.nextPos.includes(pos(tokens[end + 1]))) continue;
+                    const selfPos = pos(tokens[start]);
+                    if (selfPos === 'verb' || selfPos === 'adjective') continue;
+                }
                 if (rule.sentenceEnd) {
                     const atEnd = end === tokens.length - 1 || (tokens[end + 1].isPunctuation && (sentenceEnd(tokens[end + 1]) || tokens[end + 1].surface === ','));
                     if (!atEnd) continue;
@@ -232,7 +252,7 @@ function grammarLevels(tokens, lang) {
             }
         }
     }
-    matches.sort((a, b) => (b.end - b.start) - (a.end - a.start) || a.start - b.start);
+    matches.sort((a, b) => (b.indices.length - a.indices.length) || (a.start - b.start) || ((b.end - b.start) - (a.end - a.start)));
     const used = new Set();
     return matches.filter(match => {
         if (match.indices.some(i => used.has(i))) return false;

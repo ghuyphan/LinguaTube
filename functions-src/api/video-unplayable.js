@@ -10,6 +10,13 @@ import { readBoundedBody } from '../utils/response-body.js';
 
 const RATE_LIMIT = { max: 30, windowSeconds: 60, keyPrefix: 'video_unplayable' };
 const REPORTABLE_CODES = new Set([100, 101, 150]);
+// Never match country restrictions ("available in your country") or generic "Video unavailable"
+// (which YouTube embed also serves for geo-blocked IPs).
+const BLOCK_PATTERNS = [
+    [/Playback on other websites has been disabled|restricted from playback on certain sites/i, 'embed_disabled'],
+    [/This video is private|This video has been removed|due to a copyright claim|account associated with this video has been terminated/i, 'video_unavailable'],
+    [/Sign in to confirm your age|This video may be inappropriate for some users/i, 'age_restricted'],
+];
 
 async function verifyBlocked(videoId, fetchImpl = fetch) {
     try {
@@ -18,11 +25,18 @@ async function verifyBlocked(videoId, fetchImpl = fetch) {
             headers: { 'Referer': 'https://voca.study/', 'Accept-Language': 'en-US' },
             signal, redirect: 'manual'
         });
-        if (res.status === 404) return 'not_found';
-        if (!res.ok) return null;
+        if (res.status === 404) {
+            void res.body?.cancel?.().catch(() => {});
+            return 'not_found';
+        }
+        if (!res.ok) {
+            void res.body?.cancel?.().catch(() => {});
+            return null;
+        }
         const html = new TextDecoder().decode(await readBoundedBody(res, signal, 1024 * 1024));
-        // A generic UNPLAYABLE response also covers country restrictions.
-        if (html.includes('Playback on other websites has been disabled')) return 'embed_disabled';
+        for (const [pattern, reason] of BLOCK_PATTERNS) {
+            if (pattern.test(html)) return reason;
+        }
         return null;
     } catch {
         return null;

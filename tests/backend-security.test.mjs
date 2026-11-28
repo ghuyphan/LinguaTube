@@ -2661,3 +2661,75 @@ test('DiamondService.consumeDiamond: skips redundant profile read when user.diam
 });
 
 
+
+test('leaderboard retries an empty D1 fallback and preserves Supabase avatar and streak', async t => {
+  const { onRequestGet } = await import('../functions-src/api/leaderboard.js');
+  const learner = {
+    user_id: 'rpc-learner', name: 'Learner', avatar: 'https://example.com/learner.png',
+    xp: 25000, weekly_xp: 1000, level: 10, streak: 19, target_lang: 'ja'
+  };
+  let calls = 0;
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    assert.equal(String(url), 'https://example.supabase.co/rest/v1/rpc/get_leaderboard');
+    assert.equal(options.headers.apikey, 'public-anon-key');
+    assert.equal(options.redirect, 'manual');
+    return ++calls === 1 ? new Response(null, { status: 503 }) : Response.json([learner]);
+  });
+  const env = {
+    SUPABASE_URL: 'https://example.supabase.co',
+    SUPABASE_ANON_KEY: 'public-anon-key',
+    DB: { prepare: () => ({ bind: () => ({ all: async () => ({ results: [] }) }) }) }
+  };
+  const load = async () => {
+    const request = new Request('https://voca.study/api/leaderboard?lang=ja&period=all_time&limit=17');
+    const response = await onRequestGet({ request, env });
+    return (await response.json()).topLearners;
+  };
+
+  assert.ok((await load()).every(row => row.userId.startsWith('seed_')));
+  const row = (await load()).find(row => row.userId === learner.user_id);
+  assert.equal(row?.avatar, learner.avatar);
+  assert.equal(row?.streak, learner.streak);
+  assert.equal(calls, 2);
+});
+
+test('TTS ignores old cached fallback audio and never caches fresh fallback audio', async t => {
+  const { onRequest } = await import('../functions-src/api/tts.js');
+  const scopes = [];
+  let cacheWrites = 0;
+  let primaryAttempts = 0;
+  t.mock.method(globalThis, 'WebSocket', function () {
+    primaryAttempts++;
+    throw new Error('Primary unavailable');
+  });
+  t.mock.method(globalThis, 'fetch', async () => new Response(new Uint8Array(200)));
+  const originalCaches = Object.getOwnPropertyDescriptor(globalThis, 'caches');
+  Object.defineProperty(globalThis, 'caches', {
+    configurable: true,
+    value: {
+      async open(name) {
+        scopes.push(name);
+        return {
+          match: async () => name === 'tts-v1' ? new Response(new Uint8Array(200)) : undefined,
+          put: async () => { cacheWrites++; }
+        };
+      }
+    }
+  });
+  t.after(() => {
+    if (originalCaches) Object.defineProperty(globalThis, 'caches', originalCaches);
+    else delete globalThis.caches;
+  });
+
+  for (let i = 0; i < 2; i++) {
+    const request = new Request('https://voca.study/api/tts?v=2&lang=en&voice=en-US-JennyNeural&text=cache%20fixture');
+    const response = await onRequest({ request, waitUntil() {} });
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get('X-TTS-Engine'), 'Google-Fallback');
+    assert.equal(response.headers.get('X-TTS-Voice'), null);
+    assert.equal(response.headers.get('Cache-Control'), 'no-store');
+  }
+  assert.deepEqual(scopes, ['tts-v2', 'tts-v2']);
+  assert.equal(cacheWrites, 0);
+  assert.equal(primaryAttempts, 2);
+});

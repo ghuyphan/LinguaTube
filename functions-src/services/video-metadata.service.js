@@ -1,5 +1,6 @@
 import { captureVideoAssets } from '../data/video-assets.js';
 import { readBoundedBody } from '../utils/response-body.js';
+import { coalesceCacheFetch } from '../utils/cache-manager.js';
 import { saveVideoAvailabilityChecks } from '../data/video-info-db.js';
 import { blockReasonFromYouTubeItem, normalizeRegionRestriction, playbackAvailability } from './video-playback.service.js';
 
@@ -83,12 +84,15 @@ export async function resolveVerifiedVideoMetadata(context, videoId, { fresh = f
     }
     const startedAt = Date.now();
     try {
-        const items = await fetchYouTubeVideos(env, db, [videoId], {
+        const fetchItems = () => fetchYouTubeVideos(env, db, [videoId], {
             fresh,
             operation: fresh ? 'start' : 'quote',
             part: 'contentDetails,snippet,liveStreamingDetails,status',
             fields: 'items(id,contentDetails(duration,regionRestriction,contentRating/ytRating),status(embeddable,privacyStatus),snippet(title,channelTitle,channelId,categoryId,tags,thumbnails,liveBroadcastContent,defaultAudioLanguage,defaultLanguage),liveStreamingDetails(actualStartTime,actualEndTime,scheduledStartTime))'
         });
+        const items = fresh
+            ? await fetchItems()
+            : await coalesceCacheFetch(`yt-meta:${videoId}`, fetchItems);
         if (items.length === 0) throw Object.assign(metadataError('VIDEO_UNAVAILABLE', 404, 0), { observedAt: startedAt });
         if (items.length !== 1) throw metadataError('VIDEO_DURATION_UNAVAILABLE');
         if (eligibility && (typeof items[0].status?.embeddable !== 'boolean' ||
@@ -131,7 +135,8 @@ export async function requireVideoEligibility(context, videoId, options) {
     const db = context.db ?? context.env.VOCAB_DB;
     if (!db) throw metadataError('VIDEO_METADATA_STORAGE_UNAVAILABLE');
     const known = await db.prepare('SELECT embed_blocked_reason, region_checked_at FROM video_languages WHERE video_id=?').bind(videoId).first();
-    if (known?.embed_blocked_reason && Date.now() - known.region_checked_at < QUOTE_TTL_SECONDS * 1000) {
+    if (known?.embed_blocked_reason === 'embed_disabled'
+        || (known?.embed_blocked_reason && known.region_checked_at != null && Date.now() - known.region_checked_at < QUOTE_TTL_SECONDS * 1000)) {
         throw metadataError('VIDEO_EMBED_BLOCKED', 422, 0);
     }
     let details;
@@ -139,7 +144,7 @@ export async function requireVideoEligibility(context, videoId, options) {
         details = await resolveVerifiedVideoMetadata(context, videoId, { ...options, eligibility: true });
     } catch (error) {
         if (error.status === 404 && known) {
-            await saveVideoAvailabilityChecks(db, [{ videoId, blockReason: 'video_unavailable', checkedAt: error.observedAt }], { replaceEmbedReports: true });
+            await saveVideoAvailabilityChecks(db, [{ videoId, blockReason: 'video_unavailable', checkedAt: error.observedAt }]);
         }
         throw error;
     }
@@ -149,7 +154,7 @@ export async function requireVideoEligibility(context, videoId, options) {
             videoId, blockReason: details.blockReason,
             restriction: details.regionRestriction ? JSON.stringify(details.regionRestriction) : null,
             checkedAt: details.observedAt
-        }], { replaceEmbedReports: known.embed_blocked_reason !== 'embed_disabled' });
+        }]);
     }
     if (availability === 'unknown') throw metadataError('VIDEO_METADATA_UNAVAILABLE');
     if (availability === 'embed_blocked') throw metadataError('VIDEO_EMBED_BLOCKED', 422, 0);
@@ -246,7 +251,7 @@ export async function refreshCatalogVideoAvailability(env) {
             checkedAt
         };
     });
-    const changed = await saveVideoAvailabilityChecks(db, checks, { replaceEmbedReports: videoEligibilityEnabled(env) });
+    const changed = await saveVideoAvailabilityChecks(db, checks);
     if (videoEligibilityEnabled(env)) {
         const confirmed = checks.filter(check => check.blockReason).map(check => check.videoId);
         if (confirmed.length) {

@@ -28,6 +28,7 @@
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
+import zlib from 'zlib';
 import https from 'https';
 import { execFileSync } from 'child_process';
 import { enrichSegmentsWithTokens } from '../functions-src/utils/tokenizer.js';
@@ -152,6 +153,14 @@ function extractWranglerJson(raw) {
     return JSON.parse(raw.slice(start, end + 1));
 }
 
+function runD1Query(sql) {
+    const out = execFileSync(WRANGLER_BIN, [...WRANGLER_BASE_ARGS, 'd1', 'execute', D1_DB, '--remote', '--command', sql, '--json'], {
+        encoding: 'utf8',
+        stdio: ['pipe', 'pipe', 'pipe']
+    });
+    return extractWranglerJson(out);
+}
+
 function runD1(sql) {
     const tmpFile = path.join(os.tmpdir(), `voca_d1_${process.pid}_${Date.now()}.sql`);
     fs.writeFileSync(tmpFile, sql, 'utf8');
@@ -166,10 +175,23 @@ function runD1(sql) {
     }
 }
 
-function r2Put(key, localFile) {
-    execFileSync(WRANGLER_BIN, [...WRANGLER_BASE_ARGS, 'r2', 'object', 'put', `${R2_BUCKET}/${key}`, `--file=${localFile}`, '--remote'], {
-        stdio: 'inherit'
-    });
+function r2Put(key, localFile, { gzip = false } = {}) {
+    if (!gzip) {
+        execFileSync(WRANGLER_BIN, [...WRANGLER_BASE_ARGS, 'r2', 'object', 'put', `${R2_BUCKET}/${key}`, `--file=${localFile}`, '--content-type=application/json', '--remote'], {
+            stdio: 'inherit'
+        });
+        return;
+    }
+    const gzFile = path.join(os.tmpdir(), `voca_r2_${process.pid}_${Date.now()}_${path.basename(localFile)}.gz`);
+    const compressed = zlib.gzipSync(fs.readFileSync(localFile));
+    fs.writeFileSync(gzFile, compressed);
+    try {
+        execFileSync(WRANGLER_BIN, [...WRANGLER_BASE_ARGS, 'r2', 'object', 'put', `${R2_BUCKET}/${key}`, `--file=${gzFile}`, '--content-type=application/json', '--content-encoding=gzip', '--remote'], {
+            stdio: 'inherit'
+        });
+    } finally {
+        try { fs.unlinkSync(gzFile); } catch {}
+    }
 }
 
 function checkYouTubeOEmbed(videoId) {
@@ -488,21 +510,25 @@ async function main() {
     }
 
     // 6. Upload to CANONICAL R2 Keys
-    console.log(`[${videoId}] Uploading to Cloudflare R2 (canonical keys)...`);
-    r2Put(`transcripts/${videoId}/${lang}.ai.json`, aiOut);
+    // Transcripts & translations: gzip by default (both transcript-r2.js and translation-cache.js readers support gzip); override with --no-gzip.
+    const gzipTranscripts = args['no-gzip'] ? false : true;
+    const gzipTranslations = args['no-gzip'] ? false : true;
+    console.log(`[${videoId}] Uploading to Cloudflare R2 (canonical keys, gzip transcripts=${gzipTranscripts}, translations=${gzipTranslations})...`);
+    r2Put(`transcripts/${videoId}/${lang}.ai.json`, aiOut, { gzip: gzipTranscripts });
     if (syncNative) {
-        r2Put(`transcripts/${videoId}/${lang}.json`, natOut);
+        r2Put(`transcripts/${videoId}/${lang}.json`, natOut, { gzip: gzipTranscripts });
     }
     for (const tf of transOutFiles) {
         // CRITICAL: Backend reads HYPHENATED key translations/{videoId}/{src}-{tgt}.json!
-        r2Put(`translations/${videoId}/${lang}-${tf.tgtLang}.json`, tf.outPath);
+        r2Put(`translations/${videoId}/${lang}-${tf.tgtLang}.json`, tf.outPath, { gzip: gzipTranslations });
     }
 
     // 7. Non-destructive D1 Sync (merge JSON arrays, category, primary_language, tags, levels, translation_meta)
     console.log(`[${videoId}] Syncing Cloudflare D1 (video_languages + translation_meta)...`);
     const safeId = videoId.replace(/'/g, "''");
-    const existingRes = runD1(`SELECT video_id, title, channel, duration_seconds, duration_source, available_languages, sub_languages, ai_languages, primary_language, category, category_source, tags, levels, embed_blocked FROM video_languages WHERE video_id = '${safeId}'`);
-    const row = existingRes?.[0]?.results?.[0];
+    const existingRes = runD1Query(`SELECT video_id, title, channel, duration_seconds, duration_source, available_languages, sub_languages, ai_languages, primary_language, category, category_source, tags, levels, embed_blocked FROM video_languages WHERE video_id = '${safeId}'`);
+    const rawRow = existingRes?.[0]?.results?.[0];
+    const row = rawRow && rawRow.video_id === videoId ? rawRow : null;
 
     const mergeJsonArray = (jsonStr, additions) => {
         let arr = [];
@@ -642,8 +668,13 @@ async function main() {
         );
     }
 
-    runD1(sqlStatements.join('\n'));
-    console.log(`[${videoId}] 🚀 Published & synced! category=${resolvedCategory} (${resolvedCategorySource || 'none'}), primary_language=${resolvedPrimaryLang}, level=${levelsObj[lang]?.level || 'none'}, ai_languages=${newAiLangs}, sub_languages=${newSubLangs}`);
+    const d1WriteRes = runD1(sqlStatements.join('\n'));
+    const d1Success = Array.isArray(d1WriteRes) && d1WriteRes.every(r => r?.success !== false);
+    if (!d1Success) {
+        console.error(`[${videoId}] FAIL: D1 write returned unsuccessful result:`, JSON.stringify(d1WriteRes));
+        process.exit(1);
+    }
+    console.log(`[${videoId}] 🚀 Published & synced (${row ? 'updated' : (upsert ? 'inserted' : 'translation_meta only')})! category=${resolvedCategory} (${resolvedCategorySource || 'none'}), primary_language=${resolvedPrimaryLang}, level=${levelsObj[lang]?.level || 'none'}, ai_languages=${newAiLangs}, sub_languages=${newSubLangs}`);
 }
 
 main().catch(err => {

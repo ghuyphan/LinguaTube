@@ -8,9 +8,10 @@ import { getRecommendedVideosFromCloudflare as revised } from '../functions-src/
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const source = path => execFileSync('git', ['show', `HEAD:${path}`], { cwd: root, encoding: 'utf8' });
 const moduleUrl = text => `data:text/javascript;base64,${Buffer.from(text).toString('base64')}`;
-const baselineRanking = moduleUrl(source('functions-src/services/recommendation.service.js'));
-const baselineSource = source('functions-src/data/video-info-db.js').replace(/from '([^']+)'/g, (_, path) =>
-    `from '${path.endsWith('recommendation.service.js') ? baselineRanking : pathToFileURL(resolve(root, 'functions-src/data', path)).href}'`);
+const rewriteImports = (text, baseDir) => text.replace(/from '([^']+)'/g, (_, path) =>
+    `from '${path.endsWith('recommendation.service.js') ? baselineRanking : pathToFileURL(resolve(root, baseDir, path)).href}'`);
+const baselineRanking = moduleUrl(rewriteImports(source('functions-src/services/recommendation.service.js'), 'functions-src/services'));
+const baselineSource = rewriteImports(source('functions-src/data/video-info-db.js'), 'functions-src/data');
 const { getRecommendedVideosFromCloudflare: baseline } = await import(moduleUrl(baselineSource));
 const sqlite = new DatabaseSync(':memory:');
 sqlite.exec(`CREATE TABLE video_languages (video_id TEXT PRIMARY KEY, title TEXT, channel TEXT, channel_avatar TEXT,

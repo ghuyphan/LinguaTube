@@ -28,7 +28,10 @@ bucket_name = "linguatube-transcripts"
 VIDEO_ELIGIBILITY = "true"
 VIDEO_ASSET_PURGE = "report"
 TRANSCRIPT_GZIP_WRITES = "true"
+TRANSLATION_GZIP_WRITES = "true"
 SERVER_VIDEO_GRADING = "1"
 # YOUTUBE_DATA_API_KEY, GLADIA_API_KEY, SUPADATA_API_KEY, PAYOS keys, and SUPABASE_SERVICE_ROLE_KEY should be set in Cloudflare Dashboard
+# Public anonymous key for the public leaderboard RPC.
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkYmt2enZpcWV1bHd6Y25ycmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NTI5NjAsImV4cCI6MjEwNTAyODk2MH0.F2Js6UWUyUX-uVfDMVCNLJBG7eL6Clo9EGimjh2wgUg"
 SUPABASE_URL = "https://edbkvzviqeulwzcnrrlb.supabase.co"
 

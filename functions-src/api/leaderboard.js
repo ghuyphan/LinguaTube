@@ -190,7 +190,6 @@ export async function onRequestGet(context) {
                             targetLang: row.target_lang,
                             country: row.country || ''
                         }));
-                        memLeaderboardCache.set(cacheKey, rawRealUsers);
                     }
                 } catch (d1Err) {
                     // Fallback query without weekly_xp column if schema not updated yet
@@ -220,7 +219,6 @@ export async function onRequestGet(context) {
                                 targetLang: row.target_lang,
                                 country: row.country || ''
                             }));
-                            memLeaderboardCache.set(cacheKey, rawRealUsers);
                         }
                     } catch {
                         console.warn('[Leaderboard API] D1 query failed:', d1Err.message);
@@ -245,6 +243,7 @@ export async function onRequestGet(context) {
                             p_period: period,
                             p_limit: limit
                         }),
+                        redirect: 'manual',
                         signal: AbortSignal.timeout(4000)
                     });
 
@@ -254,22 +253,23 @@ export async function onRequestGet(context) {
                             rawRealUsers = supaData.map(row => ({
                                 userId: row.user_id,
                                 name: row.name || 'Learner',
-                                avatar: row.avatar_url || '',
+                                avatar: row.avatar || '',
                                 xp: row.xp || 0,
                                 weeklyXp: row.weekly_xp || 0,
                                 level: row.level || Math.max(1, Math.floor(Math.sqrt((row.xp || 0) / 100)) + 1),
-                                streak: row.current_streak || 0,
+                                streak: row.streak || 0,
                                 badgesCount: row.badges_count || 0,
                                 targetLang: row.target_lang || lang || 'ja',
                                 country: row.country || ''
                             }));
-                            memLeaderboardCache.set(cacheKey, rawRealUsers);
                         }
                     }
                 } catch (supaErr) {
                     console.warn('[Leaderboard API] Supabase query failed:', supaErr.message);
                 }
             }
+
+            if (rawRealUsers.length > 0) memLeaderboardCache.set(cacheKey, rawRealUsers);
         }
 
         // Merge real users with baseline community seed learners

@@ -538,7 +538,7 @@ app.all('/api/tts', async (req, res) => {
             const googleBuf = await fetchGoogleTtsLocal(text, lang);
             res.setHeader('Content-Type', 'audio/mpeg');
             res.setHeader('Content-Length', googleBuf.length);
-            res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
+            res.setHeader('Cache-Control', 'no-store');
             res.setHeader('X-TTS-Engine', 'Google-Fallback');
             res.setHeader('X-Cache', 'MISS');
             res.send(googleBuf);

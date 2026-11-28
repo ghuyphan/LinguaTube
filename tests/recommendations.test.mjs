@@ -907,3 +907,76 @@ test('country eligibility applies before the candidate cap and partitions Home a
     assert.deepEqual(await ids(await home('JP', '&q=Doraemon')), ['video_0000']);
     assert.deepEqual(await ids(await home('XX')), ['video_0201']);
 });
+
+test('rankVideos boosts newly created unfinished videos without overriding difficulty or search', () => {
+    const now = Date.UTC(2026, 10, 27, 12, 0, 0);
+    const day = 86400;
+    const sec = Math.floor(now / 1000);
+    const base = { duration: 300, tier: 'intermediate' };
+    const candidates = [
+        { ...base, videoId: 'old', title: 'Lesson', channel: 'Ch1', createdAt: sec - 30 * day, updatedAt: sec },
+        { ...base, videoId: 'fortnight', title: 'Lesson', channel: 'Ch2', createdAt: sec - 10 * day },
+        { ...base, videoId: 'week', title: 'Lesson', channel: 'Ch6', createdAt: sec - 5 * day },
+        { ...base, videoId: 'fresh', title: 'Lesson', channel: 'Ch3', createdAt: sec - 2 * day },
+        { ...base, videoId: 'fresh_movie', title: 'Movie', channel: 'Ch7', duration: 6600, createdAt: sec },
+        { ...base, videoId: 'fresh_done', title: 'Lesson', channel: 'Ch4', createdAt: sec - day },
+        { ...base, videoId: 'fresh_hard', title: 'Lesson', channel: 'Ch5', tier: 'advanced', createdAt: sec - day }
+    ];
+    const ranked = rankVideos(candidates, { now, context: { watched: ['fresh_done'], dominantTier: 'intermediate' } });
+    assert.deepEqual(ranked.map(v => v.videoId), ['fresh', 'week', 'fresh_movie', 'fortnight', 'old', 'fresh_hard', 'fresh_done']);
+    const scoreOf = id => ranked.find(v => v.videoId === id).recommendationScore;
+    assert.equal(scoreOf('fresh') - scoreOf('old'), 18);
+    assert.equal(scoreOf('week') - scoreOf('old'), 12);
+    assert.equal(scoreOf('fortnight') - scoreOf('old'), 6);
+    assert.ok(scoreOf('fresh_movie') > scoreOf('old'));
+
+    const searchRanked = rankVideos(candidates, { now, query: 'Lesson' });
+    assert.equal(
+        searchRanked.find(v => v.videoId === 'fresh').recommendationScore,
+        searchRanked.find(v => v.videoId === 'old').recommendationScore
+    );
+});
+
+test('inferSpokenLanguage recovers non-English learner podcasts from stored en primaryLanguage', () => {
+    assert.equal(inferSpokenLanguage({
+        primaryLanguage: 'en',
+        title: 'Japanese Podcast for beginners / Ep1 Self-introduction (Genki 1 level)',
+        channel: 'Japanese with Shun',
+        subLanguages: ['ja', 'vi', 'en']
+    }), 'ja');
+    assert.equal(inferSpokenLanguage({
+        primaryLanguage: 'en',
+        title: 'Learn Chinese Through Vlogs | Navigating China’s Food Streets',
+        channel: 'Lala Chinese 啦啦的中文课',
+        subLanguages: ['zh', 'vi', 'en']
+    }), 'zh');
+    assert.equal(inferSpokenLanguage({
+        primaryLanguage: 'en',
+        title: 'The ENTIRE Chinese Hell Walkthrough in 10 Minutes',
+        channel: 'Jade Rabbit Hole',
+        subLanguages: ['ja']
+    }), 'en');
+});
+
+test('rankRelatedVideos hydrates currentVideo metadata, prioritizes next episode, and nudges fresh uploads', () => {
+    const now = Date.UTC(2026, 10, 27, 12, 0, 0);
+    const sec = Math.floor(now / 1000);
+    const day = 86400;
+    const pool = [
+        { videoId: 'cur', title: '大山版ドラえもん 第1420話 テスト', channel: 'ドラちゃん', category: 'anime_drama', tier: 'elementary', tags: ['doraemon'], duration: 500 },
+        { videoId: 'ep_prev', title: '大山版ドラえもん 第1419話 前回', channel: 'ドラちゃん', category: 'anime_drama', tier: 'elementary', duration: 500, createdAt: sec - 30 * day },
+        { videoId: 'ep_next', title: '大山版ドラえもん 第1421話 次回', channel: 'ドラちゃん', category: 'anime_drama', tier: 'elementary', duration: 500, createdAt: sec - 30 * day },
+        { videoId: 'ep_next2', title: '大山版ドラえもん 第1422話 次々回', channel: 'ドラちゃん', category: 'anime_drama', tier: 'elementary', duration: 500, createdAt: sec - 30 * day },
+        { videoId: 'ep_far', title: '大山版ドラえもん 第1450話 遠い', channel: 'ドラちゃん', category: 'anime_drama', tier: 'elementary', duration: 500, createdAt: sec - 30 * day },
+        { videoId: 'anime_fresh', title: '別のアニメ', channel: 'ChA', category: 'anime_drama', tier: 'elementary', duration: 500, createdAt: sec - day },
+        { videoId: 'anime_old', title: '別のアニメ2', channel: 'ChB', category: 'anime_drama', tier: 'elementary', duration: 500, createdAt: sec - 30 * day },
+        { videoId: 'music_vid', title: 'J-Pop Song', channel: 'ChC', category: 'music', tier: 'elementary', duration: 300, createdAt: sec - day }
+    ];
+    // Omit category/tags/title from currentVideo to verify candidate-pool hydration
+    const ranked = rankRelatedVideos(pool, { currentVideo: { videoId: 'cur' }, now });
+    assert.equal(ranked[0].videoId, 'ep_next');
+    assert.ok(ranked.findIndex(v => v.videoId === 'ep_next2') < ranked.findIndex(v => v.videoId === 'ep_far'));
+    assert.ok(ranked.findIndex(v => v.videoId === 'ep_far') < ranked.findIndex(v => v.videoId === 'ep_prev'));
+    assert.ok(ranked.findIndex(v => v.videoId === 'anime_fresh') < ranked.findIndex(v => v.videoId === 'anime_old'));
+    assert.equal(ranked.at(-1).videoId, 'music_vid');
+});

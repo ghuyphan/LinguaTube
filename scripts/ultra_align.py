@@ -23,6 +23,7 @@ Outputs a candidate AI transcript JSON for verification & publishing via:
 
 import argparse
 import difflib
+import gzip
 import json
 import os
 import re
@@ -194,8 +195,11 @@ def fetch_r2_native_cues(video_id, lang):
     out_path = f"/tmp/voca_r2_{video_id}_{lang}.json"
     cmd = f'npx -y wrangler@4.166.0 r2 object get linguatube-transcripts/transcripts/{video_id}/{lang}.json --file="{out_path}" --remote'
     subprocess.check_call(cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    with open(out_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+    with open(out_path, "rb") as f:
+        raw = f.read()
+    if raw[:2] == b"\x1f\x8b":
+        raw = gzip.decompress(raw)
+    return json.loads(raw.decode("utf-8"))
 
 
 def parse_lrc_text(raw_text):
@@ -930,6 +934,16 @@ def align_sections_ja_karaoke(audio, sr, lyric_lines, sections, model_name="Next
             if nagisa is not None:
                 tag = nagisa.tagging(cleaned)
                 pairs = list(zip(tag.words, tag.postags))
+                expected_norm = normalize_align(cleaned)
+                if normalize_align("".join(w for w, _ in pairs)) != expected_norm:
+                    tag2 = nagisa.tagging(cleaned + "。")
+                    pairs2 = [(w, p) for w, p in zip(tag2.words, tag2.postags) if w != "。"]
+                    if normalize_align("".join(w for w, _ in pairs2)) == expected_norm:
+                        pairs = pairs2
+                    elif _kks is not None:
+                        pairs = [(it["orig"], "") for it in _kks.convert(cleaned)]
+                    else:
+                        pairs = [(w, "") for w in cleaned.split()]
             elif _kks is not None:
                 pairs = [(it["orig"], "") for it in _kks.convert(cleaned)]
             else:

@@ -10,8 +10,9 @@ import { jsonResponse, SUPPORTED_LEARNING_LANGUAGE_SET } from '../utils/utils.js
 
 const WEIGHTS = { completed: -70, searchCompleted: -30, resume: 10, started: 5, unseen: 40, favorite: 20,
     channel: 30, vocabulary: 25, vocabularyWord: 5, vocabularyCap: 20,
-    shortLesson: 20, longLesson: 10, extremeDuration: -10,
+    shortLesson: 10, longLesson: 6, extremeDuration: -10,
     currentTier: 20, nextTier: 12, prevTier: 6, tooEasy: -10, tooHard: -20,
+    freshRecent: 18, freshWeek: 12, freshFortnight: 6,
     ungraded: -8, jitter: 12 };
 
 const TIERS_ORDER = ['beginner', 'elementary', 'intermediate', 'upper_intermediate', 'advanced'];
@@ -356,7 +357,7 @@ function scoreLearnerCommon(v, unpacked, { includeTier = true, isSearchMode = fa
     const d = v.duration || 0;
     if (d >= 180 && d <= 720) score += WEIGHTS.shortLesson;
     else if (d > 720 && d <= 1200) score += WEIGHTS.longLesson;
-    else if (d > 0 && (d < 90 || d > 2400)) score += WEIGHTS.extremeDuration;
+    else if (d > 0 && d < 90) score += WEIGHTS.extremeDuration;
 
     const { dominantTier } = unpacked;
     const learnerIndex = TIERS_ORDER.indexOf(dominantTier);
@@ -452,8 +453,10 @@ export function rankVideos(videos, options = {}) {
         sessionSeed = null,
         query = null,
         category = null,
-        excludeIds = []
+        excludeIds = [],
+        now = Date.now()
     } = options;
+    const nowDay = Math.floor(now / 86_400_000);
 
     const cleanSearchQuery = normalizeMatchKey(query);
     const isSearchMode = Boolean(cleanSearchQuery);
@@ -514,6 +517,14 @@ export function rankVideos(videos, options = {}) {
             else if (normChan && normChan.includes(cleanSearchQuery)) score += 30;
         }
 
+        // Factor N: Modest freshness boost for newly added videos (browse only, unfinished only)
+        if (!isSearchMode && !isCompleted && Number.isFinite(v.createdAt) && v.createdAt > 0) {
+            const ageDays = nowDay - Math.floor(v.createdAt / 86400);
+            if (ageDays <= 3) score += WEIGHTS.freshRecent;
+            else if (ageDays <= 7) score += WEIGHTS.freshWeek;
+            else if (ageDays <= 14) score += WEIGHTS.freshFortnight;
+        }
+
         // Factor F: Deterministic Serendipity Jitter (disabled in search mode)
         if (!isSearchMode && sessionSeed !== null && sessionSeed !== undefined) {
             score += getDeterministicJitter(vid || '', sessionSeed, WEIGHTS.jitter);
@@ -544,6 +555,15 @@ export function rankVideos(videos, options = {}) {
         : declusterChannels(sortedVideos, { declusterCategory: !category || category === 'all' });
 }
 
+const EPISODE_RE = /(?:第\s*(\d{1,4})\s*話|エピソード\s*(\d{1,4})|\b(?:ep(?:isode)?\.?|part)\s*#?\s*(\d{1,4})\b|#(\d{1,4})\b)/i;
+
+function extractEpisodeNumber(title) {
+    const m = typeof title === 'string' ? EPISODE_RE.exec(title) : null;
+    if (!m) return null;
+    const n = Number(m[1] || m[2] || m[3] || m[4]);
+    return Number.isInteger(n) && n > 0 ? n : null;
+}
+
 /**
  * Score and rank candidate videos for the player's "More Videos" feed.
  * Strictly excludes current, session-excluded, and >=85% watched videos,
@@ -556,12 +576,22 @@ export function rankRelatedVideos(videos, options = {}) {
         currentVideo = {},
         excludeIds = [],
         context = {},
-        sessionSeed = null
+        sessionSeed = null,
+        now = Date.now()
     } = options;
+    const nowDay = Math.floor(now / 86_400_000);
 
     const currentVideoId = typeof currentVideo?.videoId === 'string' ? currentVideo.videoId.trim() : '';
+    const knownCurrent = currentVideoId ? videos.find(v => v?.videoId === currentVideoId) : null;
+    const hydratedCurrent = knownCurrent ? {
+        ...knownCurrent,
+        ...Object.fromEntries(Object.entries(currentVideo || {}).filter(([k, val]) =>
+            Array.isArray(val) ? val.length > 0 : Boolean(val) && !(k === 'category' && val === 'general')
+        ))
+    } : currentVideo;
     const unpacked = unpackLearnerContext(context, [currentVideoId, ...(Array.isArray(excludeIds) ? excludeIds : [])]);
-    const signals = extractRelatedSignals(currentVideo);
+    const signals = extractRelatedSignals(hydratedCurrent);
+    const curEp = extractEpisodeNumber(hydratedCurrent?.title);
     const effectiveRefTier = signals.refTier || unpacked.dominantTier;
     const refTierIdx = TIERS_ORDER.indexOf(effectiveRefTier);
 
@@ -586,12 +616,16 @@ export function rankRelatedVideos(videos, options = {}) {
             if (progress >= 10) v.resumeProgress = Math.round(progress);
         } else {
             score += 10;
+            if (Number.isFinite(v.createdAt) && v.createdAt > 0 && nowDay - Math.floor(v.createdAt / 86400) <= 7) {
+                score += 6;
+            }
         }
 
         // Content similarity: channel/artist, category, tags, title keywords, soft tier proximity.
         const candChan = normalizeMatchKey(cleanChannelName(v.channel));
-        if (signals.cleanChanLower && candChan &&
-            (candChan.includes(signals.cleanChanLower) || signals.cleanChanLower.includes(candChan))) {
+        const sameChannel = Boolean(signals.cleanChanLower && candChan &&
+            (candChan.includes(signals.cleanChanLower) || signals.cleanChanLower.includes(candChan)));
+        if (sameChannel) {
             score += 65;
         }
 
@@ -611,9 +645,9 @@ export function rankRelatedVideos(videos, options = {}) {
             score += shared * 10;
         }
 
+        let hits = 0;
         if (signals.keywordMatchers.length > 0 && v.title) {
             const titleLower = normalizeMatchKey(v.title);
-            let hits = 0;
             for (const [token, pattern] of signals.keywordMatchers) {
                 const matched = pattern ? pattern.test(titleLower) : titleLower.includes(token);
                 if (matched) {
@@ -622,6 +656,15 @@ export function rankRelatedVideos(videos, options = {}) {
                 }
             }
             score += hits * 20;
+        }
+
+        if (curEp !== null && (sameChannel || hits > 0)) {
+            const candEp = extractEpisodeNumber(v.title);
+            if (candEp !== null) {
+                if (candEp === curEp + 1) score += 55;
+                else if (candEp === curEp + 2) score += 20;
+                else if (candEp < curEp) score -= 10;
+            }
         }
 
         const candTierIdx = TIERS_ORDER.indexOf(normalizeTierValue(v.tier));

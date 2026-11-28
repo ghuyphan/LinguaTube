@@ -5,7 +5,7 @@ import { readBoundedBody } from '../utils/response-body.js';
  * 
  * Generates natural Azure Neural TTS audio using Microsoft Edge synthesis.
  * Incurs ZERO Cloudflare KV operations.
- * Cached via HTTP CDN & browser disk headers: public, max-age=2592000, immutable.
+ * Successful neural synthesis is cached for 30 days.
  */
 
 import {
@@ -121,17 +121,18 @@ export async function onRequest(context) {
     new URL(request.url).origin
   );
 
-  const audioResponse = (buffer, engine, cacheStatus) => new Response(buffer, {
+  const neuralCacheControl = 'public, max-age=2592000, immutable';
+  const audioResponse = (buffer, cacheStatus, isFallback = false) => new Response(buffer, {
     status: 200,
     headers: {
       'Content-Type': 'audio/mpeg',
       'Content-Length': buffer.byteLength.toString(),
-      'Cache-Control': 'public, max-age=2592000, immutable',
+      'Cache-Control': isFallback ? 'no-store' : neuralCacheControl,
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'X-TTS-Engine': engine,
-      'X-TTS-Voice': resolvedVoice,
+      'X-TTS-Engine': isFallback ? 'Google-Fallback' : 'Edge-Neural',
+      ...(!isFallback && { 'X-TTS-Voice': resolvedVoice }),
       'X-Cache': cacheStatus,
     },
   });
@@ -139,25 +140,13 @@ export async function onRequest(context) {
   let regional;
   if (!isMemoryHit) {
     try {
-      regional = await globalThis.caches?.open('tts-v1');
+      regional = await globalThis.caches?.open('tts-v2');
       const edgeHit = await regional?.match(edgeCacheUrl);
       if (edgeHit?.ok) {
-        return audioResponse(await edgeHit.arrayBuffer(), edgeHit.headers.get('X-TTS-Engine') || 'Edge-Neural', 'HIT-EDGE');
+        return audioResponse(await edgeHit.arrayBuffer(), 'HIT-EDGE');
       }
     } catch { /* Fall through to synthesis. */ }
   }
-
-  const putEdgeCache = (buffer, engine) => {
-    if (regional && context.waitUntil && buffer.byteLength > 0) {
-      context.waitUntil(regional.put(edgeCacheUrl, new Response(buffer.slice(0), {
-        headers: {
-          'Content-Type': 'audio/mpeg',
-          'Cache-Control': 'public, max-age=2592000, immutable',
-          'X-TTS-Engine': engine,
-        },
-      })).catch(() => {}));
-    }
-  };
 
   // 1. Primary: Microsoft Edge Neural TTS
   try {
@@ -166,16 +155,22 @@ export async function onRequest(context) {
       voice,
       timeoutMs: 5000,
     });
-    putEdgeCache(audioBuffer, 'Edge-Neural');
-    return audioResponse(audioBuffer, 'Edge-Neural', isMemoryHit ? 'HIT-MEMORY' : 'MISS');
+    if (regional && context.waitUntil && audioBuffer.byteLength > 0) {
+      context.waitUntil(regional.put(edgeCacheUrl, new Response(audioBuffer, {
+        headers: {
+          'Content-Type': 'audio/mpeg',
+          'Cache-Control': neuralCacheControl,
+        },
+      })).catch(() => {}));
+    }
+    return audioResponse(audioBuffer, isMemoryHit ? 'HIT-MEMORY' : 'MISS');
   } catch {
     console.warn('[EdgeTTS] Synthesis failed; trying fallback');
 
     // 2. Server-side fallback with a bounded audio read
     try {
       const googleBuffer = await fetchGoogleTts(cleanText, cleanLang);
-      putEdgeCache(googleBuffer, 'Google-Fallback');
-      return audioResponse(googleBuffer, 'Google-Fallback', 'MISS');
+      return audioResponse(googleBuffer, 'MISS', true);
     } catch {
       console.error('[TTS] Both providers unavailable');
       return jsonResponse({ error: 'TTS synthesis failed' }, 502, { 'Cache-Control': 'no-store' });

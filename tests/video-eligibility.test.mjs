@@ -207,3 +207,33 @@ test('delisted videos are reverified before a scoped, retryable purge', async t 
     assert.deepEqual(await reconcileRetiredVideoAssets(env), { candidates: 1, purged: 1 });
     assert.deepEqual([...files], [`transcripts/${videoId}/g1/en.json`]);
 });
+
+test('reconcile preserves embed_disabled reports even when YouTube API claims embeddable=true and warm recommendations paginate cleanly', async t => {
+    const { env, db, sqlite } = await setup(t);
+    for (const [id, ts] of [['vidA0000001', 300], ['vidB0000002', 200], ['vidC0000003', 100]]) {
+        sqlite.prepare(`INSERT INTO video_languages(video_id,title,channel,available_languages,sub_languages,updated_at)
+            VALUES(?,?,'Ch','["en"]','["en"]',?)`).run(id, id, ts);
+    }
+    const { onRequestGet: recommendGet } = await import('../functions-src/api/recommended-videos.js');
+    const files = new Set(['transcripts/vidA0000001/en.json', 'transcripts/vidB0000002/en.json', 'transcripts/vidC0000003/en.json']);
+    env.TRANSCRIPT_STORAGE = { head: async key => files.has(key) ? {} : null };
+
+    // Warm candidate cache first, then delist vidA via client embed report while reconcile sees embeddable=true.
+    const warm = await (await recommendGet({ request: request('recommended-videos?lang=en&limit=2'), env })).json();
+    assert.equal(warm.videos.length, 2);
+
+    await markVideoEmbedBlocked(db, 'vidA0000001', true, 'embed_disabled');
+    sqlite.prepare('UPDATE video_languages SET region_checked_at=? WHERE video_id=?').run(Date.now() - week - 1000, 'vidA0000001');
+    t.mock.method(globalThis, 'fetch', async url => {
+        const ids = new URL(url).searchParams.get('id').split(',');
+        return Response.json({ items: ids.map(id => ({ ...official(true, 'PT3M'), id })) });
+    });
+    await refreshCatalogVideoAvailability(env);
+    assert.equal(sqlite.prepare('SELECT embed_blocked, embed_blocked_reason FROM video_languages WHERE video_id=?').get('vidA0000001').embed_blocked, 1);
+
+    // Filter happens before slicing so limit=2 still returns 2 valid videos without vidA.
+    const after = await (await recommendGet({ request: request('recommended-videos?lang=en&limit=2'), env })).json();
+    assert.equal(after.videos.length, 2);
+    assert.ok(!after.videos.some(v => v.videoId === 'vidA0000001'));
+    assert.equal(after.hasMore, false);
+});

@@ -64,7 +64,7 @@ export class AudioService {
     if (this.audioBlobUrlCache.has(cacheKey)) return;
 
     try {
-      const edgeTtsUrl = `/api/tts?lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
+      const edgeTtsUrl = `/api/tts?v=2&lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
       const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
       const timer = setTimeout(() => controller?.abort(), 3000);
       const resp = await fetch(edgeTtsUrl, {
@@ -156,7 +156,7 @@ export class AudioService {
       if (!isCurrent()) return;
 
       // 3. Online Unified Neural TTS (/api/tts)
-      const ttsUrl = `/api/tts?lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
+      const ttsUrl = `/api/tts?v=2&lang=${encodeURIComponent(language)}&text=${encodeURIComponent(cleanWord)}`;
       try {
         const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
         const fetchTimer = setTimeout(() => controller?.abort(), 3500);

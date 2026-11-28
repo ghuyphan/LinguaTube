@@ -12,7 +12,7 @@ import { jsonResponse } from '../utils/utils.js';
 import { consumeRateLimit, getClientIdentifier, rateLimitResponse } from '../middlewares/rate-limiter.js';
 import { viewerCountry } from '../services/video-playback.service.js';
 import { scheduleMetadataHealing } from '../middlewares/video-validator.js';
-import { filterCurrentVideoAvailability, getRelatedVideosFromCloudflare } from '../data/video-info-db.js';
+import { getRelatedVideosFromCloudflare } from '../data/video-info-db.js';
 import { parseRecommendationRequest, recommendationResponseHeaders } from '../services/recommendation.service.js';
 
 const RATE_LIMIT_CONFIG = { max: 120, windowSeconds: 60, keyPrefix: 'related_videos' };
@@ -71,9 +71,9 @@ async function handleRelatedVideos(context, method) {
         ({ videos, hasMore } = await getRelatedVideosFromCloudflare(
             db, r2, lang, limit, offset,
             { currentVideo, excludeIds, context: userContext, sessionSeed, isRefresh, metrics,
-                country, useAssetGenerations: strict, waitUntil: context.waitUntil?.bind(context) }
+                country, useAssetGenerations: strict, filterAvailability: strict,
+                waitUntil: context.waitUntil?.bind(context) }
         ));
-        if (strict) videos = await filterCurrentVideoAvailability(db, videos, country);
     } catch (error) {
         console.error('[RelatedVideos] Retrieval failed:', error.message);
         return jsonResponse({ success: false, error: 'Recommendations temporarily unavailable' }, 503, {

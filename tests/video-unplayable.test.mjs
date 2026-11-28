@@ -166,4 +166,32 @@ describe('POST /api/video-unplayable', () => {
         });
         assert.equal((await unknown.json()).delisted, false);
     });
+
+    it('delists permanent private/removed/age-restricted embeds while ignoring generic unavailable', async () => {
+        const { sqlite, db } = setupTestDb();
+        try {
+            sqlite.prepare(`
+                INSERT INTO video_languages (video_id, available_languages, sub_languages, title, channel, duration_seconds, updated_at)
+                VALUES ('privVid0001', '["ja"]', '["ja"]', 'Private', 'Ch', 200, 1000),
+                       ('copyVid0001', '["ja"]', '["ja"]', 'Copyright', 'Ch', 200, 1000),
+                       ('ageVid00001', '["ja"]', '["ja"]', 'Age', 'Ch', 200, 1000),
+                       ('geoVid00001', '["ja"]', '["ja"]', 'Geo', 'Ch', 200, 1000)
+            `).run();
+            const send = (videoId, html) => onRequestPost({
+                request: new Request('https://voca.study/api/video-unplayable', {
+                    method: 'POST', headers: { 'CF-Connecting-IP': '1.2.3.7' },
+                    body: JSON.stringify({ videoId, errorCode: 150 })
+                }),
+                env: { VOCAB_DB: db },
+                _fetchImpl: async () => new Response(html)
+            });
+
+            assert.equal((await (await send('privVid0001', '{"reason":"This video is private"}')).json()).reason, 'video_unavailable');
+            assert.equal((await (await send('copyVid0001', '{"reason":"This video is no longer available due to a copyright claim"}')).json()).reason, 'video_unavailable');
+            assert.equal((await (await send('ageVid00001', '{"reason":"Sign in to confirm your age"}')).json()).reason, 'age_restricted');
+            assert.equal((await (await send('geoVid00001', '{"status":"UNPLAYABLE","reason":"Video unavailable"}')).json()).delisted, false);
+        } finally {
+            sqlite.close();
+        }
+    });
 });
