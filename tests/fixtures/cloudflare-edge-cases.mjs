@@ -65,7 +65,9 @@ add('payment unsigned','payment/webhook',{body:{data:{orderCode:12345678,amount:
 add('revenuecat unsigned','payment/revenuecat-webhook',{body:{event:{type:'TEST'}},status:401,noUpstream:true});
 add('revenuecat configured secret absent','payment/revenuecat-webhook',{body:{event:{type:'TEST'}},drop:'REVENUECAT_WEBHOOK_SECRET',status:503,noUpstream:true});
 add('revenuecat sandbox ignored','payment/revenuecat-webhook',{body:{event:{type:'INITIAL_PURCHASE',environment:'SANDBOX'}},headers:{Authorization:'Bearer fixture-callback'},status:200,noUpstream:true,expect:{status:'ignored_environment'}});
-for(const [route,body] of [['video-category',{videoId:'abcdefghijk',category:'invented'}],['video-level',{videoId:'abcdefghijk',language:'xx',level:'CEFR B1'}],['video-level',{videoId:'abcdefghijk',language:'en',level:'HACK'}],['video-level',{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:0.64}],['payment/create-order',{planId:'__proto__'}]]) add('authenticated invalid input '+JSON.stringify(body),route,{method:'POST',body,headers:signed,status:400,authOnly:true});
+for(const [route,body] of [['video-level',{videoId:'abcdefghijk',language:'xx',level:'CEFR B1'}],['video-level',{videoId:'abcdefghijk',language:'en',level:'HACK'}],['video-level',{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:0.64}],['payment/create-order',{planId:'__proto__'}]]) add('authenticated invalid input '+JSON.stringify(body),route,{method:'POST',body,headers:signed,status:400,authOnly:true});
+add('authenticated invalid input {"videoId":"abcdefghijk","category":"invented"}','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'invented'},headers:{...signed,'x-admin-secret':'fixture-admin'},status:400,authOnly:true});
+add('ordinary authenticated category write rejected','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,status:403,authOnly:true});
 add('payment status filters authenticated owner','payment/check-status',{query:{orderCode:'12345678'},headers:signed,status:404,authOnly:true});
 add('maintenance D1 unavailable','internal/reconcile',{body:{},headers:{Authorization:'Bearer fixture-maintenance'},drop:'VOCAB_DB',status:503,noUpstream:true});
 add('admin D1 unavailable','heal-levels',{body:{},headers:{'x-admin-secret':'fixture-admin'},drop:'VOCAB_DB',status:500,noUpstream:true});
@@ -78,18 +80,19 @@ for(const country of [undefined,'XX','T1','vn']) add('geo fallback '+country,'ge
 add('anonymous credits status','diamonds',{status:200,noUpstream:true,expect:{tier:'anonymous',diamonds:3}});
 add('category taxonomy','video-category',{status:200,noUpstream:true,expect:{success:true}});
 add('category missing video falls back','video-category',{query:{videoId:'abcdefghijk'},status:200,noUpstream:true,expect:{category:'general'}});
-add('transcript health without secrets','transcript',{method:'GET',drop:'GLADIA_API_KEY',status:200,noUpstream:true,expect:{hasGladiaKey:false}});
+add('transcript health without secrets','transcript',{method:'GET',headers:{Authorization:'Bearer fixture-maintenance'},drop:'GLADIA_API_KEY',status:200,noUpstream:true,expect:{hasGladiaKey:false}});
+add('transcript health hides secrets from public','transcript',{method:'GET',drop:'GLADIA_API_KEY',status:200,noUpstream:true,expect:{status:'ok'}});
 add('empty recommendations','recommended-videos',{body:{lang:'en'},status:200,noUpstream:true,expect:{success:true}});
 add('same-language translate bypass','translate/[[path]]',{params:{path:['en','en','hello%2Fworld']},status:200,noUpstream:true,expect:{translation:'hello/world'}});
 add('same-language batch bypass','translate/batch',{body:{source:'en',target:'en',texts:['hello','']},status:200,noUpstream:true,expect:{translations:['hello','']}});
 add('blank translation batch bypass','translate/batch',{body:{source:'en',target:'vi',texts:['',' ']},status:200,noUpstream:true,expect:{translations:['',' ']}});
-add('empty leaderboard falls back to seeds','leaderboard',{query:{limit:'-3'},status:200,providerOnly:true});
+add('empty leaderboard falls back to seeds','leaderboard',{query:{limit:'-3'},status:200,noUpstream:true});
 add('version compiled fallback','version',{status:200,noUpstream:true});
 for (const mode of ['auth-outage','auth-redirect','auth-identity-mismatch'])
  add('authentication fails closed '+mode,'video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,fixture:mode,status:mode==='auth-identity-mismatch'?401:503,authOnly:true});
-add('category only depends on identity','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,fixture:'profile-outage',status:200,authOnly:true});
+add('category only depends on identity','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:{...signed,'x-admin-secret':'fixture-admin'},fixture:'profile-outage',status:200,authOnly:true});
 add('authenticated level rejects invalid video ID','video-level',{body:{videoId:'short',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:400,authOnly:true});
-add('authenticated category persistence','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:signed,status:200,authOnly:true,expect:{category:'news'}});
+add('authenticated category persistence','video-category',{method:'POST',body:{videoId:'abcdefghijk',category:'news'},headers:{...signed,'x-admin-secret':'fixture-admin'},status:200,authOnly:true,expect:{category:'news'}});
 add('authenticated level confidence clamps','video-level',{body:{videoId:'abcdefghijk',language:'en',level:'CEFR B1',confidence:99,score:999,grammarCount:99999,speechRateCpm:99999},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{confidence:0.85,details:{score:6,tier:'advanced',grammarCount:10000,speechRateCpm:2000}}});
 add('authenticated level ignores spoofed authority','video-level',{body:{videoId:'12345678901',language:'ja',level:'JLPT N4',confidence:1,grammarCount:100,method:'metadata',forceUpdate:true,details:{forceUpdate:true}},headers:signed,status:200,allowedHosts:['auth.fixture.test','www.youtube.com'],expect:{method:'linguistics',confidence:0.85,level:'JLPT N4'}});
 add('diamond rate limit exact boundary','diamonds',{repeat:61,status:429,initialStatus:200,noUpstream:true});
